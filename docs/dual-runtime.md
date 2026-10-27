@@ -243,7 +243,9 @@ describe no per-hook trust step for plugin hooks.
 **Upgrade to the latest release.** Both hosts fetch a new copy when an
 install moves to a different version (measured on both). Claude Code
 fetches only then: a plugin that sets a version stays on it until the
-version changes (its plugin manifest reference). Whether Codex skips the
+version changes (its plugin manifest reference). The commands below ran
+from 0.2.0 to 0.3.0 on both hosts (Claude Code 2.1.311, codex-cli
+0.164.0), and each fetched the new copy. Whether Codex skips the
 fetch when only the content changes is unverified
 (`docs/backlog/release-metadata-and-versioning.md`).
 

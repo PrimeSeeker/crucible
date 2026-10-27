@@ -46,9 +46,9 @@ tags `v<version>`. (Basis: external; judgment, accepted by the
 maintainer.)
 
 The first release, 0.2.0 (2026-10-27), ran the install and the pin to a
-tag from GitHub on both hosts; an update across releases waits for the
-second release (`docs/backlog/release-metadata-and-versioning.md`).
-(Basis: measured.)
+tag from GitHub on both hosts; the second, 0.3.0 (2026-10-27), ran the
+update from 0.2.0 on both, and each host fetched the new copy. (Basis:
+measured.)
 
 ### Installing from a tag
 
@@ -91,6 +91,8 @@ promote", 2026-10-13). (Basis: judgment, accepted by the maintainer.)
 
 ## Changes
 
+- 2026-10-27: 0.3.0 ran the update from 0.2.0 on both hosts; the
+  statement that the update was still to run is replaced by that result.
 - 2026-10-27: pre-releases: `master` bumped to a pre-release version and
   tagged, an install pinned to the tag; adopted tentatively once both
   hosts were seen to accept one.
