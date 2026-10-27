@@ -56,8 +56,9 @@ to its new middle tier:
 1. `grep -n -i "truncat" skills/using-crucible/SKILL.md` finds the
    compaction line (nothing before).
 2. ``grep -rn 'under `scratch/`' skills`` finds nothing (7 before).
-3. `grep -rn "current-generation tier" skills docs` finds nothing (2
-   before); `codex.md`'s Bounded line names `gpt-6.1-terra`.
+3. `grep -rn "current-generation tier" skills docs` finds nothing
+   outside this feature's folder (2 before); `codex.md`'s Bounded line
+   names `gpt-6.1-terra`.
 4. `grep -nE '^- \*\*(correctness|evidence-and-inference)\*\*$'
    skills/redteaming/SKILL.md` finds nothing (2 before).
 5. SDD's § Models has a bullet for the snapshot-blessing agent (none
@@ -65,8 +66,7 @@ to its new middle tier:
 6. `docs/backlog/front-end-pass-followups.md` does not exist.
 7. `python -m pytest tests/` passes.
 8. The cut tool's leak search over the worktree reports no unexplained
-   hit, apart from the `feature-folder` pattern on this feature's own
-   folder.
+   hit, apart from the `feature-folder` pattern on feature folders.
 
 ## Out of scope
 
