@@ -19,7 +19,7 @@ adapter's instrument-dispatch, resume and effort operations.
 
 ## Dispatch the branch reviewer
 
-**The range** is MERGE_BASE..HEAD, MERGE_BASE = `git merge-base main HEAD` or the recorded branch point — never `HEAD~1`, which silently drops all but the last commit. The reviewer builds the diff itself, so it never enters your context.
+**The range** is MERGE_BASE..HEAD, MERGE_BASE = `git merge-base main HEAD` or the recorded branch point — never `HEAD~1`, which silently drops all but the last commit. Once the base has been merged into the branch, MERGE_BASE is `git merge-base` alone: from the recorded branch point, the range would carry every change that merge brought in. The reviewer builds the diff itself, so it never enters your context.
 
 **Dispatch** instrument `branch-reviewer` on **the default role** — this seat's floor, never lowered to save cost, or the alternate role where one of its triggers selects this seat — with its filled slot card, [code-reviewer.slots.md](code-reviewer.slots.md), through your adapter's instrument-dispatch operation (the template is [code-reviewer.md](code-reviewer.md)). Every seat this skill starts carries the seven items of `skills/subagent-driven-development/references/dispatch-composition.md`, whose § Models and effort holds the rules every dispatch shares.
 
@@ -30,6 +30,8 @@ Full-scope pass `<k>` writes `sdd/branch-review/pass-<k>.md`; confirm each seat'
 ## The branch-review loop
 
 Severity vocabulary: **BLOCKER / MAJOR / MINOR.** Only a BLOCKER or MAJOR opens a wave.
+
+Where the spec's preamble (on the lane, the note's) carries an `Umbrella:` line, take the receiving step of `skills/redteaming/references/flip-paths.md` § Under an umbrella: binding changes and late splits before each full-scope pass builds its range and before each fix wave records FIX_BASE, so a binding change it takes in falls outside the range the pass or wave reviews.
 
 1. **A full-scope pass** reads the whole branch. One that leaves no open or new BLOCKER or MAJOR ends the review.
 2. **A fix wave** — one fix dispatch plus its scoped re-review — takes what a pass left open. Record FIX_BASE (`git rev-parse HEAD`) as it opens.

@@ -138,6 +138,10 @@ boundary's base revision is recorded, so it falls outside the range the
 child's next review reads. Children take it in by a merge, since a
 rebase would rewrite revisions their records name. (Basis: judgment,
 accepted by the maintainer, 2026-10-27.)
+A child in its branch review has no task or round left, so the same
+check runs before each full-scope pass and fix wave, and the branch
+review's range is then measured from the recomputed merge base. (Basis:
+judgment, an agent's proposal not yet accepted by the maintainer.)
 
 ### Marks
 
@@ -150,7 +154,11 @@ conflicting in git. Closing is read from the marks, recursively, so it
 takes no write of its own up the chain. A child
 already in flight when its umbrella is written carries no line, so its
 finish finds its entry by its slug instead (2026-10-28). (Basis:
-judgment, accepted by the maintainer.)
+judgment, accepted by the maintainer.) A slug alone could match an
+unrelated feature born after the umbrella, so the finish marks only
+where the feature's folder was born on a tree without the umbrella.
+(Basis: judgment, an agent's proposal not yet accepted by the
+maintainer.)
 
 ## Rejected
 
@@ -171,3 +179,6 @@ judgment, accepted by the maintainer.)
   preamble line named at every statement of what binds, edited by
   weight, marked per entry and closed by its marks; it replaces
   improvised forms that left the reader merging texts.
+- 2026-10-28: a child in branch review takes in a binding change before
+  each pass and wave, and the slug match is limited to features born on
+  a tree without the umbrella; the branch review found both gaps.
