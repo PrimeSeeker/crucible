@@ -110,11 +110,13 @@ the controller transcribed. The `sdd/` files the controller writes by rule —
 the very-small lane's `wave-<n>-fix.md`, inline mode's report — are its own
 and carry no mark.
 
-**Lifecycle** (binding): provisioned at brainstorm exit; lives until SDD
-Finish or feature abandonment; in both cases the controller then deletes
+**Lifecycle** (binding): provisioned at brainstorm exit; lives until one of
+three ends — SDD Finish, an umbrella's landing (an umbrella never reaches
+SDD), or feature abandonment. At each, the controller deletes
 `.crucible/<feature-slug>/` and nothing else (at Finish, after SDD Finish's
-record checks) and reports to the operator anything it could not delete. No
-orphan workspaces. Workspace lost mid-feature: the in-flight phase restarts
+record checks; at an umbrella's landing, before it lands, in the order
+`skills/brainstorming/references/umbrellas.md` § Landing gives) and reports
+to the operator anything it could not delete. No orphan workspaces. Workspace lost mid-feature: the in-flight phase restarts
 from the committed spec or plan and `git log`; the session transcripts hold
 the lost records if they are needed.
 
@@ -347,7 +349,8 @@ writes the spec, before provisioning; `<feature-slug>` is the workspace slug
 so a filename carries only its role.
 
 - Exactly one *current* spec, named by its kind: `design.md` (standard
-  route), `folded.md` (the folded spec+plan) or `note.md` (the very-small lane).
+  route), `folded.md` (the folded spec+plan), `note.md` (the very-small lane)
+  or `umbrella.md` (an umbrella, `skills/brainstorming/references/umbrellas.md`).
 - `plan.md`, on the standard route only.
 - A route that replaces a spec keeps the predecessor in place as the
   forensic record and writes the successor into the same folder: a supersede

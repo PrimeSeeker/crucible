@@ -4,7 +4,7 @@ brainstorming 5178
 dispatching-parallel-agents 920
 finishing-a-development-branch 1682
 receiving-review 515
-redteaming 14428
+redteaming 14830
 requesting-code-review 3813
 subagent-driven-development 14332
 systematic-debugging 3422
