@@ -37,12 +37,12 @@ seen on crucible itself and on one other project crucible ran on:
 **Goals.**
 
 - One committed document kind, the **umbrella**, that holds an effort:
-  what its parts share, what each part delivers, and in what order;
-  readable in its current state from one file.
+  what its parts share, what each part delivers, in what order, and which
+  parts have landed; readable in its current state from one file.
 - Umbrellas nest: a part that itself splits becomes an umbrella.
 - Every seat of a child that receives binding content reads the
   umbrella's binding content as binding, so a child is reviewed for
-  compliance with its umbrella.
+  compliance with its umbrella and for delivering its entry.
 - What a later part must deliver lives in the umbrella, never only in
   memory or chat.
 
@@ -51,8 +51,6 @@ seen on crucible itself and on one other project crucible ran on:
 - Moving existing feature folders, nesting folders, or retrofitting an
   umbrella onto past work. An umbrella for work already in progress is
   the first use of this feature, not part of it.
-- Tracking state in the umbrella (a status field per child), or any
-  tool that computes it.
 - A changelog in the umbrella: git history and the children's specs
   record what changed.
 - Changing what the three routes do, the spec contract's sections, the
@@ -64,21 +62,20 @@ seen on crucible itself and on one other project crucible ran on:
 - **D1 — The umbrella is a spec of its own kind.** It has a slug, a
   branch, a workspace and a feature folder like a feature, and takes none
   of the three routes: its review is D4's. Its folder holds
-  `umbrella.md`, born by the existing birth step, written under the spec
-  contract's sections with these contents: Intent (the effort's goal and
-  non-goals); optionally Decisions, Constraints & invariants, and
-  Interfaces & boundaries (what children provide each other), under the
-  spec contract's weights; and Acceptance, which is the Children list —
-  ordered entries, each naming the child's slug, what it must deliver
-  and what it waits on — with the checks left to each child's own
-  Acceptance. An umbrella carries no `Deferred to implementation:`
-  marker: detail it leaves open goes to the entry of the child that
-  owns it. A nested umbrella's preamble carries the pin to its parent
-  (D7). Rationale: the spec contract's shape lets the campaign, its
-  seats and its terminal pass review an umbrella as they review a spec.
-  Rejected: a frozen parent amended from its children, and a frozen
-  parent plus an amendment log (both leave the reader merging texts, the
-  cost the improvised forms paid).
+  `umbrella.md`, born by the existing birth step and written under the
+  spec contract's sections: Intent (the effort's goal and non-goals);
+  Decisions, Constraints & invariants, Interfaces & boundaries (what
+  children provide each other) and Mechanism sketches where it has them;
+  and Acceptance, which is the Children list — ordered entries, each
+  naming the child's slug, what it must deliver, what it waits on, and
+  its mark (D9) — stating that each child's own Acceptance carries the
+  checks. A campaigned umbrella carries every section, so its seats grade
+  it as the spec it is. An umbrella carries no `Deferred to
+  implementation:` marker: detail it leaves open goes to the entry of
+  the child that owns it. A nested umbrella's preamble carries the pin to
+  its parent (D7). Rejected: a frozen parent amended from its children,
+  and a frozen parent plus an amendment log (both leave the reader
+  merging texts, the cost the improvised forms paid).
 - **D2 — Recursive.** A child that splits becomes an umbrella and the
   parent of its own children; its entry in its parent says so. Each
   umbrella holds only what its children share; what one child alone needs
@@ -94,12 +91,11 @@ seen on crucible itself and on one other project crucible ran on:
 - **D4 — Review scaled to content** [LOAD-BEARING]. An umbrella carrying
   Decisions, Constraints & invariants or Interfaces & boundaries takes a
   spec campaign; one holding only Intent and Acceptance is approved by
-  the operator, as a lane note is: drafted and shown with the proposal at
-  step 4, written as approved. Brainstorming proposes which at step 4,
-  the operator rules, and the ruling is an entry in the brainstorm
-  decision record. Neither takes a plan phase or SDD: children write the
-  plans. Binding content a child later adds to an umbrella is reviewed by
-  that child's review (D8).
+  the operator, as a lane note is: drafted, self-reviewed and shown with
+  the proposal at step 4, and written as approved. Brainstorming proposes
+  which at step 4, the operator rules, and the ruling is an entry in the
+  brainstorm decision record. Neither takes a plan phase or SDD: children
+  write the plans.
 - **D5 — The umbrella lands before its first child,** through
   `crucible:finishing-a-development-branch`, so children branch from a
   base that holds it and other sessions can read it. Before it lands,
@@ -111,57 +107,64 @@ seen on crucible itself and on one other project crucible ran on:
 - **D6 — A child's brainstorm takes its entry as input.** The entry is
   an incoming document in brainstorming's sense: what it settles stays
   settled, and the dialogue asks only what it leaves open. The child's
-  route is proposed as for any feature. A feature whose brainstorm finds
-  it must split before its spec campaign replaces its unreviewed spec
-  with `umbrella.md` (back to step 4); after the campaign, the split is a
-  supersede whose successor is `umbrella.md`.
+  route is proposed as for any feature; a child that changes its
+  umbrella's binding content does not take the very-small lane. A
+  feature whose brainstorm finds it must split before its spec is
+  reviewed replaces that spec with `umbrella.md` (back to step 4). One
+  found to need splitting later — after its campaign, or once its lane
+  note is committed — is an operator decision ask: the feature is
+  abandoned and a new umbrella, with its own slug, takes the work up and
+  lists the abandoned feature by path.
 - **D7 — The pin.** A child's spec, folded document, lane note or
   umbrella carries in its preamble a line
-  ``Umbrella: `<path>` @ `<rev>` ``. What binds the child then includes
-  the umbrella's Constraints & invariants and [LOAD-BEARING] marks at
-  that revision, and, through the umbrella's own pin, its parent's, up
-  the chain. Every seat that receives binding content reads them there
-  as binding, and grades the child's compliance with them. A child that
-  edits its umbrella (D8) pins the commit carrying the edit; once the
-  child's own campaign has closed, a re-pin is part of a scoped amendment
-  of the child's spec, as a plan header's spec pointer is re-stamped. A
-  supersede's or unfold's successor carries its predecessor's pin and
-  may re-pin, being reviewed afresh.
+  ``Umbrella: `<path>` @ `<rev>` ``, the revision being a commit on the
+  branch children land on. What binds the child then includes its own
+  entry, and the umbrella's Constraints & invariants and [LOAD-BEARING]
+  marks at that revision, and, through the umbrella's own pin, its
+  parent's, up the chain. Every seat that receives binding content reads
+  them there as binding. A change the child makes to its umbrella (D8) is
+  stated in the child's own spec, where its review reads it, and binds the
+  child over the pinned text. A child that existed before its umbrella
+  carries no pin and is bound by nothing in it.
 - **D8 — Edits ride a child.** A child that changes its umbrella edits it
-  on the child's own branch; the edit lands with the child, under the
-  child's review, which is the only check on it. Adding a child or
-  rewording a not-yet-started child's entry is lightly held; a started
-  child's entry is edited only by that child. A change to the umbrella's
-  binding content is a decision ask to the operator before the edit, as
-  a scoped amendment is; the ask names every child in flight, and each
-  takes a scoped amendment of its own spec that re-pins to the change or
-  records why it is unaffected. An edit no child causes (dropping a child
-  on the operator's word) rides the next child's branch; where no child
-  follows, it takes a branch of its own, the operator approves its diff,
+  on its own branch, stating the change in its spec; the edit lands with
+  the child, and the branch review checks the edit against the statement.
+  Adding a child or rewording a not-yet-started child's entry is lightly
+  held. A change to the umbrella's binding content — its Constraints &
+  invariants, its [LOAD-BEARING] marks, or a started child's entry — is a
+  decision ask to the operator before the edit, as a scoped amendment is;
+  the ask names every open umbrella and every child in flight beneath it,
+  at every depth. Once the change has landed, each of them re-pins to it
+  or records why it is unaffected: a child in flight by a scoped
+  amendment of its own spec (on the very-small lane, by the lane's own
+  decision ask for its note), an open nested umbrella by an edit riding
+  its next child's branch. Dropping a child, on the operator's word,
+  lands at once on a branch of its own: the operator approves its diff,
   and it lands through `crucible:finishing-a-development-branch`.
-- **D9 — State is derived.** A child is landed when its folder is on the
-  branch children land on — a child that is itself an umbrella, when it
-  has also closed (D10); in flight when it has a branch; otherwise not
-  started. Only a dropped child is marked in its entry, with its reason.
-  A slug named in an entry that another feature has taken meanwhile is
-  refused at the child's birth, as any taken slug is; the child takes a
-  new slug and edits its entry. Rationale: no status edits, and none of
-  the sibling conflicts they would cause. Rejected: a status field per
-  child.
-- **D10 — Closing.** An umbrella closes when every child has landed or
-  been dropped. The child whose landing completes that says in its close
-  readout that the umbrella closes when it lands, with the dropped
-  children and their reasons; where that closes the umbrella's own
-  parent too, it says so for each level (where a branch of its own
-  closes it, D8, the controller tells the operator the same). Whether any
-  dropped child becomes a backlog item is the operator's call, as for any
-  close readout's leftovers. From the close on, the umbrella is frozen.
+- **D9 — Each entry carries a mark.** A child marks its own entry
+  `landed` in the commit that lands it, written on its own branch before
+  its finish; a child that is itself an umbrella marks its entry `open`
+  when it lands and `closed` when it closes (D10). A dropped child's
+  entry is marked `dropped`, with its reason. An entry with no mark has
+  not landed; whether it is in flight shows from a branch named by its
+  slug. Each child edits only its own entry, so siblings' marks do not
+  conflict. Rejected: state derived from which folders and branches
+  exist (a nested umbrella's landing, an unrelated feature taking a
+  child's slug, and drops riding unlanded branches all misread it).
+- **D10 — Closing.** An umbrella is closed when every entry is marked
+  `landed`, `closed` or `dropped`; anyone reading it sees that. The child
+  whose landing closes a nested umbrella also marks that umbrella's
+  entry in its parent `closed`, on the same branch. Whether a dropped
+  child becomes a backlog item is the operator's call. From the close on,
+  the umbrella is frozen.
 - **D11 — Resuming an effort.** A session continuing an effort reads the
-  umbrella and derives the next child from what has landed. Agent memory
-  holds at most a pointer to the umbrella.
-- **D12 — The records stay in the merged tree.** Before a pull request,
-  finishing does not offer to remove the files of an umbrella's folder or
-  of a child's: D5 and D9 read them on the branch children land on.
+  umbrella and takes the first entry with no mark whose dependencies
+  have landed, after checking that no branch named by its slug exists.
+  Agent memory holds at most a pointer to the umbrella.
+- **D12 — `umbrella.md` stays in the merged tree.** Before an umbrella's
+  own pull request, finishing does not offer to remove `umbrella.md`:
+  the children read it, marks included, on the branch they land on. A
+  child's folder is offered like any feature's.
 
 ## Constraints & invariants
 
@@ -169,70 +172,78 @@ seen on crucible itself and on one other project crucible ran on:
    preamble (D7), read by each seat at the pinned revision; never through
    a copied block.
 2. Each rule this feature adds is stated once, at the site its reader
-   acts from; every other site points there.
+   acts from (§ Interfaces & boundaries assigns each); every other site
+   points there.
 3. A shipped spec is never silently edited, as before. An umbrella is
    edited in place until it closes, by its own campaign's fixes before it
-   lands and by children's edits after (D8), and is frozen from its
+   lands and by children's edits and marks after, and is frozen from its
    close.
 4. No committed text this feature writes names a project other than
    crucible or describes a private setup (`AGENTS.md`).
 
 ## Interfaces & boundaries
 
-The sites the change touches, found by search.
+The sites the change touches, found by search, each with the rule it
+owns.
 
-- **`skills/brainstorming/SKILL.md`.** One stub section, naming the new
-  reference `skills/brainstorming/references/umbrellas.md` to read in
-  full, reached from the scope-decomposition check (§ The dialogue) and
-  self-review check 3; step 4 proposes the umbrella and its review (D4),
-  and the Flow list's steps 5, 9 and 10 cover it; the opening's
-  terminal-state sentence and
-  § Handoff gain the umbrella's terminal state (campaign, or approval,
-  then landing); the spec contract gains the pin (D7). The reference
-  holds the umbrella's shape and rules (D1, D2, D4–D12) and opens with
-  the stub's heading; other sites point to it without the stub's
-  wording, since the suite allows one stub per reference.
+- **`skills/brainstorming/references/umbrellas.md`** (new) owns D1–D4 and
+  D6–D11: the shape, recursion, flat folders, review, children, the pin
+  as its writers set it, edits, marks, closing and resuming. It opens with
+  the heading of its stub.
+- **`skills/brainstorming/SKILL.md`.** One stub section naming the
+  reference to read in full, reached from the scope-decomposition check
+  (§ The dialogue), self-review check 3 and step 4 (proposing the
+  umbrella and its review); the Flow list's steps 5, 9 and 10, the
+  opening's terminal-state sentence and § Handoff gain the umbrella's
+  terminal state (campaign, or approval, then landing); the spec
+  contract's persistence paragraph points to the reference for the pin.
+  Other sites point to the reference without the stub's wording, since
+  the suite allows one stub per reference.
 - **`tests/test_skill_references.py`**, its `EXPECTED` set: the new stub
-  and reference pair, since the test asserts the set of stubs exactly.
-- **`skills/brainstorming/references/lane-note.md`.** A lane note under
-  an umbrella carries the pin in its preamble, and its Intent states any
-  change the lane makes to its umbrella.
+  and reference pair.
+- **`skills/brainstorming/references/lane-note.md`.** A lane note under an
+  umbrella carries the pin in its preamble.
 - **`skills/redteaming/references/formats.md`** § Feature folder: the
-  role name `umbrella.md` beside `design.md`, `folded.md` and `note.md`;
-  § Feature workspace root and layout, Lifecycle: the umbrella's landing
-  as a third end (D5); brainstorming's provisioning clause points there.
-- **The seats' binding content and read scope.** Every template whose
-  binding-content statement names a spec's preamble conventions — the
-  redteam seat (`skills/redteaming/seat-prompt.md`), the terminal pass
-  (`terminal-pass-prompt.md`), the branch reviewer
-  (`skills/requesting-code-review/code-reviewer.md`), the task reviewer,
-  the re-reviewer and the implementer
-  (`skills/subagent-driven-development/task-reviewer-prompt.md`,
-  `re-review-prompt.md`, `implementer-prompt.md`), each with its
-  very-small-lane passage where it has one — states that a pinned
-  umbrella's binding content binds too, and its read scope admits the
-  pinned umbrellas at their revisions. Their slot cards change only
-  where a slot must carry an umbrella path. `agents/` is regenerated.
-  The blind verifier, which receives no binding content, is unchanged.
-- **The other statements of what binds** that name a spec's preamble
-  conventions: `skills/subagent-driven-development/SKILL.md` § The Task
-  Loop's Deviations paragraph and `skills/writing-plans/SKILL.md`'s spec
-  pointer (what the pin makes binding) gain the same clause.
+  role name `umbrella.md`. § Feature workspace root and layout,
+  Lifecycle, owns D5's third end; brainstorming's provisioning clause
+  points there.
+- **What binds, at every statement of it.** Each site below gains the
+  clause that a pinned umbrella's binding content, and the child's own
+  entry, bind too, read at the pinned revisions up the chain:
+  - the templates' binding-content statements and read scopes:
+    `skills/redteaming/seat-prompt.md`, `terminal-pass-prompt.md`,
+    `skills/requesting-code-review/code-reviewer.md`,
+    `skills/subagent-driven-development/task-reviewer-prompt.md`,
+    `re-review-prompt.md`, `implementer-prompt.md`, each with its
+    very-small-lane passage where it has one;
+  - `skills/subagent-driven-development/SKILL.md`: the pre-flight
+    plan-conflict scan, the Deviations paragraph and the adjudicator
+    dispatch's inputs;
+  - `skills/requesting-code-review/SKILL.md`: the branch reviewer's
+    inputs;
+  - `skills/subagent-driven-development/references/very-small-lane.md`:
+    step 3's requirements input;
+  - `skills/writing-plans/SKILL.md`: the spec pointer's "what the pin
+    makes binding".
+
+  Slot cards change only where a slot must carry an umbrella path, and
+  `agents/` is regenerated. The blind verifier, which receives no
+  binding content, is unchanged.
+- **`skills/subagent-driven-development/references/dispatch-composition.md`**
+  items 2 and 4 own the controller's side: the pinned umbrellas' paths,
+  up the chain, are among a binding-receiving seat's input paths; the
+  revisions come from the pins.
 - **`skills/redteaming/SKILL.md`** § Dispatch composition: its seat
   input list admits the pinned umbrellas; § Exit gains the umbrella
   campaign's handoff (landing, then the first child's brainstorm).
-- **`skills/subagent-driven-development/references/dispatch-composition.md`**
-  items 2 and 4: the pinned umbrellas, up the chain, are among the input
-  paths and the binding content of every seat that receives binding
-  content.
 - **`skills/redteaming/references/flip-paths.md`.** A finding that an
-  umbrella's binding content is wrong is a decision ask as D8 states,
-  pointing to the reference.
-- **`skills/subagent-driven-development/SKILL.md` § Finish** step 3: the
-  close readout of a child whose landing closes its umbrella says so
-  (D10).
+  umbrella's binding content is wrong points to the reference (D8).
+- **`skills/subagent-driven-development/SKILL.md` § Finish** owns the
+  mark's timing: a child whose spec pins an umbrella marks its entry, and
+  where its landing closes a nested umbrella that umbrella's entry in its
+  parent, before the suite runs (D9, D10).
 - **`skills/finishing-a-development-branch/SKILL.md`**, its pull-request
-  records ask: not offered for an umbrella's folder or a child's (D12).
+  records ask, owns D12.
 - **`AGENTS.md`**, the `docs/crucible/` line, and **`README.md`**
   § What it writes into your repository: the umbrella's role file, open
   until it closes.
@@ -242,17 +253,19 @@ The sites the change touches, found by search.
     pin.
   - `docs/decisions/records-and-workspace.md`: the workspace's third
     end; the Rejected bullet on living specs scoped to after shipping;
-    the pull-request records ask's exception (D12).
+    D12, with its trade-off: a project that keeps feature folders out of
+    its merged tree still keeps `umbrella.md`.
   - `docs/decisions/routes.md`: an umbrella takes none of the three
     routes.
   - The umbrella decision itself (D1–D4, D7–D10, D12) in
-    `docs/decisions/the-spec.md` or a new record, with the observation
-    that crucible's reviewers' research reach should be examined
-    separately (operator, 2026-10-27).
+    `docs/decisions/the-spec.md` or a new record.
   - Each edit carries its Changes line.
-- **Untouched:** the plan header's single pin (the umbrella's pin
-  travels in the spec's own preamble); the blind verifier; what the
-  routes do; birth and resolve; the other consumers of the feature
+- **`docs/backlog/`**: a new item, the reviewers' research reach — the
+  operator's observation (2026-10-27) that review seats research more
+  freely than their read scopes suggest, to be examined separately.
+- **Untouched:** the plan header's single pin (the umbrella's pin travels
+  in the spec's own preamble); the blind verifier; what the routes do;
+  birth and resolve; the supersede; the other consumers of the feature
   folder.
 
 Deferred to implementation: whether the umbrella decision lives in
@@ -269,13 +282,12 @@ new value.
    `docs/*.md` and `docs/decisions/` finds it stated at its owning site
    and pointed to elsewhere. One-time check, recorded as the searches and
    their output; the branch reviewer checks it too.
-2. **Every statement of what binds names the pinned umbrella.** A search
-   over `skills/` for the phrase "preamble convention" (whitespace
-   between the words allowed) finds the umbrella clause within the same
-   statement at every hit, and `python tools/instrument_agents.py check`
-   passes. One-time check for the first, recorded with its output (on
-   today's tree it finds nine hits, none with the clause); standing for
-   the second, through the suite.
+2. **Every statement of what binds names the pinned umbrella.** Each
+   file listed under "What binds, at every statement of it" contains the
+   word "umbrella" in that statement. One-time check, recorded as a
+   search of those ten files for "umbrella" with its output; on today's
+   tree it finds none. `python tools/instrument_agents.py check`
+   passes (standing, through the suite).
 3. **The reference is reachable.** `skills/brainstorming/references/umbrellas.md`
    exists and one stub in `skills/brainstorming/SKILL.md` names it.
    Standing: `tests/test_skill_references.py`, its `EXPECTED` set gaining
@@ -302,11 +314,14 @@ umbrella run on it.
 
 - The reference's outline: when to propose (the decomposition check
   found several sub-features that share decisions, an order, or both);
-  the shape (D1); review (D4); landing (D5); children (D6, D7); edits
-  (D8); state (D9); closing (D10); resuming (D11); records (D12).
+  the shape (D1); review (D4); landing (D5, pointing to formats);
+  children (D6, D7); edits (D8); marks (D9); closing (D10); resuming
+  (D11).
 - The pin line, in a child's preamble:
   ``Umbrella: `docs/crucible/<date>-<effort>/umbrella.md` @ `<rev>` ``.
+- A Children entry:
+  ``- `<slug>` — <what it delivers>; waits on `<slug>` — landed``.
 - The templates' clause, beside "any preamble convention it declares
-  binding": "and, where its preamble pins an umbrella, that umbrella's
-  Constraints & invariants and [LOAD-BEARING] marks at the pinned
-  revision, up the chain".
+  binding": "and, where its preamble pins an umbrella, the child's own
+  entry and that umbrella's Constraints & invariants and [LOAD-BEARING]
+  marks at the pinned revision, up the chain".
