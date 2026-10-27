@@ -34,6 +34,7 @@ EXPECTED = {
         "skills/brainstorming/references/folded-lane-document.md",
     ),
     ("skills/brainstorming/SKILL.md", "skills/brainstorming/references/lane-note.md"),
+    ("skills/brainstorming/SKILL.md", "skills/brainstorming/references/umbrellas.md"),
     ("skills/redteaming/SKILL.md", "skills/redteaming/references/flip-paths.md"),
     (
         "skills/subagent-driven-development/SKILL.md",

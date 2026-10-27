@@ -11,4 +11,6 @@ Intent, Acceptance and Out of scope are **binding** for the branch reviewer; the
 
 **The note freezes at its commit.** Commit it on the feature branch as approved — before the handoff, so before implementation starts. From that commit on, a change to its binding parts is an operator decision ask, never a controller edit; SDD's lane section re-pins an approved change in its ledger.
 
+**A lane note under an umbrella** carries the umbrella line in its preamble (`skills/brainstorming/references/umbrellas.md`).
+
 Advisory shape: four `##` headings (Intent, Change list, Acceptance, Out of scope) under a `Lane: very-small (operator-confirmed <date>)` line. Persistence: `note.md` in the feature folder, created by the birth step at this first write exactly as for a spec (the spec contract's persistence rule in `crucible:brainstorming`; layout in `skills/redteaming/references/formats.md` § Feature folder), committed like any spec.
