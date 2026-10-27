@@ -65,20 +65,34 @@ current state by merging texts. (Basis: measured, by reading the
 documents of crucible's own runs and of one other project crucible ran
 on.)
 
+The maintainer asked for umbrellas, having seen two of these patterns
+in their own efforts: a parent spec with child specs under it, and
+phases whose later requirements were held by earlier specs together
+with agent memory. (Basis: the maintainer's preference.)
+
 An umbrella edited in place holds the effort's current state in one
 file, the same choice the decision records made against an append-only
-log (`docs/decisions/decision-records.md`). It closes and freezes like a
-shipped spec once nothing under it is open. (Basis: judgment, accepted
-by the maintainer, 2026-10-27.)
+log (`docs/decisions/decision-records.md`). The maintainer chose it
+from three options an agent proposed, the other two being a frozen
+parent amended from its children and a frozen parent plus an amendment
+log. It closes and freezes like a shipped spec once nothing under it is
+open. (Basis: judgment, accepted by the maintainer, 2026-10-27.)
 
 ### Recursion and flat folders
 
-One flat umbrella holding a whole tree would grow toward the
-append-only parent's size, and any depth cap would have broken on the
-four-level case. Folders stay flat because children born inside their
-umbrella's folder would rewrite the birth and resolve steps every route
-uses, and a child that existed before its umbrella could never sit
-there. (Basis: judgment, accepted by the maintainer, 2026-10-27.)
+Recursion is the maintainer's: their efforts "tend to have
+subphases-of-subphases", and they asked for it ("Yes, recursive,
+please"). One flat umbrella holding a whole tree would also grow toward
+the append-only parent's size, and any depth cap would have broken on
+the four-level case. (Basis: the maintainer's preference, 2026-10-27.)
+
+Folders stay flat because children born inside their umbrella's folder
+would rewrite the birth and resolve steps every route uses, and a child
+that existed before its umbrella could never sit there. The maintainer
+had first proposed nesting the folders too; the spec's campaign
+reversed that for these reasons, and the maintainer accepted the
+reversal. (Basis: judgment, accepted by the maintainer, reversing the
+maintainer's own earlier proposal, 2026-10-27.)
 
 ### Review by content
 
@@ -88,24 +102,31 @@ lane note is (`docs/decisions/routes.md`). An umbrella's decisions,
 constraints and interfaces bind every child under it; an umbrella
 without them holds an order and its children's obligations, whose
 checks each child's own Acceptance carries. The ruling is made at the
-umbrella's birth, and a later binding change is ruled on by itself.
-(Basis: judgment, accepted by the maintainer, 2026-10-27.)
+umbrella's birth, and a later binding change is ruled on by itself. The
+maintainer chose this from an agent's options, the others being a
+campaign for every umbrella and a campaign for none. (Basis: judgment,
+accepted by the maintainer, 2026-10-27.)
 
 ### The line, and what binds
 
 A child is bound only through its line, read by each seat in its own
-worktree, for the reason requirements travel by pointer: a copied block
-drifts from what it copies (`docs/decisions/the-spec.md`). The line
-names a path and no revision, so the plan header keeps its single pin:
-the plan pins the spec, and the spec's preamble carries the line. A seat
-treats as binding only what the statement it was handed names, so a
-statement that left the umbrella out would leave that seat reviewing
-without it; hence the clause at every statement. Within a reviewed
-range, the child's own mark and a binding change taken in from the base
-are not findings: the mark is the one edit to its entry a child is meant
-to make, and the binding change reached the base on the operator's
-ruling. (Basis: judgment, accepted by the maintainer; the last point on
-2026-10-28.)
+worktree, never through content restated in the child. Asked during the
+spec's campaign, the maintainer ruled for the line: "restatement is a
+drift invitation", the same reason requirements travel by pointer
+(`docs/decisions/the-spec.md`); and checking a child's compliance with
+its umbrella is "probably valuable". (Basis: the maintainer's
+preference, 2026-10-27.)
+
+The line names a path and no revision, so the plan header keeps its
+single pin: the plan pins the spec, and the spec's preamble carries the
+line. A seat treats as binding only what the statement it was handed
+names, so a statement that left the umbrella out would leave that seat
+reviewing without it; hence the clause at every statement. Within a
+reviewed range, the child's own mark and a binding change taken in from
+the base are not findings: the mark is the one edit to its entry a child
+is meant to make, and the binding change reached the base on the
+operator's ruling. (Basis: judgment, accepted by the maintainer; the
+last point on 2026-10-28.)
 
 ### Binding changes off the child's branch
 
