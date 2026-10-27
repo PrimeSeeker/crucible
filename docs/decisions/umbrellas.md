@@ -141,7 +141,7 @@ accepted by the maintainer, 2026-10-27.)
 A child in its branch review has no task or round left, so the same
 check runs before each full-scope pass and fix wave, and the branch
 review's range is then measured from the recomputed merge base. (Basis:
-judgment, an agent's proposal not yet accepted by the maintainer.)
+judgment, accepted by the maintainer, 2026-10-28.)
 
 ### Marks
 
@@ -157,8 +157,7 @@ finish finds its entry by its slug instead (2026-10-28). (Basis:
 judgment, accepted by the maintainer.) A slug alone could match an
 unrelated feature born after the umbrella, so the finish marks only
 where the feature's folder was born on a tree without the umbrella.
-(Basis: judgment, an agent's proposal not yet accepted by the
-maintainer.)
+(Basis: judgment, accepted by the maintainer, 2026-10-28.)
 
 ## Rejected
 
@@ -182,3 +181,5 @@ maintainer.)
 - 2026-10-28: a child in branch review takes in a binding change before
   each pass and wave, and the slug match is limited to features born on
   a tree without the umbrella; the branch review found both gaps.
+- 2026-10-28: the maintainer accepted the branch-review intake and the
+  slug-match limit; their bases now say so.
