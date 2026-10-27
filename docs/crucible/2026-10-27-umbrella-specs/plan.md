@@ -84,13 +84,13 @@ The spec's § Interfaces & boundaries names `skills/redteaming/references/flip-p
 - SDD's § Plan changes mid-execution stub triggers (T4);
 - SDD's § The Task Loop step 1 (T4).
 
-The spec's third non-goal excludes changes to the campaign or SDD beyond the sites it names, and it is lightly held. These three pointers depart from it because Constraint 2 requires each rule to be reachable from the site its reader acts from. They state no rule. A redteaming controller reaches the receiving rule through its stub trigger before a round's dispatch, where it records the round's base revision.
+The spec's third non-goal excludes changes to the campaign or SDD beyond the sites it names; these three pointers depart from its letter, and this section records the departure. Constraint 2 states each rule once at its reader's site and has other skill text point there; these are such pointers, and they state no rule. The spec pointer above binds the Constraints and D4, not the non-goal's site list. A redteaming controller reaches the receiving rule through its stub trigger before a round's dispatch, where it records the round's base revision.
 
 ## Acceptance mapping
 
 | Spec criterion | Task | Check |
 |---|---|---|
-| 1. Each rule once in skill text | T1–T4 for the rules each owns; T5 whole-tree | one-time: key-term searches over `skills/`, run before the change (none found) and after, in each owning task's report; T5 repeats them over the finished tree |
+| 1. Each rule once in skill text | T1–T4 for the rules each owns; T5 whole-tree | one-time: key-term searches over `skills/`, run before the change (the rules absent from their owning sites; earlier tasks' pointers may already match) and after, in each owning task's report; T5 repeats them over the finished tree and over `AGENTS.md`, `README.md`, `docs/*.md` and `docs/decisions/` |
 | 2. Every statement of what binds names the umbrella | T3 | one-time: each statement named under What binds, in eleven files, quoted after the change; a search of those files for "umbrella" before the change finds none. Standing: `python tools/instrument_agents.py check` in the suite |
 | 3. The reference is reachable | T1 | standing: `tests/test_skill_references.py` with the `EXPECTED` pair |
 | 4. Records carry Changes lines | T5 | standing: `tests/test_decision_records.py` for sections. Why-not for the lines themselves: the repo's rule allows no text assertion there, so the branch reviewer checks them |
