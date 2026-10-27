@@ -20,7 +20,8 @@ archive is kept (`docs/dual-runtime.md` § Upgrades and rollback).
 **Pre-releases.** To try a change before its release, `master`'s version
 is bumped to a pre-release one (`0.3.0-rc.1`), that commit tagged, and an
 install pinned to the tag; `stable` does not move. Reinstalling a release
-tag goes back (`docs/dual-runtime.md` § Release metadata).
+tag goes back (`docs/dual-runtime.md` § Release metadata, § Upgrades and
+rollback). The maintainer holds this position tentatively (§ Why).
 
 **Promotion only between features.** An install moves to a new process
 version only when no feature is between its brainstorm and its finish
@@ -61,12 +62,13 @@ version pins it. (Basis: judgment, accepted by the maintainer.)
 
 The maintainer asked for "something like an experimental branch" to try
 a change on real work; an agent proposed pre-release tags on `master`,
-since only a version change makes a host fetch a new copy. The
-maintainer agreed tentatively ("OK, tentatively agree", 2026-10-27), and
-the position was held until both hosts were seen to accept a pre-release
-version. Before the first release, both did: an install pinned to a `0.2.1-rc.1` tag loaded that version,
-in a newly fetched copy, and moving back to `v0.2.0` loaded 0.2.0, on
-Claude Code and on Codex. (Basis: the maintainer's preference; measured.)
+since a host fetches a new copy when the version changes. The maintainer
+agreed tentatively ("OK, tentatively agree", 2026-10-27), and the
+position was held until both hosts were seen to accept a pre-release
+version. Before the first release, both did: an install pinned to a
+`0.2.1-rc.1` tag loaded that version, in a newly fetched copy, and moving
+back to `v0.2.0` loaded 0.2.0, on Claude Code and on Codex. (Basis:
+judgment, accepted tentatively by the maintainer; measured.)
 
 ### Promotion between features
 
@@ -90,8 +92,8 @@ promote", 2026-10-13). (Basis: judgment, accepted by the maintainer.)
 ## Changes
 
 - 2026-10-27: pre-releases: `master` bumped to a pre-release version and
-  tagged, an install pinned to the tag; adopted once both hosts were seen
-  to accept one.
+  tagged, an install pinned to the tag; adopted tentatively once both
+  hosts were seen to accept one.
 - 2026-10-27: the first release ran the install and pin commands from
   GitHub; the statement that none had run is replaced by that result.
 - 2026-10-19: a release bumps the three manifests on `master`, tags

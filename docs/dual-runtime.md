@@ -226,8 +226,8 @@ resolve against that form, and no plugin depends on crucible.
 **A pre-release tries a change before its release.** Bump `master`'s
 version to a pre-release one (`0.3.0-rc.1`), tag that commit
 `v0.3.0-rc.1`, and install pinned to the tag (§ Upgrades and rollback);
-`stable` does not move. The version change is what makes a host fetch
-the new copy. The repository protects every `v*` tag from deletion, so a
+`stable` does not move. The version change makes a host fetch the new
+copy (§ Upgrades and rollback). The repository protects every `v*` tag from deletion, so a
 pre-release tag stays, like a release's.
 
 ## Upgrades and rollback
