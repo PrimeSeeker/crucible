@@ -80,7 +80,12 @@ the default role because its dismissals close findings without further
 review. Rulings go to the ledger so a resumed controller rebuilds the open
 set from it, and to the close readout so a ruling is never the last
 anyone hears of a finding. (Basis: judgment, accepted by the maintainer,
-2026-08-06 and 2026-10-07.)
+2026-08-06 and 2026-10-07.) The readout lists every ruling the
+controller made itself, as upstream's executing-plans lists its rulings
+in its final message (v6.4.1): the ledger is deleted at Finish, so a
+wrong ruling of the controller's is otherwise seen by no one. (Basis:
+external, for upstream's list; judgment, accepted by the maintainer,
+2026-10-27.)
 
 ## Rejected
 

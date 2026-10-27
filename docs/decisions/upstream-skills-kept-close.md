@@ -6,8 +6,8 @@ Two craft skills keep superpowers' text (v6.2.0) and change it only
 where it names one host's mechanics or crucible's own machinery, points
 at an upstream skill crucible folded, or prints a secret, where a
 shipped script or example needs its platform limit stated, where
-upstream's text is defective, and where a later upstream release
-improves it. A third,
+upstream's text is defective, and where it takes in a check from an
+upstream skill crucible folded that nothing else covers there. A third,
 receiving-review, rewrites upstream's skill for feedback from outside
 crucible's loops, keeping its core.
 
@@ -16,7 +16,7 @@ every independent agent before waiting for any of them, through the
 host's parallel fan-out operation, starting the rest as capacity frees;
 tasks that are not independent run one at a time, whatever the host
 permits; and its review steps, where each agent's diff is checked, not
-only its summary, from upstream's later verification-before-completion.
+only its summary, a check from upstream's verification-before-completion.
 It carries none of crucible's seat machinery. Redteaming starts
 its seats and leaves the rest of the fan-out mechanics to it
 (`crucible:redteaming § Panels`).
@@ -114,6 +114,16 @@ has none, reports BLOCKED wherever the skill sends it to one
 (`skills/subagent-driven-development/implementer-prompt.md`). (Basis:
 judgment, accepted by the maintainer.)
 
+Upstream's verification-before-completion lists an agent's report of
+success among the claims to check against the VCS diff
+(`superpowers/skills/verification-before-completion/SKILL.md`). Crucible
+folded that skill into its seats' rules, where the task reviewer reads
+each implementer's diff, but agents fanned out by
+dispatching-parallel-agents run outside those seats, so the check went
+into its review steps at the v7.0.1 review: an added check, not a change
+to upstream's text. (Basis: external, for upstream's check; judgment,
+accepted by the maintainer.)
+
 ### Receiving review
 
 The first design dropped upstream's receiving-code-review: "No human code
@@ -159,8 +169,8 @@ accepted by the maintainer.)
 ## Changes
 
 - 2026-10-27: dispatching-parallel-agents checks each agent's diff,
-  not only its summary, taken from a later upstream release; the
-  Decision allows such an improvement.
+  not only its summary, a check from upstream's folded
+  verification-before-completion that nothing else covers outside SDD.
 - 2026-10-27: root-cause-tracing runs `find-polluter.sh` through `bash`
   from the plugin root, and the script is committed executable: its `./`
   form failed on every POSIX host. A dead-end trace goes to

@@ -8,7 +8,7 @@ description: Use before any feature work — creating features, building compone
 Turn an idea into an intent-weighted design spec through collaborative dialogue, then hand it to the spec campaign. Output: a spec per the contract below, plus a design digest for major designs. Terminal state: invoke `crucible:redteaming` — never an implementation or planning skill. The one exception is the operator-confirmed very-small lane, whose output is a lane note and whose terminal state is SDD's lane section (§ Handoff).
 
 <HARD-GATE>
-Do NOT invoke any implementation skill, write any code, scaffold any project, or take any implementation action until the design is approved, the spec is written (the lane note, on the very-small lane), and the handoff below has run. This applies to EVERY feature regardless of perceived simplicity.
+Do NOT invoke any implementation skill, write any code (a context-gathering probe aside, § Context gathering), scaffold any project, or take any implementation action until the design is approved, the spec is written (the lane note, on the very-small lane), and the handoff below has run. This applies to EVERY feature regardless of perceived simplicity.
 </HARD-GATE>
 
 **"Too simple to need a design" is the anti-pattern.** Simple features are where unexamined assumptions waste the most work. The design can be a few sentences — but it goes through this process.

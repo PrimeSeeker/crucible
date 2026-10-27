@@ -12,8 +12,7 @@ The one way around it is the trivial-edit waiver
 **Probes.** A throwaway probe in the host's temporary directory that
 answers a question is context gathering, not implementation, and is
 never committed (`crucible:brainstorming § Context gathering (before
-any question)`). Upstream's spike, a throwaway build on the person's
-yes, was not taken.
+any question)`).
 
 **A document from outside is its input.** A requirements document, an
 issue or a plan crucible did not write goes to brainstorming, which keeps
@@ -54,6 +53,19 @@ brainstorming before its Setup creates anything. (Basis: the
 maintainer's preference, quoted; judgment, accepted by the maintainer,
 for the first point.)
 
+### Probes
+
+Context gathering already reads the repo before asking; some questions
+are answered only by running something, a command or a library call, and
+asking the operator instead spends their time on what a minute's run
+settles. Upstream's brainstorming (v7.0.0) offers a spike, a throwaway
+build on the person's yes that skips planning and review. The maintainer
+ruled for the narrower form at the v7.0.1 review
+(`docs/crucible/2026-10-27-upstream-review/dispositions.md`): a probe that
+answers a question, kept out of the tracked tree and never committed, so
+nothing built in it reaches the branch unreviewed. (Basis: external, for
+upstream's spike; judgment, accepted by the maintainer.)
+
 ### Questions
 
 Upstream's "prefer multiple choice" was restored on 2026-10-07. The port
@@ -84,6 +96,9 @@ the maintainer, for keeping it open.)
 - **A rule against multiple-choice questions in the skill**: one
   person's preference (§ Why).
 - **Upstream's companion as it is**: a Node server with a usage ping
+  (§ Why).
+- **Upstream's spike**, a throwaway build on the person's yes that skips
+  the plan and review: it builds the feature the route exists to review
   (§ Why).
 
 ## What a project may change

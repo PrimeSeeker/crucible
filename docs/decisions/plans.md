@@ -100,6 +100,13 @@ what readers find things by stayed: the routing table's heading, its row
 format, one owner per row and the folded pointer. (Basis: judgment,
 accepted by the maintainer.)
 
+The edge and error scenarios name the inputs a spec implies but never
+names, after the Review Focus section of upstream's writing-plans
+(v6.4.1): those are the inputs no task tests unless a plan names them,
+and the reviewers grade a failure on one by its effect on a reasonable
+person (`docs/decisions/evidence-and-findings.md`). (Basis: external;
+judgment, accepted by the maintainer, 2026-10-27.)
+
 ### Task sizing
 
 The sizing rule is upstream's (`superpowers/skills/writing-plans/SKILL.md`,

@@ -67,9 +67,13 @@ person using the software (`skills/requesting-code-review/code-reviewer.md`
 § Verdict 4: Quality). A panel seat reports a consequential choice the
 artifact takes for granted with no decision recording it
 (`skills/redteaming/seat-prompt.md`). The implementer's test evidence
-names every failing test, whether its change caused it or not, and the
-task reviewer and the re-reviewer re-read evidence that looks truncated
-at its stated path before reporting it missing.
+names every failing test, whether its change caused it or not
+(`skills/subagent-driven-development/implementer-prompt.md` § Report
+Format), and the task reviewer and the re-reviewer re-read evidence that
+looks truncated at its stated path before reporting it missing
+(`skills/subagent-driven-development/task-reviewer-prompt.md` § The
+Implementer's Report; `skills/subagent-driven-development/re-review-prompt.md`
+§ Tests).
 
 ## Why
 
