@@ -1,0 +1,15 @@
+# Python
+__pycache__/
+*.py[cod]
+.pytest_cache/
+.venv/
+
+# Editor / OS noise
+.DS_Store
+Thumbs.db
+
+# Isolated feature workspaces (skills/using-git-worktrees default location)
+.worktrees/
+
+# NOTE: the per-feature workspace root (.crucible/) self-ignores via its own
+# .gitignore, written at provisioning -- no entry needed here.

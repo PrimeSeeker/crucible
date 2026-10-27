@@ -1,0 +1,17 @@
+{
+  "name": "crucible",
+  "description": "Seeded invalid manifest: the required version field is absent.",
+  "author": {
+    "name": "Example Author"
+  },
+  "skills": "./skills/",
+  "hooks": {},
+  "interface": {
+    "displayName": "Crucible",
+    "shortDescription": "Seeded fixture",
+    "longDescription": "Seeded fixture for the missing-required-field error case.",
+    "developerName": "Example Author",
+    "category": "Developer Tools",
+    "capabilities": ["Interactive", "Read", "Write"]
+  }
+}

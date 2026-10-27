@@ -1,0 +1,17 @@
+{
+  "name": "crucible",
+  "version": "0.1.1",
+  "description": "Seeded invalid manifest: interface.category is absent.",
+  "author": {
+    "name": "Example Author"
+  },
+  "skills": "./skills/",
+  "hooks": {},
+  "interface": {
+    "displayName": "Crucible",
+    "shortDescription": "Seeded fixture",
+    "longDescription": "Seeded fixture for the missing-interface-field error case.",
+    "developerName": "Example Author",
+    "capabilities": ["Interactive", "Read", "Write"]
+  }
+}

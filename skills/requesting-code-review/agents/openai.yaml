@@ -1,0 +1,3 @@
+interface:
+  display_name: "Requesting Code Review"
+  short_description: "Dispatch the whole-branch reviewer before merging"

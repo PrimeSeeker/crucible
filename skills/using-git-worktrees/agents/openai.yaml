@@ -1,0 +1,3 @@
+interface:
+  display_name: "Using Git Worktrees"
+  short_description: "Give feature work an isolated workspace"

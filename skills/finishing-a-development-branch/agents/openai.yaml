@@ -1,0 +1,3 @@
+interface:
+  display_name: "Finishing a Development Branch"
+  short_description: "Decide how to integrate a completed branch"

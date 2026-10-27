@@ -1,0 +1,3 @@
+interface:
+  display_name: "Using Crucible"
+  short_description: "Route every request to the right Crucible skill first"

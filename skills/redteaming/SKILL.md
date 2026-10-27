@@ -1,0 +1,169 @@
+---
+name: redteaming
+description: Use on a just-written spec or plan, before accepting it.
+---
+
+# Redteaming — review controller
+
+## Overview
+
+You are the review **controller**. A **spec campaign** is an iterated loop: dispatch a panel of fresh-context review seats at one artifact, merge their findings, apply fixes, verify them blind, read out to the operator, and repeat until the stop rule says converged — then run the terminal pass and hand off. Every step writes records; every judgment is computed from the records, never from conversation memory.
+
+**A plan is not campaigned.** It gets the **plan phase**: a single verification round closed by its terminal pass, with no loop and no round cap (§ The plan phase — one verification round). It reuses the dispatch composition, the merge, conservation and finding-hygiene rules, and the readout; everything from § Round 0 to § Stop rule and terminal pass describes the spec campaign except where it says otherwise. A small change may instead fold its plan into its spec and run no plan phase (§ The folded lane).
+
+**The operator steers through decision asks without being required to read the artifact.** That is why the readouts exist and why the terminal pass checks each ask's fidelity to the findings behind it.
+
+**Scope:** the panel apparatus exists for specs and plans, nothing else. Open-ended project-wide issue-mining is out of scope and gets its own framing. Whole-branch review of implemented code is not a campaign either; it is `crucible:requesting-code-review`'s.
+
+**Announce at start:** "I'm using the crucible:redteaming skill to run the spec campaign." — or "… to run the plan phase."
+
+**Dispatch reference:** read `skills/using-crucible/references/<runtime>-dispatch.md` from the plugin root when this skill starts, and again after compaction — it holds your adapter's instrument-dispatch, resume and effort operations.
+
+## Inputs and state
+
+- **The artifact**: one spec or one plan, at a fixed path and revision. Every seat in a round reads that one revision.
+- **The feature workspace**: `<repo>/.crucible/<feature-slug>/`, provisioned at brainstorm exit (if missing: the provisioning step in `formats.md` § Feature workspace root and layout). Records live under its `campaigns/spec/` or `campaigns/plan/`.
+- **The formats contract**: `skills/redteaming/references/formats.md` defines the workspace layout, the round record, the state vocabulary, the special records, the feature folder and the digest; records are composed by plain path-join from the repo root. If this skill and that file conflict, stop and report BLOCKED — never improvise a format.
+
+**Round records and state lines** (producer: you, at each phase boundary; consumers: your rehydration, the stop rule, the blind verifier, the terminal pass): each `round-NN/record.md` carries a `state:` line, each state written only after its phase's outputs are on disk (`formats.md` § Round record format, field 2). **Rehydration:** after compaction, resume from the workspace — the current round is the highest record number, and its state line says where to pick up; a fix list recorded while state is short of `fix-applied` is re-checked item by item against the artifact before any re-apply. A resume at `state: readout` delivers the recorded readout again, without its trace; re-delivering a readout is harmless. In the plan phase or on the folded lane, re-read that route's reference first (§ The plan phase — one verification round, § The folded lane).
+
+**Artifact freeze** (binding): the artifact is never edited while any seat, verifier or pass is reading it — fixes land between dispatches.
+
+**Shared tree** (binding): commit nothing in the worktree while a dispatched agent is working in it — the index is shared, so a bare commit sweeps in whatever that agent staged; queue the commit until it returns. **Tree check, every dispatch window** — panel seats (one window per concurrent batch), the round-0 pre-pass, the blind verifier, the terminal pass, and the plan phase's pre-pass and coherence seats: start it with your fixes committed and no tracked or staged change, and record `git rev-parse HEAD` and `git status --porcelain --untracked-files=all`; take both again when its last report is in. Untracked files present at the start are tolerated. A moved HEAD, any tracked or staged change, or an untracked path that appeared or disappeared means the tree changed under the window, and every report from it is void until re-measured — above all one that contradicts a number you verified earlier. Your fix apply lands between windows, never inside one. The readings go in the dispatch's own record section (`formats.md` § Round record format).
+
+## Dispatch composition
+
+Every seat you start — panel seat, round-0 pre-pass, blind verifier, terminal pass, and the plan phase's mechanical pre-pass and coherence seat — carries the seven-item dispatch composition in `skills/subagent-driven-development/references/dispatch-composition.md`; read that file before your first dispatch, and again after compaction — it binds as if written here. Its input paths are the artifact at its revision, the workspace paths its inputs live at, the supporting inputs its card lists and, for the blind verifier, the tracked files a delta claim names; nothing else. The round-0 pre-pass is the one controller-composed dispatch here. Two items differ for these seats:
+
+- **The binding pointer.** Where the artifact under review is a **plan**, the pointer is the spec the plan's header names. The **blind verifier gets no binding-content pointer**: the fix list is its whole normative input, and anything more destroys its blindness.
+- **The report file** is the deliverable, the returned message a short status: every report — seat, verifier and pass alike — is a disk artifact written by its author under its template's authorization. A missing or refused file is handled as item 5 says; a report you save yourself carries the mark `skills/redteaming/references/formats.md` § Feature workspace root and layout states.
+
+**Dispatching an instrument.** Three seats are instruments, each with a slot card beside its template: instrument `redteam-seat` (`seat-prompt.md`, `seat-prompt.slots.md`), instrument `blind-verifier` (`verifier-prompt.md`, `verifier-prompt.slots.md`) and instrument `terminal-pass` (`terminal-pass-prompt.md`, `terminal-pass-prompt.slots.md`). Read the card, not the template: dispatch the instrument with its filled slot card through your adapter's instrument-dispatch operation. Set every selector to one value; a passage you leave unselected — `off`, or the alternate you did not pick — is dropped, not narrated.
+
+## Round 0 — mechanical pre-pass
+
+This is the **spec campaign's** round 0; the plan phase runs its own mechanical pre-pass inside its single round and has no `round-00`.
+
+For artifacts **with a code baseline**: before any panel, dispatch one standalone agent (it consumes no round against the cap) to produce a baseline claim table — every "the code does X" claim → TRUE/FALSE with evidence — plus a liveness check (every declared mechanism has a producer and a consumer within the artifact) and execution of regex/CLI claims (run them, don't read them). Its prompt carries the templates' scratch line — code it runs goes under the workspace's `scratch/campaigns/spec/round-00/`, never the tracked tree — and their suite bound: a focused check where a claim needs one, never a package-wide suite; heavy validation is recommended in its report instead. Record it as `round-00/` per the formats reference and apply its fixes before round 1. **No dedicated verifier for round 0** — the round-1 panel's full-scope read is the check on those fixes.
+
+For **greenfield artifacts** (no code baseline): no round-0 agent — one round-1 seat takes the claims-vs-inputs table and the liveness check as its **ordered-first hunt** (its `worksheet` selector set to `ordered-first`).
+
+## Panels
+
+**Panel size tracks artifact maturity AND artifact size — never a fixed number.** Calibration (advisory; derived from thin local data): fresh large artifact round 1 = 4–5 seats; small artifact = 1 seat carrying several lenses; post-structural-stability rounds = 1–2 seats. A 1-seat round is **general by default**.
+
+**Lens roster** (a lens is a search-ordering hint, never a scope limit):
+
+- **correctness**
+- **evidence-and-inference**
+- **general** (unscoped) — at least one seat with no box on **every multi-seat round**.
+- **contract-fidelity** — when interface density warrants.
+- **right-sizing** (cost-benefit scope-cutting) — seated in round 1 and periodically after, not every round: re-seated mid-campaign, or when the artifact has grown — a soft judgment on the net of the line counts the round records' trace holds (lines added minus lines removed, `formats.md` § Round record format, field 8), a reflow's noise in that net tolerated; judged by the scope-cut decisions it produces. It carries the **over-subtraction guard**: for each area it examines, its report distinguishes **"examined and judged right-sized — do not cut"** from not examined (`skills/redteaming/seat-prompt.md`), and you and fix waves consult those attestations before applying any cut — cutting attested content requires a logged ruling in the round record. A proposed cut that would remove binding content, or a declared mechanism's only producer or consumer, is a finding against the cut, not a cut.
+- **abstraction-level** — for specs (mechanism detail creeping into binding sections is a finding).
+
+Rotate lenses across rounds and mix them per artifact; add a lens for whatever this artifact makes load-bearing, its one-line description in the seat's lens slot as for a roster lens.
+
+**Full-scope mandate always**: every seat reads the whole artifact every round; the lens only orders the search. **Agents never see each other's reports.**
+
+**Seat models:** every dispatch runs on the default role but one: **the blind verifier runs on the bounded role** and never lower — checking a fix list against a diff is a bounded task, and its mandate is unchanged by the tier. **Round 1's swap:** in a spec campaign's round 1 with two or more seats on this host, the seat you judge most architecture-heavy runs on the alternate role in place of the default role; name it in the campaign shape you propose at brainstorming's digest gate. A seat on another host neither counts toward those two nor is ever the swapped one, so a default-role seat always sits beside the swap; a replacement for a lost swapped seat keeps the alternate role. A one-seat round 1 has no swap, and neither has the plan phase. The roles, the alternate role's other triggers, model naming and effort follow `skills/subagent-driven-development/references/dispatch-composition.md` § Models and effort.
+
+Dispatch each seat as instrument `redteam-seat` with its filled slot card (§ Dispatch composition); its report `seat-<id>.md` feeds your merge. **Seat ids are never reused within a feature**: every seat, a replacement included, takes an id no earlier seat of the feature has used, so a mention of one round's id never accounts for another round's finding in the conservation check. The one exception is the plan phase's pre-pass, whose fixed id `p0` a successor plan phase under supersede reuses. Seats of one round are independent by construction, so **start every seat the host admits before waiting for any of them**; the rest of the fan-out mechanics are `crucible:dispatching-parallel-agents`'s. Record the roster (seat id, model, effort where set, lens) in the round record before or at dispatch.
+
+**Launch:** read the campaign shape the operator approved at brainstorming's digest gate — the gate entry in the workspace's `brainstorm-decisions.md`, naming the seats with their lenses and models and the expected rounds. Announce the shape in the campaign-start readout, naming any departure from that entry, and **proceed — no approval wait**.
+
+**Quorum and degraded rounds** (producer: the round record's quorum block; consumers: cap arithmetic and the stop rule): record every lost or crashed seat with what happened. A round that lost any dispatched seat is either **topped back up** (the lost seat re-dispatched) or explicitly recorded as **degraded**.
+
+**Topping up is gated** by the replacement rule execution uses. Start a replacement only when the **host confirms** the prior owner is terminal or absent, or that it acknowledged an interrupt; that confirmation is what revokes its write admission, and your inference from silence is not. **Ambiguous liveness is `BLOCKED`**: record it in the quorum block and escalate to the operator — never dispatch a replacement to find out whether the first one is still running. A sanctioned replacement writes to a **fresh report path** — a `seat-<id>.md` under a fresh id (above) — never the lost seat's file. In-flight seats resume by their recorded identity rather than being re-dispatched, so record each seat's identity in the roster before relying on continuation. A degraded round never counts toward convergence and does not consume the cap; **two consecutive degraded rounds = infrastructure escalation to the operator**. A 1-seat round losing its seat is degraded by definition — a crashed seat is never read as a clean pass.
+
+## Merge and finding hygiene
+
+When all seats return (state `returned`), merge into the round record's `## Merged finding list`, one entry per finding in the shape `formats.md` § Round record format, field 5 fixes — its `origins:` element naming every per-seat finding id it accounts for, and its disposition, `applied`, `partly-applied`, `parked`, `rejected` or `deferred-to-implementation`, **with a ruling recorded for every partly-applied, parked or rejected finding** (a partly-applied one's naming the part not acted on). Silent discard is forbidden; § Round readout says which of them the readout carries.
+
+**Merge from the indexes.** Every seat report opens with a `## Index` — one line per finding: id, severity, a one-sentence claim, an evidence pointer — an advisory merge aid that nothing checks against the findings. Read the indexes first and merge from them; open a finding's body only to author its fix, to rule on a contested finding or a collision between seats, or where its index line is not enough to rule. **When you open a body to author its fix, check each sub-point of it against the fix item**: an unaddressed sub-point is added to the item or ruled in the entry. For a BLOCKER or MAJOR entry the check covers the body of every origin, duplicates included; outside that, a duplicate of a finding you have read, a MINOR entry's duplicates and a MINOR you defer are ruled from their index lines. Questions are read in full. A merged entry whose fix reverses an earlier round's applied fix names that round and entry id in its substance.
+
+**Deferral** (`deferred-to-implementation`) is the disposition, **at any severity**, of a finding whose resolution needs mechanism that is **local** — inside one implementer's natural scope. Non-local mechanism — cross-task or cross-component contracts, shared formats, orderings or state, consumers outside the change's own files — is never deferred: it lands in the artifact's Interfaces & boundaries (a plan's Inter-task contracts). A finding whose resolution corrects or deletes existing artifact text is `applied` — corrections land at artifact stage, because a shipped artifact is never silently edited — and stays `applied` when only its local mechanism is deferred, that mechanism riding a marker in the same fix-list item. A deferred finding stays visible three ways: it **keeps its row** in the merged list, which the conservation arithmetic reads; its `Deferred to implementation:` marker is what the plan's **deferred-items routing table** is assembled from (`crucible:writing-plans`), so a spec-stage deferral is owner-pending until plan time and from plan time on an unowned deferral is a defect; and the round readout carries the round's **deferred count**. Two findings *against* a deferral are legitimate and distinct: that it is **unsafe** (the content is actually binding or cross-task) and that it is **misplaced** (deferrable content sitting where the routing table would hand it to the wrong owner). "The detail is missing" is neither — it is the point of a recorded deferral, and outside the seats' finding scope (below).
+
+**Merge conservation — mandatory, every numbered panel round, at merge time.** Every raw seat finding is accounted for: merged into an entry, or closed as a duplicate of one and carried in the absorbing entry's `origins:` element. Every seat question id gets a disposition — answered, carried to readout, or rejected with a ruling — in the record's `## Question dispositions` (`formats.md` § Round record format, field 5).
+
+**Check it; do not reconcile by hand:** `python <plugin-root>/skills/redteaming/scripts/conserve.py <feature-slug> <phase> <round>`, where `<plugin-root>` is the installed plugin root you resolved and `<phase>` is `spec` or `plan`, checks that every finding and question id the round's seat reports carry occurs in the record; its `--help` gives the round forms, what counts as accounted, and what each exit code means — an exit 2 among them, which is never read as clean. It is **silent when clean** (exit 0); on a miss it prints one `unaccounted:` line and exits 1, and you merge or disposition each id it names and re-run it, all before the fix list freezes. Record the result on the quorum block's `conservation:` line (`formats.md` § Round record format, field 3). This run is the only conservation check: nothing re-runs it at round close. Where the script cannot run at all — no interpreter, say — stop and tell the operator; never reconcile by hand in its place.
+
+**On a degraded or topped-up round** these verdicts are expected, not merge defects. A lost seat's report that reached disk is still checked, since a replacement never reuses its id: account for its ids that carry substance like any surviving seat's — a finding id in an `origins:` element, a question id by its disposition — and leave a header-only id whose substance never reached disk unaccounted deliberately, the verdict carrying the `unaccounted:` line verbatim and the quorum block's loss recording explaining it. Exit 0 on such a round says nothing about findings that never reached disk.
+
+**Finding hygiene** (bound on all seats, all rounds — the seat prompt carries it; you enforce it at merge): severity staked per finding; a BLOCKER without reproduction/evidence is a question, not a blocker; code-shaped claims carry run transcripts or an `UNVERIFIED` tag. **`UNVERIFIED` findings never enter a fix list as-is** — verify or discard them, the outcome on an indented continuation line of the entry.
+
+**Finding scope** (bound on all seats, the seat prompt carrying it; you enforce it at merge): the artifact's advisory register — its mechanism sketches — is graded only for contradiction with binding content or infeasibility. Missing local mechanism detail — inside one implementer's natural scope — is not a finding at spec or plan stage. Content a format makes binding — a plan task's required fields and acceptance, a spec's required sections — is never local detail: its absence stays a finding. Contradictions and infeasibility are findings at any locality. A finding raised outside this scope is still merged and accounted for, and dispositioned `rejected` with that ruling.
+
+**Record hygiene** (the seat rule, turned on the records and readouts *you* author): a code-shaped claim in a fix list, a merged entry, a ruling, a verification outcome, a readout or a decision ask shows its evidence — what you read or ran — or carries `UNVERIFIED`, and that tag is the whole vocabulary here. It tags a *claim*; it never admits an `UNVERIFIED` *finding* to a fix list. A decision ask resting on an untagged unverified mechanical fact is a defect in the ask: an operator ratification obtained on one is the measured channel by which author-supplied false facts reach ratified decisions.
+
+### Operating stance — baseline error rate
+
+A baseline defect rate in controller-authored text is a design assumption of this process; blind verification, the conservation check and the terminal pass are budgeted for it. A caught error is the loop functioning, not a verdict on the author: report errors, your own included, in the flat register of any other finding — the fact, the correction, the consequence — editorializing about no one.
+
+**[LOAD-BEARING]** Because the rate is expected and non-punitive, disclosure against interest stays cheap — shading a record, not erring in it, is the only reportable failure *of the reporting duty itself*; every other reporting obligation in this skill stands unchanged, and this stance may never be cited to skip, soften, or summarize any of them.
+
+Shading is *detected and reported* by the terminal pass's **directional-bias statement** (§ Stop rule and terminal pass).
+
+## Fix application and blind verification
+
+Write the **fix list** into the round record's `## Fix list` (producer: you; consumer: the blind verifier — its *sole* mandate input), then apply it to the artifact. **Fix-by-deletion is a first-class resolution** — a fix that removes machinery outranks one that adds it, all else equal.
+
+**Fix altitude** (binding on every item): a fix states its binding outcome at the altitude of the text around it, in as many sentences as that takes to be unambiguous, and carries no mechanism the surrounding section does not already carry at that level. A deferred finding's item lands that outcome, a `Deferred to implementation:` marker and any acceptance item below; the mechanism is the implementer's to design. **Reproducers travel as acceptance:** where a finding carries a concrete reproducer — an input and the wrong result — and its fix, deferred or landed, changes required behavior, the item adds an acceptance item stating the input and the required result. The outcome and the acceptance item are binding content, which the blind verifier checks like any item and every downstream reviewer grades as binding; the routing row the marker earns is only the ownership pointer.
+
+**The artifact states the current design only.** A fix replaces text; it never annotates it. The artifact carries no finding citations, no resolution sketches and no amendment or changelog prose — what changed, in which round, and why live in the round records. The amendment marker a scoped amendment writes — on a shipped spec through SDD, or mid-campaign (§ Flip paths — load-bearing content mid-campaign or mid-execution) — is a marker line, not narrative, and stays.
+
+**Propagation sweep — before the list freezes.** A fix edits content, and content is commonly stated in more than one place. For each item, sweep the artifact by the content's key terms for every other site restating what that item changes, and enumerate those sites in the item. Content genuinely stated once yields an item naming its one site and no sweep prose beyond it. A fix that lands at fewer sites than its item names is not landed — the measured dominant wave defect is the correct fix applied once while a sibling statement stands.
+
+**A predicate is run, not read** (binding). Where an item's substance is a predicate — an acceptance check, a gate, a grep, a census query, any mechanical check — run it at the tree state it will run against before you record the item applied, and put the command and its output under that item in the `## Fix list`. A check of a state the change has not yet reached must fail on today's tree: that failure is the evidence it can fire. A check adopted from a seat's remedy is run the same way — the seat's word is not evidence. Whether the text landed is the verifier's check; whether the predicate is right is yours.
+
+After **every** apply, dispatch the **blind verifier** — instrument `blind-verifier` with its filled slot card (§ Dispatch composition): inputs are the fix list + the diff **only, never rationale**, with the tracked files a delta claim names as that claim's evidence. Its mandate: every item verified landed — **the complete list, never stopping at first pass** (early victory is the named verifier failure mode); nothing outside the list moved; and the **delta-claims check** — new "the code does X" claims introduced by the wave get the round-0 treatment, TRUE or FALSE with evidence, or not checked with the reason, because baseline verification doesn't end at round 0 when artifact growth doesn't.
+
+Check each delta claim the verifier reports not checked yourself; record its verdicts, and your outcome for each such claim, in the round record's `## Verifier block` (state `verified`).
+
+## Round readout
+
+Record it in the round record's `## Round readout` at every round close and deliver it to the operator as recorded, less its trace (producer: you; consumers: the operator's decisions, the digest, the terminal pass):
+
+- key findings declared — every rejected, parked or partly-applied BLOCKER/MAJOR among them named in words the operator can act on, with its ruling;
+- **technical calls made autonomously**; **design judgments as decision asks with recommendations**, in analyst language — no step requires reading spec, plan, code or diffs, and an ask may quote the few lines it turns on. Each ask lists every option the findings behind it propose, and states what its change withdraws from an earlier operator approval;
+- the round's **`deferred-to-implementation` count**;
+- design-digest update (`formats.md` § Design digest format) — **omitted where the feature has no digest**: a minor design carries none, and a folded-lane feature is a minor design by construction (§ The folded lane);
+- in a numbered spec-campaign round with no BLOCKER, the folded lane's included, **whether the round drove structural change and on what basis** (§ Stop rule and terminal pass) — omitted elsewhere: a round with a BLOCKER cannot be the stop round, and round 0, the terminal-pass record and the plan record never are.
+
+That is the whole mandate — five items, fewer where the digest or the structural item is omitted; omitted means dropped, not narrated as absent. Record hygiene (§ Merge and finding hygiene) binds how they are written; it is not another item. The delivered readout carries no internal id — merged-list, seat-finding or question id — and no line counts. What other readers need from them goes in the readout's **trace**, the record-only part after it (`formats.md` § Round record format, field 8): each decision ask's merged-list ids, which the terminal pass reads, and, in a numbered spec-campaign round, the wave's line counts, which the right-sizing re-seat trigger reads (§ Panels).
+
+**Readout coverage is yours alone:** nothing checks it after you, so before recording the readout, check against the merged list that it covers every rejected, parked or partly-applied BLOCKER or MAJOR with its ruling. Then close the round: record the readout and its trace, write `state: readout`, and deliver the readout as recorded; the round is closed once it is delivered. An operator ruling or a record correction that arrives after a round closed is written, dated, into that round's `## Rulings and corrections`.
+
+## Stop rule and terminal pass
+
+**Stop trigger: the first round producing zero BLOCKERs and no structural finding.** *Structural* means the fix redefines a mechanism — adds one, removes one, or re-shapes one — rather than correcting content inside a mechanism that stands; recording a deferral is never itself a structural change, and the binding outcome a deferral's item lands is judged by this same test as any other edit. **Severity mix plus that structural judgment is the entire rule.** Finding provenance and finding counts are not signals (counts stay flat deep into long campaigns). Both remaining signals are noisy, so the rule is **controller judgment over recorded inputs** — the merged lists of the round records — not mechanical thresholds and never conversation memory. A round that drives structural change is **never** the converged round.
+
+Open detail MAJORs at the triggering round get **one fix wave + blind verification**, backstopped by the terminal pass's full-scope re-read.
+
+A campaign never converges on unreviewed edits: the **terminal pass (1 seat) always runs at campaign close**. Dispatch it as instrument `terminal-pass` with its filled slot card, `phase` set `spec` (§ Dispatch composition); its inputs are the artifact, the campaign's round records and readouts, and the seat findings behind each decision ask. Its two mandates, the same in both phases, and their binding ordering are stated in full in `skills/redteaming/terminal-pass-prompt.md`:
+
+1. **Artifact re-read** — full-scope when the final round produced a fix wave (its card's `fix-wave` selector), performed and recorded before it opens any record.
+2. **Decision-ask fidelity**, unconditional — each ask checked against the merged entries its trace names (§ Round readout) and their seat findings.
+
+**Its report stays as the pass wrote it** — never transcribed, paraphrased, or trimmed by you. A correction, or a mismatch in the report's Notes, flagged `CONCLUSION-CHANGING` is itself a decision ask to the operator; an unflagged correction is reported and does not escalate. A **directional-bias statement** in the pass's report — corrections sharing a direction that favors the record author's narrative — is **mandatory and unconditional in the pass, and you never drop, soften or make it contingent on how many corrections the pass found**; what is gated is the escalation. You raise it to the operator as a decision ask where **a correction sharing that direction is flagged `CONCLUSION-CHANGING`, or the pass states the record is materially misleading**; below that threshold it is not an ask. Drift auditing across features is the operator's, mined from the terminal passes' reports in the session transcripts; this process keeps no accumulator. Mechanics: the pass consumes no round against the cap (neither does round 0); its artifact findings may trigger **at most one further fix wave + second read** (dispatched with `follow-up` set `second-read`, as instrument `terminal-pass` with its filled slot card; recorded in the terminal-pass record per the formats reference), and the second read — a new file beside the first report — is the spec campaign's last report. Anything still open after that, and any non-structural BLOCKER/MAJOR at the cap, goes to the operator as a decision ask.
+
+**Cap: 4 rounds (degraded rounds excluded, per § Panels), with an escalation path — structural findings still open at the cap go to the operator as a decision ask: another round / supersede / accept-with-parked-rulings.** Cap arithmetic is derived from records, never a stored counter: rounds consumed = count of records numbered ≥ 01 with `degraded: no`. The cap is the spec campaign's; the plan phase has none, because it never loops.
+
+## The plan phase — one verification round
+
+A plan is not campaigned: it gets one verification round, closed by its terminal pass after the fix wave, with no loop and no round cap. **Before the phase's first dispatch, read `skills/redteaming/references/plan-phase.md` in full; it binds as if written here**, and after compaction you re-read it before resuming the phase. It carries the phase's seats and dispatch arithmetic, its merge, post-wave verification and repair paths, its record, and its close — the ledger seeding included.
+
+## The folded lane
+
+A small change may fold its plan into its spec — one combined spec+plan document and no plan phase — on the operator's confirmation at brainstorming, recorded in the brainstorm decision record. **Where the decision record carries that confirmation, read `skills/redteaming/references/folded-lane.md` in full before the campaign's round 0, and re-read it after compaction; it binds as if written here.** It carries the route's round-loop lines, its per-round deferral rows, unfolding, and its exit.
+
+## Exit
+
+On convergence, the handoff is your **explicit move, stated in the close readout**:
+
+- a **spec campaign** hands off to `crucible:writing-plans`;
+- **a spec campaign whose artifact is a combined spec+plan document names `crucible:subagent-driven-development` in its close readout, not the plan skill** — the combined document already is the plan, so there is no plan phase to route to (§ The folded lane). **That close also owns the ledger seeding**: seed SDD's deferred list from the combined document's deferred-items routing table — one entry per row, carrying the item's id, its one-line intent and its owning task — exactly as the plan phase's close seeds it on the standard route, and after the close check § The folded lane names;
+- the **plan phase** hands off to `crucible:subagent-driven-development`, its close (ledger seeding included) as written in § The plan phase — one verification round.
+
+## Flip paths — load-bearing content mid-campaign or mid-execution
+
+From the spec campaign's close onward, [LOAD-BEARING] or binding-by-construction contract content that a finding shows wrong is never flipped by a fix wave: it takes a scoped amendment or a supersede. A supersede called for at any point, inside the campaign included — the cap ask's supersede option, an unfold — takes the supersede path. **Before raising either decision ask or taking either path, read `skills/redteaming/references/flip-paths.md` in full; it binds as if written here**, and re-read it after compaction: a flip in flight shows through its decision ask, recorded in the round record or the ledger you rehydrate from.

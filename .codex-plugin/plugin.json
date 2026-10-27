@@ -1,0 +1,39 @@
+{
+  "name": "crucible",
+  "version": "0.2.0",
+  "description": "Process skills for autonomous agentic development: lean plan contracts, deviation-with-rationale execution, and multi-round agentic redteaming as the primary review mechanism",
+  "author": {
+    "name": "PrimeSeeker"
+  },
+  "homepage": "https://github.com/PrimeSeeker/crucible",
+  "repository": "https://github.com/PrimeSeeker/crucible",
+  "license": "MIT",
+  "keywords": [
+    "skills",
+    "workflows",
+    "redteaming",
+    "planning",
+    "code-review",
+    "subagents"
+  ],
+  "skills": "./skills/",
+  "hooks": {},
+  "interface": {
+    "displayName": "Crucible",
+    "shortDescription": "Spec, plan, redteam and execute with fresh-context agents",
+    "longDescription": "Crucible routes feature work through brainstorming to an intent-weighted spec, a lean implementation plan, adversarial redteam campaigns over both, and subagent-driven execution with adjudicated per-task review and a capped whole-branch review.",
+    "developerName": "PrimeSeeker",
+    "category": "Developer Tools",
+    "websiteURL": "https://github.com/PrimeSeeker/crucible",
+    "capabilities": [
+      "Interactive",
+      "Read",
+      "Write"
+    ],
+    "defaultPrompt": [
+      "I've got an idea for something I'd like to build.",
+      "Let's plan a change to this project.",
+      "Review this branch before I merge it."
+    ]
+  }
+}

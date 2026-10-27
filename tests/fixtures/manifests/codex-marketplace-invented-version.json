@@ -1,0 +1,21 @@
+{
+  "name": "crucible",
+  "interface": {
+    "displayName": "Crucible"
+  },
+  "plugins": [
+    {
+      "name": "crucible",
+      "version": "0.1.1",
+      "source": {
+        "source": "local",
+        "path": "./"
+      },
+      "policy": {
+        "installation": "AVAILABLE",
+        "authentication": "ON_INSTALL"
+      },
+      "category": "Developer Tools"
+    }
+  ]
+}

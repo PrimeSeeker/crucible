@@ -1,0 +1,87 @@
+#!/usr/bin/env bash
+# SessionStart hook: print crucible's router as the session's additional
+# context, in the output document of the host named by the first argument.
+#
+# hooks/hooks.json registers it with the host's name as that argument. The
+# host is never inferred from the environment: one host may set another's
+# variables (Codex sets the plugin-root variable of the host this script
+# serves), so only the registration can say which host runs the hook. A new
+# host is one registration naming it and one arm in the `case` below
+# (hooks/README.md § Porting to another host).
+#
+# The plugin root is resolved from this script's own location, never from the
+# working directory or an environment variable.
+#
+# Every failure writes one `crucible: router not loaded: <reason>` line to
+# stderr and no other (the commands called here have their stderr
+# suppressed), and exits 1. The whole document is built before any of it is
+# written, so a failure detected before the write leaves stdout empty: a host
+# reads schema-valid JSON on stdout as success whatever the exit code, and
+# error text never belongs in the session's context.
+#
+# Written for bash 3.2 (macOS's /bin/bash) and newer: no associative arrays,
+# no namerefs, no heredocs (a bash 5.3 heredoc hang is on record upstream).
+
+set -u
+
+# Byte-wise matching: every pattern below is ASCII, and UTF-8 text (the
+# router's em dashes) passes through untouched.
+LC_ALL=C
+# A reader that goes away makes the write fail, and so report, rather than
+# end the script silently by SIGPIPE.
+trap '' PIPE
+
+fail() {
+    printf 'crucible: router not loaded: %s\n' "$1" >&2
+    exit 1
+}
+
+case "$0" in
+    */*) root="${0%/*}/.." ;;
+    *) root=.. ;;
+esac
+
+# read_text NAME RELPATH: the file's text into variable NAME, with each CRLF
+# and each lone CR turned into LF, as a text-mode read does. The trailing `x`
+# keeps the file's trailing newlines, which command substitution would strip.
+read_text() {
+    local text
+    text=$(cat -- "$root/$2" 2>/dev/null && printf x) || fail "cannot read $2"
+    text=${text%x}
+    text=${text//$'\r\n'/$'\n'}
+    text=${text//$'\r'/$'\n'}
+    printf -v "$1" '%s' "$text"
+}
+
+# json_string NAME TEXT: TEXT as the body of a JSON string, into variable
+# NAME. Backslash first, so the backslashes the later steps add are not
+# doubled. Every replacement is quoted: bash 5.2's patsub_replacement gives
+# an unquoted `&` or backslash there a meaning of its own. The router files
+# carry no other control character (tests/test_router.py holds them to it).
+json_string() {
+    local s=$2 bs='\'
+    s=${s//"$bs"/"$bs$bs"}
+    s=${s//'"'/"$bs\""}
+    s=${s//$'\n'/"${bs}n"}
+    s=${s//$'\r'/"${bs}r"}
+    s=${s//$'\t'/"${bs}t"}
+    printf -v "$1" '%s' "$s"
+}
+
+read_text router skills/using-crucible/SKILL.md
+
+case "${1-}" in
+    claude-code)
+        read_text host_map skills/using-crucible/references/claude-code.md
+        json_string context "You have crucible. Below: the using-crucible skill, then this host's runtime reference. Read both before acting."$'\n\n'"$router"$'\n'"---"$'\n\n'"$host_map"
+        document='{"hookSpecificOutput": {"hookEventName": "SessionStart", "additionalContext": "'"$context"'"}}'
+        ;;
+    '')
+        fail "no host argument (expected: claude-code)"
+        ;;
+    *)
+        fail "unknown host '$1' (expected: claude-code)"
+        ;;
+esac
+
+printf '%s\n' "$document" 2>/dev/null || fail "cannot write the document to stdout"

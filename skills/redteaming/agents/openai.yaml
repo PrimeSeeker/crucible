@@ -1,0 +1,3 @@
+interface:
+  display_name: "Redteaming"
+  short_description: "Run an adversarial review campaign on a spec or plan"

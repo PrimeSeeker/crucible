@@ -1,0 +1,10 @@
+{
+  "name": "crucible",
+  "displayName": "Crucible",
+  "version": "0.1.1",
+  "description": "Seeded fixture: the Claude half of a version-mismatched pair.",
+  "author": {
+    "name": "Example Author"
+  },
+  "license": "MIT"
+}

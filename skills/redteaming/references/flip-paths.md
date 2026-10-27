@@ -1,0 +1,14 @@
+## Flip paths — scoped amendment and supersede
+
+You own both paths, in whichever skill context you are operating. They govern content downstream work can build on, so the bar on flipping it by a fix wave binds from the spec campaign's close onward: during a spec's own campaign the spec is the artifact under review, and its fix waves correct [LOAD-BEARING] content like any other text, with the terminal pass as the check. From that close on, a [LOAD-BEARING] mark (or binding-by-construction contract content) that a finding shows wrong cannot be flipped by a fix wave; it forces one of these paths, and so does defective or superseded plan text found mid-execution. The supersede path applies wherever a supersede is called for, inside a campaign included — the cap ask's supersede option, an unfold. **Both start as an analyst-language decision ask to the operator with a recommendation**, except a ruling that patches the plan (below); choose by blast radius, your judgment, logged.
+
+**Scoped amendment** (the default, for a contained blast radius), on the operator's confirmation:
+
+1. amend the spec **in place with an amendment marker** at the changed content;
+2. patch the plan to match — where spec and plan are separate documents, the same patch re-stamps the plan header's spec pointer to the amended revision; a folded document keeps its `Spec: this document` header;
+3. **point in-flight seats at the patch** — seats read the plan live, so later dispatches read it; an implementer resumed in an open task's fix wave is told to re-read its task section; and **each amendment commit is named** in the dispatch of every task-loop review, re-review and adjudication whose range holds it: any other change to the plan, a folded document or the spec in that range is a scope finding;
+4. continue — **no new spec campaign or plan phase**.
+
+A ruling that patches the plan mid-execution, an adjudicator's or yours, is handled by steps 3 and 4, its commit named as an amendment commit is.
+
+**Supersede** (structural blast radius): draft a successor spec and header-mark the old one superseded. Predecessors stay in place as the forensic record; successors go into the feature's existing feature folder, which its resolve step finds, under the successor names it gives, an unfold's included — both in the Feature folder section of `skills/redteaming/references/formats.md`. If execution is in flight, halt it and derive a successor plan. The successor ledger takes the identity and predecessor-link lines of the Setup section of `skills/subagent-driven-development/SKILL.md`, which also says how a resume follows that link and recovers when the predecessor records are gone; the successor plan's header records which completed tasks carry over and which are invalidated. A successor spec gets its own spec campaign and a successor plan its own plan phase; **the round counter does not carry over**.

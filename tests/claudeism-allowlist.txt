@@ -1,0 +1,78 @@
+# Claude-ism scanner allowlist
+#
+# Grammar, one entry per line:
+#
+#     <class> | <term> | <location> | <rationale>
+#
+#   class     2 or 3 -- the retained-by-design class the entry belongs to
+#   term      a term id from TERMS in tests/claudeism_scanner.py
+#   location  a repository path
+#   rationale why the term is retained there
+#
+# Allowlisting is per term per location. There is no whole-file form and the
+# loader rejects every shape of one: three of the four pre-adaptation
+# positives sat in files that also carried allowlisted model-policy prose.
+#
+# There is no router class. `skills/using-crucible/SKILL.md` carries no
+# provider noun, so it has no entry here and a match there is a defect,
+# never an allowlist candidate.
+#
+# Model names are licensed only in the two host maps' Model roles entries:
+# skills and slot cards name a role, never a model, so no other skill file
+# has a model-name row.
+# A row locates a file, not an entry, so review keeps the names inside the
+# Model roles entry.
+#
+# ---------------------------------------------------------------------------
+# Class 2 -- provider references: the runtime adapter references. Their
+# job is naming the host verb, the host's project-instruction file and that
+# provider's own roster, so they carry terms by design.
+#
+# `skills/using-crucible/references/codex.md` carries Codex model-line terms
+# only, in its Model roles entry, and no Claude-host term;
+# `codex-dispatch.md` carries no scanner term and has no entry. The hook
+# injects `claude-code.md` beside the router, and each file's entries allow
+# their terms at that file alone.
+# ---------------------------------------------------------------------------
+2 | claude-code | skills/using-crucible/references/claude-code.md | the runtime this host map is for
+2 | claude-md | skills/using-crucible/references/claude-code.md | the instruction file this host reads, user-level and project
+2 | skill-tool | skills/using-crucible/references/claude-code.md | the host verb for the load-a-skill operation
+2 | opus | skills/using-crucible/references/claude-code.md | Model roles: this host's model for the default role, and the earlier versions its floor line excludes
+2 | sonnet | skills/using-crucible/references/claude-code.md | Model roles: this host's model for the bounded role, and the earlier versions its floor line excludes
+2 | haiku | skills/using-crucible/references/claude-code.md | Model roles: the weak tier its floor line excludes
+2 | fable | skills/using-crucible/references/claude-code.md | Model roles: this host's model for the alternate role
+2 | claude-code | skills/using-crucible/references/claude-code-dispatch.md | the runtime this dispatch reference is for
+2 | codex-model-slug | skills/using-crucible/references/codex.md | Model roles: this host's models for the default, bounded and alternate roles, and the previous generation its floor line excludes
+2 | luna | skills/using-crucible/references/codex.md | Model roles: the fast class its floor line excludes
+#
+# Class 2, routing half. `skills/writing-skills/SKILL.md` routes an author
+# to each host's own skill creator, personal skill directory and authoring
+# guidance, so it names the two hosts symmetrically, or it cannot route.
+# The construction shared text must not carry is the
+# only-personal-skill-location CLAIM, which a citation naming one host's
+# path beside the other host's is not (the pairing test in
+# test_claudeism_scanner.py holds that). Per term per location, as above.
+2 | anthropic | skills/writing-skills/SKILL.md | routing prose: names whose authoring guidance is cited on descriptions
+2 | claude-code | skills/writing-skills/SKILL.md | routing prose: names the host whose skill creator, skill path, guidance and instruction file are cited
+2 | claude | skills/writing-skills/SKILL.md | routing prose: that host's documentation URLs
+2 | claude-home-path | skills/writing-skills/SKILL.md | routing prose: cites that host's personal skill path AS one host's, beside the Codex path
+2 | claude-md | skills/writing-skills/SKILL.md | routing prose: one named example of a project-instruction surface, paired with its Codex counterpart
+#
+# ---------------------------------------------------------------------------
+# Class 3 -- runtime support (`README.md`, `hooks/README.md`, and the hook
+# script `hooks/session-start`).
+#
+# These are runtime-support documentation and code INSIDE the scan corpus and
+# must name the hosts by design: a reader deciding which runtime to install
+# on, reading which registration file carries which placeholder, or porting
+# the hook to another host, cannot be served by text that refuses to name the
+# runtimes. Per term per location, as above.
+# ---------------------------------------------------------------------------
+3 | claude-code | README.md | runtime-support doc: names one of the two supported hosts in the opening line and the platforms, quickstart, coming-from-superpowers, configuration, cost and updates sections
+3 | claude | README.md | runtime-support doc: the host's own CLI verb in the quickstart, coming-from-superpowers and updates commands, and the provider's model family and subscription plans in the calibration paragraph and cost section
+3 | claude-md | README.md | runtime-support doc: names that host's instruction file beside the Codex one, as where a user overrides crucible's defaults
+3 | claude-code | hooks/README.md | hook doc: names the host in the registration table
+3 | claude | hooks/README.md | hook doc: the host half of every two-runtime contrast
+3 | claude-plugin-root | hooks/README.md | registration doc: the plugin-root placeholder that host's registration file actually spells (Claude registration and compatibility docs may name it)
+3 | bash-script-entrypoint | hooks/README.md | registration doc: the hook command that host's registration file spells, `bash` running the hook script at that host's plugin-root placeholder
+3 | claude | hooks/session-start | hook script: `claude-code`, the host argument naming the one host this script has an arm for
