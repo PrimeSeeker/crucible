@@ -126,8 +126,8 @@ accepted by the maintainer.)
 ## Changes
 
 - 2026-10-27: review seats also check that the range's base is an
-  ancestor of its head: a range across diverged history was reviewed as a
-  diff of unrelated trees. Upstream's review-package added the same guard
+  ancestor of its head: a range across diverged history would be
+  reviewed as a diff of unrelated trees. Upstream's review-package added the same guard
   (superpowers v6.4.1).
 - 2026-10-15: the branch-review loop, owned by requesting-code-review:
   mandatory after SDD and before merging any branch, a full-scope reviewer,
