@@ -8,6 +8,7 @@
 - {phase-dir}: `{workspace-path}/campaigns/spec/` or `{workspace-path}/campaigns/plan/`, by `phase`.
 - {binding-artifact-path}: `spec` phase, the spec itself; `plan` phase, the spec the plan's header names; never `none`.
 - {binding-revision}: that artifact's revision.
+- {umbrella-paths}: where the binding artifact's preamble carries an `Umbrella:` line, the umbrella it names and each one up the chain, by path; else `none`.
 - {report-path}: `spec` phase, `{workspace-path}/campaigns/spec/terminal-pass/pass.md`; `plan` phase, `{workspace-path}/campaigns/plan/round-01/terminal-pass.md`; a second read, `second-read.md` beside the first report, which it never overwrites.
 
 ## Selectors

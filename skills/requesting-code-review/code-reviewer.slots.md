@@ -6,6 +6,7 @@
 - [PLUGIN_ROOT]: the absolute path of crucible's plugin root, the one you read this card from.
 - [MANDATE_REMINDER]: one line restating this review's binding output: full-scope findings with staked severity and file:line evidence, the ledger triage, and a merge verdict, written to this pass's report file, and a reply of the merge verdict and that file's path; in standalone mode, the report as the final message.
 - [SPEC_POINTER]: the spec path at its pinned revision, the pointer the plan's header carries ("none" where the branch has no spec) — a pointer, never a copied block. On the very-small lane, the lane note at its pinned revision.
+- [UMBRELLAS]: where the spec's preamble carries an `Umbrella:` line (on the very-small lane, the note's), the umbrella it names and each one up the chain, by path; else "none".
 - [DESCRIPTION]: a brief summary of what was built.
 - [REQUIREMENTS]: what it should do — plan file path, task text, or requirements; on the very-small lane, the lane note at its pinned revision.
 - [LEDGER_MINORS]: the SDD ledger's deferred minors **and the plan's unresolved routed deferred items**, verbatim, each labelled with its owning task; "none" in standalone mode.

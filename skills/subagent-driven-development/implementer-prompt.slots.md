@@ -4,6 +4,7 @@
 
 - [TASK]: `Task <N>: <task name>`, as the plan numbers and names it; on the very-small lane, the lane note's title; for a branch-review fix wave, `Branch wave <n> fixes`.
 - [REQUIREMENTS]: for a task and its fresh wave-4–5 implementer, the plan's path and the task's number (`the plan at <path>, Task <N>`); on the very-small lane, the lane note's committed path at its pinned revision; for a branch-review fix wave, the spec at its pinned revision and the plan (one document where the plan is folded into the spec).
+- [UMBRELLAS]: where the spec's preamble carries an `Umbrella:` line (on the very-small lane, the note's), the umbrella it names and each one up the chain, by path; else "none".
 - [CONTEXT]: one line on where this work fits; interfaces and decisions from neighboring tasks the requirements cannot know; a pointer to any ledger entry parked in the area it touches. A fix-only dispatch (a fresh wave-4–5 implementer, a branch-review fix wave) adds the findings to answer, verbatim with their ids and the report files they come from; the fresh wave-4–5 implementer is also told a prior implementer worked the task and its report file holds what was tried.
 - [PLAN_REMINDER]: one line: the binding acceptance criteria and the Decision Log obligation; on the very-small lane, the note's Acceptance checks; on a fix-only dispatch, that each finding is fixed or NOT CONFIRMED.
 - [WORKTREE_PATH]: the absolute path to the assigned worktree.

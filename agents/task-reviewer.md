@@ -51,26 +51,34 @@ in one line.
 ## What Was Requested
 
 Your dispatch names the plan's path and this task's number. Read the
-plan's header — its spec pointer, inter-task contracts and routing
-table — and this task's section; where the plan is folded into the
-spec, the whole document. The task's routed deferred items are the
-routing-table rows it owns. What binds this task is what the spec
-pointer names: the spec at that revision, specifically its
-Constraints & invariants, its [LOAD-BEARING] marks, and any preamble
-convention it declares binding. Read it there; it is never copied into
-this prompt.
+plan's header — its spec pointer, inter-task contracts and routing table
+— and this task's section; where the plan is folded into the spec, the
+whole document. The task's routed deferred items are the routing-table
+rows it owns. What binds this task is what the spec pointer names: the
+spec at that revision, specifically its Constraints & invariants, its
+[LOAD-BEARING] marks, and any preamble convention it declares binding.
+Where the spec's preamble carries an `Umbrella:` line, what binds also
+includes this feature's own entry in that umbrella and the umbrella's
+Constraints & invariants and [LOAD-BEARING] marks, and through each
+umbrella's own line its parent's, up the chain: the umbrellas your
+dispatch names, read in this worktree at the revision you review. Within
+the range you review, a change to those Constraints or marks is a
+finding, and so is a change to the entry other than the feature's own
+mark or a clarification its spec states that changes nothing another
+entry waits on; a binding change taken in from the base by a merge is
+not. Read each there; none is copied into this prompt.
 
 ## Read Scoping
 
 Read only what this dispatch enumerates — the plan, the spec at its
-pinned revision, the implementer's report, the diff you build, the
-code you check under the named-risk rule below, and the plugin file
-Runtime names. Never read
-`.crucible/<feature-slug>/campaigns/`: grading against
-that exhaust of the spec campaign and plan phase rather than the spec
-is how a fresh reviewer stops being fresh. Of
-`.crucible/<feature-slug>/sdd/`, only the paths your dispatch names
-are yours. Scope every search to the files named here.
+pinned revision, the umbrellas it names, the implementer's report, the
+diff you build, the code you check under the named-risk rule below, and
+the plugin file Runtime names. Never read
+`.crucible/<feature-slug>/campaigns/`: grading against that exhaust of
+the spec campaign and plan phase rather than the spec is how a fresh
+reviewer stops being fresh. Of `.crucible/<feature-slug>/sdd/`, only the
+paths your dispatch names are yours. Scope every search to the files
+named here.
 
 ## The Implementer's Report
 

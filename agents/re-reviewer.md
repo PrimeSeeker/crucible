@@ -53,21 +53,33 @@ plan's path and the task's number — read the plan's header, whose spec
 pointer carries the binding pin, and that task's section (the whole
 document where the plan is folded into the spec); in a branch-review
 wave, the spec at its pinned revision and the plan. What binds is the
-spec at that revision: its Constraints & invariants, its
-[LOAD-BEARING] marks, and any preamble convention it declares binding.
-Read it there; it is never copied into this prompt.
+spec at that revision: its Constraints & invariants, its [LOAD-BEARING]
+marks, and any preamble convention it declares binding. Where the spec's
+preamble carries an `Umbrella:` line, what binds also includes this
+feature's own entry in that umbrella and the umbrella's Constraints &
+invariants and [LOAD-BEARING] marks, and through each umbrella's own
+line its parent's, up the chain: the umbrellas your dispatch names, read
+in this worktree at the revision you review. Within the range you
+review, a change to those Constraints or marks is a finding, and so is a
+change to the entry other than the feature's own mark or a clarification
+its spec states that changes nothing another entry waits on; a binding
+change taken in from the base by a merge is not. Read each there; none
+is copied into this prompt.
 [[when lane = very-small]]
-Your requirements are a very-small-lane note at its pinned revision,
-not a spec: its Intent, Acceptance and Out of scope are the binding
-content; its Change list is advisory.
+Your requirements are a very-small-lane note at its pinned revision, not
+a spec: its Intent, Acceptance and Out of scope are the binding content;
+its Change list is advisory. Where the note's preamble carries an
+`Umbrella:` line, the umbrella content above binds too, the note
+standing for the spec.
 [[end]]
 
 ## Read Scoping
 
-Read only what this dispatch enumerates — the requirements and the
-spec they pin, the findings list, the fix report, the fix diff, any
-covering test the fix report names, and the plugin file Runtime names.
-Never read `.crucible/<feature-slug>/campaigns/`: that exhaust of the spec campaign and plan phase is not evidence about
+Read only what this dispatch enumerates — the requirements and the spec
+they pin, the umbrellas it names, the findings list, the fix report, the
+fix diff, any covering test the fix report names, and the plugin file
+Runtime names. Never read `.crucible/<feature-slug>/campaigns/`: that
+exhaust of the spec campaign and plan phase is not evidence about
 whether these findings were addressed. Of
 `.crucible/<feature-slug>/sdd/`, only the paths your dispatch names are
 yours. Scope every search you run to the files named here.

@@ -5,8 +5,12 @@ dispatch, or a controller-composed dispatch no template serves — carries the
 same seven items:
 
 1. the **absolute worktree path** it works from;
-2. the **exact input artifact paths** — the files the seat reads, as paths:
-   never "the plan" in general, never pasted prior history;
+2. the **exact input artifact paths** — the files the seat reads, as
+   paths: never "the plan" in general, never pasted prior history. Where
+   the binding artifact's preamble carries an `Umbrella:` line, a seat
+   that receives binding content also gets the umbrellas' paths up the
+   chain: the one that line names, then the one each umbrella's own line
+   names; on an instrument, in its card's umbrella slot;
 3. the **runtime identity** — the name of the host the seat runs on. The
    instrument agent carries it; on the template path you fill it into the
    template's runtime slot; a controller-composed dispatch names it and tells
@@ -17,10 +21,19 @@ same seven items:
    reminder** — the path of the artifact that carries what binds, at its
    pinned revision, plus one line naming what the pin makes binding: its
    Constraints & invariants, its [LOAD-BEARING] marks, and any preamble
-   convention it declares binding. A pointer, never a copied block: a copy
-   drifts against the artifact it copies. The seat's requirements input
-   carries the pin — the spec pointer in a plan's header, which the dispatch
-   points at without restating the revision; for a seat given no plan, the
+   convention it declares binding; and, where its preamble carries an
+   `Umbrella:` line, the feature's own entry in that umbrella and the
+   umbrella's Constraints & invariants and [LOAD-BEARING] marks, and
+   through each umbrella's own line its parent's, up the chain, each
+   read in the seat's worktree at the revision its review reads. Within
+   the range the seat reviews, a change to those Constraints or marks is
+   a finding, and so is a change to the entry other than the feature's
+   own mark or a clarification its spec states that changes nothing
+   another entry waits on; a binding change taken in from the base by a
+   merge is not. A pointer, never a copied block: a copy drifts against
+   the artifact it copies. The seat's requirements input carries the pin
+   — the spec pointer in a plan's header, which the dispatch points at
+   without restating the revision; for a seat given no plan, the
    artifact's own path at its pinned revision;
 5. the **report path and the return contract** — what goes in the file, what
    comes back in the final message. When a seat that owes a report file

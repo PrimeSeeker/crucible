@@ -28,18 +28,20 @@ and context are relative to your worktree.
 
 ## Requirements
 
-Read the requirements your dispatch names first. A task's are the
-plan's path and the task's number: read the plan's header — its spec
-pointer, inter-task contracts and routing table — and your task's
-section; where the plan is folded into the spec, the whole document.
-The spec pointer names the spec at its pinned revision and what that
-pin makes binding; a branch-review fix wave hands you the spec at its
-pinned revision and the plan. Read the spec at that revision; it is
-never copied into this prompt.
+Read the requirements your dispatch names first. A task's are the plan's
+path and the task's number: read the plan's header — its spec pointer,
+inter-task contracts and routing table — and your task's section; where
+the plan is folded into the spec, the whole document. The spec pointer
+names the spec at its pinned revision and what that pin makes binding; a
+branch-review fix wave hands you the spec at its pinned revision and the
+plan. Read the spec at that revision, and the umbrellas your dispatch
+names; none is copied into this prompt.
 [[when lane = very-small]]
 This is a very-small-lane note, not a spec: its Intent, Acceptance and
-Out of scope are the binding content named below; its Change list is
-advisory, and a departure from it is a Decision Log entry.
+Out of scope are the binding content named below — the umbrella content
+there included where the note's preamble carries an `Umbrella:` line,
+the note standing for the spec; its Change list is advisory, and a
+departure from it is a Decision Log entry.
 [[end]]
 
 Your dispatch's context gives what the requirements cannot know: where
@@ -52,16 +54,16 @@ work from After Review Findings.
 
 ## Read Scoping
 
-Read only what your dispatch enumerates — the requirements and the
-spec they pin, the report files it names, and the worktree code
-those point you at — plus the plugin files Runtime names, and write
-only your worktree and your own report path. Never read
+Read only what your dispatch enumerates — the requirements and the spec
+they pin, the umbrellas it names, the report files it names, and the
+worktree code those point you at — plus the plugin files Runtime names,
+and write only your worktree and your own report path. Never read
 `.crucible/<feature-slug>/campaigns/`: that exhaust of the spec campaign
 and plan phase would replace the converged spec with the argument that
-produced it. Of
-`.crucible/<feature-slug>/sdd/`, only the paths your dispatch names are
-yours. Scope every search to your worktree and those files; an unscoped
-repository-wide grep is the measured way that exhaust reaches a seat.
+produced it. Of `.crucible/<feature-slug>/sdd/`, only the paths your
+dispatch names are yours. Scope every search to your worktree and those
+files; an unscoped repository-wide grep is the measured way that exhaust
+reaches a seat.
 
 ## Where You Work
 
@@ -85,12 +87,20 @@ Work from the worktree path your dispatch names (absolute). Binding:
 
 ## Binding vs Advisory: the Deviation License
 
-- **Binding** — what the pin names: the spec's Constraints &
-  invariants, its [LOAD-BEARING] marks and any preamble convention it
-  declares binding, at the pinned revision; plus values marked
-  verbatim. If the codebase makes a binding item wrong or
-  unimplementable, **changing or contradicting it is not yours: report
-  BLOCKED** with what you found — never improvise around it.
+- **Binding** — what the pin names: the spec's Constraints & invariants,
+  its [LOAD-BEARING] marks and any preamble convention it declares
+  binding, at the pinned revision; plus values marked verbatim. Where
+  the spec's preamble carries an `Umbrella:` line, it also includes this
+  feature's own entry in that umbrella and the umbrella's Constraints &
+  invariants and [LOAD-BEARING] marks, and through each umbrella's own
+  line its parent's, up the chain, read in your worktree. Within the
+  range under review, a change to those Constraints or marks is a
+  finding, and so is a change to the entry other than the feature's own
+  mark or a clarification its spec states that changes nothing another
+  entry waits on; a binding change taken in from the base by a merge is
+  not. If the codebase makes a binding item wrong or unimplementable,
+  **changing or contradicting it is not yours: report BLOCKED** with
+  what you found — never improvise around it.
 - **Advisory** — mechanism sketches, suggested approaches,
   lightly-held positions. Deviate, or flip a lightly-held position,
   where the codebase contradicts its assumptions; **every deviation

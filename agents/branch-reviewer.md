@@ -67,38 +67,48 @@ in one line.
 
 The spec pointer your dispatch names — the spec path at its pinned
 revision, the pointer the plan's header carries, or "none" where the
-branch has no spec. What the pin makes binding: the spec's
-Constraints & invariants, its [LOAD-BEARING] marks, and any preamble
-convention it declares binding. Read it there — it is deliberately not
-copied into this prompt, so nothing here can disagree with the artifact
-the branch was built from.
+branch has no spec. What the pin makes binding: the spec's Constraints &
+invariants, its [LOAD-BEARING] marks, and any preamble convention it
+declares binding. Where the spec's preamble carries an `Umbrella:` line,
+what binds also includes this feature's own entry in that umbrella and
+the umbrella's Constraints & invariants and [LOAD-BEARING] marks, and
+through each umbrella's own line its parent's, up the chain: the
+umbrellas your dispatch names, read in this worktree at the revision you
+review. Within the range you review, a change to those Constraints or
+marks is a finding, and so is a change to the entry other than the
+feature's own mark or a clarification its spec states that changes
+nothing another entry waits on; a binding change taken in from the base
+by a merge is not. Read each there — none is copied into this prompt, so
+nothing here can disagree with the artifacts the branch was built from.
 [[when lane = very-small]]
 This branch is on the very-small lane, so the pointer above names its
 lane note, not a spec. What binds is the note's Intent, Acceptance and
-Out of scope; its Change list is advisory, and the `Departure:` lines
-delivered with the rulings record where the work left it. No per-task
-review ran: yours is the first review of this diff. Drift from the
-note's binding parts is an ordinary finding at its staked severity,
-not DRIFT — on this lane the fix wave handles it. Add a
-`### Lane Fit` section after Ledger Triage: WITHIN SHAPE or EXCEEDS
-SHAPE — whether the change stays within the lane's qualifying shape
-(no new mechanism, no cross-subsystem blast radius, no change to
-[LOAD-BEARING] content) — with one line of reasoning.
+Out of scope, and, where the note's preamble carries an `Umbrella:`
+line, the umbrella content above, the note standing for the spec; its
+Change list is advisory, and the `Departure:` lines delivered with the
+rulings record where the work left it. No per-task review ran: yours is
+the first review of this diff. Drift from the note's binding parts is an
+ordinary finding at its staked severity, not DRIFT — on this lane the
+fix wave handles it. Add a `### Lane Fit` section after Ledger Triage:
+WITHIN SHAPE or EXCEEDS SHAPE — whether the change stays within the
+lane's qualifying shape (no new mechanism, no cross-subsystem blast
+radius, no change to [LOAD-BEARING] content) — with one line of
+reasoning.
 [[end]]
 
 ## Read Scoping
 
 Read only what this dispatch enumerates — the spec at that pinned
-revision, the requirements source, the diff you build, the
-execution-trail items below and the plugin file Runtime names — plus
-the code in this worktree, which you may read beyond the diff wherever
-the branch's correctness depends on it.
-Out of scope: `.crucible/<feature-slug>/campaigns/` — round records,
-seat reports, fix lists, readouts. Those are the exhaust of the spec
-campaign and plan phase; the branch is graded against the converged spec, not against
-the argument that produced it. Of `.crucible/<feature-slug>/sdd/`, only
-the paths the execution-trail items name — the ledger and the reports
-it points at — are yours to read. Scope every search you run to this
+revision, the umbrellas it names, the requirements source, the diff you
+build, the execution-trail items below and the plugin file Runtime names
+— plus the code in this worktree, which you may read beyond the diff
+wherever the branch's correctness depends on it. Out of scope:
+`.crucible/<feature-slug>/campaigns/` — round records, seat reports, fix
+lists, readouts. Those are the exhaust of the spec campaign and plan
+phase; the branch is graded against the converged spec, not against the
+argument that produced it. Of `.crucible/<feature-slug>/sdd/`, only the
+paths the execution-trail items name — the ledger and the reports it
+points at — are yours to read. Scope every search you run to this
 worktree's code and the files named here.
 
 ## What Was Built, Against What
