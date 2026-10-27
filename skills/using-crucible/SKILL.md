@@ -23,6 +23,8 @@ Your instruction files — user-level, project and any other the host loads (you
 
 **Evidence before claims:** before saying work is complete, fixed or passing, run the check that shows it and report what its output said.
 
+**After compaction:** a skill whose text came back cut short — it ends in a truncation notice — is invoked again before you act on it.
+
 ## Skill Priority
 
 When several skills apply, process skills come first: brainstorming before building, systematic-debugging before fixing; implementation and domain skills follow.

@@ -8,7 +8,7 @@ redteaming 14341
 requesting-code-review 3741
 subagent-driven-development 14039
 systematic-debugging 3335
-using-crucible 2064
+using-crucible 2090
 using-git-worktrees 1713
 writing-plans 1654
 writing-skills 1528
