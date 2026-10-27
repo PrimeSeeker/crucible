@@ -232,6 +232,34 @@ def test_failure_host_argument_names_no_arm(tmp_path: Path, args: tuple[str, ...
 
 
 @needs_bash
+def test_empty_path_runs_no_command_from_the_working_directory(tmp_path: Path) -> None:
+    """A host can spawn the hook with an empty PATH, under which bash looks
+    names up in the working directory (upstream field report: `cat: command
+    not found` at session start). The script runs no external command: with
+    PATH empty and a planted ``cat`` in the working directory, the envelope
+    is complete and the planted file never runs."""
+    bash = hr.find_bash()
+    assert bash is not None
+    marker = tmp_path / "ran"
+    planted = tmp_path / "cat"
+    planted.write_bytes(f"#!/bin/sh\n: > '{marker.as_posix()}'\n".encode())
+    planted.chmod(0o755)
+    # PATH is emptied inside bash: Git for Windows' bash.exe launcher builds
+    # a PATH of its own, so an empty one passed from here never arrives.
+    proc = subprocess.run(
+        [bash, "-c", 'PATH= "$BASH" "$0" claude-code', SCRIPT.as_posix()],
+        cwd=tmp_path,
+        stdin=subprocess.DEVNULL,
+        capture_output=True,
+        text=True,
+        encoding="utf-8",
+        timeout=60,
+    )
+    assert hr.additional_context(proc) == hr.envelope()
+    assert not marker.exists()
+
+
+@needs_bash
 def test_failure_closed_stdout() -> None:
     """A write that fails is a failure too: with stdout closed, exit 1 and
     the one stderr line, never a silent exit 0."""

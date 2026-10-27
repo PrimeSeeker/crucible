@@ -37,6 +37,17 @@ without Python, on bash 5.2.37 and on GNU bash 3.2.57 built from source.
 Apple's `/bin/bash` has not run it. Where Windows has no Git Bash, see
 "Porting to another host".
 
+**`bash` comes from `PATH`.** The script itself runs no external command,
+so a startup `PATH` that is empty, or that finds a name in the working
+directory, cannot break it or run a planted file (`tests/test_hook_script.py`).
+The registration's `bash` is still looked up on `PATH`: where a host spawns
+the hook with an empty `PATH`, the shell may find no `bash` and the hook
+fails, or it runs a `bash` in the working directory. No command form
+avoids the lookup on every host (`/bin/bash` is absent on Windows; upstream's
+`${BASH:-bash}` helps only where the host's shell is bash), so the
+registration keeps `bash`. The one report of such a spawn is upstream's, on
+Claude Code 2.1.274 (superpowers issue #2310).
+
 **Why Codex registers none.**
 - Codex already routes without it, through skill discovery and the router's
   read-from-path fallback. A Codex session that never reads the router runs

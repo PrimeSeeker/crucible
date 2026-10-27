@@ -12,7 +12,10 @@ location and picks its output by the host argument alone, never from the
 environment; `claude-code` is its one arm. It prints one
 `hookSpecificOutput` document whose context is a lead line, the router,
 a separator and the Claude Code host map, with each CRLF and lone CR
-turned into LF. Every failure prints one `crucible: router not loaded:
+turned into LF. It runs no external command, so the `PATH` it starts
+with cannot break it or make it run a file from the working directory;
+the registration's own `bash` is still found on `PATH`
+(`hooks/README.md` § Hook registration per runtime). Every failure prints one `crucible: router not loaded:
 <reason>` line on stderr and exits 1, and a failure found before the
 write leaves stdout empty (`hooks/README.md` § SessionStart injection).
 It is measured on Git Bash 5.3 (Windows 11) and, on Debian 13.5, on bash
@@ -101,6 +104,16 @@ failure exited 1 with empty stdout and the one line. Apple's `/bin/bash`
 stays, in the maintainer's words, "plausibly working, but untested".
 (Basis: measured; the maintainer's preference, for leaving it there.)
 
+The script read its files with `cat` until 2026-10-27. Upstream had a
+field report of a hook spawned with an empty `PATH` (`cat: command not
+found`, superpowers issue #2310), and with `PATH` empty bash searches the
+working directory: a `cat` planted there ran at session start (Git Bash
+5.3, 2026-10-27). The read is now bash's own. Under bash 5.2.37 and GNU
+bash 3.2.57 (Debian 13.5, WSL 2) and Git Bash 5.3, the new script's
+output is byte-identical across the three, and with `PATH` empty and a
+planted `cat` the envelope is complete and the planted file does not
+run. (Basis: measured; external.)
+
 ### No guards
 
 Crucible's first design (2026-08-06) moved mechanically checkable rules
@@ -183,6 +196,9 @@ reasons and the triggers that would reopen it, is in the backlog item.
 
 ## Changes
 
+- 2026-10-27: the script reads with a builtin, not `cat`, and runs no
+  external command: under an empty `PATH`, bash ran a `cat` planted in
+  the working directory. The registration keeps `bash` from `PATH`.
 - 2026-10-14: one SessionStart hook, on Claude Code: a bash script at a
   3.2 floor, told its host by argument, every failure visible; measured on
   Git Bash 5.3, bash 5.2.37 and GNU bash 3.2.57, Apple's bash untested.
