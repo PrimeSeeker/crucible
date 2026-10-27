@@ -75,7 +75,7 @@ A task is the smallest unit that carries its own test cycle and is worth a fresh
 
 ## Self-review
 
-Before the plan phase, re-read the plan once and fix what turns up — the folded lane's combined-document author included, who reaches these formats through `crucible:brainstorming`:
+Before the plan phase, re-read the plan once and fix what turns up — the folded lane's combined-document author included, who reaches these formats through `crucible:brainstorming` and runs these checks at its self-review step:
 
 1. **Placeholder scan:** "TBD", "TODO", incomplete sections, vague requirements. A `Deferred to implementation:` marker is exempt.
 2. **Header arithmetic:** the ownership census against the tasks' Files rows, the acceptance mapping against the spec's criteria, every named decision id against the spec.

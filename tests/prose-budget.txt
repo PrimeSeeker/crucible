@@ -10,5 +10,5 @@ subagent-driven-development 14072
 systematic-debugging 3335
 using-crucible 2090
 using-git-worktrees 1713
-writing-plans 1654
+writing-plans 1662
 writing-skills 1528
