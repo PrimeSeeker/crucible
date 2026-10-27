@@ -77,6 +77,15 @@ There are three overlaps, each between disjoint sections and resolved by the seq
 - **Taking in the base.** T2's flip-paths states the receiving side of D8. T4's pointer at SDD § The Task Loop step 1 sends a controller there before it records BASE whenever a binding change is pending.
 - **Role-file mentions.** Wherever a SKILL.md names the role file, it uses a placeholder path, for example `<feature-folder>/umbrella.md`. It names the reference by its full path. A bare backticked basename fails `tests/test_structure.py`'s cited-file check.
 
+## Departure from the spec's site list
+
+The spec's § Interfaces & boundaries names `skills/redteaming/references/flip-paths.md` as the owner of a child controller's side of D6 and D8. It does not name the sites that route a controller there. This plan adds three such pointers:
+- redteaming's § Flip paths stub triggers (T2);
+- SDD's § Plan changes mid-execution stub triggers (T4);
+- SDD's § The Task Loop step 1 (T4).
+
+The spec's third non-goal excludes changes to the campaign or SDD beyond the sites it names, and it is lightly held. These three pointers depart from it because Constraint 2 requires each rule to be reachable from the site its reader acts from. They state no rule. A redteaming controller reaches the receiving rule through its stub trigger before a round's dispatch, where it records the round's base revision.
+
 ## Acceptance mapping
 
 | Spec criterion | Task | Check |
@@ -137,7 +146,7 @@ Consumers found by search, all read and left unchanged:
 - Error: for a late split or a binding change found by a child, the reference sends the reader to `skills/redteaming/references/flip-paths.md` and states neither as a supersede nor as an umbrella edit on the child's branch.
 - Integration: the suite passes, including `test_skill_references` with the new pair, `test_structure`'s cited-file and orphan checks, and `test_prose_budget` with the raised brainstorming line.
 
-One-time check for criterion 1, recorded: key-term searches over `skills/` for T1's rules, run before (none found) and after.
+One-time check for criterion 1, recorded: key-term searches over `skills/` for T1's rules, run before (the rules absent from their owning sites; earlier tasks' pointers may already match) and after.
 
 ## T2 — Redteaming's sites: formats, Exit, flip-paths and its stub
 
@@ -174,7 +183,7 @@ None of the others needs a change.
 - Error: a late split, or a binding change found by a child's seat, goes to the operator as a decision ask, never as an umbrella edit on the child's branch. The § Flip paths stub's trigger list covers both.
 - Integration: the suite passes, and `test_prose_budget` passes with the redteaming line.
 
-One-time check for criterion 1, recorded: key-term searches over `skills/` for T2's rules, run before (none found) and after.
+One-time check for criterion 1, recorded: key-term searches over `skills/` for T2's rules, run before (the rules absent from their owning sites; earlier tasks' pointers may already match) and after.
 
 ## T3 — What binds, at every statement of it
 
@@ -217,7 +226,7 @@ Consumers found by search: a whitespace-tolerant scan of `skills/` for "preamble
   - A child with no umbrella line binds nothing new.
   - A chain of two umbrellas binds both.
 - Error:
-  - A change within the reviewed range to the umbrella's Constraints or marks is a finding, and so is a change to the child's entry that its spec does not state.
+  - A change within the reviewed range to the umbrella's Constraints & invariants or [LOAD-BEARING] marks is a finding. So is a change to the child's entry, unless it is a clarification the child's spec states that changes nothing another entry waits on (D8).
   - The child's own mark is not a finding, and neither is a binding change taken in from the base.
 - Integration: `python tools/instrument_agents.py check` passes. The suite passes, including the prose budgets and the claude-ism scanner over the edited templates.
 
@@ -255,7 +264,7 @@ One-time checks, recorded:
   - A SKILL.md mention of the role file uses a placeholder path, so `test_structure` passes.
 - Integration: the suite passes, and `test_prose_budget` passes with both lines.
 
-One-time check for criterion 1, recorded: key-term searches over `skills/` for T4's rules, run before (none found) and after.
+One-time check for criterion 1, recorded: key-term searches over `skills/` for T4's rules, run before (the rules absent from their owning sites; earlier tasks' pointers may already match) and after.
 
 ## T5 — Documentation, decision records, and the whole-tree sweep
 
@@ -278,4 +287,4 @@ One-time check for criterion 1, recorded: key-term searches over `skills/` for T
 - Error: a record that restates a skill rule word for word instead of citing it is a defect.
 - Integration: the full suite passes on the branch head.
 
-One-time check, recorded: criterion 1's key-term searches over the finished `skills/` tree. Every rule is stated at its owning site and pointed to elsewhere, and the what-binds clause is stated in all eleven files. A miss is reported to the controller as a cannot-verify item naming the owning task.
+One-time check, recorded: criterion 1's key-term searches over the finished `skills/` tree. Every rule is stated at its owning site and pointed to elsewhere, and the what-binds clause is stated in all eleven files. The same searches over `AGENTS.md`, `README.md`, `docs/*.md` and `docs/decisions/` show those files describing and citing each rule rather than restating it. A miss is reported to the controller as a cannot-verify item naming the owning task.
