@@ -3,7 +3,7 @@
 Host mechanics for this runtime; the skills carry the process rules.
 
 **Instruction files.** This host reads the user-level and the project
-`CLAUDE.md`.
+`CLAUDE.md`, and a project's `AGENTS.md` where no `CLAUDE.md` exists.
 
 **Planning mode.** This host has a plan mode; the router's
 brainstorm-before-planning rule covers entering it.

@@ -24,7 +24,5 @@ map beside this file, `codex.md`, carries the rest.
   path, not `~` or `CODEX_HOME`, which a Windows sandbox maps to its own
   account. If you cannot read it, or the key is absent, tell the
   operator which, that their seats run at the model's default unless the
-  key is set, and recommend `high`. An override is accepted only
-  with `fork_turns` at `"none"` or a turn count (a
-  full-history fork inherits model and effort); an unsupported effort is
+  key is set, and recommend `high`. An unsupported effort is
   rejected, naming the levels that model supports.
