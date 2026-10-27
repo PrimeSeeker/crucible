@@ -47,8 +47,8 @@ naming no alternate skips all three.
 implementer a tier up where one exists, and at the default role to fresh
 eyes at the same tier; a BLOCKED reasoning problem at the default role
 goes to the operator, who may name the alternate role. Where a host gives
-the bounded role the default role's model, its dispatch reference says
-escalation there has no tier bump.
+the bounded role the default role's model, escalation from it has no tier
+to bump to.
 
 **Effort is the operator's.** No flow sets or raises a dispatch's
 reasoning effort on either host; a dispatch sets one only on the
@@ -211,10 +211,14 @@ operator's config key.
 
 ## Changes
 
+- 2026-10-27: no dispatch reference states the no-tier-bump case any
+  more, since Codex's dropped it; the escalation paragraph states the
+  case host-neutrally.
 - 2026-10-27: on Codex the bounded role moves from the default role's
   model to `gpt-6.1-terra`, since that host now lists a
-  current-generation middle tier; the snapshot-blessing agent gets a row,
-  the bounded role or better, since it had none.
+  current-generation middle tier.
+- 2026-10-27: the snapshot-blessing agent gets a row, the bounded role
+  or better, since it had none.
 - 2026-10-14: effort the operator's on both hosts, set on a dispatch only
   on request and held lightly; on Codex the seats' effort from the
   operator's config key, checked before the first dispatch, `high`
