@@ -41,6 +41,12 @@
   project a redteam controller loaded the redteaming skill plus
   `formats.md`, about 27K tokens, before any work, so the trigger likely
   trips there. Cost was measured in tokens, not duties or adherence.
+- **Umbrellas added about 4,200 words** across six skills
+  (brainstorming +53%, most of it in a reference loaded on demand). The
+  largest single part is the clause on what binds, stated in full at
+  thirteen statements in eleven files, about 90 to 110 words each, as
+  the umbrella spec required; a one-line clause with the finding rule
+  stated once would save roughly 600 to 700 words.
 - **A minor defect the audit found, unfixed:** the re-review template's
   comment rule is a fragment of the implementer's and task reviewer's.
   Copying the whole rule in would add one more restatement; the shared

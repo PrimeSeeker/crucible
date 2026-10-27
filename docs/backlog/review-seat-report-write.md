@@ -15,6 +15,10 @@
   `scratch/` directory at the reviewed worktree's root, since the
   templates then gave the scratch location only relative to the feature
   workspace.
+- In a later run of five tasks, two of the five task reviewers wrote
+  no file on their first return: one said its tools could not write the
+  folder, the other skipped the write and wrote it when resumed. The
+  scoped re-review and both branch-review passes wrote theirs.
 - The re-review and verifier templates now say the report file is
   required even where the host advises returning text, and every review
   and seat template gives the scratch path from the checkout's root
