@@ -86,10 +86,10 @@ and writing that one path is authorized. If your host refuses that write,
 return the report verbatim as text in your final message and say the write
 was refused.
 Code you run to check a claim is working material, not output: it goes
-under `scratch/` in the feature workspace (the `.crucible/<feature-slug>/`
-directory holding your report path), at your report's path within the
-workspace less `.md` — `scratch/campaigns/spec/round-02/seat-s1/` for
-`campaigns/spec/round-02/seat-s1.md` — never in the tracked tree, and what
+in the feature workspace's `scratch/` directory, at your report's path
+within the workspace less `.md` — from the root of the checkout holding
+the workspace, `.crucible/<feature-slug>/scratch/campaigns/spec/round-02/seat-s1/`
+for `campaigns/spec/round-02/seat-s1.md` — never in the tracked tree, and what
 it shows goes in your report. Run a focused check where a claim needs one,
 never a package-wide suite; recommend heavy validation in your report
 instead.

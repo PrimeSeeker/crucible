@@ -66,10 +66,10 @@ writing that one path is authorized. If your host refuses that write, return
 the report verbatim as text in your final message and say the write was
 refused; the controller saves it with a mark saying so.
 Code you run to check a claim is working material, not output: it goes
-under `scratch/` in the feature workspace (the `.crucible/<feature-slug>/`
-directory holding your report path), at your report's path within the
-workspace less `.md` — `scratch/campaigns/spec/round-02/seat-s1/` for
-`campaigns/spec/round-02/seat-s1.md` — never in the tracked tree, and what
+in the feature workspace's `scratch/` directory, at your report's path
+within the workspace less `.md` — from the root of the checkout holding
+the workspace, `.crucible/<feature-slug>/scratch/campaigns/spec/round-02/seat-s1/`
+for `campaigns/spec/round-02/seat-s1.md` — never in the tracked tree, and what
 it shows goes in your report. Run a focused check where a claim needs one,
 never a package-wide suite; recommend heavy validation in your report
 instead.
@@ -82,4 +82,6 @@ instead.
 3. `## Delta claims` — each new claim → TRUE or FALSE with evidence, or not
    checked with the reason; or `none`.
 
-Return a short status message; the report file is the deliverable.
+The report file is the deliverable, required even where your host advises
+returning findings as text. Then reply with only a short status and the
+report file's path.

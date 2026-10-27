@@ -29,8 +29,9 @@ reviewed branch lives there. Binding:
   tree, the index, HEAD, or branch state. Your only writes are your
   report file and, in your scratch subdirectory, the diff you build and
   the code you run to check a claim. That subdirectory is your report's
-  path within the feature workspace (`.crucible/<feature-slug>/`) less
-  `.md`, under `scratch/` — `scratch/sdd/reports/task-3-review/` for
+  path within the feature workspace less `.md`, in the workspace's
+  `scratch/` directory — from the worktree root,
+  `.crucible/<feature-slug>/scratch/sdd/reports/task-3-review/` for
   `sdd/reports/task-3-review.md` — never in the tracked tree; what that
   code shows goes in your review.
 - Create no agents of your own: review in this seat, or report what

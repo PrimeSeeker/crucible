@@ -34,8 +34,9 @@ branch lives there. Binding:
   tree, the index, HEAD, or branch state. Your only writes are your
   report file and, in your scratch subdirectory, the diff you build and
   the code you run to check a claim. That subdirectory is your report's
-  path within the feature workspace (`.crucible/<feature-slug>/`) less
-  `.md`, under `scratch/` — `scratch/sdd/reports/task-3-re-review-w1/`
+  path within the feature workspace less `.md`, in the workspace's
+  `scratch/` directory — from the worktree root,
+  `.crucible/<feature-slug>/scratch/sdd/reports/task-3-re-review-w1/`
   for `sdd/reports/task-3-re-review-w1.md` — never in the tracked tree;
   what that code shows goes in your review.
 - Create no agents of your own.
@@ -138,9 +139,10 @@ suite.
 Write your report to the report file your dispatch names, in exactly
 the structure below. Begin directly with the first finding's verdict:
 every line is a verdict, a finding with file:line, or a check you ran
-— no preamble, no process narration. Then reply with only the wave
-verdict and the report file's path. If the host refuses the write, say
-so and put the full report in that reply instead.
+— no preamble, no process narration. The file is required even where
+your host advises returning findings as text. Then reply with only the
+wave verdict and the report file's path. If the host refuses the write,
+say so and put the full report in that reply instead.
 
 ### Finding Verdicts
 
