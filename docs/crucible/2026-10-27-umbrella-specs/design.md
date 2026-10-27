@@ -128,8 +128,11 @@ seen on crucible itself and on one other project crucible ran on:
   Constraints & invariants and [LOAD-BEARING] marks, and, through the
   umbrella's own line, its parent's, up the chain. Every seat that
   receives binding content reads them there as binding, in the worktree
-  it works in, at the commit its review reads, and a change to that
-  binding content within the range it reviews is a finding. A successor
+  it works in, at the commit its review reads. Within the range it
+  reviews, a change to the umbrella's Constraints & invariants or
+  [LOAD-BEARING] marks is a finding, and a change to the child's own
+  entry is one unless it is the clarification D8 allows and the child's
+  spec states it. A successor
   — by
   supersede, unfold or the very-small lane's upgrade hatch — carries its
   predecessor's line. A child that existed before its umbrella carries no
@@ -148,7 +151,8 @@ seen on crucible itself and on one other project crucible ran on:
   lands at once on a branch of its own: the operator approves its diff,
   and it lands through `crucible:finishing-a-development-branch`. Each
   child in flight then takes in the base by a merge, never a rebase, at
-  its next task or round boundary, or the operator rules it unaffected. A
+  its next task or round boundary — before that task's or round's base
+  revision is recorded — or the operator rules it unaffected. A
   child the change contradicts amends: a spec or folded document by a
   scoped amendment, a lane note by the lane's own operator-approved note
   change, re-pinned in its ledger, or by its upgrade hatch. Dropping a
@@ -159,7 +163,7 @@ seen on crucible itself and on one other project crucible ran on:
   lands (D5); a dropped child's entry `dropped`, with its reason. A child
   that existed before its umbrella is entered with its mark when the
   umbrella is written; one still in flight then is entered unmarked, and
-  the next branch that edits the umbrella after it has landed marks it.
+  marks its entry at its own finish like any child.
   An entry with no mark has not landed. A mark touches only its own
   entry, and blank lines between entries keep siblings' marks from
   conflicting in git. Rejected: state derived from which folders and
@@ -206,10 +210,11 @@ seen on crucible itself and on one other project crucible ran on:
 The sites the change touches, found by search, each with the rule it
 owns.
 
-- **`skills/brainstorming/references/umbrellas.md`** (new) owns D1–D4 and
-  D6–D11, and D5's mark: the shape, recursion, flat folders, review,
-  children, the umbrella line as its writers set it, edits, marks,
-  closing and resuming. It opens with the heading of its stub.
+- **`skills/brainstorming/references/umbrellas.md`** (new) owns D1–D11,
+  D5's workspace end aside: the shape, recursion, flat folders, review,
+  the landing (before the first child, the campaign-record check, the
+  parent mark), children, the umbrella line as its writers set it, edits,
+  marks, closing and resuming. It opens with the heading of its stub.
 - **`skills/brainstorming/SKILL.md`.** One stub section naming the
   reference to read in full, reached from the scope-decomposition check
   (§ The dialogue), self-review check 3 and step 4 (proposing the
@@ -232,7 +237,7 @@ owns.
 - **What binds, at every statement of it.** Each site below gains the
   clause that the child's own entry and its umbrella's binding content
   bind too, up the chain, read in the seat's worktree, and that a change
-  to them within the reviewed range is a finding:
+  to them within the reviewed range is a finding as D7 states:
   - the templates' binding-content statements and read scopes:
     `skills/redteaming/seat-prompt.md`, `terminal-pass-prompt.md`,
     `skills/requesting-code-review/code-reviewer.md`,
@@ -271,8 +276,8 @@ owns.
   its upgrade hatch: the successor carries the note's umbrella line (D7).
 - **`skills/subagent-driven-development/SKILL.md` § Finish** owns the
   `landed` mark's timing: a child whose spec, folded document or lane
-  note carries an umbrella line marks its entry before the suite runs
-  (D9).
+  note carries an umbrella line, or whose slug an open umbrella's
+  Children list names, marks its entry before the suite runs (D9).
 - **`skills/finishing-a-development-branch/SKILL.md`**, its pull-request
   records ask, owns D12.
 - **`AGENTS.md`**, the `docs/crucible/` line, and **`README.md`**
@@ -352,5 +357,6 @@ umbrella run on it.
 - The templates' clause, beside "any preamble convention it declares
   binding": "and, where its preamble names an umbrella, the child's own
   entry and that umbrella's Constraints & invariants and [LOAD-BEARING]
-  marks, up the chain; a change to them within the reviewed range is a
-  finding".
+  marks, up the chain; within the reviewed range, a change to those
+  Constraints or marks is a finding, and so is a change to the entry its
+  spec does not state".
