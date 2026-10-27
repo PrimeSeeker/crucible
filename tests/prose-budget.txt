@@ -7,7 +7,7 @@ receiving-review 515
 redteaming 14402
 requesting-code-review 3765
 subagent-driven-development 14186
-systematic-debugging 3385
+systematic-debugging 3422
 using-crucible 2034
 using-git-worktrees 1713
 writing-plans 1662

@@ -10,7 +10,7 @@ change got one disposition: **adopt** (take it close to upstream's form),
 
 The maintainer ruled on 2026-10-27: the recommendations below stand, except
 where a row says otherwise. **Lane A** is this feature's note; **lane B**
-is the next lane; **backlog** names the item that holds it.
+is the next lane (backlog `upstream-adoptions.md`); **backlog** names the item that holds it.
 
 Where the two execution readers disagreed, the row gives the one the
 controller confirmed against the files.

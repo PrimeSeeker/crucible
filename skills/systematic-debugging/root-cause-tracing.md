@@ -13,6 +13,7 @@ digraph when_to_use {
     "Bug appears deep in stack?" [shape=diamond];
     "Can trace backwards?" [shape=diamond];
     "Add instrumentation, trace again" [shape=box];
+    "No Root Cause (SKILL.md)" [shape=box];
     "Trace to original trigger" [shape=box];
     "BETTER: Also add defense-in-depth" [shape=box];
 
@@ -20,6 +21,7 @@ digraph when_to_use {
     "Can trace backwards?" -> "Trace to original trigger" [label="yes"];
     "Can trace backwards?" -> "Add instrumentation, trace again" [label="no - dead end"];
     "Add instrumentation, trace again" -> "Can trace backwards?";
+    "Add instrumentation, trace again" -> "No Root Cause (SKILL.md)" [label="finds nothing earlier"];
     "Trace to original trigger" -> "BETTER: Also add defense-in-depth";
 }
 ```
@@ -111,7 +113,8 @@ under the installed plugin root:
 bash <script> '.git' 'src/**/*.test.ts'
 ```
 
-Runs tests one-by-one, stops at first polluter. See script for usage.
+Runs tests one-by-one, stops at first polluter. The script's usage lines
+show its arguments.
 
 `find-polluter.sh` is POSIX/Bash-only. **Consequence on Windows:** the
 script is a Bash program built on `find`, `sort` and `wc`, so it does not run
@@ -153,11 +156,13 @@ digraph principle {
     "Add validation at each layer" [shape=box];
     "Bug impossible" [shape=doublecircle];
     "Add instrumentation, trace again" [shape=box];
+    "No Root Cause (SKILL.md)" [shape=box];
 
     "Found immediate cause" -> "Can trace one level up?";
     "Can trace one level up?" -> "Trace backwards" [label="yes"];
     "Can trace one level up?" -> "Add instrumentation, trace again" [label="no"];
     "Add instrumentation, trace again" -> "Can trace one level up?";
+    "Add instrumentation, trace again" -> "No Root Cause (SKILL.md)" [label="finds nothing earlier"];
     "Trace backwards" -> "Is this the source?";
     "Is this the source?" -> "Trace backwards" [label="no - keeps going"];
     "Is this the source?" -> "Fix at source" [label="yes"];

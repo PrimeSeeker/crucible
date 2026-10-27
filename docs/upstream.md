@@ -15,14 +15,6 @@ fully reviewed version.
 - **Last fully reviewed version:** v7.0.1, reviewed 2026-10-27. Each
   change's disposition, and the maintainer's rulings, are in
   `docs/crucible/2026-10-27-upstream-review/dispositions.md`.
-- **Taken before that review:** v6.3.0's Codex spawn effort fix (upstream
-  pull requests #2060 to #2062). Upstream pins `model` and
-  `reasoning_effort` on every spawn, with
-  `[agents] default_subagent_reasoning_effort` as a backstop; crucible
-  takes the backstop as the mechanism instead. Its dispatches leave
-  effort unset, the user's Codex config sets the key (`docs/codex.md`
-  § Install), and the controller says so once when the key is absent
-  (`skills/using-crucible/references/codex-dispatch.md`).
 
 ## Upkeep
 
@@ -46,6 +38,7 @@ decision pending, with the backlog item that decides it.
 | `superpowers/skills/test-driven-development/SKILL.md` | the implementer and task-reviewer prompts (`skills/subagent-driven-development/implementer-prompt.md`, `skills/subagent-driven-development/task-reviewer-prompt.md`) |
 | `superpowers/skills/test-driven-development/writing-good-tests.md` | `skills/subagent-driven-development/writing-good-tests.md` |
 | `superpowers/skills/verification-before-completion/` | the router's evidence line (`skills/using-crucible/SKILL.md`), the implementer's quoted-run rule, and the full suite run in `crucible:subagent-driven-development § Finish` |
+| `superpowers/skills/subagent-driven-development/references/` (batching, cannot-verify, final-review, fix-loop, handling-reports, preflight, resuming) | `skills/subagent-driven-development/`, rewritten; batching is declined (`docs/crucible/2026-10-27-upstream-review/dispositions.md`) |
 | `superpowers/skills/subagent-driven-development/scripts/sdd-workspace` | the workspace provisioning step in `skills/redteaming/references/formats.md` |
 
 ## Not carried
@@ -79,7 +72,7 @@ decision pending, with the backlog item that decides it.
 | `superpowers/tests/version-bump/`, `superpowers/tests/writing-skills/` | — | Their subjects, the version-bump script and `render-graphs.js`, are not carried. |
 | `superpowers/.pre-commit-config.yaml`, `superpowers/scripts/lint-shell.sh`, `superpowers/tests/shell-lint/` | — | The config lints no shell: it runs ruff and ty on upstream's `evals/`. The lint needs ShellCheck, and upstream wires it to nothing; crucible's one hook is behavior-tested on every failure path. |
 | `superpowers/tests/systematic-debugging/` | — | `skills/systematic-debugging/find-polluter.sh` is upstream's blob, its pattern fix included, and advisory: nothing in a workflow waits on it. |
-| verification-before-completion's Common Failures table and its agent-delegation check (`superpowers/skills/verification-before-completion/SKILL.md`) | the router's evidence line, the implementer's quoted run, the task reviewer's verdicts, SDD Finish | Each claim it lists has a check at the site that makes it, except a check of each agent's diff where agents run outside SDD, which the review's next lane adds to dispatching-parallel-agents (`docs/crucible/2026-10-27-upstream-review/dispositions.md`). |
+| verification-before-completion's Common Failures table and its agent-delegation check (`superpowers/skills/verification-before-completion/SKILL.md`) | the router's evidence line, the implementer's quoted run, the task reviewer's verdicts, SDD Finish | Each claim it lists has a check at the site that makes it, except a check of each agent's diff where agents run outside SDD, which `docs/backlog/upstream-adoptions.md` adds to dispatching-parallel-agents. |
 | the visual companion: `superpowers/skills/brainstorming/scripts/`, `superpowers/skills/brainstorming/visual-companion.md`, `superpowers/tests/brainstorm-server/` | — | The maintainer did not use it, and upstream's form is a Node server with a usage ping to strip; restoring it opt-in is open (`docs/backlog/visual-companion.md`). |
 | `superpowers/skills/brainstorming/spec-document-reviewer-prompt.md`, `superpowers/skills/writing-plans/plan-document-reviewer-prompt.md` (both removed upstream by v7.0.1), and `superpowers/skills/brainstorming/builder-check-prompt.md`, which replaced the first | the spec campaign; the plan phase | Replaced by crucible's own review. |
 | SDD's other scripts, `superpowers/skills/subagent-driven-development/scripts/review-package` and `superpowers/skills/subagent-driven-development/scripts/task-brief` | reviewers build their own diff; the plan pointer | Replaced. |

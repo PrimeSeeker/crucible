@@ -50,10 +50,12 @@ substantial fixes; there is no wave loop and no cap
 
 **Review seats build their own diff.** The task reviewer, re-reviewer,
 branch reviewer and adjudicator each check with `git cat-file -t` that both
-ends of their range are commits, have git write the commit list and a stat
+ends of their range are commits and with `git merge-base --is-ancestor`
+that the base is an ancestor of the head, have git write the commit list and a stat
 summary with a `-U10` patch into files in their scratch subdirectory with
-`--output`, and read the diff there. An end that is not a commit, or a
-failing git command, is reported, never reviewed as an empty diff. The
+`--output`, and read the diff there. An end that is not a commit, a base
+that is not an ancestor of the head, or a failing git command, is
+reported, never reviewed as an empty diff. The
 controller records the base before each dispatch, never uses `HEAD~1`, and
 never takes the diff into its own context
 (`skills/subagent-driven-development/task-reviewer-prompt.md` § Diff Under
@@ -123,6 +125,10 @@ accepted by the maintainer.)
 
 ## Changes
 
+- 2026-10-27: review seats also check that the range's base is an
+  ancestor of its head: a range across diverged history was reviewed as a
+  diff of unrelated trees. Upstream's review-package added the same guard
+  (superpowers v6.4.1).
 - 2026-10-15: the branch-review loop, owned by requesting-code-review:
   mandatory after SDD and before merging any branch, a full-scope reviewer,
   waves opened only by BLOCKER or MAJOR, a full-scope terminal pass, a cap
