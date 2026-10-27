@@ -124,10 +124,12 @@ seen on crucible itself and on one other project crucible ran on:
   parent's, up the chain. Every seat that receives binding content reads
   them there as binding. A change the child makes to its umbrella (D8) is
   stated in the child's own spec, where its review reads it, and binds the
-  child over the pinned text. A child that existed before its umbrella
-  carries no pin and is bound by nothing in it.
+  child over the pinned text. A supersede's or unfold's successor
+  carries its predecessor's pin. A child that existed before its
+  umbrella carries no pin and is bound by nothing in it.
 - **D8 — Edits ride a child.** A child that changes its umbrella edits it
-  on its own branch, stating the change in its spec; the edit lands with
+  on its own branch, stating the change in its spec (its note's Intent,
+  on the very-small lane); the edit lands with
   the child, and the branch review checks the edit against the statement.
   Adding a child or rewording a not-yet-started child's entry is lightly
   held. A change to the umbrella's binding content — its Constraints &
@@ -147,8 +149,9 @@ seen on crucible itself and on one other project crucible ran on:
   when it lands and `closed` when it closes (D10). A dropped child's
   entry is marked `dropped`, with its reason. An entry with no mark has
   not landed; whether it is in flight shows from a branch named by its
-  slug. Each child edits only its own entry, so siblings' marks do not
-  conflict. Rejected: state derived from which folders and branches
+  slug. A child's marks touch only its own entry and, where it closes a
+  nested umbrella, that umbrella's entry in its parent; a drop touches
+  only the dropped entry; so siblings' marks do not conflict. Rejected: state derived from which folders and branches
   exist (a nested umbrella's landing, an unrelated feature taking a
   child's slug, and drops riding unlanded branches all misread it).
 - **D10 — Closing.** An umbrella is closed when every entry is marked
@@ -231,7 +234,8 @@ owns.
   binding content, is unchanged.
 - **`skills/subagent-driven-development/references/dispatch-composition.md`**
   items 2 and 4 own the controller's side: the pinned umbrellas' paths,
-  up the chain, are among a binding-receiving seat's input paths; the
+  up the chain, are among a binding-receiving seat's input paths, and
+  item 4's statement of what the pin makes binding gains the clause; the
   revisions come from the pins.
 - **`skills/redteaming/SKILL.md`** § Dispatch composition: its seat
   input list admits the pinned umbrellas; § Exit gains the umbrella
