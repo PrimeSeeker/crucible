@@ -81,7 +81,8 @@ Reviewing each release as a diff from the last fully reviewed version
 keeps one point at which every disposition was checked; a piece taken
 from a later release on its own is listed separately because the rest of
 that release was not reviewed, and a file that maps one to one needs no
-row. The review past v6.2.0 is `docs/backlog/upstream-sync-review.md`.
+row. The first such review, to v7.0.1, ran on 2026-10-27
+(`docs/crucible/2026-10-27-upstream-review/dispositions.md`).
 (Basis: judgment, accepted by the maintainer on 2026-10-20.)
 
 ## Rejected
@@ -101,6 +102,8 @@ row. The review past v6.2.0 is `docs/backlog/upstream-sync-review.md`.
 
 ## Changes
 
+- 2026-10-27: the upstream map reviewed to v7.0.1; the record points at
+  that review's dispositions in place of the backlog item it closed.
 - 2026-10-20: the upstream map, maintained, in place of a frozen
   manifest of the v6.2.0 port; each release reviewed as a diff from the
   last fully reviewed version.

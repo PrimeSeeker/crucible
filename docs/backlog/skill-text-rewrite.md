@@ -45,6 +45,10 @@
   comment rule is a fragment of the implementer's and task reviewer's.
   Copying the whole rule in would add one more restatement; the shared
   seat reference is its fix.
+- **"Load-bearing" means two things in SDD:** the spec's `[LOAD-BEARING]`
+  mark, and the fix loop's breaker, where a "real and load-bearing"
+  finding is one a later task builds on or one that reveals a plan
+  defect. A reader can take the breaker's STOP as tied to the mark.
 
 ## Follow-up
 
@@ -58,4 +62,5 @@
   lever, and each retirement is the operator's ruling. Part of it: restate
   the resident-cost re-open trigger above as resident tokens per route, or
   retire it.
-- Fix the minor defect above on the way.
+- Fix the minor defect above on the way, and give the breaker's sense of
+  "load-bearing" a word of its own.

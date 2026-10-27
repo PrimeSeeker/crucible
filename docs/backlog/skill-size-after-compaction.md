@@ -19,11 +19,24 @@
   came back cut short. That restores the whole text at the cost of a
   second copy in context; it does not help a skill dropped entirely, and
   whether agents follow it is unmeasured.
+- Upstream met the same failure (a session that lost the fix loop's cap
+  to the cut ran 18 rounds, superpowers #2565) and in v7.0.1 moved SDD's
+  always-run sections into references read at their step, the fix loop's
+  before every round, and added a test failing any `SKILL.md` of 20,000
+  bytes or more. That is about the same line as 5,000 tokens at four
+  characters a token. Redteaming's `SKILL.md` is 34,196 bytes and SDD's
+  31,897; the others are under 17,500. In SDD, Disputes and adjudication
+  and Finish lie past the line.
+- Crucible's authoring rule (`docs/decisions/authoring-crucible.md`)
+  sends only route-conditional procedures to references; text every
+  route runs stays in the skill. Following upstream means widening it.
 
 ## Follow-up
 
 Bring the largest skills under the per-skill budget, moving
-route-conditional text into references read on demand
-(`skill-text-rewrite.md`). Measure the token counts with a tokenizer
-first, and check the budget against the current Claude Code
-documentation.
+route-conditional text, and where the rule is widened always-run sections,
+into references read at their step (`skill-text-rewrite.md`). Measure the
+token counts with a tokenizer first, and check the budget against the
+current Claude Code documentation. Once the skills fit, a structural test
+holds each `SKILL.md` under the line, as upstream's does; the host's
+compaction is its reader.
