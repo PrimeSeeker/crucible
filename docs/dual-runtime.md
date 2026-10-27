@@ -223,6 +223,13 @@ tag is `v<version>`, not the `<plugin>--v<version>` form Claude Code's
 `claude plugin tag` creates: other plugins' dependency version ranges
 resolve against that form, and no plugin depends on crucible.
 
+**A pre-release tries a change before its release.** Bump `master`'s
+version to a pre-release one (`0.3.0-rc.1`), tag that commit
+`v0.3.0-rc.1`, and install pinned to the tag (§ Upgrades and rollback);
+`stable` does not move. The version change is what makes a host fetch
+the new copy. The repository protects every `v*` tag from deletion, so a
+pre-release tag stays, like a release's.
+
 ## Upgrades and rollback
 
 **Every release keeps its tag, so rollback is reinstalling the
@@ -233,8 +240,11 @@ No step re-observes hook trust. No current install registers a hook that
 asks for trust: crucible registers no Codex hook, and Claude Code's docs
 describe no per-hook trust step for plugin hooks.
 
-**Upgrade to the latest release.** Claude Code fetches a new copy only
-when the version changes; whether Codex does too is unverified
+**Upgrade to the latest release.** Both hosts fetch a new copy when an
+install moves to a different version (measured on both). Claude Code
+fetches only then: a plugin that sets a version stays on it until the
+version changes (its plugin manifest reference). Whether Codex skips the
+fetch when only the content changes is unverified
 (`docs/backlog/release-metadata-and-versioning.md`).
 
 - Claude Code: `claude plugin update crucible@crucible`, then start a new
@@ -260,6 +270,10 @@ codex plugin marketplace remove crucible
 codex plugin marketplace add PrimeSeeker/crucible --ref v<version>
 codex plugin add crucible@crucible
 ```
+
+**Try a pre-release** the same way, with its tag (`v0.3.0-rc.1`) in
+place of `v<version>`. To go back, pin a release tag, or re-add the
+marketplace without a tag to track `stable` again.
 
 After any install, upgrade or rollback, check routing in a new session. On
 Claude Code, no `crucible: router not loaded` notice means the router

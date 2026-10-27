@@ -3,7 +3,9 @@
 Crucible's Codex support is experimental (§ Status). This guide covers
 installing it, the two config keys it needs, checking that it is the one
 router and that sessions reach it, and rolling back. The command forms are
-those of codex-cli 0.163.0; the version tested is codex-cli 0.162.1.
+those of codex-cli 0.163.0; the install and pin commands ran on
+codex-cli 0.164.0. The version crucible itself was tested on is
+codex-cli 0.162.1.
 
 Companions: `docs/dual-runtime.md` (what the two hosts share; releases,
 updates and version rollback), `hooks/README.md` (why crucible registers no
