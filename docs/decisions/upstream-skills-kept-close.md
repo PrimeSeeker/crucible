@@ -4,8 +4,9 @@
 
 Two craft skills keep superpowers' text (v6.2.0) and change it only
 where it names one host's mechanics or crucible's own machinery, points
-at an upstream skill crucible folded, or prints a secret, and where a
-shipped script or example needs its platform limit stated. A third,
+at an upstream skill crucible folded, or prints a secret, where a
+shipped script or example needs its platform limit stated, and where
+upstream's text is defective. A third,
 receiving-review, rewrites upstream's skill for feedback from outside
 crucible's loops, keeping its core.
 
@@ -18,14 +19,20 @@ its seats and leaves the rest of the fan-out mechanics to it
 (`crucible:redteaming § Panels`).
 
 **systematic-debugging** is upstream's text except four lines of its
-`SKILL.md` and a note in each of two references. Test-first reads "Write
+`SKILL.md`, a note in each of two references, and root-cause-tracing's
+script invocation and dead-end edges. Test-first reads "Write
 the failing test before the fix; where no test or script can reproduce
 the bug, say why", with a pointer to
 `skills/subagent-driven-development/writing-good-tests.md`; the verify
 step asks for evidence before done without naming an upstream skill; and
 the example's two lines that printed a secret's value test only for its
 presence. `skills/systematic-debugging/root-cause-tracing.md` says
-`find-polluter.sh` is POSIX/Bash-only and what to do on Windows instead;
+`find-polluter.sh` is POSIX/Bash-only and what to do on Windows instead,
+runs it through `bash` by its path from the plugin root (upstream's `./`
+form resolved against the user's project), and sends a trace that
+dead-ends to instrumentation and then to `SKILL.md`'s "No Root Cause"
+section, where upstream's two diagrams disagree (one fixes at the symptom
+point, the other forbids it);
 `skills/systematic-debugging/condition-based-waiting.md` says its example
 is a pattern to copy, not a runnable script. The framing and the "your
 human partner" sections stay.
@@ -148,6 +155,11 @@ accepted by the maintainer.)
 
 ## Changes
 
+- 2026-10-27: root-cause-tracing runs `find-polluter.sh` through `bash`
+  from the plugin root, and the script is committed executable: its `./`
+  form failed on every POSIX host. A dead-end trace goes to
+  instrumentation, then to "No Root Cause", resolving upstream's two
+  contradicting diagrams (still contradicting at v7.0.1).
 - 2026-10-20: receiving-review restates each item in the agent's own
   words before implementing, an item it cannot restate counting as
   unclear: upstream's step, restored.

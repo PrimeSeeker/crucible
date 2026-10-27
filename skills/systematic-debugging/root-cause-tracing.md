@@ -12,16 +12,21 @@ Bugs often manifest deep in the call stack (git init in wrong directory, file cr
 digraph when_to_use {
     "Bug appears deep in stack?" [shape=diamond];
     "Can trace backwards?" [shape=diamond];
-    "Fix at symptom point" [shape=box];
+    "Add instrumentation, trace again" [shape=box];
     "Trace to original trigger" [shape=box];
     "BETTER: Also add defense-in-depth" [shape=box];
 
     "Bug appears deep in stack?" -> "Can trace backwards?" [label="yes"];
     "Can trace backwards?" -> "Trace to original trigger" [label="yes"];
-    "Can trace backwards?" -> "Fix at symptom point" [label="no - dead end"];
+    "Can trace backwards?" -> "Add instrumentation, trace again" [label="no - dead end"];
+    "Add instrumentation, trace again" -> "Can trace backwards?";
     "Trace to original trigger" -> "BETTER: Also add defense-in-depth";
 }
 ```
+
+A dead end calls for instrumentation (§ Adding Stack Traces), not a fix
+where the error appears. Where instrumentation finds no earlier cause either,
+follow `SKILL.md` § When Process Reveals "No Root Cause".
 
 **Use when:**
 - Error happens deep in execution (not at entry point)
@@ -98,18 +103,19 @@ npm test 2>&1 | grep 'DEBUG git init'
 
 If something appears during tests but you don't know which test:
 
-Use the bisection script `find-polluter.sh` in this directory:
+Use the bisection script beside this file, run from the project being
+debugged, where `<script>` is `skills/systematic-debugging/find-polluter.sh`
+under the installed plugin root:
 
 ```bash
-./find-polluter.sh '.git' 'src/**/*.test.ts'
+bash <script> '.git' 'src/**/*.test.ts'
 ```
 
 Runs tests one-by-one, stops at first polluter. See script for usage.
 
 `find-polluter.sh` is POSIX/Bash-only. **Consequence on Windows:** the
-invocation above does not run natively there: it relies on the shebang and the
-executable bit, and the script is a Bash program built on `find`, `sort` and
-`wc`. Run it from a POSIX environment — WSL or Git Bash — or bisect by hand:
+script is a Bash program built on `find`, `sort` and `wc`, so it does not run
+natively there. Run it from a POSIX environment — WSL or Git Bash — or bisect by hand:
 run the candidate test files one at a time and check after each whether the
 polluting file or directory appeared. The script only automates that loop;
 nothing in this workflow waits on it.
@@ -146,11 +152,12 @@ digraph principle {
     "Fix at source" [shape=box];
     "Add validation at each layer" [shape=box];
     "Bug impossible" [shape=doublecircle];
-    "NEVER fix just the symptom" [shape=octagon, style=filled, fillcolor=red, fontcolor=white];
+    "Add instrumentation, trace again" [shape=box];
 
     "Found immediate cause" -> "Can trace one level up?";
     "Can trace one level up?" -> "Trace backwards" [label="yes"];
-    "Can trace one level up?" -> "NEVER fix just the symptom" [label="no"];
+    "Can trace one level up?" -> "Add instrumentation, trace again" [label="no"];
+    "Add instrumentation, trace again" -> "Can trace one level up?";
     "Trace backwards" -> "Is this the source?";
     "Is this the source?" -> "Trace backwards" [label="no - keeps going"];
     "Is this the source?" -> "Fix at source" [label="yes"];
