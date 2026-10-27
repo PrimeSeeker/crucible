@@ -184,7 +184,9 @@ The sites the change touches, found by search.
 - **`skills/brainstorming/SKILL.md`.** One stub section, naming the new
   reference `skills/brainstorming/references/umbrellas.md` to read in
   full, reached from the scope-decomposition check (§ The dialogue) and
-  self-review check 3; the opening's terminal-state sentence and
+  self-review check 3; step 4 proposes the umbrella and its review (D4),
+  and the Flow list's steps 5, 9 and 10 cover it; the opening's
+  terminal-state sentence and
   § Handoff gain the umbrella's terminal state (campaign, or approval,
   then landing); the spec contract gains the pin (D7). The reference
   holds the umbrella's shape and rules (D1, D2, D4–D12) and opens with
