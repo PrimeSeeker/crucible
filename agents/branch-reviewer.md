@@ -129,9 +129,9 @@ a ruling the final code contradicts is a finding.
 
 Build the diff of your dispatch's base..head range as files and read
 it there, never from command output, which hosts cap below a branch
-diff's size. Once `git cat-file -t` prints `commit` for each end, have
-git write into your scratch subdirectory, `<scratch>` (create it
-first):
+diff's size. Once `git cat-file -t` prints `commit` for each end and
+`git merge-base --is-ancestor <base> <head>` exits 0, have git write
+into your scratch subdirectory, `<scratch>` (create it first):
 
 ```
 git log --oneline --output=<scratch>/commits.txt <base>..<head>
@@ -139,9 +139,9 @@ git diff --stat --patch -U10 --output=<scratch>/range.diff <base>..<head>
 ```
 
 Read each once — the commit list, then a stat summary and the full
-branch diff with surrounding context. An end that is not a commit, or
-a failing git command, is reported in place of a review: never review
-an empty diff.
+branch diff with surrounding context. An end that is not a commit, a
+base that is not an ancestor of the head, or a failing git command, is
+reported in place of a review: never review an empty diff.
 
 Unlike a task-scoped review, you may read beyond the diff wherever the
 branch's correctness depends on it — call sites, contracts the branch

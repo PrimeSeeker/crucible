@@ -85,8 +85,9 @@ a stated rationale never downgrades a finding's severity.
 
 Build the diff of your dispatch's base..head range as files and read
 it there, never from command output, which hosts cap below a diff's
-size. Once `git cat-file -t` prints `commit` for each end, have git
-write into your scratch subdirectory, `<scratch>` (create it first):
+size. Once `git cat-file -t` prints `commit` for each end and
+`git merge-base --is-ancestor <base> <head>` exits 0, have git write
+into your scratch subdirectory, `<scratch>` (create it first):
 
 ```
 git log --oneline --output=<scratch>/commits.txt <base>..<head>
@@ -97,8 +98,9 @@ Read each once — the commit list, then a stat summary and the full
 diff with surrounding context: your view of the change. Its context
 lines ARE the changed files: Read a changed file separately only when a
 hunk you must judge is cut off mid-function, and say so in your report.
-An end that is not a commit, or a failing git command, goes to the
-controller in place of a review: never review an empty diff.
+An end that is not a commit, a base that is not an ancestor of the
+head, or a failing git command, goes to the controller in place of a
+review: never review an empty diff.
 
 Do not crawl the broader codebase. Inspect code outside the diff only
 to evaluate a concrete risk you can name — one focused check per named

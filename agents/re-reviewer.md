@@ -85,9 +85,9 @@ Read the fix report your dispatch names — in a task's fix wave, the
 implementer's report file, this wave's fix report appended at its end.
 Build the diff of your dispatch's fix-base..head range as files and
 read it there, never from command output, which hosts cap below a
-diff's size. Once `git cat-file -t` prints `commit` for each end, have
-git write into your scratch subdirectory, `<scratch>` (create it
-first):
+diff's size. Once `git cat-file -t` prints `commit` for each end and
+`git merge-base --is-ancestor <fix-base> <head>` exits 0, have git
+write into your scratch subdirectory, `<scratch>` (create it first):
 
 ```
 git log --oneline --output=<scratch>/commits.txt <fix-base>..<head>
@@ -95,9 +95,10 @@ git diff --stat --patch -U10 --output=<scratch>/range.diff <fix-base>..<head>
 ```
 
 Read each once — the fix commits, then a stat summary and the fix
-diff with surrounding context. An end that is not a commit, or a
-failing git command, goes to the controller in place of a re-review:
-never verdict against an empty diff.
+diff with surrounding context. An end that is not a commit, a fix base
+that is not an ancestor of the head, or a failing git command, goes to
+the controller in place of a re-review: never verdict against an empty
+diff.
 
 ## Scope
 
