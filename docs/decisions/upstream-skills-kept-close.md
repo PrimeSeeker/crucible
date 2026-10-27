@@ -120,8 +120,10 @@ success among the claims to check against the VCS diff
 folded that skill into its seats' rules, where the task reviewer reads
 each implementer's diff, but agents fanned out by
 dispatching-parallel-agents run outside those seats, so the check went
-into its review steps at the v7.0.1 review: an added check, not a change
-to upstream's text. (Basis: external, for upstream's check; judgment,
+into its review steps at the v7.0.1 review: a clause added to "Read each
+summary" and "Review each summary" rewritten as "Check each diff", two
+lines to carry past later upstream releases, against a success report
+nobody checks. (Basis: external, for upstream's check; judgment,
 accepted by the maintainer.)
 
 ### Receiving review
@@ -168,9 +170,10 @@ accepted by the maintainer.)
 
 ## Changes
 
-- 2026-10-27: dispatching-parallel-agents checks each agent's diff,
-  not only its summary, a check from upstream's folded
-  verification-before-completion that nothing else covers outside SDD.
+- 2026-10-27: the Decision admits a check from a folded upstream skill
+  that nothing else covers; under it, dispatching-parallel-agents checks
+  each agent's diff, not only its summary, from upstream's
+  verification-before-completion, which nothing covers outside SDD.
 - 2026-10-27: root-cause-tracing runs `find-polluter.sh` through `bash`
   from the plugin root, and the script is committed executable: its `./`
   form failed on every POSIX host. A dead-end trace goes to
