@@ -81,9 +81,10 @@ policy; on 2026-10-20 the Claude Code dispatch reference dropped its
 restatement of the escalation rule, which
 `skills/subagent-driven-development/references/dispatch-composition.md`
 § Models and effort and SDD's Models section own. Codex's matching
-sentence stays: it states a host fact, that the bounded role uses the
-default role's model there. (Basis: judgment, accepted by the
-maintainer.)
+sentence stayed while it stated a host fact, that the bounded role used
+the default role's model there, and went on 2026-10-27, when the bounded
+role moved to a model of its own (`docs/decisions/model-roles-and-effort.md`).
+(Basis: judgment, accepted by the maintainer.)
 
 ### Codex as a host
 
@@ -190,6 +191,9 @@ preference.)
 
 ## Changes
 
+- 2026-10-27: the Codex dispatch reference's no-tier-bump sentence is
+  gone, since the bounded role there no longer uses the default role's
+  model.
 - 2026-10-27: the surfaces paragraph states the position and the
   bundled-Codex fact without quoting the maintainer's own usage or dating
   their desktop app's state, which is private context.

@@ -27,7 +27,4 @@ map beside this file, `codex.md`, carries the rest.
   key is set, and recommend `high`. An override is accepted only
   with `fork_turns` at `"none"` or a turn count (a
   full-history fork inherits model and effort); an unsupported effort is
-  rejected, naming the levels that model supports. Where the host map's
-  Model roles entry gives the bounded role the default role's model,
-  escalating a stuck task has no tier bump: it is fresh eyes at the same
-  tier.
+  rejected, naming the levels that model supports.

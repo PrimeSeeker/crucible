@@ -41,14 +41,13 @@ entering it.
 
 ## Model roles
 
-Read on codex-cli 0.162.1.
+Read on codex-cli 0.164.0.
 
 - **Default** — `gpt-6.1-sol`.
-- **Bounded** — the default role's model: no current-generation tier sits
-  between it and the fast class.
+- **Bounded** — `gpt-6.1-terra`.
 - **Alternate** — `gpt-6-astra`.
 - **Weak spots of the default role** — visual and graphics work.
 
 Never a weak, fast or mini tier, Luna-class included, nor a model this
-host lists as previous, older or legacy (on 0.162.1, `gpt-6-sol` and the
+host lists as previous, older or legacy (on 0.164.0, `gpt-6-sol` and the
 5.x models). Every model named here qualifies.

@@ -87,14 +87,19 @@ opinion, and from the maintainer's requirement: "All of this would change
 with effectively every model release, so we need ease of updates". An
 agent proposed the three roles, named in the skills and mapped to models
 only in the host maps and the generator, and the maintainer accepted. On
-Codex the bounded role is the default role's model: that host has no
-current-generation tier between it and the fast class (read on codex-cli
-0.162.1), and the maintainer preferred the default model to a fast one:
-"Luna in my experience tends to be very tasteless, so I'd rather exclude
-them. Sol fallback is OK". The floor is
+Codex the bounded role was at first the default role's model: that host
+listed no model of the current generation between it and the fast class
+(read on codex-cli 0.162.1), and the maintainer preferred the default model to a
+fast one: "Luna in my experience tends to be very tasteless, so I'd
+rather exclude them. Sol fallback is OK". Codex then listed a
+current-generation middle tier, `gpt-6.1-terra` (read on codex-cli
+0.164.0, 2026-10-27); an agent proposed moving the bounded role to it,
+and the maintainer agreed ("Yes, please"). Its capability against the
+default model is unmeasured. The floor is
 judged by the host's own generation labels rather than by a list written
 in crucible. (Basis: the maintainer's preference, for the requirement and
-the exclusion; judgment, accepted by the maintainer, for the structure.)
+the exclusion; judgment, accepted by the maintainer, for the structure
+and the move to the middle tier.)
 
 ### The seats
 
@@ -206,8 +211,10 @@ operator's config key.
 
 ## Changes
 
-- 2026-10-27: the snapshot-blessing agent gets a row, the bounded role
-  or better, since it had none.
+- 2026-10-27: on Codex the bounded role moves from the default role's
+  model to `gpt-6.1-terra`, since that host now lists a
+  current-generation middle tier; the snapshot-blessing agent gets a row,
+  the bounded role or better, since it had none.
 - 2026-10-14: effort the operator's on both hosts, set on a dispatch only
   on request and held lightly; on Codex the seats' effort from the
   operator's config key, checked before the first dispatch, `high`
