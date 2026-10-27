@@ -54,10 +54,10 @@ For **greenfield artifacts** (no code baseline): no round-0 agent — one round-
 
 **Lens roster** (a lens is a search-ordering hint, never a scope limit):
 
-- **correctness**
-- **evidence-and-inference**
+- **correctness** (does what the artifact says hold, on every path and input it covers)
+- **evidence-and-inference** (are its claims verified and its measurements valid, and do its conclusions follow from them)
 - **general** (unscoped) — at least one seat with no box on **every multi-seat round**.
-- **contract-fidelity** — when interface density warrants.
+- **contract-fidelity** (does each interface match what its producers and consumers do) — when interface density warrants.
 - **right-sizing** (cost-benefit scope-cutting) — seated in round 1 and periodically after, not every round: re-seated mid-campaign, or when the artifact has grown — a soft judgment on the net of the line counts the round records' trace holds (lines added minus lines removed, `formats.md` § Round record format, field 8), a reflow's noise in that net tolerated; judged by the scope-cut decisions it produces. It carries the **over-subtraction guard**: for each area it examines, its report distinguishes **"examined and judged right-sized — do not cut"** from not examined (`skills/redteaming/seat-prompt.md`), and you and fix waves consult those attestations before applying any cut — cutting attested content requires a logged ruling in the round record. A proposed cut that would remove binding content, or a declared mechanism's only producer or consumer, is a finding against the cut, not a cut.
 - **abstraction-level** — for specs (mechanism detail creeping into binding sections is a finding).
 

@@ -29,7 +29,8 @@ bounded task may drop to the bounded role. Task reviewers and
 re-reviewers run on the bounded role or better. The adjudicator, the
 redteam panel seats and passes, and the branch reviewer run on the
 default role, never lowered to save cost; the blind verifier runs on the
-bounded role, never lower (`crucible:subagent-driven-development
+bounded role, never lower; the snapshot-blessing agent runs on the
+bounded role or better (`crucible:subagent-driven-development
 § Models`; `crucible:redteaming § Panels`;
 `crucible:requesting-code-review § Dispatch the branch reviewer`).
 
@@ -116,6 +117,9 @@ adjudicator and the branch reviewer stay on the default role, the
 adjudicator because its dismissals close findings without further
 review, and "the bounded role or better" for reviewers replaced "mid-tier
 or better", which no host map defined, with no change of meaning.
+The snapshot-blessing agent had no row until 2026-10-27, when an agent
+proposed the bounded role or better, since like the blind verifier it
+checks one stated claim, and the maintainer approved it.
 (Basis: the maintainer's preference, for the verifier's tier; measured,
 for the recount; judgment, accepted by the maintainer, for the other
 rows.)
@@ -202,6 +206,8 @@ operator's config key.
 
 ## Changes
 
+- 2026-10-27: the snapshot-blessing agent gets a row, the bounded role
+  or better, since it had none.
 - 2026-10-14: effort the operator's on both hosts, set on a dispatch only
   on request and held lightly; on Codex the seats' effort from the
   operator's config key, checked before the first dispatch, `high`

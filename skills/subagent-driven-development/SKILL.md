@@ -58,6 +58,7 @@ The rules every dispatch shares — name the model, the three roles and the floo
 - **Implementer:** the default role, or the alternate role where one of its triggers selects this seat; a clearly bounded task may drop to the bounded role.
 - **Task reviewer and re-reviewer:** the bounded role or better, always.
 - **Adjudicator:** the default role — its dismissals close findings without further review.
+- **Snapshot-blessing agent:** the bounded role or better — a blind check of one stated claim.
 - **Escalation, fix waves 4–5:** a tier bump where one exists (the bounded role → the default role); at the default role, its ceiling, fresh eyes at the same tier.
 
 ## The Task Loop
@@ -70,7 +71,7 @@ Record BASE (`git rev-parse HEAD`) before dispatching — the task's review rang
 
 Dispatch instrument `implementer` with its card filled per its slot rules: the plan's path and the task's number as `[REQUIREMENTS]`, `sdd/reports/task-<N>-report.md` as `[REPORT_FILE]`. The seat reads the plan in its worktree — the header and its own task's section, or the whole document where the plan is folded into the spec. Where routing-table rows name its task, the plan reminder adds that **each routed item gets its own Decision Log entry** recording the call made. Never paste accumulated prior-task history, and never quote the spec: each seat opens it at the pinned revision the plan header names.
 
-**Record the implementer's agent identity in the ledger as soon as the dispatch reports it** — fix waves 1–3 resume that identity. Never run two implementers at once: they share the tree.
+**Record the implementer's agent identity in the ledger as soon as the dispatch reports it**, as `Task <N>: implementer <agent id>` — fix waves 1–3 resume that identity. Never run two implementers at once: they share the tree.
 
 ### 2. Handle the report
 
@@ -106,7 +107,7 @@ Dispatch hygiene: no open-ended directives ("check all uses") without a concrete
 
 Every acceptance criterion in the task maps to a standing test, a one-time check or a stated why-not — confirm the report shows each: a standing test passing in its quoted run; a one-time check's command and quoted output, plus its failing pre-change run where it checks a state the change brings about.
 
-- **Snapshot/golden blessing** (where behavior preservation is the claim): **never autonomous.** A fresh blind agent — given the old/new output pair and the behavior-preservation claim, nothing else — verdicts the change. One it judges intent-visible goes to the operator as a decision ask: what changed and why it matters, never a raw diff to read.
+- **Snapshot/golden blessing** (where behavior preservation is the claim): **never autonomous.** A fresh blind agent — given the old/new output pair and the behavior-preservation claim, nothing else — verdicts the change: it writes `sdd/reports/task-<N>-snapshot.md` and replies with its verdict, preserved or intent-visible, and that path. One it judges intent-visible goes to the operator as a decision ask: what changed and why it matters, never a raw diff to read.
 
 ### 5. The fix loop
 

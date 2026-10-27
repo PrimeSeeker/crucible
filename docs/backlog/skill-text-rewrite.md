@@ -22,10 +22,9 @@
   git internals and restates its rules three or four times. The host
   adapters restate host-neutral process rules (the never-predict rule,
   fan-out independence, effort-on-request). Redteaming's lens
-  roster gives right-sizing its trigger mechanics while the other lenses
-  lack the one-line description the seat card requires. SDD specifies the
-  adjudicator inline to git flags and gives the snapshot-blessing agent
-  one sentence. Templates explain their own design to maintainers, and
+  roster gives right-sizing its trigger mechanics and the other lenses a
+  line each. SDD specifies the adjudicator inline to git flags and the
+  snapshot-blessing agent in two sentences. Templates explain their own design to maintainers, and
   the terminal-pass template carries the controller's escalation routing.
 - **Size follows mechanisms.** The three execution and review skills
   (redteaming, SDD, requesting-code-review) grew from 16.3k words to 41.2k
@@ -42,11 +41,10 @@
   project a redteam controller loaded the redteaming skill plus
   `formats.md`, about 27K tokens, before any work, so the trigger likely
   trips there. Cost was measured in tokens, not duties or adherence.
-- **Minor defects the audit found, unfixed:** the snapshot-blessing seat
-  has no model row, report path or return contract; the implementer
-  identity's ledger line has no shape (SDD and its lane reference); the
-  re-review template's comment rule is a fragment of the implementer's
-  and task reviewer's; redteaming's lens roster lacks lens descriptions.
+- **A minor defect the audit found, unfixed:** the re-review template's
+  comment rule is a fragment of the implementer's and task reviewer's.
+  Copying the whole rule in would add one more restatement; the shared
+  seat reference is its fix.
 
 ## Follow-up
 
@@ -60,4 +58,4 @@
   lever, and each retirement is the operator's ruling. Part of it: restate
   the resident-cost re-open trigger above as resident tokens per route, or
   retire it.
-- Fix the four minor defects above on the way.
+- Fix the minor defect above on the way.
