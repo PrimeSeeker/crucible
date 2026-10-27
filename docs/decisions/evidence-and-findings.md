@@ -59,6 +59,18 @@ Test-First, Evidence Before Done). The task reviewer takes that reported
 output as given; which seats run the full suite is stated in
 `docs/decisions/spec-campaign.md`.
 
+**What the requirements leave unsaid.** The execution reviewers read
+the requirements' silence as no permission: a failure on an input they
+imply but never name is a defect, graded by its effect on a reasonable
+person using the software (`skills/requesting-code-review/code-reviewer.md`
+§ What to Check; `skills/subagent-driven-development/task-reviewer-prompt.md`
+§ Verdict 4: Quality). A panel seat reports a consequential choice the
+artifact takes for granted with no decision recording it
+(`skills/redteaming/seat-prompt.md`). The implementer's test evidence
+names every failing test, whether its change caused it or not, and the
+task reviewer and the re-reviewer re-read evidence that looks truncated
+at its stated path before reporting it missing.
+
 ## Why
 
 ### Review that holds without a human reader
@@ -144,6 +156,17 @@ suite (`docs/decisions/spec-campaign.md`); controllers have the router's
 line. (Basis: measured; judgment, accepted by the maintainer,
 for the scope.)
 
+### What the requirements leave unsaid
+
+The four rules came from superpowers releases v6.4.1 to v7.0.1, adopted
+at the review of that range
+(`docs/crucible/2026-10-27-upstream-review/dispositions.md`). Upstream
+also had brainstorming record which choices the person made and which
+the agent made; the maintainer declined it, since a mark saying the
+operator decided invites deference to the choice, and took the seats'
+clause in its place, which asks for the missing decision instead.
+(Basis: external; judgment, accepted by the maintainer.)
+
 ## Rejected
 
 - **Tiers of certainty** beside `UNVERIFIED` (§ Why).
@@ -155,6 +178,12 @@ for the scope.)
 
 ## Changes
 
+- 2026-10-27: what the requirements leave unsaid: the execution
+  reviewers grade a failure on an implied input by its effect on a
+  reasonable person, seats report an unrecorded consequential choice,
+  the implementer names every failing test, and the task reviewer and
+  re-reviewer re-read evidence that looks truncated; adopted from
+  upstream at the v7.0.1 review.
 - 2026-10-14: evidence before claims: a completion claim rests on a check
   run, a predicate fix is run and must fail before its change, and a test
   result comes from the run's own output, unknown until read.

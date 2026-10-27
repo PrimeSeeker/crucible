@@ -125,6 +125,9 @@ instead.
   acceptance, a spec's required sections — is never local detail: its
   absence is a finding.
 - Contradictions and infeasibility are findings at any locality.
+- A consequential choice the artifact takes for granted with no
+  decision recording it (the platform, the language, the form of the
+  deliverable) is a finding.
 
 **Report:** write to the report path your dispatch names — a
 `seat-<id>.md` file, `<id>` being your seat id:

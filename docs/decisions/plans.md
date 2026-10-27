@@ -30,7 +30,8 @@ commit messages, per-step checkboxes or copies of spec content
 (`crucible:writing-plans § Per-task structure — four fields, all
 required`; `crucible:writing-plans § What a plan never contains`). Each
 acceptance criterion maps to a kind of check or says why neither applies
-(`docs/decisions/test-rules.md`).
+(`docs/decisions/test-rules.md`). Its edge and error scenarios name the
+inputs the spec implies but never names.
 
 **Task sizing.** A task is the smallest unit with its own test cycle that
 is worth a fresh reviewer's gate: split where a reviewer could reject one
@@ -152,6 +153,9 @@ directory and the argument value are interfaces that records and
 
 ## Changes
 
+- 2026-10-27: a task's edge and error scenarios name the inputs the
+  spec implies but never names, after upstream's Review Focus (v7.0.1
+  review): those are the inputs no one else will think to test.
 - 2026-10-15: the lean plan contract: a header whose spec pointer is the
   only pin, four task fields with no constraints field, the excluded
   content, the routing table's heading and row format, acceptance mapped

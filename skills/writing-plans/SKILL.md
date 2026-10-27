@@ -44,7 +44,7 @@ Binding or cross-task content is never deferrable — a deferral covering it is 
 - **Why** — one paragraph: the task's role in the design, and the rationale it inherits.
 - **Files** — touch list, matching this task's row in the ownership census. Enumerate the existing consumers of every symbol, file, or interface the task changes or deletes — mechanically, by search, not from memory — and account for each: it lands in this list or in the census, or the task is not yet scoped. A rule stated in more than one place — docs, prompts, templates — is such an interface, and every site that states it is a consumer.
 - **Contract** — interfaces consumed and produced: signatures, not bodies; plus the spec decisions this task enacts, named by their ids. Naming is the mechanism — a task never quotes the spec's binding text.
-- **Acceptance** — observable behaviors, plus test scenarios by category — happy / edge / error / integration — as scenario descriptions, not test code.
+- **Acceptance** — observable behaviors, plus test scenarios by category — happy / edge / error / integration — as scenario descriptions, not test code. The edge and error scenarios name the inputs the spec implies but never names (an empty file, a missing directory, a second run).
 
 There is no per-task constraints field. Every seat reads the header's spec pointer, so a task's binding content is read from the spec at its pinned revision; a per-task restatement would be a second copy to keep true.
 

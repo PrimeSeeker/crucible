@@ -17,7 +17,8 @@ is closed by its ruling. Every outcome is written under the ledger's
 a [LOAD-BEARING] decision goes to the operator as a decision ask, the
 finding open until the answer. Adjudication adds no wave; a wave whose fix
 dispatch only disputes is still a wave. Every dismissed or parked BLOCKER
-or MAJOR reaches the operator with its ruling in the close readout. The
+or MAJOR reaches the operator with its ruling in the close readout, and
+so does every ruling the controller made itself, with its reason. The
 adjudicator runs on the default role
 (`docs/decisions/model-roles-and-effort.md`;
 `crucible:subagent-driven-development § Rules every route shares`).
@@ -92,6 +93,11 @@ anyone hears of a finding. (Basis: judgment, accepted by the maintainer,
 
 ## Changes
 
+- 2026-10-27: the close readout lists every ruling the controller
+  made itself, not only dismissed or parked BLOCKER/MAJOR findings: the
+  ledger is deleted at Finish, so the readout is the one place the
+  operator can find a wrong ruling (after upstream's final message, at
+  the v7.0.1 review).
 - 2026-10-07: one dispute rule: NOT CONFIRMED answers and the
   controller's own disputes go in batches to a fresh adjudicator seat at
   any wave on every SDD route; the controller rules

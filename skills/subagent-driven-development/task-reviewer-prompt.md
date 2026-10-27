@@ -75,6 +75,11 @@ rationales ("left it per YAGNI," "kept it simple deliberately") are
 the implementer grading their own work: judge the code on its merits;
 a stated rationale never downgrades a finding's severity.
 
+Evidence that looks truncated, or results it claims that you cannot
+find, re-read at its stated path before reporting it missing; what is
+then still missing or garbled is a gap you report, never a reason to
+re-run the suite.
+
 ## Diff Under Review
 
 Build the diff of your dispatch's base..head range as files and read
@@ -194,6 +199,11 @@ Defects, not style:
   hazard, or local reason a line looks wrong but isn't; cites symbols
   rather than `file:line`; and points to the owning reference doc or
   decision record where the project has one.
+
+The plan's and spec's silence is not permission. A failure on an input
+they imply but never name (an empty file, a path with spaces, a second
+run) is a defect, graded by its effect on a reasonable person using the
+software, not by whether the requirements mention its trigger.
 
 ## Finding Hygiene and Severity
 

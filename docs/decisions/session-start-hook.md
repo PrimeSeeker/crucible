@@ -55,7 +55,7 @@ from skill prose as `python <plugin-root>/...` with the resolved root put
 in; where it cannot run, the redteaming controller stops and tells the
 operator. The suite needs Python 3.10 or newer. writing-skills keeps the
 general rule in one line: forward slashes, and an interpreter the users'
-hosts have.
+hosts have, named in the invocation.
 
 **No runtime port.** No JavaScript core, Claude Code mod, CLI or mod
 probe; the mod path waits in `docs/backlog/claude-code-mod.md`.
@@ -196,6 +196,9 @@ reasons and the triggers that would reopen it, is in the backlog item.
 
 ## Changes
 
+- 2026-10-27: writing-skills' rule now names the interpreter in the
+  invocation, since packagers can strip executable bits (upstream,
+  v7.0.1 review).
 - 2026-10-27: the script reads with a builtin, not `cat`, and runs no
   external command: under an empty `PATH`, bash ran a `cat` planted in
   the working directory. The registration keeps `bash` from `PATH`.

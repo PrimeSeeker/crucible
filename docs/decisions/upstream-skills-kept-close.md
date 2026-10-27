@@ -5,8 +5,9 @@
 Two craft skills keep superpowers' text (v6.2.0) and change it only
 where it names one host's mechanics or crucible's own machinery, points
 at an upstream skill crucible folded, or prints a secret, where a
-shipped script or example needs its platform limit stated, and where
-upstream's text is defective. A third,
+shipped script or example needs its platform limit stated, where
+upstream's text is defective, and where a later upstream release
+improves it. A third,
 receiving-review, rewrites upstream's skill for feedback from outside
 crucible's loops, keeping its core.
 
@@ -14,7 +15,9 @@ crucible's loops, keeping its core.
 every independent agent before waiting for any of them, through the
 host's parallel fan-out operation, starting the rest as capacity frees;
 tasks that are not independent run one at a time, whatever the host
-permits. It carries none of crucible's seat machinery. Redteaming starts
+permits; and its review steps, where each agent's diff is checked, not
+only its summary, from upstream's later verification-before-completion.
+It carries none of crucible's seat machinery. Redteaming starts
 its seats and leaves the rest of the fan-out mechanics to it
 (`crucible:redteaming § Panels`).
 
@@ -155,6 +158,9 @@ accepted by the maintainer.)
 
 ## Changes
 
+- 2026-10-27: dispatching-parallel-agents checks each agent's diff,
+  not only its summary, taken from a later upstream release; the
+  Decision allows such an improvement.
 - 2026-10-27: root-cause-tracing runs `find-polluter.sh` through `bash`
   from the plugin root, and the script is committed executable: its `./`
   form failed on every POSIX host. A dead-end trace goes to

@@ -177,7 +177,9 @@ missing element, prohibitions backfire: use the forms above.
   from a real case, commented with why. Not five languages, not a
   fill-in-the-blank template.
 - **Portability.** Write forward slashes in paths, examples included, and
-  run scripts only with an interpreter your users' hosts have.
+  run scripts only with an interpreter your users' hosts have, naming it
+  in the invocation (`bash <script>`, `python <script>`), never a bare
+  path: packagers can strip executable bits.
 - **Size and placement.** Always-loaded text (descriptions, anything a
   host injects at session start) is budgeted by its host. Everything else
   is as short as its job allows. State each rule once, where its reader

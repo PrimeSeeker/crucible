@@ -28,7 +28,7 @@ Do NOT invoke any implementation skill, write any code, scaffold any project, or
 
 ## Context gathering (before any question)
 
-Explore the project state first: files, docs, recent commits, existing specs and plans, backlog items touching the area. The operator's steering time is expensive — arrive at the dialogue already knowing what the repo knows. Every question the repo can answer is a question you don't ask.
+Explore the project state first: files, docs, recent commits, existing specs and plans, backlog items touching the area. The operator's steering time is expensive — arrive at the dialogue already knowing what the repo knows. Every question the repo can answer is a question you don't ask. A throwaway probe outside the tracked tree, in the host's temporary directory, that answers a question (run a command, try a library call) is context gathering, not the code the HARD-GATE forbids: it is never committed, and what it showed enters the dialogue.
 
 **An incoming document** — a requirements document, an issue, a plan crucible did not write — is the brainstorm's input: what it settles stays settled, the dialogue asks only what it leaves open, and what you write still gets its route's review. A foreign plan takes the route that fits it, proposed at step 4 like any other; the spec adds the sections reviewers bind to, and the plan's tasks are reused where the route carries a plan — on the standard route, keep the plan in the feature folder under a descriptive name for `crucible:writing-plans` to read beside the spec.
 

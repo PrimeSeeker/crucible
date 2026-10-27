@@ -9,6 +9,12 @@ written and the handoff has run, "regardless of perceived simplicity".
 The one way around it is the trivial-edit waiver
 (`docs/decisions/routes.md`).
 
+**Probes.** A throwaway probe in the host's temporary directory that
+answers a question is context gathering, not implementation, and is
+never committed (`crucible:brainstorming § Context gathering (before
+any question)`). Upstream's spike, a throwaway build on the person's
+yes, was not taken.
+
 **A document from outside is its input.** A requirements document, an
 issue or a plan crucible did not write goes to brainstorming, which keeps
 what it settles and asks only about the rest; the result gets its
@@ -88,6 +94,10 @@ ask for a foreign plan to run as written, or set how questions are asked.
 
 ## Changes
 
+- 2026-10-27: a throwaway probe answering a question is context
+  gathering, never committed, narrower than upstream's spike (v7.0.1
+  review): it lets a question the repo can answer by running something
+  be answered without a design.
 - 2026-10-12: brainstorming first, with a document from outside, a
   foreign plan included, as its input; no run-as-written route.
 - 2026-10-07: the visual companion stays dropped, now with a reason.

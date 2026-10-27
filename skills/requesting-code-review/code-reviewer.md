@@ -150,6 +150,10 @@ touches, integration seams. Name what you checked in your report.
   deviation from *binding* plan content with no logged decision is
   undisclosed drift — report it flagged as DRIFT with the task it
   belongs to; the controller routes it separately from the fix wave.
+- The requirements' silence is not permission. A failure on an input
+  they imply but never name (an empty file, a path with spaces, a
+  second run) is a defect, graded by its effect on a reasonable person
+  using the software, not by whether they mention its trigger.
 
 **Code quality:**
 - Clean separation of concerns?

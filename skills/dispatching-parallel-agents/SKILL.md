@@ -79,7 +79,7 @@ Your host's parallel fan-out operation starts them; where it admits fewer at onc
 ### 4. Review and Integrate
 
 When agents return:
-- Read each summary
+- Read each summary, then check the diff of the files it changed: a summary reports what the agent meant to do, the diff what it did
 - Verify fixes don't conflict
 - Run full test suite
 - Integrate all changes
@@ -161,7 +161,7 @@ Agent 3 → Fix tool-approval-race-conditions.test.ts
 ## Verification
 
 After agents return:
-1. **Review each summary** - Understand what changed
+1. **Check each diff** - Understand what changed, from the diff, not the summary
 2. **Check for conflicts** - Did agents edit same code?
 3. **Run full suite** - Verify all fixes work together
 4. **Spot check** - Agents can make systematic errors

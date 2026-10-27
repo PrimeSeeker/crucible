@@ -221,7 +221,8 @@ Write your full report to the report file your dispatch names:
   audits this section either way).
 - **Test evidence** — covering tests, the commands run and their
   output; for test-first work, the failing (RED) output before
-  implementation and the passing (GREEN) output after.
+  implementation and the passing (GREEN) output after; and every
+  failing test by name, whether your change caused it or not.
 - Files changed; self-review findings; issues or concerns
 
 Claim discipline: every code-shaped claim — what a function does, what

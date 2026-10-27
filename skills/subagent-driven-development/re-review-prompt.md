@@ -124,8 +124,10 @@ Treat the fix report as unverified claims: confirm that for each
 finding answered fixed it names the covering tests with their command
 and output, and the sibling instances of the defect pattern in the
 diff the findings were raised against (or states there were none);
-verify the claims against the diff. Do not re-run the suite to confirm
-the report. Run a test only when reading the code raises a specific
+verify the claims against the diff. Evidence that looks truncated, or
+results it claims that you cannot find, re-read at its stated path
+before reporting it missing. Do not re-run the suite to confirm the
+report. Run a test only when reading the code raises a specific
 doubt no existing run answers — a focused test, never a package-wide
 suite.
 
