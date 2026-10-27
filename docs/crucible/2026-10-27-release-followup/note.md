@@ -39,8 +39,9 @@ on both hosts, and the pre-release channel passed its check.
    and `docs/decisions/releases.md` (nothing before the change).
 3. `docs/decisions/releases.md`'s newest Changes line is dated 2026-10-27.
 4. `python -m pytest tests/` passes.
-5. The cut tool's leak search over the worktree reports
-   `0 unexplained hit(s)`.
+5. The cut tool's leak search over the worktree reports no unexplained
+   hit except the `feature-folder` pattern on this feature's own folder,
+   which the cut used for folders it left behind.
 
 ## Out of scope
 
