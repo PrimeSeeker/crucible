@@ -146,6 +146,13 @@ the resolve step of `skills/redteaming/references/formats.md`
 git diff --name-only --diff-filter=A <base-branch>...HEAD -- <feature-folder>
 ```
 
+On an umbrella's own branch, where the list holds
+`<feature-folder>/umbrella.md`, drop that file from the list: it stays
+in the merged tree, since the umbrella's children read it, marks
+included, on the branch they land on
+(`skills/brainstorming/references/umbrellas.md`). An empty list leaves
+nothing to ask.
+
 Tell the operator that the branch's commits carry these files, so
 the PR shows them under any merge strategy and removing them now keeps
 them out of the merged tree only; then ask whether they go into the PR.
