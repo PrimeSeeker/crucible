@@ -70,7 +70,9 @@ seen on crucible itself and on one other project crucible ran on:
   by blank lines, each naming the child's slug, what it must deliver,
   what it waits on, and its mark (D9) — stating that each child's own
   Acceptance carries the checks. A campaigned umbrella carries every
-  section, so its seats grade it as the spec it is. An umbrella carries
+  section, so its seats grade it as the spec it is. Its Interfaces &
+  boundaries describe; a contract between children that must bind is one
+  of its Constraints & invariants. An umbrella carries
   no `Deferred to implementation:` marker: detail it leaves open goes to
   the entry of the child that owns it. A nested umbrella's preamble names
   its parent (D7). Rejected: a frozen parent amended from its children,
@@ -90,12 +92,14 @@ seen on crucible itself and on one other project crucible ran on:
   that existed before its umbrella could never sit there).
 - **D4 — Review scaled to content** [LOAD-BEARING]. An umbrella carrying
   Decisions, Constraints & invariants or Interfaces & boundaries takes a
-  spec campaign; one holding only Intent and Acceptance is approved by
-  the operator, as a lane note is: drafted, self-reviewed and shown with
-  the proposal at step 4, and written as approved. Brainstorming proposes
-  which at step 4, the operator rules, and the ruling is an entry in the
-  brainstorm decision record. Neither takes a plan phase or SDD: children
-  write the plans.
+  spec campaign; one without them (Mechanism sketches aside) is approved
+  by the operator, as a lane note is: drafted, self-reviewed and shown
+  with the proposal at step 4, and written as approved. Brainstorming
+  proposes which at step 4, the operator rules, and the ruling is an
+  entry in the brainstorm decision record. Neither takes a plan phase or
+  SDD: children write the plans. This classifies an umbrella at its
+  birth; the operator's ruling on a later binding change (D8) says
+  whether that change takes a campaign.
 - **D5 — The umbrella lands before its first child,** through
   `crucible:finishing-a-development-branch`, so children branch from a
   base that holds it and other sessions can read it. Before it lands,
@@ -108,44 +112,55 @@ seen on crucible itself and on one other project crucible ran on:
 - **D6 — A child's brainstorm takes its entry as input.** The entry is
   an incoming document in brainstorming's sense: what it settles stays
   settled, and the dialogue asks only what it leaves open. The child's
-  route is proposed as for any feature. A feature whose brainstorm finds
-  it must split before its spec is reviewed removes that spec and writes
-  `umbrella.md` in its place (back to step 4). One found to need
-  splitting later — after its campaign, or once its lane note is
-  committed — is an operator decision ask: the feature is abandoned, its
-  entry is marked `dropped` naming the new umbrella, and a new umbrella
-  with its own slug takes the work up, listing the abandoned feature by
-  path.
+  route is proposed as for any feature. A feature found to need splitting
+  before its spec campaign closes removes its spec and writes
+  `umbrella.md` in its place (back to step 4; a campaign in progress
+  stops). One found to need splitting later — after its campaign, or once
+  its lane note is committed — is an operator decision ask: the feature is
+  abandoned, and a new umbrella with its own slug takes the work up,
+  listing the abandoned feature by path. In the parent, the new umbrella
+  is entered in the old entry's place, carrying its obligation, and
+  carries the parent's umbrella line; entries that waited on the old one
+  wait on it; the old entry stays, marked `dropped` and naming it.
 - **D7 — The umbrella line.** A child's spec, folded document, lane note
   or umbrella carries in its preamble a line ``Umbrella: `<path>` ``.
   What binds the child then includes its own entry, and the umbrella's
   Constraints & invariants and [LOAD-BEARING] marks, and, through the
   umbrella's own line, its parent's, up the chain. Every seat that
   receives binding content reads them there as binding, in the worktree
-  it works in, at the commit its review reads. A successor — by
+  it works in, at the commit its review reads, and a change to that
+  binding content within the range it reviews is a finding. A successor
+  — by
   supersede, unfold or the very-small lane's upgrade hatch — carries its
   predecessor's line. A child that existed before its umbrella carries no
   line and is bound by nothing in it.
 - **D8 — Edits.** Lightly held edits ride a child's branch and land with
-  it: adding a child, rewording a not-yet-started child's entry, and the
-  child's own mark (D9). A change to the umbrella's binding content — its
-  Constraints & invariants, its [LOAD-BEARING] marks, or a started
-  child's entry — is a decision ask to the operator, naming every open
-  umbrella and every child in flight beneath it, at every depth. On the
-  operator's ruling it lands at once on a branch of its own: the operator
-  approves its diff, and it lands through
-  `crucible:finishing-a-development-branch`. Each child in flight then
-  takes in the base before its next dispatch, or the operator rules it
-  unaffected; a child whose spec the change contradicts takes a scoped
-  amendment. Dropping a child, on the operator's word, lands the same
-  way.
+  it: adding a child; rewording an entry whose child has not started (a
+  child has started once its feature folder is born); a child's
+  clarification of its own entry, stated in its spec, that changes
+  nothing another entry waits on; edits to the umbrella's Intent,
+  unmarked Decisions and Interfaces & boundaries; and the child's own
+  mark (D9). A change to the umbrella's binding content — its
+  Constraints & invariants, its [LOAD-BEARING] marks, or any other change
+  to a started child's entry — is never made on a child's branch: it is a
+  decision ask to the operator, naming every open umbrella and every
+  child in flight beneath it, at every depth. On the operator's ruling it
+  lands at once on a branch of its own: the operator approves its diff,
+  and it lands through `crucible:finishing-a-development-branch`. Each
+  child in flight then takes in the base by a merge, never a rebase, at
+  its next task or round boundary, or the operator rules it unaffected. A
+  child the change contradicts amends: a spec or folded document by a
+  scoped amendment, a lane note by the lane's own operator-approved note
+  change, re-pinned in its ledger, or by its upgrade hatch. Dropping a
+  child, on the operator's word, lands the same way.
 - **D9 — Each entry carries a mark.** A child marks its own entry
   `landed` in the commit that lands it, written on its own branch before
   its finish; a nested umbrella's entry is marked `umbrella` when it
   lands (D5); a dropped child's entry `dropped`, with its reason. A child
   that existed before its umbrella is entered with its mark when the
-  umbrella is written, or once it has landed if it is still in flight
-  then. An entry with no mark has not landed. A mark touches only its own
+  umbrella is written; one still in flight then is entered unmarked, and
+  the next branch that edits the umbrella after it has landed marks it.
+  An entry with no mark has not landed. A mark touches only its own
   entry, and blank lines between entries keep siblings' marks from
   conflicting in git. Rejected: state derived from which folders and
   branches exist (a nested umbrella's landing, an unrelated feature
@@ -159,8 +174,10 @@ seen on crucible itself and on one other project crucible ran on:
 - **D11 — Resuming an effort.** A session continuing an effort reads the
   umbrella and takes the first entry with no mark whose dependencies have
   landed — marked `landed`, or `umbrella` and closed; a `dropped`
-  dependency is the operator's call — and confirms with the operator that
-  it is not in flight elsewhere. Agent memory holds at most a pointer to
+  dependency is the operator's call — descending into an entry marked
+  `umbrella` that is not closed, once its own dependencies have landed,
+  to take its next entry by the same rule; and it confirms with the
+  operator that the entry is not in flight elsewhere. Agent memory holds at most a pointer to
   the umbrella.
 - **D12 — `umbrella.md` stays in the merged tree.** Before an umbrella's
   own pull request, finishing does not offer to remove `umbrella.md`:
@@ -174,8 +191,9 @@ seen on crucible itself and on one other project crucible ran on:
    through a copied block.
 2. Each rule this feature adds to skill text is stated once, at the site
    its reader acts from (§ Interfaces & boundaries assigns each); other
-   skill text points there. Documentation and decision records describe
-   and cite it.
+   skill text points there. The one exception is the clause on what
+   binds, which every statement of what binds carries. Documentation and
+   decision records describe and cite a rule.
 3. A shipped spec is never silently edited, as before. An umbrella is
    edited in place until it closes, by its own campaign's fixes before it
    lands and by the edits and marks of D8 and D9 after, and is frozen
@@ -213,7 +231,8 @@ owns.
   points there.
 - **What binds, at every statement of it.** Each site below gains the
   clause that the child's own entry and its umbrella's binding content
-  bind too, up the chain, read in the seat's worktree:
+  bind too, up the chain, read in the seat's worktree, and that a change
+  to them within the reviewed range is a finding:
   - the templates' binding-content statements and read scopes:
     `skills/redteaming/seat-prompt.md`, `terminal-pass-prompt.md`,
     `skills/requesting-code-review/code-reviewer.md`,
@@ -240,17 +259,20 @@ owns.
   are among a binding-receiving seat's input paths.
 - **`skills/redteaming/SKILL.md`** § Dispatch composition: its seat
   input list admits the umbrellas; § Exit gains the umbrella campaign's
-  handoff (landing, then the first child's brainstorm).
-- **`skills/redteaming/references/flip-paths.md`** owns the in-flight
-  child's side of D8 — a binding change to its umbrella: take in the
-  base before the next dispatch, and a scoped amendment where the
-  child's spec contradicts it — and the successor's umbrella line for a
-  supersede or an unfold (D7).
+  handoff — landing, by the steps the reference states (D5), then the
+  first child's brainstorm.
+- **`skills/redteaming/references/flip-paths.md`** owns a child
+  controller's side of D8 and D6: raising a binding change to its
+  umbrella, or a late split, as a decision ask, never as an umbrella edit
+  on the child's branch; receiving a binding change — taking in the base
+  and amending where contradicted, as D8 states; and the successor's
+  umbrella line for a supersede or an unfold (D7).
 - **`skills/subagent-driven-development/references/very-small-lane.md`**,
   its upgrade hatch: the successor carries the note's umbrella line (D7).
 - **`skills/subagent-driven-development/SKILL.md` § Finish** owns the
-  `landed` mark's timing: a child whose spec carries an umbrella line
-  marks its entry before the suite runs (D9).
+  `landed` mark's timing: a child whose spec, folded document or lane
+  note carries an umbrella line marks its entry before the suite runs
+  (D9).
 - **`skills/finishing-a-development-branch/SKILL.md`**, its pull-request
   records ask, owns D12.
 - **`AGENTS.md`**, the `docs/crucible/` line, and **`README.md`**
@@ -281,8 +303,9 @@ new value.
 ## Acceptance
 
 1. **Each rule once in skill text.** For each rule in § Interfaces &
-   boundaries, a search by its key terms over `skills/` finds it stated
-   at its owning site and pointed to elsewhere; `AGENTS.md`, `README.md`,
+   boundaries, the what-binds clause aside, a search by its key terms over
+   `skills/` finds it stated at its owning site and pointed to elsewhere;
+   `AGENTS.md`, `README.md`,
    `docs/*.md` and `docs/decisions/` describe and cite it. One-time
    check, recorded as the searches and their output; the branch reviewer
    checks it too.
@@ -329,4 +352,5 @@ umbrella run on it.
 - The templates' clause, beside "any preamble convention it declares
   binding": "and, where its preamble names an umbrella, the child's own
   entry and that umbrella's Constraints & invariants and [LOAD-BEARING]
-  marks, up the chain".
+  marks, up the chain; a change to them within the reviewed range is a
+  finding".
