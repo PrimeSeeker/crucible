@@ -169,6 +169,12 @@ adapters are in `docs/dual-runtime.md`.
   the spec and the plan (`design.md` and `plan.md`; `folded.md` or
   `note.md` on the two small routes). They are committed on the feature
   branch, so they merge with the work.
+- **An umbrella,** `umbrella.md` in a feature folder of its own, for an
+  effort too large for one feature: what its features share, what each
+  delivers, in what order, and which have landed. Each feature names it
+  and is reviewed against it. Unlike a spec, it stays open after it
+  merges, updated as its features land, until each has landed or been
+  dropped.
 - **A workspace,** `.crucible/<feature-name>/`, holding the review rounds'
   records, agents' reports and the execution ledger. It is untracked
   (crucible writes a `.crucible/.gitignore` that ignores it all) and is
@@ -271,6 +277,8 @@ both hosts.
   and a recommendation.
 - **Route** — standard, folded or very small (§ How it works).
 - **Feature folder** — the committed folder with a feature's spec and plan.
+- **Umbrella** — the committed document holding an effort of several
+  features: what they share, what each delivers, and which have landed.
 - **Workspace** — the untracked folder with a feature's process records,
   deleted at finish.
 - **Host map** — the file that maps crucible's operations to one host's

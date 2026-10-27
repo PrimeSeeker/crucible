@@ -24,7 +24,10 @@ to install it: `README.md`; the layout: `docs/dual-runtime.md`.
   log. A resolved item is deleted; a partly resolved one keeps only what
   remains open.
 - `docs/crucible/<date>-<slug>/` — one folder per feature: its spec, plan or
-  lane note. Frozen once the feature ships; follow-ups go to the backlog.
+  lane note, or, for an effort of several features, its umbrella
+  (`umbrella.md`). Frozen once the feature ships; follow-ups go to the
+  backlog. An umbrella is edited in place until it closes
+  (`skills/brainstorming/references/umbrellas.md`).
 
 ## You are editing the process you run under
 

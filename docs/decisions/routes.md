@@ -5,7 +5,11 @@
 A feature takes one of three routes, recommended at brainstorming's
 present-the-design step, confirmed or vetoed by the operator there, and
 recorded in the brainstorm decision record. The controller never
-declares a small route, and no feature enters one mid-flight.
+declares a small route, and no feature enters one mid-flight. An
+umbrella, the document holding an effort of several features, takes
+none of the three: it is campaigned or approved by what it carries, and
+each of its children takes a route of its own
+(`docs/decisions/umbrellas.md`).
 
 - **Standard:** spec, spec campaign, plan, the plan's verification round,
   execution with per-task review, branch review.
@@ -109,6 +113,9 @@ small route or the waiver for its work.
 
 ## Changes
 
+- 2026-10-28: an umbrella takes none of the three routes, since it has
+  no plan or code of its own; its review follows what it carries, and
+  its children take routes of their own.
 - 2026-10-13: the folded lane: spec and plan in one document, every
   review instrument unchanged, the route known from `folded.md` and the
   decision record.

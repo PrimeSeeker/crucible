@@ -14,9 +14,13 @@ every later consumer finds it by a resolve step that creates nothing and
 reports none or several (`skills/redteaming/references/formats.md`
 § Feature folder). A shipped spec is never silently edited: it stays as
 the forensic record, and a route that replaces it writes a successor
-beside it. In a pull request, finishing lists the files the branch adds
-to its feature folder and asks the operator whether they go in, saying
-first that the branch's commits carry them anyway.
+beside it. The exception is an umbrella's `umbrella.md`, edited in place
+after it lands until it closes (`docs/decisions/umbrellas.md`). In a pull
+request, finishing lists the files the branch adds to its feature folder
+and asks the operator whether they go in, saying first that the branch's
+commits carry them anyway; an umbrella's own pull request leaves
+`umbrella.md` off that list, so it stays in the merged tree
+(`crucible:finishing-a-development-branch § Step 5: Execute Choice`).
 
 **The workspace.** A feature's process records (round records, seat
 reports, the execution ledger, scratch) live in `.crucible/<slug>/` at the
@@ -27,7 +31,10 @@ and confirmed with `git check-ignore` on a file path
 layout); no host `.gitignore` is edited. Nothing in it is committed or
 archived, and `.crucible/` holds workspaces only. SDD Setup looks for the
 workspace before its worktree and provisioning steps, and continues in
-the checkout that holds it. A workspace lost mid-feature restarts the
+the checkout that holds it. A workspace's life has three ends, SDD
+Finish, an umbrella's landing and the feature's abandonment, and each
+deletes it (`skills/redteaming/references/formats.md` § Feature
+workspace root and layout). A workspace lost mid-feature restarts the
 in-flight phase from the committed spec or plan and `git log`.
 
 **No committed summary.** A feature's committed record is its spec, its
@@ -37,7 +44,8 @@ records' process rules still bind, and their layout is guidance. The
 session transcripts hold the raw records for as long as the host keeps
 them (`README.md` § What it writes into your repository).
 
-**Finish.** SDD Finish runs in a fixed order: record checks, the full
+**Finish.** SDD Finish runs in a fixed order: record checks, the
+feature's mark in its umbrella where an umbrella names it, the full
 suite or the project's declared merge gate on HEAD, a close readout to
 the operator, deletion of `.crucible/<slug>/` and nothing else, then
 finishing; any loop activity restarts it at the record checks. A red run
@@ -84,6 +92,14 @@ of the work, since the plan's pins need commits, and a mode in which they
 are never committed is `docs/backlog/records-retention-config.md`.
 (Basis: the maintainer's preference.)
 
+An umbrella is the exception to that ask, since its children read it,
+their marks included, on the base they branch from and land on: removed
+from the merged tree, it would be gone for every child after it. The
+trade-off is that a project keeping feature folders out of its merged
+tree still keeps each `umbrella.md`; a child's own folder is asked about
+like any feature's. (Basis: judgment, accepted by the maintainer,
+2026-10-27.)
+
 ### The workspace
 
 Upstream's SDD keeps a per-plan workspace,
@@ -110,6 +126,12 @@ earlier phase settled is committed. A configuration file under
 crucible's own repository and in the one other project crucible had run
 on, and a project states its wishes in its own instruction files, which
 outrank skills. (Basis: measured; judgment, accepted by the maintainer.)
+
+An umbrella's landing became the third end on 2026-10-27. An umbrella
+takes no plan and no execution, so it never reaches SDD Finish, and its
+workspace would otherwise outlive it; it is deleted before the landing,
+after the campaign records are checked, as SDD Finish deletes a
+feature's. (Basis: judgment, accepted by the maintainer.)
 
 ### No committed summary
 
@@ -143,6 +165,11 @@ left to the operator or the repository's conventions. (Basis: external,
 for upstream; judgment, accepted by the maintainer; measured, by the
 maintainer's report, for the run times.)
 
+The umbrella mark, added on 2026-10-27, comes before the suite so that
+the suite runs on the tree that lands, mark included; a mark committed
+after it would land untested. (Basis: judgment, accepted by the
+maintainer.)
+
 Repository conventions come first in a pull request (2026-10-08), with no
 attempt to detect who owns the repository; a convention that rewrites
 commits already made, such as sign-offs, is a history rewrite and the
@@ -160,6 +187,10 @@ worktree. (Basis: judgment, accepted by the maintainer.)
   project (§ Why).
 - **Living specs** kept true after the feature ships: a shipped spec is a
   forensic record, and durable knowledge goes to documentation (§ Why).
+  The rejection covers a feature's spec once its feature ships. An
+  umbrella is edited in place after it lands, because it holds an open
+  effort's current state, and is frozen once it closes
+  (`docs/decisions/umbrellas.md`).
 - **A configuration file under `.crucible/`**: no repository crucible
   ran on ever used one, and instruction files already outrank skills
   (§ Why).
@@ -174,6 +205,13 @@ worktree. (Basis: judgment, accepted by the maintainer.)
 
 ## Changes
 
+- 2026-10-28: umbrellas (`docs/decisions/umbrellas.md`): an umbrella's
+  landing as the workspace's third end, since an umbrella never reaches
+  SDD Finish; the umbrella mark in SDD Finish before the suite, so the
+  suite runs on the tree that lands; `umbrella.md` kept off the
+  pull-request ask, since children read it from the merged tree; and the
+  living-specs rejection scoped to a feature's spec after it ships, since
+  an umbrella stays open after it lands.
 - 2026-10-12: the feature folder: spec and plan committed on the feature
   branch under a default root a project may override, found by an exact
   birth and resolve match, a shipped spec never silently edited, and the
