@@ -132,7 +132,8 @@ seen on crucible itself and on one other project crucible ran on:
   reviews, a change to the umbrella's Constraints & invariants or
   [LOAD-BEARING] marks is a finding, and a change to the child's own
   entry is one unless it is the clarification D8 allows and the child's
-  spec states it. A successor
+  spec states it, or the child's own mark (D9); a binding change taken in
+  from the base under D8 is not. A successor
   — by
   supersede, unfold or the very-small lane's upgrade hatch — carries its
   predecessor's line. A child that existed before its umbrella carries no
@@ -163,7 +164,9 @@ seen on crucible itself and on one other project crucible ran on:
   lands (D5); a dropped child's entry `dropped`, with its reason. A child
   that existed before its umbrella is entered with its mark when the
   umbrella is written; one still in flight then is entered unmarked, and
-  marks its entry at its own finish like any child.
+  marks its entry at its own finish: it carries no umbrella line, so it
+  merges in the base, which holds the umbrella, and marks the entry that
+  names its slug.
   An entry with no mark has not landed. A mark touches only its own
   entry, and blank lines between entries keep siblings' marks from
   conflicting in git. Rejected: state derived from which folders and
@@ -277,7 +280,8 @@ owns.
 - **`skills/subagent-driven-development/SKILL.md` § Finish** owns the
   `landed` mark's timing: a child whose spec, folded document or lane
   note carries an umbrella line, or whose slug an open umbrella's
-  Children list names, marks its entry before the suite runs (D9).
+  Children list on the base names — merging in the base first where its
+  tree lacks that umbrella — marks its entry before the suite runs (D9).
 - **`skills/finishing-a-development-branch/SKILL.md`**, its pull-request
   records ask, owns D12.
 - **`AGENTS.md`**, the `docs/crucible/` line, and **`README.md`**
