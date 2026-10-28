@@ -2,50 +2,66 @@
 
 ## Intent
 
-**Problem.** Crucible spends most of its review before implementation,
-on artifacts that are harder to reason about than code, and its later
-campaign rounds mostly fix wording and the drift earlier fixes brought
-in. On crucible's own umbrella-specs feature (2026-10-28), four spec
-rounds and a terminal pass missed the one structural gap; an
-implementer and the branch review found it
-(`docs/backlog/campaign-early-stop-investigation.md`).
+**Problem.** In the maintainer's assessment, crucible spends most of its
+review before implementation, on artifacts that are harder to reason
+about than code, and its later campaign rounds mostly fix wording and
+the drift earlier fixes brought in. On crucible's own umbrella-specs
+feature (2026-10-28), four spec rounds and a terminal pass missed the
+one structural gap; an implementer and the branch review found it
+(`docs/backlog/campaign-early-stop-investigation.md`). The same item
+records the counter-evidence: a recount of past campaigns found
+stopping earlier as untested as stopping later, and at least 7 of 75
+stop calls overturned, reopened or flagged `CONCLUSION-CHANGING`.
 
-Its seats meanwhile grade against the spec as given:
+Its seats meanwhile grade mostly against the spec as given. Some room
+exists: the spec contract holds unmarked decisions lightly
+(`skills/brainstorming/SKILL.md` § Spec contract), and redteam seats
+have a `## Questions` section and may find that a binding item is
+itself wrong (`skills/redteaming/seat-prompt.md`). What is missing:
 
-- [LOAD-BEARING] marks are used liberally
-  (`docs/backlog/load-bearing-marks-audit.md`), and brainstorming
+- The maintainer judges [LOAD-BEARING] marks to be used too liberally;
+  `docs/backlog/load-bearing-marks-audit.md` counts 0 to 7 per recent
+  feature and has not counted how often one bound anything. Brainstorming
   records an operator's answer as settled (`skills/brainstorming/SKILL.md`
-  § Workspace provisioning (brainstorm exit)), while most such answers mean
-  "no strong preference; this until new evidence arrives".
+  § Workspace provisioning (brainstorm exit)), while most such answers
+  mean "no strong preference; this until new evidence arrives".
 - The branch reviewer cites file:line for every finding and its output
   format has no section for questions
   (`skills/requesting-code-review/code-reviewer.md` § Calibration,
   § Output Format), so a doubt about the premise has no form to take.
 - Improvements and style are not findings for any reviewer
   (`docs/backlog/review-improvements.md`).
-- No seat sees the operator's original request, so none can check the
-  spec's Intent against what was asked for.
+- No seat sees the operator's original request, and no step records
+  it, so none can check the spec's Intent against what was asked for.
 
-The very-small lane runs no review before code, and nothing independent
-checks its premises. The effort began with that question: is routing
-features with potentially non-trivial impact through the very-small
-lane sound?
+The arrangement choices (review before implementation and its width,
+the plan's form, per-task review, direct or subagent execution) are
+correlated but need not always align, in the maintainer's observation;
+the three routes fix them together.
+
+The very-small lane runs no review before code. On it, the branch
+reviewer's Lane Fit section checks one premise, that the change keeps
+the lane's qualifying shape, and an EXCEEDS SHAPE statement opens the
+upgrade hatch (`skills/requesting-code-review/code-reviewer.md`,
+`skills/subagent-driven-development/references/very-small-lane.md`).
+Nothing checks the goal premise: whether the note's Intent is what was
+asked. The effort began with that question: is routing features with
+potentially non-trivial impact through the very-small lane sound?
 
 **Goals.**
 
 - **G1.** Answer the origin question: when a feature with non-trivial
   impact may take the very-small lane, and an independent check of the
-  lane's premises.
+  lane's goal premise beside the existing Lane Fit check.
 - **G2.** Move review load from artifacts to code wherever overturning
   a major mechanism after implementation is unlikely.
 - **G3.** Let seats and implementers say that the spec, or the goal
   behind it, is wrong, and voice misgivings with no specific issue to
   point to, without either costing a fix wave.
-- **G4.** Hold decisions lightly by default; a mark names what builds on
-  the decision it marks.
-- **G5.** Make the arrangement choices separable, with named presets:
-  review before implementation and its width, the plan's form, per-task
-  review, and direct or subagent execution.
+- **G4.** Record approvals as lightly held by default, as the spec
+  contract already holds unmarked decisions; a mark names what builds
+  on the decision it marks.
+- **G5.** Make the arrangement choices separable.
 
 **Non-goals.**
 
@@ -54,10 +70,16 @@ lane sound?
   them); their mandate changes only if `seat-voice`'s probes show it
   filtering out problems it could see.
 - A redteam round on the very-small lane.
-- A measurement or calibration programme.
+- A standing measurement or calibration programme. One-off probes inside
+  a child, such as `seat-voice`'s, are not one.
 - The skill-text rewrite (`docs/backlog/skill-text-rewrite.md`) and the
   umbrella follow-ups (`docs/backlog/umbrella-followups.md`), which stay
   separate items.
+- The backlog follow-ups no entry below names, which stay in the
+  backlog: the digest at the first round close and caps as cost bounds
+  (`docs/backlog/lane-entry-and-downshift.md`),
+  `docs/backlog/decision-ask-framing.md` and
+  `docs/backlog/reviewer-research-reach.md`.
 
 ## Decisions
 
@@ -78,29 +100,44 @@ All lightly held.
 - **U3. The overturn question.** "After implementation, is overturning
   a major mechanism still plausible?" Additions and smaller corrections
   do not count. The question selects the arrangement and stops review
-  before implementation. Basis: the maintainer's proposed trigger.
+  before implementation. Basis: the maintainer's proposed trigger,
+  adopted as a hypothesis under U1; the recount above neither supports
+  nor refutes it.
 - **U4. Doubts without a specific issue are an output of their own.**
-  They are not findings: no severity, no fix wave. A seat raises at most
-  a few, and none is the normal case. They reach the operator through a
-  readout or the branch review; a task reviewer's go to the branch
-  reviewer as leads. Basis: the maintainer's proposal ("your intents
-  don't mean what you seem to think they do" is not a finding, but
+  They are not findings: no severity, no fix wave, and none is the
+  normal case. Basis: the maintainer's proposal ("your intents don't
+  mean what you seem to think they do" is not a finding, but
   potentially useful).
-- **U5. Size is tracked, not capped.** Each child's spec states its net
-  word change to the skills and what it removed; the Children list keeps
-  the running total. Nothing is triggered by it. Basis: the maintainer's
-  ruling, with wide priors on this effort's natural size.
+- **U5. Size is tracked, not capped.** Each child's landing states its
+  net word change to the skills and what it removed, as the prose-budget
+  rule already asks of every commit that grows a skill; the effort's
+  total is the change in `tests/prose-budget.txt` since this umbrella
+  landed. Nothing is triggered by it. Basis: the maintainer's ruling,
+  with wide priors on this effort's natural size.
 - **U6. This effort applies U3 now.** Its own campaigns stop once
-  overturning a major mechanism is no longer plausible, recording that
-  judgment and its reason at each round close, ahead of `arrangements`
-  writing it into the process. Basis: the maintainer's waiver.
+  overturning a major mechanism is no longer plausible, ahead of
+  `arrangements` writing it into the process; the round readout's
+  statement of whether the round drove structural change carries that
+  judgment and its reason. Until `seat-voice`'s premise check reaches
+  the running install, the existing full-scope branch review is the only
+  safeguard after code: the risk accepted with the waiver. Basis: the
+  maintainer's waiver.
+- **U7. The arrangement choices become separable.** Review before
+  implementation and its width, the plan's form, per-task review, and
+  direct or subagent execution are chosen per feature rather than fixed
+  together by a route. The form (presets over the choices, fields of
+  the step-4 route proposal, or another) is `arrangements`'s to choose.
+  Basis: the maintainer's proposal ("several separate decisions …
+  correlated, but don't have to be always aligned").
 
 ## Constraints & invariants
 
 - **C1.** The branch review stays mandatory on every arrangement, at
-  full scope and with its premise check. Pre-implementation review
-  shrinks only because the review after code stays and widens;
-  `arrangements` may make any other review optional, never this one.
+  full scope, and from `seat-voice`'s landing on with the premise check
+  it adds. Pre-implementation review shrinks only because the review
+  after code stays and widens; `arrangements` may make any other review
+  optional, never this one. U6 is the one exception, for this effort's
+  own campaigns.
 
 ## Interfaces & boundaries
 
@@ -110,12 +147,12 @@ All lightly held.
   grade against, and what a premise-level finding can lead to.
   `arrangements` consumes the correction path as the safety valve for
   stopping review early.
-- **`seat-voice` provides** the misgivings channel, the premise-level
-  mandate at the branch review (the very-small lane's included), the
-  original request as a seat input, and the improvements ruling.
-  `arrangements` consumes the branch review's premise check as the
-  condition for lightening review before implementation, so G1 is the
-  two children's joint result.
+- **`seat-voice` provides** the U4 channel, the premise-level mandate
+  at the branch review on every arrangement, the original request as an
+  input to redteam seats and the branch reviewer, and the improvements
+  ruling. `arrangements` consumes the branch review's premise check as
+  the condition for lightening review before implementation, so G1 is
+  the two children's joint result.
 - **Shared files.** All three children edit the same skills (the
   reviewer templates, subagent-driven-development, the lane references,
   brainstorming). They run in order, each brainstormed from a base that
@@ -129,35 +166,52 @@ The Children list, in order:
   for a spec that code shows wrong, routine, recorded and lighter than a
   supersede; guidance for [LOAD-BEARING] marks per U2; how strongly an
   approval is recorded, in the brainstorm decision record and in
-  `docs/decisions/`. Takes up `docs/backlog/load-bearing-marks-audit.md`.
+  `docs/decisions/`; decision-record tasks take the brainstorm decision
+  record as an input (from `docs/backlog/review-catch-and-implementers.md`).
+  Takes up `docs/backlog/load-bearing-marks-audit.md`, its count done in
+  context gathering or dropped, as the child's brainstorm decides.
   Waits on nothing.
 
-- `seat-voice` — first two probes: a differential probe, one fresh
-  default-role seat with no rubric on 6–10 past task reviews that came
-  back clean or with only minors, from crucible and from one other
+- `seat-voice` — first two one-off probes: a differential probe, one
+  fresh default-role seat with no rubric on 6–10 past task reviews that
+  came back clean or with only minors, from crucible and from one other
   project, the latter reported as aggregate figures only; and an escape
   analysis of later fixes on git history. Then: a premise-level mandate
-  for the branch review (the very-small lane's included) and for redteam
-  seats, such findings reaching the operator as decision asks without
-  opening a fix wave; the operator's original request as a seat input,
-  for an independent restatement of the goal; the misgivings channel of
-  U4 across seats, task reviewers and implementers included; the format
-  barriers (file:line on every finding, the branch reviewer's missing
-  question section); the improvements ruling; implementers' standing;
-  reviewers' research reach. Task reviewers' mandate changes only on
-  the probes' evidence. Takes up `docs/backlog/review-improvements.md`,
-  `review-catch-and-implementers.md`, `reviewer-research-reach.md` and
-  `decision-ask-framing.md`. Waits on `binding-and-marks`.
+  for the branch review on every arrangement and for redteam seats,
+  extending what exists (seats' Questions, Lane Fit, a binding item
+  found wrong) rather than adding beside it, such findings reaching the
+  operator as decision asks without opening a fix wave; the operator's
+  original request, recorded at brainstorming, as an input to redteam
+  seats and to the branch reviewer, for an independent restatement of
+  the goal; the U4 channel across seats, task reviewers and
+  implementers, a few items at most per seat, reaching the operator
+  through a readout or the branch review, a task reviewer's going to the
+  branch reviewer as leads; the format barriers (file:line on every
+  finding, the branch reviewer's missing question section); the
+  improvements ruling; implementers' standing; a trace check for rules
+  tied to a trigger (from `docs/backlog/review-catch-and-implementers.md`).
+  Task reviewers' mandate changes only on the probes' evidence. Takes up
+  `docs/backlog/review-improvements.md` and
+  `review-catch-and-implementers.md`. Waits on `binding-and-marks`.
 
-- `arrangements` — the four arrangement choices as separate settings,
-  with named presets and the invalid combinations stated; the
-  controller proposes a preset naming its departures and the operator
-  confirms; U3 as the selector and the stop trigger; the very-small
-  lane's entry test, and the origin question's answer recorded in
-  `docs/decisions/`, closing G1; the folded lane kept, absorbed into a
-  preset or retired; per-task review as a plan choice. Takes up
-  `docs/backlog/campaign-early-stop-investigation.md` and
-  `lane-entry-and-downshift.md`. Waits on `seat-voice`.
+- `arrangements` — the arrangement choices made separable per U7, in a
+  form the child chooses, with the invalid combinations stated and the
+  existing routes re-expressed in its terms; the controller proposes an
+  arrangement naming its departures from the usual one, and the operator
+  confirms; U3 as the selector and the stop trigger, and how it relates
+  to the very-small lane's current qualifying shape; the origin
+  question's answer recorded in `docs/decisions/`, closing G1; the
+  folded lane kept, absorbed or retired; per-task review as a plan
+  choice (from `docs/backlog/review-catch-and-implementers.md`). Takes
+  up `docs/backlog/campaign-early-stop-investigation.md` and the
+  downshift follow-up of `lane-entry-and-downshift.md`. Waits on
+  `seat-voice`.
 
-Each child's own Acceptance carries the checks. Running word total
-(U5): none landed yet.
+Each child's own Acceptance carries the checks. A child taking up a
+backlog item resolves it or trims it to what stays open, and its spec
+says which follow-ups it closes.
+
+## Mechanism sketches
+
+None at umbrella level: design detail is each child's, in its entry and
+its own spec.
