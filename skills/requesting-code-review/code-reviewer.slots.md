@@ -4,12 +4,12 @@
 
 - [WORKTREE_PATH]: the absolute path to the worktree holding the reviewed branch.
 - [PLUGIN_ROOT]: the absolute path of crucible's plugin root, the one you read this card from.
-- [MANDATE_REMINDER]: one line restating this review's binding output: full-scope findings with staked severity and file:line evidence, the ledger triage, and a merge verdict, written to this pass's report file, and a reply of the merge verdict and that file's path; in standalone mode, the report as the final message.
+- [MANDATE_REMINDER]: one line restating this review's binding output: the goal check, full-scope findings with staked severity, evidence and location, questions, the ledger triage with a ruling per lead, and a merge verdict, written to this pass's report file, and a reply of the merge verdict and that file's path; in standalone mode, the report as the final message.
 - [SPEC_POINTER]: the spec path at its pinned revision, the pointer the plan's header carries ("none" where the branch has no spec) — a pointer, never a copied block. On the very-small lane, the lane note at its pinned revision.
 - [UMBRELLAS]: where the spec's preamble carries an `Umbrella:` line (on the very-small lane, the note's), the umbrella it names and each one up the chain, by path; else "none".
 - [DESCRIPTION]: a brief summary of what was built.
 - [REQUIREMENTS]: what it should do — plan file path, task text, or requirements; on the very-small lane, the lane note at its pinned revision.
-- [LEDGER_MINORS]: the SDD ledger's deferred minors **and the plan's unresolved routed deferred items**, verbatim, each labelled with its owning task; "none" in standalone mode.
+- [LEDGER_MINORS]: the SDD ledger's deferred minors, leads included, **and the plan's unresolved routed deferred items**, verbatim, each labelled with its owning task; "none" in standalone mode.
 - [RULINGS]: the adjudication rulings from execution and the branch review's own so far, verbatim; on the very-small lane, followed by the ledger's `Departure:` lines, verbatim; "none" in standalone mode.
 - [REPORT_FILE]: this pass's output, in the feature workspace: `sdd/branch-review/pass-<k>.md` for full-scope pass <k>. A replacement seat adds `-r<R>` before `.md`, as in `sdd/branch-review/pass-<k>-r<R>.md`. "none" in standalone mode, where the report is the final message.
 - [BASE_SHA]: the starting commit — the merge base, never `HEAD~1`.
