@@ -108,7 +108,7 @@ figures below are the controller's summary of them):
 - A premise-finding mandate for task reviewers. On code the probe found
   the rubric hiding nothing; on prose the catches it missed were things
   the rubric neither asks for nor forbids (attribution, premise,
-  dropped caveats), two of the three on the bounded role. `Questions`
+  dropped caveats), one of the three on the bounded role. `Questions`
   (D3), the default role (D6) and the decision-record basis check
   `binding-and-marks` added cover them without a new finding mandate.
 - The goal check and `Questions` for the terminal pass: it checks the
