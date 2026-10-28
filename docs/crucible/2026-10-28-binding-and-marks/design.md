@@ -156,7 +156,10 @@ All lightly held, as the umbrella's U2 makes the default.
   rulings and the close readout lists it. In the plan phase a contained
   amendment lands as an item of that phase's fix list, is named in its
   readout as a technical call, and is seeded into the ledger at the
-  phase's close. A change that is not contained keeps the operator's
+  phase's close; SDD's setup seeds any the plan record names that the
+  ledger lacks, as it seeds routing rows. A contained amendment reaches
+  the operator through those readouts, not the design digest, which
+  records decision asks. A change that is not contained keeps the operator's
   confirmation, and a plan conflict that is a design judgment still goes
   to the operator. Reversing a contained amendment is a scoped amendment
   the operator confirms, made before the branch lands. Producers: an
@@ -191,14 +194,17 @@ All lightly held, as the umbrella's U2 makes the default.
   call" included, and means "this until new evidence arrives"; `firm` is
   recorded only on the operator's explicit word, never inferred from an
   approval. A route entry (the fold, the very-small lane) confirms the
-  route by being present, whatever its status. A `firm` decision that
+  route when its status is `accepted` or `firm`; an `open` one confirms
+  nothing. A `firm` decision that
   reaches a spec or an umbrella is stated there as the operator's firm
   preference, and binds (D1). It is not thereby marked: a mark records
   what builds on a decision, `firm` the operator's preference. Every
   operator ruling on a decision ask after the brainstorm, in a campaign,
   the plan phase or execution, is entered in the brainstorm decision
-  record too, with its status; that is stated once, where the record is
-  defined. In `docs/decisions/`, a record states a position as held
+  record too, with its status. That rule is stated once, in
+  `skills/redteaming/references/formats.md` beside the record's place in
+  the workspace, which both controllers read, and each site that records
+  an operator ruling points to it. In `docs/decisions/`, a record states a position as held
   firmly only where the maintainer said so; "the maintainer's
   preference" names a position's origin, not its strength, and no
   existing record is re-read as firm. Basis: the maintainer's
@@ -245,21 +251,29 @@ All lightly held, as the umbrella's U2 makes the default.
   mark-touching rulings:
   - `skills/redteaming/references/flip-paths.md`: the scoped amendment's
     confirmation by the controller where contained, the containment
-    test (C3), and plan-patching rulings under the same test.
+    test (C3), plan-patching rulings under the same test, and a pointer
+    from its decision asks to the later-rulings rule (D4).
   - `skills/redteaming/SKILL.md`: § Flip paths, which routes binding
-    content a finding shows wrong; the mark on its reporting stance (D3).
+    content a finding shows wrong; § Round readout, where an operator
+    ruling is recorded, pointing to the later-rulings rule (D4); the mark
+    on its reporting stance (D3).
     Its § Fix application sentence making a fix's acceptance item
     binding already agrees with D1 and stays.
   - `skills/redteaming/references/plan-phase.md`: a contained amendment
     made in the plan phase lands in its fix list, is named in its
     readout and is seeded into the ledger; its "structural plan finding
     — the spec's premise is wrong" reworded to D2's sense of structural.
-  - `skills/redteaming/references/formats.md` § Design digest format:
-    the statuses.
+  - `skills/redteaming/references/formats.md`: § Design digest format's
+    statuses; beside the decision record's place in § Feature workspace
+    root and layout, the rule that every later operator ruling enters it
+    (D4).
   - `skills/subagent-driven-development/SKILL.md`: the Deviations
     paragraph; § Disputes and adjudication, where a plan conflict or an
     adjudicator's ruling that touches binding content passes the
-    containment test; § Plan changes mid-execution.
+    containment test, and where an operator's answer is recorded, a
+    pointer to the later-rulings rule (D4); § Setup's self-seed, covering
+    plan-phase amendments the plan record names; § Plan changes
+    mid-execution.
   - The six seat templates, each stating what binds (D1's set, its
     intent reading and its stance; in the umbrella clause, firm
     decisions): `skills/redteaming/seat-prompt.md`,
@@ -278,11 +292,14 @@ All lightly held, as the umbrella's U2 makes the default.
   - `skills/brainstorming/references/umbrellas.md`: § Children's binding
     sentence and § Edits' unmarked Decisions gain the `firm` class.
   - `skills/requesting-code-review/SKILL.md`: the mark on its wave cap
-    (D3).
+    (D3); its dispatch paragraph's umbrella clause gains firm decisions.
+  - `skills/subagent-driven-development/references/very-small-lane.md`:
+    only its branch-review item's umbrella clause, which gains firm
+    decisions; the note's own binding parts stay (Non-goals).
   - `skills/brainstorming/SKILL.md`: § Spec contract's decision-weight
     convention (D1, D3, D4's `firm` in the spec); § Workspace
-    provisioning's decision record (statuses, proposer, later operator
-    rulings); the fold and lane entries that record an answer as
+    provisioning's decision record (statuses, proposer, and a pointer to
+    the later-rulings rule); the fold and lane entries that record an answer as
     settled.
   - `skills/writing-plans/SKILL.md`: D5; § Binding vs advisory, which
     gains the `firm` class.
@@ -296,8 +313,7 @@ All lightly held, as the umbrella's U2 makes the default.
     `docs/backlog/nested-orchestration.md`, whose observation lists
     mark-touching rulings among mid-run asks. `agents/`, regenerated
     from the changed templates; `tests/prose-budget.txt`.
-- **Unchanged:** `skills/subagent-driven-development/references/very-small-lane.md`
-  and the qualifying-shape sites (Non-goals).
+- **Unchanged:** the qualifying-shape sites (Non-goals).
 
 Deferred to implementation: the wording each template uses for D1, at the altitude of its existing binding paragraph.
 
