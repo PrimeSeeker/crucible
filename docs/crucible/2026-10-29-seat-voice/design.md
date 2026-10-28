@@ -2,11 +2,11 @@
 
 Umbrella: `docs/crucible/2026-10-28-hypothesis-specs/umbrella.md`
 
-## Intent
+## Request
 
-**The request.** The umbrella carries no request block of its own, so
-the effort's opening message (2026-10-28) is quoted here, as evidence of
-what was asked for, not as the standard:
+The umbrella carries no request block of its own, so the effort's
+opening message (2026-10-28) is quoted here, as evidence of what was
+asked for, not as the standard:
 
 > 3) I think the reviewer agents have a narrower mandate (they're still
 > evolved from normal code review, after all) than the redteaming ones,
@@ -38,6 +38,8 @@ and, from the same dialogue, the message that changed point 4:
 
 This feature's own entry in the umbrella states what it must deliver.
 
+## Intent
+
 **Problem.** A seat that doubts the premise of what it reviews has no
 form to put it in. The branch reviewer cites `file:line` for every
 finding and has no section for questions
@@ -55,10 +57,14 @@ implementers' concerns named the problems that mattered and the task
 reviews approved with minors (`docs/backlog/review-catch-and-implementers.md`).
 
 **The probes** (one-off, run in this feature's context gathering,
-2026-10-28; the entry's two):
+2026-10-28; the entry's two; their records are session-local, so the
+figures below are the controller's summary of them):
 
-- *Escape analysis*, over git history and 109 first full-scope branch
-  reviews on crucible and on a second project (Python, Claude models):
+- *Escape analysis*, over git history and the first full-scope branch
+  review of each feature, 109 in all, recorded on crucible and on a
+  second project (Python, Claude models) from 2026-10-01: later
+  fix commits were attributed by blame to the task ranges whose reviews
+  had approved them, and
   task reviews let through 12 real defects; 10 were minor wording,
   consistency or comment slips, and the 2 MAJORs were premise-level and
   needed other tasks' knowledge, both caught by the branch review. The
@@ -78,8 +84,9 @@ reviews approved with minors (`docs/backlog/review-catch-and-implementers.md`).
   binding-and-marks literal-reading gap among them. Where the original ran
   on the default role over code (4 samples), both saw the same defects;
   where a later fix exists, the original had staked it MINOR, the ledger
-  carried it, and the branch review or a later commit fixed it. On records and design prose, the seat raised what the
-  rubric does not ask for: an unruled decision recorded as settled, a
+  carried it, and the branch review or a later commit fixed it. On
+  records and design prose, the seat raised what the rubric does not ask
+  for, though nothing in it forbids: an unruled decision recorded as settled, a
   policy reversal filed as a stale fact, controller proposals listed as
   operator rulings, caveats dropped from a measurement. Three defects it
   found still stood on master (D9). Model and rubric are confounded in the
@@ -88,8 +95,7 @@ reviews approved with minors (`docs/backlog/review-catch-and-implementers.md`).
 **Goals.**
 
 - **G1.** A seat can stake a claim that the premise is wrong, and it
-  reaches the one who rules on it, the operator wherever it questions what
-  was asked for, without costing a fix wave.
+  reaches the operator without costing a fix wave.
 - **G2.** A seat can voice a doubt, a misgiving or an improvement with
   nothing specific to stake, and nothing it voices is silently dropped.
 - **G3.** Redteam seats and the branch reviewer check the Intent against
@@ -99,9 +105,14 @@ reviews approved with minors (`docs/backlog/review-catch-and-implementers.md`).
 
 **Non-goals.**
 
-- A premise-finding mandate for task reviewers: the probes found the
-  rubric hiding nothing on code; their premise doubts go to `Questions`
-  (D1, D3).
+- A premise-finding mandate for task reviewers. On code the probe found
+  the rubric hiding nothing; on prose the catches it missed were things
+  the rubric neither asks for nor forbids (attribution, premise,
+  dropped caveats), two of the three on the bounded role. `Questions`
+  (D3), the default role (D6) and the decision-record basis check
+  `binding-and-marks` added cover them without a new finding mandate.
+- The goal check and `Questions` for the terminal pass: it checks the
+  campaign's own work, and the round's seats carry both.
 - Moving the re-reviewer's tier: the probes did not look at it.
 - Changing which arrangement a feature takes (`arrangements`).
 - Retrofitting a request block into the umbrella.
@@ -112,24 +123,35 @@ All lightly held unless stated.
 
 - **D1. Premise findings.** The finding that exists today, that a binding
   item is itself wrong (`skills/redteaming/seat-prompt.md`), is extended
-  to the whole premise and labelled `premise`: it claims, with evidence,
-  that a binding item, the goal, the Intent or the chosen approach is
-  wrong, or that the request itself looks mistaken. Redteam seats, the
-  branch reviewer and implementers may raise one; a task reviewer puts a
-  premise doubt in `Questions` (D3). It carries a staked severity, opens
-  no fix wave and consumes no cap. Routing has one home: one against a
-  binding item takes the containment test as it does today, the
-  controller confirming a contained correction; one against the goal, the
-  Intent, the approach or the request goes to the operator as a decision
-  ask with a recommendation, since it questions what was asked for. While
-  an ask is open, work goes on unless later work builds on the challenged
-  premise. `literal-reading` (binding text applied where its author
-  plainly did not intend) stays a separate label: it questions an
-  application, not the premise. Basis: the entry; the form is the
-  controller's proposal, accepted by the operator.
+  past binding items to the premise behind them. A finding labelled
+  `premise` claims, with evidence, that something the operator decided or
+  asked for is wrong: the goal, the Intent, the chosen approach, or the
+  request itself. The line against an ordinary finding, structural ones
+  included, is that test: fixing it would change an operator decision,
+  the Intent or the request. A binding item found wrong keeps the routes
+  it has today: in a spec's own campaign the fix list, from the
+  campaign's close the containment test, and for an implementer BLOCKED
+  with a proposed correction. Redteam seats, the branch reviewer and
+  implementers may raise a premise finding; a task reviewer puts a premise
+  doubt in `Questions` (D3).
+
+  A premise finding carries a staked severity, for the operator's
+  weighing, and always goes to the operator as a decision ask with a
+  recommendation. It is an open decision ask, not an open BLOCKER or
+  MAJOR: it holds no stop rule, review end, task completion or merge gate
+  open by itself, and the readouts carry it until ruled. While it is open,
+  work goes on unless later work builds on the challenged premise. The
+  operator's ruling decides what follows, and that takes the route any
+  change of its kind takes: in a campaign, the next fix list (a change it
+  brings that re-shapes a mechanism makes its round structural); after
+  the close, `flip-paths.md`; in execution, a fix wave counted like any.
+  `literal-reading` (binding text applied where its author plainly did
+  not intend) stays a separate label: it questions an application, not
+  the premise. Basis: the entry; the form is the controller's proposal,
+  accepted by the operator.
 - **D2. The goal check.** Before reading the Intent, a redteam seat and
-  the branch reviewer restate the goal in one sentence from the request
-  block, then compare; a mismatch it can stand behind is a premise
+  the branch reviewer restate the goal in one sentence from the Request
+  section, then compare; a mismatch it can stand behind is a premise
   finding, a vaguer one a question. On the very-small lane the branch
   reviewer's Lane Fit gains this check beside its shape check, so the
   lane's goal premise gets the independent check the umbrella's G1 asks
@@ -142,43 +164,59 @@ All lightly held unless stated.
   implementer's report. A task reviewer's or an implementer's items reach
   the branch reviewer as leads; the branch reviewer's reach the operator
   in the close readout, each carried or ruled by the controller.
-  Improvements stay out of findings, and that rule now points here. The
-  controller may act on an improvement itself, as a lightly held change it
-  names in the readout. Basis: the entry (U4 channel, improvements
+  Improvements stay out of findings, and that rule now points here. An
+  improvement the controller adopts, as a lightly held change it names in
+  the readout, rides the next fix wave as one of its items (in a
+  campaign, a fix-list item naming the question id), never opens a wave
+  by itself, and is never applied by the controller outside the
+  very-small lane; one raised where no wave follows goes to the operator
+  in the readout. Basis: the entry (U4 channel, improvements
   ruling); the single section is the controller's proposal, accepted.
 - **D4. Location.** Every finding keeps its evidence. Its location is
   `file:line`, or, for a premise finding, the passage of the spec, plan
   or request it contradicts. Basis: the entry (format barriers).
-- **D5. The request block.** A `Request` block opens the Intent of every
-  spec, folded document, lane note and umbrella: the message that asked
-  for the work, and any later message that changed what was asked,
-  verbatim; a message the controller is unsure about is included. A part
-  the project's rules for committed text keep out is replaced by
-  `[redacted: <kind>]`. A child points to its umbrella's block and quotes
+- **D5. The request block.** A `## Request` section precedes the Intent
+  of every spec, folded document, lane note and umbrella, outside the
+  parts any route makes binding: the message that asked for the work, and
+  any later message that changed what was asked, verbatim; a message the
+  controller is unsure about is included. A part the project's rules for
+  committed text keep out is replaced by `[redacted: <kind>]`; where the
+  project has no rule that covers it, the controller asks the operator
+  once, when it writes the section. A child points to its umbrella's block and quotes
   only what was asked of it; where its umbrella has none, as this
   effort's has not, it quotes the effort's request itself, as this spec
   does. The request is evidence, not the standard: a seat may find it
   wrong. Where no request block exists (a document written before this
   feature, a standalone branch review), the goal check (D2) restates the
-  goal from the Intent and says the request was unavailable. Basis: the entry; placement and form
-  the controller's proposal, accepted.
+  goal from the Intent and says the request was unavailable. Basis: the
+  entry; placement and form the controller's proposal, accepted, the
+  placement moved before the Intent in the campaign, since a lane note's
+  Intent binds.
 - **D6. The task reviewer on the default role**, every task. The row read
   "the bounded role or better", renamed on 2026-10-13 from "mid-tier or
-  better", a proposal of crucible's first rewrite that predates this
-  repository's history and was never measured; controllers took the
-  floor. Basis: the
-  differential probe, and the operator's ruling (2026-10-29).
+  better" with no change of meaning
+  (`docs/decisions/model-roles-and-effort.md`); no measurement in this
+  repository's records supports either wording, and controllers took the
+  floor. Basis: the differential probe, and the operator's ruling
+  (2026-10-29).
 - **D7. Implementers' standing.** The task reviewer rules on every concern
   the implementer reports, in its deviation audit: confirmed as a finding
   at a staked severity, or dismissed with a one-line reason. A confirmed
-  concern then travels as a finding of its severity: a MINOR to the
-  ledger, a BLOCKER or MAJOR into the fix loop; the deviation audit fails
-  only on a concern left unruled. A concern is about the task's own work;
-  what reaches beyond it goes to `Questions`. An implementer may raise a
-  premise finding (D1) and use `Questions` (D3). A fix outside its task is
-  proposed in its report, naming the site and the change, never made; the
-  controller routes it to the owning task, to the branch review as a
-  deferred minor, or, where it touches binding content, to the operator.
+  concern travels as a finding of the verdict it belongs to: an intent or
+  scope gap fails that verdict, a quality defect goes by its severity. A
+  review that leaves a reported concern unruled is missing a verdict, and
+  the controller treats it as any review missing a verdict. The controller
+  no longer handles concerns before review: every concern goes to the
+  task review. A concern is about the task's own work; what reaches
+  beyond it goes to `Questions`. An implementer may use `Questions` (D3)
+  and raise a premise finding (D1), in its report under its own heading,
+  with status DONE_WITH_CONCERNS where the task is done and BLOCKED where
+  it cannot go on without the ruling; the controller routes it, and the
+  task reviewer does not rule on it as a concern. A binding item found
+  wrong stays BLOCKED with a proposed correction. A fix outside its task
+  is proposed in its report, naming the site and the change, never made;
+  the controller routes it to the owning task, to the branch review as a
+  lead, or, where it touches binding content, by `flip-paths.md`.
   On the very-small lane, which has no task review, an implementer the
   controller dispatches has its concerns, `Questions` items and proposals
   transcribed to the ledger, and the branch reviewer, the lane's first
@@ -201,8 +239,12 @@ All lightly held unless stated.
     which the blind verifier must never see, and lands in the spec, outside
     the verifier's diff and read scope (`skills/redteaming/references/plan-phase.md`,
     `skills/redteaming/verifier-prompt.md`). The item carries the binding
-    item and the change; the reason goes to the ruling of the merged
-    entry that led to it, in the plan record; the verifier skips the item.
+    item and the change; the reason and why it is contained go to the
+    ruling of the merged entry that led to it, in the plan record. The
+    verifier checks the item's plan-side hunks (the re-pin and any plan
+    patch) and does not look for the spec change, which lands outside its
+    diff; the controller confirms the amendment commit landed, and the
+    terminal pass reads the amended spec as binding.
     The ledger copy, seeded at the plan phase's close
     (`plan-phase.md` § Close) or by SDD's Setup (`SKILL.md`, the ledger's
     contained amendments), carries the item and that reason together, so
@@ -213,10 +255,13 @@ All lightly held unless stated.
 ## Constraints & invariants
 
 - **C1.** A premise finding, a question and a lead never open a fix wave
-  and never consume a wave cap.
+  by themselves and never consume a wave cap; a premise finding holds no
+  gate keyed on an open BLOCKER or MAJOR.
 - **C2.** Nothing a seat or an implementer voices under D1, D3 or D7 is
   dropped unrecorded: each item ends with a disposition, a ruling, a
-  ledger line or a line in a readout.
+  ledger line or a line in a readout. In a standalone branch review, which
+  has no ledger, the report itself is that record, handled under
+  `crucible:receiving-review`.
 - **C3.** An implementer never edits outside its task.
 - **C4.** The seat-side rules of D1–D4 are stated once, in the shared
   reference (Interfaces), and the controller-side routing of D1 once, in
@@ -232,21 +277,29 @@ All lightly held unless stated.
   pointing to it under the plugin root its dispatch names; the redteam
   seat's slot card gains that plugin-root slot, and its read scoping
   admits the file.
-- **Premise routing**, in `skills/redteaming/references/flip-paths.md`:
-  the controller's handling of D1, read by the redteaming controller
+- **Premise routing**, in `skills/redteaming/references/flip-paths.md`,
+  whose scope widens for it to a premise finding at any phase, the spec
+  campaign included: the controller's handling of D1, read by the redteaming controller
   (merge and readout) and by SDD and `requesting-code-review` (task loop
   and branch-review loop).
 - **Leads.** A task reviewer's and an implementer's `Questions` items,
-  and an implementer's out-of-task proposals the controller routes to the
-  branch review (D7), ride the ledger's `## Deferred minors` to the branch
-  reviewer, which triages them as it triages minors. No new dispatch slot.
+  an implementer's out-of-task proposals the controller routes to the
+  branch review, and on the very-small lane a dispatched implementer's
+  concerns (D7) are written under the ledger's `## Deferred minors`,
+  each marked as a lead, and reach the branch reviewer through its
+  existing ledger-items input; no new dispatch slot. It rules on each
+  lead: CONFIRMED as a finding at a staked severity, or LEFT with one
+  line, not by the minors' PROMOTE / FIX-IN-WAVE / LEAVE-PARKED triage.
 - **The ledger and the close readout.** The close readout is assembled
   from the ledger (SDD § Finish), so what it lists is first written there:
   each premise finding and its ruling under `## Adjudication rulings`, and
   each branch-reviewer `Questions` item, with the controller's
-  disposition, under `## Deferred minors`.
+  disposition, under a new `## Questions` section that no seat reads, so
+  a pass's questions never become the next pass's input.
 - **Owners of the other sites**: the redteam seat template and its
-  merge/readout text; the branch-reviewer template, its slot card and
+  merge/readout text, redteaming's § Dispatch composition (its closed
+  input list), `formats.md` (the fix-list item naming a question id, the
+  ledger's `## Questions`); the branch-reviewer template, its slot card and
   `requesting-code-review`; the redteam seat's slot card; the
   task-reviewer and implementer templates, the task reviewer's and the
   re-reviewer's slot cards (their shared reviewer row splits, the
@@ -272,14 +325,17 @@ All lightly held unless stated.
   pass.
 - **A4.** The task reviewer's model row and slot card name the default
   role, and no text still puts it on the bounded role. One-time search for
-  "bounded role or better": every remaining hit names only the re-reviewer
-  or the snapshot-blessing agent.
+  "bounded role or better" over `skills/` and the decision records'
+  Decision sections (Why history and feature folders excluded): every
+  hit names only the re-reviewer or the snapshot-blessing agent.
 - **A5.** The request block is defined in the spec contract and in the
   lane-note, folded-document and umbrella shapes. One-time search.
 - **A6.** Lane Fit carries the goal check; the branch-reviewer template
   carries the trace question; check 5 carries the trace. One-time search.
 - **A7.** The task reviewer's deviation audit has a line per implementer
-  concern, and SDD's `DONE_WITH_CONCERNS` handling no longer "notes" one.
+  concern; SDD's `DONE_WITH_CONCERNS` handling sends every concern to the
+  task review, neither noting one nor handling it before review; a
+  review missing a concern's ruling counts as missing a verdict.
   One-time search.
 - **A8.** D9's three defects are gone. One-time check per item.
 - **A9.** `docs/backlog/review-improvements.md` is deleted;
@@ -297,11 +353,12 @@ All lightly held unless stated.
 
 - The goal restatement is one line in the seat's report, before its
   findings; in Lane Fit, a second verdict beside WITHIN/EXCEEDS SHAPE.
-- In a campaign, a premise finding routed to the operator has its merged
-  entry `parked` with the ruling "decision ask to the operator", and the
-  readout carries the ask.
+- In a campaign, a premise finding has its merged entry `parked` with the
+  ruling "decision ask to the operator", the readout carries the ask, and
+  the stop rule reads a premise entry as a decision ask, not by its
+  severity.
 - The task reviewer's concern line sits beside its routed-items line:
   one entry per concern, CONFIRMED (with the finding) or DISMISSED (with
   the reason).
 - Deferred to implementation: the wording and placement of each pointer,
-  and the ledger line form for a lead.
+  and the ledger line forms for a lead and a question.
