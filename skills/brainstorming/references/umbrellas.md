@@ -6,6 +6,7 @@ An **umbrella** holds an effort too large for one feature: what its parts share,
 
 An umbrella is a spec of its own kind. It has a slug, a branch, a worktree, a workspace and a feature folder like a feature, and takes none of the three routes: its review is the one § Review states. Its file is `umbrella.md` in its feature folder, born by the birth step of `skills/redteaming/references/formats.md` § Feature folder and written under the spec contract's sections:
 
+- **Request** — the effort's request, as the spec contract defines it. A child's Request points to this section and quotes only what was asked of that child: the passages of it that ask something of the child, and each later message that changed what was asked of it. Under an umbrella with no Request, a child quotes the effort's whole request.
 - **Intent** — the effort's goal and non-goals.
 - **Decisions**, **Constraints & invariants**, **Interfaces & boundaries** (what children provide each other) and **Mechanism sketches**, where it has them. Its Interfaces & boundaries describe; a contract between children that must bind is one of its Constraints & invariants.
 - **Acceptance** — the Children list, stating that each child's own Acceptance carries the checks.
@@ -33,14 +34,15 @@ A campaigned umbrella takes steps 5–10 as a spec does, and the campaign's clos
 An umbrella lands before its first child, through `crucible:finishing-a-development-branch`, so children branch from a base that holds it and other sessions can read it. Before it lands, its controller:
 
 1. where a campaign ran, checks its records — round records, readouts, the digest — and names any gap in the campaign's close readout;
-2. deletes the umbrella's workspace, an end of a workspace's life that the Lifecycle of `skills/redteaming/references/formats.md` § Feature workspace root and layout names;
-3. for a nested umbrella, marks its entry in its parent `umbrella`, in the same landing.
+2. writes each premise finding still open into the entry of the child the effort resumes at (§ Resuming), marked as an open premise ask, so that child's brainstorm finds it, and puts it to the operator with the landing ask, as `skills/redteaming/references/flip-paths.md` § Premise findings states; the landing does not wait for the ruling;
+3. deletes the umbrella's workspace, an end of a workspace's life that the Lifecycle of `skills/redteaming/references/formats.md` § Feature workspace root and layout names;
+4. for a nested umbrella, marks its entry in its parent `umbrella`, in the same landing.
 
 After the landing, the effort resumes at its first child (§ Resuming).
 
 #### Children
 
-A child's brainstorm takes its entry as an incoming document (§ Context gathering): what the entry settles stays settled, and the dialogue asks only what it leaves open. The child's route is proposed as for any feature.
+A child's brainstorm takes its entry as an incoming document (§ Context gathering): what the entry settles stays settled, and the dialogue asks only what it leaves open. An open premise ask its umbrella's landing wrote into the entry (§ Landing) enters the child's brainstorm decision record, with the operator's ruling where one has come since, or else as open, for the dialogue to take up. The child's route is proposed as for any feature.
 
 **The umbrella line.** A child's spec, folded document, lane note or umbrella carries in its preamble one line naming its umbrella's file:
 
