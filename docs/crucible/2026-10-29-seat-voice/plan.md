@@ -52,6 +52,7 @@ T1 → T2 → T3 → T4 → T5 → T6, strictly sequential: T1–T5 each edit `t
 - **Fixed names** (each producer named; consumers use them verbatim): the label `premise` (T1), written after a finding header's severity, as in `FINDING <seat-id>-<n> [MAJOR] premise`, the form `conserve.py` already reads an id from; the section heading `## Request` (T5 defines it in the spec contract; T1's goal check and T3's Lane Fit read it); the lead verdicts `CONFIRMED`, `RECOMMENDED`, `LEFT` (T3 defines them in the branch-reviewer template; T4's ledger text names them); the ledger section `## Questions` (T4 defines it in SDD § Setup; T3's read-scoping exclusion and the close readout name it); a fix-list item may name a question id `<seat-id>-q<n>` as what it resolves (T2, in `formats.md`).
 - **Ledger line forms** (T4 defines them in SDD § Setup; T3's branch-reviewer template and `requesting-code-review` read and write them): a lead is a line under `## Deferred minors` opening `Task <N>: lead (<kind>):`, `<kind>` one of `question`, `proposal`, `concern`, or on the very-small lane `Lane: lead (<kind>):`, then the one-line item; a question is a line under `## Questions` opening `Branch review pass <k>:` or `Branch wave <n>:`, then the question and, after ` — `, the controller's disposition. The branch reviewer's triage line for a lead carries its verdict, `CONFIRMED`, `RECOMMENDED` or `LEFT`.
 - **Pointer form** (T2–T5): a pointer to the shared reference or the premise section is a plain citation of the file and section; none is written in the stub form ("read … in full"), which `tests/test_skill_references.py` pins.
+- **Citations across tasks** (every task): a task cites only files and sections that exist at its own head, so each task's suite run, `tests/test_skill_references.py` included, passes; a pointer to a section a later task creates is added by that later task.
 - **The redteam seat's plugin root** (T2, internal): its slot card gains a plugin-root slot like the other instruments' cards; redteaming § Dispatch composition's closed input list admits the shared reference.
 - **The task reviewer's tier** (T4 produces; T6 records it): SDD § Models gives the task reviewer its own row, the default role; the re-reviewer keeps "the bounded role or better"; both slot cards follow their rows.
 
@@ -59,10 +60,10 @@ T1 → T2 → T3 → T4 → T5 → T6, strictly sequential: T1–T5 each edit `t
 
 | Spec criterion | Task | Check |
 |---|---|---|
-| A1 | T1 (reference), T2–T4 (pointers); sweep in T6 | One-time: T1 records in its report one key phrase from each of the reference's four sections, as written; T6 searches `skills/` for those phrases and finds them only in the reference |
+| A1 | T1 (reference), T2–T4 (pointers); sweep in T6 | One-time: T6 takes one key phrase from each of the reference's four sections as written, searches `skills/` for those phrases, and finds them only in the reference |
 | A2 | T1; sweep in T6 | One-time search: `flip-paths.md` states it; redteaming, SDD and `requesting-code-review` point to it |
 | A3 | T2 | Standing: `tests/test_dispatch_contracts_templates.py::test_seat_report_entry_headers_carry_ids_conserve_collects`, which ties the seat template's headers to `conserve.py`, and `tests/test_conserve.py`, both unchanged, pass |
-| A4 | T4 (skills), T6 (records); search in T6 | One-time search over `skills/` and the records' Decision sections |
+| A4 | T4 (skills), T6 (records); search in T6 | One-time search over `skills/`, `tools/` and the records' Decision sections |
 | A5 | T5 | One-time search |
 | A6 | T3 (Lane Fit, trace question), T5 (check 5) | One-time search, in each task |
 | A7 | T4 | One-time search |
@@ -98,7 +99,7 @@ The spec marker's second item, the ledger line forms for a lead and a question, 
 Deferred to implementation: the shared reference's wording within its four sections (DI-3).
 
 **Acceptance.**
-- Happy: the reference has the four sections; `flip-paths.md`'s new section states each element the contract lists, and its scope sentence covers any phase; the report records one key phrase per section for T6's A1 sweep.
+- Happy: the reference has the four sections; `flip-paths.md`'s new section states each element the contract lists, and its scope sentence covers any phase.
 - Edge: the reference states the fallback where no `## Request` exists (D5's last sentence) and a plan-phase seat's input; the `flip-paths.md` section states the precedence for a firm decision or a lane note's Intent found wrong.
 - Error: the reference restates no routing (that is `flip-paths.md`'s), and `flip-paths.md` restates no seat rule (one-time search for the label's definition in both).
 - Integration: the suite passes, the orphan rule included (the premise section cites the reference).
