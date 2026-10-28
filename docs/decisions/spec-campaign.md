@@ -84,7 +84,7 @@ the full suite (`skills/subagent-driven-development/implementer-prompt.md`
 controller-authored text and budgets blind verification, the
 conservation check and the terminal pass for it; errors, the
 controller's own included, are reported in the flat register of any
-other finding. Its [LOAD-BEARING] paragraph makes shading a record, not
+other finding. Its paragraph on disclosure makes shading a record, not
 erring in it, the only reportable failure of the reporting duty, and
 forbids citing the stance to skip, soften or summarize any other
 obligation (`crucible:redteaming § Operating stance — baseline error
@@ -246,12 +246,14 @@ In one session's retrospective (2026-08-16), the controller's readouts
 prosecuted its own error rate while its subagents' reports did not, and
 the errors it disclosed leaned in the flattering direction, which shame
 rewards. The stance makes a caught error the loop working, so disclosure
-stays cheap; the [LOAD-BEARING] paragraph keeps it from being read as a
+stays cheap; the paragraph on disclosure keeps it from being read as a
 licence to soften records, and the terminal pass's directional-bias
 statement is the instrument that detects shading
 (`docs/decisions/terminal-pass.md`). On 2026-10-13 the block lost four
 sentences on the recommendation of the controller, its reader, keeping
-the [LOAD-BEARING] paragraph unchanged. (Basis: a single incident, for
+that paragraph unchanged; on 2026-10-28 the paragraph lost its
+[LOAD-BEARING] mark, its wording kept, when marks became a spec
+convention (`docs/decisions/the-spec.md`). (Basis: a single incident, for
 the motive; judgment, accepted by the maintainer, for the stance and the
 trim.)
 
@@ -268,6 +270,8 @@ trim.)
 
 ## Changes
 
+- 2026-10-28: the operating stance's paragraph on disclosure lost its
+  [LOAD-BEARING] mark, its wording kept: marks are a spec convention.
 - 2026-10-13: panels sized by the artifact's maturity and size, every
   seat full-scope with its lens only ordering the search, and lenses
   rotating, mixing per artifact and added with a one-line description.

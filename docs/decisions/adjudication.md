@@ -13,9 +13,13 @@ review range itself and rules each finding UPHELD or DISMISSED with a
 ruling. An upheld finding re-enters the loop and cannot be disputed again;
 one upheld at the task-loop cap goes to the breaker. A dismissed finding
 is closed by its ruling. Every outcome is written under the ledger's
-`## Adjudication rulings`, and a ruling the adjudicator marks as touching
-a [LOAD-BEARING] decision goes to the operator as a decision ask, the
-finding open until the answer. Adjudication adds no wave; a wave whose fix
+`## Adjudication rulings`. A ruling the adjudicator marks as touching
+binding content, what binds in the spec or its umbrellas
+(`docs/decisions/the-spec.md`), passes the containment test before the
+controller acts on it: a contained one the controller records as its own
+ruling, and any other goes to the operator as a decision ask, the
+finding open until the answer; on the very-small lane, one changing the
+note's binding parts is the operator's. Adjudication adds no wave; a wave whose fix
 dispatch only disputes is still a wave. Every dismissed or parked BLOCKER
 or MAJOR reaches the operator with its ruling in the close readout, and
 so does every ruling the controller made itself, with its reason. The
@@ -25,9 +29,15 @@ adjudicator runs on the default role
 
 **What the controller rules on.** Two kinds only: a plan-conflict finding
 on a diff it did not write (is the plan or the work wrong?), and the
-breaker's consequence rulings at the task-loop cap. A plan conflict that
-is a design judgment or touches a [LOAD-BEARING] decision goes to the
-operator as a decision ask instead. Everything else contested goes to the
+breaker's consequence rulings at the task-loop cap. A reviewer's finding
+that a binding item's literal reading reaches a case its author did not
+consider is such a plan conflict. A plan conflict that is a design judgment
+goes to the operator as a decision ask instead, and a ruling of the
+controller's that touches binding content passes the containment test,
+one it does not find contained going to the operator as a decision ask
+(`skills/redteaming/references/flip-paths.md` § The containment test).
+The contained amendments the controller confirms, the plan phase's
+included, are among its rulings in the ledger and the close readout. Everything else contested goes to the
 adjudicator: an implementer's NOT CONFIRMED, a finding the controller
 judges wrong, at the cap included, and any plan-conflict finding or park
 ruling on a diff the controller wrote (inline mode, the very-small lane).
@@ -87,17 +97,36 @@ wrong ruling of the controller's is otherwise seen by no one. (Basis:
 external, for upstream's list; judgment, accepted by the maintainer,
 2026-10-27.)
 
+Until 2026-10-28 every ruling that touched a [LOAD-BEARING] mark went
+to the operator. With the spec read as a hypothesis
+(`docs/decisions/the-spec.md`), a ruling that touches any binding
+content, not only a mark, passes the containment test instead, so the
+adjudicator marks what touches binding content and the controller
+confirms what is contained. A reviewer's finding that a binding item's
+literal reading reaches a case its author did not consider is ruled on
+as the plan conflict it is, whether the binding text or the work is
+wrong, and not sent to the adjudicator as an ordinary dispute; on a
+diff the controller wrote it goes to the adjudicator, as every plan
+conflict there does. (Basis: judgment, accepted by the maintainer,
+2026-10-28.)
+
 ## Rejected
 
 - **Adjudicating only at the cap**, upstream's rule (§ Why).
 - **The controller ruling on findings against its own diff**, or parking
   a branch-review BLOCKER or MAJOR on its own ruling (§ Why).
 - **Asking the operator which governs** on every plan conflict: only a
-  design judgment or a [LOAD-BEARING] conflict reaches the operator
-  (§ Why).
+  design judgment, or a change to binding content the containment test
+  does not find contained, reaches the operator (§ Why).
+- **An operator ask for every ruling touching a mark**, the rule until
+  2026-10-28 (§ Why).
 
 ## Changes
 
+- 2026-10-28: a ruling touching any binding content, not only a mark,
+  passes the containment test, a contained one becoming the controller's
+  ruling and any other an operator ask; a reviewer's literal-reading
+  finding is ruled on as a plan conflict.
 - 2026-10-27: the close readout lists every ruling the controller
   made itself, not only dismissed or parked BLOCKER/MAJOR findings: the
   ledger is deleted at Finish, so the readout is the one place the

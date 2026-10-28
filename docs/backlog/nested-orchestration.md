@@ -11,9 +11,9 @@
   on the session's strongest model and reading every report, is the
   costliest seat. It reports its rulings when it finishes.
 - A crucible controller puts decision asks to the operator mid-run (SDD's
-  breaker, a fourth branch-review wave, rulings touching a
-  `[LOAD-BEARING]` decision); a nested one cannot reach the operator
-  until it returns. The maintainer, 2026-10-27: "the barrier is not
+  breaker, a fourth branch-review wave, a change to binding content the
+  containment test does not find contained); a nested one cannot reach
+  the operator until it returns. The maintainer, 2026-10-27: "the barrier is not
   insurmountable, but I doubt the size of the cost win".
 - Crucible's seat agents carry no tool limits, so on Claude Code a seat
   can now nest dispatches; the seat templates ban it in prose. The

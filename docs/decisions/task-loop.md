@@ -11,13 +11,23 @@ and the very-small lane's fix waves excepted
 lane runs no per-task loop (`docs/decisions/routes.md`).
 
 **The implementer contract.** What the plan's spec pointer names binds,
-with requirements, interfaces, non-goals and acceptance; the approach is
-advice. The implementer may depart from advisory content, logging each
-departure in its report's Decision Log with what, why and blast radius,
-and logs its call on every deferred item routed to its task; changing or
-contradicting binding content is BLOCKED
+the decisions the spec records as the operator's firm preference
+included (`docs/decisions/the-spec.md`), with requirements, interfaces,
+non-goals and acceptance; the approach is advice. Binding text is read
+for its intent. The implementer may depart from advisory content,
+logging each departure in its report's Decision Log with what, why and
+blast radius, and logs its call on every deferred item routed to its
+task; changing or contradicting binding content, or applying it
+literally to a case its author plainly did not consider, is BLOCKED,
+the report naming the item, the evidence that shows it wrong and a
+proposed correction
 (`skills/subagent-driven-development/implementer-prompt.md` § Binding vs
-Advisory: the Deviation License). It reports BLOCKED or NEEDS_CONTEXT
+Advisory: the Deviation License). The controller lets an item the
+evidence does not show wrong stand, re-dispatching with its ruling, and
+passes any other correction through the containment test: a contained
+one it confirms, any other goes to the operator as a decision ask
+carrying the proposal (`crucible:subagent-driven-development § The Task
+Loop`, step 2). It reports BLOCKED or NEEDS_CONTEXT
 rather than guess on insufficient context, an unsettled trade-off,
 conflicting findings, ambiguity above its authority, or reading file
 after file without progress, and is told that escalating is never
@@ -42,7 +52,10 @@ exception) and quality (defects, not style; new-test adequacy is the
 reviewer's own judgment). Cannot-verify items go to the controller, and
 one it confirms is a failed intent verdict. The reviewer takes the
 reported test output as given and builds its own diff
-(`docs/decisions/branch-review.md`). Task reviewers and re-reviewers run
+(`docs/decisions/branch-review.md`). Where a binding item's literal
+reading reaches a case its author plainly did not consider, it reports a
+literal-reading finding naming the item and the case, for the
+controller's ruling (`docs/decisions/adjudication.md`). Task reviewers and re-reviewers run
 on the bounded role or better (`docs/decisions/model-roles-and-effort.md`).
 
 **Loop wiring.** A failed intent, scope or deviation-audit verdict enters
@@ -121,6 +134,17 @@ writing-skills, so its guidance reached an implementer writing skill text
 only by accident; the skill's evaluations need fresh agents, which a seat
 does not start, so the seat logs the prose-only exception and leaves them
 to the controller. (Basis: judgment, accepted by the maintainer.)
+
+On 2026-10-28, with the spec read as a hypothesis
+(`docs/decisions/the-spec.md`), a binding item found wrong became a
+correction to propose, not only a stop: the implementer holds the
+evidence, so its BLOCKED report carries it with a proposed correction,
+and the containment test decides whether the controller or the operator
+confirms it. Reading binding text for its intent, with the
+literal-reading case raised rather than applied, answers a sample's
+case of a controller applying a Constraint literally to an edge case its
+author plausibly never considered. (Basis: judgment, accepted by the
+maintainer; measured, for the case.)
 
 On 2026-08-23 an implementer seat committed under an identity taken from
 its session context in place of the configured one; the rule against
@@ -231,6 +255,11 @@ the maintainer.)
 
 ## Changes
 
+- 2026-10-28: the implementer contract: firm decisions bind, binding
+  text is read for its intent, and BLOCKED on a binding item carries the
+  evidence and a proposed correction, which the controller triages
+  through the containment test; task review reports a literal-reading
+  case for the controller.
 - 2026-10-27: the identity incident no longer says whose address the
   seat used, which is private context.
 - 2026-10-15: the implementer contract: binding and advisory content, a

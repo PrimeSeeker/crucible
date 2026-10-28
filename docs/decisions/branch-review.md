@@ -74,8 +74,8 @@ first design (2026-08-06) made the loop iterative, because fixes unmask
 problems and drift, and stopped it by severity rather than by banning
 iteration: the maintainer's intuition was that such a loop "shifts to
 lesser and lesser issues". Only a full-scope read clears the branch;
-scoped re-reviews verify waves. The cap of three waves is marked
-[LOAD-BEARING] as the loop's only termination guarantee, and a DRIFT pass
+scoped re-reviews verify waves. The cap of three waves is the loop's
+only termination guarantee, and a DRIFT pass
 spends a wave so that revert-and-replan cycles cannot bypass it. One fixer
 with the whole list is upstream's rule: per-finding fixers each rebuild
 context and re-run suites, and in a session upstream reports, a final
@@ -125,6 +125,9 @@ accepted by the maintainer.)
 
 ## Changes
 
+- 2026-10-28: the wave cap lost its [LOAD-BEARING] mark, its wording
+  kept: marks are a spec convention, and the skills place none on their
+  own text (`docs/decisions/the-spec.md`).
 - 2026-10-27: review seats also check that the range's base is an
   ancestor of its head: a range across diverged history would be
   reviewed as a diff of unrelated trees. Upstream's review-package added the same guard

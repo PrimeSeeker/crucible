@@ -22,18 +22,23 @@ children carry both (`skills/brainstorming/references/umbrellas.md`
 
 **Binding through one line.** A child names its umbrella in a line of
 its preamble, and through that line its own entry and the umbrella's
-binding content bind it, up the chain of umbrellas, each read where it
-lives (`skills/brainstorming/references/umbrellas.md` § Children).
+binding content, its Constraints & invariants, its marks and the
+decisions it records as the operator's firm preference, bind it, up the
+chain of umbrellas, each read where it lives
+(`skills/brainstorming/references/umbrellas.md` § Children).
 Every statement of what binds, in the skills and the seat templates,
 names the umbrella; that clause is the one rule of the umbrella that
 crucible's text states at each of its sites rather than once.
 
 **Edited by weight until it closes.** Lightly held edits travel on a
-child's branch. A binding change never does: it goes to the operator,
-lands on a branch of its own, and each child in flight takes it in from
-the base (`skills/brainstorming/references/umbrellas.md` § Edits;
+child's branch. A binding change, a change to a firm decision included,
+never does: it goes to the operator, lands on a branch of its own, and
+each child in flight takes it in from the base
+(`skills/brainstorming/references/umbrellas.md` § Edits;
 `skills/redteaming/references/flip-paths.md` § Under an umbrella:
-binding changes and late splits).
+binding changes and late splits). A child's controller never confirms a
+change to umbrella content itself, however contained the change looks
+(`skills/redteaming/references/flip-paths.md` § The containment test).
 
 **Marks, not derived state.** Each entry carries its own mark, `landed`,
 `umbrella` or `dropped`, and a child writes its own `landed` in the
@@ -128,6 +133,14 @@ is meant to make, and the binding change reached the base on the
 operator's ruling. (Basis: judgment, accepted by the maintainer; the
 last point on 2026-10-28.)
 
+An umbrella records the operator's firm preferences as a spec does
+(`docs/decisions/the-spec.md`), so its firm decisions bind its children
+too, and changing one is a binding change: as a lightly held edit it
+could otherwise travel on one child's branch. Umbrella content stays
+outside what a child's controller may confirm as a contained amendment,
+keeping the decision ask it had. (Basis: judgment, accepted by the
+maintainer, 2026-10-28.)
+
 ### Binding changes off the child's branch
 
 A binding change made on one child's branch would reach the base, and
@@ -173,6 +186,9 @@ where the feature's folder was born on a tree without the umbrella.
 
 ## Changes
 
+- 2026-10-28: an umbrella's firm decisions bind its children and
+  changing one is a binding change; a child's controller never confirms
+  a change to umbrella content as a contained amendment.
 - 2026-10-28: umbrellas: one committed document per effort of several
   features, reviewed by what it carries, binding its children through a
   preamble line named at every statement of what binds, edited by

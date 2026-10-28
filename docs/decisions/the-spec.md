@@ -2,18 +2,56 @@
 
 ## Decision
 
-**Decision weights.** A [LOAD-BEARING] mark binds exactly the sentence or
-bullet it annotates, and the Constraints & invariants section binds by
-construction; everything else is lightly held, and downstream work may
-flip it with a logged rationale (`crucible:brainstorming § Spec
-contract`).
+**The spec is a hypothesis.** A spec is read as probably subtly wrong
+and certainly locally imperfect. What binds in it, from its campaign's
+close, is its Constraints & invariants, its marks, the decisions it
+records as the operator's firm preference, the preamble conventions it
+declares binding, and the umbrella content its umbrella line brings in.
+Binding means never changed silently, not never changed without the
+operator, and binding text is read for its intent: a case its literal
+reading reaches that its author plainly did not consider is raised for a
+ruling, never applied literally. Everything else is lightly held, and
+downstream work may flip it with a logged rationale
+(`crucible:brainstorming § Spec contract`).
+
+**Decision weights.** A mark, `[LOAD-BEARING: <what builds on it>]`,
+binds exactly the sentence or bullet it annotates, and is earned only
+where something beyond that sentence builds on the decision: other
+tasks, other features or children, an outside commitment. A wording, a
+threshold only the feature uses and the operator's preference earn none.
+Constraints & invariants binds by construction and holds invariants
+every task must keep, not a requirement one site meets. Marks are a spec
+convention: the skills place none on their own text.
+
+**Approval strength.** The brainstorm decision record and the design
+digest record each decision `open`, `accepted` or `firm`, and each
+record entry names its proposer, the operator or the controller.
+`accepted`, the default for any approval, a "+", an "OK" or a "your
+call" included, means "this until new evidence arrives"; `firm` is
+recorded only on the operator's explicit word, never inferred from an
+approval. A firm decision that reaches a spec or an umbrella is stated
+there as the operator's firm preference and binds without a mark. A
+route entry confirms its route only when `accepted` or `firm`. Every
+operator ruling on a decision ask after the brainstorm enters the
+brainstorm decision record too (`crucible:brainstorming § Workspace
+provisioning (brainstorm exit)`;
+`skills/redteaming/references/formats.md` § Feature workspace root and
+layout).
 
 **Flip paths.** From the spec campaign's close on, binding content found
-wrong changes only through a scoped amendment (contained blast radius;
-no new campaign or plan phase) or a supersede (a successor with its own
-review), each opened by a decision ask; a ruling that patches the plan
-mid-execution needs no ask. The procedure is stated once, in
-`skills/redteaming/references/flip-paths.md`.
+wrong changes only through a scoped amendment (a correction inside a
+mechanism that stands; no new campaign or plan phase) or a supersede (a
+successor with its own review). Every change to binding content, a
+ruling that patches the plan included, is either contained or put to
+the operator as a decision ask. It is contained when everything that
+builds on or consumes the changed item lies inside the feature, and it
+changes no umbrella content and no firm decision, makes no failing
+check pass on the same work, and redefines no mechanism, which takes a
+supersede. The controller confirms a contained scoped amendment itself
+and records it as its own ruling, which reaches the branch review and
+the close readout; reversing one is a scoped amendment the operator
+confirms. The procedure and the test are stated once, in
+`skills/redteaming/references/flip-paths.md` (§ The containment test).
 
 **Requirements by pointer.** The converged spec is a shared input every
 downstream agent reads for itself; isolation covers the campaign's
@@ -62,7 +100,69 @@ each departure, but one who finds binding content wrong reports BLOCKED
 and never improvises around it
 (`skills/subagent-driven-development/implementer-prompt.md` § Binding vs
 Advisory: the Deviation License). (Basis: judgment, accepted by the
-maintainer, 2026-08-05.)
+maintainer, 2026-08-05.) Since 2026-10-28 the report names the item, the
+evidence that shows it wrong and a proposed correction
+(`docs/decisions/task-loop.md`).
+
+### The spec as a hypothesis
+
+The maintainer asked that the process state throughout that a spec is
+"likely subtly flawed (and almost certainly has some local errors as
+well, given that we're trying to stop redteaming early)", and observed
+that most of their approvals are shaped like "no strong preference,
+let's go with this until new evidence arrives", while "load-bearing
+marks are used too liberally and result in bureaucracy" (2026-10-28).
+An earlier count found 27 and 15 marks in the specs of crucible's first
+two features (August 2026), and 0 to 7, most 2 or 3, in those since
+October; the maintainer, on 2026-10-27: "we're probably marking too
+many points as load-bearing". (Basis: the maintainer's preference, for
+the aim; measured, for the count.)
+
+Until then every correction to a spec's binding content, however
+contained, cost an operator ask. A sample took the place of a full count, which
+workspaces deleted at finish would have made a transcript dig, and in
+which a mark that never fired cannot be told from one that deterred a
+drift: four features with marks that went through implementation, on
+crucible and one other project, their session transcripts searched by
+keyword, so the figures are order-of-magnitude only and the sample's
+report is not committed. 3 of 29 marks and 9 of 36 Constraints items had
+any binding event after their campaign closed, most of them a review
+finding that cited the item and rejected a real drift, at the cost of at
+most a fix round. The costly cases took three shapes: ceremony, a mark
+on a command's wording forcing a scoped amendment and a re-pin of the
+plan; literalism, a controller applying a Constraint literally to an
+edge case its author plausibly never considered and removing existing
+behaviour, with no ask; and a probably blocked improvement, a Constraint
+reverting an implementer's improvement. The one chain of a stop and two
+asks began at an Acceptance threshold and ended in a Constraint change
+the maintainer accepted with "OK, I guess", after the host's permission
+classifier had refused the spec edit as "rewriting a binding acceptance
+threshold so a failing gate would pass". Unmarked operator rulings
+flipped downstream went fine, under the logged-rationale rule. An agent
+offered dropping the count or sampling, and the maintainer chose the
+sample. (Basis: measured, for the sample; judgment, accepted by the
+maintainer, for sampling in place of a count, 2026-10-28.)
+
+Under the containment test, a correction whose consumers all lie inside
+the feature is the controller's to confirm, and is made visible rather
+than asked: its marker, its named commit, a ruling in the ledger that the branch review
+receives, and a line in the close readout. Umbrella content and firm
+decisions keep the operator's ask they had; the failing-check exclusion
+answers the acceptance-threshold case, and the intent reading the
+literalism case. An agent proposed the controller as confirmer, one of
+three options with a fresh adjudicator per correction and a batched,
+non-blocking operator ask, and the maintainer agreed. A mark names what
+builds on it, which is what the test reads off it; the operator's
+preference is recorded as a status, `firm`, not a mark: a mark records
+what builds on a decision, `firm` the operator's preference. The two
+marks the skills had placed on
+their own text, on the redteaming reporting stance and the branch
+review's wave cap, went with their wording kept. Approvals default to
+`accepted` because most mean "this until new evidence arrives", and the
+maintainer left the statuses to the agent ("your call"). (Basis: the
+maintainer's preference, for the aim; judgment, accepted by the
+maintainer, for the test, the mark's form and the statuses, 2026-10-28;
+measured, for the two exclusions' cases.)
 
 ### Pointers, not copies
 
@@ -116,9 +216,22 @@ measured.)
   to land their mechanism in the spec (§ Why).
 - **Annotating a fix in the spec** with finding citations or changelog
   prose: what changed and why lives in the round records.
+- **An operator ask for every correction to binding content**, the rule
+  until 2026-10-28, and **a fresh adjudicator per correction or a
+  batched, non-blocking operator ask** as the confirmer of a contained
+  one (§ Why).
+- **A mark for the operator's preference**: it is recorded `firm`
+  (§ Why).
 
 ## Changes
 
+- 2026-10-28: the spec as a hypothesis: firm decisions bind, binding
+  text is read for its intent, the controller confirms a scoped
+  amendment the containment test finds contained and records it as its
+  ruling, a mark names what builds on it and the skills carry none, and
+  approvals are recorded `open`, `accepted` or `firm` with a proposer;
+  after the maintainer's request and a sample of marks and Constraints
+  items after their campaign's close.
 - 2026-10-13: flip paths: the scoped amendment and the supersede, stated
   once in a shared reference.
 - 2026-10-11: requirements by pointer: the plan's path and task number,

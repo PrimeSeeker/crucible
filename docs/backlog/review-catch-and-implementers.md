@@ -14,9 +14,6 @@
   lane and every route's branch review) have none. The brainstorm's
   consumer sweep finds existing sites that state a rule; it does not
   ask whether every flow reaches a rule's trigger.
-- The task that wrote the decision record could not see the brainstorm
-  decision record, so it tagged every position "judgment, accepted by
-  the maintainer", including positions that were the maintainer's own.
 - The maintainer's view (2026-10-28): work on what the campaign
   catches, and probably empower implementers further.
 
@@ -32,9 +29,6 @@
   that are sequential on shared files and low in mechanism, such as
   prose, the plan may route review to the branch review alone, keeping
   the implementer's concerns as the per-task net.
-- **Decision-record tasks take the brainstorm decision record** as an
-  input (maintainer agreed), so each Basis tag is attributed when
-  written.
 - **Implementers' standing.** Decide what more an implementer may do
   with a concern beyond reporting it: for example, raise it as a
   finding the task review must rule on, or propose a fix to a site

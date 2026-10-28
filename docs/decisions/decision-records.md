@@ -26,6 +26,16 @@ A record's sections, in order:
 - `## Changes`: one line per change, newest first,
   `<YYYY-MM-DD>: <what changed, and why>`.
 
+A record states a position as held firmly only where the maintainer
+said so: "the maintainer's preference" names a position's origin, not
+its strength, and no existing record is re-read as firm. A plan task
+that writes or edits a record names the feature's brainstorm decision
+record among its inputs, and each position's basis is attributed from
+its entry's proposer and status, the maintainer's preference where the
+operator proposed it and judgment, accepted by the maintainer, where the
+controller did (`crucible:writing-plans § Per-task structure — four
+fields, all required`).
+
 A section carries content or is absent; none says "N/A". Every edit adds
 its Changes line in the same commit. At the port, a record got one
 Changes line per position it states, ported or added beside the ported
@@ -97,6 +107,23 @@ without the history they came from; quoting the maintainer is fine.
 (Basis: judgment, accepted by the maintainer on 2026-10-17; quoting is
 the maintainer's own allowance.)
 
+### Origin and strength
+
+On crucible's umbrella-specs feature (2026-10-28), the task that wrote a
+decision record could not see the brainstorm decision record, and tagged
+every position "judgment, accepted by the maintainer", the maintainer's
+own included. Naming that record among the task's inputs, for its
+implementer and its task reviewer, was an agent's follow-up the
+maintainer agreed to. (Basis: a single incident; judgment, accepted by
+the maintainer.)
+
+With approvals recorded `accepted` by default and `firm` only on the
+operator's word (`docs/decisions/the-spec.md`), "the maintainer's
+preference" could be read as firmness; the sentence keeping origin and
+strength apart was an agent's proposal, the maintainer leaving the call
+to it ("your call"). (Basis: judgment, accepted by the maintainer,
+2026-10-28.)
+
 ## Rejected
 
 - **An append-only log** whose entries supersede earlier ones by naming
@@ -108,6 +135,10 @@ the maintainer's own allowance.)
 
 ## Changes
 
+- 2026-10-28: a position is stated as firmly held only on the
+  maintainer's word, the maintainer's preference naming its origin, not
+  its strength; a task writing a record attributes each basis from the
+  brainstorm decision record's proposer and status.
 - 2026-10-20: records by family, edited in place with git history as the
   log, in place of the append-only log and the planned immutable records.
 - 2026-10-20: slug-only names and no index file.

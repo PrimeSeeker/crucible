@@ -51,12 +51,18 @@ plan together (two for a large plan), one merged fix wave, the blind
 verifier and the plan phase's terminal pass
 (`docs/decisions/terminal-pass.md`). After a not-landed verdict or a
 terminal-pass finding, one scoped repair; anything still open goes to the
-operator as a decision ask, and a structural finding takes the flip path
-against the spec. The shape is announced and the phase proceeds, with no
-approval gate. It is called the plan phase, never a campaign; its
-directory `campaigns/plan/` and argument value `plan` keep their names. At
-close the controller seeds SDD's ledger from the routing table and hands
-off to execution (`skills/redteaming/references/plan-phase.md`).
+operator as a decision ask, and a finding that shows the spec wrong takes
+the flip path against the spec. A correction to the spec that the
+containment test finds contained lands in the phase's own fix wave, as a
+`Contained amendment:` item of its fix list, and is named in its readout
+as a technical call (`docs/decisions/the-spec.md`). The shape is
+announced and the phase proceeds, with no approval gate. It is called the
+plan phase, never a campaign; its directory `campaigns/plan/` and
+argument value `plan` keep their names. At close the controller seeds
+SDD's ledger from the routing table, and with each contained amendment as
+one of its own rulings, which SDD's setup copies there if the ledger
+lacks it, and hands off to execution
+(`skills/redteaming/references/plan-phase.md`).
 
 ## Why
 
@@ -138,6 +144,15 @@ wave had just introduced, which no earlier round could have seen, and the
 maintainer confirmed adding the closing pass during that design's
 campaign. (Basis: measured; judgment, accepted by the maintainer.)
 
+The plan phase called a finding that shows the spec's premise wrong
+"structural", while the containment test calls a change structural when
+it redefines a mechanism, and sends it to a supersede; on 2026-10-28 the
+phase's wording became a finding that shows the spec wrong, leaving one
+sense. A contained amendment the phase makes is seeded into the ledger
+because the branch review and the close readout find the controller's
+rulings only there, as they find execution's. (Basis: judgment, accepted
+by the maintainer.)
+
 The maintainer's amendment to the design philosophy (2026-08-06): the
 spec phase expects steering, while the plan phase is autonomous by
 default, the maintainer reporting over 95% "proceed" in practice. When the
@@ -160,6 +175,9 @@ directory and the argument value are interfaces that records and
 
 ## Changes
 
+- 2026-10-28: the plan phase: a finding that shows the spec wrong takes
+  the flip path, and a contained amendment lands in the phase's fix
+  list, is named in its readout and is seeded into the ledger at close.
 - 2026-10-27: a task's edge and error scenarios name the inputs the
   spec implies but never names, after upstream's Review Focus (v7.0.1
   review): those are the inputs no one else will think to test.
