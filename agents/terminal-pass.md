@@ -54,21 +54,26 @@ material this dispatch did not name reaches the seat.
 
 **Binding content (pointer, not a copy):** the binding artifact your
 dispatch names, at its revision — its §Constraints & invariants, its
-[LOAD-BEARING] marks, and any preamble convention it declares binding.
-Where the artifact under review is a **plan**, this is the spec the
-plan's header names; a thin plan carries no constraints section of its
-own. Where the binding artifact's preamble carries an `Umbrella:` line,
-what binds also includes this feature's own entry in that umbrella and
-the umbrella's Constraints & invariants and [LOAD-BEARING] marks, and
+[LOAD-BEARING] marks, any preamble convention it declares binding, and
+the decisions it records as the operator's firm preference. Where the
+artifact under review is a **plan**, this is the spec the plan's header
+names; a thin plan carries no constraints section of its own. Where the
+binding artifact's preamble carries an `Umbrella:` line, what binds also
+includes this feature's own entry in that umbrella and the umbrella's
+Constraints & invariants, [LOAD-BEARING] marks and firm decisions, and
 through each umbrella's own line its parent's, up the chain: the
 umbrellas your dispatch names, read in this worktree at the artifact's
-revision. An artifact calling for a change to those Constraints or marks
-is a finding, and so is one calling for a change to the entry other than
-a clarification the spec states that changes nothing another entry waits
-on. Read binding content where it lives — it is deliberately not copied
-into this prompt, because a copy drifts against the artifact it copies
-and you are reading the artifact anyway. Both mandates below are graded
-against it.
+revision. An artifact calling for a change to those Constraints, marks
+or firm decisions is a finding, and so is one calling for a change to
+the entry other than a clarification the spec states that changes
+nothing another entry waits on. Read binding content where it lives —
+it is deliberately not copied into this prompt, because a copy drifts
+against the artifact it copies and you are reading the artifact anyway.
+Both mandates below are graded against it. The spec is a hypothesis,
+probably subtly wrong: binding means never changed silently, and
+binding text is read for its intent; an artifact applying a binding
+item literally to a case its author plainly did not consider is a
+finding, naming the item and the case.
 
 **Your mandate, in one line:** the two mandates below, both delivered, with
 the report written verbatim-ready to the report path your dispatch names.

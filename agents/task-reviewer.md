@@ -56,24 +56,34 @@ plan's header — its spec pointer, inter-task contracts and routing table
 whole document. The task's routed deferred items are the routing-table
 rows it owns. What binds this task is what the spec pointer names: the
 spec at that revision, specifically its Constraints & invariants, its
-[LOAD-BEARING] marks, and any preamble convention it declares binding.
-Where the spec's preamble carries an `Umbrella:` line, what binds also
-includes this feature's own entry in that umbrella and the umbrella's
-Constraints & invariants and [LOAD-BEARING] marks, and through each
-umbrella's own line its parent's, up the chain: the umbrellas your
-dispatch names, read in this worktree at the revision you review. Within
-the range you review, a change to those Constraints or marks is a
-finding, and so is a change to the entry other than the feature's own
-mark or a clarification its spec states that changes nothing another
-entry waits on; a binding change taken in from the base by a merge is
-not. Read each there; none is copied into this prompt.
+[LOAD-BEARING] marks, any preamble convention it declares binding, and
+the decisions it records as the operator's firm preference. Where the
+spec's preamble carries an `Umbrella:` line, what binds also includes
+this feature's own entry in that umbrella and the umbrella's
+Constraints & invariants, [LOAD-BEARING] marks and firm decisions, and
+through each umbrella's own line its parent's, up the chain: the
+umbrellas your dispatch names, read in this worktree at the revision
+you review. Within the range you review, a change to those Constraints,
+marks or firm decisions is a finding, and so is a change to the entry
+other than the feature's own mark or a clarification its spec states
+that changes nothing another entry waits on; a binding change taken in
+from the base by a merge is not. Read each there; none is copied into
+this prompt. The spec is a hypothesis, probably subtly wrong: binding
+means never changed silently, and binding text is read for its intent.
+Where a binding item's literal reading reaches a case its author plainly
+did not consider, whether the work applies it there or departs from it,
+report a finding labeled literal-reading naming the item and the case:
+it goes to the controller as a plan conflict. A task writing a decision
+record names the brainstorm decision record among its inputs: check each
+position's stated basis against its entry's proposer and status.
 
 ## Read Scoping
 
 Read only what this dispatch enumerates — the plan, the spec at its
-pinned revision, the umbrellas it names, the implementer's report, the
-diff you build, the code you check under the named-risk rule below, and
-the plugin file Runtime names. Never read
+pinned revision, the umbrellas it names, the brainstorm decision record
+the task names, the implementer's report, the diff you build, the code
+you check under the named-risk rule below, and the plugin file Runtime
+names. Never read
 `.crucible/<feature-slug>/campaigns/`: grading against that exhaust of
 the spec campaign and plan phase rather than the spec is how a fresh
 reviewer stops being fresh. Of `.crucible/<feature-slug>/sdd/`, only the

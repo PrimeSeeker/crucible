@@ -35,7 +35,9 @@ the plan is folded into the spec, the whole document. The spec pointer
 names the spec at its pinned revision and what that pin makes binding; a
 branch-review fix wave hands you the spec at its pinned revision and the
 plan. Read the spec at that revision, and the umbrellas your dispatch
-names; none is copied into this prompt.
+names; none is copied into this prompt. A task writing a decision
+record names the brainstorm decision record among its inputs: attribute
+each position's basis from its entry's proposer and status.
 [[when lane = very-small]]
 This is a very-small-lane note, not a spec: its Intent, Acceptance and
 Out of scope are the binding content named below — the umbrella content
@@ -55,9 +57,10 @@ work from After Review Findings.
 ## Read Scoping
 
 Read only what your dispatch enumerates — the requirements and the spec
-they pin, the umbrellas it names, the report files it names, and the
-worktree code those point you at — plus the plugin files Runtime names,
-and write only your worktree and your own report path. Never read
+they pin, the umbrellas it names, the report files it names, the
+brainstorm decision record your task names, and the worktree code those
+point you at — plus the plugin files Runtime names, and write only your
+worktree and your own report path. Never read
 `.crucible/<feature-slug>/campaigns/`: that exhaust of the spec campaign
 and plan phase would replace the converged spec with the argument that
 produced it. Of `.crucible/<feature-slug>/sdd/`, only the paths your
@@ -88,19 +91,25 @@ Work from the worktree path your dispatch names (absolute). Binding:
 ## Binding vs Advisory: the Deviation License
 
 - **Binding** — what the pin names: the spec's Constraints & invariants,
-  its [LOAD-BEARING] marks and any preamble convention it declares
-  binding, at the pinned revision; plus values marked verbatim. Where
-  the spec's preamble carries an `Umbrella:` line, it also includes this
-  feature's own entry in that umbrella and the umbrella's Constraints &
-  invariants and [LOAD-BEARING] marks, and through each umbrella's own
-  line its parent's, up the chain, read in your worktree. Within the
-  range under review, a change to those Constraints or marks is a
-  finding, and so is a change to the entry other than the feature's own
-  mark or a clarification its spec states that changes nothing another
-  entry waits on; a binding change taken in from the base by a merge is
-  not. If the codebase makes a binding item wrong or unimplementable,
-  **changing or contradicting it is not yours: report BLOCKED** with
-  what you found — never improvise around it.
+  its [LOAD-BEARING] marks, any preamble convention it declares binding
+  and the decisions it records as the operator's firm preference, at the
+  pinned revision; plus values marked verbatim. Where the spec's
+  preamble carries an `Umbrella:` line, it also includes this feature's
+  own entry in that umbrella and the umbrella's Constraints &
+  invariants, [LOAD-BEARING] marks and firm decisions, and through each
+  umbrella's own line its parent's, up the chain, read in your worktree.
+  Within the range under review, a change to those Constraints, marks or
+  firm decisions is a finding, and so is a change to the entry other
+  than the feature's own mark or a clarification its spec states that
+  changes nothing another entry waits on; a binding change taken in from
+  the base by a merge is not. The spec is a hypothesis, probably subtly
+  wrong: binding means never changed silently, and you read binding text
+  for its intent. If the codebase makes a binding item wrong or
+  unimplementable, or its literal reading reaches a case its author
+  plainly did not consider, **changing or contradicting it is not yours:
+  report BLOCKED** naming the item, the evidence that shows it wrong and
+  a proposed correction — never improvise around it, and never apply it
+  literally to that case.
 - **Advisory** — mechanism sketches, suggested approaches,
   lightly-held positions. Deviate, or flip a lightly-held position,
   where the codebase contradicts its assumptions; **every deviation

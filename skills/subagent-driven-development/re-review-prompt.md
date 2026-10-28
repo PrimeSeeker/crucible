@@ -48,17 +48,24 @@ pointer carries the binding pin, and that task's section (the whole
 document where the plan is folded into the spec); in a branch-review
 wave, the spec at its pinned revision and the plan. What binds is the
 spec at that revision: its Constraints & invariants, its [LOAD-BEARING]
-marks, and any preamble convention it declares binding. Where the spec's
-preamble carries an `Umbrella:` line, what binds also includes this
-feature's own entry in that umbrella and the umbrella's Constraints &
-invariants and [LOAD-BEARING] marks, and through each umbrella's own
+marks, any preamble convention it declares binding, and the decisions
+it records as the operator's firm preference. Where the spec's preamble
+carries an `Umbrella:` line, what binds also includes this feature's own
+entry in that umbrella and the umbrella's Constraints & invariants,
+[LOAD-BEARING] marks and firm decisions, and through each umbrella's own
 line its parent's, up the chain: the umbrellas your dispatch names, read
 in this worktree at the revision you review. Within the range you
-review, a change to those Constraints or marks is a finding, and so is a
-change to the entry other than the feature's own mark or a clarification
-its spec states that changes nothing another entry waits on; a binding
-change taken in from the base by a merge is not. Read each there; none
-is copied into this prompt.
+review, a change to those Constraints, marks or firm decisions is a
+finding, and so is a change to the entry other than the feature's own
+mark or a clarification its spec states that changes nothing another
+entry waits on; a binding change taken in from the base by a merge is
+not. Read each there; none is copied into this prompt. The spec is a
+hypothesis, probably subtly wrong: binding means never changed silently,
+and binding text is read for its intent. Where the fix diff applies a
+binding item, or departs from one, in a case its literal reading
+reaches and its author plainly did not consider, report new breakage
+labeled literal-reading naming the item and the case: it goes to the
+controller as a plan conflict.
 [[when lane = very-small]]
 Your requirements are a very-small-lane note at its pinned revision, not
 a spec: its Intent, Acceptance and Out of scope are the binding content;
