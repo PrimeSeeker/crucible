@@ -1,6 +1,6 @@
 # Word count per skill directory: whitespace-separated tokens in its *.md files.
 # Read by tests/test_prose_budget.py; AGENTS.md (the prose budget) says when to change a line.
-brainstorming 5162
+brainstorming 5407
 dispatching-parallel-agents 920
 finishing-a-development-branch 1726
 receiving-review 515
