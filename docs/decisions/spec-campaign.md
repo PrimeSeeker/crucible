@@ -70,7 +70,17 @@ in its readout whether it drove structural change and on what basis.
 The cap is 4 rounds, degraded rounds excluded, counted from the records;
 structural findings open at the cap go to the operator as a decision
 ask: another round, a supersede, or acceptance with parked rulings
-(`crucible:redteaming § Stop rule and terminal pass`).
+(`crucible:redteaming § Stop rule and terminal pass`). A premise finding
+(`docs/decisions/evidence-and-findings.md`) is merged `parked` as a
+decision ask to the operator and counts as no BLOCKER, open MAJOR or
+structural finding here: a round whose only BLOCKER is a premise finding
+can be the stop round, and an open one joins neither cap ask. One still
+open at the campaign's close is carried in the digest's
+`## Open judgments`, or in the close readout of a minor design, and
+seeded into the ledger as open at the plan phase's close, or at the
+campaign's own close on the folded lane; an umbrella's goes to the
+operator with the landing ask (`docs/decisions/umbrellas.md`;
+`skills/redteaming/references/flip-paths.md` § Premise findings).
 
 **Focused checks.** Panel seats, the round-0 pre-pass, the blind
 verifier and the terminal pass run a focused check where a claim needs
@@ -231,6 +241,14 @@ the operator (2026-10-13). Whether campaigns should stop earlier is
 `docs/backlog/campaign-early-stop-investigation.md`. (Basis: measured;
 judgment, accepted by the maintainer.)
 
+The hypothesis-specs umbrella asked that a seat be able to say the spec,
+or the goal behind it, is wrong without costing a fix wave, so a premise
+finding reaches the operator as a decision ask rather than as an open
+BLOCKER or MAJOR that a gate would wait on. The readouts carry it until
+it is ruled, and each close passes it to the next phase's record: an
+agent's proposal, which the maintainer accepted. (Basis: judgment,
+accepted by the maintainer, 2026-10-29.)
+
 ### Focused checks
 
 A round-0 pre-pass once started a package-wide suite run of over 30
@@ -270,6 +288,9 @@ trim.)
 
 ## Changes
 
+- 2026-10-29: a premise finding is a decision ask, outside the stop
+  rule's count and the cap asks, carried across the campaign's close
+  until ruled.
 - 2026-10-28: the operating stance's paragraph on disclosure lost its
   [LOAD-BEARING] mark, its wording kept: marks are a spec convention.
 - 2026-10-13: panels sized by the artifact's maturity and size, every

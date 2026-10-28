@@ -3,7 +3,7 @@
 Crucible is forked from [superpowers](https://github.com/obra/superpowers)
 and owned outright (`docs/decisions/fork-and-own.md`). This map says where
 upstream's files went: the skills renamed or folded, the files not carried
-with the reason for each, and the drops not yet decided. A file that maps
+with the reason for each, and any drop not yet decided. A file that maps
 one to one, kept or rewritten in place under the same role, has no row.
 
 Upstream paths carry the prefix `superpowers/` and name files at the last
@@ -78,9 +78,4 @@ decision pending, with the backlog item that decides it.
 | SDD's other scripts, `superpowers/skills/subagent-driven-development/scripts/review-package` and `superpowers/skills/subagent-driven-development/scripts/task-brief` | reviewers build their own diff; the plan pointer | Replaced. |
 | systematic-debugging's `superpowers/skills/systematic-debugging/CREATION-LOG.md` and its pressure and academic tests (`superpowers/skills/systematic-debugging/test-pressure-1.md` to `superpowers/skills/systematic-debugging/test-pressure-3.md`, `superpowers/skills/systematic-debugging/test-academic.md`) | — | Upstream's skill-development record, read by no workflow step. |
 | writing-skills' reference files other than `superpowers/skills/writing-skills/references/graphviz-conventions.dot` (the rest of `superpowers/skills/writing-skills/references/`, and `superpowers/skills/writing-skills/render-graphs.js`) | the hosts' own skill tooling and guidance | writing-skills routes to each host's own tooling. |
-
-## Not carried, decision pending
-
-| upstream | what is open | backlog item |
-|---|---|---|
-| the code reviewer's Recommendations section (`superpowers/skills/requesting-code-review/code-reviewer.md`) | crucible's reviewers report improvements as no finding (`docs/decisions/evidence-and-findings.md`); whether that rule is right | `docs/backlog/review-improvements.md` |
+| the code reviewer's Recommendations section (`superpowers/skills/requesting-code-review/code-reviewer.md`) | a reviewer's `Questions` section (`skills/subagent-driven-development/references/premise-and-questions.md` § Questions) | An improvement is no finding, so it opens no fix wave; it goes in `Questions` beside doubts, and one the controller adopts rides the next fix wave (`docs/decisions/evidence-and-findings.md`). |

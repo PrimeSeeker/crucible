@@ -14,6 +14,20 @@ ruling, never applied literally. Everything else is lightly held, and
 downstream work may flip it with a logged rationale
 (`crucible:brainstorming § Spec contract`).
 
+**The request.** A `## Request` section precedes the Intent of every
+spec, folded document, lane note and umbrella: the message that asked
+for the work and each later message that changed what was asked,
+verbatim, a message the controller is unsure about included. It stands
+outside the parts any route makes binding: it is evidence of what was
+asked, not the standard, and a seat may find the request itself wrong.
+A part the project's rules for committed text keep out is replaced by
+`[redacted: <kind>]`, and where no rule settles a part, the controller
+asks the operator once, as it writes the section. A child's Request
+points to its umbrella's and quotes only what was asked of the child, or
+the effort's whole request where its umbrella has none. Seats check the
+Intent against it (`docs/decisions/evidence-and-findings.md`, the goal
+check).
+
 **Decision weights.** A mark, `[LOAD-BEARING: <what builds on it>]`,
 binds exactly the sentence or bullet it annotates, and is earned only
 where something beyond that sentence builds on the decision: other
@@ -52,6 +66,12 @@ and records it as its own ruling, which reaches the branch review and
 the close readout; reversing one is a scoped amendment the operator
 confirms. The procedure and the test are stated once, in
 `skills/redteaming/references/flip-paths.md` (§ The containment test).
+A premise finding, a claim that something the operator asked for or
+decided is wrong, goes to the operator as a decision ask at any phase,
+the spec campaign included, never confirmed as contained; where it is
+also a binding item found wrong, a firm decision or a lane note's
+Intent, its route governs (`skills/redteaming/references/flip-paths.md`
+§ Premise findings).
 
 **Requirements by pointer.** The converged spec is a shared input every
 downstream agent reads for itself; isolation covers the campaign's
@@ -78,6 +98,12 @@ every stating site as a consumer: brainstorming's consumer sweep and a
 plan task's Files field enumerate them, and a fix report names the
 sibling instances of its defect (`crucible:brainstorming § Spec
 self-review`, check 5).
+
+**Rules tied to a trigger are traced.** For a rule a design ties to a
+trigger ("at each X, do Y"), the same check names every route and phase
+that must reach the rule and the moment X occurs in each; where X occurs
+and nothing reaches the rule, the design has a gap. The branch reviewer
+asks the same of the shipped text (`docs/decisions/branch-review.md`).
 
 ## Why
 
@@ -168,6 +194,31 @@ maintainer, for the test, the mark's form and the statuses, 2026-10-28;
 measured, for the two exclusions' cases; judgment, a branch review's
 proposal accepted by the maintainer, for testing a literal-reading ruling.)
 
+### The request
+
+Until 2026-10-29 no step recorded the operator's request and no seat saw
+it, so none could check a spec's Intent against what was asked. The
+hypothesis-specs umbrella asked for the request quoted verbatim in the
+spec or lane note itself, where every seat already reads it, redacted
+where `AGENTS.md`'s no-local-context rule would keep a part out, as
+evidence and not the standard. Its placement before the Intent, outside
+every binding part, and its form are an agent's proposal, which the
+maintainer accepted; the placement moved there from the opening of the
+Intent during the spec's campaign, since a lane note's Intent binds and the
+request must not. (Basis: judgment, accepted by the maintainer.)
+
+### The trace
+
+On crucible's umbrella-specs feature (2026-10-28), the spec campaign and
+the plan phase missed a rule triggered "at each task or round boundary"
+in two phases that have none, the very-small lane and every branch
+review; an implementer and the branch review found it. The consumer
+sweep finds the sites that state a rule; it does not ask whether every
+flow reaches the rule's trigger. The trace sits in the author's
+self-review and the branch review, and gives no campaign seat a duty: an
+agent's proposal, which the maintainer accepted. (Basis: a single
+incident; judgment, accepted by the maintainer.)
+
 ### Pointers, not copies
 
 Copying spec content into the plan and then into every task brief made
@@ -229,6 +280,11 @@ measured.)
 
 ## Changes
 
+- 2026-10-29: a `## Request` section, outside the binding parts, before
+  every spec's, folded document's, lane note's and umbrella's Intent; a
+  premise finding goes to the operator at any phase; check 5 traces each
+  rule tied to a trigger through every route and phase; after the
+  umbrella-specs run and the hypothesis-specs umbrella's entry.
 - 2026-10-28: testing a literal-reading ruling, accepted by the
   maintainer at the landing.
 - 2026-10-28: sampling in place of a count attributed to the

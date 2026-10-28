@@ -25,8 +25,9 @@ the claude-ism scanner flags model names anywhere else in shipped text.
 Every dispatch names its model.
 
 **The seats.** The implementer runs on the default role, and a clearly
-bounded task may drop to the bounded role. Task reviewers and
-re-reviewers run on the bounded role or better. The adjudicator, the
+bounded task may drop to the bounded role. The task reviewer runs on the
+default role, every task; re-reviewers run on the bounded role or
+better. The adjudicator, the
 redteam panel seats and passes, and the branch reviewer run on the
 default role, never lowered to save cost; the blind verifier runs on the
 bounded role, never lower; the snapshot-blessing agent runs on the
@@ -129,6 +130,26 @@ checks one stated claim, and the maintainer approved it.
 for the recount; judgment, accepted by the maintainer, for the other
 rows.)
 
+The task reviewer moved to the default role on 2026-10-29. Its row had
+read "the bounded role or better" since the rename above, and before it
+"mid-tier or better", from a proposal of 2026-08-07 that measured
+nothing; no measurement in crucible's records supports either wording,
+and controllers took the floor. A differential probe (2026-10-28)
+re-read 10 past task reviews that had approved, 5 on crucible and 5 on
+one other project, each by one fresh default-role seat with no rubric,
+given a snapshot at the reviewed head, the diff and the plan task. Where
+the original reviewer ran on the bounded role (3 crucible samples), the
+seat found every defect a later branch review caught that the original
+had missed. Where the original ran on the default role over code (4
+samples), both saw the same defects, and where a later fix exists, the
+original had staked it MINOR and the ledger carried it to the fix. Model
+and rubric are confounded in the first group, and the samples are
+small. An agent proposed the default role for every task, and the
+maintainer agreed, wondering why the lower tier had been chosen in the
+first place. The re-reviewer keeps its row, which the probe did not
+look at: an agent's proposal, which the maintainer agreed to. (Basis:
+measured, on 10 samples; judgment, accepted by the maintainer.)
+
 ### The alternate role
 
 Round 1's swap is the maintainer's: "probably we need an R1 replacement
@@ -211,6 +232,9 @@ operator's config key.
 
 ## Changes
 
+- 2026-10-29: the task reviewer runs on the default role, every task,
+  after a differential probe of past task reviews; the re-reviewer keeps
+  the bounded role or better.
 - 2026-10-27: no dispatch reference states the no-tier-bump case any
   more, since Codex's dropped it; the escalation paragraph states the
   case host-neutrally.

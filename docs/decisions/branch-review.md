@@ -15,9 +15,29 @@ integration, drift accumulated across the branch, and anything the gates
 let through. It may read beyond the diff where correctness depends on it,
 triages every deferred item (promote, fix in a wave, or leave parked),
 checks each ruling against the final code, and flags undisclosed drift
-from binding content in a completed task as DRIFT. It runs on the default
+from binding content in a completed task as DRIFT. It runs the goal
+check, may raise premise findings and writes a `Questions` section
+(`docs/decisions/evidence-and-findings.md`), and for each rule the
+branch ties to a trigger asks whether every route and phase that must
+apply it reaches it when the trigger occurs. It runs on the default
 role, never lowered to save cost
 (`docs/decisions/model-roles-and-effort.md`).
+
+**Leads and questions.** A task reviewer's and an implementer's
+`Questions` items, an implementer's fixes proposed outside its task, the
+concerns of a fix report no re-review reads, and on the very-small lane
+a dispatched implementer's concerns, reach the branch reviewer as leads:
+ledger lines under `## Deferred minors` marked `lead (<kind>)`. It rules
+on each lead instead of triaging it: CONFIRMED, a finding at a staked
+severity; RECOMMENDED, an improvement it backs, which the controller may
+adopt to ride the next fix wave or which reaches the operator in the
+close readout; or LEFT, with one line. Its own `Questions` items, and a
+branch-review fix report's, go under the ledger's `## Questions` with
+the controller's disposition; the close readout lists them, and the
+branch reviewer's read scoping excludes that section, so a pass's
+questions never become the next pass's input
+(`crucible:subagent-driven-development § Setup`;
+`skills/requesting-code-review/code-reviewer.md` § Execution Trail).
 
 **The loop.** Only a BLOCKER or MAJOR opens a fix wave: one fresh
 implementer with the complete findings list, then a scoped re-review of
@@ -27,7 +47,11 @@ MAJOR open is followed by a full-scope pass, skipped only when nothing
 changed since the last one; the pass that ends the review is the branch
 review's terminal pass, a branch-reviewer dispatch. The cap is three
 waves; a finding that would need a fourth goes to the operator as a
-decision ask. Off the
+decision ask. A premise finding is a decision ask, not an open BLOCKER
+or MAJOR: a pass that leaves only premise findings open ends the review,
+and one left open holds no merge gate by itself. The re-reviewer rules
+on each concern a fix report raises, and a re-review missing a ruling
+is missing a verdict. Off the
 very-small lane, a DRIFT finding hands its task to revert-and-replan and
 spends a wave; on the lane, drift from the note is a wave finding. A red
 suite at SDD's Finish is a BLOCKER that opens a wave. Fixes are never the
@@ -42,10 +66,12 @@ the controller.
 **Standalone mode.** On a branch with no SDD run, the reviewer gets no
 ledger inputs and no report file, returns its report as its final
 message, works under the host's temporary directory, and reports
-deviations as ordinary findings rather than DRIFT. The invoking agent
-handles the findings under `crucible:receiving-review`, fixes the
-BLOCKERs and MAJORs it confirms and runs the review again after
-substantial fixes; there is no wave loop and no cap
+deviations as ordinary findings rather than DRIFT. With no ledger, the
+report is the record of everything it raises, its questions included.
+The invoking agent handles the findings under `crucible:receiving-review`,
+fixes the BLOCKERs and MAJORs it confirms, sends a premise finding to the
+operator as a decision ask rather than to a fix, and runs the review
+again after substantial fixes; there is no wave loop and no cap
 (`crucible:requesting-code-review § Standalone mode`).
 
 **Review seats build their own diff.** The task reviewer, re-reviewer,
@@ -101,6 +127,27 @@ merging any branch", as upstream's "Before merge to main" does: an edit
 made under the trivial-edit waiver is already outside the process. (Basis: judgment, accepted by the
 maintainer; external, for upstream's trigger.)
 
+### The last line of defence
+
+The maintainer asked for the reviewers' mandate to be extended to the
+redteam seats' "to parity", as "the last line of defense" ("maybe only
+full-branch, rather than task reviews?"), especially on the very-small
+lane, which has no independent review of its premises (2026-10-28). An
+escape analysis the same day found the branch review catching both
+premise-level MAJORs that task reviews had let through, and 6 of its 11
+BLOCKERs or MAJORs on planned routes premise-level or plan-coverage gaps
+(`docs/decisions/evidence-and-findings.md`). (Basis: the maintainer's
+preference, for the aim; measured.)
+
+Leads carry what task reviewers and implementers voice to the one seat
+that sees every task, and a pass's questions stay out of the next
+pass's input. The trace question comes from the umbrella-specs
+feature (2026-10-28), whose rule fired "at each task or round boundary"
+while two phases, the very-small lane and every branch review, have
+none; the spec campaign and the plan phase missed it, and the branch
+review confirmed it as its one MAJOR. (Basis: a single incident;
+judgment, accepted by the maintainer, for the forms.)
+
 ### Review seats build their own diff
 
 On 2026-10-11 crucible deleted its copy of upstream's `review-package`
@@ -125,6 +172,13 @@ accepted by the maintainer.)
 
 ## Changes
 
+- 2026-10-29: the branch reviewer runs the goal check, raises premise
+  findings, which keep no review open and hold no merge, writes
+  `Questions` to the ledger's `## Questions`, rules on leads CONFIRMED,
+  RECOMMENDED or
+  LEFT, and asks the trace question; the re-reviewer rules on a fix
+  report's concerns; the standalone report is its own record; after the
+  maintainer's request and an escape analysis.
 - 2026-10-28: the wave cap lost its [LOAD-BEARING] mark, its wording
   kept: marks are a spec convention, and the skills place none on their
   own text (`docs/decisions/the-spec.md`).

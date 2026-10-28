@@ -54,15 +54,21 @@ terminal-pass finding, one scoped repair; anything still open goes to the
 operator as a decision ask, and a finding that shows the spec wrong takes
 the flip path against the spec. A correction to the spec that the
 containment test finds contained lands in the phase's own fix wave, as a
-`Contained amendment:` item of its fix list, and is named in its readout
-as a technical call (`docs/decisions/the-spec.md`). The shape is
+`Contained amendment:` item of its fix list naming the binding item and
+the change, and is named in its readout as a technical call
+(`docs/decisions/the-spec.md`). Its reason, and why it is contained, go
+in the ruling of the merged entry that led to it, never in the item: the
+fix list is the blind verifier's input. The verifier verdicts the item
+from its plan-side hunks, the re-pin and any plan patch, and the
+controller confirms that the amendment commit landed. The shape is
 announced and the phase proceeds, with no approval gate. It is called the
 plan phase, never a campaign; its directory `campaigns/plan/` and
 argument value `plan` keep their names. At close the controller seeds
-SDD's ledger from the routing table, and with each contained amendment as
-one of its own rulings, which SDD's setup copies there if the ledger
-lacks it, and hands off to execution
-(`skills/redteaming/references/plan-phase.md`).
+SDD's ledger from the routing table, with each contained amendment as
+one of its own rulings, the item and its reason together, which SDD's
+setup copies there if the ledger lacks it, and with each premise finding
+still open as open (`docs/decisions/evidence-and-findings.md`), and
+hands off to execution (`skills/redteaming/references/plan-phase.md`).
 
 ## Why
 
@@ -153,6 +159,15 @@ because the branch review and the close readout find the controller's
 rulings only there, as they find execution's. (Basis: judgment, accepted
 by the maintainer.)
 
+As first written, a `Contained amendment:` item carried its reason,
+which the blind verifier must never see, and named a spec change that
+lands outside the verifier's diff and read scope; a probe of past
+reviews found it on 2026-10-28. The reason moved to the merged entry's
+ruling and travels with the item into the ledger, so the ruling still
+says what changed and why, and the verifier checks only what its diff
+holds. An agent's proposal, which the maintainer accepted. (Basis:
+measured, by the probe; judgment, accepted by the maintainer.)
+
 The maintainer's amendment to the design philosophy (2026-08-06): the
 spec phase expects steering, while the plan phase is autonomous by
 default, the maintainer reporting over 95% "proceed" in practice. When the
@@ -175,6 +190,10 @@ directory and the argument value are interfaces that records and
 
 ## Changes
 
+- 2026-10-29: a `Contained amendment:` item names the binding item and
+  the change, its reason going to the merged entry's ruling and beside
+  the item in the ledger, and the verifier verdicts it from the plan's
+  hunks; the plan phase's close seeds open premise asks into the ledger.
 - 2026-10-28: the plan phase: a finding that shows the spec wrong takes
   the flip path, and a contained amendment lands in the phase's fix
   list, is named in its readout and is seeded into the ledger at close.

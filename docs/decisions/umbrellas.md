@@ -9,7 +9,11 @@ Acceptance is the ordered list of its children, each entry saying what
 that child delivers, what it waits on, and whether it has landed. A
 child that splits becomes an umbrella itself, at any depth; every
 child's folder is born at the root like any feature's, and the list is
-the index (`skills/brainstorming/references/umbrellas.md` § Shape).
+the index. Its Request quotes the effort's request; a child's Request
+points to it and quotes only what was asked of that child, or the
+effort's whole request where the umbrella has none
+(`skills/brainstorming/references/umbrellas.md` § Shape;
+`docs/decisions/the-spec.md`).
 
 **Reviewed by what it carries, on no route.** An umbrella takes none of
 the three routes (`docs/decisions/routes.md`). One that carries
@@ -46,6 +50,17 @@ commit that lands it (`skills/brainstorming/references/umbrellas.md`
 § Marks; `crucible:subagent-driven-development § Finish`). An umbrella
 has closed when its marks say so, read down the chain; from then it is
 frozen (`skills/brainstorming/references/umbrellas.md` § Closing).
+
+**An open premise ask at the landing.** A premise finding still open
+when an umbrella lands goes to the operator with the landing ask, and
+the landing never waits on it. With no ledger to hold it, it is noted
+in the first entry with no mark in the umbrella's Children list, as
+`open premise ask: <the ask>`; that child's brainstorm takes it into its
+decision record, with the operator's ruling where one has come since or
+else as open for its dialogue, and the child removes the note as a
+clarification its spec states (`skills/brainstorming/references/umbrellas.md`
+§ Landing, § Children; `skills/redteaming/references/flip-paths.md`
+§ Premise findings).
 
 **Kept in the merged tree.** An umbrella's own pull request never
 offers `umbrella.md` for removal; the trade-off is in
@@ -87,9 +102,12 @@ open. (Basis: judgment, accepted by the maintainer, 2026-10-27.)
 
 Recursion is the maintainer's: their efforts "tend to have
 subphases-of-subphases", and they asked for it ("Yes, recursive,
-please"). One flat umbrella holding a whole tree would also grow toward
-the append-only parent's size, and any depth cap would have broken on
-the four-level case. (Basis: the maintainer's preference, 2026-10-27.)
+please"). (Basis: the maintainer's preference, 2026-10-27.) One flat
+umbrella holding a whole tree would also grow toward the append-only
+parent's size, and any depth cap would have broken on the four-level
+case: the reasons the umbrella-specs spec gave for rejecting both,
+which the maintainer accepted with it. (Basis: judgment, accepted by
+the maintainer, 2026-10-27.)
 
 Folders stay flat because children born inside their umbrella's folder
 would rewrite the birth and resolve steps every route uses, and a child
@@ -127,11 +145,12 @@ single pin: the plan pins the spec, and the spec's preamble carries the
 line. A seat treats as binding only what the statement it was handed
 names, so a statement that left the umbrella out would leave that seat
 reviewing without it; hence the clause at every statement. Within a
-reviewed range, the child's own mark and a binding change taken in from
-the base are not findings: the mark is the one edit to its entry a child
-is meant to make, and the binding change reached the base on the
-operator's ruling. (Basis: judgment, accepted by the maintainer; the
-last point on 2026-10-28.)
+reviewed range, the child's own mark, a clarification its spec states
+that changes nothing another entry waits on, and a binding change taken
+in from the base are not findings: the mark and such a clarification
+are the edits to its entry a child is meant to make, and the binding
+change reached the base on the operator's ruling. (Basis: judgment,
+accepted by the maintainer; the last point on 2026-10-28.)
 
 An umbrella records the operator's firm preferences as a spec does
 (`docs/decisions/the-spec.md`), so its firm decisions bind its children
@@ -172,6 +191,22 @@ unrelated feature born after the umbrella, so the finish marks only
 where the feature's folder was born on a tree without the umbrella.
 (Basis: judgment, accepted by the maintainer, 2026-10-28.)
 
+### An open premise ask at the landing
+
+A premise finding holds no gate (`docs/decisions/evidence-and-findings.md`),
+so an umbrella's landing, which every child waits on, never waits for
+one. An umbrella has no ledger, its workspace is deleted at the landing,
+and a release usually separates the landing from the first child's
+session, so the ask is kept in that child's entry, in the merged tree
+its brainstorm reads as the incoming document. A first form gave the
+entry a carrier of its own, which a task review found conflicting with
+the marks, the resume step and the edit rules, and leaving the ask no
+exit; as a note the child removes by the clarification it may already
+make, it adds no kind of edit. A ruling the operator gives between the
+landing and that brainstorm is written nowhere until the child's
+decision record takes it in. (Basis: judgment, an agent's call during
+the seat-voice feature's execution, 2026-10-29.)
+
 ## Rejected
 
 - **A frozen parent amended from its children**, and **a frozen parent
@@ -186,6 +221,14 @@ where the feature's folder was born on a tree without the umbrella.
 
 ## Changes
 
+- 2026-10-29: the umbrella's Request, which a child's points to; a
+  premise finding open at the landing goes to the operator with the
+  landing ask and is noted in the first unmarked entry until that child
+  takes it up.
+- 2026-10-29: a clarification its spec states is named beside the mark
+  as an edit a child makes to its entry, and the recursion paragraph's
+  basis is split between the maintainer's preference and the spec's
+  reasoning; a probe found both misstated.
 - 2026-10-28: an umbrella's firm decisions bind its children and
   changing one is a binding change; a child's controller never confirms
   a change to umbrella content as a contained amendment.

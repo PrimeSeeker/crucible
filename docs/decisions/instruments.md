@@ -54,10 +54,15 @@ and layout). Report names stay clear of Claude Code's subagent write
 filter, which `tests/test_report_filenames.py` checks for every card.
 
 **The plugin root.** The implementer's, task reviewer's, re-reviewer's
-and branch reviewer's cards carry `[PLUGIN_ROOT]`, filled with the plugin
-root the controller read the card from. Through it the implementer reads
-systematic-debugging, `writing-good-tests.md` and writing-skills, and the
-reviewers read `writing-good-tests.md`, in any repository.
+and branch reviewer's cards carry `[PLUGIN_ROOT]`, and the redteam
+seat's `{plugin-root}`, filled with the plugin root the controller read
+the card from. Through it the implementer reads systematic-debugging,
+`writing-good-tests.md` and writing-skills, and the reviewers read
+`writing-good-tests.md`, in any repository; the implementer, the task
+reviewer, the branch reviewer and the redteam seat read the shared
+reference `skills/subagent-driven-development/references/premise-and-questions.md`,
+which states once what a seat may raise beyond an ordinary finding
+(`docs/decisions/evidence-and-findings.md`).
 
 ## Why
 
@@ -180,6 +185,17 @@ calls use", had no referent in SDD, which runs no script, and became the
 root the controller read the card from. (Basis: judgment, accepted by the
 maintainer.)
 
+On 2026-10-29 the rules for premise findings, the goal check, questions
+and a finding's location went into one shared reference, which four
+seats' templates point to, under `AGENTS.md`'s rule that rules every
+seat follows live in one shared reference; the redteam seat, which had
+no plugin-root slot, gained one to reach it. An agent's proposal, which
+the maintainer accepted. (Basis: judgment, accepted by the maintainer.)
+The reference's first name matched Claude Code's subagent write filter,
+which would have refused every later seat's write to that shipped file,
+so it was renamed in the task that wrote it. (Basis: a single
+incident, 2026-10-29.)
+
 ## Rejected
 
 - **Composing every dispatch by hand**: the measured cost of carrying
@@ -202,6 +218,10 @@ maintainer.)
 
 ## Changes
 
+- 2026-10-29: the redteam seat's card gains the plugin-root slot, and
+  four seats read the shared reference
+  `skills/subagent-driven-development/references/premise-and-questions.md`
+  through it.
 - 2026-10-17: report files: every instrument writes its own, its template
   naming the write and a refused-write fallback; the controller confirms
   the file, resumes once and persists under a mark; names kept clear of

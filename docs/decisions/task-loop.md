@@ -32,7 +32,18 @@ rather than guess on insufficient context, an unsettled trade-off,
 conflicting findings, ambiguity above its authority, or reading file
 after file without progress, and is told that escalating is never
 penalized (`skills/subagent-driven-development/implementer-prompt.md`
-§ Stop-and-Ask Triggers). Its dispatch carries a one-line reminder of the
+§ Stop-and-Ask Triggers). Beside its work, its report may carry concerns
+about that work, `Questions` items, a premise finding
+(`docs/decisions/evidence-and-findings.md`), under its own heading with
+status DONE_WITH_CONCERNS, or BLOCKED where it cannot go on without the
+ruling, and a fix it proposes outside its task, naming the site and the
+change, which it never makes. The controller handles none of these
+before review: the review of the work rules on every concern, the
+controller routes the rest, `Questions` items and out-of-task proposals
+as leads for the branch reviewer, a proposal touching binding content by
+the flip paths, a premise finding to the operator
+(`crucible:subagent-driven-development § What a report voices`). Its
+dispatch carries a one-line reminder of the
 binding acceptance criteria and the Decision Log obligation; it writes
 its report to a file and replies with a short status. A task that changes
 text instructing agents sends it to `skills/writing-skills/SKILL.md`. It
@@ -47,16 +58,28 @@ triggers selects the seat, the bounded role for a clearly bounded task
 is adversarial, "attempt to reject this task", governing the search and
 not the conclusion. Four verdicts, all required: intent, scope, the
 deviation audit (each Decision Log entry justified, nothing undisclosed,
-every routed item's call recorded, RED before GREEN or a logged
-exception) and quality (defects, not style; new-test adequacy is the
-reviewer's own judgment). Cannot-verify items go to the controller, and
-one it confirms is a failed intent verdict. The reviewer takes the
-reported test output as given and builds its own diff
+each concern the implementer reports ruled on, every routed item's call
+recorded, RED before GREEN or a logged exception) and quality (defects,
+not style; new-test adequacy is the reviewer's own judgment). A concern
+is confirmed as a finding at a staked severity, an intent or scope gap
+failing that verdict and a quality defect going by its severity, or
+dismissed with a one-line reason; a review that leaves one unruled is
+missing a verdict. The re-reviewer rules the same way on a fix report's
+concerns, and a wave that only disputes, which has no re-review, turns
+its concerns into leads. The ruling duty adds to what the reviewer
+accounts for, never narrowing what it looks for. Its own `Questions`
+items, a premise doubt among them, become leads
+(`docs/decisions/evidence-and-findings.md`). Cannot-verify items go to
+the controller, and one it confirms is a failed intent verdict. The
+reviewer takes the reported test output as given and builds its own diff
 (`docs/decisions/branch-review.md`). Where a binding item's literal
 reading reaches a case its author plainly did not consider, it reports a
 literal-reading finding naming the item and the case, for the
-controller's ruling (`docs/decisions/adjudication.md`). Task reviewers and re-reviewers run
-on the bounded role or better (`docs/decisions/model-roles-and-effort.md`).
+controller's ruling (`docs/decisions/adjudication.md`). The task
+reviewer runs on the default role, every task, and the re-reviewer on
+the bounded role or better (`docs/decisions/model-roles-and-effort.md`).
+An open premise finding is a decision ask, not an open BLOCKER or MAJOR,
+and holds no task's completion by itself.
 
 **Loop wiring.** A failed intent, scope or deviation-audit verdict enters
 the fix loop whatever the finding's severity label; quality findings enter
@@ -152,6 +175,23 @@ operator. (Basis: judgment, accepted by the maintainer; measured, for
 the case; judgment, a branch review's proposal accepted by the maintainer, for testing the
 ruling.)
 
+On crucible's umbrella-specs feature (2026-10-28, five tasks, all
+prose), the issues that mattered surfaced in the implementers'
+`DONE_WITH_CONCERNS` reports: a duplicated rule, ceremony for an
+approval-only document, a rule two phases could never reach, and wrong
+Basis tags in a decision record. The controller then noted concerns
+that did not bear on correctness or scope and sent the task to review;
+the five task reviewers approved every task with minors only, and the
+branch review confirmed the unreachable rule as its one MAJOR. The
+maintainer's view was that implementers should probably be empowered
+further. A
+concern now goes to the review of the work it is about, which must rule
+on it, and what reaches beyond the task has `Questions`, a premise
+finding or a proposal, so an implementer that sees a fix elsewhere says
+so instead of making it. (Basis: a single incident; the maintainer's
+preference, for the aim; judgment, accepted by the maintainer, for the
+form.)
+
 On 2026-08-23 an implementer seat committed under an identity taken from
 its session context in place of the configured one; the rule against
 setting one followed on 2026-10-07. (Basis: a single incident.)
@@ -175,6 +215,15 @@ legitimate outcome because a manufactured finding costs a fix wave.
 
 Adequacy became the reviewer's own judgment, and RED before GREEN part
 of the deviation audit, on 2026-10-07 (`docs/decisions/test-rules.md`).
+
+The task reviewer moved to the default role on 2026-10-29, after a
+differential probe of past task reviews found the reviews on the bounded
+role missing what a default-role seat with no rubric saw, on small
+samples and with model and rubric confounded
+(`docs/decisions/model-roles-and-effort.md`). Its mandate stayed: on
+code the probe found the rubric hiding nothing, so a premise doubt is
+one of its questions, not a finding (`docs/decisions/evidence-and-findings.md`).
+(Basis: measured; judgment, accepted by the maintainer.)
 
 ### Loop wiring
 
@@ -261,6 +310,12 @@ the maintainer.)
 
 ## Changes
 
+- 2026-10-29: implementers' standing: the review of the work rules on
+  every concern the implementer reports, a missing ruling counting as a
+  missing verdict, and the controller handles none before it; an
+  implementer may add `Questions`, a premise finding and fixes proposed
+  outside its task, never made; the task reviewer runs on the default
+  role; after the umbrella-specs run and a differential probe.
 - 2026-10-28: testing a literal-reading ruling, accepted by the
   maintainer at the landing.
 - 2026-10-28: an adjudicator's ruling on a literal-reading case passes

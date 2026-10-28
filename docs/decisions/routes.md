@@ -18,10 +18,15 @@ each of its children takes a route of its own
   plan phase, and every review instrument unchanged
   (`skills/redteaming/references/folded-lane.md`).
 - **Very small**, for a small change with none: a frozen lane note
-  (intent, change list, acceptance as runnable checks, out of scope),
-  inline implementation, the repository's own gates and the branch
-  review, with no spec campaign, plan, digest or per-task review
+  (the request, intent, change list, acceptance as runnable checks, out
+  of scope), inline implementation, the repository's own gates and the
+  branch review, with no spec campaign, plan, digest or per-task review
   (`skills/subagent-driven-development/references/very-small-lane.md`).
+  The branch reviewer, the lane's first review, states in its Lane Fit
+  whether the change keeps the lane's qualifying shape and whether the
+  note's Intent matches the goal its request asks for; it rules on a
+  dispatched implementer's concerns, questions and proposals, which the
+  controller transcribes to the ledger as leads.
 
 Both small routes qualify by judgment, not by file or line counts: no
 new mechanism, no blast radius across subsystems, no change to
@@ -73,6 +78,16 @@ move to the standard route, never to the folded one, whose entry comes
 before any artifact is written. The note and the lane's ledger carry a
 `Lane: very-small` line. (Basis: judgment, accepted by the maintainer.)
 
+Nothing checked the lane's goal premise, whether the note's Intent is
+what was asked. The maintainer found it "especially concerning for the
+very-small, where we don't have independent review of the premises, but
+it doesn't seem worth to introduce a redteam round" (2026-10-28). Lane
+Fit gained the goal check beside its shape check, read against the
+note's quoted request
+(`docs/decisions/evidence-and-findings.md`): an agent's proposal, which
+the maintainer accepted. (Basis: the maintainer's preference, for the
+aim; judgment, accepted by the maintainer, for the form.)
+
 The note and the lane proposal share one gate (2026-10-07): a separate
 gate re-presented decisions just made and never showed the note whose
 acceptance binds the reviewer. (Basis: judgment, accepted by the
@@ -113,6 +128,11 @@ small route or the waiver for its work.
 
 ## Changes
 
+- 2026-10-29: the lane note carries the request, and the branch
+  reviewer's Lane Fit checks the note's Intent against it beside the
+  shape check and rules on a dispatched implementer's leads; after the
+  maintainer's concern that the lane's premises had no independent
+  review.
 - 2026-10-28: an umbrella takes none of the three routes, since it has
   no plan or code of its own; its review follows what it carries, and
   its children take routes of their own.
