@@ -3,6 +3,7 @@
 ## Slots
 
 - {worktree-path}: the absolute worktree path the seat works from.
+- {plugin-root}: the absolute path of crucible's plugin root, the one you read this card from.
 - {artifact-kind}: `spec` or `plan`; a folded lane's combined spec+plan document is `spec`.
 - {artifact-path}: the artifact under review.
 - {revision}: its frozen revision, the same for every seat of the round.

@@ -19,7 +19,11 @@ it.
 
 **Runtime:** you are running on Claude Code. Use this host's own tools for
 editing files, running commands and loading a skill; do not re-run the
-top-level router.
+top-level router. The plugin file this template names below,
+`skills/subagent-driven-development/references/premise-and-questions.md`
+(the shared reference), is under the plugin root your dispatch names
+(absolute); read its § Premise findings, § The goal check, § Questions
+and § Location.
 
 **Workspace:** work from the worktree path your dispatch names (absolute).
 Never read, edit or run git against any other checkout of this repository —
@@ -59,12 +63,14 @@ wrong: binding means never changed silently, and binding text is read
 for its intent. That a binding item is itself wrong is a legitimate
 finding, and so is an artifact applying one literally to a case its
 author plainly did not consider, naming the item and the case; changing
-one is never yours to do.
+one is never yours to do. That the premise behind them is wrong is a
+premise finding (the shared reference, § Premise findings).
 
 **Read scoping (binding):** read only the inputs this dispatch
-enumerates — the artifact, the binding-content pointer, the umbrellas
-your dispatch names, the supporting inputs above — and write only your
-own report path below. Everything else in the workspace and the
+enumerates — the artifact, the binding-content pointer and, for the goal
+check, the `## Request` section and Intent of the document it names, the
+umbrellas your dispatch names, the supporting inputs above, the shared
+reference — and write only your own report path below. Everything else in the workspace and the
 repository is out of scope: other seats' reports, round records, fix
 lists, readouts. Scope every search you run to your enumerated inputs;
 an unscoped grep is the measured way review exhaust reaches a seat that
@@ -78,6 +84,10 @@ The lens is a **search-ordering hint — not a scope limit**. Your mandate is
 **full-scope**: read the whole artifact, and report any finding you hit
 regardless of whether it matches your lens. Order your hunt by the lens;
 bound nothing by it.
+
+**The goal check:** before you read the Intent, run the shared
+reference's § The goal check; its sentence and what the comparison found
+go in your report's `## Goal check`.
 
 [[when right-sizing = on]]
 **Over-subtraction guard (your attestation obligation):** for each area of
@@ -124,7 +134,8 @@ instead.
 - Code-shaped claims (regexes, CLI invocations, "the code does X") must carry
   a run transcript, or be tagged `UNVERIFIED`. Run the pattern against the
   example before writing what it reaches; never assert from reading alone.
-- Improvements and style preferences are not findings.
+- Improvements and style preferences are not findings; where they go is
+  the shared reference's § Questions.
 
 **Finding scope (binding):**
 
@@ -148,38 +159,44 @@ instead.
 `seat-<id>.md` file, `<id>` being your seat id:
 
 1. `## Verdict` — one line: your overall read of the artifact's fitness.
-2. `## Index` — one line per finding, in the order of `## Findings`:
+2. `## Goal check` — your one-sentence restatement of the goal, then what
+   comparing it with the Intent found, in a line or two.
+3. `## Index` — one line per finding, in the order of `## Findings`:
    `- <seat-id>-<n> [BLOCKER|MAJOR|MINOR] <claim> — <evidence pointer>`,
-   the id and severity exactly as that finding's header carries them, the
+   the id, severity and any `premise` label exactly as that finding's
+   header carries them, the
    claim in one sentence, the evidence pointer a location (`file:line`, a
    section) or `UNVERIFIED`. The controller merges from this index and
    opens a finding's body only where the merge needs it, so the line must
    let a reader rule on the finding without it. With no findings, write
    only `none` here.
 [[when worksheet = ordered-first]]
-3. `## Worksheet` — the worked content your mandate asks for: the
+4. `## Worksheet` — the worked content your mandate asks for: the
    claims-vs-inputs table and the liveness check's results. Tables, lists
    and sub-headings are fine here; a finding the work turns up is written
    as an entry under `## Findings`, not left here.
 [[end]]
 [[when worksheet = pre-pass]]
-3. `## Worksheet` — the worked content your mandate asks for: the
+4. `## Worksheet` — the worked content your mandate asks for: the
    pre-pass's liveness, ownership-closure and overlap arithmetic.
    Tables, lists and sub-headings are fine here; a finding the work
    turns up is written as an entry under `## Findings`, not left here.
 [[end]]
-4. `## Findings` — one entry per finding, opened by the header line
-   `FINDING <seat-id>-<n> [BLOCKER|MAJOR|MINOR]` on its own line, then the
-   substance, the evidence (or `UNVERIFIED`), and the artifact location.
+5. `## Findings` — one entry per finding, opened by the header line
+   `FINDING <seat-id>-<n> [BLOCKER|MAJOR|MINOR]` on its own line, a
+   premise finding's carrying its label after the severity,
+   `FINDING <seat-id>-<n> [BLOCKER|MAJOR|MINOR] premise`; then the
+   substance, the evidence (or `UNVERIFIED`), and the location the shared
+   reference's § Location gives.
    `<seat-id>` is the `<id>` of your report path above; `<n>` numbers your
    findings from 1; the controller accounts for each finding by that id.
    With no findings, write only `none` here.
-5. `## Questions` — anything material you could not stake as a finding,
-   each opened by the header line `QUESTION <seat-id>-q<n>` on its own
-   line, then the question. `<n>` numbers your questions from 1. With no
-   questions, write only `none` here.
+6. `## Questions` — the items the shared reference's § Questions
+   describes, each opened by the header line `QUESTION <seat-id>-q<n>` on
+   its own line, then the item. `<n>` numbers your questions from 1. With
+   no questions, write only `none` here.
 [[when right-sizing = on]]
-6. `## Right-sized — do not cut` — your over-subtraction attestations, per
+7. `## Right-sized — do not cut` — your over-subtraction attestations, per
    area examined.
 [[end]]
 

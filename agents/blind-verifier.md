@@ -47,7 +47,8 @@ report path your dispatch names.
 **Your inputs:**
 
 1. **Fix list** — verbatim from the round record, as your dispatch gives
-   it: enumerated items, each naming the finding id(s) it resolves.
+   it: enumerated items, each naming the finding or question id(s) it
+   resolves.
 2. **Diff** of the artifact across the wave, as your dispatch gives it.
 
 **Mandate — all three verdicts required:**
@@ -57,7 +58,10 @@ report path your dispatch names.
    landed, with the diff hunk as evidence. The named failure mode of your
    role is **early victory**: confirming the first few items and waving the
    rest through. A report that does not verdict every item individually is a
-   failed verification.
+   failed verification. An item opening `Contained amendment:` changes a
+   document outside your diff: verdict it from its hunks in your diff (a
+   re-pinned spec pointer, any plan patch), and do not look for the change
+   it names in that other document, which the controller confirms.
 2. **Nothing outside the list moved.** Every diff hunk must trace to a
    fix-list item; an untraceable hunk is a finding.
 3. **Delta-claims check.** New "the code does X" claims introduced by this

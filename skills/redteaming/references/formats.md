@@ -231,6 +231,9 @@ Fields, in order:
    `parked` | `rejected` | `deferred-to-implementation` — plus the ruling a
    partly-applied, parked or rejected entry owes and an `UNVERIFIED` entry's
    verification outcome (`crucible:redteaming` § Merge and finding hygiene).
+   An entry merged from a premise finding carries the label `premise`
+   after its severity, `- F4 MAJOR premise`: the stop rule reads it as a
+   decision ask, not by its severity.
 
    **Origins element** (binding): every entry names the per-seat finding
    ids it accounts for —
@@ -259,11 +262,14 @@ Fields, in order:
    **Question dispositions** (`## Question dispositions`, after the merged
    finding list): every question a seat report raises, by its id
    `<seat-id>-q<n>`, is answered (with the answer), carried to readout (the
-   question goes to the operator in this round's readout) or rejected (with
-   a ruling).
+   question goes to the operator in this round's readout), rejected (with
+   a ruling) or adopted (an improvement riding this round's fix wave, with
+   the fix item that carries it; `crucible:redteaming` § Merge and finding
+   hygiene).
 
 6. **Fix list** (`## Fix list`) — enumerated fix items, each naming the
-   finding id(s) it resolves: the blind verifier's sole mandate input (fix
+   finding id(s) it resolves, or the question id `<seat-id>-q<n>` of an
+   adopted improvement it carries: the blind verifier's sole mandate input (fix
    list + diff, never rationale). **Restating sites** (binding): each item
    also names every other artifact site restating the content it changes,
    found by the propagation sweep run before the list freezes
@@ -282,7 +288,8 @@ Fields, in order:
    defines: key findings, every rejected, parked or partly-applied
    BLOCKER/MAJOR named with its ruling; technical calls; decision asks; the
    round's `deferred-to-implementation` count; the digest-update note; and,
-   in a numbered spec-campaign round with no BLOCKER, whether the round
+   in a numbered spec-campaign round with no BLOCKER other than a premise
+   finding, whether the round
    drove structural change and on what basis. The delivered readout carries
    no internal id — merged-list, seat-finding or question id — and no line
    counts.
