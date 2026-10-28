@@ -34,7 +34,7 @@ A campaigned umbrella takes steps 5–10 as a spec does, and the campaign's clos
 An umbrella lands before its first child, through `crucible:finishing-a-development-branch`, so children branch from a base that holds it and other sessions can read it. Before it lands, its controller:
 
 1. where a campaign ran, checks its records — round records, readouts, the digest — and names any gap in the campaign's close readout;
-2. writes each premise finding still open into the entry of the child the effort resumes at (§ Resuming), marked as an open premise ask, so that child's brainstorm finds it, and puts it to the operator with the landing ask, as `skills/redteaming/references/flip-paths.md` § Premise findings states; the landing does not wait for the ruling;
+2. notes each premise finding still open in the first entry with no mark in its own Children list, after what that child must deliver, as `open premise ask: <the ask>`, and puts it to the operator with the landing ask, as `skills/redteaming/references/flip-paths.md` § Premise findings states; the landing does not wait for a ruling, and one given before it lands takes its route there and drops the note;
 3. deletes the umbrella's workspace, an end of a workspace's life that the Lifecycle of `skills/redteaming/references/formats.md` § Feature workspace root and layout names;
 4. for a nested umbrella, marks its entry in its parent `umbrella`, in the same landing.
 
@@ -42,7 +42,7 @@ After the landing, the effort resumes at its first child (§ Resuming).
 
 #### Children
 
-A child's brainstorm takes its entry as an incoming document (§ Context gathering): what the entry settles stays settled, and the dialogue asks only what it leaves open. An open premise ask its umbrella's landing wrote into the entry (§ Landing) enters the child's brainstorm decision record, with the operator's ruling where one has come since, or else as open, for the dialogue to take up. The child's route is proposed as for any feature.
+A child's brainstorm takes its entry as an incoming document (§ Context gathering): what the entry settles stays settled, and the dialogue asks only what it leaves open. An `open premise ask:` note in the entry (§ Landing) enters the child's brainstorm decision record, with the operator's ruling where one has come since, or else as open, for the dialogue to take up; the child then removes the note, a clarification its spec states (§ Edits). The child's route is proposed as for any feature.
 
 **The umbrella line.** A child's spec, folded document, lane note or umbrella carries in its preamble one line naming its umbrella's file:
 
