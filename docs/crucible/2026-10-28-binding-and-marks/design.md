@@ -287,7 +287,7 @@ All lightly held, as the umbrella's U2 makes the default.
   - `skills/writing-plans/SKILL.md`: D5; § Binding vs advisory, which
     gains the `firm` class.
   - `docs/decisions/`: `the-spec.md`, `decision-records.md`,
-    `adjudication.md` (the routing of mark-touching rulings),
+    `adjudication.md` (the routing of rulings that touch binding content),
     `task-loop.md` (the implementer contract), `branch-review.md` and
     `spec-campaign.md` (their citations of the dropped marks),
     `umbrellas.md` where it states what binds a child, each with a
