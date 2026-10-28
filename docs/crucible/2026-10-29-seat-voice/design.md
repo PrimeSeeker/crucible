@@ -190,10 +190,14 @@ All lightly held unless stated.
   weighing, and always goes to the operator as a decision ask with a
   recommendation. It is an open decision ask, not an open BLOCKER or
   MAJOR: it holds no stop rule, review end, task completion or merge gate
-  open by itself, and the readouts carry it until ruled; one still open at
-  a phase's close is seeded into the ledger's `## Adjudication rulings` as
-  open, so the close readout carries it. While it is open,
-  work goes on unless later work builds on the challenged premise. The
+  open by itself, and the readouts carry it until ruled. One still open
+  when the spec campaign closes is carried in the digest's
+  `## Open judgments` (a minor design's close readout, which has no
+  digest) and seeded into the ledger's `## Adjudication rulings` as open
+  where the ledger is first seeded: at the plan phase's close, or at the
+  campaign's close on the folded lane; one raised later is written there
+  directly. The SDD close readout then carries it. While it is open, work
+  goes on unless later work builds on the challenged premise. The
   operator's ruling decides what follows, and that takes the route any
   change of its kind takes: in a campaign, the next fix list (a change it
   brings that re-shapes a mechanism makes its round structural); after
@@ -346,8 +350,13 @@ All lightly held unless stated.
   concerns (D7) are written under the ledger's `## Deferred minors`,
   each marked as a lead, and reach the branch reviewer through its
   existing ledger-items input; no new dispatch slot. It rules on each
-  lead: CONFIRMED as a finding at a staked severity, or LEFT with one
-  line, not by the minors' PROMOTE / FIX-IN-WAVE / LEAVE-PARKED triage.
+  lead: CONFIRMED as a finding at a staked severity, RECOMMENDED where it
+  is an improvement the reviewer backs (the controller may adopt it to
+  ride the next fix wave, as D3 says, or it reaches the operator in the
+  close readout), or LEFT with one line; not by the minors' PROMOTE /
+  FIX-IN-WAVE / LEAVE-PARKED triage. A `Questions` item from a
+  branch-review fix wave's report, which no later pass may read, goes to
+  the ledger's `## Questions` instead, for the close readout.
 - **The ledger and the close readout.** The close readout is assembled
   from the ledger (SDD § Finish), so what it lists is first written there:
   each premise finding and its ruling under `## Adjudication rulings`, and
@@ -369,8 +378,10 @@ All lightly held unless stated.
   re-reviewer's tier unchanged), SDD's § Models, task loop (task
   completion), Setup (the ledger's sections, the new `## Questions`
   included, and the contained-amendment copy) and § Finish,
-  `requesting-code-review`'s loop (its end condition), `very-small-lane.md`,
-  `plan-phase.md` (D9; its close seeds open premise asks);
+  `requesting-code-review`'s loop (its end condition) and Red Flags (the
+  merge flag), `very-small-lane.md`, `plan-phase.md` (D9; its close seeds
+  open premise asks), redteaming's § Exit (the folded lane's close seeds
+  them; the spec campaign's close carries them in the digest);
   brainstorming's spec
   contract, check 5, `lane-note.md`, `folded-lane-document.md` and
   `umbrellas.md` § Shape; the decision records whose position changes
@@ -415,13 +426,16 @@ All lightly held unless stated.
   `tests/prose-budget.txt` and what was removed (umbrella U5). Why
   neither: a report, read by the operator.
 - **A12.** Every gate keyed on an open BLOCKER or MAJOR (the stop
-  trigger, the cap escalation, the branch review's end condition, task
-  completion) reads a premise finding as a decision ask. One-time search.
+  trigger, the cap escalation, the branch review's end condition and its
+  merge red flag, task completion) reads a premise finding as a decision
+  ask. One-time search.
 - **A13.** The controller-side flows land: the branch reviewer rules on
-  each lead CONFIRMED or LEFT; the ledger carries `## Questions`, which
+  each lead CONFIRMED, RECOMMENDED or LEFT; the ledger carries
+  `## Questions`, which
   the close readout lists and the branch reviewer's read scoping
   excludes; a fix-list item may name a question id; the re-reviewer rules
-  on a fix report's concerns; open premise asks are seeded at a close.
+  on a fix report's concerns; an open premise ask is carried across the
+  spec campaign's close and seeded where the ledger is first seeded.
   One-time search per site.
 
 ## Mechanism sketches (advisory)
