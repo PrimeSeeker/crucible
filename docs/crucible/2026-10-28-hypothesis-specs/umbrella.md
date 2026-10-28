@@ -51,8 +51,8 @@ potentially non-trivial impact through the very-small lane sound?
 **Goals.**
 
 - **G1.** Answer the origin question: when a feature with non-trivial
-  impact may take the very-small lane, and an independent check of the
-  lane's goal premise beside the existing Lane Fit check.
+  impact may take the very-small lane; and give the lane an independent
+  check of its goal premise, extending the existing Lane Fit check.
 - **G2.** Move review load from artifacts to code wherever overturning
   a major mechanism after implementation is unlikely.
 - **G3.** Let seats and implementers say that the spec, or the goal
@@ -109,19 +109,18 @@ All lightly held.
   mean what you seem to think they do" is not a finding, but
   potentially useful).
 - **U5. Size is tracked, not capped.** Each child's landing states its
-  net word change to the skills and what it removed, as the prose-budget
-  rule already asks of every commit that grows a skill; the effort's
-  total is the change in `tests/prose-budget.txt` since this umbrella
-  landed. Nothing is triggered by it. Basis: the maintainer's ruling,
+  net word change to the skills, from `tests/prose-budget.txt`, and what
+  it removed; the effort's total is the sum of the children's figures.
+  Nothing is triggered by it. Basis: the maintainer's ruling,
   with wide priors on this effort's natural size.
 - **U6. This effort applies U3 now.** Its own campaigns stop once
   overturning a major mechanism is no longer plausible, ahead of
   `arrangements` writing it into the process; the round readout's
   statement of whether the round drove structural change carries that
-  judgment and its reason. Until the release that carries
-  `seat-voice`'s premise check (U8), the existing full-scope branch
-  review is the only safeguard after code: the risk accepted with the
-  waiver. Basis: the maintainer's waiver.
+  judgment and its reason. Until the installs carry `seat-voice`'s
+  premise check (U8), the existing full-scope branch review is the only
+  safeguard after code: the risk the maintainer accepted with the waiver
+  and confirmed as an exception to C1. Basis: the maintainer's waiver.
 - **U7. The arrangement choices become separable.** Review before
   implementation and its width, the plan's form, per-task review, and
   direct or subagent execution are chosen per feature rather than fixed
@@ -129,20 +128,24 @@ All lightly held.
   the step-4 route proposal, or another) is `arrangements`'s to choose.
   Basis: the maintainer's proposal ("several separate decisions …
   correlated, but don't have to be always aligned").
-- **U8. A release per child.** Each child is released, and the
-  maintainer's installs updated, before the next child's brainstorm, so
-  every later child runs under the rules its predecessors wrote; "waits
-  on" in the Children list means released. Basis: the maintainer's
-  ruling after the umbrella's first review round.
+- **U8. Each child runs under its predecessors' rules.** Before a
+  child's brainstorm, the maintainer's installs carry every child landed
+  before it; "waits on" in the Children list means landed and installed.
+  The means is open: a release, a pre-release on the existing channel
+  (`docs/dual-runtime.md` § Release metadata), or installs tracking a
+  long-lived effort branch. A host fetches a new copy only when the
+  version changes, so each means bumps the version. Basis: the
+  maintainer's ruling after the umbrella's first review round, and their
+  note that nothing forces a release.
 
 ## Constraints & invariants
 
 - **C1.** The branch review stays mandatory on every arrangement, at
-  full scope, and from the release that carries `seat-voice`'s premise
-  check on, with that check; `arrangements` may make any other review
+  full scope, and, once the installs carry `seat-voice`'s premise check,
+  with that check; `arrangements` may make any other review
   optional, never this one. Pre-implementation review shrinks only
   because the review after code stays and widens, with one exception:
-  under U6 this effort's own campaigns shrink it before that release.
+  under U6 this effort's own campaigns shrink it before then.
 
 ## Interfaces & boundaries
 
@@ -219,7 +222,7 @@ The Children list, in order:
 Each child's own Acceptance carries the checks. A child taking up a
 backlog item resolves it or trims it to what stays open, and its spec
 says which follow-ups it closes; an item shared between children is
-trimmed by each, and the last of them deletes it.
+trimmed by each, and deleted once nothing in it stays open.
 
 ## Mechanism sketches
 
