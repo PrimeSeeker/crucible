@@ -204,7 +204,7 @@ The Children list, in order:
   tied to a trigger. Task reviewers' mandate changes only on the probes'
   evidence. Takes up `docs/backlog/review-improvements.md` and the
   trace-check and implementers'-standing follow-ups of
-  `review-catch-and-implementers.md`. Waits on `binding-and-marks`.
+  `review-catch-and-implementers.md`. Waits on `binding-and-marks` — landed
 
 - `arrangements` — the arrangement choices made separable per U7, in a
   form the child chooses, with the invalid combinations stated and the
