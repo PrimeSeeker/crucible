@@ -118,10 +118,10 @@ All lightly held.
   overturning a major mechanism is no longer plausible, ahead of
   `arrangements` writing it into the process; the round readout's
   statement of whether the round drove structural change carries that
-  judgment and its reason. Until `seat-voice`'s premise check reaches
-  the running install, the existing full-scope branch review is the only
-  safeguard after code: the risk accepted with the waiver. Basis: the
-  maintainer's waiver.
+  judgment and its reason. Until the release that carries
+  `seat-voice`'s premise check (U8), the existing full-scope branch
+  review is the only safeguard after code: the risk accepted with the
+  waiver. Basis: the maintainer's waiver.
 - **U7. The arrangement choices become separable.** Review before
   implementation and its width, the plan's form, per-task review, and
   direct or subagent execution are chosen per feature rather than fixed
@@ -129,15 +129,20 @@ All lightly held.
   the step-4 route proposal, or another) is `arrangements`'s to choose.
   Basis: the maintainer's proposal ("several separate decisions …
   correlated, but don't have to be always aligned").
+- **U8. A release per child.** Each child is released, and the
+  maintainer's installs updated, before the next child's brainstorm, so
+  every later child runs under the rules its predecessors wrote; "waits
+  on" in the Children list means released. Basis: the maintainer's
+  ruling after the umbrella's first review round.
 
 ## Constraints & invariants
 
 - **C1.** The branch review stays mandatory on every arrangement, at
-  full scope, and from `seat-voice`'s landing on with the premise check
-  it adds. Pre-implementation review shrinks only because the review
-  after code stays and widens; `arrangements` may make any other review
-  optional, never this one. U6 is the one exception, for this effort's
-  own campaigns.
+  full scope, and from the release that carries `seat-voice`'s premise
+  check on, with that check; `arrangements` may make any other review
+  optional, never this one. Pre-implementation review shrinks only
+  because the review after code stays and widens, with one exception:
+  under U6 this effort's own campaigns shrink it before that release.
 
 ## Interfaces & boundaries
 
@@ -149,15 +154,14 @@ All lightly held.
   stopping review early.
 - **`seat-voice` provides** the U4 channel, the premise-level mandate
   at the branch review on every arrangement, the operator's request
-  quoted in the spec or lane note, and the improvements ruling. `arrangements` consumes the branch review's premise check as
-  the condition for lightening review before implementation, so G1 is
-  the two children's joint result.
+  quoted in the spec or lane note, and the improvements ruling.
+  `arrangements` consumes the branch review's premise check as the
+  condition for lightening review before implementation, so G1 is the
+  two children's joint result.
 - **Shared files.** All three children edit the same skills (the
   reviewer templates, subagent-driven-development, the lane references,
   brainstorming). They run in order, each brainstormed from a base that
-  holds its predecessors. Each child is released and the install updated
-  before the next child's brainstorm, so every later child runs under
-  the rules its predecessors wrote.
+  holds its predecessors (U8).
 
 ## Acceptance
 
@@ -168,9 +172,10 @@ The Children list, in order:
   supersede; guidance for [LOAD-BEARING] marks per U2; how strongly an
   approval is recorded, in the brainstorm decision record and in
   `docs/decisions/`; decision-record tasks take the brainstorm decision
-  record as an input (from `docs/backlog/review-catch-and-implementers.md`).
-  Takes up `docs/backlog/load-bearing-marks-audit.md`, its count done in
-  context gathering or dropped, as the child's brainstorm decides.
+  record as an input. Takes up `docs/backlog/load-bearing-marks-audit.md`,
+  its count done in context gathering or dropped, as the child's
+  brainstorm decides, and the decision-record follow-up of
+  `docs/backlog/review-catch-and-implementers.md`.
   Waits on nothing.
 
 - `seat-voice` — first two one-off probes: a differential probe, one
@@ -186,15 +191,16 @@ The Children list, in order:
   seat already reads it (a part the no-local-context rule keeps out of a
   public repository is redacted, saying so), for an independent
   restatement of the goal, the request being evidence and not the
-  standard: a seat may find the request itself wrong; the U4 channel across seats, task reviewers and
-  implementers, a few items at most per seat, reaching the operator
+  standard (a seat may find the request itself wrong); the U4 channel
+  across seats, task reviewers and implementers, a few items at most
+  per seat, reaching the operator
   through a readout or the branch review, a task reviewer's going to the
   branch reviewer as leads; the format barriers (file:line on every
   finding, the branch reviewer's missing question section); the
   improvements ruling; implementers' standing; a trace check for rules
-  tied to a trigger (from `docs/backlog/review-catch-and-implementers.md`).
-  Task reviewers' mandate changes only on the probes' evidence. Takes up
-  `docs/backlog/review-improvements.md` and
+  tied to a trigger. Task reviewers' mandate changes only on the probes'
+  evidence. Takes up `docs/backlog/review-improvements.md` and the
+  trace-check and implementers'-standing follow-ups of
   `review-catch-and-implementers.md`. Waits on `binding-and-marks`.
 
 - `arrangements` — the arrangement choices made separable per U7, in a
@@ -205,14 +211,15 @@ The Children list, in order:
   to the very-small lane's current qualifying shape; the origin
   question's answer recorded in `docs/decisions/`, closing G1; the
   folded lane kept, absorbed or retired; per-task review as a plan
-  choice (from `docs/backlog/review-catch-and-implementers.md`). Takes
-  up `docs/backlog/campaign-early-stop-investigation.md` and the
-  downshift follow-up of `lane-entry-and-downshift.md`. Waits on
-  `seat-voice`.
+  choice. Takes up `docs/backlog/campaign-early-stop-investigation.md`,
+  the downshift follow-up of `lane-entry-and-downshift.md` and the
+  per-task-review follow-up of `review-catch-and-implementers.md`.
+  Waits on `seat-voice`.
 
 Each child's own Acceptance carries the checks. A child taking up a
 backlog item resolves it or trims it to what stays open, and its spec
-says which follow-ups it closes.
+says which follow-ups it closes; an item shared between children is
+trimmed by each, and the last of them deletes it.
 
 ## Mechanism sketches
 
