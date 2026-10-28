@@ -179,7 +179,7 @@ The Children list, in order:
   its count done in context gathering or dropped, as the child's
   brainstorm decides, and the decision-record follow-up of
   `docs/backlog/review-catch-and-implementers.md`.
-  Waits on nothing.
+  Waits on nothing — landed
 
 - `seat-voice` — first two one-off probes: a differential probe, one
   fresh default-role seat with no rubric on 6–10 past task reviews that
