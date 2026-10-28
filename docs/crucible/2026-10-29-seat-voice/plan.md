@@ -14,7 +14,7 @@ T1 → T2 → T3 → T4 → T5 → T6, strictly sequential: T1–T5 each edit `t
 
 | File | Owner |
 |---|---|
-| `skills/subagent-driven-development/references/findings-and-questions.md` (new) | T1 |
+| `skills/subagent-driven-development/references/premise-and-questions.md` (new) | T1 |
 | `skills/redteaming/references/flip-paths.md` | T1 |
 | `skills/redteaming/seat-prompt.md`, `skills/redteaming/seat-prompt.slots.md` | T2 |
 | `skills/redteaming/SKILL.md` | T2 |
@@ -45,7 +45,7 @@ T1 → T2 → T3 → T4 → T5 → T6, strictly sequential: T1–T5 each edit `t
 
 ## Inter-task contracts
 
-- **The shared reference** (T1 produces; T2, T3, T4 point to it by path and section): path `skills/subagent-driven-development/references/findings-and-questions.md`, with exactly these `##` sections, their names the anchors pointers cite: `## Premise findings` (D1's seat side), `## The goal check` (D2), `## Questions` (D3), `## Location` (D4). A seat reads it under the plugin root its dispatch names.
+- **The shared reference** (T1 produces; T2, T3, T4 point to it by path and section): path `skills/subagent-driven-development/references/premise-and-questions.md`, (the spec's Interfaces name it `findings-and-questions.md`; renamed at execution, a lightly held detail, because that basename matches the host's subagent report-name filter, which would refuse every later seat's write to the file), with exactly these `##` sections, their names the anchors pointers cite: `## Premise findings` (D1's seat side), `## The goal check` (D2), `## Questions` (D3), `## Location` (D4). A seat reads it under the plugin root its dispatch names.
 - **Premise routing** (T1 produces; T2, T3, T4 point to it): `skills/redteaming/references/flip-paths.md` gains a `### Premise findings` section stating D1's controller side once: always the operator as a decision ask; an open decision ask, not an open BLOCKER or MAJOR, holding no gate keyed on one (C1); work goes on unless later work builds on the challenged premise; the ruling's route by kind; the carry chain across closes (below); and the precedence where a finding is both a premise finding and a binding item found wrong. Its opening scope sentence widens so that this section applies at any phase.
 - **The carry chain**, including the second read's two open MINORs (T1 states it in the section above; T2 and T4 implement its steps): an open premise ask raised by a plan-phase seat is carried in the plan record until the plan phase's close seeds it into the ledger's `## Adjudication rulings` as open; one open when a spec campaign closes is carried in the digest's `## Open judgments` (a minor design's close readout where there is no digest) and seeded at the plan phase's close, or at the campaign's close on the folded lane; one raised after the ledger exists is written there directly; one still open at an umbrella's landing, which has no ledger, goes to the operator with the landing ask and, unruled, enters the first child's brainstorm decision record as open, where that child's dialogue takes it up — no landing waits on it (D1: it holds no gate). T5 implements the umbrella step in `umbrellas.md` § Landing and § Children; T2 the umbrella bullet of redteaming § Exit.
 - **The goal check's input for a plan** (T1 states it; T2 implements the seat's read scope): a plan-phase seat restates the goal from the `## Request` section of the spec its plan's header names, and compares it with that spec's Intent and the plan's Goal; the seat's read scoping admits the spec's `## Request` and Intent beside the binding content.
