@@ -118,7 +118,7 @@ October; the maintainer, on 2026-10-27: "we're probably marking too
 many points as load-bearing". (Basis: the maintainer's preference, for
 the aim; measured, for the count.)
 
-Until then every correction to a spec's binding content, however
+Until 2026-10-28 every correction to a spec's binding content, however
 contained, cost an operator ask. A sample took the place of a full count, which
 workspaces deleted at finish would have made a transcript dig, and in
 which a mark that never fired cannot be told from one that deterred a
@@ -139,9 +139,9 @@ the maintainer accepted with "OK, I guess", after the host's permission
 classifier had refused the spec edit as "rewriting a binding acceptance
 threshold so a failing gate would pass". Unmarked operator rulings
 flipped downstream went fine, under the logged-rationale rule. An agent
-offered dropping the count or sampling, and the maintainer chose the
-sample. (Basis: measured, for the sample; judgment, accepted by the
-maintainer, for sampling in place of a count, 2026-10-28.)
+offered dropping the count or sampling, recommending the first, and the
+maintainer chose the sample. (Basis: measured, for the sample; the
+maintainer's preference, for sampling in place of a count, 2026-10-28.)
 
 Under the containment test, a correction whose consumers all lie inside
 the feature is the controller's to confirm, and is made visible rather
@@ -229,6 +229,8 @@ measured.)
 
 ## Changes
 
+- 2026-10-28: sampling in place of a count attributed to the
+  maintainer's preference, as the brainstorm record has it.
 - 2026-10-28: a ruling on a literal-reading case passes the containment
   test whichever way it goes, after a branch review found the
   controller's own literal application unguarded.
