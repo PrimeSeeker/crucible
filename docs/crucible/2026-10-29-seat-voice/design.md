@@ -5,9 +5,29 @@ Umbrella: `docs/crucible/2026-10-28-hypothesis-specs/umbrella.md`
 ## Request
 
 The umbrella carries no request block of its own, so the effort's
-opening message (2026-10-28) is quoted here, as evidence of what was
-asked for, not as the standard:
+request is quoted here whole, as evidence of what was asked for, not as
+the standard. The opening message (2026-10-28):
 
+> OK, the next one is big, but it seems to me that its various strands
+> are intertwined, and it's better to address it now
+>
+> 1) I believe that, generally, reasoning about the existing or
+> in-progress code is easier than about planned one. We seem to spend an
+> awful lot of time planning, especially on smaller features, and the
+> last rounds seem to be dedicated to fixing compact errors. I believe we
+> could shift this load to the "after" review, with the criterion like
+> "do we reasonably expect major mechanisms to be overturned further down
+> the line?" (additions or smaller correctrions are OK). It probably also
+> should be used as the primary very-small trigger - say, for lack of
+> major mechanisms, or overdetermined decisions
+>
+> 2) We would probably need to explicitly state the assumption that the
+> spec is likely subtly flawed (and almost certainly has some local
+> errors as well, given that we're trying to stop redteaming early)
+> throughout the process. Given the occasional "doesn't actually launch"
+> issues (OK, that was quite a while ago, but still), it's probably not
+> far from the truth, and it's likely to be a useful frame
+>
 > 3) I think the reviewer agents have a narrower mandate (they're still
 > evolved from normal code review, after all) than the redteaming ones,
 > and we should extend it to parity. I don't expect broad corrections to
@@ -26,15 +46,40 @@ asked for, not as the standard:
 >
 > 5) Probably more proactivity throughout the process? I believe we
 > disallowed improvement suggestions, for example.
+>
+> I suppose I'm missing something logically connected here. Also, might
+> be worth checking if we have more relevant backlog items
+>
+> Thoughts?
 
-and, from the same dialogue, the message that changed point 4:
+and the reply that changed what was asked (same day):
 
+> 1-3: Yes, agreed
 > 4: Calibration is not the key point here (probably I'm consuming too
 > much rationalism), the idea is - can we have the process to detect that
 > things aren't right when there is no specific issue to point to, in a
 > sensible manner? Say, something like "your intents don't mean what you
 > seem to think they do" is not a finding in a normal sense, but
 > potentially useful
+> 5: OK
+> 6: Not sure if it fits here, but maybe we could be more flexible with
+> arrangements. We've got several separate decisions (redteaming usage
+> and then width, separate/folded plan and possibly per-task review
+> usage, direct/subagent execution) that are correlated, but don't have
+> to be always aligned
+> Also of note: we might want to extend the lightly-held stance. Most of
+> my approvals are shaped like "no strong preference, let's go with this
+> until new evidence arrives" (and then occasionally become design
+> pillars), seems like load-bearing marks are used too liberally and
+> result in bureaucracy
+>
+> Agreed with an umbrella
+>
+> Yes, this plan. I started with "is routing features with potentially
+> non-trivial impacts through very small lane sound?", and then the
+> (meta?)-feature expanded by association
+
+This child takes up points 3, 4 and 5 and the reply's point 4.
 
 This feature's own entry in the umbrella states what it must deliver.
 
@@ -124,12 +169,18 @@ All lightly held unless stated.
 - **D1. Premise findings.** The finding that exists today, that a binding
   item is itself wrong (`skills/redteaming/seat-prompt.md`), is extended
   past binding items to the premise behind them. A finding labelled
-  `premise` claims, with evidence, that something the operator decided or
-  asked for is wrong: the goal, the Intent, the chosen approach, or the
-  request itself. The line against an ordinary finding, structural ones
-  included, is that test: fixing it would change an operator decision,
-  the Intent or the request. A binding item found wrong keeps the routes
-  it has today: in a spec's own campaign the fix list, from the
+  `premise` claims, with evidence, that something the operator asked for
+  or decided is wrong: the request itself, what the Intent asks for, or a
+  decision the operator made or holds firm, the chosen approach included
+  where the operator chose it. A decision the operator only accepted from
+  the controller's proposal is lightly held, and a finding against it is
+  an ordinary one, flipped with a logged rationale; so is a correction of
+  the Intent's wording or facts that leaves what it asks for unchanged.
+  That is the line against an ordinary finding, structural ones included.
+  Where a finding is both a premise finding and a binding item found
+  wrong (a firm decision, a lane note's Intent), the premise route
+  governs. Any other binding item found wrong keeps the routes it has
+  today: in a spec's own campaign the fix list, from the
   campaign's close the containment test, and for an implementer BLOCKED
   with a proposed correction. Redteam seats, the branch reviewer and
   implementers may raise a premise finding; a task reviewer puts a premise
@@ -139,7 +190,9 @@ All lightly held unless stated.
   weighing, and always goes to the operator as a decision ask with a
   recommendation. It is an open decision ask, not an open BLOCKER or
   MAJOR: it holds no stop rule, review end, task completion or merge gate
-  open by itself, and the readouts carry it until ruled. While it is open,
+  open by itself, and the readouts carry it until ruled; one still open at
+  a phase's close is seeded into the ledger's `## Adjudication rulings` as
+  open, so the close readout carries it. While it is open,
   work goes on unless later work builds on the challenged premise. The
   operator's ruling decides what follows, and that takes the route any
   change of its kind takes: in a campaign, the next fix list (a change it
@@ -158,8 +211,8 @@ All lightly held unless stated.
   for. Basis: the controller's proposal, accepted.
 - **D3. `Questions`, widened.** The section holds anything material a
   seat could not stake as a finding: a question, a doubt, a misgiving or
-  a suggested improvement, a few at most per seat, none being the normal
-  case. Redteam seats keep their section, its ids and its dispositions;
+  a suggested improvement, a few at most per seat; for doubts and
+  misgivings, none is the normal case. Redteam seats keep their section, its ids and its dispositions;
   the task reviewer and the branch reviewer gain it, and so does the
   implementer's report. A task reviewer's or an implementer's items reach
   the branch reviewer as leads; the branch reviewer's reach the operator
@@ -184,7 +237,7 @@ All lightly held unless stated.
   project has no rule that covers it, the controller asks the operator
   once, when it writes the section. A child points to its umbrella's block and quotes
   only what was asked of it; where its umbrella has none, as this
-  effort's has not, it quotes the effort's request itself, as this spec
+  effort's has not, it quotes the effort's whole request, as this spec
   does. The request is evidence, not the standard: a seat may find it
   wrong. Where no request block exists (a document written before this
   feature, a standalone branch review), the goal check (D2) restates the
@@ -199,15 +252,18 @@ All lightly held unless stated.
   repository's records supports either wording, and controllers took the
   floor. Basis: the differential probe, and the operator's ruling
   (2026-10-29).
-- **D7. Implementers' standing.** The task reviewer rules on every concern
-  the implementer reports, in its deviation audit: confirmed as a finding
+- **D7. Implementers' standing.** The reviewer of the work an
+  implementer's report covers rules on every concern it reports: the task
+  reviewer for a task's report, in its deviation audit; the re-reviewer
+  for a fix report, task-loop and branch-review waves alike; on the
+  very-small lane, the branch reviewer (below). Each concern is confirmed as a finding
   at a staked severity, or dismissed with a one-line reason. A confirmed
   concern travels as a finding of the verdict it belongs to: an intent or
   scope gap fails that verdict, a quality defect goes by its severity. A
   review that leaves a reported concern unruled is missing a verdict, and
   the controller treats it as any review missing a verdict. The controller
   no longer handles concerns before review: every concern goes to the
-  task review. A concern is about the task's own work; what reaches
+  review of that work. A concern is about the task's own work; what reaches
   beyond it goes to `Questions`. An implementer may use `Questions` (D3)
   and raise a premise finding (D1), in its report under its own heading,
   with status DONE_WITH_CONCERNS where the task is done and BLOCKED where
@@ -255,8 +311,9 @@ All lightly held unless stated.
 ## Constraints & invariants
 
 - **C1.** A premise finding, a question and a lead never open a fix wave
-  by themselves and never consume a wave cap; a premise finding holds no
-  gate keyed on an open BLOCKER or MAJOR.
+  by themselves and consume no wave cap; a premise finding holds no gate
+  keyed on an open BLOCKER or MAJOR. A wave that an operator's ruling on
+  a premise finding opens counts against its cap like any.
 - **C2.** Nothing a seat or an implementer voices under D1, D3 or D7 is
   dropped unrecorded: each item ends with a disposition, a ruling, a
   ledger line or a line in a readout. In a standalone branch review, which
@@ -298,14 +355,22 @@ All lightly held unless stated.
   a pass's questions never become the next pass's input.
 - **Owners of the other sites**: the redteam seat template and its
   merge/readout text, redteaming's § Dispatch composition (its closed
-  input list), `formats.md` (the fix-list item naming a question id, the
-  ledger's `## Questions`); the branch-reviewer template, its slot card and
+  input list) and § Stop rule and terminal pass (the stop trigger and the
+  cap escalation, keyed on BLOCKERs), `formats.md` (the fix-list item
+  naming a question id), the blind verifier's template and slot card (a
+  `Contained amendment:` item verdicted from its plan-side hunks); the
+  branch-reviewer template (its read scoping excludes the ledger's
+  `## Questions`), its slot card and
   `requesting-code-review`; the redteam seat's slot card; the
-  task-reviewer and implementer templates, the task reviewer's and the
+  task-reviewer, re-reviewer and implementer templates, the task
+  reviewer's and the
   re-reviewer's slot cards (their shared reviewer row splits, the
-  re-reviewer's tier unchanged), SDD's § Models, task loop, Setup (the
-  contained-amendment copy) and § Finish, `very-small-lane.md`,
-  `plan-phase.md` (D9); brainstorming's spec
+  re-reviewer's tier unchanged), SDD's § Models, task loop (task
+  completion), Setup (the ledger's sections, the new `## Questions`
+  included, and the contained-amendment copy) and § Finish,
+  `requesting-code-review`'s loop (its end condition), `very-small-lane.md`,
+  `plan-phase.md` (D9; its close seeds open premise asks);
+  brainstorming's spec
   contract, check 5, `lane-note.md`, `folded-lane-document.md` and
   `umbrellas.md` § Shape; the decision records whose position changes
   (`evidence-and-findings`, `model-roles-and-effort`, `the-spec`,
@@ -345,6 +410,15 @@ All lightly held unless stated.
   Changes line (the decision-records test checks headings only).
 - **A10.** The suite passes and the generated agents match their
   templates. Standing.
+- **A12.** Every gate keyed on an open BLOCKER or MAJOR (the stop
+  trigger, the cap escalation, the branch review's end condition, task
+  completion) reads a premise finding as a decision ask. One-time search.
+- **A13.** The controller-side flows land: the branch reviewer rules on
+  each lead CONFIRMED or LEFT; the ledger carries `## Questions`, which
+  the close readout lists and the branch reviewer's read scoping
+  excludes; a fix-list item may name a question id; the re-reviewer rules
+  on a fix report's concerns; open premise asks are seeded at a close.
+  One-time search per site.
 - **A11.** The landing states the skills' net word change from
   `tests/prose-budget.txt` and what was removed (umbrella U5). Why
   neither: a report, read by the operator.
