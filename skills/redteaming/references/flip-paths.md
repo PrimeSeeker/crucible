@@ -30,7 +30,7 @@ A contained change to the spec is a scoped amendment you confirm with no decisio
 
 ### Premise findings
 
-What a premise finding is, and its label `premise`, is in `skills/subagent-driven-development/references/findings-and-questions.md` § Premise findings. Your side, at any phase, the spec campaign included:
+What a premise finding is, and its label `premise`, is in `skills/subagent-driven-development/references/premise-and-questions.md` § Premise findings. Your side, at any phase, the spec campaign included:
 
 **The ask.** Every premise finding goes to the operator as an analyst-language decision ask with your recommendation, carrying the severity its seat staked for the operator's weighing — never a change you confirm, whatever § The containment test would find. It is an open decision ask, not an open BLOCKER or MAJOR: by itself it holds open no gate keyed on one — the stop trigger and the cap escalation, the branch review's end condition and its merge red flag, task completion — opens no fix wave and consumes no wave cap. The readouts carry it until it is ruled. While it is open, work goes on, except work that builds on the premise it challenges, which waits for the ruling.
 
