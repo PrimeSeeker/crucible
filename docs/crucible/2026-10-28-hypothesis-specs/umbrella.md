@@ -148,15 +148,16 @@ All lightly held.
   `arrangements` consumes the correction path as the safety valve for
   stopping review early.
 - **`seat-voice` provides** the U4 channel, the premise-level mandate
-  at the branch review on every arrangement, the original request as an
-  input to redteam seats and the branch reviewer, and the improvements
-  ruling. `arrangements` consumes the branch review's premise check as
+  at the branch review on every arrangement, the operator's request
+  quoted in the spec or lane note, and the improvements ruling. `arrangements` consumes the branch review's premise check as
   the condition for lightening review before implementation, so G1 is
   the two children's joint result.
 - **Shared files.** All three children edit the same skills (the
   reviewer templates, subagent-driven-development, the lane references,
   brainstorming). They run in order, each brainstormed from a base that
-  holds its predecessors.
+  holds its predecessors. Each child is released and the install updated
+  before the next child's brainstorm, so every later child runs under
+  the rules its predecessors wrote.
 
 ## Acceptance
 
@@ -181,9 +182,11 @@ The Children list, in order:
   extending what exists (seats' Questions, Lane Fit, a binding item
   found wrong) rather than adding beside it, such findings reaching the
   operator as decision asks without opening a fix wave; the operator's
-  original request, recorded at brainstorming, as an input to redteam
-  seats and to the branch reviewer, for an independent restatement of
-  the goal; the U4 channel across seats, task reviewers and
+  request, quoted verbatim in the spec or lane note itself, where every
+  seat already reads it (a part the no-local-context rule keeps out of a
+  public repository is redacted, saying so), for an independent
+  restatement of the goal, the request being evidence and not the
+  standard: a seat may find the request itself wrong; the U4 channel across seats, task reviewers and
   implementers, a few items at most per seat, reaching the operator
   through a readout or the branch review, a task reviewer's going to the
   branch reviewer as leads; the format barriers (file:line on every
