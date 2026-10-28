@@ -149,9 +149,12 @@ than asked: its marker, its named commit, a ruling in the ledger that the branch
 receives, and a line in the close readout. Umbrella content and firm
 decisions keep the operator's ask they had; the failing-check exclusion
 answers the acceptance-threshold case, and the intent reading the
-literalism case. An agent proposed the controller as confirmer, one of
-three options with a fresh adjudicator per correction and a batched,
-non-blocking operator ask, and the maintainer agreed. A mark names what
+literalism case, with a ruling on a literal-reading case passing the
+test whichever way it goes, since the controller that rules on it is
+the role that applied the text literally in the sample. An agent
+proposed the controller as confirmer, one of three options with a
+fresh adjudicator per correction and a batched, non-blocking operator
+ask, and the maintainer agreed. A mark names what
 builds on it, which is what the test reads off it; the operator's
 preference is recorded as a status, `firm`, not a mark: a mark records
 what builds on a decision, `firm` the operator's preference. The two
@@ -162,7 +165,8 @@ review's wave cap, went with their wording kept. Approvals default to
 maintainer left the statuses to the agent ("your call"). (Basis: the
 maintainer's preference, for the aim; judgment, accepted by the
 maintainer, for the test, the mark's form and the statuses, 2026-10-28;
-measured, for the two exclusions' cases.)
+measured, for the two exclusions' cases; judgment, a branch review's
+proposal, for testing a literal-reading ruling.)
 
 ### Pointers, not copies
 
@@ -225,6 +229,9 @@ measured.)
 
 ## Changes
 
+- 2026-10-28: a ruling on a literal-reading case passes the containment
+  test whichever way it goes, after a branch review found the
+  controller's own literal application unguarded.
 - 2026-10-28: the spec as a hypothesis: firm decisions bind, binding
   text is read for its intent, the controller confirms a scoped
   amendment the containment test finds contained and records it as its

@@ -19,10 +19,12 @@ From the spec campaign's close, every change to binding content, a ruling that p
 
 - a change to umbrella content, this feature's own entry included;
 - a change to a decision the spec or an umbrella records as the operator's firm preference;
-- a change after which the same work, unchanged, passes a check it failed;
+- a change after which the same work, unchanged, passes a verification gate or an acceptance check it failed;
 - a structural change, one that redefines a mechanism rather than correcting content inside one that stands: it takes a supersede.
 
 Any other change keeps the operator's decision ask, as does a plan conflict that is a design judgment.
+
+A ruling on a case a binding item's literal reading reaches, or on a BLOCKED report about a binding item, passes this test whichever way it goes. One that leaves the text standing goes to the operator as a decision ask where applying it as written changes behaviour something outside this feature builds on or consumes, and is otherwise recorded as your ruling.
 
 A contained change to the spec is a scoped amendment you confirm with no decision ask, and one in every other respect — marker, plan patch, re-pin, named commit — so every rule naming a scoped amendment covers it. Record each contained change as one of your rulings under the ledger's `## Adjudication rulings` — the item, what changed and why, why it is contained, the commit — so the branch review receives it and the close readout lists it; in the plan phase it lands as `skills/redteaming/references/plan-phase.md` states. It reaches the operator through readouts, never the design digest, which records decision asks. Reversing one is a scoped amendment the operator confirms, made before the branch lands.
 
