@@ -12,9 +12,13 @@
   8,400 and 7,800 tokens at four characters a token (an estimate, not a
   tokenizer count). Both are above the budget; the other skills are
   below it.
-- In maintainer sessions on 2026-10-20 and 2026-10-27 the re-attached
-  copy of the subagent-driven-development skill ended in a truncation
-  notice after compaction.
+- In maintainer sessions on 2026-10-20, 2026-10-27 and 2026-10-28 the
+  re-attached copy of the subagent-driven-development skill ended in a
+  truncation notice after compaction.
+- In a session that spanned a plugin update, compaction re-attached the
+  copies of skills invoked before the update, from the old version's
+  directory; invoking them again loaded the new version. A controller
+  that does not notice runs the old rules.
 - The router now tells an agent to invoke a skill again when its text
   came back cut short. That restores the whole text at the cost of a
   second copy in context; it does not help a skill dropped entirely, and

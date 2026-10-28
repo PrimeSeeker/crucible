@@ -64,7 +64,8 @@
   through `[PLUGIN_ROOT]`; history and long rationale to the decision
   records; host-neutral rules out of the adapters.
 - For each mechanism, weigh what it costs in always-loaded text against
-  what it has caught; retiring the ones that don't pay is the larger
+  what it has caught (one data point: in one subagent-driven run, the
+  tree checks around eight review seats changed nothing); retiring the ones that don't pay is the larger
   lever, and each retirement is the operator's ruling. Part of it: restate
   the resident-cost re-open trigger above as resident tokens per route, or
   retire it.

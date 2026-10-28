@@ -23,10 +23,27 @@
   and the trigger stay, and a numbered spec-campaign round with no BLOCKER
   states in its readout whether it drove structural change and on what
   basis.
+- On crucible's own umbrella-specs feature (2026-10-28), four spec
+  rounds, a terminal pass and its second read mostly fixed wording,
+  much of it drift from earlier rounds' fixes, and missed the one
+  structural gap (a rule triggered at task or round boundaries that two
+  phases never reach). An implementer and the branch review found it,
+  and one fix wave closed it.
+- The maintainer's proposed trigger (2026-10-28): keep reviewing before
+  implementation while overturning a significant mechanism after
+  implementation is still plausible, as it routinely is in round 1.
+  Expanding or correcting errors in a compact artifact does not need
+  review before implementation, and reasoning about existing or
+  in-progress code is easier than about a spec.
 
 ## Follow-up
 
 Research questions:
+
+- The maintainer's trigger above: how a controller judges that
+  overturning a significant mechanism is no longer plausible, and
+  whether rounds that only repair earlier rounds' text should count
+  toward stopping.
 
 - Is a multi-round spec campaign net-positive against one round plus
   execution-time review? Compare the two on session transcripts already
