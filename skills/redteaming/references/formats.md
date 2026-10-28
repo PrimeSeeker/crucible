@@ -80,6 +80,13 @@ workspace):
 The other report names under `sdd/` — review, re-review, fix and adjudication
 reports — are fixed in `crucible:subagent-driven-development` § Finish.
 
+**Later operator rulings enter the decision record (binding).** Every
+operator ruling on a decision ask after the brainstorm — in a campaign, the
+plan phase or execution — is also entered in `brainstorm-decisions.md`, in
+that record's entry form (`crucible:brainstorming` § Workspace provisioning
+(brainstorm exit)) and with its status, beside wherever its own phase
+records it.
+
 Per-round directory contents:
 
 ```
@@ -399,8 +406,12 @@ never by side-authoring against the spec.
 
 Sections:
 
-- `## Decisions` — each: the decision, the trade-off it resolves, status
-  (settled / open), source pointer (which readout or record).
+- `## Decisions` — each: the decision, the trade-off it resolves, status,
+  source pointer (which readout or record). The status is `open`,
+  `accepted` or `firm`: `accepted` is the default for any approval, a
+  "+", an "OK" or a "your call" included, and means "this until new
+  evidence arrives"; `firm` is recorded only on the operator's explicit
+  word, never inferred from an approval.
 - `## Positions flipped` — what flipped, why, and where (source pointer).
 - `## Open judgments` — pending decision asks, each with its recommendation.
 
