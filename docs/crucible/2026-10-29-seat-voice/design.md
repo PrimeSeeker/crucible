@@ -212,7 +212,8 @@ All lightly held unless stated.
 - **D3. `Questions`, widened.** The section holds anything material a
   seat could not stake as a finding: a question, a doubt, a misgiving or
   a suggested improvement, a few at most per seat; for doubts and
-  misgivings, none is the normal case. Redteam seats keep their section, its ids and its dispositions;
+  misgivings, none is the normal case. Redteam seats keep their section,
+  its ids and its dispositions;
   the task reviewer and the branch reviewer gain it, and so does the
   implementer's report. A task reviewer's or an implementer's items reach
   the branch reviewer as leads; the branch reviewer's reach the operator
@@ -410,6 +411,9 @@ All lightly held unless stated.
   Changes line (the decision-records test checks headings only).
 - **A10.** The suite passes and the generated agents match their
   templates. Standing.
+- **A11.** The landing states the skills' net word change from
+  `tests/prose-budget.txt` and what was removed (umbrella U5). Why
+  neither: a report, read by the operator.
 - **A12.** Every gate keyed on an open BLOCKER or MAJOR (the stop
   trigger, the cap escalation, the branch review's end condition, task
   completion) reads a premise finding as a decision ask. One-time search.
@@ -419,9 +423,6 @@ All lightly held unless stated.
   excludes; a fix-list item may name a question id; the re-reviewer rules
   on a fix report's concerns; open premise asks are seeded at a close.
   One-time search per site.
-- **A11.** The landing states the skills' net word change from
-  `tests/prose-budget.txt` and what was removed (umbrella U5). Why
-  neither: a report, read by the operator.
 
 ## Mechanism sketches (advisory)
 
