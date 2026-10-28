@@ -144,7 +144,8 @@ confirms it. Reading binding text for its intent, with the
 literal-reading case raised rather than applied, answers a sample's
 case of a controller applying a Constraint literally to an edge case its
 author plausibly never considered. Since that controller is also the
-one who rules on such a case, its ruling passes the containment test
+one who rules on such a case, its ruling, like an adjudicator's on a
+diff the controller wrote, passes the containment test
 whichever way it goes, and one applying the text where something
 outside the feature builds on the behaviour it changes goes to the
 operator. (Basis: judgment, accepted by the maintainer; measured, for
@@ -260,6 +261,8 @@ the maintainer.)
 
 ## Changes
 
+- 2026-10-28: an adjudicator's ruling on a literal-reading case passes
+  the containment test too, closing the same gap on its path.
 - 2026-10-28: a ruling on a literal-reading case, or on BLOCKED about a
   binding item, passes the containment test whichever way it goes, after
   a branch review found the controller's own literal application

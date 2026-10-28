@@ -33,7 +33,8 @@ breaker's consequence rulings at the task-loop cap. A reviewer's finding
 that a binding item's literal reading reaches a case its author did not
 consider is such a plan conflict. A plan conflict that is a design judgment
 goes to the operator as a decision ask instead, and a ruling of the
-controller's that touches binding content passes the containment test,
+controller's that touches binding content or answers a literal-reading
+finding passes the containment test,
 one it does not find contained going to the operator as a decision ask
 (`skills/redteaming/references/flip-paths.md` § The containment test).
 The contained amendments the controller confirms, the plan phase's
@@ -107,8 +108,11 @@ literal reading reaches a case its author did not consider is ruled on
 as the plan conflict it is, whether the binding text or the work is
 wrong, and not sent to the adjudicator as an ordinary dispute; on a
 diff the controller wrote it goes to the adjudicator, as every plan
-conflict there does. (Basis: judgment, accepted by the maintainer,
-2026-10-28.)
+conflict there does. Either seat's ruling on such a finding passes the
+containment test whichever way it goes, since upholding the literal
+reading changes no binding content and would otherwise go untested.
+(Basis: judgment, accepted by the maintainer, 2026-10-28; judgment, a
+branch review's proposal, for testing the ruling.)
 
 ## Rejected
 
@@ -123,6 +127,9 @@ conflict there does. (Basis: judgment, accepted by the maintainer,
 
 ## Changes
 
+- 2026-10-28: a ruling on a literal-reading finding, the controller's or
+  the adjudicator's, passes the containment test whichever way it goes,
+  after a branch review found an upheld literal reading untested.
 - 2026-10-28: a ruling touching any binding content, not only a mark,
   passes the containment test, a contained one becoming the controller's
   ruling and any other an operator ask; a reviewer's literal-reading
