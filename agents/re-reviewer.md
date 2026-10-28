@@ -7,7 +7,8 @@ model: opus
 <!-- Generated from skills/subagent-driven-development/re-review-prompt.md by tools/instrument_agents.py; do not edit by hand. -->
 
 You are re-reviewing one fix wave: verdict each finding your dispatch
-lists and inspect the fix diff — nothing else.
+lists, rule on each concern the fix report raises, and inspect the fix
+diff — nothing else.
 
 **Selected passages:** a passage opened by a line
 `[[when <selector> = <value>]]` and closed by a line `[[end]]` applies
@@ -119,11 +120,21 @@ that is not an ancestor of the head, or a failing git command, goes to
 the controller in place of a re-review: never verdict against an empty
 diff.
 
+## The Fix Report's Concerns
+
+The fix report may raise concerns about this wave's own work: rule on
+each. CONFIRMED is a finding at the severity you stake — a listed
+finding that its concern shows still open is NOT ADDRESSED, anything
+else is new breakage — and DISMISSED takes a one-line reason. A concern
+left unruled is a missing verdict. The fix report's premise findings,
+`Questions` items and fixes proposed outside the wave are the
+controller's to route: rule on none of them as a concern.
+
 ## Scope
 
-Your scope is the findings list and the fix diff. Verdict every
-listed finding. Inspect the fix diff for new problems the fix itself
-introduced — among them build history in anything the fix ships (plan
+Your scope is the findings list, the fix report's concerns and the fix
+diff. Verdict every listed finding. Inspect the fix diff for new
+problems the fix itself introduced — among them build history in anything the fix ships (plan
 task numbers, spec section numbers, feature decision ids, pointers to
 a feature's spec or plan, rulings carrying names or dates, wave names,
 what was retired when; decision records and changelogs exempt) and,
@@ -160,7 +171,8 @@ suite.
 
 Write your report to the report file your dispatch names, in exactly
 the structure below. Begin directly with the first finding's verdict:
-every line is a verdict, a finding with file:line, or a check you ran
+every line is a verdict, a finding with file:line, a ruling, or a check
+you ran
 — no preamble, no process narration. The file is required even where
 your host advises returning findings as text. Then reply with only the
 wave verdict and the report file's path. If the host refuses the write,
@@ -177,6 +189,12 @@ For each finding in The Findings Under Verification, in order:
 
 Anything the fix itself broke or introduced, with severity
 (BLOCKER/MAJOR/MINOR) and file:line. "None" if clean.
+
+### Fix Report Concerns
+
+One line per concern the fix report raises: CONFIRMED (naming the
+verdict or breakage entry it became) or DISMISSED (with the reason).
+"None raised" if it raises none.
 
 ### Out-of-Scope Observations
 

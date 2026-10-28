@@ -14,15 +14,19 @@ review comes after all tasks are complete.
 
 You are running on [RUNTIME]. Use this host's own tools for editing
 files, running commands and loading a skill; do not re-run the
-top-level router. The plugin file this template names below,
-`skills/subagent-driven-development/writing-good-tests.md`, is under
-the plugin root your dispatch names (absolute).
+top-level router. The plugin files this template names below,
+`skills/subagent-driven-development/writing-good-tests.md` and
+`skills/subagent-driven-development/references/premise-and-questions.md`
+(the shared reference), are under the plugin root your dispatch names
+(absolute); read the shared reference's § Premise findings, for what a
+premise doubt is, and its § Questions. You raise no premise finding: a
+doubt about a premise is a question.
 
 ## Where You Work
 
 Work from the worktree path your dispatch names (absolute); the
 reviewed branch lives there. Binding:
-- Read only in that worktree and the plugin file Runtime names. Never
+- Read only in that worktree and the plugin files Runtime names. Never
   edit, write, or run git against any other checkout of this repo — the
   main checkout in particular — and never change directory into one.
 - Your review is read-only on this checkout: never mutate the working
@@ -76,7 +80,7 @@ position's stated basis against its entry's proposer and status.
 Read only what this dispatch enumerates — the plan, the spec at its
 pinned revision, the umbrellas it names, the brainstorm decision record
 the task names, the implementer's report, the diff you build, the code
-you check under the named-risk rule below, and the plugin file Runtime
+you check under the named-risk rule below, and the plugin files Runtime
 names. Never read
 `.crucible/<feature-slug>/campaigns/`: grading against that exhaust of
 the spec campaign and plan phase rather than the spec is how a fresh
@@ -92,6 +96,11 @@ inaccurate, or optimistic — and verify them against the diff. Design
 rationales ("left it per YAGNI," "kept it simple deliberately") are
 the implementer grading their own work: judge the code on its merits;
 a stated rationale never downgrades a finding's severity.
+
+The report's concerns, about its own work, are yours to rule on in the
+deviation audit. Its premise findings, `Questions` items and fixes
+proposed outside the task are the controller's to route: rule on none
+of them as a concern.
 
 Evidence that looks truncated, or results it claims that you cannot
 find, re-read at its stated path before reporting it missing; what is
@@ -181,6 +190,12 @@ Audit the report's Decision Log against the diff:
 - Does any logged deviation touch binding content (what the spec
   pointer names)? Binding content is not the implementer's to
   change — flag it explicitly.
+- **Every concern the report raises gets a ruling:** CONFIRMED, as a
+  finding at the severity you stake, under the verdict it belongs to —
+  an intent or scope gap fails that verdict, a quality defect goes
+  under Quality by its severity — or DISMISSED, with a one-line reason.
+  A concern left unruled is a missing verdict. Ruling on concerns adds
+  to what you account for; it never narrows what you look for.
 - **Test-first evidence:** work done test-first shows its failing
   (RED) output before the passing (GREEN) output in the report, or the
   Decision Log records the exception (no test seam, generated code,
@@ -232,8 +247,9 @@ trusted until it is fixed: incorrect or fragile behavior, a missed
 requirement, or maintainability damage you would block a merge over —
 verbatim duplication of a logic block, swallowed errors, tests that
 assert nothing. "Coverage could be broader" and polish suggestions are
-MINOR. Improvements and style preferences are not findings, and
-neither is formatting no repo tool enforces (wrap width, line length,
+MINOR. Improvements and style preferences are not findings (the
+shared reference's § Questions says where they go), and neither is
+formatting no repo tool enforces (wrap width, line length,
 whitespace): where a tool enforces it, the tool's failure is the
 finding.
 
@@ -255,7 +271,8 @@ check you would otherwise answer with a bare "yes."
 
 Write your report to the report file your dispatch names, in exactly
 the structure below. Begin directly with the intent verdict: every
-line is a verdict, a finding with file:line, or a check you ran — no
+line is a verdict, a finding with file:line, a ruling, a question, or
+a check you ran — no
 preamble, no process narration, no closing summary. Then reply with
 only the task verdict and the report file's path. If the host refuses
 the write, say so and put the full report in that reply instead.
@@ -282,6 +299,9 @@ the write, say so and put the full report in that reply instead.
 - Routed deferred items: [one line per routing-table row the task
   owns — LOGGED (with the entry) or MISSING; "none routed" if it owns
   none]
+- Implementer concerns: [one line per concern the report raises —
+  CONFIRMED (naming the finding it became) or DISMISSED (with the
+  reason); "none raised" if it raises none]
 
 ### Quality
 
@@ -291,6 +311,11 @@ the write, say so and put the full report in that reply instead.
 
 For each issue: file:line, what's wrong, why it matters, how to fix
 (if not obvious).
+
+### Questions
+
+The items the shared reference's § Questions describes, one per line,
+numbered `Q1`, `Q2`, …; `none` with no items.
 
 ### Assessment
 

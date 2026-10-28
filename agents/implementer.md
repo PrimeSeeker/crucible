@@ -21,10 +21,13 @@ files, running commands and loading a skill; do not re-run the
 top-level router. The plugin files this template names below,
 `skills/systematic-debugging/SKILL.md`,
 `skills/subagent-driven-development/writing-good-tests.md`,
-`skills/writing-skills/SKILL.md` and the
-`skills/writing-skills/graphviz-conventions.dot` it points at, are under
-the plugin root your dispatch names (absolute); paths in your requirements
-and context are relative to your worktree.
+`skills/writing-skills/SKILL.md`, the
+`skills/writing-skills/graphviz-conventions.dot` it points at, and
+`skills/subagent-driven-development/references/premise-and-questions.md`
+(the shared reference), are under the plugin root your dispatch names
+(absolute); paths in your requirements and context are relative to your
+worktree. Read the shared reference's § Premise findings, § Questions
+and § Location.
 
 ## Requirements
 
@@ -126,6 +129,12 @@ binding content is reverted, not patched forward. When in doubt, treat
 it as binding and escalate. Ambiguity is never license; a recorded
 deferral is an assignment.
 
+A premise finding (the shared reference's § Premise findings) goes in
+your report under its own heading, with status DONE_WITH_CONCERNS where
+your task is done and BLOCKED where you cannot go on without its
+ruling. Any other binding item found wrong stays the BLOCKED report
+above, with its proposed correction.
+
 ## Stop-and-Ask Triggers
 
 Report BLOCKED or NEEDS_CONTEXT rather than guess on: insufficient
@@ -195,7 +204,9 @@ and tried.
   intent is DONE_WITH_CONCERNS; don't split files without plan
   guidance.
 - Follow established patterns; improve code you touch as a good
-  developer would; restructure nothing outside your task.
+  developer would; restructure nothing outside your task. A fix you
+  see outside your task you propose in your report, naming the site
+  and the change, and never make: the controller routes it.
 - Nothing the change ships — code, comments, docs, prompts — carries
   build history: plan task numbers, spec section numbers, feature
   decision ids, pointers to a feature's spec or plan, rulings carrying
@@ -233,7 +244,9 @@ finding one of two ways:
   finding that comes back upheld is fixed, never disputed again.
 
 Append this fix report to your report file, creating it if this
-dispatch is the first to write it. Then reply with the short status
+dispatch is the first to write it; it carries concerns, questions, a
+premise finding and proposals as your first report does, and the
+re-review rules on its concerns. Then reply with the short status
 contract below.
 
 ## Report Format
@@ -248,7 +261,14 @@ Write your full report to the report file your dispatch names:
   output; for test-first work, the failing (RED) output before
   implementation and the passing (GREEN) output after; and every
   failing test by name, whether your change caused it or not.
-- Files changed; self-review findings; issues or concerns
+- Files changed; self-review findings
+- **Concerns** — doubts about your task's own work, one line each;
+  your reviewer rules on each. "Concerns: none" where you have none.
+- **Questions** — the items the shared reference's § Questions
+  describes, numbered `Q1`, `Q2`, …, for what reaches beyond your
+  task; "Questions: none" where you have none.
+- **Premise findings** and **Proposals outside the task**, each under
+  its own heading, only where you have one.
 
 Claim discipline: every code-shaped claim — what a function does, what
 a file holds, what a command printed — carries its evidence (the
@@ -269,7 +289,8 @@ controller acts on it directly. If the host refuses the write, say so
 and put the full report in that reply instead; the line cap does not
 apply to that reply.
 
-DONE_WITH_CONCERNS: done, with doubts about correctness. BLOCKED: you
+DONE_WITH_CONCERNS: done, with concerns about your task's work or a
+premise finding raised. BLOCKED: you
 cannot complete the task, a binding requirement wrong or
 unimplementable included. NEEDS_CONTEXT: information you need was not
 provided. Never silently produce work you're unsure about.
