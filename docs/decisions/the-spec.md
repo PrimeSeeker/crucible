@@ -166,7 +166,7 @@ maintainer left the statuses to the agent ("your call"). (Basis: the
 maintainer's preference, for the aim; judgment, accepted by the
 maintainer, for the test, the mark's form and the statuses, 2026-10-28;
 measured, for the two exclusions' cases; judgment, a branch review's
-proposal, for testing a literal-reading ruling.)
+proposal accepted by the maintainer, for testing a literal-reading ruling.)
 
 ### Pointers, not copies
 
@@ -229,6 +229,8 @@ measured.)
 
 ## Changes
 
+- 2026-10-28: testing a literal-reading ruling, accepted by the
+  maintainer at the landing.
 - 2026-10-28: sampling in place of a count attributed to the
   maintainer's preference, as the brainstorm record has it.
 - 2026-10-28: a ruling on a literal-reading case passes the containment

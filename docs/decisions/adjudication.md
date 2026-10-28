@@ -112,7 +112,7 @@ conflict there does. Either seat's ruling on such a finding passes the
 containment test whichever way it goes, since upholding the literal
 reading changes no binding content and would otherwise go untested.
 (Basis: judgment, accepted by the maintainer, 2026-10-28; judgment, a
-branch review's proposal, for testing the ruling.)
+branch review's proposal accepted by the maintainer, for testing the ruling.)
 
 ## Rejected
 
@@ -127,6 +127,8 @@ branch review's proposal, for testing the ruling.)
 
 ## Changes
 
+- 2026-10-28: testing a literal-reading ruling, accepted by the
+  maintainer at the landing.
 - 2026-10-28: a ruling on a literal-reading finding, the controller's or
   the adjudicator's, passes the containment test whichever way it goes,
   after a branch review found an upheld literal reading untested.

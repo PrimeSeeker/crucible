@@ -149,7 +149,7 @@ diff the controller wrote, passes the containment test
 whichever way it goes, and one applying the text where something
 outside the feature builds on the behaviour it changes goes to the
 operator. (Basis: judgment, accepted by the maintainer; measured, for
-the case; judgment, a branch review's proposal, for testing the
+the case; judgment, a branch review's proposal accepted by the maintainer, for testing the
 ruling.)
 
 On 2026-08-23 an implementer seat committed under an identity taken from
@@ -261,6 +261,8 @@ the maintainer.)
 
 ## Changes
 
+- 2026-10-28: testing a literal-reading ruling, accepted by the
+  maintainer at the landing.
 - 2026-10-28: an adjudicator's ruling on a literal-reading case passes
   the containment test too, closing the same gap on its path.
 - 2026-10-28: a ruling on a literal-reading case, or on BLOCKED about a
