@@ -1,20 +1,24 @@
-# Lane downshift, and the digest at the first round close
+# The digest at the first round close, and plans without a campaign
 
 ## Observation
 
-- A route is chosen at the end of the design dialogue, and there is no
-  mid-flight entry: a feature past that step stays on its route. The
-  very-small lane has an upgrade hatch to the standard route
-  (`skills/subagent-driven-development/references/very-small-lane.md`);
-  no route has a way down.
-- The round cap bounds rounds, not spend.
 - For a major design, brainstorming writes the design digest at brainstorm
   exit, when only the brainstorm decision record exists to derive it from;
   campaigns extend it at round closes (brainstorming § Design digest).
+- Two arrangements are unsupported
+  (`skills/brainstorming/SKILL.md` § Proposing the arrangement (step 4)):
+  - **A campaigned spec implemented with no plan**, lane-style, once its
+    campaign has stopped. Left out when the arrangement choices became
+    separable (2026-10-29).
+  - **A lane note with a plan.** A settled change that needs several
+    coordinated tasks takes the standard preset, whose campaign is
+    expected to stop after its first round, because only the campaign
+    presets carry a plan.
 
 ## Follow-up
 
 - Create the digest at the first round close rather than at brainstorm
   exit.
-- Consider an operator-confirmed downshift to a lighter route, and state
-  that caps are not cost bounds.
+- Consider implementing from a campaigned spec with no separate plan.
+- Consider a lane note with a plan. Trigger: a settled multi-task change
+  run through a spec campaign only to get a plan.
