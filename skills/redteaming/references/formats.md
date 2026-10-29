@@ -85,7 +85,9 @@ operator ruling on a decision ask after the brainstorm — in a campaign, the
 plan phase or execution — is also entered in `brainstorm-decisions.md`, in
 that record's entry form (`crucible:brainstorming` § Workspace provisioning
 (brainstorm exit)) and with its status, beside wherever its own phase
-records it.
+records it. An answer that leaves the call to the controller is entered
+with the delegated status that section defines, never as the operator's
+ruling or choice.
 
 Per-round directory contents:
 
@@ -120,10 +122,17 @@ and carry no mark.
 **Lifecycle** (binding): provisioned at brainstorm exit; lives until one of
 three ends — SDD Finish, an umbrella's landing (an umbrella never reaches
 SDD), or feature abandonment. At each, the controller deletes
-`.crucible/<feature-slug>/` and nothing else (at Finish, after SDD Finish's
-record checks; at an umbrella's landing, before it lands, in the order
-`skills/brainstorming/references/umbrellas.md` § Landing gives) and reports
-to the operator anything it could not delete. No orphan workspaces. Workspace lost mid-feature: the in-flight phase restarts
+`.crucible/<feature-slug>/` and nothing else, and reports to the operator
+anything it could not delete. No item left open stays only in the
+workspace: at Finish and at an umbrella's landing, the work left open is
+first written to `open-items.md` (§ Feature folder), the deletion
+following in the order `crucible:subagent-driven-development` § Finish or
+`skills/brainstorming/references/umbrellas.md` § Landing gives; at
+abandonment, the operator's call (a late split's included), the readout
+asking for it lists what the records hold open. An umbrella's closing
+review has a workspace of its own under the umbrella's slug, in the
+checkout the session works in, deleted once its findings are written
+(`skills/brainstorming/references/umbrellas.md`). No orphan workspaces. Workspace lost mid-feature: the in-flight phase restarts
 from the committed spec or plan and `git log`; the session transcripts hold
 the lost records if they are needed.
 
@@ -262,17 +271,19 @@ Fields, in order:
    **Question dispositions** (`## Question dispositions`, after the merged
    finding list): every question a seat report raises, by its id
    `<seat-id>-q<n>`, is answered (with the answer), carried to readout (the
-   question goes to the operator in this round's readout), rejected (with
-   a ruling) or adopted (an improvement riding this round's fix wave, with
-   the fix item that carries it; `crucible:redteaming` § Merge and finding
-   hygiene).
+   question goes to the operator in this round's readout, quoted
+   verbatim), rejected (with a ruling) or adopted (an improvement riding
+   this round's fix wave, with the fix item that carries it); which
+   questions are always carried, and where a question is never adopted,
+   is in `crucible:redteaming` § Merge and finding hygiene.
 
 6. **Fix list** (`## Fix list`) — enumerated fix items, each naming the
    finding id(s) it resolves, or the question id `<seat-id>-q<n>` of an
    adopted improvement it carries: the blind verifier's sole mandate input (fix
    list + diff, never rationale). **Restating sites** (binding): each item
    also names every other artifact site restating the content it changes,
-   found by the propagation sweep run before the list freezes
+   found by the propagation sweep run before the list freezes, and for an
+   item that adds or changes a rule each site its trace finds
    (`crucible:redteaming` § Fix application and blind verification), or its
    one site where the content is stated once.
 
@@ -287,10 +298,12 @@ Fields, in order:
    operator, compact, with the items `crucible:redteaming` § Round readout
    defines: key findings, every rejected, parked or partly-applied
    BLOCKER/MAJOR named with its ruling; technical calls; decision asks; the
-   round's `deferred-to-implementation` count; the digest-update note; in
+   round's `deferred-to-implementation` count; the questions carried to
+   readout, each quoted verbatim; the digest-update note; in
    every numbered spec-campaign round, whether overturning a major
-   mechanism after code is still plausible, and why, answering each seat's
-   plausible forecast by the mechanism it names; and, at the close of the
+   mechanism after code is still reasonably expected, and why, answering
+   each seat forecast that it is reasonably expected by the mechanism it
+   names; and, at the close of the
    plan phase and of a folded campaign, the tasks the plan marks
    `Review: branch only`, with their reasons, as information. The
    delivered readout carries no internal id — merged-list, seat-finding or
@@ -316,8 +329,8 @@ Fields, in order:
      (`crucible:redteaming` § Panels); where the wave was not committed, the
      trace records the counts as not taken;
    - in a numbered spec-campaign round record only, beside each mechanism
-     the overturn item answers, the ids of the seats whose plausible
-     forecasts named it.
+     the overturn item answers, the ids of the seats whose forecasts named
+     it as reasonably expected to be overturned.
 
 **Special records** — field sets and reachable states (a state outside a
 record's subset is skipped by definition):
@@ -325,7 +338,8 @@ record's subset is skipped by definition):
 - **Round-00:** fields 1, 2, 6 and 8 plus `## Claim table` (baseline claims
   → TRUE/FALSE with evidence). Its findings and the fixes applied before
   round 1 are in its fix list. It has no merge and so no question
-  dispositions: the round-0 agent's questions are answered in its readout.
+  dispositions: the round-0 agent's questions are answered in its readout,
+  under the panel's rule for which are always carried.
   States: `dispatched → returned → fix-applied → readout`.
 - **Terminal pass** (`terminal-pass/record.md`): fields 1, 2, 6 and 8, with
   a pointer to `pass.md` in its preamble. Field 6 is present only when the
@@ -348,8 +362,8 @@ record's subset is skipped by definition):
 ## Feature folder
 
 This section is the binding definition of where a feature's committed
-documents live — its spec and its plan — and skill prose points here rather
-than restating it.
+documents live — its spec, its plan and its open items — and skill prose
+points here rather than restating it.
 
 **Feature folder (binding):** each feature's committed documents live
 together in one tracked directory of the target repo, the feature's
@@ -371,6 +385,11 @@ so a filename carries only its role.
   route), `folded.md` (the folded spec+plan), `note.md` (the very-small lane)
   or `umbrella.md` (an umbrella, `skills/brainstorming/references/umbrellas.md`).
 - `plan.md`, on the standard route only.
+- `open-items.md`, the work left open, each item with its source: written
+  and committed at SDD's Finish (`crucible:subagent-driven-development`
+  § Finish), and for an umbrella at its landing and after its closing
+  review (`skills/brainstorming/references/umbrellas.md`), unless the
+  project's instructions name another home for open items.
 - A route that replaces a spec keeps the predecessor in place as the
   forensic record and writes the successor into the same folder: a supersede
   successor takes a numeric suffix (`design-2.md`, `plan-2.md`, …); an
@@ -420,10 +439,9 @@ Sections:
 
 - `## Decisions` — each: the decision, the trade-off it resolves, status,
   source pointer (which readout or record). The status is `open`,
-  `accepted` or `firm`: `accepted` is the default for any approval, a
-  "+", an "OK" or a "your call" included, and means "this until new
-  evidence arrives"; `firm` is recorded only on the operator's explicit
-  word, never inferred from an approval.
+  `accepted` or `firm`, read as the brainstorm decision record defines
+  them, a call the operator left to the controller recorded as delegated
+  (`crucible:brainstorming` § Workspace provisioning (brainstorm exit)).
 - `## Positions flipped` — what flipped, why, and where (source pointer).
 - `## Open judgments` — pending decision asks, each with its recommendation.
 
