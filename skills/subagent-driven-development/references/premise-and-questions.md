@@ -1,35 +1,50 @@
 # Premise findings and questions
 
-What a seat may raise beyond an ordinary finding, and the form it takes;
-and the arrangement questions, which seats apply, as do the controllers
-that propose a feature's arrangement, stop a spec campaign, mark a
-plan's tasks or work a task inline. Your template or skill names
+What a seat may raise beyond a defect in the work, and the form it
+takes; and the arrangement questions, which seats apply, as do the
+controllers that propose a feature's arrangement, stop a spec campaign,
+mark a plan's tasks or work a task inline. Your template or skill names
 the sections that apply to you.
 
 ## Premise findings
 
-A premise finding claims, with evidence, that something the operator
-asked for or decided is wrong: the request itself, what the Intent asks
-for, or a decision the operator made or holds firm, the chosen approach
-included where the operator chose it. Mark it with the label `premise`
+A premise finding claims, with evidence, that one of three things is
+wrong: the request, what the Intent asks for, or a firm decision. Each
+is readable from the document: the request and the Intent are its
+sections, and a firm decision says so in its rationale. On the
+very-small lane the lane note's Intent stands for the spec's. For a
+child of an umbrella, the request includes the effort's request that its
+`## Request` section quotes, and the umbrella's Intent is protected as
+the child's own is. Mark a premise finding with the label `premise`
 after the finding's severity, as in `FINDING s2-3 [MAJOR] premise`, and
 stake that severity as for any finding: it is for the operator's
 weighing.
 
-What separates it from an ordinary finding is who stands behind what you
-challenge, as the document records each decision's basis. A decision the
-operator only accepted from the controller's proposal is lightly held: a
-finding against it is an ordinary one, structural or not, and so is a
-correction of the Intent's wording or facts that leaves what it asks for
-unchanged. A firm decision or a lane note's Intent shown wrong is a
-premise finding; any other binding item shown wrong stays the finding
-your template already names for it. A `literal-reading` finding keeps its
-own label: it questions how a binding item applies to a case, not the
-premise behind it.
+Every other decision, whoever proposed it, is lightly held: a finding
+against it is an ordinary one, structural or not, and so is a correction
+of an Intent's wording or facts, the umbrella's included, that leaves
+what it asks for unchanged. A change on a child's branch to what its
+umbrella's Intent asks, in the spec, the plan or the code, is a finding.
+Any other binding item shown wrong, such as a Constraint or a mark, is
+no premise finding: it keeps the route your template gives it. A
+`literal-reading` finding keeps its own label: it questions how a
+binding item applies to a case, not the premise behind it.
 
 Redteam seats, the branch reviewer and implementers raise premise
 findings. A task reviewer that doubts a premise writes the doubt in its
 `Questions` (§ Questions).
+
+## Binding items and unrecorded choices
+
+Two findings a reviewer raises beyond a defect in the work:
+
+- **A binding item that is itself wrong** is a legitimate finding,
+  naming the item and the evidence that shows it wrong; changing the
+  item is never yours to do. A firm decision shown wrong is a premise
+  finding instead (§ Premise findings).
+- **A consequential choice the artifact you review takes for granted**
+  with no decision recording it (the platform, the language, the form
+  of the deliverable) is a finding.
 
 ## The goal check
 
@@ -72,24 +87,26 @@ contradicts.
 
 Each site that applies one of these says what its answer decides there.
 
-**The overturn question.** Once the work is coded, is overturning one of
-its major mechanisms plausible? A major mechanism is a part of the
-design other parts build on: a component, a rule others key on, a file
-role, a data flow, an interface between parts. Overturning one replaces,
-removes or re-shapes it; an addition, or a correction that leaves its shape
+**The overturn question.** Is overturning a major mechanism after code
+reasonably expected? A major mechanism is a part of the design other
+parts build on: a component, a rule others key on, a file role, a data
+flow, an interface between parts. Overturning one replaces, removes or
+re-shapes it; an addition, or a correction that leaves its shape
 standing, does not count. Before code the answer is a forecast from the
 design and its records; after code it is read from the code as well.
 
-Before any review, the answer is no in two cases only:
+Before any review, the answer is usually no in one of two cases:
 
 - the work has no major mechanism: it adds to, corrects or removes
   within mechanisms that stay as they are;
 - its decisions are overdetermined.
 
+A no for any other reason states that reason.
+
 For an umbrella's campaign, the code is its children's: the question
-asks whether implementing the children could plausibly overturn a
-major mechanism the umbrella fixes, such as its split into children, an
-interface between them or a constraint they share.
+asks whether, once the children are implemented, overturning a major
+mechanism the umbrella fixes is reasonably expected, such as its split
+into children, an interface between them or a constraint they share.
 
 **Overdetermined.** Work, a whole design or a single task, is
 overdetermined when every decision in it is forced by what is already
