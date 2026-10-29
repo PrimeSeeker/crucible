@@ -6,7 +6,15 @@ Every spec campaign closes with the terminal pass, one fresh seat outside
 the cap; the plan phase closes with its own after its fix wave. It has
 two mandates, in this order: a re-read of the artifact, recorded before
 it opens any record, then decision-ask fidelity, checking each ask
-against the findings behind it. It reports counted record corrections,
+against the findings behind it and, in a spec campaign, the stop: the
+stated basis against every forecast line in the numbered rounds' seat
+verdicts, each forecast overturn answered by the mechanism it names, and
+the stop round's fix list against the rule that a round whose wave
+re-shapes a major mechanism is no stop round
+(`docs/decisions/spec-campaign.md`). For that check its inputs gain
+every numbered round's seat reports, their verdict sections only, and
+its card the plugin root through which it reads the overturn question.
+It reports counted record corrections,
 and only a correction flagged `CONCLUSION-CHANGING` reaches the operator
 as a decision ask. Its directional-bias statement is mandatory and
 unconditional, and escalates only above its threshold. Its tail is
@@ -46,6 +54,18 @@ left, escalating every correction would have made each wording fix an
 ask, so only `CONCLUSION-CHANGING` corrections escalate. (Basis:
 measured, for the samples; the maintainer's preference, for where the
 check sits; judgment, accepted by the maintainer, for the escalation.)
+
+The stop came back into the mandate on 2026-10-29, as part of
+decision-ask fidelity, when the stop trigger became the overturn
+question. A stop-rule call then mattered little, since a wrong one only
+cost another round; under the new trigger a stop is what ends review
+before code, and a probe of the campaigns that stopped by the question
+found the controller making each call and writing the readout that
+justified it, one stop basis overstated. The seats' forecast lines give
+the check a record the controller did not write. It reads only their
+verdict sections, so whole seat reports stay outside its inputs.
+(Basis: measured, for the probe; judgment, accepted by the maintainer,
+for the check.)
 
 The re-read comes first because reading the records' account of the
 artifact before the artifact turns a confirming read into a re-derivation
@@ -90,7 +110,8 @@ the maintainer, for the rest.)
 - **A fidelity seat every round**: the same check at higher cost
   (§ Why).
 - **Ruling-consistency, conservation-walk and whole-seat-report
-  mandates for the pass**, removed on 2026-10-07 (§ Why).
+  mandates for the pass**, removed on 2026-10-07 (§ Why); the stop
+  check of 2026-10-29 reads the seats' verdict sections and no more.
 - **Escalating every correction**, or every directional-bias statement,
   to the operator (§ Why).
 - **A standing-stance line below the threshold** (§ Why).
@@ -98,6 +119,12 @@ the maintainer, for the rest.)
 
 ## Changes
 
+- 2026-10-29: in a spec campaign, decision-ask fidelity also checks the
+  stop's basis against every numbered round's forecast lines and the
+  stop round's fix list against the re-shape rule, a mismatch that would
+  have changed the stop flagged `CONCLUSION-CHANGING`; its inputs gain
+  the seats' verdict sections and its card the plugin root; after the
+  stop trigger became the overturn question.
 - 2026-10-13: the terminal pass: an artifact re-read and decision-ask
   fidelity, stated in full only in its template, and a mandatory
   directional-bias statement that escalates only above its threshold.

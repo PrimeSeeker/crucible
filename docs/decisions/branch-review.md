@@ -14,6 +14,8 @@ full-scope, for what task-scoped gates cannot see: cross-task
 integration, drift accumulated across the branch, and anything the gates
 let through. It may read beyond the diff where correctness depends on it,
 triages every deferred item (promote, fix in a wave, or leave parked),
+a task's routed items aside where that task was completed branch review
+only (below),
 checks each ruling against the final code, and flags undisclosed drift
 from binding content in a completed task as DRIFT. It runs the goal
 check, may raise premise findings and writes a `Questions` section
@@ -22,6 +24,29 @@ branch ties to a trigger asks whether every route and phase that must
 apply it reaches it when the trigger occurs. It runs on the default
 role, never lowered to save cost
 (`docs/decisions/model-roles-and-effort.md`).
+
+**Tasks completed branch review only.** For a task the ledger completes
+branch review only (`docs/decisions/task-loop.md`), the branch reviewer
+is the first review. The controller names each such task in the card's
+`[BRANCH_ONLY_TASKS]` slot, with its range, its latest attempt's report,
+the brainstorm decision record where the task writes a decision record,
+and the amendment commits its range holds. Over that range the reviewer
+makes the task review's four judgments, intent, scope (a deleted or
+weakened test against the Decision Log included, and a change to the
+plan or spec other than a named amendment commit), the deviation audit
+and quality, checks each decision-record position's basis against the
+brainstorm decision record, judges the task's routed items in its
+deviation audit rather than in the sweep, and rules on its leads. The
+first full-scope pass after each such completion, the review's first
+pass or the pass resuming it after a revert-and-replan, writes one line
+per task naming the judgments and what they raised; a pass missing a
+line it owes is refused as a review missing a verdict is, and SDD's
+Finish reads that line in place of the task's review file. A failed
+intent, scope or deviation-audit judgment on such a task opens a wave
+whatever its staked severity, as the task loop wires it
+(`crucible:requesting-code-review § Tasks completed branch review only`;
+`skills/requesting-code-review/code-reviewer.md` § Tasks With No Task
+Review).
 
 **Leads and questions.** A task reviewer's and an implementer's
 `Questions` items, an implementer's fixes proposed outside its task, the
@@ -39,7 +64,8 @@ questions never become the next pass's input
 (`crucible:subagent-driven-development § Setup`;
 `skills/requesting-code-review/code-reviewer.md` § Execution Trail).
 
-**The loop.** Only a BLOCKER or MAJOR opens a fix wave: one fresh
+**The loop.** Only a BLOCKER or MAJOR, or a failed judgment on a task
+completed branch review only, opens a fix wave: one fresh
 implementer with the complete findings list, then a scoped re-review of
 the findings answered fixed, the disputed ones going to the adjudicator
 (`docs/decisions/adjudication.md`). A wave that leaves no BLOCKER or
@@ -148,6 +174,32 @@ none; the spec campaign and the plan phase missed it, and the branch
 review confirmed it as its one MAJOR. (Basis: a single incident;
 judgment, accepted by the maintainer, for the forms.)
 
+### The first review of a task with none
+
+When a plan may route a task's review to the branch review alone
+(`docs/decisions/task-loop.md`), every check the task review made needs
+an owner, or the mark drops checks rather than moving them. The
+controller's gate owns what the report must show; the branch reviewer
+owns the judgments, and it is the seat best placed for them, since it
+sees every task. It has to know which tasks went unreviewed, hence the
+slot; without a per-task line nothing would show that it made the
+judgments, and SDD's Finish would find neither a review file nor a
+record in its place. The wiring is the task loop's, so a failed intent
+or scope judgment is not left to ride a wave as a minor. (Basis:
+judgment, accepted by the maintainer, 2026-10-29.)
+
+As first written, only the review's first pass owed the line, so a
+marked task redone through revert-and-replan after that pass would get
+no judgments at all; a seat of the plan phase found it, and the
+line became owed by the first full-scope pass after each such
+completion, a redone task's included. A task's routed items were first
+to reach the reviewer through the sweep as before; the task that
+shipped the reviewer's mandate judged them in the task's own deviation
+audit instead, where the task loop checks each routed item at its
+task's review, and the controller ruled that reading stands. (Basis:
+judgment, an agent's rulings that the feature's own rules left to it,
+not put to the maintainer, 2026-10-29.)
+
 ### Review seats build their own diff
 
 On 2026-10-11 crucible deleted its copy of upstream's `review-package`
@@ -172,6 +224,14 @@ accepted by the maintainer.)
 
 ## Changes
 
+- 2026-10-29: the branch reviewer is the first review of each task
+  completed branch review only, named in a new slot: it makes the task
+  review's four judgments over the task's range and checks its decision
+  record's bases, judges its routed items in its deviation audit, and
+  writes a line per task in the first full-scope pass after that
+  task's completion, which Finish reads; a failed intent, scope or
+  deviation-audit judgment opens a wave at any severity; so that no
+  check the task review made goes unowned.
 - 2026-10-29: the branch reviewer runs the goal check, raises premise
   findings, which keep no review open and hold no merge, writes
   `Questions` to the ledger's `## Questions`, rules on leads CONFIRMED,

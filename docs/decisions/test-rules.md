@@ -18,8 +18,11 @@ is redone test-first or logged as an exception: no test seam, generated
 code, prose-only work, a removal. A removal's failing step is the removed
 path's own tests failing or deleted with it, never a new test that the
 thing is absent. The task reviewer's deviation audit checks RED output
-before GREEN, or the logged exception, and is the only seat that checks it
-(`skills/subagent-driven-development/implementer-prompt.md` § Tests:
+before GREEN, or the logged exception, and is the one seat that checks
+it, but for a task completed branch review only, where the controller's
+gate checks the evidence is in the report and the branch reviewer's
+deviation audit judges it (`docs/decisions/task-loop.md`;
+`skills/subagent-driven-development/implementer-prompt.md` § Tests:
 Test-First, Evidence Before Done). Outside SDD, systematic-debugging
 writes the failing test before the fix and says why where no test or
 script can reproduce the bug.
@@ -33,13 +36,15 @@ requirement or review finding the deletion fulfils; or a warning sign from
 `skills/subagent-driven-development/writing-good-tests.md` that the test
 shows. The task reviewer checks the Decision Log's justification against
 the code, the re-reviewer the fix report's, and the branch reviewer judges
-from the code and the requirements
+from the code and the requirements, and checks the Decision Log's
+justification itself for a task completed branch review only
 (`skills/subagent-driven-development/task-reviewer-prompt.md` § Verdict 2:
 Scope; `skills/subagent-driven-development/re-review-prompt.md` § Scope;
 `skills/requesting-code-review/code-reviewer.md` § What to Check).
 
 **Adequacy, and no gate.** New-test adequacy is the task reviewer's own
-judgment. There is no mutation gate; the test guide's mutation check is
+judgment, and the branch reviewer's for a task completed branch review
+only. There is no mutation gate; the test guide's mutation check is
 a manual practice
 (`skills/subagent-driven-development/writing-good-tests.md` § The
 Mutation Check).
@@ -81,7 +86,9 @@ first; upstream's delete-only form did not, since work with no test seam,
 generated code and prose-only work keep the logged exception. The same
 day the deviation audit began checking RED before GREEN, which nobody had
 checked. Only an implementer's report carries that evidence, so the
-check stays the task reviewer's. Outside SDD, systematic-debugging's skip
+check stays with the seat that reads the report: the task reviewer, or,
+for a task completed branch review only, the branch reviewer, whose slot
+names that report (2026-10-29). Outside SDD, systematic-debugging's skip
 narrowed on 2026-10-15 from any stated reason to a bug no test or script
 can reproduce, an observable condition. (Basis: external; judgment,
 accepted by the maintainer.)
@@ -142,6 +149,11 @@ testing, or other test gates, states them there.
 
 ## Changes
 
+- 2026-10-29: for a task completed branch review only, the branch
+  reviewer takes the task reviewer's test checks, RED before GREEN, a
+  deleted test's justification and new-test adequacy, the controller's
+  gate first checking the evidence is in the report; since such a task
+  has no task review.
 - 2026-10-15: test rules for reviewed work: standing tests or one-time
   checks, test-first with logged exceptions including removals, RED
   before GREEN checked by the task reviewer, weakened tests always a

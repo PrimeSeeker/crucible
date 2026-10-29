@@ -16,9 +16,11 @@ contracts; the acceptance mapping; and the deferred-items routing table,
 under its own `## Deferred-items routing table` heading, one backticked
 row per owning task with `T<N>` alone in the owner cell, assembled from
 the `Deferred to implementation:` markers. Each row's closure chain is the
-owning implementer's Decision Log entry, that task's review and the branch
-review's sweep. There is no test-namespace allocation and no
-parallelizable tier (`crucible:writing-plans § Plan header`;
+owning implementer's Decision Log entry, that task's review (for a task
+marked branch review only, the controller's presence check and then the
+branch reviewer) and the branch review's sweep. There is no
+test-namespace allocation and no parallelizable tier
+(`crucible:writing-plans § Plan header`;
 `crucible:writing-plans § Deferring detail`).
 
 **Four task fields.** Why, Files, Contract and Acceptance, all required,
@@ -33,10 +35,28 @@ acceptance criterion maps to a kind of check or says why neither applies
 (`docs/decisions/test-rules.md`). Its edge and error scenarios name the
 inputs the spec implies but never names.
 
-**Task sizing.** A task is the smallest unit with its own test cycle that
-is worth a fresh reviewer's gate: split where a reviewer could reject one
-task while approving its neighbour, and fold setup into the task that
-needs it. The calibration, about a page per task and plans in the low
+**The review mark.** A task that meets the mark's criterion, defined in
+`skills/subagent-driven-development/references/premise-and-questions.md`
+§ The arrangement questions, may carry the line `Review: branch only —
+<reason>`, the reason saying how it meets it; a task with no mark is
+reviewed. Dispatched, a marked task takes the branch review as its first
+review (`docs/decisions/task-loop.md`). Marks are plan content: the
+review that grades the plan grades them, the plan phase's coherence
+seats or, on the folded preset, the spec campaign's seats, and that
+phase's close readout lists the marked tasks for the operator as
+information. Marking a task that has not run after that review has
+closed is a downshift from the arrangement the operator confirmed: never
+a contained amendment, it goes to the operator as a decision ask
+(`skills/redteaming/references/flip-paths.md` § The containment test;
+`crucible:writing-plans § Per-task structure — four fields, all
+required`).
+
+**Task sizing.** A task is the smallest unit with its own test cycle and
+its own review verdict, a fresh task reviewer's gate or, for a marked
+task, the branch reviewer's judgments over its range: split where a
+reviewer could reject one task while approving its neighbour, and fold
+setup into the task that needs it. The calibration, about a page per
+task and plans in the low
 teens of tasks, is advisory (`crucible:writing-plans § Task sizing`).
 
 **Self-review.** The author re-reads the plan once before the plan phase:
@@ -127,6 +147,20 @@ the calibration, advisory like that design's other numeric calibrations;
 no measurement stands behind the numbers. (Basis: external, for the rule;
 judgment, accepted by the maintainer, for the calibration.)
 
+### The review mark
+
+Per-task review is one of the choices the maintainer asked to separate
+from the route (2026-10-28; `docs/decisions/routes.md`), and the plan is
+where the tasks exist to choose it for. A mark carries its reason so the
+seats grading the plan can judge it, and the criterion asks what a late
+review would cost: the branch review runs after every later task, too
+late for a detail something else builds on. Marks written at plan time
+pass that review; a mark added later changes a reviewed plan, so it is
+the operator's to confirm, a deliberate asymmetry. (Basis: the
+maintainer's preference, for the choice; judgment, accepted by the
+maintainer, for the mark, its grading and the downshift rule,
+2026-10-29.)
+
 ### Self-review
 
 Upstream's plan author runs a self-review: spec coverage, a placeholder
@@ -190,6 +224,12 @@ directory and the argument value are interfaces that records and
 
 ## Changes
 
+- 2026-10-29: a task may carry `Review: branch only — <reason>` where it
+  meets the mark's criterion, graded as plan content and listed at the
+  close of the phase that reviews the plan; marking an unrun task later
+  is the operator's call; task sizing and the routed items' closure
+  chain name the branch reviewer for a marked task; per-task review made
+  a plan choice at the maintainer's request.
 - 2026-10-29: a `Contained amendment:` item names the binding item and
   the change, its reason going to the merged entry's ruling and beside
   the item in the ledger, and the verifier verdicts it from the plan's

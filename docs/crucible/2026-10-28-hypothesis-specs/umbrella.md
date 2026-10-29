@@ -76,7 +76,7 @@ potentially non-trivial impact through the very-small lane sound?
   umbrella follow-ups (`docs/backlog/umbrella-followups.md`), which stay
   separate items.
 - The backlog follow-ups no entry below names, which stay in the
-  backlog: the digest at the first round close and caps as cost bounds
+  backlog: the digest at the first round close
   (`docs/backlog/lane-entry-and-downshift.md`),
   `docs/backlog/decision-ask-framing.md` and
   `docs/backlog/reviewer-research-reach.md`.

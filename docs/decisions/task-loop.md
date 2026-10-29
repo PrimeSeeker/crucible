@@ -3,7 +3,8 @@
 ## Decision
 
 **The spine.** SDD executes a plan task by task: a fresh implementer, then
-one fresh-context reviewer, with progress kept in a ledger that survives
+one fresh-context reviewer, unless the plan routes the task's review to
+the branch review (below), with progress kept in a ledger that survives
 compaction. The controller records BASE before each implementer, never
 runs two implementers at once, and fixes no finding itself, inline mode
 and the very-small lane's fix waves excepted
@@ -38,7 +39,8 @@ about that work, `Questions` items, a premise finding
 status DONE_WITH_CONCERNS, or BLOCKED where it cannot go on without the
 ruling, and a fix it proposes outside its task, naming the site and the
 change, which it never makes. The controller handles none of these
-before review: the review of the work rules on every concern, the
+before review, beyond its check of a marked task's concerns (below):
+the review of the work rules on every concern, the
 controller routes the rest, `Questions` items as leads for the branch
 reviewer, an out-of-task proposal to the task that owns its site, as a
 lead for the branch reviewer or, where it touches binding content, by
@@ -55,7 +57,8 @@ names for it: the default role, the alternate role where one of its
 triggers selects the seat, the bounded role for a clearly bounded task
 (`docs/decisions/model-roles-and-effort.md`).
 
-**Task review.** One fresh reviewer per task, never skipped. Its stance
+**Task review.** One fresh reviewer per task, never skipped, a task
+completed branch review only aside (below). Its stance
 is adversarial, "attempt to reject this task", governing the search and
 not the conclusion. Four verdicts, all required: intent, scope, the
 deviation audit (each Decision Log entry justified, nothing undisclosed,
@@ -77,10 +80,31 @@ reviewer takes the reported test output as given and builds its own diff
 reading reaches a case its author plainly did not consider, it reports a
 literal-reading finding naming the item and the case, for the
 controller's ruling (`docs/decisions/adjudication.md`). The task
-reviewer runs on the default role, every task, and the re-reviewer on
-the bounded role or better (`docs/decisions/model-roles-and-effort.md`).
-An open premise finding is a decision ask, not an open BLOCKER or MAJOR,
-and holds no task's completion by itself.
+reviewer runs on the default role, every task it reviews, and the
+re-reviewer on the bounded role or better
+(`docs/decisions/model-roles-and-effort.md`). An open premise finding is
+a decision ask, not an open BLOCKER or MAJOR, and holds no task's
+completion by itself.
+
+**Branch review only.** A dispatched task whose plan section carries
+`Review: branch only` (`docs/decisions/plans.md`) runs no task review and
+no fix loop where its report passes the verification gates, widened to
+what the task review would have read in the report: each acceptance
+check, RED output before GREEN or a logged exception, and a Decision Log
+entry for each deferred item routed to it. The controller checks that
+each is there; the branch reviewer judges its substance. The
+implementer's concerns, `Questions` items and out-of-task proposals
+become leads for the branch reviewer, and its premise finding goes where
+any does. A report that fails a gate, or a concern touching something a
+later task builds on, sends the task to the task review after all, and
+it runs the loop from there. Otherwise the ledger records
+`Task <N>: complete (commits <base7>..<head7>, branch review only)`, which
+the resume rule reads as any `complete` line, and the branch reviewer is
+the task's first review, making the task review's judgments over its
+range (`docs/decisions/branch-review.md`;
+`crucible:subagent-driven-development § The Task Loop`). A task worked
+inline keeps its task review whatever its mark
+(`crucible:subagent-driven-development § Inline mode`).
 
 **Loop wiring.** A failed intent, scope or deviation-audit verdict enters
 the fix loop whatever the finding's severity label; quality findings enter
@@ -114,11 +138,18 @@ verdicts the change, and one it judges intent-visible goes to the
 operator as a decision ask saying what changed and why it matters, never
 a raw diff.
 
-**Inline mode.** The controller may implement a task itself, typically a
-small mechanical one where a dispatch costs more than it protects. Review
-applies unchanged, and any loop-entering finding, at any severity,
-converts the task to standard dispatch, a fresh implementer owning the
-fixes (`crucible:subagent-driven-development § Inline mode`).
+**Inline mode.** The controller may implement a task itself only where
+the task is overdetermined, in the sense
+`skills/subagent-driven-development/references/premise-and-questions.md`
+§ The arrangement questions defines, and fits its remaining context
+without pushing out the coordination state it needs through the branch
+review; otherwise it dispatches, the default. On the very-small lane,
+whose change brainstorming already found settled, the context test
+alone decides, inline being the lane's default
+(`skills/subagent-driven-development/references/very-small-lane.md`).
+Review applies unchanged, and any loop-entering finding, at any
+severity, converts the task to standard dispatch, a fresh implementer
+owning the fixes (`crucible:subagent-driven-development § Inline mode`).
 
 ## Why
 
@@ -226,6 +257,39 @@ code the probe found the rubric hiding nothing, so a premise doubt is
 one of its questions, not a finding (`docs/decisions/evidence-and-findings.md`).
 (Basis: measured; judgment, accepted by the maintainer.)
 
+### Branch review only
+
+The maintainer named per-task review among the choices a route fixes
+that need not align with the others (2026-10-28), and asked whether the
+reviewers' widened mandate belonged "maybe only full-branch, rather than
+task reviews?". (Basis: the maintainer's preference, for making it a
+choice.) The evidence above points the same way for some tasks: on the
+umbrella-specs feature the task reviews of prose tasks run in sequence on
+shared files approved everything while the implementers' concerns and
+the branch review found what mattered, and an escape analysis of 109
+features' histories found task reviews letting through 12 real defects,
+10 minor slips and 2 premise-level MAJORs that needed other tasks'
+knowledge, both caught by the branch review
+(`docs/decisions/evidence-and-findings.md`). (Basis: a single incident;
+measured.)
+
+The mark is the plan's call, graded by the review of the plan, so it
+needs no confirmation of its own at brainstorming; a task review is
+dropped only where the plan says why the task meets the criterion, and
+the branch reviewer, who sees every task, owns every judgment the task
+review made, so none goes unowned. The controller's part is a presence
+check, not a ruling: it never rules on the concerns it routes, except to
+send a task whose concern touches what a later task builds on to its own
+review, because the branch review runs too late for that. The
+alternatives offered were leads alone, with no escape to a task review,
+and the controller ruling on the concerns itself. (Basis: judgment,
+accepted by the maintainer, 2026-10-29.) An inline task keeps its task
+review whatever its mark: without it no fresh seat would read the task
+before the branch review, and inline mode stays where the maintainer's
+ruling of 2026-10-27 left it, "not extended for now". That was an
+agent's proposal, the maintainer leaving the call to it ("your call").
+(Basis: judgment, accepted by the maintainer, 2026-10-29.)
+
 ### Loop wiring
 
 Intent, scope and the deviation audit are pass-or-fail questions about
@@ -297,6 +361,23 @@ prevents; on 2026-10-07 the mode's guard against ruling on its own diff
 became the general dispute rule. (Basis: external; judgment, accepted by
 the maintainer.)
 
+Until 2026-10-29 the mode had no stated criterion: inline mode was for a
+small mechanical task, by a loose judgment of a dispatch's cost against
+its protection, and the lane dispatched by the change's width. The
+maintainer raised the question, cost and speed against "fresh eyes,
+fresh context", with "no clear separating criterion", and wanted inline
+execution not expanded "much" (2026-10-29). A dispatched implementer buys
+an independent read of the spec before code, worth more as review
+before code shrinks, and the controller's context; a task with nothing
+left to decide gains nothing from the first, so it may run inline where
+the second allows. The defaults stayed: subagents on the campaign
+presets, inline on the lane. The lane's branch-review fix waves stay the
+controller's whatever the change's width, a residual accepted since a
+lane change is one implementer's worth. An agent's proposal, which the
+maintainer accepted ("OK, I guess"). (Basis: the maintainer's
+preference, for not expanding the mode; judgment, accepted by the
+maintainer, for the criterion.)
+
 ## Rejected
 
 - **A stuck trigger** escalating a seat past the default role, for now
@@ -306,11 +387,22 @@ the maintainer.)
   verdict** (§ Why).
 - **Execution with no subagents**, upstream's executing-plans fallback
   (§ Why).
+- **A marked task's concerns as leads alone, or ruled on by the
+  controller** (§ Why).
 - **Autonomous snapshot blessing** by the implementer or the controller
   (§ Why).
 
 ## Changes
 
+- 2026-10-29: a task the plan marks `Review: branch only`, dispatched,
+  runs no task review where its report passes the widened gates and no
+  concern touches a later task's ground, its concerns becoming leads and
+  the branch reviewer its first review, completed by a new ledger line;
+  an inline task keeps its review; inline mode only for an overdetermined
+  task that fits the controller's context, the lane's dispatch by context
+  alone, in place of "costs more than it protects" and "wide enough to
+  crowd"; after the maintainer's request to separate per-task review and
+  question about inline execution.
 - 2026-10-29: implementers' standing: the review of the work rules on
   every concern the implementer reports, a missing ruling counting as a
   missing verdict, and the controller handles none before it; an

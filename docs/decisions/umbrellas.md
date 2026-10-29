@@ -16,7 +16,7 @@ effort's whole request where the umbrella has none
 `docs/decisions/the-spec.md`).
 
 **Reviewed by what it carries, on no route.** An umbrella takes none of
-the three routes (`docs/decisions/routes.md`). One that carries
+the three presets (`docs/decisions/routes.md`). One that carries
 decisions, constraints or interfaces gets a spec campaign; one that only
 orders its children and states their obligations is approved by the
 operator as a lane note is. Brainstorming proposes which and the
@@ -119,16 +119,25 @@ maintainer's own earlier proposal, 2026-10-27.)
 
 ### Review by content
 
-The split follows the line the routes draw: a design decision worth
-reviewing gets a campaign, and a document without one is approved as a
-lane note is (`docs/decisions/routes.md`). An umbrella's decisions,
-constraints and interfaces bind every child under it; an umbrella
-without them holds an order and its children's obligations, whose
-checks each child's own Acceptance carries. The ruling is made at the
-umbrella's birth, and a later binding change is ruled on by itself. The
-maintainer chose this from an agent's options, the others being a
-campaign for every umbrella and a campaign for none. (Basis: judgment,
-accepted by the maintainer, 2026-10-27.)
+An umbrella's decisions, constraints and interfaces bind every child
+under it, so one that carries them gets a campaign; an umbrella without
+them holds an order and its children's obligations, whose checks each
+child's own Acceptance carries, and is approved as a lane note is. The
+ruling is made at the umbrella's birth, and a later binding change is
+ruled on by itself. The maintainer chose this from an agent's options,
+the others being a campaign for every umbrella and a campaign for none.
+(Basis: judgment, accepted by the maintainer, 2026-10-27.)
+
+The split first followed the line the routes then drew, by whether a
+design decision deserved review before code. When the overturn question
+replaced that line for features (`docs/decisions/routes.md`), it did not
+take over here: it asks whether code could overturn a mechanism, and an
+umbrella has no code of its own, so its review stays chosen by its
+content. Once an umbrella's campaign runs, the question stops it as any
+campaign's, read against its children's code
+(`skills/subagent-driven-development/references/premise-and-questions.md`
+§ The arrangement questions). (Basis: judgment, accepted by the
+maintainer, 2026-10-29.)
 
 ### The line, and what binds
 
@@ -221,6 +230,11 @@ maintainer, 2026-10-29.)
 
 ## Changes
 
+- 2026-10-29: review by content no longer rests on the routes' retired
+  "worth reviewing" line: the overturn question selects a feature's
+  review, and an umbrella, with no code of its own, keeps review by
+  content, its campaign stopped by the question read against its
+  children's code.
 - 2026-10-29: the basis of the open premise ask's note at the landing
   reads judgment, accepted by the maintainer, no longer an agent's
   call: the maintainer accepted the call.

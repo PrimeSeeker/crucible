@@ -117,26 +117,36 @@ written spec through a dialogue with you. A **spec campaign** then sends a
 panel of fresh agents, each with its own review angle, to attack the spec
 in rounds: their findings are merged and fixed, and another fresh agent
 checks the fixes. After each round you get a readout and any decision
-asks. A campaign stops at the first round that finds no serious or
-structural problem, or at four rounds, when what is still open comes to
-you. A final **terminal pass** re-reads the whole spec and checks that the
-readouts you were given were faithful to the findings. Then a plan is
-written and checked once, and execution starts: a fresh agent implements
-each task, a fresh reviewer checks it, and disagreements go to an
-adjudicator. A whole-branch review closes the work, and you choose whether
-to merge, open a pull request or keep the branch.
+asks. A campaign stops once code no longer looks likely to overturn any
+of the design's major mechanisms, each reviewer forecasting that in its
+verdict, or at four rounds, when what is still open comes to you. A
+final **terminal pass** re-reads the whole spec and checks that the
+readouts you were given, and the decision to stop, were faithful to the
+findings. Then a plan is written and checked once, and execution
+starts: a fresh agent implements each task, a fresh reviewer checks it
+unless the plan leaves that task to the whole-branch review, and
+disagreements go to an adjudicator. A whole-branch review closes the
+work, and you choose whether to merge, open a pull request or keep the
+branch.
 
-**Three routes.** At the end of the design dialogue crucible recommends a
-route, and you confirm or veto it:
+**Three presets.** At the end of the design dialogue crucible proposes
+how the work is arranged, and you confirm or veto it. The question that
+decides is whether code is likely to overturn one of the design's major
+mechanisms; size alone does not decide:
 
 - **Standard:** spec, spec campaign, plan, a single verification round of
-  the plan, execution.
-- **Folded:** for a small change that still carries a design decision
-  worth reviewing: one document holding both spec and plan, the same spec
+  the plan, execution; the usual choice.
+- **Folded:** for a design that needs review but whose plan is one or
+  two tasks: one document holding both spec and plan, the same spec
   campaign, no separate plan step.
-- **Very small:** for a small change with no design decision worth
-  reviewing before code: a short lane note, implemented directly, then the
-  branch review.
+- **Very small:** for a change whose design is settled and that one
+  implementer can carry: a short lane note, implemented directly, then
+  the branch review.
+
+Which tasks skip their own review, and which are implemented in the
+main session rather than by a fresh agent, are decided later, in the
+plan and task by task (`skills/brainstorming/SKILL.md` § Proposing the
+arrangement (step 4)).
 
 **The skills**, one line each:
 
@@ -167,7 +177,7 @@ adapters are in `docs/dual-runtime.md`.
 
 - **A feature folder,** `docs/crucible/<date>-<feature-name>/`, holding
   the spec and the plan (`design.md` and `plan.md`; `folded.md` or
-  `note.md` on the two small routes). They are committed on the feature
+  `note.md` on the two small presets). They are committed on the feature
   branch, so they merge with the work.
 - **An umbrella,** `umbrella.md` in a feature folder of its own, for an
   effort too large for one feature: what its features share, what each
@@ -275,7 +285,8 @@ both hosts.
   you were told matched the findings.
 - **Decision ask** — a question for you, in plain language, with options
   and a recommendation.
-- **Route** — standard, folded or very small (§ How it works).
+- **Preset** (also **route**) — standard, folded or very small (§ How it
+  works).
 - **Feature folder** — the committed folder with a feature's spec and plan.
 - **Umbrella** — the committed document holding an effort of several
   features: what they share, what each delivers, and which have landed.

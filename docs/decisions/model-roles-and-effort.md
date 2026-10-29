@@ -26,7 +26,7 @@ Every dispatch names its model.
 
 **The seats.** The implementer runs on the default role, and a clearly
 bounded task may drop to the bounded role. The task reviewer runs on the
-default role, every task; re-reviewers run on the bounded role or
+default role, every task it reviews; re-reviewers run on the bounded role or
 better. The adjudicator, the
 redteam panel seats and passes, and the branch reviewer run on the
 default role, never lowered to save cost; the blind verifier runs on the
@@ -232,6 +232,9 @@ operator's config key.
 
 ## Changes
 
+- 2026-10-29: the task reviewer's row reads "every task it reviews", a
+  plan's task marked branch review only having no task review
+  (`docs/decisions/task-loop.md`).
 - 2026-10-29: the task reviewer runs on the default role, every task,
   after a differential probe of past task reviews; the re-reviewer keeps
   the bounded role or better.

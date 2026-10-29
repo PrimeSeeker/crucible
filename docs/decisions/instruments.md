@@ -62,7 +62,12 @@ the card from. Through it the implementer reads systematic-debugging,
 reviewer, the branch reviewer and the redteam seat read the shared
 reference `skills/subagent-driven-development/references/premise-and-questions.md`,
 which states once what a seat may raise beyond an ordinary finding
-(`docs/decisions/evidence-and-findings.md`).
+(`docs/decisions/evidence-and-findings.md`) and the arrangement
+questions (`docs/decisions/routes.md`). The terminal pass's card carries
+`{plugin-root}` too, and the pass reads that reference's arrangement
+questions for its stop check (`docs/decisions/terminal-pass.md`), under
+the same grant of the shared reference as the redteam seat
+(`crucible:redteaming § Dispatch composition`).
 
 ## Why
 
@@ -197,6 +202,14 @@ so it was renamed in the task that wrote it. (Basis: a single
 incident, 2026-10-29; judgment, accepted by the maintainer, for the
 rename.)
 
+The arrangement questions, the overturn question, "overdetermined" and
+the mark's criterion, went into the same reference on 2026-10-29: seats
+apply them, so do the controllers that propose an arrangement, stop a
+campaign, mark a plan's tasks or work a task inline, and one home every
+reader already reaches keeps them stated once. The terminal pass, which
+checks the stop against them, gained the plugin-root slot to reach it.
+(Basis: judgment, accepted by the maintainer.)
+
 ## Rejected
 
 - **Composing every dispatch by hand**: the measured cost of carrying
@@ -219,6 +232,9 @@ rename.)
 
 ## Changes
 
+- 2026-10-29: the shared reference also holds the arrangement questions,
+  and the terminal pass's card gains `{plugin-root}` to read them for its
+  stop check, so each definition has one home every reader reaches.
 - 2026-10-29: the shared reference's rename, an agent's call, gains the
   basis judgment, accepted by the maintainer: the maintainer accepted it.
 - 2026-10-29: the redteam seat's card gains the plugin-root slot, and

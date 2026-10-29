@@ -23,7 +23,8 @@ ordered-first hunt. Round 0 consumes no round of the cap
 **Panels.** Panel size tracks the artifact's maturity and size, never a
 fixed number; the calibration is advisory: 4–5 seats for a fresh large
 artifact's round 1, one seat carrying several lenses for a small
-artifact, 1–2 once the structure is stable. Every seat reads the whole
+artifact, 1–2 for a round reading the result of a wave that added,
+removed or re-shaped a major mechanism. Every seat reads the whole
 artifact, its lens only ordering the search, and no seat sees another's
 report. The roster is correctness, evidence-and-inference, general,
 contract-fidelity where interfaces are dense, right-sizing, and
@@ -58,23 +59,36 @@ convergence or against the cap, a one-seat round that loses its seat is
 degraded, and two consecutive degraded rounds go to the operator as an
 infrastructure escalation (`crucible:redteaming § Panels`).
 
-**Stop rule and cap.** The campaign stops at the first round with zero
-BLOCKERs and no structural finding, structural meaning a fix adds,
-removes or reshapes a mechanism. Finding counts and finding provenance
-are not signals, and the call is the controller's judgment over the
-round records, never conversation memory. Open detail MAJORs at that
-round get one fix wave and blind verification, and the terminal pass
-always follows (`docs/decisions/terminal-pass.md`). A numbered
-spec-campaign round with no BLOCKER, the folded lane's included, states
-in its readout whether it drove structural change and on what basis.
-The cap is 4 rounds, degraded rounds excluded, counted from the records;
-structural findings open at the cap go to the operator as a decision
-ask: another round, a supersede, or acceptance with parked rulings
+**Stop rule and cap.** The campaign stops after the first numbered
+panel round once overturning a major mechanism after code is no longer
+plausible: the overturn question, defined with its reading for an
+umbrella's campaign in
+`skills/subagent-driven-development/references/premise-and-questions.md`
+§ The arrangement questions. The call is the controller's judgment over
+the round's records, the seats' forecasts included, never conversation
+memory; finding counts and finding provenance are not signals, and
+severity is not the trigger: a BLOCKER that would overturn a mechanism
+keeps the campaign going by the question itself. A round whose own fix
+wave adds, removes or re-shapes a major mechanism is never the stop
+round, since no seat has read the result, and once a campaign is chosen
+at least one numbered panel round runs. The stop round's open findings
+of any severity, premise findings aside, get one fix wave and blind
+verification, and the terminal pass always follows and checks the stop's
+basis (`docs/decisions/terminal-pass.md`). In a spec campaign every
+panel seat's verdict carries a line forecasting the answer, naming the
+mechanism where it forecasts an overturn
+(`skills/redteaming/seat-prompt.md`), and every numbered
+round's readout, the folded lane's and an umbrella's included, states
+whether an overturn is still plausible and why, answering each plausible
+forecast by the mechanism it names. The cap is 4 rounds, degraded rounds
+excluded, counted from the records, the campaign's guarantee that it
+ends; it bounds rounds, not spend. An overturn still plausible at the
+cap goes to the operator as a decision ask: another round, a supersede,
+or acceptance with parked rulings
 (`crucible:redteaming § Stop rule and terminal pass`). A premise finding
 (`docs/decisions/evidence-and-findings.md`) is merged `parked` as a
-decision ask to the operator and counts as no BLOCKER, open MAJOR or
-structural finding here: a round whose only BLOCKER is a premise finding
-can be the stop round, and an open one joins neither cap ask. One still
+decision ask to the operator and is never an open finding here, and an
+open one joins neither cap ask. One still
 open at the campaign's close is carried in the digest's
 `## Open judgments`, or in the close readout of a minor design, and
 seeded into the ledger as open at the plan phase's close, or at the
@@ -222,7 +236,7 @@ validation. (Basis: measured; judgment, accepted by the maintainer,
 
 The share of findings introduced by earlier fix waves left the stop rule
 on 2026-08-17, with the per-merge attribution that computed it, and the
-structural conjunct carries the rule: in the spec campaign for
+structural conjunct then carried the rule: in the spec campaign for
 crucible's Codex support, the zero-BLOCKER half held from round 2 while
 structural findings ran on to round 4. The cap fell from 6 to 4,
 calibrated on that feature's spec and plan campaigns, both of which ran
@@ -237,9 +251,42 @@ a valid trigger is on record, so stopping later is as untested as
 stopping earlier. At least 7 of 75 stop calls were overturned, reopened
 or flagged `CONCLUSION-CHANGING`, the structural half the contested one,
 so a BLOCKER-free round's readout now states its structural basis for
-the operator (2026-10-13). Whether campaigns should stop earlier is
-`docs/backlog/campaign-early-stop-investigation.md`. (Basis: measured;
-judgment, accepted by the maintainer.)
+the operator (2026-10-13). (Basis: measured; judgment, accepted by the
+maintainer.)
+
+Under that trigger, a round spent repairing the drift of the last
+round's fixes kept the campaign going: on one project, 60–90% of the
+findings of rounds 2 and later had been introduced by the previous
+round's fix waves. The maintainer judged that reasoning about code is
+easier than about a planned design, and proposed the criterion "do we
+reasonably expect major mechanisms to be overturned further down the
+line?", additions and smaller corrections not counting (2026-10-28).
+(Basis: measured, for the drift share; the maintainer's preference, for
+the criterion, approved as a hypothesis with no demonstrated accuracy.)
+The hypothesis-specs effort applied it to its own campaigns before it
+was written into the skills, stopping three times, after one, one and
+two panel rounds; nothing found later overturned a major mechanism, and
+the post-stop MAJORs that could be traced were drift from recent fixes
+(`docs/decisions/routes.md` gives the figures and their limits). On
+2026-10-29 the question became the trigger, replacing severity and the
+structural judgment rather than joining them, and the cap stayed as the
+termination guarantee, stated as a bound on rounds, not on spend. The
+alternatives offered were the controller's judgment alone, with no
+forecasts, and both tests together. (Basis: measured, for the stops;
+judgment, accepted by the maintainer, for the rule's form.)
+
+The seats' forecasts and the re-shape rule answer one weakness of the
+probe: in each of those stops the controller made the call and wrote the
+readout justifying it. A forecast line from every seat gives the stop a
+record the controller did not write, and the terminal pass checks the
+stated basis against it (`docs/decisions/terminal-pass.md`). In the
+campaign that wrote these rules, piloting the forecast lines, its
+terminal pass flagged `CONCLUSION-CHANGING` a round-2 stop resting on
+the controller's reading of one seat's forecast, and the operator ran a
+third round. (Basis: judgment, accepted by the
+maintainer; a single incident, 2026-10-29.) Whether a multi-round
+campaign is net-positive at all, and what would settle the cap, stay
+open in `docs/backlog/campaign-early-stop-investigation.md`.
 
 The hypothesis-specs umbrella asked that a seat be able to say the spec,
 or the goal behind it, is wrong without costing a fix wave, so a premise
@@ -279,6 +326,9 @@ trim.)
 
 - **Finding counts as a stop signal**: they stay flat deep into long
   campaigns (§ Why).
+- **Severity and the structural judgment as the stop trigger**, alone
+  or beside the overturn question: a round repairing its predecessor's
+  drift kept the campaign going (§ Why).
 - **A verifier for round 0's fixes**: the next dispatch is a full-scope
   panel (§ Why).
 - **A mechanical growth gate**, a token counter or a hard cap on
@@ -288,6 +338,15 @@ trim.)
 
 ## Changes
 
+- 2026-10-29: the stop trigger is the overturn question, replacing
+  "zero BLOCKERs and no structural finding": every spec-campaign seat
+  forecasts it, every numbered round's readout answers the forecasts,
+  a round whose wave re-shapes a major mechanism is never the stop
+  round, at least one panel round runs, and the stop round's open
+  findings of any severity take its fix wave; the cap of 4 stays, a
+  bound on rounds, not spend; the late-round panel calibration reads a
+  re-shaping wave's result; after the maintainer's proposed criterion
+  and this effort's own stops under it.
 - 2026-10-29: a premise finding is a decision ask, outside the stop
   rule's count and the cap asks, carried across the campaign's close
   until ruled, so a seat can say the spec or its goal is wrong without
