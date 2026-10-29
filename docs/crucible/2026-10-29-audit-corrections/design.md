@@ -49,6 +49,11 @@ folder):
 > no-commited-intermediaries route. Possibly this by default, overridable
 > by instructions?
 
+On the terminal pass's asks (the stop, D22 as it stands, a split of the
+finish half, the lean in the records):
+
+> Thanks; OK, your call
+
 ## Intent
 
 ### Problem
@@ -349,11 +354,13 @@ firm. Each names the audit finding it answers.
   the recommendation is a pull request, the readout also asks finishing's
   question whether the feature folder's files go into it, saying that
   leaving `open-items.md` out leaves it only in the branch's history. The
-  controller waits for the answer. Then, in order: the open-items file is
-  written as the answer left it and committed with the umbrella mark, and
-  any files the answer leaves out of a pull request removed; the suite
-  runs on that HEAD; the workspace is deleted; finishing carries out the
-  answer. An answer that discards the work skips the file and the suite. A
+  controller waits for the answer. An answer that asks for more work, or
+  a ruling that opens a wave (D21), reopens the loop first, and Finish
+  restarts at step 1. An answer that chooses an integration option runs,
+  in order: the open-items file written as the answer left it and
+  committed, with the umbrella mark where the feature has one, and any
+  files the answer leaves out of a pull request removed; the suite on
+  that HEAD; workspace deletion; finishing carrying out the answer. An answer that discards the work skips the file and the suite. A
   red suite is a BLOCKER, as now, and reopens the loop; a red run the
   adjudicator dismissed is shown to the operator, and an answer that
   accepts it lets finishing proceed past its Step 1. Where the answer
@@ -395,8 +402,8 @@ firm. Each names the audit finding it answers.
   left open (D23) — is written to `<feature-folder>/open-items.md`, each
   item with its source; those the readout proposed to drop and the answer
   did not keep are named dropped there. No item takes a ruling of its own,
-  so "no ruling per minor" stands. The file is committed on the branch
-  with the umbrella mark, before the suite; where the loop reopens, the
+  so "no ruling per minor" stands. The file is committed on the branch,
+  with the umbrella mark where the feature has one, before the suite; where the loop reopens, the
   branch reviewer takes that commit as in scope, as it takes the umbrella
   mark. No review reads it otherwise, so the readout lists every item, and
   in this repository `AGENTS.md` has the controller check the
@@ -428,8 +435,9 @@ firm. Each names the audit finding it answers.
   unanswered. Premise asks keep their own carrying (flip-paths). The close
   readout lists `## Questions`, and D22 writes what remains. An umbrella
   has no ledger: what its brainstorm and campaign left open goes, at its
-  landing, to an `open-items.md` in its folder, committed on its branch;
-  a later write to that file, the closing review's, appends to it.
+  landing, to an `open-items.md` in its folder, or where the project's
+  instructions say open items go, committed on its branch; a later write
+  to that file, the closing review's, appends to it.
   A deferral never counts as done until it is in an open-items file or
   named dropped.
 - **D24 — An umbrella gets one closing review, a step after its last
@@ -468,8 +476,10 @@ firm. Each names the audit finding it answers.
     wrote the file, the one file a closed umbrella's folder gains; then
     the workspace is deleted. A fixes feature reads them from there
     as its incoming document. A premise finding from it is a decision ask
-    in that readout, its ruling written into the same file. Where nothing
-    is kept, nothing is committed.
+    in that readout, its ruling written into the same file, which then
+    counts as kept. The file names the findings dropped beside those
+    kept. Where nothing is kept and no premise finding was raised, nothing
+    is committed, the readout naming each finding dropped.
   - **Closing is unchanged.** It is still read from the marks, and the
     review writes nothing into the umbrella document; the umbrella is
     closed by then, so a fixes feature is a feature of its own.
@@ -498,7 +508,7 @@ firm. Each names the audit finding it answers.
   operator. The operator has now confirmed it. Only the record changes:
   `docs/decisions/spec-campaign.md` states the confirmation.
 - **D26 — The word delta is reported, not targeted.** The feature is
-  expected to add roughly a thousand words of skill text, most of it in
+  expected to add roughly 1,500 words of skill text, most of it in
   D19–D24; the cuts are the skill-text rewrite's. Each task reports its
   word delta, and the prose budget moves with the commits. D15–D17 and
   D22 also add a little work on every feature (a trace per fix item, one
