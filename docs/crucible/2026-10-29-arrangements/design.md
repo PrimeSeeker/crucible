@@ -217,29 +217,33 @@ All lightly held. Basis tags follow `docs/decisions/decision-records.md`.
   without a separate plan; a campaign on a lane note (the umbrella's
   non-goal); a spec with no campaign (write a note); a note with a plan,
   or a spec with no plan (no case on record); any arrangement without the
-  branch review. Basis: the maintainer's proposal (the reply's point 6),
+  branch review. Basis: the maintainer's preference (the reply's point 6),
   for separability; judgment, accepted by the maintainer, for presets
   over fields.
 
 - **D2. The overturn question selects review before code.** At step 4,
   review before code is chosen where overturning a major mechanism after
   code is plausible, and none where it is not: the design has no major
-  mechanism, or its decisions are overdetermined — dictated, or forced
-  by constraints. The question replaces both the small routes' shape
-  test and the "design decision worth reviewing" split. Between the two
-  campaign presets, folded fits a plan of one or two tasks with no seam
-  worth its own review; standard fits the rest. Blast radius moves to the
-  plan and execution choices: a wide change needs coordinating and fills
-  context, which a plan or a dispatched implementer answers, while the
-  branch review reads the whole diff whatever its width. The
-  [LOAD-BEARING] clause is dropped: shipped specs are frozen, and under
-  an umbrella a change to its marks is already a binding change with its
-  own path; the residual — a lane outside any umbrella changing what
-  another feature in flight builds on — is accepted as rare and visible
-  at the merge. Basis: the maintainer's proposal (opening point 1: "the
-  primary very-small trigger - say, for lack of major mechanisms, or
-  overdetermined decisions"), for the selector; judgment, accepted by
-  the maintainer, for the rest.
+  mechanism, or its decisions are overdetermined (both defined in the
+  arrangement questions' home, Interfaces). The question replaces both
+  the small routes' shape test and the "design decision worth reviewing"
+  split. Between the two campaign presets, folded fits a plan of one or
+  two tasks with no seam worth its own review; standard fits the rest.
+  Width is no test of risk, since the branch review reads the whole diff
+  whatever its width, but it still shapes the arrangement where the work
+  needs coordinating: a settled change one implementer can carry takes
+  the very-small preset with a dispatched implementer (D14); one that
+  needs several coordinated tasks needs a plan, which only the campaign
+  presets carry, so it takes the standard preset, whose campaign the
+  overturn question then stops after its first round. The [LOAD-BEARING]
+  clause is dropped: shipped specs are frozen, and under an umbrella a
+  change to its marks is already a binding change with its own path; the
+  residual — a lane outside any umbrella changing what another feature in
+  flight builds on — is accepted as rare and visible at the merge. Basis:
+  the maintainer's preference (opening point 1: "the primary very-small
+  trigger - say, for lack of major mechanisms, or overdetermined
+  decisions"), for the selector; judgment, accepted by the maintainer,
+  for the rest.
 
 - **D3. The step-4 proposal.** One brainstorming subsection, "proposing
   the arrangement", replaces the two route-entry subsections: it holds
@@ -250,22 +254,26 @@ All lightly held. Basis tags follow `docs/decisions/decision-records.md`.
   answer is a route entry in the brainstorm decision record, now written
   for every preset, in the form the fold's and the lane's take today. What stays route-specific stays: the very-small lane's note shown
   with the proposal and written as approved; no entry mid-flight, the
-  downshifts of D13 and the lane's upgrade hatch aside. Basis: judgment,
-  accepted by the maintainer.
+  downshifts of D13 and the lane's upgrade hatch aside. This clarifies
+  the umbrella entry's "the operator confirms": the operator confirms the
+  preset; per-task review is the plan's, reported (D10), and execution is
+  chosen per task (D14). The clarification changes nothing another
+  entry waits on. Basis: judgment, accepted by the maintainer.
 
 - **D4. Lane Fit after code.** The branch reviewer's Lane Fit keeps its
   verdict words WITHIN SHAPE and EXCEEDS SHAPE
   (`skills/requesting-code-review/code-reviewer.md`); "shape" becomes the
-  overturn question asked of the diff: the change shows no major
-  mechanism the note did not settle. EXCEEDS SHAPE opens the upgrade
-  hatch as now (the upgrade-hatch paragraph of
+  overturn question asked after code: EXCEEDS SHAPE where overturning a
+  major mechanism of the change is plausible, one the note states
+  included. EXCEEDS SHAPE opens the upgrade hatch as now (the
+  upgrade-hatch paragraph of
   `skills/subagent-driven-development/references/very-small-lane.md`,
   which reads it as a statement that the change "exceeds the lane's
   qualifying shape"). Basis: judgment, accepted by the maintainer.
 
 - **D5. The origin question's answer.** Routing a feature with
-  non-trivial impact to no review before code is sound where the
-  overturn question answers no at step 4, because the mandatory
+  non-trivial impact to no review before code is sound, a hypothesis
+  like D6, where the overturn question answers no at step 4, because the mandatory
   full-scope branch review, with its goal and premise checks, is the
   independent check; size is not the risk, an unsettled mechanism is. It
   is recorded in `docs/decisions/routes.md` with its evidence and limits
@@ -279,8 +287,10 @@ All lightly held. Basis tags follow `docs/decisions/decision-records.md`.
   severity, premise findings aside, take the existing one fix wave with
   blind verification, and the terminal pass's re-read backstops it; a
   BLOCKER that would overturn a mechanism keeps the campaign going by
-  the question itself. Once a campaign is chosen, at least one numbered
-  panel round runs. Basis: the maintainer's proposal (opening point 1),
+  the question itself. A round whose own fix wave adds, removes or
+  re-shapes a major mechanism is not the stop round: no seat has read
+  the result. Once a campaign is chosen, at least one numbered panel
+  round runs. Basis: the maintainer's preference (opening point 1),
   adopted as a hypothesis with no demonstrated accuracy (§ Intent).
 
 - **D7. The seats forecast; the terminal pass checks the stop.** In a
@@ -288,14 +298,16 @@ All lightly held. Basis tags follow `docs/decisions/decision-records.md`.
   `Overturn after code: plausible — <which mechanism, why>` or `Overturn
   after code: not plausible`. The round readout's structural item
   becomes whether overturning a major mechanism after code is still
-  plausible, and why, answering each seat that said plausible; it is
-  stated in every numbered spec-campaign round. The terminal pass's
-  decision-ask fidelity mandate also checks the stop round's stated
-  basis against the seats' forecast lines, its inputs gaining the stop
-  round's seat reports, their `## Verdict` sections only; a mismatch that would have
-  changed the stop is flagged `CONCLUSION-CHANGING`, a decision ask by
-  the existing rule. Basis: judgment, accepted by the maintainer, after
-  the U6 probe found the stop caller writing its own justification.
+  plausible, and why, answering each plausible forecast by the mechanism
+  it names, the seats' ids kept to the readout's trace; it is stated in
+  every numbered spec-campaign round. The terminal pass's decision-ask
+  fidelity mandate also checks the stop: the stated basis against the
+  stop round's forecast lines, its inputs gaining that round's seat
+  reports, their `## Verdict` sections only, and the stop round's fix
+  list against D6's re-shape rule. A mismatch that would have changed
+  the stop is flagged `CONCLUSION-CHANGING`, a decision ask by the
+  existing rule. Basis: judgment, accepted by the maintainer, after the
+  U6 probe found the stop caller writing its own justification.
 
 - **D8. The cap.** The cap stays at four rounds, its termination
   guarantee; at the cap, a still-plausible overturn goes to the operator
@@ -308,26 +320,37 @@ All lightly held. Basis tags follow `docs/decisions/decision-records.md`.
   judgment, accepted by the maintainer.
 
 - **D9. "Structural" keeps its other work.** The word stays where it
-  does work beyond the stop: the flip paths' supersede
-  (`skills/redteaming/references/flip-paths.md`). Two sites tie it to
-  the stop and are re-expressed: a premise ruling's change that
-  re-shapes a mechanism "makes its round structural" (the same file,
-  § Premise findings) becomes a change that makes an overturn plausible
-  again; and the folded preset's unfolding, judged today "under the stop
+  does work beyond the stop: the flip paths' supersede and containment
+  (`skills/redteaming/references/flip-paths.md`). Four sites tie it to
+  the stop and are re-expressed: a premise ruling's change that re-shapes
+  a mechanism "makes its round structural" (the same file, § Premise
+  findings), which becomes a change that makes an overturn plausible
+  again; the folded preset's unfolding, judged today "under the stop
   rule's structural vocabulary" (the unfolding paragraph of
-  `skills/redteaming/references/folded-lane.md`), is judged instead by
-  whether the work turns out to need a separate plan. Basis:
-  judgment, accepted by the maintainer.
+  `skills/redteaming/references/folded-lane.md`), judged instead by
+  whether the work turns out to need a separate plan; the panel
+  calibration's "post-structural-stability rounds"
+  (`skills/redteaming/SKILL.md` § Panels), which become rounds after the
+  overturn question first answers no; and "any non-structural
+  BLOCKER/MAJOR at the cap" (the same file, § Stop rule and terminal
+  pass), which becomes any BLOCKER or MAJOR still open at the cap. The
+  README's paraphrase of the trigger is corrected with them (D15).
+  Basis: judgment, accepted by the maintainer.
 
-- **D10. The plan's per-task mark.** A plan task may carry `Review:
-  branch only` where it is low in mechanism and nothing outside it
-  depends on its details; with no mark, the task is reviewed. The seats
-  that grade the plan grade marks as plan content — the plan phase's, or
-  on the folded preset the spec campaign's — and that phase's close
-  readout lists the marked tasks for the operator, as information. Basis: the
-  maintainer's agreement to per-task review as a plan choice (2026-10-28,
-  `docs/backlog/review-catch-and-implementers.md`); judgment, accepted by
-  the maintainer, for the form.
+- **D10. The plan's per-task mark.** A plan task may carry the line
+  `Review: branch only — <reason>` where it meets the mark's criterion:
+  low in mechanism, with nothing outside it depending on its details
+  (defined in the arrangement questions' home, Interfaces); with no mark,
+  the task is reviewed. The mark applies to a dispatched task: a task
+  done inline (D14) keeps its task review whatever its mark, as inline
+  mode states today. The seats that grade the plan grade marks as plan
+  content — the plan phase's, or on the folded preset the spec
+  campaign's — and that phase's close readout lists the marked tasks for
+  the operator, as information. The asymmetry with D13 is deliberate:
+  marks written at plan time pass that review, while marks added later
+  change a reviewed plan. Basis: judgment, accepted by the maintainer
+  (the per-task-review follow-up of
+  `docs/backlog/review-catch-and-implementers.md`, agreed 2026-10-28).
 
 - **D11. A marked task in execution.** It runs no task review and no fix
   loop. Its verification gates run, widened to what the report must
@@ -338,12 +361,14 @@ All lightly held. Basis tags follow `docs/decisions/decision-records.md`.
   premise finding goes where it goes now. Where a concern touches
   something a later task builds on, the controller dispatches the marked
   task's own review after all, and the task runs the task loop from
-  step 3. A marked task may be done inline (D14): inline mode's rule that
-  review applies unchanged holds for unmarked tasks, and a marked inline
-  task's first review is the branch review, as on the lane. Every site
-  stating that each task gets a task review, or tying routed items to
-  it, is corrected — in SDD, writing-plans, requesting-code-review, the
-  task reviewer's card and the branch reviewer's template. Basis: judgment, accepted by the maintainer.
+  step 3. Every site stating that each task gets a task review, tying
+  routed items to it or expecting its report files is corrected: in SDD
+  (the task loop, and § Finish's per-task record check, which expects no
+  review file for a task completed branch review only), writing-plans
+  (§ Task sizing's reviewer-gate rationale included), requesting-code-review,
+  the implementer's template (its routed-item paragraph), the task
+  reviewer's card and the branch reviewer's template. Basis: judgment,
+  accepted by the maintainer.
 
 - **D12. The branch reviewer learns which tasks went unreviewed.** It
   receives the tasks completed branch-review-only (Interfaces) and is the
@@ -364,17 +389,20 @@ All lightly held. Basis tags follow `docs/decisions/decision-records.md`.
   checked by the terminal pass (D7). Otherwise the arrangement stays as
   confirmed at step 4. Basis: judgment, accepted by the maintainer.
 
-- **D14. The inline criterion.** Work inline only where the work is
-  overdetermined — nothing in it for an independent reader of the spec
-  to question — and fits the controller's remaining context without
-  pushing out coordination state before the branch review; otherwise
-  dispatch. It replaces inline mode's "costs more than it protects" and
-  the lane's "wide enough to crowd your context". Defaults are unchanged:
-  subagents on the campaign presets, inline on the very-small lane while
-  both tests hold. What a dispatched implementer buys is an independent
-  read of the spec before code, worth more as review before code shrinks,
-  and the controller's context. Basis: judgment, accepted by the
-  maintainer ("OK, I guess").
+- **D14. The inline criterion.** On the campaign presets, a task is
+  worked inline only where it is overdetermined (the arrangement
+  questions' home, the sense D2 uses) and fits the controller's remaining
+  context without pushing out coordination state before the branch
+  review; otherwise it is dispatched. On the very-small lane, whose
+  change the step-4 answer already found settled, the context test alone
+  decides: inline by default, an implementer dispatched where the work
+  would crowd the controller's context. It replaces inline mode's "costs
+  more than it protects" and the lane's "wide enough to crowd your
+  context". Defaults are unchanged: subagents on the campaign presets,
+  inline on the lane. What a dispatched implementer buys is an
+  independent read of the spec before code, worth more as review before
+  code shrinks, and the controller's context. Basis: judgment, accepted
+  by the maintainer ("OK, I guess").
 
 - **D15. Records and backlog.** The decision records `routes.md`,
   `spec-campaign.md`, `task-loop.md`, `branch-review.md` and `plans.md`
@@ -392,8 +420,8 @@ All lightly held. Basis tags follow `docs/decisions/decision-records.md`.
 ## Constraints & invariants
 
 - **C1. Every rule has one home.** D1's table and unsupported list, the
-  overturn question's definition and the mark's criterion are each
-  stated once; every other site points to that home.
+  overturn question's definition, "overdetermined" and the mark's
+  criterion are each stated once; every other site points to that home.
 - **C2. Existing identifiers stay.** The route entry in the brainstorm
   decision record, the lane ledger's lines, the file roles `design.md`,
   `folded.md` and `note.md`, and the verdict words WITHIN SHAPE and
@@ -411,13 +439,18 @@ All lightly held. Basis tags follow `docs/decisions/decision-records.md`.
 
 ## Interfaces & boundaries
 
-- **The overturn question** — defined once, in a section of the shared
-  reference `skills/subagent-driven-development/references/premise-and-questions.md`,
-  which the redteam seats and the branch reviewer already read; consumed
-  by brainstorming's step-4 subsection, the stop rule
-  (`skills/redteaming/SKILL.md`), the seat template's forecast line,
-  Lane Fit (`skills/requesting-code-review/code-reviewer.md`) and the
-  lane reference.
+- **The arrangement questions** — the overturn question, how it reads
+  for an umbrella's campaign (after its children's code), what
+  "overdetermined" means, and the mark's criterion — defined once, in
+  one new section of the shared reference
+  `skills/subagent-driven-development/references/premise-and-questions.md`.
+  The section lists the seat template and the branch reviewer's template
+  give for that file each gain it, and the terminal pass's inputs gain
+  it. Consumed by brainstorming's step-4 subsection, the stop rule
+  (`skills/redteaming/SKILL.md`), the seat template's forecast line, the
+  terminal pass's stop check, Lane Fit
+  (`skills/requesting-code-review/code-reviewer.md`), the lane
+  reference, writing-plans' mark, and the seats grading a plan's marks.
 - **The seat's forecast line** — produced by `skills/redteaming/seat-prompt.md`
   in seats whose artifact kind is `spec` (a folded document's included);
   consumed by the controller's stop call and the terminal pass, whose
@@ -428,8 +461,8 @@ All lightly held. Basis tags follow `docs/decisions/decision-records.md`.
 - **The readout item** — stated in `skills/redteaming/SKILL.md` § Round
   readout and in `skills/redteaming/references/formats.md` § Round record
   format; both sites change together.
-- **The per-task mark** — produced in a plan task as the line
-  `Review: branch only` (`skills/writing-plans/SKILL.md`); consumed by
+- **The per-task mark** — produced in a plan task as its own line,
+  `Review: branch only — <reason>` (`skills/writing-plans/SKILL.md`); consumed by
   the seats grading the plan, by SDD § The Task Loop, and through the
   completion line by the branch reviewer.
 - **The completion line** — `Task <N>: complete (commits <base7>..<head7>,
@@ -437,38 +470,45 @@ All lightly held. Basis tags follow `docs/decisions/decision-records.md`.
   reads it as any `complete` line.
 - **The branch reviewer's new slot** — `[BRANCH_ONLY_TASKS]`, the tasks
   the ledger completed branch-review-only, each with its commit range,
-  its report path (`sdd/reports/task-<N>-report.md`, which the slot
-  makes readable under the reviewer's read scoping) and, where its plan
-  entry names the brainstorm decision record, that record's path; or
-  "none". Filled by `crucible:requesting-code-review` from the ledger,
-  read by `skills/requesting-code-review/code-reviewer.md`, declared in
+  the report path of its latest attempt not reverted
+  (`sdd/reports/task-<N>-report.md`, or its `-x<X>` form after
+  revert-and-replan), which the slot makes readable under the reviewer's
+  read scoping, and, where its plan entry names the brainstorm decision
+  record, that record's path; or "none". Filled by
+  `crucible:requesting-code-review` from the ledger and the plan, read by
+  `skills/requesting-code-review/code-reviewer.md`, declared in
   `code-reviewer.slots.md` within the card's character budget
   (`tests/instrument_corpus.py`); `agents/` is regenerated.
 - **The route entry** — the brainstorm decision record's entry for the
   confirmed preset, now written for every preset, in its existing form; read by the folded-lane and
   very-small-lane references as now.
 
-Deferred to implementation: the wording and placement of each pointer to the overturn question's home.
+Deferred to implementation: the wording and placement of each pointer to the arrangement questions' home.
 
 Deferred to implementation: where in the branch reviewer's template the text for branch-review-only tasks sits.
+
+Deferred to implementation: how the new slot fits the card's character budget — a terse rule, a trim of existing card text, or a raised budget with its reason.
 
 ## Acceptance
 
 - **A1.** The shape test and the "worth reviewing" split are gone from
-  `skills/` and from `docs/decisions/routes.md`, its Changes section
-  aside. One-time: a whitespace-normalized search, so a phrase wrapped
+  `skills/`, `README.md` and `docs/decisions/routes.md`, its Changes
+  section aside. One-time: a whitespace-normalized search, so a phrase wrapped
   across lines is found, for "no new mechanism", "blast radius across
   subsystems", "cross-subsystem blast radius" and "worth reviewing before
   code" over those paths, quoted, run before (hits) and after (none in
   that sense).
 - **A2.** D1's table and unsupported list, the overturn question's
-  definition and the mark's criterion each have one home (C1). One-time:
+  definition, "overdetermined" and the mark's criterion each have one
+  home (C1). One-time:
   a search for a key phrase of each, quoted.
 - **A3.** The stop rule states the overturn trigger, the old trigger's
   phrase "zero BLOCKERs and no structural finding" is gone, and the
   readout item reads the same at both its sites. One-time: a
   whitespace-normalized search over `skills/`, `docs/decisions/` (Changes
-  sections aside) and `README.md`, before (hits) and after (none).
+  sections aside) and `README.md`, before (hits) and after (none); and a
+  search for "structural" over `skills/redteaming/` and `README.md`, each
+  hit kept by D9 or re-expressed, quoted.
 - **A4.** The seat template asks for the forecast line in spec-campaign
   seats only, and the terminal pass checks the stop basis against it.
   Why neither test kind: prose fidelity, judged by review.
@@ -499,7 +539,7 @@ Advisory.
   the unsupported list; what the proposal names; then a line per preset
   pointing to what stays route-specific (the lane note drafted with the
   proposal; the folded document's reference).
-- **The plan mark**, in a task's Why or as its own line:
+- **The plan mark**, as its own line in the task:
 
       Review: branch only — prose in one skill, after T2; nothing later
       reads its wording
