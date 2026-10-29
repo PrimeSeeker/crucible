@@ -243,8 +243,8 @@ All lightly held. Basis tags follow `docs/decisions/decision-records.md`.
   needs coordinating: a settled change one implementer can carry takes
   the very-small preset with a dispatched implementer (D14); one that
   needs several coordinated tasks needs a plan, which only the campaign
-  presets carry, so it takes the standard preset, whose campaign the
-  overturn question then stops after its first round. The [LOAD-BEARING]
+  presets carry, so it takes the standard preset, whose campaign is
+  expected to stop after its first round, the stop judged by D6. The [LOAD-BEARING]
   clause is dropped: shipped specs are frozen, and under an umbrella a
   change to its marks is already a binding change with its own path; the
   residual — a lane outside any umbrella changing what another feature in
@@ -311,10 +311,11 @@ All lightly held. Basis tags follow `docs/decisions/decision-records.md`.
   plausible, and why, answering each plausible forecast by the mechanism
   it names, the seats' ids kept to the readout's trace; it is stated in
   every numbered spec-campaign round. The terminal pass's decision-ask
-  fidelity mandate also checks the stop: the stated basis against the
-  stop round's forecast lines, its inputs gaining that round's seat
-  reports, their `## Verdict` sections only, and the stop round's fix
-  list against D6's re-shape rule. A mismatch that would have changed
+  fidelity mandate also checks the stop: the stated basis against every
+  forecast line of the campaign's numbered rounds, each plausible one
+  answered by the mechanism it names, its inputs gaining every numbered
+  round's seat reports, their `## Verdict` sections only, and the stop
+  round's fix list against D6's re-shape rule. A mismatch that would have changed
   the stop is flagged `CONCLUSION-CHANGING`, a decision ask by the
   existing rule. Basis: judgment, accepted by the maintainer, after the
   U6 probe found the stop caller writing its own justification.
@@ -495,7 +496,7 @@ All lightly held. Basis tags follow `docs/decisions/decision-records.md`.
   in seats whose artifact kind is `spec` (a folded document's and an
   umbrella's included: the seat card offers only `spec` and `plan`);
   consumed by the controller's stop call and the terminal pass, whose
-  inputs gain the stop round's seat reports' `## Verdict` sections
+  inputs gain every numbered round's seat reports' `## Verdict` sections
   (`skills/redteaming/terminal-pass-prompt.md`, and the input list in
   `skills/redteaming/SKILL.md` § Stop rule and terminal pass). Form as
   in D7.
@@ -558,7 +559,10 @@ Deferred to implementation: how the new slot fits the card's character budget �
   search for "structural" over `skills/redteaming/` and `README.md`, each
   hit kept by D9 or re-expressed, quoted.
 - **A4.** The seat template asks for the forecast line in spec-campaign
-  seats only, and the terminal pass checks the stop basis against it.
+  seats only, and the terminal pass checks the stop basis against every
+  numbered round's forecast lines: a stop round whose seats all forecast
+  "not plausible", called while an earlier round's plausible forecast
+  stands unanswered by its mechanism, is flagged.
   Why neither test kind: prose fidelity, judged by review.
 - **A5.** The plan mark, the marked task's handling, the completion line
   and the branch reviewer's slot are consistent across writing-plans,
