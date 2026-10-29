@@ -116,7 +116,9 @@ Work from the worktree path your dispatch names (absolute). Binding:
   The call is your job, not a deviation, and **each routed item gets
   its own Decision Log entry** naming the item and the call: that entry
   closes it, your reviewer checks for it, and an item your log skips
-  goes to the branch review as unresolved.
+  goes to the branch review as unresolved. Where your task's section
+  carries `Review: branch only`, the controller checks the entry is
+  there, and your first reviewer may be the branch reviewer.
 
 An unlogged deviation is indistinguishable from drift, and drift from
 binding content is reverted, not patched forward. When in doubt, treat
