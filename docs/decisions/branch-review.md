@@ -197,8 +197,7 @@ to reach the reviewer through the sweep as before; the task that
 shipped the reviewer's mandate judged them in the task's own deviation
 audit instead, where the task loop checks each routed item at its
 task's review, and the controller ruled that reading stands. (Basis:
-judgment, an agent's rulings that the feature's own rules left to it,
-not put to the maintainer, 2026-10-29.)
+judgment, accepted by the maintainer, 2026-10-29.)
 
 ### Review seats build their own diff
 

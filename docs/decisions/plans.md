@@ -17,8 +17,8 @@ under its own `## Deferred-items routing table` heading, one backticked
 row per owning task with `T<N>` alone in the owner cell, assembled from
 the `Deferred to implementation:` markers. Each row's closure chain is the
 owning implementer's Decision Log entry, that task's review (for a task
-marked branch review only, the controller's presence check and then the
-branch reviewer) and the branch review's sweep. There is no
+completed branch review only, the controller's presence check and then
+the branch reviewer) and the branch review's sweep. There is no
 test-namespace allocation and no parallelizable tier
 (`crucible:writing-plans § Plan header`;
 `crucible:writing-plans § Deferring detail`).

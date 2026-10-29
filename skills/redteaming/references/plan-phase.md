@@ -11,7 +11,7 @@ A plan gets **one verification round**, recorded as the single record `campaigns
 
 **Every dispatch follows `crucible:redteaming` § Panels and § Dispatch composition** — model, effort, roster and filled slot card — and the tree check in `crucible:redteaming` § Inputs and state. **Announce the phase shape** — seats, lenses, dispatch count — in the phase-start readout and proceed; the announcement is not an approval gate.
 
-**Marks are plan content.** Where a task carries `Review: branch only` (its form: `crucible:writing-plans` § Per-task structure — four fields, all required), the coherence seats grade each mark against the mark's criterion in `skills/subagent-driven-development/references/premise-and-questions.md` § The arrangement questions, and their mandate reminder names that grading; the close readout lists the marked tasks (`crucible:redteaming` § Round readout).
+**Marks are plan content.** Where a task carries `Review: branch only` (its form: `crucible:writing-plans` § Per-task structure — four fields, all required), the coherence seats grade each mark, by their mandate reminder (`skills/redteaming/seat-prompt.slots.md`); the close readout lists the marked tasks (`crucible:redteaming` § Round readout).
 
 **One merged wave.** Pre-pass and coherence findings are merged under the spec campaign's finding hygiene, disposition and merge-conservation rules. A fix item for a `deferred-to-implementation` finding lands its marker in the plan and appends that marker's routing-table rows — one per owning task, the source cell naming the plan site, owner assigned — so the close seeds them like any other row.
 

@@ -18,9 +18,8 @@
   crucible, it reversed (1.75); classifiers called about the same share
   of later edits repairs in both periods (29% and 31%). The README's comparisons stay
   labelled as impressions.
-- A recount of campaign records left the cap and the stop trigger
-  unchanged, the evidence inconclusive
-  (`campaign-early-stop-investigation.md`).
+- A recount of campaign records left the cap unchanged, the evidence
+  inconclusive (`campaign-early-stop-investigation.md`).
 
 ## Follow-up
 

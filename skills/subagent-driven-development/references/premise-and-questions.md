@@ -75,8 +75,8 @@ Each site that applies one of these says what its answer decides there.
 **The overturn question.** Once the work is coded, is overturning one of
 its major mechanisms plausible? A major mechanism is a part of the
 design other parts build on: a component, a rule others key on, a file
-role, a data flow, an interface between parts. Overturning one replaces
-or re-shapes it; an addition, or a correction that leaves its shape
+role, a data flow, an interface between parts. Overturning one replaces,
+removes or re-shapes it; an addition, or a correction that leaves its shape
 standing, does not count. Before code the answer is a forecast from the
 design and its records; after code it is read from the code as well.
 

@@ -5,7 +5,7 @@ description: Use when executing an implementation plan or a very-small-lane note
 
 # Subagent-Driven Development
 
-Execute a plan by dispatching a fresh implementer subagent per task and a single fresh-context reviewer after each, unless the plan routes that task's review to the branch review, then hand the branch to `crucible:requesting-code-review` for its capped whole-branch review. The one route with no plan is the operator-confirmed very-small lane: § The very-small lane executes its lane note, and the rest of this skill applies to it only where that section says so.
+Execute a plan by dispatching a fresh implementer subagent per task and a single fresh-context reviewer after each (unless the plan routes that task's review to the branch review); then hand the branch to `crucible:requesting-code-review` for its capped whole-branch review. The one route with no plan is the operator-confirmed very-small lane: § The very-small lane executes its lane note, and the rest of this skill applies to it only where that section says so.
 
 **Why subagents:** a seat never inherits your session's history — you construct exactly what it needs, which keeps it focused and keeps your own context for coordination.
 
@@ -78,8 +78,8 @@ Dispatch instrument `implementer` with its card filled per its slot rules: the p
 
 ### 2. Handle the report
 
-- **DONE:** dispatch the reviewer (step 3).
-- **DONE_WITH_CONCERNS:** dispatch the reviewer (step 3), which rules on every concern the report raises; you handle none before that review.
+- **DONE:** dispatch the reviewer (step 3; a marked task: below).
+- **DONE_WITH_CONCERNS:** dispatch the reviewer (step 3), which rules on every concern the report raises; you handle none before that review (a marked task: below).
 - **NEEDS_CONTEXT:** provide the missing context and re-dispatch.
 - **BLOCKED:** assess — a context problem gets context and a re-dispatch; a reasoning problem a tier bump where one exists (the bounded role → the default role), and at the default role the operator's call, who may name the alternate role; an oversized task a split; a defective plan an escalation (§ Plan changes mid-execution). A report that a binding item is wrong names the item, its evidence and a proposed correction. Your ruling — the item stands where the evidence does not show it wrong, with your reason; otherwise the correction, proposed or yours — passes `skills/redteaming/references/flip-paths.md` § The containment test: a contained one you confirm and record as that section states, then re-dispatch; any other goes to the operator as a decision ask carrying the proposal. A task blocked on a premise finding waits for the operator's ruling. Never ignore an escalation or make the same model retry without changes.
 
@@ -214,7 +214,7 @@ After the last task completes, run `crucible:requesting-code-review`: it owns th
 
 ## The very-small lane
 
-The third route, alongside the standard route and the folded lane: a small change executed from a lane note, with no spec campaign, no plan and no per-task review, entered only on the operator's confirmation at brainstorming, recorded in the brainstorm decision record. **On entering the lane, read `skills/subagent-driven-development/references/very-small-lane.md` in full, and re-read it after compaction; it binds as if written here**, and where it says so it supersedes this skill's rules for the lane.
+The third route, alongside the standard and folded presets: the very-small preset (`crucible:brainstorming` § Proposing the arrangement (step 4)), executed from a lane note, with no spec campaign, no plan and no per-task review, entered only on the operator's confirmation at brainstorming, recorded in the brainstorm decision record. **On entering the lane, read `skills/subagent-driven-development/references/very-small-lane.md` in full, and re-read it after compaction; it binds as if written here**, and where it says so it supersedes this skill's rules for the lane.
 
 ## Finish
 

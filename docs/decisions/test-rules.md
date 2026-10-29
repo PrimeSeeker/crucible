@@ -40,7 +40,8 @@ from the code and the requirements, and checks the Decision Log's
 justification itself for a task completed branch review only
 (`skills/subagent-driven-development/task-reviewer-prompt.md` § Verdict 2:
 Scope; `skills/subagent-driven-development/re-review-prompt.md` § Scope;
-`skills/requesting-code-review/code-reviewer.md` § What to Check).
+`skills/requesting-code-review/code-reviewer.md` § What to Check and
+§ Tasks With No Task Review).
 
 **Adequacy, and no gate.** New-test adequacy is the task reviewer's own
 judgment, and the branch reviewer's for a task completed branch review

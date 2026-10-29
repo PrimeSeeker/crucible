@@ -83,8 +83,10 @@ whether an overturn is still plausible and why, answering each plausible
 forecast by the mechanism it names. The cap is 4 rounds, degraded rounds
 excluded, counted from the records, the campaign's guarantee that it
 ends; it bounds rounds, not spend. An overturn still plausible at the
-cap goes to the operator as a decision ask: another round, a supersede,
-or acceptance with parked rulings
+cap, or a cap round whose own wave adds, removes or re-shapes a major
+mechanism, goes to the operator as a decision ask: another round, a
+supersede, or acceptance with parked rulings; so does any BLOCKER or
+MAJOR still open at the cap
 (`crucible:redteaming § Stop rule and terminal pass`). A premise finding
 (`docs/decisions/evidence-and-findings.md`) is merged `parked` as a
 decision ask to the operator and is never an open finding here, and an
@@ -250,8 +252,8 @@ nor lowering the cap, nor changing the trigger: no fresh-panel round past
 a valid trigger is on record, so stopping later is as untested as
 stopping earlier. At least 7 of 75 stop calls were overturned, reopened
 or flagged `CONCLUSION-CHANGING`, the structural half the contested one,
-so a BLOCKER-free round's readout now states its structural basis for
-the operator (2026-10-13). (Basis: measured; judgment, accepted by the
+so from 2026-10-13 a BLOCKER-free round's readout stated its structural
+basis for the operator. (Basis: measured; judgment, accepted by the
 maintainer.)
 
 Under that trigger, a round spent repairing the drift of the last
@@ -344,8 +346,9 @@ trim.)
   a round whose wave re-shapes a major mechanism is never the stop
   round, at least one panel round runs, and the stop round's open
   findings of any severity take its fix wave; the cap of 4 stays, a
-  bound on rounds, not spend; the late-round panel calibration reads a
-  re-shaping wave's result; after the maintainer's proposed criterion
+  bound on rounds, not spend, and a cap round whose wave re-shapes a
+  major mechanism takes the cap ask; the late-round panel calibration
+  reads a re-shaping wave's result; after the maintainer's proposed criterion
   and this effort's own stops under it.
 - 2026-10-29: a premise finding is a decision ask, outside the stop
   rule's count and the cap asks, carried across the campaign's close

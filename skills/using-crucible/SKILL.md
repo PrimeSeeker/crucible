@@ -43,7 +43,7 @@ These thoughts usually precede a skipped skill check; make the check instead:
 | "This doesn't need a formal skill" | If one matches, load it. |
 | "I remember this skill" | Skills change: read the current version. |
 | "This doesn't count as a task" | Any action is a task: check the index. |
-| "The skill is overkill" | A small change has the lanes, a trivial one the waiver: offer one. |
+| "The skill is overkill" | Brainstorming offers lighter arrangements, a trivial change the waiver: offer one. |
 | "I'll just do this one thing first" | Check before doing anything. |
 | "This feels productive" | Unrouted action is usually redone: check first. |
 | "I know what that means" | Knowing the concept is not using the skill: load it. |
