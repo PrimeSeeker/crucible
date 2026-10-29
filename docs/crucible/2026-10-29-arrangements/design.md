@@ -366,7 +366,8 @@ All lightly held. Basis tags follow `docs/decisions/decision-records.md`.
   loop. Its verification gates run, widened to what the report must
   show: each acceptance check, RED output before GREEN or a logged
   exception, and a Decision Log entry for each deferred item the plan
-  routes to it. The implementer's concerns, `Questions` items and
+  routes to it; a report that fails a gate sends the task to step 3, as
+  below. The implementer's concerns, `Questions` items and
   out-of-task proposals become leads for the branch reviewer; its
   premise finding goes where it goes now. Where a concern touches
   something a later task builds on, the controller dispatches the marked
@@ -377,16 +378,29 @@ All lightly held. Basis tags follow `docs/decisions/decision-records.md`.
   review file for a task completed branch review only), writing-plans
   (§ Task sizing's reviewer-gate rationale included), requesting-code-review,
   the implementer's template (its routed-item paragraph), the task
-  reviewer's card and the branch reviewer's template. Basis: judgment,
+  reviewer's card, the branch reviewer's template, and flip-paths' rule
+  naming amendment commits to task-loop reviews
+  (`skills/redteaming/references/flip-paths.md`, step 3 of a plan
+  patch), which names them to the branch reviewer for a marked task's
+  range. Basis: judgment,
   accepted by the maintainer.
 
 - **D12. The branch reviewer learns which tasks went unreviewed.** It
   receives the tasks completed branch-review-only (Interfaces) and is the
   first review of each: the task review's judgments over the task's range
   — intent, scope (a deleted or weakened test against the Decision Log
-  included), the deviation audit of its Decision Log, quality — and, for
-  a task that writes a decision record, each position's basis against
-  the brainstorm decision record; it rules on the task's leads as now.
+  included, and a change to the plan or spec in the range that is not a
+  named amendment commit), the deviation audit of its Decision Log,
+  quality — and, for a task that writes a decision record, each
+  position's basis against the brainstorm decision record; it rules on
+  the task's leads as now. The first full-scope pass reports a line per
+  such task naming the judgments made and what they raised; later passes
+  re-grade the whole branch as now. The controller refuses a first pass
+  missing a task's line, as it refuses a task review missing a verdict,
+  and Finish's per-task record check reads that line in place of the
+  review file. The wiring stays the task loop's: a failed intent, scope
+  or deviation-audit judgment on such a task opens a wave whatever its
+  severity.
   Routed items still open reach it through the existing sweep, and drift
   reaches revert-and-replan through the existing path. Basis: judgment,
   accepted by the maintainer.
@@ -501,11 +515,18 @@ All lightly held. Basis tags follow `docs/decisions/decision-records.md`.
   (`sdd/reports/task-<N>-report.md`, or its `-x<X>` form after
   revert-and-replan), which the slot makes readable under the reviewer's
   read scoping, and, where its plan entry names the brainstorm decision
-  record, that record's path; or "none". Filled by
+  record, that record's path, and the amendment commits its range
+  holds; or "none". Filled by
   `crucible:requesting-code-review` from the ledger and the plan, read by
   `skills/requesting-code-review/code-reviewer.md`, declared in
   `code-reviewer.slots.md` within the card's character budget
   (`tests/instrument_corpus.py`); `agents/` is regenerated.
+- **The per-task line** — in the first full-scope pass's report, one
+  line per branch-review-only task naming the judgments made and the
+  issues they raised; produced by the branch reviewer
+  (`skills/requesting-code-review/code-reviewer.md`, its output format),
+  read by the controller's missing-line check and by SDD § Finish's
+  per-task record check (D12).
 - **The route entry** — the brainstorm decision record's entry for the
   confirmed preset, now written for every preset, in its existing form; read by the folded-lane and
   very-small-lane references as now.
@@ -514,7 +535,7 @@ Deferred to implementation: the wording and placement of each pointer to the arr
 
 Deferred to implementation: where in the branch reviewer's template the text for branch-review-only tasks sits.
 
-Deferred to implementation: how the new slot fits the card's character budget — a terse rule, a trim of existing card text, or a raised budget with its reason.
+Deferred to implementation: how the new slot fits the card's character budget — a trim of existing card text or a raised budget with its reason (the card is at 2,820 of 3,000 characters, and the slot's line alone needs about 200).
 
 ## Acceptance
 
