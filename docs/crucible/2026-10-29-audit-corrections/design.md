@@ -37,6 +37,11 @@ On the umbrella's last child reviewing the whole effort:
 
 > 6: Might be worth a separate wider review?
 
+On the spec campaign's round-1 asks (the closing review a step rather
+than a gate; the word target dropped):
+
+> Agreed with the recommendations
+
 ## Intent
 
 ### Problem
@@ -82,8 +87,7 @@ The correctness defects this feature fixes:
   wave is graded by nobody; step 4 states the overturn selector absolutely
   and then overrides it; the overturn threshold reads "plausible" where the
   operator's criterion said "reasonably expect"; a decision record
-  restates the containment test without its newest exclusion; the plan
-  pre-pass owes a goal check the coherence seat already performs.
+  restates the containment test without its newest exclusion.
 
 The patterns behind the misses, from the trace: a fix wave created the
 defect and nothing traced its consequences (6 of 10 clusters); findings
@@ -102,7 +106,8 @@ integration menu.
 
 1. Fix the correctness defects above.
 2. Re-point the review stages at the patterns, without new seats in the
-   feature's own route.
+   feature's own route. The diff-only read is met at the plan stage
+   (D17); the branch review already reads the whole branch.
 3. Give the controller a cleanup wave of its own, and make the close
    readout the decision point it already is in practice, with the work left
    open handed over durably instead of through chat.
@@ -122,6 +127,9 @@ integration menu.
 - Two findings that predate the effort (the folded lane's "requires a code
   baseline" claim; the very-small hatch naming no next skill): filed with
   the rewrite.
+- The plan pre-pass's goal check, which duplicates the coherence seat's:
+  removing it would cost more template text than it saves, since a
+  selector passage tests one value only.
 - Which review methods catch what: the audit's methods the effort's
   reviews never ran (a route walkthrough, a trace from the request, a
   design-smell read) and its comparison of seats by model (four seats on
@@ -137,7 +145,11 @@ firm. Each names the audit finding it answers.
 
 - **D1 — A premise finding protects the request, what the Intent asks for,
   and firm decisions; nothing else.** (M1.) On the very-small lane the lane
-  note's Intent stands for the spec's. Every other decision, accepted from
+  note's Intent stands for the spec's. For an umbrella's child, the
+  request includes the effort's request its Request section quotes, and
+  the umbrella's Intent is protected as the child's own is; the
+  umbrella's § Edits keeps a child's edit to that Intent to corrections
+  that leave what it asks for unchanged. Every other decision, accepted from
   whoever proposed it, is lightly held, and a finding against it is
   ordinary; a binding item shown wrong (a Constraint, a mark) keeps the
   route it has now. The text separating findings by "who stands behind
@@ -164,22 +176,25 @@ firm. Each names the audit finding it answers.
   questions carried to readout, each quoted verbatim. A seat question that
   doubts the request, the Intent or a firm decision is always carried;
   every other question keeps its four dispositions, as now (an adopted
-  improvement with no wave to ride is carried too).
-- **D5 — A pending premise ask weighs in the overturn answer.** (M8.) It
-  still holds no cap and opens no fix wave; but where upholding it would
-  re-shape a major mechanism, overturning one after code stays reasonably
-  expected, so the campaign does not stop on it.
-- **D6 — The plan phase's mechanical pre-pass owes no goal check.**
-  (hm-10.) The coherence seat performs it.
+  improvement with no wave to ride is carried too). Round 0's questions,
+  answered in its readout, follow the same rule.
+- **D5 — A pending premise ask can hold the stop.** (M8.) Where upholding
+  a pending premise ask would re-shape a major mechanism, the campaign's
+  stop waits for its ruling. It still opens no fix wave, holds no cap and
+  joins neither cap ask: at the cap it is put to the operator alone, as
+  now.
 
 ### The arrangement text
 
-- **D7 — One inline test on every route.** (M5.) On the very-small lane the
-  controller implements inline only where SDD § Inline mode's test holds,
-  the change overdetermined and fitting its context; otherwise it
-  dispatches the implementer, as the lane already permits. Inline mode's
-  review clause does not apply on the lane, which has no task review; only
-  its test does. The lane's context-only sentence goes. Rationale: the
+- **D7 — One test for inline implementation.** (M5.) On the very-small
+  lane the controller implements the change inline only where SDD
+  § Inline mode's test holds, the change overdetermined and fitting its
+  context; otherwise it dispatches the implementer, as the lane already
+  permits. Inline mode's review clause does not apply on the lane, which
+  has no task review; only its test does. The lane's context-only sentence
+  goes, and the preset table's "inline by default" becomes "inline where
+  overdetermined". The lane's fix waves stay inline, as the lane's own
+  design, a cleanup wave's included. Rationale: the
   controller's own brainstorm argument for the widened lane relied on
   this safeguard, which a spec-round fix removed.
 - **D8 — The overturn threshold uses the operator's words.** (rf-5.) The
@@ -193,9 +208,13 @@ firm. Each names the audit finding it answers.
   (its U3); this returns to the original words on the operator's
   agreement.
 - **D9 — Step 4's selector stops contradicting itself.** (hm-7.) "where
-  that section's two cases make it not plausible, it takes none" is
-  qualified by "where one implementer can carry it"; the unsupported-combinations reason becomes
-  "a spec is always campaigned, a note never is". The record's "no known
+  that section's two cases make it not plausible, it takes none" becomes
+  keyed on the answer itself (where overturning is not reasonably
+  expected, the reference's two usual cases or another stated reason),
+  and qualified by "where one implementer can carry it". The unsupported
+  reason "a campaign on a lane note, or a spec with no campaign" becomes
+  "a spec is always campaigned, a note never is"; the note-with-a-plan
+  reason keeps its text. The record's "no known
   use" for a note with a plan is corrected (the settled multi-task change
   is one). The wider separability question is the rewrite's.
 - **D10 — A review mark is never written where no seat grades it.** (M7.)
@@ -217,9 +236,9 @@ firm. Each names the audit finding it answers.
   rf-3.) "A binding item is itself wrong" and "a consequential choice taken
   for granted with no decision recording it" move from the redteam seat's
   template to a section of their own in `premise-and-questions.md`, which
-  the branch reviewer already reads. The redteam seat's and the branch
-  reviewer's templates name that section; the task reviewer's and the
-  implementer's do not, so the record's rejection of a premise mandate for
+  the branch reviewer already reads. The redteam seat's, the terminal
+  pass's and the branch reviewer's templates name that section; the task
+  reviewer's and the implementer's do not, so the record's rejection of a premise mandate for
   task reviewers stands.
 - **D13 — Leads keep the task review's guards.** (M6, hm-3.) At the branch
   review, a lead the reviewer confirms as an intent or scope gap opens a
@@ -228,16 +247,21 @@ firm. Each names the audit finding it answers.
   a lead unruled is refused as missing a verdict, beside the existing
   rule for a missing task line.
 - **D14 — An adopted improvement rides a wave as an improvement.** (M4, at
-  MINOR.) Its fix-list entry is labelled an improvement; the fixer applies
-  it or declines it with a reason, with no defect to confirm and no NOT
-  CONFIRMED or adjudication; the re-reviewer checks it landed and broke
-  nothing.
+  MINOR.) Its entry in the wave's findings list is labelled an
+  improvement and carries its own instruction: apply it or decline it
+  with a reason, with no defect to confirm and no NOT CONFIRMED or
+  adjudication. The implementer card's fix-wave reminder and the
+  re-review card's findings slot name the label, so an applied
+  improvement reaches the re-review, which checks it landed and broke
+  nothing; neither template gains words. A declined improvement joins the
+  work left open (D22).
 
 ### The review stages
 
 - **D15 — Each fix item that adds or changes a rule is traced before its
   wave.** Before every spec-campaign or plan-phase fix list freezes, round
-  0's and the terminal pass's follow-up wave included, the controller runs
+  0's, the terminal pass's follow-up wave and a plan-phase repair
+  included, the controller runs
   brainstorming's self-review trace on each such item: who produces the
   rule's input, who reads its output, which routes and phases reach it.
   What the trace finds lands as sites in the item's existing restating-
@@ -248,9 +272,14 @@ firm. Each names the audit finding it answers.
   pass, while a campaign's last wave is read only by the verifier and the
   terminal pass.
 - **D16 — The spec campaign's terminal pass reads the brainstorm decision
-  record.** Its added check: each `accepted` or `firm` entry still holds in
-  the artifact, or a later entry, or a round readout naming the change and
-  what it withdraws, records its change. That would have caught the
+  record.** Its added check, on each `accepted` or `firm` entry whose
+  decision the artifact states (process entries such as the route and
+  the campaign shape aside): the entry still holds in the artifact, or a
+  later entry, or a round readout naming the change and what it
+  withdraws, records its change. It reports in its decision-ask fidelity
+  part; an approval withdrawn with no such record is flagged
+  `CONCLUSION-CHANGING`, so it reaches the operator. That would have
+  caught the
   inline-test reversal, and the stop-rule reversal as far as the records
   go: whether a recorded readout was delivered stays unchecked (a
   non-goal).
@@ -265,13 +294,16 @@ firm. Each names the audit finding it answers.
   quoted verbatim (D4). An operator answer leaving a call to the
   controller ("your call") is recorded as delegated to the controller,
   never as the operator's ruling or choice; the decision record's
-  `accepted` status still covers it.
+  `accepted` status still covers it, and a decision record's basis reads
+  it as the maintainer leaving the call to the agent, a form
+  `docs/decisions/decision-records.md` already uses.
 
 ### Finish
 
 - **D19 — The controller may run one cleanup wave.** Once the branch
-  review has ended with no BLOCKER or MAJOR open, and the wave cap allows,
-  the controller may open one cleanup wave of the minors and leads it
+  review has ended with no BLOCKER or MAJOR open, and where the wave
+  would not be the last the cap allows (so a wave stays for what its
+  pass or a ruling raises), the controller may open one cleanup wave of the minors and leads it
   judges worth fixing. It runs as any wave: counted against the cap, its
   scoped re-review, then a full-scope pass. One per branch: minors the
   cleanup wave or its following pass raise open no other; a BLOCKER or
@@ -284,10 +316,15 @@ firm. Each names the audit finding it answers.
   came from one incident of fixes seeding fixes, which the one-per-branch
   limit still guards.
 - **D20 — The close readout is the decision point.** It comes after the
-  last full-scope pass and ends with the controller's recommendation (land,
-  hold, or more work) and its reason. Where the operator's answer chooses
-  an integration option, `crucible:finishing-a-development-branch` carries
-  it out without presenting its menu again; the menu is no longer
+  last full-scope pass and ends with the controller's recommendation, one
+  of finishing's options (merge locally, open a pull request, keep the
+  branch) or more work, and its reason, and with what the work left open
+  needs (D22). The controller waits for the answer; the workspace is
+  deleted after it, at SDD's Finish, before finishing runs. Where the
+  answer chooses an integration option,
+  `crucible:finishing-a-development-branch` carries it out without
+  presenting its menu again, and an answer that chooses none gets the
+  menu with the recommendation; the menu is no longer
   presented "exactly as written". Where loop activity follows the answer,
   the next readout reports what changed, and the earlier answer stands
   only where nothing new was left open. Integration stays the operator's
@@ -298,74 +335,88 @@ firm. Each names the audit finding it answers.
   with a recommendation, which it does not do today; its rationalization
   rows that say "present the menu and wait" and "the menu is complete as
   written" change with it.
-- **D21 — An operator ruling at the readout reopens the loop.** (M3.) A
-  ruling on a premise ask, or a request for more work, opens a wave of the
-  branch-review loop, counted against its cap, followed by a full-scope
-  pass; Finish then restarts at step 1. At the cap the existing escalation
-  applies. SDD Setup also seeds each open premise ask that the plan record
+- **D21 — The readout's answer can reopen the loop.** (M3.) The wave
+  flip-paths gives a ruling "in execution" is a wave of the branch-review
+  loop, and Finish's existing restart rule follows it; neither is
+  restated. A ruling that keeps the decision changes nothing and opens no
+  wave. A request for more work opens a wave the same way where the work
+  is what the spec and plan already require; new scope is a new feature,
+  as finishing says now. Where the cap is spent, the operator's answer is
+  the escalation's answer and may open the wave (C2). SDD Setup also seeds each open premise ask that the plan record
   or the spec campaign's close carried and the ledger lacks (wt-4), beside
   its two existing backstops.
 - **D22 — Work left open is filed where the project keeps deferred work,
-  or named dropped.** At SDD's Finish, each item left open (a minor, a
-  lead, a question, an unruled ask) is filed in the project's home for
-  deferred work, or named as dropped in the readout. In the repository:
-  filed as an edit committed on the branch beside the umbrella mark,
-  before the suite, so the suite runs once on the tree that lands; like
-  that mark it is read by no review, and the close readout names each
-  item filed so the operator sees it. Outside the repository (an issue
-  tracker): listed in the readout for filing, and filed only on the
-  operator's word. No home known: the readout lists the items and
-  proposes what to do. A later answer that asks for more work revises
-  the filing when Finish restarts. The workspace is deleted once the
-  operator's integration decision has been carried out. The other two
-  ends of a workspace keep their rules: at an umbrella's landing an open
-  premise ask already passes to the first child, and abandonment is the
-  operator's call.
-- **D23 — A deferral to a follow-up is a D22 filing.** A disposition that
-  sends work to a follow-up, at any phase, names the item, and the item
-  reaches the close readout's list of what was left open, where D22 files
-  it; a deferral never counts as done until it is filed or named dropped.
-- **D24 — An umbrella gets one closing review.** A review reads the whole
-  range from the umbrella's landing to its last child's landing, against
-  the umbrella: its request, entries, Constraints and decisions.
-  - **Owner and moment.** The session whose landing leaves every entry
-    marked runs it, once that landing is done: the last child's
-    controller after its finish, or the session that landed a drop. A
-    session resuming the effort that finds every entry marked and no
-    closing-review line runs it then.
-  - **Seats.** Two or three controller-composed dispatches, each carrying
-    the seven items of the dispatch composition, read-only, each with a
-    lens that reads across children (request fidelity, the seams between
-    children, a walkthrough of the routes) and its own report file; no new
-    instrument or template. The width is the controller's call, announced,
-    with no approval gate.
-  - **Where it runs.** A workspace provisioned under the umbrella's slug
-    in the checkout the session works in; the closing review is one of
-    the workspace's ends in the formats reference's Lifecycle, deleted
-    when its findings have been filed or entered.
-  - **What it leads to.** Its findings feed a fixes feature on whatever
-    route fits, entered as a child of the umbrella, so the umbrella stays
-    open until it lands; what is not fixed is filed or named dropped as
-    D22 states. One per umbrella: a child entered from its findings does
-    not trigger another.
-  - **Closing.** An umbrella is closed when every entry is marked and its
-    closing-review line is written: a new edit kind in the umbrella
-    skill's § Edits, a line in the umbrella itself naming the date and
-    the outcome, committed on the fixes child's branch, or, where nothing
-    is to be fixed, on a branch of its own landed on the operator's
-    go-ahead. This reverses the recorded position that closing takes no
-    write of its own; "nothing is written upward" still holds, since the
-    line is the umbrella's own. A nested umbrella runs its own at its
-    close, and its parent's range covers it again. Umbrellas already
-    closed when this lands stay closed.
+  or named dropped.** At SDD's Finish, the work left open (minors, leads,
+  questions, declined improvements, the deferrals D23 brings) becomes one
+  grouped entry per feature in the project's home for deferred work,
+  each item in it, and those the controller judges not worth keeping
+  named dropped there; no item takes a ruling of its own, so "no ruling
+  per minor" stands. In the repository: committed on the branch beside
+  the umbrella mark, before the suite, so the suite runs once on the tree
+  that lands; no review reads it on a first pass through Finish, so the
+  close readout names the entry, and where the loop reopens, the branch
+  reviewer takes that commit as in scope, as it takes the umbrella mark.
+  Outside the repository (an issue tracker): the readout proposes the
+  entry, filed only on the operator's word. No home known: the readout
+  proposes one. Unruled asks are not filed; the readout asks them. A
+  later answer revises the entry when Finish restarts. The workspace is
+  deleted only once every item is filed or named dropped: an unanswered
+  filing proposal is not a drop, and the controller says the workspace
+  stays. This reverses the recorded position that filing open work is
+  left to the operator or the repository's conventions: the filing is
+  the controller's step, made where the convention says.
+- **D23 — A deferral is filed at the close of the phase that made it.** A
+  disposition that sends work to a follow-up outside the feature (not
+  `deferred-to-implementation`, which the plan routes) is filed by D22's
+  cases at the close of the phase that made it: a spec campaign's or the
+  plan phase's close readout names it and the in-repository entry is
+  committed on the feature branch; an umbrella's campaign files it at the
+  umbrella's landing, before its workspace is deleted; in execution it is
+  a lead and reaches SDD's Finish. It never counts as done until it is
+  filed or named dropped.
+- **D24 — An umbrella gets one closing review, a step after its last
+  landing, not a gate.** A review reads the whole range from the
+  umbrella's landing to the landing that completed it, against the
+  umbrella: its request, entries, Constraints and decisions.
+  - **When.** Once the umbrella is complete by § Closing's existing rule
+    (every entry `landed` or `dropped`, or `umbrella` with that umbrella
+    closed). The controller whose landing completes it runs it right
+    after, as its call, announced. Where that landing happens outside a
+    session (a pull request merged later), the last child's close readout
+    says the review is due, and the operator starts it. A nested
+    umbrella's review runs at its own completion; where that completes
+    its parent, the parent's runs after it, its range covering the nested
+    one again.
+  - **Seats.** Two or three controller-composed dispatches on the default
+    role, each carrying the seven items of the dispatch composition,
+    read-only, each with a lens that reads across children (request
+    fidelity, the seams between children, a walkthrough of the routes)
+    and its own report file; no new instrument or template. The width is
+    the controller's call, announced.
+  - **Its records.** A workspace under the umbrella's slug in the checkout
+    the session works in, one of the workspace's ends in the formats
+    reference's Lifecycle. Its readout to the operator lists each finding
+    with where it goes: the incoming document of a fixes feature's
+    brainstorm, which commits it in that feature's folder; the D22
+    filing; or named dropped. A premise finding from it is a decision ask
+    in that readout. The workspace is deleted once every finding has gone
+    one of those ways.
+  - **Closing is unchanged.** It is still read from the marks, and the
+    review writes nothing into the umbrella; the umbrella is closed by
+    then, so a fixes feature is a feature of its own.
   - An umbrella approved without a campaign gets it too, since it reads
     code the children wrote.
 
-  Rationale: the operator asked for a separate, wider review rather than
-  the last child's review widened; a child's review grades against its
-  own plan and would mix siblings' defects into its wave cap. A seat on
-  the other host is the operator's own instruction where it applies; the
-  skills compose no such seat (`docs/backlog/second-runtime-seat.md`).
+  Rationale: the operator asked "Might be worth a separate wider
+  review?" and accepted the detailed proposal; a child's review grades
+  against its own plan and would mix siblings' defects into its wave
+  cap. At spec round 1 the operator accepted making it a step rather
+  than a gate, which withdrew "before the umbrella is marked closed": a
+  gate needed a recursive owner, a committed record and a landing ask
+  per umbrella. It can be skipped where a landing happens outside a
+  session and nobody acts on the readout. A seat on the other host is the
+  operator's own instruction where it applies; the skills compose no such
+  seat (`docs/backlog/second-runtime-seat.md`).
 
 ### Records and size
 
@@ -376,10 +427,14 @@ firm. Each names the audit finding it answers.
   the stop the controller's judgment, and the change was never put to the
   operator. The operator has now confirmed it. Only the record changes:
   `docs/decisions/spec-campaign.md` states the confirmation.
-- **D26 — No net growth in skill words, as a target.** Lightly held, not
-  binding: sections D1–D14 are expected to remove more than they add, D15
-  –D18 to add a little, D19–D24 to add the most. Each task reports its word
-  delta; the prose budget moves with the commits.
+- **D26 — The word delta is reported, not targeted.** The feature is
+  expected to add roughly a thousand words of skill text, most of it in
+  D19–D24; the cuts are the skill-text rewrite's. Each task reports its
+  word delta, and the prose budget moves with the commits. D15–D17 and
+  D22 also add a little work on every feature (a trace per fix item, one
+  terminal-pass check, one pre-pass table, one filing commit), which word
+  counts do not show; the decision records say so. The operator accepted
+  dropping the earlier no-growth target at spec round 1.
 - **D27 — The backlog edits come first.** One commit at the start of the
   branch edits the backlog items that take this feature's non-goals
   (§ Non-goals), with the audit's figures, so the deferrals are recorded
@@ -391,11 +446,12 @@ firm. Each names the audit finding it answers.
 - **C1 — Integration stays the operator's decision.** No step lands,
   pushes, opens a pull request or discards work without the operator's
   answer.
-- **C2 — Every wave counts against the branch-review cap**, a cleanup wave
-  and a ruling's wave included; the cap stays three.
-- **C3 — Nothing left open at SDD's Finish or by an umbrella's closing
-  review is silently discarded**: each item is filed or named dropped
-  (D22, D24).
+- **C2 — Every wave the controller opens counts against the branch-review
+  cap**, a cleanup wave and a ruling's wave included; the cap stays three,
+  and a wave beyond it opens only on the operator's answer.
+- **C3 — Nothing left open at a phase's close, SDD's Finish or an
+  umbrella's closing review is silently discarded**: each item is filed
+  or named dropped (D22–D24).
 - **C4 — No outward action without the operator's word**: filing outside
   the repository is one.
 - **C5 — No rule routes on a decision's proposer.**
@@ -424,12 +480,8 @@ census is the authoritative list.
   `skills/brainstorming/SKILL.md` § Workspace provisioning;
   `skills/redteaming/terminal-pass-prompt.md` where it checks readouts.
 - **D5:** `skills/redteaming/SKILL.md` § Stop rule and terminal pass.
-- **D6, D17:** `skills/redteaming/seat-prompt.md` (the goal check and its
-  report item, the pre-pass worksheet) and `seat-prompt.slots.md`;
-  `skills/redteaming/references/plan-phase.md`, `folded-lane.md`;
-  `premise-and-questions.md` § The goal check (its plan paragraph);
-  `docs/decisions/evidence-and-findings.md` (its plan-phase goal-check
-  sentence).
+- **D17:** `skills/redteaming/seat-prompt.md` (the pre-pass worksheet);
+  `skills/redteaming/references/plan-phase.md`, `folded-lane.md`.
 - **D7:** `skills/subagent-driven-development/references/very-small-lane.md`
   (What runs, step 2); `skills/brainstorming/SKILL.md` step 4 (the lane's
   dispatch clause); `skills/subagent-driven-development/SKILL.md`
@@ -441,7 +493,9 @@ census is the authoritative list.
   `terminal-pass-prompt.md`, `code-reviewer.md`, `very-small-lane.md`,
   `flip-paths.md`, `docs/decisions/routes.md`,
   `docs/decisions/spec-campaign.md`, `docs/decisions/umbrellas.md`,
-  `README.md` (read only: its "likely" already agrees); the forecast
+  `README.md` (read only: its "likely" already agrees);
+  `skills/brainstorming/references/umbrellas.md` § Edits (D1's umbrella
+  Intent); the forecast
   line's two forms in `seat-prompt.md`, which `terminal-pass-prompt.md`
   and `formats.md` read.
 - **D9:** `skills/brainstorming/SKILL.md` § Proposing the arrangement;
@@ -455,17 +509,20 @@ census is the authoritative list.
 - **D12, D13:** `premise-and-questions.md`; `skills/redteaming/seat-prompt.md`;
   `skills/requesting-code-review/code-reviewer.md` and `SKILL.md`;
   `docs/decisions/evidence-and-findings.md` (it names the seat template as
-  the consequential-choice clause's home). The branch reviewer's slot
+  the consequential-choice clause's home); `terminal-pass-prompt.md`. The
+  branch reviewer's slot
   card is at 2,991 of 3,000 characters: the wording belongs in the
   template.
 - **D14:** `skills/requesting-code-review/SKILL.md` § The branch-review
   loop; `skills/subagent-driven-development/implementer-prompt.md`;
-  `re-review-prompt.md`. The implementer's slot card is at 2,947 of 3,000
-  characters: the wording belongs in the template.
+  `implementer-prompt.slots.md` (its fix-wave reminder) and
+  `re-review-prompt.slots.md` (its findings slot); the templates are
+  unchanged. Measured headroom: 53 and 136 characters.
 - **D15, D16:** `skills/redteaming/SKILL.md` (fix application; terminal
   pass inputs); `terminal-pass-prompt.md` and its slot card;
   `skills/brainstorming/SKILL.md` § Spec self-review, read only;
-  `docs/decisions/terminal-pass.md` (it lists the pass's inputs).
+  `docs/decisions/terminal-pass.md` (it lists the pass's inputs);
+  `docs/decisions/decision-records.md` (D18's basis form).
 - **D19–D23:** `skills/requesting-code-review/SKILL.md` (Minors, Questions
   and leads, the loop); `skills/subagent-driven-development/SKILL.md`
   § Setup and § Finish; `skills/finishing-a-development-branch/SKILL.md`
@@ -474,14 +531,18 @@ census is the authoritative list.
   ruling's route, carrying an open ask); `very-small-lane.md` step 4;
   `skills/redteaming/references/formats.md` § Lifecycle (deletion
   timing); `docs/decisions/records-and-workspace.md` (Finish's order and
-  deletion); `README.md` (its "deleted at finish").
-- **D24:** `skills/brainstorming/references/umbrellas.md` § Edits,
-  § Closing, § Resuming, § Landing and § Children;
+  deletion, and its "filing that work is left to the operator");
+  `README.md` (its "deleted at finish", and § What it writes into your
+  repository); `skills/requesting-code-review/code-reviewer.md` (the
+  filing commit in scope, beside the umbrella mark);
+  `skills/redteaming/SKILL.md` § Exit and `references/plan-phase.md`
+  (D23 at a phase's close); `skills/brainstorming/references/umbrellas.md`
+  § Landing (D23 at an umbrella's landing).
+- **D24:** `skills/brainstorming/references/umbrellas.md` § Closing;
   `skills/redteaming/references/formats.md` § Lifecycle;
-  `skills/subagent-driven-development/SKILL.md` § Finish step 2, where the
-  last mark is written; `docs/decisions/umbrellas.md` (its "closing takes
-  no write of its own"); `docs/decisions/records-and-workspace.md`;
-  `README.md` (when an umbrella closes).
+  `skills/subagent-driven-development/SKILL.md` § Finish (the close
+  readout saying the review is due); `docs/decisions/umbrellas.md`;
+  `docs/decisions/records-and-workspace.md`.
 - **Generated:** `agents/` from the changed templates, by
   `python tools/instrument_agents.py write`.
 - **Records** (each with a Changes line): `evidence-and-findings.md`,
@@ -512,7 +573,7 @@ census is the authoritative list.
   unrelated "plausibly" sites stay).
 - **A5 — The word delta is reported:** one-time check, skill word counts at
   `dd6897d` against HEAD, from `tests/prose-budget.txt`, in the close
-  readout (D26 is a target, so the check reports rather than fails).
+  readout (D26 sets no target, so the check reports rather than fails).
 - **A6 — Each decision lands where its Interfaces entry says, with no new
   contradiction:** prose fidelity, which only review can judge (task
   reviews and the branch review); no test.
@@ -534,9 +595,10 @@ Advisory; the plan and implementers may replace them.
   implementer and re-review templates' fix-wave passages.
 - D19–D22: the Finish order could become record checks, the umbrella
   mark and the in-repository filing, the suite, the close readout with the
-  recommendation, then the integration step, then workspace deletion;
-  the cleanup wave sits in `requesting-code-review` beside § Minors.
-- D24: a short § Closing review in `umbrellas.md`.
+  recommendation, the operator's answer, workspace deletion, then
+  finishing; the cleanup wave sits in `requesting-code-review` beside
+  § Minors.
+- D24: a short § Closing review in `umbrellas.md`, after § Closing.
 
 Deferred to implementation: the closing review's report file names
-inside its workspace, and the wording of the closing-review line.
+inside its workspace.
