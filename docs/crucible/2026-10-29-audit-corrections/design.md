@@ -42,6 +42,13 @@ than a gate; the word target dropped):
 
 > Agreed with the recommendations
 
+On the round-2 ask (work left open written to a file in the feature
+folder):
+
+> I tentatively agree with a, but that would fail on a somewhat-planned
+> no-commited-intermediaries route. Possibly this by default, overridable
+> by instructions?
+
 ## Intent
 
 ### Problem
@@ -98,7 +105,7 @@ the children (5 of 10); the operator's approvals were in no reviewer's
 inputs (4 of 10).
 
 Separately, the operator finds finish too rigid: minors never open a wave,
-although the operator approves the cleanup wave every time, and the flow
+although "in practice, I approve them anyway", and the flow
 runs from the close readout through workspace deletion to a fixed
 integration menu.
 
@@ -149,7 +156,8 @@ firm. Each names the audit finding it answers.
   request includes the effort's request its Request section quotes, and
   the umbrella's Intent is protected as the child's own is; the
   umbrella's § Edits keeps a child's edit to that Intent to corrections
-  that leave what it asks for unchanged. Every other decision, accepted from
+  that leave what it asks for unchanged, and a ruled change to what it
+  asks lands as a binding change by § Edits. Every other decision, accepted from
   whoever proposed it, is lightly held, and a finding against it is
   ordinary; a binding item shown wrong (a Constraint, a mark) keeps the
   route it has now. The text separating findings by "who stands behind
@@ -239,16 +247,18 @@ firm. Each names the audit finding it answers.
   the branch reviewer already reads. The redteam seat's, the terminal
   pass's and the branch reviewer's templates name that section; the task
   reviewer's and the implementer's do not, so the record's rejection of a premise mandate for
-  task reviewers stands.
+  task reviewers stands. For the branch reviewer, a consequential choice
+  is one the code makes with no decision recording it.
 - **D13 — Leads keep the task review's guards.** (M6, hm-3.) At the branch
   review, a lead the reviewer confirms as an intent or scope gap opens a
   wave whatever its staked severity, as in a task review; for a task that
   ran branch review only, it also fails that judgment. A pass that leaves
   a lead unruled is refused as missing a verdict, beside the existing
   rule for a missing task line.
-- **D14 — An adopted improvement rides a wave as an improvement.** (M4, at
-  MINOR.) Its entry in the wave's findings list is labelled an
-  improvement and carries its own instruction: apply it or decline it
+- **D14 — Changes asked for ride a wave as changes, not findings.** (M4,
+  at MINOR.) An adopted improvement, an operator's ruling and work the
+  operator asked for each enter the wave's findings list labelled as
+  such, carrying their own instruction: apply it or decline it
   with a reason, with no defect to confirm and no NOT CONFIRMED or
   adjudication. The implementer card's fix-wave reminder and the
   re-review card's findings slot name the label, so an applied
@@ -301,14 +311,16 @@ firm. Each names the audit finding it answers.
 ### Finish
 
 - **D19 — The controller may run one cleanup wave.** Once the branch
-  review has ended with no BLOCKER or MAJOR open, and where the wave
-  would not be the last the cap allows (so a wave stays for what its
-  pass or a ruling raises), the controller may open one cleanup wave of the minors and leads it
-  judges worth fixing. It runs as any wave: counted against the cap, its
+  review has ended with no BLOCKER or MAJOR open, and a wave remains
+  under the cap, the controller may open one cleanup wave of the minors,
+  and the leads the reviewer ruled CONFIRMED or RECOMMENDED, that it
+  judges worth fixing; a wave of improvements alone may open. Its ledger
+  line marks it `cleanup`, so a resumed controller sees it spent. It runs
+  as any wave: counted against the cap, its
   scoped re-review, then a full-scope pass. One per branch: minors the
   cleanup wave or its following pass raise open no other; a BLOCKER or
-  MAJOR opens a normal wave. The close readout names what was left and
-  why. Minors still never open a wave by themselves. It runs wherever the
+  MAJOR opens a normal wave, and one raised at the cap takes the existing
+  escalation. The close readout names what was left and why. Minors still never open a wave by themselves. It runs wherever the
   branch-review loop runs, the very-small lane included (its fixes inline,
   as for any lane wave); standalone mode has no loop and no cleanup wave.
   Rationale: in the operator's words, "in practice, I approve them
@@ -317,9 +329,9 @@ firm. Each names the audit finding it answers.
   limit still guards.
 - **D20 — The close readout is the decision point.** It comes after the
   last full-scope pass and ends with the controller's recommendation, one
-  of finishing's options (merge locally, open a pull request, keep the
-  branch) or more work, and its reason, and with what the work left open
-  needs (D22). The controller waits for the answer; the workspace is
+  of the options finishing offers on that branch (merge locally, open a
+  pull request, keep the branch; no merge on a detached HEAD) or more
+  work, and its reason, naming where the work left open went (D22). The controller waits for the answer; the workspace is
   deleted after it, at SDD's Finish, before finishing runs. Where the
   answer chooses an integration option,
   `crucible:finishing-a-development-branch` carries it out without
@@ -335,9 +347,11 @@ firm. Each names the audit finding it answers.
   with a recommendation, which it does not do today; its rationalization
   rows that say "present the menu and wait" and "the menu is complete as
   written" change with it.
-- **D21 — The readout's answer can reopen the loop.** (M3.) The wave
-  flip-paths gives a ruling "in execution" is a wave of the branch-review
-  loop, and Finish's existing restart rule follows it; neither is
+- **D21 — The readout's answer can reopen the loop.** (M3.) For a ruling
+  given at the close readout, the wave flip-paths gives a ruling "in
+  execution" is a wave of the branch-review loop, and Finish's existing
+  restart rule follows it; one given during the task loop takes
+  flip-paths' route at the next task boundary, as now. Neither rule is
   restated. A ruling that keeps the decision changes nothing and opens no
   wave. A request for more work opens a wave the same way where the work
   is what the spec and plan already require; new scope is a new feature,
@@ -345,61 +359,76 @@ firm. Each names the audit finding it answers.
   the escalation's answer and may open the wave (C2). SDD Setup also seeds each open premise ask that the plan record
   or the spec campaign's close carried and the ledger lacks (wt-4), beside
   its two existing backstops.
-- **D22 — Work left open is filed where the project keeps deferred work,
-  or named dropped.** At SDD's Finish, the work left open (minors, leads,
-  questions, declined improvements, the deferrals D23 brings) becomes one
-  grouped entry per feature in the project's home for deferred work,
-  each item in it, and those the controller judges not worth keeping
-  named dropped there; no item takes a ruling of its own, so "no ruling
-  per minor" stands. In the repository: committed on the branch beside
-  the umbrella mark, before the suite, so the suite runs once on the tree
-  that lands; no review reads it on a first pass through Finish, so the
-  close readout names the entry, and where the loop reopens, the branch
-  reviewer takes that commit as in scope, as it takes the umbrella mark.
-  Outside the repository (an issue tracker): the readout proposes the
-  entry, filed only on the operator's word. No home known: the readout
-  proposes one. Unruled asks are not filed; the readout asks them. A
-  later answer revises the entry when Finish restarts. The workspace is
-  deleted only once every item is filed or named dropped: an unanswered
-  filing proposal is not a drop, and the controller says the workspace
-  stays. This reverses the recorded position that filing open work is
-  left to the operator or the repository's conventions: the filing is
-  the controller's step, made where the convention says.
+- **D22 — Work left open goes to the feature folder, unless the
+  project's instructions name another home.** At SDD's Finish, the work
+  left open — minors, leads, questions, declined improvements, unruled
+  asks, parked BLOCKER or MAJOR findings with their rulings, and the
+  deferrals D23 brings — is written to `<feature-folder>/open-items.md`,
+  each item with its source, and those the controller judges not worth
+  keeping named dropped there; no item takes a ruling of its own, so "no
+  ruling per minor" stands. It is committed on the branch beside the
+  umbrella mark, before the suite, so the suite runs on the tree that
+  lands, and any later change to it restarts Finish at the suite. No
+  review reads it on a first pass through Finish: the close readout names
+  it, and in this repository the controller checks the no-local-context
+  rule on it itself; where the loop reopens, the branch reviewer takes
+  that commit as in scope, as it takes the umbrella mark. Where the
+  project's instructions name another home for deferred work, the items go
+  there instead: an in-repository home on the branch as above, an outside
+  tracker as the instructions say, which are the operator's word for it.
+  A mode that commits no feature-folder files is such a case
+  (`docs/backlog/records-retention-config.md`). No item is left only in
+  the workspace, which is deleted after the operator's answer to the close
+  readout, before finishing runs. Rationale: the operator's ruling at spec
+  round 2, "Possibly this by default, overridable by instructions?"; it
+  replaces filing into an unknown home, whose authorization and retention
+  rules each round found holes in. It reverses two recorded positions:
+  that no summary of a feature is committed (this is a list of open items,
+  not a summary), and that filing open work is left to the operator or the
+  repository's conventions.
 - **D23 — A deferral is filed at the close of the phase that made it.** A
   disposition that sends work to a follow-up outside the feature (not
-  `deferred-to-implementation`, which the plan routes) is filed by D22's
-  cases at the close of the phase that made it: a spec campaign's or the
-  plan phase's close readout names it and the in-repository entry is
-  committed on the feature branch; an umbrella's campaign files it at the
-  umbrella's landing, before its workspace is deleted; in execution it is
-  a lead and reaches SDD's Finish. It never counts as done until it is
-  filed or named dropped.
+  `deferred-to-implementation`, which the plan routes) goes to D22's home
+  at the close of the phase that made it, named in that close's readout:
+  a brainstorm's or its spec campaign's at the campaign's close, and a
+  plan phase's at its close, committed on the feature branch (Finish then
+  adds to the same file); an umbrella's brainstorm's or campaign's at the
+  umbrella's landing, in the umbrella's folder, before its workspace is
+  deleted; execution's as a lead that reaches SDD's Finish. It never
+  counts as done until it is filed or named dropped.
 - **D24 — An umbrella gets one closing review, a step after its last
-  landing, not a gate.** A review reads the whole range from the
-  umbrella's landing to the landing that completed it, against the
-  umbrella: its request, entries, Constraints and decisions.
+  landing, not a gate.** A review reads the children's landings, from the
+  umbrella's own to the one that completed it, unrelated landings on a
+  shared base aside, against the umbrella: its request, entries, Constraints and decisions.
   - **When.** Once the umbrella is complete by § Closing's existing rule
     (every entry `landed` or `dropped`, or `umbrella` with that umbrella
     closed). The controller whose landing completes it runs it right
     after, as its call, announced. Where that landing happens outside a
-    session (a pull request merged later), the last child's close readout
-    says the review is due, and the operator starts it. A nested
+    session (a pull request merged later), the close readout of each child
+    whose landing could complete the umbrella, siblings in flight counted,
+    says the review is due once they have all landed, and the operator
+    starts it by asking for it; the umbrella skill's § Closing review is
+    its entry point. A nested
     umbrella's review runs at its own completion; where that completes
     its parent, the parent's runs after it, its range covering the nested
     one again.
   - **Seats.** Two or three controller-composed dispatches on the default
     role, each carrying the seven items of the dispatch composition,
     read-only, each with a lens that reads across children (request
-    fidelity, the seams between children, a walkthrough of the routes)
+    fidelity, the seams between children, a walkthrough of the workflows
+    the effort changed)
     and its own report file; no new instrument or template. The width is
     the controller's call, announced.
   - **Its records.** A workspace under the umbrella's slug in the checkout
     the session works in, one of the workspace's ends in the formats
     reference's Lifecycle. Its readout to the operator lists each finding
     with where it goes: the incoming document of a fixes feature's
-    brainstorm, which commits it in that feature's folder; the D22
-    filing; or named dropped. A premise finding from it is a decision ask
-    in that readout. The workspace is deleted once every finding has gone
+    brainstorm, which commits it in that feature's folder; D22's home,
+    by default an `open-items.md` in the umbrella's folder committed on a
+    branch of its own with a landing ask, only where something is left
+    for it; or named dropped. A premise finding from it is a decision ask
+    in that readout, its ruling entering the fixes feature's brainstorm
+    record or the open items. The workspace is deleted once every finding has gone
     one of those ways.
   - **Closing is unchanged.** It is still read from the marks, and the
     review writes nothing into the umbrella; the umbrella is closed by
@@ -413,7 +442,8 @@ firm. Each names the audit finding it answers.
   cap. At spec round 1 the operator accepted making it a step rather
   than a gate, which withdrew "before the umbrella is marked closed": a
   gate needed a recursive owner, a committed record and a landing ask
-  per umbrella. It can be skipped where a landing happens outside a
+  per umbrella, where the step needs a landing ask only when findings are
+  left with no fixes feature to carry them. It can be skipped where a landing happens outside a
   session and nobody acts on the readout. A seat on the other host is the
   operator's own instruction where it applies; the skills compose no such
   seat (`docs/backlog/second-runtime-seat.md`).
@@ -438,8 +468,8 @@ firm. Each names the audit finding it answers.
 - **D27 — The backlog edits come first.** One commit at the start of the
   branch edits the backlog items that take this feature's non-goals
   (§ Non-goals), with the audit's figures, so the deferrals are recorded
-  before any work depends on them (D22's in-repository case applied to
-  this feature).
+  before any work depends on them: D23 applied to this feature, whose
+  repository's instructions name `docs/backlog/` as the home.
 
 ## Constraints & invariants
 
@@ -457,7 +487,8 @@ firm. Each names the audit finding it answers.
 - **C5 — No rule routes on a decision's proposer.**
 - **C6 — The blind verifier's inputs gain nothing.**
 - **C7 — Shipped skill text names no project-specific home for deferred
-  work**: it refers to the project's own convention.
+  work**: its default is the feature folder, which every project crucible
+  runs in has, and a project's instructions may name another.
 - **C8 — Each new or moved rule has one home**; other sites point to it.
 
 ## Interfaces & boundaries
@@ -471,7 +502,8 @@ census is the authoritative list.
   (its restatement of the premise definition and of who stands behind a
   decision, and the decline's Changes line); `docs/decisions/the-spec.md`
   (the proposer sentence, and its restatement of the premise
-  definition). The attribution uses of the proposer
+  definition); `skills/brainstorming/references/umbrellas.md` § Edits (the
+  umbrella's Intent). The attribution uses of the proposer
   (`implementer-prompt.md`, `task-reviewer-prompt.md`, `code-reviewer.md`,
   `writing-plans`, `docs/decisions/decision-records.md`) stay.
 - **D4, D18:** `skills/redteaming/SKILL.md` § Round readout and § Merge and
@@ -493,9 +525,7 @@ census is the authoritative list.
   `terminal-pass-prompt.md`, `code-reviewer.md`, `very-small-lane.md`,
   `flip-paths.md`, `docs/decisions/routes.md`,
   `docs/decisions/spec-campaign.md`, `docs/decisions/umbrellas.md`,
-  `README.md` (read only: its "likely" already agrees);
-  `skills/brainstorming/references/umbrellas.md` § Edits (D1's umbrella
-  Intent); the forecast
+  `README.md` (read only: its "likely" already agrees); the forecast
   line's two forms in `seat-prompt.md`, which `terminal-pass-prompt.md`
   and `formats.md` read.
 - **D9:** `skills/brainstorming/SKILL.md` § Proposing the arrangement;
@@ -531,7 +561,9 @@ census is the authoritative list.
   ruling's route, carrying an open ask); `very-small-lane.md` step 4;
   `skills/redteaming/references/formats.md` § Lifecycle (deletion
   timing); `docs/decisions/records-and-workspace.md` (Finish's order and
-  deletion, and its "filing that work is left to the operator");
+  deletion, its "filing that work is left to the operator", and its
+  "No committed summary"); `skills/redteaming/references/formats.md`
+  § Feature folder (the files named by role gain `open-items.md`);
   `README.md` (its "deleted at finish", and § What it writes into your
   repository); `skills/requesting-code-review/code-reviewer.md` (the
   filing commit in scope, beside the umbrella mark);
@@ -552,7 +584,8 @@ census is the authoritative list.
   other the plan's census finds.
 - **Backlog** (D27): `docs/backlog/skill-text-rewrite.md`,
   `campaign-early-stop-investigation.md`, `decision-ask-framing.md`,
-  `reviewer-research-reach.md`.
+  `reviewer-research-reach.md`, and `records-retention-config.md` (its
+  mode must say where open items go).
 
 ## Acceptance
 
@@ -594,7 +627,7 @@ Advisory; the plan and implementers may replace them.
 - D14: a fix-list label such as `Improvement:`; one sentence each in the
   implementer and re-review templates' fix-wave passages.
 - D19–D22: the Finish order could become record checks, the umbrella
-  mark and the in-repository filing, the suite, the close readout with the
+  mark and the open-items file, the suite, the close readout with the
   recommendation, the operator's answer, workspace deletion, then
   finishing; the cleanup wave sits in `requesting-code-review` beside
   § Minors.
