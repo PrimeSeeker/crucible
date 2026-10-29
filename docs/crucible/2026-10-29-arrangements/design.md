@@ -187,7 +187,7 @@ tree cannot reproduce:
   project; whether the overturn question
   leaves it a niche is for later.
 - New verdict tokens, ledger forms or file roles for the existing
-  routes.
+  routes, beyond the completion line (D11) and the forecast line (D7).
 - A change to the task reviewer's or branch reviewer's mandate beyond
   what D4 and D12 state.
 - Expanding inline execution: the maintainer's ruling of 2026-10-27,
@@ -574,7 +574,8 @@ Deferred to implementation: how the new slot fits the card's character budget â€
   task by check.
 - **A7.** The inline criterion replaces both phrasings. One-time: a
   search for "costs more than it protects" and "wide enough to crowd"
-  over `skills/` and `docs/decisions/`, before (hits) and after (none).
+  over `skills/` and `docs/decisions/` (Changes sections aside), before
+  (hits) and after (none).
 - **A8.** Each changed decision record carries a Changes line; the
   backlog items match D15. One-time: the file list and a diff stat,
   quoted.
