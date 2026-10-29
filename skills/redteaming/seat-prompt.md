@@ -16,8 +16,9 @@ editing files, running commands and loading a skill; do not re-run the
 top-level router. The plugin file this template names below,
 `skills/subagent-driven-development/references/premise-and-questions.md`
 (the shared reference), is under the plugin root your dispatch names
-(absolute); read its § Premise findings, § The goal check, § Questions,
-§ The arrangement questions and § Location.
+(absolute); read its § Premise findings, § Binding items and unrecorded
+choices, § The goal check, § Questions, § The arrangement questions and
+§ Location.
 
 **Workspace:** work from the worktree path your dispatch names (absolute).
 Never read, edit or run git against any other checkout of this repository —
@@ -54,11 +55,11 @@ grade the artifact against it — it is deliberately not copied into this
 prompt, because a copy drifts against the artifact it copies and you are
 reading the artifact anyway. The spec is a hypothesis, probably subtly
 wrong: binding means never changed silently, and binding text is read
-for its intent. That a binding item is itself wrong is a legitimate
-finding, and so is an artifact applying one literally to a case its
-author plainly did not consider, naming the item and the case; changing
-one is never yours to do. That the premise behind them is wrong is a
-premise finding (the shared reference, § Premise findings).
+for its intent. An artifact applying a binding item literally to a case
+its author plainly did not consider is a finding, naming the item and
+the case. What else a binding item or a premise draws as a finding is in
+the shared reference's § Binding items and unrecorded choices and
+§ Premise findings.
 
 **Read scoping (binding):** read only the inputs this dispatch
 enumerates — the artifact, the binding-content pointer and, for the goal
@@ -104,6 +105,16 @@ table and the check's results go in your report's `## Worksheet` section
 own entry under `## Findings`.
 [[end]]
 
+[[when worksheet = pre-pass]]
+**Set census (beside your arithmetic):** for each set the plan adds a
+member to — a value of an enumeration, a case a dispatch or a table
+handles, an item of a list several places spell out — list every place
+in the repository's tracked text that enumerates that set, and that
+place's consumers. Search tracked files only (`git grep`), never the feature
+workspace. A place where the new member belongs that the plan's file
+census leaves out is a finding.
+[[end]]
+
 **Read-only discipline (binding):** you edit nothing — not the artifact, not
 the workspace (its `scratch/` aside), not the codebase. A seat that "helpfully" fixes what it finds
 poisons the review's measurements. Your only output is your report file,
@@ -144,10 +155,9 @@ instead.
 - Content a format makes binding — a plan task's required fields and
   acceptance, a spec's required sections — is never local detail: its
   absence is a finding.
-- Contradictions and infeasibility are findings at any locality.
-- A consequential choice the artifact takes for granted with no
-  decision recording it (the platform, the language, the form of the
-  deliverable) is a finding.
+- Contradictions and infeasibility are findings at any locality, and so
+  are the two the shared reference's § Binding items and unrecorded
+  choices names.
 
 **Report:** write to the report path your dispatch names — a
 `seat-<id>.md` file, `<id>` being your seat id:
@@ -155,9 +165,11 @@ instead.
 1. `## Verdict` — one line: your overall read of the artifact's fitness.
    Where your artifact kind is `spec`, a second line answers the shared
    reference's overturn question (§ The arrangement questions) as your
-   forecast for this artifact, in one of two forms:
-   `Overturn after code: plausible — <which mechanism, why>` or
-   `Overturn after code: not plausible`.
+   forecast for this artifact, in exactly one of two forms:
+   `Overturn after code: reasonably expected — <which mechanism, why>` or
+   `Overturn after code: not reasonably expected`. Where your no rests on
+   neither of that section's two usual cases, its reason goes on the
+   line after.
 2. `## Goal check` — your one-sentence restatement of the goal, then what
    comparing it with the Intent found, in a line or two.
 3. `## Index` — one line per finding, in the order of `## Findings`:
@@ -177,8 +189,8 @@ instead.
 [[end]]
 [[when worksheet = pre-pass]]
 4. `## Worksheet` — the worked content your mandate asks for: the
-   pre-pass's liveness, ownership-closure and overlap arithmetic.
-   Tables, lists and sub-headings are fine here; a finding the work
+   pre-pass's liveness, ownership-closure and overlap arithmetic, and
+   its set census. Tables, lists and sub-headings are fine here; a finding the work
    turns up is written as an entry under `## Findings`, not left here.
 [[end]]
 5. `## Findings` — one entry per finding, opened by the header line

@@ -6,11 +6,11 @@ The folded preset **folds the plan into the spec**: one combined spec+plan docum
 
 **The round loop** gains three lines:
 
-- **Round 0 always runs** — the fold requires a code baseline — and its pre-pass **also covers the plan half**: ownership closure and the overlap arithmetic over the task list.
+- **Round 0 always runs** — the fold requires a code baseline — and its pre-pass **also covers the plan half**: ownership closure and the overlap arithmetic over the task list, and the set census of the plan phase's pre-pass (`skills/redteaming/seat-prompt.md`, its pre-pass passage), its inputs widened to the repository's tracked text for it.
 - **After every fix wave**, the terminal pass's included, you re-run the liveness, ownership and overlap arithmetic yourself, booking no dispatch, and record it in that record's `Verifier block`, or under its `Fix list` where it has none.
 - **The round-1 seat carries the right-sizing lens** alongside general.
 
-**Marks are plan content.** A task of the combined document may carry `Review: branch only` (its form: `crucible:writing-plans` § Per-task structure — four fields, all required); the campaign's seats grade each mark as plan content, by their mandate reminder (`skills/redteaming/seat-prompt.slots.md`), and the close readout lists the marked tasks (`crucible:redteaming` § Round readout).
+**Marks are plan content.** A task of the combined document may carry `Review: branch only` (its form: `crucible:writing-plans` § Per-task structure — four fields, all required); the campaign's seats grade each mark as plan content, by their mandate reminder (`skills/redteaming/seat-prompt.slots.md`), and the close readout lists the marked tasks (`crucible:redteaming` § Round readout). A mark is added only in a wave a later round's seats read — never in the wave of the round the campaign stops at, the cap round's, or the terminal pass's follow-up wave; a question proposing one there is answered or carried (`crucible:redteaming` § Merge and finding hygiene).
 
 **Deferrals are kept per round.** With no plan time to assemble them at, every fix wave that lands a `Deferred to implementation:` marker — round 0's and the terminal pass's included — also appends that marker's routing-table rows, one per owning task, the source cell naming the marker's site in the combined document, owner assigned. At the campaign close, verify **every marker has its rows and no row is owner-pending** before seeding.
 
@@ -18,4 +18,4 @@ The folded preset **folds the plan into the spec**: one combined spec+plan docum
 
 **Unfolding.** Where the campaign or execution shows the work needs a separate plan — your judgment — undo the fold as an **operator decision ask on the supersede path** (`crucible:redteaming` § Flip paths — load-bearing content mid-campaign or mid-execution): a spec-only successor and a separate plan, each with its standard phase, the ledger carrying the predecessor link. Both go into the existing feature folder as `design.md` and `plan.md`, beside `folded.md`, which stays as the forensic record (`formats.md` § Feature folder). There is no dedicated ejection protocol.
 
-**Exit and execution.** The close hands off **directly to SDD** and owns the ledger seeding, open premise asks included (`crucible:redteaming` § Exit). SDD and the branch review run with standard caps and inputs; the plan pointer names the combined document, so seats read the whole of it, as designed.
+**Exit and execution.** The close hands off **directly to SDD** and owns the ledger seeding, open premise asks and what earlier phases left open included (`crucible:redteaming` § Exit). SDD and the branch review run with standard caps and inputs; the plan pointer names the combined document, so seats read the whole of it, as designed.

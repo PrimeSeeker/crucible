@@ -25,7 +25,8 @@ editing files, running commands and loading a skill; do not re-run the
 top-level router. The plugin file this template names below,
 `skills/subagent-driven-development/references/premise-and-questions.md`
 (the shared reference), is under the plugin root your dispatch names
-(absolute); read its § The arrangement questions.
+(absolute); read its § Premise findings, § Binding items and unrecorded
+choices and § The arrangement questions.
 
 **Workspace:** work from the worktree path your dispatch names (absolute).
 Never read, edit or run git against any other checkout of this repository —
@@ -38,13 +39,17 @@ read; delegation is not part of the assignment.
 recorded in them (`round-*/record.md` in the phase directory your
 dispatch names); and, for each decision ask in those readouts, the seat
 findings behind it — the per-seat ids in the `origins:` element of each
-merged entry the ask turns on, read in that round's `seat-<id>.md` files.
-No other seat finding is an input, and none feeds the re-read.
+merged entry the ask turns on, read in that round's `seat-<id>.md` files;
+and, for each question a round record's `## Question dispositions`
+carries to readout, that question in its seat report's `## Questions`.
+No other seat finding or question is an input, and none feeds the
+re-read.
 
 [[when phase = spec]]
 For the stop check (mandate 2), also every numbered round's seat
 reports — the `seat-<id>.md` files of `round-01` onward — their
-`## Verdict` sections only.
+`## Verdict` sections only; and for the decision-record check (mandate
+2), the brainstorm decision record your dispatch names.
 [[end]]
 
 Nothing else is an input.
@@ -109,7 +114,10 @@ binds them:
 - Content a format makes binding — a plan task's required fields and
   acceptance, a spec's required sections — is never local detail: its
   absence is a finding.
-- Contradictions and infeasibility are findings at any locality.
+- Contradictions and infeasibility are findings at any locality, and so
+  are the two the shared reference's § Binding items and unrecorded
+  choices names; its § Premise findings says when a finding is a premise
+  finding.
 
 **Mandate 2 — decision-ask fidelity (unconditional, regardless of mandate
 1's outcome).** Every decision ask in the readouts states the trade-off the
@@ -123,27 +131,45 @@ entry, and read its seat findings as if the trace had named it. Those are
 your corrections; another record mismatch you notice goes in `## Notes`,
 not under corrections.
 
+Two more checks belong to mandate 2. Each question a round record's
+`## Question dispositions` carries to readout is quoted verbatim, from
+its seat report, in that round's readout; one paraphrased or missing is
+a mismatch. A call the operator left to the controller is entered as
+delegated (`accepted — delegated to the controller`); one your inputs
+state as the operator's ruling or choice is a mismatch.
+
 [[when phase = spec]]
 **The stop check, part of mandate 2.** The campaign stopped where a
 round's readout found overturning a major mechanism after code no
-longer plausible (the shared reference's § The arrangement questions).
-Check that basis against every forecast line in the numbered rounds'
-`## Verdict` sections: each `Overturn after code: plausible` line must
-be answered, in its round's readout or a later one, by the mechanism it
-names. One left unanswered is a mismatch, even where every seat of the
-stop round forecast `not plausible`. So is a stop round whose fix list
+longer reasonably expected (the shared reference's § The arrangement
+questions). Check that basis against every forecast line in the
+numbered rounds' `## Verdict` sections: each
+`Overturn after code: reasonably expected` line must be answered, in its
+round's readout or a later one, by the mechanism it names. One left
+unanswered is a mismatch, even where every seat of the stop round
+forecast `not reasonably expected`. So is a stop round whose fix list
 adds, removes or re-shapes a major mechanism: no seat has read the
-result. Each mismatch is a correction, flagged `CONCLUSION-CHANGING`
-where it would have changed the stop. A campaign closed on the
-operator's ruling of the cap ask has no stop to check.
+result. So is a stop called while a premise ask was pending whose
+upholding would re-shape a major mechanism: such an ask holds the stop
+until the operator rules. Each mismatch is a correction, flagged
+`CONCLUSION-CHANGING` where it would have changed the stop. A campaign
+closed on the operator's ruling of the cap ask has no stop to check.
+
+**The decision-record check, part of mandate 2.** For each `accepted`
+or `firm` entry of the brainstorm decision record whose decision the
+artifact states — process entries, such as the route and the campaign
+shape, aside — the decision still holds in the artifact, or a later
+entry, or a round readout naming the change and what it withdraws,
+records its change. An approval withdrawn with no such record is a
+correction flagged `CONCLUSION-CHANGING`.
 [[end]]
 
 **Ordering (binding):** perform and **record** your mandate-1 re-read
 **before you open any exhaust input** — the round records, the readouts,
-the seat findings and the seats' verdicts are all exhaust. Write the
-artifact verdict section first, then open them for mandate 2. Reading
-the records' account of the artifact
-before reading the artifact is how a confirming read becomes a re-derivation
+the seat findings and questions, the seats' verdicts and the brainstorm
+decision record are all exhaust. Write the artifact verdict section
+first, then open them for mandate 2. Reading the records' account of
+the artifact before reading the artifact is how a confirming read becomes a re-derivation
 of someone else's conclusion.
 
 Report the outcome as **`Record corrections: <N>`**, each correction stated
@@ -209,7 +235,8 @@ Write this exact structure, short by shape: a check that came back clean is
 attested in one line, never narrated.
 
 1. `## Artifact verdict` — clean, or the findings, each opened by the seat
-   format's header line `FINDING <seat-id>-<n> [BLOCKER|MAJOR|MINOR]` —
+   format's header line `FINDING <seat-id>-<n> [BLOCKER|MAJOR|MINOR]`, a
+   premise finding's carrying the label `premise` after the severity —
    `<seat-id>` is your pass id, named above, and `<n>` counts your
    findings from 1 — then the substance and the evidence; seat-report
    hygiene applies: staked severity, evidence or `UNVERIFIED`.
@@ -217,9 +244,9 @@ attested in one line, never narrated.
    correction (record text → true state → evidence), flagged
    `CONCLUSION-CHANGING` or not; `Record corrections: 0`, with one line
    naming the decision asks checked and, in a spec campaign, the stop
-   round checked, is the clean outcome. Close with a directional-bias
-   line: either "corrections share no direction" or the direction they
-   share, stated as an observation — and raised as a decision ask only
+   round and the decision-record entries checked, is the clean outcome.
+   Close with a directional-bias line: either "corrections share no
+   direction" or the direction they share, stated as an observation — and raised as a decision ask only
    where it meets the escalation threshold above.
 3. `## Notes` — record mismatches outside mandate 2, and anything else
    material to the close decision; else `none`.
