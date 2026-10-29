@@ -1,4 +1,4 @@
-# Review seats return reports as text: check the fix took
+# Review seats return reports as text: the fix has not taken
 
 ## Observation
 
@@ -17,18 +17,38 @@
   workspace.
 - In a later run of five tasks, two of the five task reviewers wrote
   no file on their first return: one said its tools could not write the
-  folder, the other skipped the write and wrote it when resumed. The
-  scoped re-review and both branch-review passes wrote theirs.
-- The re-review and verifier templates now say the report file is
+  folder, the other skipped the write and wrote it when resumed.
+- Since then the re-review and verifier templates say the report file is
   required even where the host advises returning text, and every review
   and seat template gives the scratch path from the checkout's root
-  (`.crucible/<feature-slug>/scratch/…`). Whether that changes what seats
-  do is unmeasured.
+  (`.crucible/<feature-slug>/scratch/…`).
+- On the two runs after that change, the misses persisted in the blind
+  verifier and the scoped re-reviewer, and in no other seat:
+  - In the first, read from its session transcripts, both blind
+    verifiers wrote no file on their first return and wrote it when
+    resumed once. Two scoped re-reviewers, one in a task's fix wave and
+    one in a branch-review fix wave, reported the write barred ("my
+    instructions bar report files") and returned the report as text,
+    which the controller saved under its mark. Panel seats, task
+    reviewers, the branch-review passes and the terminal passes wrote
+    theirs.
+  - In the second, read from its workspace records, two of the three
+    spec-campaign blind verifiers wrote no file on their first return and
+    wrote it when resumed once. The plan phase's verifier, every panel
+    seat and pre-pass, every terminal-pass read, seven implementers and
+    seven task reviewers wrote theirs on the first return. The
+    controller's dispatch constraints added "Write your report file
+    before replying" from the second spec round, under which one verifier
+    still missed, and "Use your Write tool to write…" from the plan
+    phase, under which none did; that is one dispatch under the second
+    wording, so it shows no effect yet.
 
 ## Follow-up
 
-On the first subagent-driven runs after the release that carries the
-change, count the re-review and verifier dispatches that wrote no report
-file or wrote scratch files outside the workspace. If the misses persist,
-consider carrying the scratch directory as an absolute path in the slot
-cards.
+- Have the verifier's and the re-reviewer's cards name the host's
+  file-write tool for the report, through the host map, since the one
+  verifier dispatched under that wording wrote on its first return;
+  count report-file misses, and scratch files written outside the
+  workspace, again on the runs after.
+- If the misses persist, carry the scratch directory, and with it the
+  report path, as an absolute path in the slot cards.
