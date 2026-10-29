@@ -217,7 +217,7 @@ The Children list, in order:
   choice. Takes up `docs/backlog/campaign-early-stop-investigation.md`,
   the downshift follow-up of `lane-entry-and-downshift.md` and the
   per-task-review follow-up of `review-catch-and-implementers.md`.
-  Waits on `seat-voice`.
+  Waits on `seat-voice` — landed
 
 Each child's own Acceptance carries the checks. A child taking up a
 backlog item resolves it or trims it to what stays open, and its spec
