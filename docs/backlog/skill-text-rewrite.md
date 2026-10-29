@@ -8,10 +8,14 @@
   going to decision records; siblings at one grain. `AGENTS.md`'s Where
   text goes rule names their homes in crucible. Existing text has not been
   brought into line.
+- **Size as of `dd6897d`.** The twelve skills hold 62,069 words
+  (`tests/prose-budget.txt`): subagent-driven-development 18,724,
+  redteaming 17,871, brainstorming 5,994, requesting-code-review 5,581,
+  the other eight 13,899 together.
 - **Placement is worth about 11%.** A detail-level audit of all shipped
-  skill prose (three readers, read-only) judged about 5,500 of 48,700
-  words wrong-level or restated: redteaming ~12%, SDD ~12%, the other
-  skills ~10%. Restatement is the largest category, mostly seat templates
+  skill prose (three readers, read-only), when it came to 48,700 words,
+  judged about 5,500 of them wrong-level or restated: redteaming ~12%,
+  SDD ~12%, the other skills ~10%. Restatement is the largest category, mostly seat templates
   copying shared rules (the deleted-test list, build history, the comment
   rule, diff-as-files, read scoping, the workspace and scratch rules); the
   copies have started to drift.
@@ -28,8 +32,8 @@
   the terminal-pass template carries the controller's escalation routing.
 - **Size follows mechanisms.** The three execution and review skills
   (redteaming, SDD, requesting-code-review) grew from 16.3k words to 41.2k
-  over two months: records and evidence machinery about 12k, two-host
-  dispatch about 4.8k, cost-diet and cost-levers about 4.7k, review fix
+  over two months (42.2k as of `dd6897d`): records and evidence
+  machinery about 12k, two-host dispatch about 4.8k, cost-diet and cost-levers about 4.7k, review fix
   waves about 2.5k net. Later rewrites cut 9.8k, mostly by deleting
   mechanisms, not by rewording. Placement alone will not halve the text.
 - **Resident cost.** A measurement on one project's very large features
@@ -47,8 +51,35 @@
   thirteen statements in eleven files, about 90 to 110 words each, as
   the umbrella spec required; a one-line clause with the finding rule
   stated once would save roughly 600 to 700 words.
-- **A minor defect the audit found, unfixed:** the re-review template's
-  comment rule is a fragment of the implementer's and task reviewer's.
+- **Design-level findings of the umbrella audit.** An audit of the
+  hypothesis-specs umbrella's three features (2026-10-29), by five
+  readers blind to the review records and two tracing each finding back
+  through them, found design-level problems that the effort's reviews had
+  mostly seen and deferred to this item, which no commit of the effort
+  updated. Its correctness findings went to a feature of their own
+  (audit-corrections, 2026-10-30); these were left here:
+  - growth (the size figures above);
+  - separability of review before code and plan form: the route presets
+    treat them as separate choices, while a feature's spec is always
+    campaigned and a note never is;
+  - signal and vocabulary sprawl: the labels, statuses and marks a
+    reader must know;
+  - the check on a check: each seat forecasts the overturn answer, the
+    round readout answers the forecasts, and the terminal pass checks
+    the stop against both;
+  - the binding clause restated at many sites (the umbrellas bullet
+    above);
+  - the containment test's incident rules: exclusions in
+    `skills/redteaming/references/flip-paths.md` § The containment test,
+    each added after one incident;
+  - the request block copied into each umbrella child's spec.
+- **Two findings that predate the effort**, found by the same audit:
+  the folded lane gives "the fold requires a code baseline" as the reason
+  round 0 always runs, a claim the audit flagged; and the very-small
+  lane's upgrade hatch moves the work to the standard route without
+  naming the skill that runs next.
+- **A minor defect the placement audit found, unfixed:** the re-review
+  template's comment rule is a fragment of the implementer's and task reviewer's.
   Copying the whole rule in would add one more restatement; the shared
   seat reference is its fix.
 - **"Load-bearing" means two things in SDD:** the spec's `[LOAD-BEARING]`
@@ -69,5 +100,13 @@
   lever, and each retirement is the operator's ruling. Part of it: restate
   the resident-cost re-open trigger above as resident tokens per route, or
   retire it.
+- Take the umbrella audit's design-level findings above as design
+  targets of the rewrite, and fix its two predating findings on the way.
+- Consider moving the right-sizing lens, with its over-subtraction guard
+  and re-seat trigger, from the spec campaign to the branch review.
+- Restructure how a tension a review finds gets closed, now by adding a
+  distinction. For a fix-list clause asking whether a removing or
+  merging resolution exists, the maintainer agreed it looked weak and
+  deferred the restructuring ("probably later").
 - Fix the minor defect above on the way, and give the breaker's sense of
   "load-bearing" a word of its own.

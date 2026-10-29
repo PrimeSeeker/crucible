@@ -26,12 +26,17 @@
   structural gap (a rule triggered at task or round boundaries that two
   phases never reach). An implementer and the branch review found it,
   and one fix wave closed it.
-- Since 2026-10-29 a spec campaign stops once overturning a major
-  mechanism after code is no longer plausible, each seat forecasting the
-  answer and the terminal pass checking the stop against the forecasts
-  (`docs/decisions/spec-campaign.md`). The trigger is a hypothesis with
-  no demonstrated accuracy: three stops under it, all on prose changes to
-  crucible's skills, with no counterfactual. The cap of four stays.
+- Since 2026-10-29 a spec campaign stops on the overturn question's
+  answer, each seat forecasting it and the terminal pass checking the
+  stop against the forecasts; the threshold's wording is in
+  `docs/decisions/spec-campaign.md` § Stop rule and cap. The trigger is a
+  hypothesis with no demonstrated accuracy: three stops under it, all on
+  prose changes to crucible's skills, with no counterfactual. The cap of
+  four stays.
+- Nothing records, after code, whether a stopped campaign's mechanisms
+  were overturned: the forecasts are checked at the stop, never against
+  what implementation and the branch review later changed, so the
+  trigger's accuracy cannot be read from the records.
 
 ## Follow-up
 
@@ -41,6 +46,10 @@ Research questions:
   execution-time review? Compare the two on session transcripts already
   on disk, the campaigns stopped by the overturn question included.
 - Fix altitude and deferral as drift reducers.
+- What an outcome record for stopped campaigns would take: at the
+  feature's finish, whether any major mechanism the stopped campaign
+  left standing was overturned after code, so the trigger's accuracy
+  can be measured.
 - What would settle the cap: one extra fresh-panel round past a valid
   stop on a sample of campaigns, and a definition of "routine" at-cap
   escalation before escalations are counted again.
