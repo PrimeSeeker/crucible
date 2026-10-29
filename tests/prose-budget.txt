@@ -5,7 +5,7 @@ dispatching-parallel-agents 920
 finishing-a-development-branch 1726
 receiving-review 515
 redteaming 17847
-requesting-code-review 4903
+requesting-code-review 5581
 subagent-driven-development 18710
 systematic-debugging 3422
 using-crucible 2034

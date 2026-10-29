@@ -22,7 +22,7 @@ top-level router. The plugin files this template names below,
 `skills/subagent-driven-development/references/premise-and-questions.md`
 (the shared reference), are under the plugin root your dispatch names
 (absolute); read the shared reference's § Premise findings, § The goal
-check, § Questions and § Location.
+check, § Questions, § Location and § The arrangement questions.
 
 ## Where You Work
 
@@ -96,29 +96,30 @@ rulings record where the work left it. No per-task review ran: yours is
 the first review of this diff. Drift from the note's binding parts is an
 ordinary finding at its staked severity, not DRIFT — on this lane the
 fix wave handles it. Add a `### Lane Fit` section after Ledger Triage
-with two verdicts, each with one line of reasoning: WITHIN SHAPE or
-EXCEEDS SHAPE — whether the change stays within the lane's qualifying
-shape (no new mechanism, no cross-subsystem blast radius, no change to
-[LOAD-BEARING] content); and GOAL MATCHES or GOAL DIFFERS — what your
-Goal Check found, a difference naming the premise finding or question
-it raised.
+with two verdicts, each with one line of reasoning: EXCEEDS SHAPE where,
+now that the change is coded, overturning a major mechanism of it is
+plausible (the shared reference's § The arrangement questions), one the
+note states included, and WITHIN SHAPE where it is not; and GOAL
+MATCHES or GOAL DIFFERS — what your Goal Check found, a difference
+naming the premise finding or question it raised.
 [[end]]
 
 ## Read Scoping
 
 Read only what this dispatch enumerates — the spec at that pinned
 revision, the umbrellas it names, the requirements source, the diff you
-build, the execution-trail items below and the plugin files Runtime
-names — plus the code in this worktree, which you may read beyond the
-diff wherever the branch's correctness depends on it. Out of scope:
+build, the execution-trail items below, the files its branch-review-only
+list names and the plugin files Runtime names — plus the code in this
+worktree, which you may read beyond the diff wherever the branch's
+correctness depends on it. Out of scope:
 `.crucible/<feature-slug>/campaigns/` — round records, seat reports, fix
 lists, readouts. Those are the exhaust of the spec campaign and plan
 phase; the branch is graded against the converged spec, not against the
 argument that produced it. Of `.crucible/<feature-slug>/sdd/`, only the
-paths the execution-trail items name — the ledger and the reports it
-points at — are yours to read, and of the ledger not its `## Questions`
-section, which holds earlier passes' questions, never a later pass's
-input. Scope every search you run to this worktree's code and the files
+paths the execution-trail items and the branch-review-only list name —
+the ledger and the reports they point at — are yours to read, and of
+the ledger not its `## Questions` section, which holds earlier passes'
+questions, never a later pass's input. Scope every search you run to this worktree's code and the files
 named here.
 
 ## What Was Built, Against What
@@ -154,11 +155,45 @@ Triage every other deferred item: PROMOTE (it compounds across tasks or is
 worse than its label — restake the severity), FIX-IN-WAVE (trivial,
 ride along), or LEAVE-PARKED (with one line of reasoning). A routed
 item reaching you still open means its owning task made no recorded
-call, or made one its reviewer left contested — say which, and judge
-the item on the final code rather than on the row's wording. This
-sweep is the last link of these items' closure chain; nothing after
+call, or made one its task review left contested — say which, and judge
+the item on the final code rather than on the row's wording. A task on
+your branch-review-only list had no task review: its routed items are
+judged in its deviation audit (below), not here. This sweep is the
+last link of these items' closure chain; nothing after
 it looks at them again. Check each ruling against the code it covers:
 a ruling the final code contradicts is a finding.
+
+## Tasks With No Task Review
+
+Your dispatch's branch-review-only list names the tasks whose first
+review is yours, each with its commit range, its implementer's report,
+the brainstorm decision record where the task writes a decision record,
+and the amendment commits its range holds; or "none". For each task
+named, read its plan section and its report, the report's claims
+unverified until its range bears them out, and make over that range the
+four judgments a task review makes:
+
+- **intent** — every requirement of the task implemented, against the
+  plan's intent: nothing missing, extra or misunderstood;
+- **scope** — every hunk attributable to the task or its Decision Log;
+  a weakened test fails it, as do a deleted test or case whose
+  justification (the list under Testing, below) the Decision Log does
+  not name or the code contradicts, and a change to the plan, a folded
+  document or the spec other than a named amendment commit;
+- **deviation audit** — each Decision Log entry justified, no deviation
+  undisclosed, the test-first evidence real (RED before GREEN, or the
+  exception logged with its reason), and each routed item's entry a
+  call the code bears out, not a restated row;
+- **quality** — defects, as What to Check lists them, a file the task
+  grew past one clear responsibility, the adequacy of its new tests and
+  noise in its reported test output included.
+
+Where a decision record is named, also check each position's stated
+basis against its entry's proposer and status there. The task's
+concerns reach you as leads among the deferred items. A failed
+judgment is an entry under Issues at the severity you stake, naming the
+task and the judgment: the controller opens a fix wave on a failed
+intent, scope or deviation audit whatever its severity.
 
 ## Git Range to Review
 
@@ -263,9 +298,9 @@ implementation, say so.
 
 Write your report to the report file your dispatch names, in exactly
 the structure below. Begin directly with the Goal Check: every line is
-the goal check, a finding with its location, a question, a triage
-verdict, or a check you ran — no preamble, no process narration. Then
-reply with only the merge verdict and the report file's path. If the
+the goal check, a finding with its location, a question, a task line,
+a triage verdict, or a check you ran — no preamble, no process
+narration. Then reply with only the merge verdict and the report file's path. If the
 host refuses the write, say so and put the full report in that reply
 instead. In standalone mode the report is your final message.
 
@@ -297,6 +332,13 @@ For each issue (a premise finding's entry opens with its label,
 
 The items the shared reference's § Questions describes, one per line,
 numbered `Q1`, `Q2`, …; `none` with no items.
+
+### Task Lines
+
+One line per task your branch-review-only list names:
+`Task <N>: intent PASS|FAIL, scope PASS|FAIL, deviation audit PASS|FAIL, quality PASS|FAIL, bases PASS|FAIL|n/a — <the issues they raised, by location, or none>`,
+`bases` judging a decision record's positions; `none` where the list
+names no task.
 
 ### Ledger Triage
 
