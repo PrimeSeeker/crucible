@@ -35,16 +35,18 @@ The advisory register — the shape of the solution, the sketch an implementer m
 
 Detail is deferred to implementers by default; the plan pins only what is binding or crosses tasks. Mark any non-binding detail `Deferred to implementation: <what>` on its own line or bullet — the marker is grep-able, which is what lets the routing table be assembled mechanically rather than remembered.
 
-Every marker earns its routing-table rows (§ Plan header), and each row is the item's closure chain for its owning task: the implementer records the call in their Decision Log, the task's reviewer checks it, and anything still open is swept at branch review.
+Every marker earns its routing-table rows (§ Plan header), and each row is the item's closure chain for its owning task: the implementer records the call in their Decision Log; the task's reviewer checks it, or, for a task marked `Review: branch only`, the controller's gate checks the entry is there and the branch reviewer judges it; anything still open is swept at branch review.
 
 Binding or cross-task content is never deferrable — a deferral covering it is a defect in the plan, and so is a deferral whose content sits in a section the routing table would hand to the wrong owner. "The detail is missing" is not a defect in a recorded deferral; it is the point of one.
 
 ## Per-task structure — four fields, all required
 
 - **Why** — one paragraph: the task's role in the design, and the rationale it inherits.
-- **Files** — touch list, matching this task's row in the ownership census. Enumerate the existing consumers of every symbol, file, or interface the task changes or deletes — mechanically, by search, not from memory — and account for each: it lands in this list or in the census, or the task is not yet scoped. A rule stated in more than one place — docs, prompts, templates — is such an interface, and every site that states it is a consumer. A task that writes or edits a decision record names the brainstorm decision record (`.crucible/<feature-slug>/brainstorm-decisions.md`) among its inputs, so its implementer attributes, and its task reviewer checks, each position's basis from its entry's proposer and status.
+- **Files** — touch list, matching this task's row in the ownership census. Enumerate the existing consumers of every symbol, file, or interface the task changes or deletes — mechanically, by search, not from memory — and account for each: it lands in this list or in the census, or the task is not yet scoped. A rule stated in more than one place — docs, prompts, templates — is such an interface, and every site that states it is a consumer. A task that writes or edits a decision record names the brainstorm decision record (`.crucible/<feature-slug>/brainstorm-decisions.md`) among its inputs, so its implementer attributes, and its task reviewer (for a marked task, the branch reviewer) checks, each position's basis from its entry's proposer and status.
 - **Contract** — interfaces consumed and produced: signatures, not bodies; plus the spec decisions this task enacts, named by their ids. Naming is the mechanism — a task never quotes the spec's binding text.
 - **Acceptance** — observable behaviors, plus test scenarios by category — happy / edge / error / integration — as scenario descriptions, not test code. The edge and error scenarios name the inputs the spec implies but never names (an empty file, a missing directory, a second run).
+
+**The review mark** is optional and not a field. A task that meets the mark's criterion (`skills/subagent-driven-development/references/premise-and-questions.md` § The arrangement questions) may carry, on its own line below the task's heading, `Review: branch only — <reason>`, the reason saying how the task meets it. Dispatched, a marked task takes the branch review as its first review, unless its report sends it to a task review after all (`crucible:subagent-driven-development` § The Task Loop). A task with no mark is reviewed. Marks are plan content, graded by the review that grades the plan; marking a task after that review has closed is the operator's call (`skills/redteaming/references/flip-paths.md` § The containment test).
 
 There is no per-task constraints field. Every seat reads the header's spec pointer, so a task's binding content is read from the spec at its pinned revision; a per-task restatement would be a second copy to keep true.
 
@@ -71,7 +73,7 @@ An absence or removal criterion ("X is gone") is a one-time check unless the pla
 
 ## Task sizing
 
-A task is the smallest unit that carries its own test cycle and is worth a fresh reviewer's gate — split where a reviewer could reject one task while approving its neighbor; fold setup, configuration, and scaffolding into the task whose deliverable needs them. (Calibration, advisory: a task's Why+Contract+Acceptance around a page; plans in the low-teens of tasks.)
+A task is the smallest unit that carries its own test cycle and its own review verdict — a fresh task reviewer's gate, or, for a marked task, the branch reviewer's judgments over its range — split where a reviewer could reject one task while approving its neighbor; fold setup, configuration, and scaffolding into the task whose deliverable needs them. (Calibration, advisory: a task's Why+Contract+Acceptance around a page; plans in the low-teens of tasks.)
 
 ## Self-review
 

@@ -6,7 +6,7 @@ You own both paths, in whichever skill context you are operating. What binds in 
 
 1. amend the spec **in place with an amendment marker** at the changed content;
 2. patch the plan to match — where spec and plan are separate documents, the same patch re-stamps the plan header's spec pointer to the amended revision; a folded document keeps its `Spec: this document` header;
-3. **point in-flight seats at the patch** — seats read the plan live, so later dispatches read it; an implementer resumed in an open task's fix wave is told to re-read its task section; and **each amendment commit is named** in the dispatch of every task-loop review, re-review and adjudication whose range holds it: any other change to the plan, a folded document or the spec in that range is a scope finding;
+3. **point in-flight seats at the patch** — seats read the plan live, so later dispatches read it; an implementer resumed in an open task's fix wave is told to re-read its task section; and **each amendment commit is named** in the dispatch of every task-loop review, re-review and adjudication whose range holds it, and, for a task completed branch review only, to the branch reviewer beside that task's range (`crucible:requesting-code-review`): any other change to the plan, a folded document or the spec in that range is a scope finding;
 4. continue — **no new spec campaign or plan phase**.
 
 A ruling that patches the plan mid-execution, an adjudicator's or yours, passes § The containment test like any change to binding content: a contained one is handled by steps 3 and 4, its commit named as an amendment commit is; any other goes to the operator as a decision ask.
@@ -20,6 +20,7 @@ From the spec campaign's close, every change to binding content, a ruling that p
 - a change to umbrella content, this feature's own entry included;
 - a change to a decision the spec or an umbrella records as the operator's firm preference;
 - a change after which the same work, unchanged, passes a verification gate or an acceptance check it failed;
+- marking `Review: branch only` a task that has not run, once the review grading the plan has closed: a downshift from the arrangement the operator confirmed;
 - a structural change, one that redefines a mechanism rather than correcting content inside one that stands: it takes a supersede.
 
 Any other change keeps the operator's decision ask, as does a plan conflict that is a design judgment.
@@ -34,9 +35,9 @@ What a premise finding is, and its label `premise`, is in `skills/subagent-drive
 
 **A mislabel.** A finding labelled `premise` that the reference above classes as ordinary — against a decision the operator only accepted from your proposal, say — is an ordinary finding: merge or route it as one, your reason for reading it so recorded with it.
 
-**The ask.** Every premise finding goes to the operator as an analyst-language decision ask with your recommendation, carrying the severity its seat staked for the operator's weighing — never a change you confirm, whatever § The containment test would find. It is an open decision ask, not an open BLOCKER or MAJOR: by itself it holds open no gate keyed on one — the stop trigger and the cap escalation, the branch review's end condition and its merge red flag, task completion — opens no fix wave and consumes no wave cap. The readouts carry it until it is ruled. While it is open, work goes on, except work that builds on the premise it challenges, which waits for the ruling.
+**The ask.** Every premise finding goes to the operator as an analyst-language decision ask with your recommendation, carrying the severity its seat staked for the operator's weighing — never a change you confirm, whatever § The containment test would find. It is an open decision ask, not an open BLOCKER or MAJOR: by itself it holds open no gate keyed on one — the cap escalation, the branch review's end condition and its merge red flag, task completion — opens no fix wave and consumes no wave cap. The readouts carry it until it is ruled. While it is open, work goes on, except work that builds on the premise it challenges, which waits for the ruling.
 
-**The ruling.** What the operator's ruling brings takes the route any change of its kind takes: in a spec campaign, the next fix list, where a change that re-shapes a mechanism makes its round structural; from that campaign's close, the paths above, the ruling standing as the operator's confirmation; in execution, a fix wave, counted against its cap like any.
+**The ruling.** What the operator's ruling brings takes the route any change of its kind takes: in a spec campaign, the next fix list, where a change that re-shapes a major mechanism makes overturning one after code plausible again, and its round no stop round (`crucible:redteaming` § Stop rule and terminal pass); from that campaign's close, the paths above, the ruling standing as the operator's confirmation; in execution, a fix wave, counted against its cap like any.
 
 **Precedence.** A finding that is both a premise finding and a binding item found wrong — a firm decision, a lane note's Intent — takes this section's route. Any other binding item found wrong keeps its own: in its spec's own campaign the fix list, from that campaign's close § The containment test, and from an implementer a BLOCKED report with a proposed correction.
 
