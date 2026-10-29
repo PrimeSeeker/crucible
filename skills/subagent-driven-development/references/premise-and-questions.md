@@ -1,7 +1,10 @@
 # Premise findings and questions
 
-What a seat may raise beyond an ordinary finding, and the form it takes.
-Your template names the sections that apply to you.
+What a seat may raise beyond an ordinary finding, and the form it takes;
+and the arrangement questions, which seats apply, as do the controllers
+that propose a feature's arrangement, stop a spec campaign, mark a
+plan's tasks or work a task inline. Your template or skill names
+the sections that apply to you.
 
 ## Premise findings
 
@@ -64,3 +67,41 @@ your template gives.
 Every finding carries its evidence and a location: `file:line`, or, for
 a premise finding, the passage of the spec, plan or request it
 contradicts.
+
+## The arrangement questions
+
+Each site that applies one of these says what its answer decides there.
+
+**The overturn question.** Once the work is coded, is overturning one of
+its major mechanisms plausible? A major mechanism is a part of the
+design other parts build on: a component, a rule others key on, a file
+role, a data flow, an interface between parts. Overturning one replaces
+or re-shapes it; an addition, or a correction that leaves its shape
+standing, does not count. Before code the answer is a forecast from the
+design and its records; after code it is read from the code as well.
+
+Before any review, the answer is no in two cases only:
+
+- the work has no major mechanism: it adds to, corrects or removes
+  within mechanisms that stay as they are;
+- its decisions are overdetermined.
+
+For an umbrella's campaign, the code is its children's: the question
+asks whether implementing the children could plausibly overturn a
+major mechanism the umbrella fixes, such as its split into children, an
+interface between them or a constraint they share.
+
+**Overdetermined.** Work, a whole design or a single task, is
+overdetermined when every decision in it is forced by what is already
+fixed (the codebase, binding items, decisions taken earlier) so firmly
+that no alternative survives them: a careful independent reader would
+make the same choices, so neither review before code nor a fresh
+reader's pass has one left to change.
+
+**The mark's criterion.** A plan task may take the branch review as its
+first review, with no task review of its own, where it is low in
+mechanism and nothing outside it depends on its details: it builds no
+major mechanism and leaves little of how it works for its implementer
+to decide, and later tasks, contracts and readers build on what it
+delivers, never on how it does it. The branch review runs only after
+every later task, too late for a detail something else builds on.
