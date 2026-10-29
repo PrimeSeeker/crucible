@@ -394,10 +394,12 @@ All lightly held. Basis tags follow `docs/decisions/decision-records.md`.
   named amendment commit), the deviation audit of its Decision Log,
   quality — and, for a task that writes a decision record, each
   position's basis against the brainstorm decision record; it rules on
-  the task's leads as now. The first full-scope pass reports a line per
-  such task naming the judgments made and what they raised; later passes
-  re-grade the whole branch as now. The controller refuses a first pass
-  missing a task's line, as it refuses a task review missing a verdict,
+  the task's leads as now. The first full-scope pass after a task
+  completes branch-review-only — the review's first pass, or the pass
+  resuming it after a revert-and-replan — reports a line for that task
+  naming the judgments made and what they raised; other passes re-grade
+  the whole branch as now. The controller refuses such a pass missing a
+  task's line, as it refuses a task review missing a verdict,
   and Finish's per-task record check reads that line in place of the
   review file. The wiring stays the task loop's: a failed intent, scope
   or deviation-audit judgment on such a task opens a wave whatever its
@@ -405,6 +407,10 @@ All lightly held. Basis tags follow `docs/decisions/decision-records.md`.
   Routed items still open reach it through the existing sweep, and drift
   reaches revert-and-replan through the existing path. Basis: judgment,
   accepted by the maintainer.
+
+  Amended 2026-10-29 (scoped amendment, plan phase): the per-task line
+  is owed by the first full-scope pass after each branch-review-only
+  completion, a redone task's included.
 
 - **D13. Downshifts.** One is the operator's to confirm: marking tasks
   that have not run `Review: branch only`, a plan patch put to the
@@ -522,8 +528,9 @@ All lightly held. Basis tags follow `docs/decisions/decision-records.md`.
   `skills/requesting-code-review/code-reviewer.md`, declared in
   `code-reviewer.slots.md` within the card's character budget
   (`tests/instrument_corpus.py`); `agents/` is regenerated.
-- **The per-task line** — in the first full-scope pass's report, one
-  line per branch-review-only task naming the judgments made and the
+- **The per-task line** — in the report of the first full-scope pass
+  after a task's branch-review-only completion (D12), one line per such
+  task naming the judgments made and the
   issues they raised; produced by the branch reviewer
   (`skills/requesting-code-review/code-reviewer.md`, its output format),
   read by the controller's missing-line check and by SDD § Finish's
