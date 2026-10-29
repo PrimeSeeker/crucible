@@ -162,9 +162,13 @@ firm. Each names the audit finding it answers.
   the umbrella's Intent is protected as the child's own is; the
   umbrella's § Edits keeps a child's edit to that Intent to corrections
   that leave what it asks for unchanged, and a ruled change to what it
-  asks lands as a binding change by § Edits; the rule telling a child's
-  seats what change to the umbrella is a finding (§ Children, and the
-  sites restating it) gains the umbrella's Intent. Every other decision, accepted from
+  asks lands as a binding change by § Edits; that a child's branch
+  changes what the umbrella's Intent asks is a finding, stated once in
+  the shared reference beside the premise line and in § Children, not
+  added to the restatements of the binding clause, which the skill-text
+  rewrite collapses.
+  Amended 2026-10-30 at the plan phase (contained, controller-confirmed):
+  one home instead of thirteen restatements. Every other decision, accepted from
   whoever proposed it, is lightly held, and a finding against it is
   ordinary; a binding item shown wrong (a Constraint, a mark) keeps the
   route it has now. The text separating findings by "who stands behind
