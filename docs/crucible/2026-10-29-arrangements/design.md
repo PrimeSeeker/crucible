@@ -178,7 +178,9 @@ tree cannot reproduce:
 **Non-goals.**
 
 - Skipping the plan after a campaign, implementing from the spec
-  lane-style: a new combination with no case on record; it is added to
+  lane-style: left out by the maintainer's ruling (2026-10-29); D2 now
+  produces its case, a settled change that needs several tasks, which
+  the backlog item names as its trigger. It is added to
   `docs/backlog/lane-entry-and-downshift.md`, beside that item's digest
   follow-up.
 - Retiring the folded preset: in steady use, about nineteen features
@@ -188,7 +190,7 @@ tree cannot reproduce:
 - New verdict tokens, ledger forms or file roles for the existing
   routes.
 - A change to the task reviewer's or branch reviewer's mandate beyond
-  the inputs D12 names.
+  what D4 and D12 state.
 - Expanding inline execution: the maintainer's ruling of 2026-10-27,
   "not extended for now"
   (`docs/crucible/2026-10-27-upstream-review/dispositions.md`).
@@ -212,7 +214,9 @@ All lightly held. Basis tags follow `docs/decisions/decision-records.md`.
   | very-small | none: a lane note | none: the note's change list | none | inline by default (D14) |
 
   Each choice is made where its information exists: the preset at step 4,
-  per-task review in the plan, execution per task. Unsupported, each for
+  per-task review in the plan, execution per task. Review's width — a
+  campaign's seats and rounds — stays where it is chosen today: the
+  campaign shape approved at the digest gate, and the stop rule (D6). Unsupported, each for
   the reason given: per-task review with no plan (no tasks); a plan phase
   without a separate plan; a campaign on a lane note (the umbrella's
   non-goal); a spec with no campaign (write a note); a note with a plan,
@@ -228,7 +232,12 @@ All lightly held. Basis tags follow `docs/decisions/decision-records.md`.
   arrangement questions' home, Interfaces). The question replaces both
   the small routes' shape test and the "design decision worth reviewing"
   split. Between the two campaign presets, folded fits a plan of one or
-  two tasks with no seam worth its own review; standard fits the rest.
+  two tasks with no seam worth its own review; standard fits the rest. A
+  folded feature stays a minor design, with no digest: its plan is small
+  enough that the decision record's list, presented inline at the digest
+  gate, steers it. An umbrella's review stays chosen by its content
+  (`skills/brainstorming/references/umbrellas.md` § Review), since it has
+  no code of its own to review after.
   Width is no test of risk, since the branch review reads the whole diff
   whatever its width, but it still shapes the arrangement where the work
   needs coordinating: a settled change one implementer can carry takes
@@ -330,8 +339,8 @@ All lightly held. Basis tags follow `docs/decisions/decision-records.md`.
   `skills/redteaming/references/folded-lane.md`), judged instead by
   whether the work turns out to need a separate plan; the panel
   calibration's "post-structural-stability rounds"
-  (`skills/redteaming/SKILL.md` § Panels), which become rounds after the
-  overturn question first answers no; and "any non-structural
+  (`skills/redteaming/SKILL.md` § Panels), which become rounds that read
+  a re-shaping wave's result (D6), 1–2 seats; and "any non-structural
   BLOCKER/MAJOR at the cap" (the same file, § Stop rule and terminal
   pass), which becomes any BLOCKER or MAJOR still open at the cap. The
   README's paraphrase of the trigger is corrected with them (D15).
@@ -384,7 +393,9 @@ All lightly held. Basis tags follow `docs/decisions/decision-records.md`.
 - **D13. Downshifts.** One is the operator's to confirm: marking tasks
   that have not run `Review: branch only`, a plan patch put to the
   operator as a decision ask, never a contained amendment of the
-  controller's. The campaign stop (D6) also lightens review, and stays
+  controller's: its home is the containment test's list of changes that
+  are never contained (`skills/redteaming/references/flip-paths.md`
+  § The containment test). The campaign stop (D6) also lightens review, and stays
   the controller's call under the stop rule, reported in the readout and
   checked by the terminal pass (D7). Otherwise the arrangement stays as
   confirmed at step 4. Basis: judgment, accepted by the maintainer.
@@ -399,7 +410,10 @@ All lightly held. Basis tags follow `docs/decisions/decision-records.md`.
   would crowd the controller's context. It replaces inline mode's "costs
   more than it protects" and the lane's "wide enough to crowd your
   context". Defaults are unchanged: subagents on the campaign presets,
-  inline on the lane. What a dispatched implementer buys is an
+  inline on the lane. The lane's branch-review fix waves stay the
+  controller's, as today, whatever the change's width: a residual
+  accepted, since a lane change is one implementer's worth (D2) and its
+  waves are smaller. What a dispatched implementer buys is an
   independent read of the spec before code, worth more as review before
   code shrinks, and the controller's context. Basis: judgment, accepted
   by the maintainer ("OK, I guess").
@@ -407,10 +421,13 @@ All lightly held. Basis tags follow `docs/decisions/decision-records.md`.
 - **D15. Records and backlog.** The decision records `routes.md`,
   `spec-campaign.md`, `task-loop.md`, `branch-review.md` and `plans.md`
   take these positions with their bases; other records and the README
-  are corrected where they state what changed.
+  are corrected where they state what changed, `umbrellas.md`'s
+  rationale for review by content among them (it cites the retired
+  "worth reviewing" line).
   `docs/backlog/review-catch-and-implementers.md` is deleted;
   `docs/backlog/lane-entry-and-downshift.md` keeps the digest follow-up,
-  drops the downshift and caps sentence, and gains the plan-skip path; `docs/backlog/campaign-early-stop-investigation.md`
+  drops the downshift and caps sentence, and gains the plan-skip path
+  with its trigger (D2's settled multi-task changes); `docs/backlog/campaign-early-stop-investigation.md`
   keeps three research questions — whether a multi-round campaign is
   net-positive, fix altitude and deferral as drift reducers, what would
   settle the cap — and drops the trigger question (adopted) and the
@@ -443,14 +460,20 @@ All lightly held. Basis tags follow `docs/decisions/decision-records.md`.
   for an umbrella's campaign (after its children's code), what
   "overdetermined" means, and the mark's criterion — defined once, in
   one new section of the shared reference
-  `skills/subagent-driven-development/references/premise-and-questions.md`.
+  `skills/subagent-driven-development/references/premise-and-questions.md`,
+  whose opening scope sentence widens to the controllers that apply it.
   The section lists the seat template and the branch reviewer's template
-  give for that file each gain it, and the terminal pass's inputs gain
-  it. Consumed by brainstorming's step-4 subsection, the stop rule
+  give for that file each gain it; the terminal pass reaches it through
+  a plugin-root slot added to its card
+  (`skills/redteaming/terminal-pass-prompt.slots.md`) and through
+  § Dispatch composition's grant of the shared reference
+  (`skills/redteaming/SKILL.md`), which extends to instrument
+  `terminal-pass`. Consumed by brainstorming's step-4 subsection, the stop rule
   (`skills/redteaming/SKILL.md`), the seat template's forecast line, the
   terminal pass's stop check, Lane Fit
   (`skills/requesting-code-review/code-reviewer.md`), the lane
-  reference, writing-plans' mark, and the seats grading a plan's marks.
+  reference, SDD § Inline mode, writing-plans' mark, and the seats
+  grading a plan's marks.
 - **The seat's forecast line** — produced by `skills/redteaming/seat-prompt.md`
   in seats whose artifact kind is `spec` (a folded document's included);
   consumed by the controller's stop call and the terminal pass, whose
@@ -495,8 +518,8 @@ Deferred to implementation: how the new slot fits the card's character budget �
   `skills/`, `README.md` and `docs/decisions/routes.md`, its Changes
   section aside. One-time: a whitespace-normalized search, so a phrase wrapped
   across lines is found, for "no new mechanism", "blast radius across
-  subsystems", "cross-subsystem blast radius" and "worth reviewing before
-  code" over those paths, quoted, run before (hits) and after (none in
+  subsystems", "cross-subsystem blast radius" and "worth reviewing" over
+  those paths and `docs/decisions/umbrellas.md`, quoted, run before (hits) and after (none in
   that sense).
 - **A2.** D1's table and unsupported list, the overturn question's
   definition, "overdetermined" and the mark's criterion each have one
@@ -529,6 +552,10 @@ Deferred to implementation: how the new slot fits the card's character budget �
 - **A9.** The suite passes, its prose budget included. Standing.
 - **A10.** The landing states the net word change to the skills and what
   was removed (umbrella U5). Why neither test kind: a report.
+- **A11.** `docs/decisions/routes.md` states the origin question's
+  answer (D5) with its evidence and limits, closing the umbrella's G1
+  with `seat-voice`'s goal check. Why neither test kind: prose, judged
+  by review.
 
 ## Mechanism sketches
 
