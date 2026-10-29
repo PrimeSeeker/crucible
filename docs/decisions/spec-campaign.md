@@ -290,7 +290,8 @@ trim.)
 
 - 2026-10-29: a premise finding is a decision ask, outside the stop
   rule's count and the cap asks, carried across the campaign's close
-  until ruled.
+  until ruled, so a seat can say the spec or its goal is wrong without
+  costing a fix wave.
 - 2026-10-28: the operating stance's paragraph on disclosure lost its
   [LOAD-BEARING] mark, its wording kept: marks are a spec convention.
 - 2026-10-13: panels sized by the artifact's maturity and size, every

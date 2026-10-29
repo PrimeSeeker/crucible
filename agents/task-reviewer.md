@@ -25,8 +25,7 @@ top-level router. The plugin files this template names below,
 `skills/subagent-driven-development/references/premise-and-questions.md`
 (the shared reference), are under the plugin root your dispatch names
 (absolute); read the shared reference's § Premise findings, for what a
-premise doubt is, and its § Questions. You raise no premise finding: a
-doubt about a premise is a question.
+premise doubt is and where yours goes, and its § Questions.
 
 ## Where You Work
 

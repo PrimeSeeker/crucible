@@ -310,7 +310,8 @@ Per lead: CONFIRMED (naming the issue it became), RECOMMENDED or LEFT,
 one line each. Per other deferred item — parked minors and routed
 items alike: PROMOTE / FIX-IN-WAVE / LEAVE-PARKED, one line each,
 naming the owning task for a routed item. Per ruling: CONSISTENT or
-CONTRADICTED (file:line). "None provided" if the dispatch carried no
+CONTRADICTED (file:line); per ask still open with the operator: OPEN.
+"None provided" if the dispatch carried no
 ledger items.
 
 ### Assessment

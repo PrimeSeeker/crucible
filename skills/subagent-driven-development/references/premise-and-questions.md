@@ -1,4 +1,4 @@
-# Findings and questions
+# Premise findings and questions
 
 What a seat may raise beyond an ordinary finding, and the form it takes.
 Your template names the sections that apply to you.

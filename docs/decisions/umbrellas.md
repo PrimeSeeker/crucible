@@ -204,8 +204,8 @@ the marks, the resume step and the edit rules, and leaving the ask no
 exit; as a note the child removes by the clarification it may already
 make, it adds no kind of edit. A ruling the operator gives between the
 landing and that brainstorm is written nowhere until the child's
-decision record takes it in. (Basis: judgment, an agent's call during
-the seat-voice feature's execution, 2026-10-29.)
+decision record takes it in. (Basis: judgment, accepted by the
+maintainer, 2026-10-29.)
 
 ## Rejected
 
@@ -221,10 +221,14 @@ the seat-voice feature's execution, 2026-10-29.)
 
 ## Changes
 
-- 2026-10-29: the umbrella's Request, which a child's points to; a
+- 2026-10-29: the basis of the open premise ask's note at the landing
+  reads judgment, accepted by the maintainer, no longer an agent's
+  call: the maintainer accepted the call.
+- 2026-10-29: the umbrella's Request, which a child's points to, so a
+  child's seats check its Intent against the effort's request; a
   premise finding open at the landing goes to the operator with the
   landing ask and is noted in the first unmarked entry until that child
-  takes it up.
+  takes it up, since an umbrella has no ledger to carry it.
 - 2026-10-29: a clarification its spec states is named beside the mark
   as an edit a child makes to its entry, and the recursion paragraph's
   basis is split between the maintainer's preference and the spec's

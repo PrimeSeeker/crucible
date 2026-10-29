@@ -129,8 +129,8 @@ maintainer; external, for upstream's trigger.)
 
 ### The last line of defence
 
-The maintainer asked for the reviewers' mandate to be extended to the
-redteam seats' "to parity", as "the last line of defense" ("maybe only
+The maintainer asked for the reviewers' mandate to be extended "to
+parity" with the redteam seats', as "the last line of defense" ("maybe only
 full-branch, rather than task reviews?"), especially on the very-small
 lane, which has no independent review of its premises (2026-10-28). An
 escape analysis the same day found the branch review catching both

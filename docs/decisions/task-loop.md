@@ -39,8 +39,9 @@ status DONE_WITH_CONCERNS, or BLOCKED where it cannot go on without the
 ruling, and a fix it proposes outside its task, naming the site and the
 change, which it never makes. The controller handles none of these
 before review: the review of the work rules on every concern, the
-controller routes the rest, `Questions` items and out-of-task proposals
-as leads for the branch reviewer, a proposal touching binding content by
+controller routes the rest, `Questions` items as leads for the branch
+reviewer, an out-of-task proposal to the task that owns its site, as a
+lead for the branch reviewer or, where it touches binding content, by
 the flip paths, a premise finding to the operator
 (`crucible:subagent-driven-development § What a report voices`). Its
 dispatch carries a one-line reminder of the

@@ -193,7 +193,9 @@ directory and the argument value are interfaces that records and
 - 2026-10-29: a `Contained amendment:` item names the binding item and
   the change, its reason going to the merged entry's ruling and beside
   the item in the ledger, and the verifier verdicts it from the plan's
-  hunks; the plan phase's close seeds open premise asks into the ledger.
+  hunks, since a probe found the reason reaching the blind verifier and
+  the spec change outside its diff; the plan phase's close seeds open
+  premise asks into the ledger, so execution carries them until ruled.
 - 2026-10-28: the plan phase: a finding that shows the spec wrong takes
   the flip path, and a contained amendment lands in the phase's fix
   list, is named in its readout and is seeded into the ledger at close.

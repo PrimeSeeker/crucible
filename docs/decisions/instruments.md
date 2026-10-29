@@ -194,7 +194,8 @@ the maintainer accepted. (Basis: judgment, accepted by the maintainer.)
 The reference's first name matched Claude Code's subagent write filter,
 which would have refused every later seat's write to that shipped file,
 so it was renamed in the task that wrote it. (Basis: a single
-incident, 2026-10-29.)
+incident, 2026-10-29; judgment, accepted by the maintainer, for the
+rename.)
 
 ## Rejected
 
@@ -218,10 +219,13 @@ incident, 2026-10-29.)
 
 ## Changes
 
+- 2026-10-29: the shared reference's rename, an agent's call, gains the
+  basis judgment, accepted by the maintainer: the maintainer accepted it.
 - 2026-10-29: the redteam seat's card gains the plugin-root slot, and
   four seats read the shared reference
   `skills/subagent-driven-development/references/premise-and-questions.md`
-  through it.
+  through it, so the rules for premise findings, the goal check and
+  questions are stated once.
 - 2026-10-17: report files: every instrument writes its own, its template
   naming the write and a refused-write fallback; the controller confirms
   the file, resumes once and persists under a mark; names kept clear of

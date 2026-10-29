@@ -25,8 +25,9 @@ is listed above, apart from the reviewed version, because the rest of that
 release was not reviewed.
 
 A row's reason is one recorded when the file was dropped or one the
-maintainer confirmed. A drop with neither is listed as not carried,
-decision pending, with the backlog item that decides it.
+maintainer confirmed. A drop with neither is listed in a section "Not
+carried, decision pending", recreated when needed, with what is open and
+the backlog item that decides it.
 
 ## Renamed or folded
 
