@@ -188,7 +188,8 @@ firm. Each names the audit finding it answers.
   answered in its readout, follow the same rule.
 - **D5 — A pending premise ask can hold the stop.** (M8.) Where upholding
   a pending premise ask would re-shape a major mechanism, the campaign's
-  stop waits for its ruling. It still opens no fix wave, holds no cap and
+  stop waits for its ruling, its rounds continuing under the cap
+  meanwhile. It still opens no fix wave, holds no cap and
   joins neither cap ask: at the cap it is put to the operator alone, as
   now.
 
