@@ -353,14 +353,19 @@ firm. Each names the audit finding it answers.
   branch; no merge on a detached HEAD) or more work, and its reason. Where
   the recommendation is a pull request, the readout also asks finishing's
   question whether the feature folder's files go into it, saying that
-  leaving `open-items.md` out leaves it only in the branch's history. The
-  controller waits for the answer. An answer that asks for more work, or
+  leaving `open-items.md` out leaves it only in the branch's history;
+  where the answer picks a pull request the readout did not recommend,
+  finishing asks it, with the same warning. The controller waits for the
+  answer. An answer that asks for more work, or
   a ruling that opens a wave (D21), reopens the loop first, and Finish
   restarts at step 1. An answer that chooses an integration option runs,
   in order: the open-items file written as the answer left it and
-  committed, with the umbrella mark where the feature has one, and any
-  files the answer leaves out of a pull request removed; the suite on
-  that HEAD; workspace deletion; finishing carrying out the answer. An answer that discards the work skips the file and the suite. A
+  committed, with the umbrella mark where the feature has one; the suite
+  on that HEAD; workspace deletion; finishing carrying out the answer,
+  its own step removing any files the answer leaves out of a pull request
+  and re-running the suite, as now.
+  Amended 2026-10-30 after the spec campaign (contained, controller-confirmed): the removal moved back to finishing, after the suite; the files
+  question covers an unrecommended pull request. An answer that discards the work skips the file and the suite. A
   red suite is a BLOCKER, as now, and reopens the loop; a red run the
   adjudicator dismissed is shown to the operator, and an answer that
   accepts it lets finishing proceed past its Step 1. Where the answer
@@ -372,8 +377,8 @@ firm. Each names the audit finding it answers.
   and the earlier answer stands only where nothing new was left open;
   otherwise it asks again. Integration stays the operator's decision.
   Finishing asks only what the operator's answer left open, such as the
-  base branch where it is unconfirmed; it no longer lists `open-items.md`
-  among the files it offers to remove, the readout having asked. Where no close readout
+  base branch where it is unconfirmed, or the files question where the
+  readout did not ask it. Where no close readout
   precedes it (an umbrella's landing, a standalone review), finishing
   presents its options with a recommendation, which it does not do today;
   its rationalization rows that say "present the menu and wait" and "the
@@ -416,8 +421,10 @@ firm. Each names the audit finding it answers.
   `AGENTS.md` gains a line keeping the default (open items in the feature
   folder's file, turned into backlog items on the operator's word), beside
   its "follow-ups go to the backlog". No item is left only in the
-  workspace. Rationale: the operator's ruling at spec round 2, "Possibly
-  this by default, overridable by instructions?"; it replaces filing into
+  workspace. Rationale: the operator's tentative answer at spec round 2,
+  "Possibly this by default, overridable by instructions?", the final
+  form delegated to the controller ("your call") after the terminal
+  pass; it replaces filing into
   an unknown home, whose authorization and retention rules each round
   found holes in. It reverses two recorded positions: that no summary of
   a feature is committed (this is a list of open items, not a summary),
@@ -438,8 +445,9 @@ firm. Each names the audit finding it answers.
   landing, to an `open-items.md` in its folder, or where the project's
   instructions say open items go, committed on its branch; a later write
   to that file, the closing review's, appends to it.
-  A deferral never counts as done until it is in an open-items file or
-  named dropped.
+  A deferral never counts as done until it is in an open-items file, or
+  the home the project's instructions name, or named dropped.
+  Amended 2026-10-30 after the spec campaign (contained, controller-confirmed): the instructions' home added.
 - **D24 — An umbrella gets one closing review, a step after its last
   landing, not a gate.** A review reads the children's landings, from the
   umbrella's own to the one that completed it, unrelated landings on a
@@ -490,11 +498,16 @@ firm. Each names the audit finding it answers.
   review?" and accepted the detailed proposal; a child's review grades
   against its own plan and would mix siblings' defects into its wave
   cap. At spec round 1 the operator accepted making it a step rather
-  than a gate, which withdrew "before the umbrella is marked closed": a
-  gate needed a recursive owner, a committed record and a landing ask
-  per umbrella, where the step needs a landing ask only when findings are
-  kept. It can be skipped where a landing happens outside a session and
-  nobody acts on the readout. A seat on the other host is the operator's
+  than a gate, which withdrew "before the umbrella is marked closed". The
+  ask overstated the gate's extra cost: the step has since gained the
+  recursive completion rule and the committed findings file too, so a
+  gate would add only a landing ask when the review finds nothing and a
+  resume check, against a step that can be skipped where a landing
+  happens outside a session and nobody acts on the readout, a session
+  resuming the effort being pointed to it. Put back on that trade-off
+  after the campaign, the operator delegated the choice to the
+  controller, who kept the step.
+  Amended 2026-10-30 after the spec campaign (contained, controller-confirmed): the rationale corrected. A seat on the other host is the operator's
   own instruction where it applies; the skills compose no such seat
   (`docs/backlog/second-runtime-seat.md`).
 
@@ -614,8 +627,8 @@ census is the authoritative list.
   and leads, the loop); `skills/subagent-driven-development/SKILL.md`
   § Setup and § Finish; `skills/finishing-a-development-branch/SKILL.md`
   (Step 1 on a dismissed red run, Step 4's menu, its rationalization
-  rows, and its pull-request records ask, which no longer lists
-  `open-items.md`); `AGENTS.md` (the controller's no-local-context check
+  rows, and its pull-request records ask, which warns that leaving
+  `open-items.md` out leaves it only in the branch's history); `AGENTS.md` (the controller's no-local-context check
   on the open-items file, and the line keeping the default);
   `skills/redteaming/references/flip-paths.md` § Premise findings (the
   ruling's route, carrying an open ask); `very-small-lane.md` step 4, its
