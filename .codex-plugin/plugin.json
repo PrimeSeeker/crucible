@@ -1,6 +1,6 @@
 {
   "name": "crucible",
-  "version": "0.6.0",
+  "version": "0.7.0",
   "description": "Process skills for autonomous agentic development: lean plan contracts, deviation-with-rationale execution, and multi-round agentic redteaming as the primary review mechanism",
   "author": {
     "name": "PrimeSeeker"
