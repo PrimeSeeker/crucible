@@ -178,9 +178,8 @@ tree cannot reproduce:
 **Non-goals.**
 
 - Skipping the plan after a campaign, implementing from the spec
-  lane-style: left out by the maintainer's ruling (2026-10-29); D2 now
-  produces its case, a settled change that needs several tasks, which
-  the backlog item names as its trigger. It is added to
+  lane-style: left out by the maintainer's ruling (2026-10-29). It is
+  added to
   `docs/backlog/lane-entry-and-downshift.md`, beside that item's digest
   follow-up.
 - Retiring the folded preset: in steady use, about nineteen features
@@ -219,9 +218,10 @@ All lightly held. Basis tags follow `docs/decisions/decision-records.md`.
   campaign shape approved at the digest gate, and the stop rule (D6). Unsupported, each for
   the reason given: per-task review with no plan (no tasks); a plan phase
   without a separate plan; a campaign on a lane note (the umbrella's
-  non-goal); a spec with no campaign (write a note); a note with a plan,
-  or a spec with no plan (no case on record); any arrangement without the
-  branch review. Basis: the maintainer's preference (the reply's point 6),
+  non-goal); a spec with no campaign (write a note); a note with a plan
+  (left out by the maintainer's ruling after round 1, D2), or a spec with
+  no plan (left out by the maintainer's ruling, Non-goals); any
+  arrangement without the branch review. Basis: the maintainer's preference (the reply's point 6),
   for separability; judgment, accepted by the maintainer, for presets
   over fields.
 
@@ -282,7 +282,8 @@ All lightly held. Basis tags follow `docs/decisions/decision-records.md`.
 
 - **D5. The origin question's answer.** Routing a feature with
   non-trivial impact to no review before code is sound, a hypothesis
-  like D6, where the overturn question answers no at step 4, because the mandatory
+  like D6, where the overturn question answers no at step 4 and the
+  change is one implementer's worth (D2), because the mandatory
   full-scope branch review, with its goal and premise checks, is the
   independent check; size is not the risk, an unsettled mechanism is. It
   is recorded in `docs/decisions/routes.md` with its evidence and limits
@@ -427,7 +428,9 @@ All lightly held. Basis tags follow `docs/decisions/decision-records.md`.
   `docs/backlog/review-catch-and-implementers.md` is deleted;
   `docs/backlog/lane-entry-and-downshift.md` keeps the digest follow-up,
   drops the downshift and caps sentence, and gains the plan-skip path
-  with its trigger (D2's settled multi-task changes); `docs/backlog/campaign-early-stop-investigation.md`
+  and the left-out note-with-a-plan combination, the latter with its
+  trigger: D2's settled multi-task change, campaigned only to get a
+  plan; `docs/backlog/campaign-early-stop-investigation.md`
   keeps three research questions — whether a multi-round campaign is
   net-positive, fix altitude and deferral as drift reducers, what would
   settle the cap — and drops the trigger question (adopted) and the
@@ -475,7 +478,8 @@ All lightly held. Basis tags follow `docs/decisions/decision-records.md`.
   reference, SDD § Inline mode, writing-plans' mark, and the seats
   grading a plan's marks.
 - **The seat's forecast line** — produced by `skills/redteaming/seat-prompt.md`
-  in seats whose artifact kind is `spec` (a folded document's included);
+  in seats whose artifact kind is `spec` (a folded document's and an
+  umbrella's included: the seat card offers only `spec` and `plan`);
   consumed by the controller's stop call and the terminal pass, whose
   inputs gain the stop round's seat reports' `## Verdict` sections
   (`skills/redteaming/terminal-pass-prompt.md`, and the input list in
