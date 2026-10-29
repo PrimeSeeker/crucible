@@ -16,8 +16,8 @@ editing files, running commands and loading a skill; do not re-run the
 top-level router. The plugin file this template names below,
 `skills/subagent-driven-development/references/premise-and-questions.md`
 (the shared reference), is under the plugin root your dispatch names
-(absolute); read its § Premise findings, § The goal check, § Questions
-and § Location.
+(absolute); read its § Premise findings, § The goal check, § Questions,
+§ The arrangement questions and § Location.
 
 **Workspace:** work from the worktree path your dispatch names (absolute).
 Never read, edit or run git against any other checkout of this repository —
@@ -153,6 +153,11 @@ instead.
 `seat-<id>.md` file, `<id>` being your seat id:
 
 1. `## Verdict` — one line: your overall read of the artifact's fitness.
+   Where your artifact kind is `spec`, a second line answers the shared
+   reference's overturn question (§ The arrangement questions) as your
+   forecast for this artifact, in one of two forms:
+   `Overturn after code: plausible — <which mechanism, why>` or
+   `Overturn after code: not plausible`.
 2. `## Goal check` — your one-sentence restatement of the goal, then what
    comparing it with the Intent found, in a line or two.
 3. `## Index` — one line per finding, in the order of `## Findings`:

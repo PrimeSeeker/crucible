@@ -28,7 +28,10 @@ it.
 
 **Runtime:** you are running on Claude Code. Use this host's own tools for
 editing files, running commands and loading a skill; do not re-run the
-top-level router.
+top-level router. The plugin file this template names below,
+`skills/subagent-driven-development/references/premise-and-questions.md`
+(the shared reference), is under the plugin root your dispatch names
+(absolute); read its § The arrangement questions.
 
 **Workspace:** work from the worktree path your dispatch names (absolute).
 Never read, edit or run git against any other checkout of this repository —
@@ -44,13 +47,20 @@ findings behind it — the per-seat ids in the `origins:` element of each
 merged entry the ask turns on, read in that round's `seat-<id>.md` files.
 No other seat finding is an input, and none feeds the re-read.
 
+[[when phase = spec]]
+For the stop check (mandate 2), also every numbered round's seat
+reports — the `seat-<id>.md` files of `round-01` onward — their
+`## Verdict` sections only.
+[[end]]
+
 Nothing else is an input.
 
-**Read scoping (binding):** read only the inputs enumerated above and
-the binding content below, the umbrellas your dispatch names included,
-and write only your own report path below. Scope every search you run to
-them; an unscoped grep across the repository is the measured way
-material this dispatch did not name reaches the seat.
+**Read scoping (binding):** read only the inputs enumerated above, the
+shared reference and the binding content below, the umbrellas your
+dispatch names included, and write only your own report path below.
+Scope every search you run to them; an unscoped grep across the
+repository is the measured way material this dispatch did not name
+reaches the seat.
 
 **Binding content (pointer, not a copy):** the binding artifact your
 dispatch names, at its revision — its §Constraints & invariants, its
@@ -119,10 +129,26 @@ entry, and read its seat findings as if the trace had named it. Those are
 your corrections; another record mismatch you notice goes in `## Notes`,
 not under corrections.
 
+[[when phase = spec]]
+**The stop check, part of mandate 2.** The campaign stopped where a
+round's readout found overturning a major mechanism after code no
+longer plausible (the shared reference's § The arrangement questions).
+Check that basis against every forecast line in the numbered rounds'
+`## Verdict` sections: each `Overturn after code: plausible` line must
+be answered, in its round's readout or a later one, by the mechanism it
+names. One left unanswered is a mismatch, even where every seat of the
+stop round forecast `not plausible`. So is a stop round whose fix list
+adds, removes or re-shapes a major mechanism: no seat has read the
+result. Each mismatch is a correction, flagged `CONCLUSION-CHANGING`
+where it would have changed the stop. A campaign closed on the
+operator's ruling of the cap ask has no stop to check.
+[[end]]
+
 **Ordering (binding):** perform and **record** your mandate-1 re-read
-**before you open any exhaust input** — the round records, the readouts and
-the seat findings are all exhaust. Write the artifact verdict section first,
-then open them for mandate 2. Reading the records' account of the artifact
+**before you open any exhaust input** — the round records, the readouts,
+the seat findings and the seats' verdicts are all exhaust. Write the
+artifact verdict section first, then open them for mandate 2. Reading
+the records' account of the artifact
 before reading the artifact is how a confirming read becomes a re-derivation
 of someone else's conclusion.
 
@@ -196,10 +222,11 @@ attested in one line, never narrated.
 2. `## Record corrections` — `Record corrections: <N>`, then one item per
    correction (record text → true state → evidence), flagged
    `CONCLUSION-CHANGING` or not; `Record corrections: 0`, with one line
-   naming the decision asks checked, is the clean outcome. Close with a
-   directional-bias line: either "corrections share no direction" or the
-   direction they share, stated as an observation — and raised as a decision
-   ask only where it meets the escalation threshold above.
+   naming the decision asks checked and, in a spec campaign, the stop
+   round checked, is the clean outcome. Close with a directional-bias
+   line: either "corrections share no direction" or the direction they
+   share, stated as an observation — and raised as a decision ask only
+   where it meets the escalation threshold above.
 3. `## Notes` — record mismatches outside mandate 2, and anything else
    material to the close decision; else `none`.
 

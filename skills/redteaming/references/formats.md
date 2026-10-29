@@ -232,8 +232,8 @@ Fields, in order:
    partly-applied, parked or rejected entry owes and an `UNVERIFIED` entry's
    verification outcome (`crucible:redteaming` § Merge and finding hygiene).
    An entry merged from a premise finding carries the label `premise`
-   after its severity, `- F4 MAJOR premise`: the stop rule reads it as a
-   decision ask, not by its severity.
+   after its severity, `- F4 MAJOR premise`: a decision ask whatever its
+   severity, never an open finding the stop rule or the cap reads.
 
    **Origins element** (binding): every entry names the per-seat finding
    ids it accounts for —
@@ -287,12 +287,14 @@ Fields, in order:
    operator, compact, with the items `crucible:redteaming` § Round readout
    defines: key findings, every rejected, parked or partly-applied
    BLOCKER/MAJOR named with its ruling; technical calls; decision asks; the
-   round's `deferred-to-implementation` count; the digest-update note; and,
-   in a numbered spec-campaign round with no BLOCKER other than a premise
-   finding, whether the round
-   drove structural change and on what basis. The delivered readout carries
-   no internal id — merged-list, seat-finding or question id — and no line
-   counts.
+   round's `deferred-to-implementation` count; the digest-update note; in
+   every numbered spec-campaign round, whether overturning a major
+   mechanism after code is still plausible, and why, answering each seat's
+   plausible forecast by the mechanism it names; and, at the close of the
+   plan phase and of a folded campaign, the tasks the plan marks
+   `Review: branch only`, with their reasons, as information. The
+   delivered readout carries no internal id — merged-list, seat-finding or
+   question id — and no line counts.
 
    **Trace** (record only, never delivered): the field ends with a part
    opened by a line `Trace:`, after the readout, holding the bookkeeping
@@ -312,7 +314,10 @@ Fields, in order:
      — two numbers, added then removed, with no justification prose. Their
      net is the signal the right-sizing re-seat trigger judges
      (`crucible:redteaming` § Panels); where the wave was not committed, the
-     trace records the counts as not taken.
+     trace records the counts as not taken;
+   - in a numbered spec-campaign round record only, beside each mechanism
+     the overturn item answers, the ids of the seats whose plausible
+     forecasts named it.
 
 **Special records** — field sets and reachable states (a state outside a
 record's subset is skipped by definition):

@@ -3,6 +3,7 @@
 ## Slots
 
 - {worktree-path}: the absolute worktree path the pass works from.
+- {plugin-root}: the absolute path of crucible's plugin root, the one you read this card from.
 - {artifact-path}: `spec` phase, the spec; `plan` phase, the amended plan.
 - {revision}: the artifact's revision.
 - {phase-dir}: `{workspace-path}/campaigns/spec/` or `{workspace-path}/campaigns/plan/`, by `phase`.
