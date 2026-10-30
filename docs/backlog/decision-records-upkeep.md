@@ -2,15 +2,17 @@
 
 ## Observation
 
-- The records in `docs/decisions/` total about 36,600 words, against about
-  48,800 in the shipped skills. Their Decision sections restate skill
-  procedure in about 1,370 lines. The reference scanner catches a renamed
+- At `a709dbc` the records in `docs/decisions/` total 60,484 words,
+  against 65,636 in the shipped skills (whitespace-separated tokens in
+  `*.md`, as `tests/prose-budget.txt` counts them). Their Decision
+  sections run to about 1,940 non-blank lines, much of it restating
+  skill procedure. The reference scanner catches a renamed
   or removed heading a record cites, but not changed content, so a skill
   edit can leave a record untrue with no test failing.
 - `docs/decisions/decision-records.md` and `AGENTS.md` require a dated
   Changes line for every edit to a record, including edits that change no
   decision, such as a citation fix a renamed heading forces.
-- Known slips left from the records' first writing:
+- Known slips, most left from the records' first writing:
   - The rules crucible declined (`docs/decisions/rejected-machinery.md`)
     are restated in `shared-tree.md`, `git-steps.md` and
     `evidence-and-findings.md`. The copies agree today.
@@ -25,6 +27,18 @@
     without a why-not phrase.
   - `docs/dual-runtime.md`'s Effort bullet points at "the rules above",
     whose bullet does not name escalation.
+  - Decision paragraphs that restate the skill text clause by clause:
+    in `umbrellas.md`, "Edited by weight until it closes", "Marks, not
+    derived state" and "One closing review, a step and not a gate"
+    (`skills/brainstorming/references/umbrellas.md` § Edits, § Marks,
+    § Closing, § Closing review); in `records-and-workspace.md`, "Work
+    left open" and "Finish" (`crucible:subagent-driven-development`
+    § Finish, `crucible:finishing-a-development-branch`).
+  - Two bases in `routes.md` (at `a709dbc`, lines 143 and 255) read
+    "the maintainer's preference, for the …", a phrasing older than the
+    rule that attributes a basis from the brainstorm decision record's
+    proposer and status (`decision-records.md`); neither was checked
+    against a decision record entry.
 - `docs/backlog/second-runtime-seat.md` says no skill text mentions
   cross-runtime seats; `skills/redteaming/SKILL.md` § Panels does.
 

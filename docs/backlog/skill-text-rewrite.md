@@ -12,6 +12,12 @@
   (`tests/prose-budget.txt`): subagent-driven-development 18,724,
   redteaming 17,871, brainstorming 5,994, requesting-code-review 5,581,
   the other eight 13,899 together.
+- **Growth since `dd6897d`.** At `a709dbc` they hold 65,636 words,
+  +3,567: redteaming +1,324, subagent-driven-development +761,
+  brainstorming +672, requesting-code-review +573,
+  finishing-a-development-branch +206, writing-plans +31, the other six
+  unchanged. All of it is the audit-corrections feature's, whose spec
+  estimated about +1,500 and set no target.
 - **Placement is worth about 11%.** A detail-level audit of all shipped
   skill prose (three readers, read-only), when it came to 48,700 words,
   judged about 5,500 of them wrong-level or restated: redteaming ~12%,
@@ -84,6 +90,20 @@
   template's comment rule is a fragment of the implementer's and task reviewer's.
   Copying the whole rule in would add one more restatement; the shared
   seat reference is its fix.
+- **Two numbering and naming slips:**
+  - two "Step 6"s that mean different steps, both reached at one Finish:
+    `crucible:finishing-a-development-branch` § Step 6: Cleanup
+    Workspace removes the worktree, and step 6 of
+    `crucible:subagent-driven-development` § Finish deletes the feature
+    workspace, `.crucible/<feature-slug>/`;
+  - `skills/redteaming/references/formats.md`'s paragraph on later
+    operator rulings in the decision record enters an answer that
+    leaves the call to the controller "with the delegated status that
+    section defines", which reads as a fourth status; the section it
+    points to, `crucible:brainstorming` § Workspace provisioning
+    (brainstorm exit), defines no status but a form of `accepted`,
+    `accepted — delegated to the controller`, written in the proposer's
+    place.
 - **"Load-bearing" means two things in SDD:** the spec's `[LOAD-BEARING]`
   mark, and the fix loop's breaker, where a "real and load-bearing"
   finding is one a later task builds on or one that reveals a plan
@@ -111,5 +131,5 @@
   a distinction. For a fix-list clause asking whether a removing or
   merging resolution exists, the maintainer agreed it looked weak and
   deferred the restructuring ("probably later").
-- Fix the minor defect above on the way, and give the breaker's sense of
-  "load-bearing" a word of its own.
+- Fix the minor defect and the two slips above on the way, and give the
+  breaker's sense of "load-bearing" a word of its own.
