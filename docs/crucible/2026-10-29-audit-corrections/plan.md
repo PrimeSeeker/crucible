@@ -1,6 +1,6 @@
 # Audit corrections — plan
 
-Spec: `docs/crucible/2026-10-29-audit-corrections/design.md` @ `39cb385` — binding: its Constraints & invariants (C1–C8). It has no [LOAD-BEARING] marks, no preamble convention declared binding, no firm decisions and no `Umbrella:` line; its Decisions are lightly held.
+Spec: `docs/crucible/2026-10-29-audit-corrections/design.md` @ `4c28d19` — binding: its Constraints & invariants (C1–C8). It has no [LOAD-BEARING] marks, no preamble convention declared binding, no firm decisions and no `Umbrella:` line; its Decisions are lightly held.
 
 ## Goal
 
