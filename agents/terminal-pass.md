@@ -249,7 +249,8 @@ attested in one line, never narrated.
 2. `## Record corrections` — `Record corrections: <N>`, then one item per
    correction (record text → true state → evidence), flagged
    `CONCLUSION-CHANGING` or not; `Record corrections: 0`, with one line
-   naming the decision asks checked and, in a spec campaign, the stop
+   naming the decision asks, carried questions and delegated calls
+   checked and, in a spec campaign, the stop
    round and the decision-record entries checked, is the clean outcome.
    Close with a directional-bias line: either "corrections share no
    direction" or the direction they share, stated as an observation — and raised as a decision ask only

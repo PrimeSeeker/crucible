@@ -187,8 +187,10 @@ adapters are in `docs/dual-runtime.md`.
   delivers, in what order, and which have landed. Each feature names it
   and is reviewed against it. Unlike a spec, it stays open after it
   merges, updated as its features land, until each has landed or been
-  dropped. Then a closing review reads the whole effort, and what it
-  finds that you keep goes to an `open-items.md` in its folder.
+  dropped. When it merges, anything its brainstorm and review left open
+  goes to an `open-items.md` in its folder; once it closes, a closing
+  review reads the whole effort, and what it finds that you keep is
+  added there.
 - **A workspace,** `.crucible/<feature-name>/`, holding the review rounds'
   records, agents' reports and the execution ledger. It is untracked
   (crucible writes a `.crucible/.gitignore` that ignores it all) and is

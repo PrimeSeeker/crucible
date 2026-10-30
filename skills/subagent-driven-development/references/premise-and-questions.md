@@ -30,8 +30,8 @@ no premise finding: it keeps the route your template gives it. A
 `literal-reading` finding keeps its own label: it questions how a
 binding item applies to a case, not the premise behind it.
 
-Redteam seats, the branch reviewer and implementers raise premise
-findings. A task reviewer that doubts a premise writes the doubt in its
+Redteam seats, the terminal pass, the branch reviewer, an umbrella's
+closing-review seats and implementers raise premise findings. A task reviewer that doubts a premise writes the doubt in its
 `Questions` (§ Questions).
 
 ## Binding items and unrecorded choices
@@ -95,7 +95,7 @@ re-shapes it; an addition, or a correction that leaves its shape
 standing, does not count. Before code the answer is a forecast from the
 design and its records; after code it is read from the code as well.
 
-Before any review, the answer is usually no in one of two cases:
+Before any review, the answer is no in either of two usual cases:
 
 - the work has no major mechanism: it adds to, corrects or removes
   within mechanisms that stay as they are;

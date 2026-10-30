@@ -125,7 +125,8 @@ SDD), or feature abandonment. At each, the controller deletes
 `.crucible/<feature-slug>/` and nothing else, and reports to the operator
 anything it could not delete. No item left open stays only in the
 workspace: at Finish and at an umbrella's landing, the work left open is
-first written to `open-items.md` (§ Feature folder), the deletion
+first written to `open-items.md` (§ Feature folder), or the home the
+project's instructions name, unless the work is discarded, the deletion
 following in the order `crucible:subagent-driven-development` § Finish or
 `skills/brainstorming/references/umbrellas.md` § Landing gives; at
 abandonment, the operator's call (a late split's included), the readout
@@ -306,8 +307,9 @@ Fields, in order:
    names; and, at the close of the
    plan phase and of a folded campaign, the tasks the plan marks
    `Review: branch only`, with their reasons, as information. The
-   delivered readout carries no internal id — merged-list, seat-finding or
-   question id — and no line counts.
+   delivered readout's own words carry no internal id — merged-list,
+   seat-finding or question id — and no line counts; a carried question
+   is quoted as written, ids included.
 
    **Trace** (record only, never delivered): the field ends with a part
    opened by a line `Trace:`, after the readout, holding the bookkeeping
