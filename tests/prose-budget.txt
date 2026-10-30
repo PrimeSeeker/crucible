@@ -2,11 +2,11 @@
 # Read by tests/test_prose_budget.py; AGENTS.md (the prose budget) says when to change a line.
 brainstorming 6654
 dispatching-parallel-agents 920
-finishing-a-development-branch 1726
+finishing-a-development-branch 1898
 receiving-review 515
 redteaming 19131
 requesting-code-review 6153
-subagent-driven-development 18888
+subagent-driven-development 19453
 systematic-debugging 3422
 using-crucible 2032
 using-git-worktrees 1713

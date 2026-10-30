@@ -7,9 +7,11 @@ description: Use when implementation is complete, all tests pass, and you need t
 
 ## Overview
 
-**Core principle:** Verify tests → Detect environment → Present options → Execute choice → Clean up.
+**Core principle:** Verify tests → Detect environment → Take the operator's choice → Execute it → Clean up.
 
 **Announce at start:** "I'm using the finishing-a-development-branch skill to complete this work."
+
+**After a close readout** (`crucible:subagent-driven-development` § Finish), the operator has already chosen: carry out the option their answer chose without presenting the menu again, and ask only what the answer left open — the base branch where it is unconfirmed (Step 3), the records question where the readout did not ask it (Option 2). Where no close readout precedes this skill, as at an umbrella's landing or after a standalone review, or the answer chose no option, Step 4 presents the options.
 
 **Every command below is a single invocation** — no shell program, no
 command substitution, no captured variables. Run each one, keep its output
@@ -24,13 +26,15 @@ Merge-acceptance criteria are project-defined — if the project names its own g
 
 A full run on exactly the HEAD being integrated, whose command and output you can still show, counts, and its result stands — green or red, it is not re-run for a different one; any other tree, or a run you can no longer show (after compaction, say), is re-run.
 
-**If tests fail**, report the failures and stop — the menu comes after a green suite:
+**If tests fail**, report the failures and stop — integration comes after a green suite:
 
 ```
 Tests failing (<N> failures). Must fix before completing:
 
 [Show failures]
 ```
+
+The one exception: a red run the adjudicator dismissed, which the operator was shown and accepted (`crucible:subagent-driven-development` § Finish). Continue to Step 2 on it.
 
 **If tests pass:** continue to Step 2.
 
@@ -65,7 +69,7 @@ Confirm before merging: merging into the wrong base is expensive to undo.
 
 ## Step 4: Present Options
 
-**Normal repo and named-branch worktree — present exactly these 3 options:**
+**Normal repo and named-branch worktree — these 3 options:**
 
 ```
 Implementation complete. What would you like to do?
@@ -74,10 +78,10 @@ Implementation complete. What would you like to do?
 2. Push and create a Pull Request
 3. Keep the branch as-is (I'll handle it later)
 
-Which option?
+I recommend <option>: <reason>. Which option?
 ```
 
-**Detached HEAD — present exactly these 2 options:**
+**Detached HEAD — these 2 options:**
 
 ```
 Implementation complete. You're on a detached HEAD (externally managed workspace).
@@ -85,14 +89,14 @@ Implementation complete. You're on a detached HEAD (externally managed workspace
 1. Push as new branch and create a Pull Request
 2. Keep as-is (I'll handle it later)
 
-Which option?
+I recommend <option>: <reason>. Which option?
 ```
 
-Present the menu exactly as written — concise, with every option coming
-from the list above. Discarding the work happens only in response to your
-human partner explicitly asking for it (see "If your human partner asks to
-discard the work" below). Wait for their answer; the integration decision
-is theirs.
+Present them concisely, every option coming from the list above, with
+your recommendation and its reason. Discarding the work happens only in
+response to your human partner explicitly asking for it (see "If your
+human partner asks to discard the work" below). Wait for their answer;
+the integration decision is theirs.
 
 ## Step 5: Execute Choice
 
@@ -130,6 +134,10 @@ git branch -d <feature-branch>
 reached the base. That refusal is a signal, never an obstacle — the merge
 did not take. Investigate; never reach for `-D` to make it go away.
 
+Where the close readout named an umbrella's closing review as the step
+after this landing, run it next
+(`skills/brainstorming/references/umbrellas.md` § Closing review).
+
 ### Option 2: Push and Create PR
 
 **The repo's conventions come first:** its PR template, contribution
@@ -153,11 +161,13 @@ included, on the branch they land on
 (`skills/brainstorming/references/umbrellas.md`). An empty list leaves
 nothing to ask.
 
-Tell the operator that the branch's commits carry these files, so
-the PR shows them under any merge strategy and removing them now keeps
-them out of the merged tree only; then ask whether they go into the PR.
-If not, remove exactly the listed files in a final commit (`git rm`, then
-commit) and re-run Step 1's suite on the new HEAD.
+Unless the close readout asked this and the answer settled it, tell the
+operator that the branch's commits carry these files, so the PR shows
+them under any merge strategy and removing them now keeps them out of
+the merged tree only, and that leaving `<feature-folder>/open-items.md`
+out leaves the work left open only in the branch's history; then ask
+whether they go into the PR. If not, remove exactly the listed files in a final commit
+(`git rm`, then commit) and re-run Step 1's suite on the new HEAD.
 
 Then push:
 
@@ -247,8 +257,8 @@ place. If your platform provides a workspace-exit tool, use it.
 | Excuse | Reality |
 |--------|---------|
 | "Tests passed earlier this session" | Run the suite on the tree you are about to integrate. A green run only proves the tree it ran on. |
-| "They obviously want it merged" | Integration is your human partner's decision. Present the menu and wait. |
-| "They seem done with this feature — I'll offer to discard it" | The menu is complete as written. Discard happens only when your human partner asks for it in so many words. |
+| "They obviously want it merged" | Integration is your human partner's decision. Carry out the option they chose; with none chosen, present the options with your recommendation and wait. |
+| "They seem done with this feature — I'll offer to discard it" | Discard is never among the options. It happens only when your human partner asks for it in so many words. |
 | "'Yeah, get rid of it' counts as confirmation" | Only the typed word `discard` authorizes deletion. |
 | "The PR is up, so the worktree is clutter now" | PR feedback gets fixed in that worktree. It stays until the work lands. |
 | "This other worktree looks stale — I'll clean it too" | Clean up only worktrees under `.worktrees/` or `worktrees/`. Everything else belongs to the host. |

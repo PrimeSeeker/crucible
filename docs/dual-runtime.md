@@ -23,7 +23,7 @@ tests/                           # repo test suite (python -m pytest tests/)
 docs/                            # runtime docs (this file, codex.md), authoring rules, backlog/
 docs/decisions/<slug>.md         # decision records: why crucible is as it is
 docs/upstream.md                 # the upstream map: where superpowers' files went
-docs/crucible/<date>-<slug>/     # one folder per feature: its spec and plan
+docs/crucible/<date>-<slug>/     # one folder per feature: its spec, plan and open items
 ```
 
 ## The separation

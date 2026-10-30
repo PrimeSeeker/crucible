@@ -126,8 +126,8 @@ findings. Then a plan is written and checked once, and execution
 starts: a fresh agent implements each task, a fresh reviewer checks it
 unless the plan leaves that task to the whole-branch review, and
 disagreements go to an adjudicator. A whole-branch review closes the
-work, and you choose whether to merge, open a pull request or keep the
-branch.
+work, and you choose, on crucible's recommendation, whether to merge,
+open a pull request or keep the branch.
 
 **Three presets.** At the end of the design dialogue crucible proposes
 how the work is arranged, and you confirm or veto it. The question that
@@ -178,17 +178,22 @@ adapters are in `docs/dual-runtime.md`.
 - **A feature folder,** `docs/crucible/<date>-<feature-name>/`, holding
   the spec and the plan (`design.md` and `plan.md`; `folded.md` or
   `note.md` on the two small presets). They are committed on the feature
-  branch, so they merge with the work.
+  branch, so they merge with the work. At finish, where anything was
+  left open, the folder also gets `open-items.md`: that work (deferred
+  minor findings, open questions, undecided asks), each item with its
+  source, unless your instructions name another place for it.
 - **An umbrella,** `umbrella.md` in a feature folder of its own, for an
   effort too large for one feature: what its features share, what each
   delivers, in what order, and which have landed. Each feature names it
   and is reviewed against it. Unlike a spec, it stays open after it
   merges, updated as its features land, until each has landed or been
-  dropped.
+  dropped. Then a closing review reads the whole effort, and what it
+  finds that you keep goes to an `open-items.md` in its folder.
 - **A workspace,** `.crucible/<feature-name>/`, holding the review rounds'
   records, agents' reports and the execution ledger. It is untracked
   (crucible writes a `.crucible/.gitignore` that ignores it all) and is
-  deleted when the feature finishes.
+  deleted when the feature finishes, once the work left open is written
+  out.
 - **Worktrees.** By default every feature gets its own worktree, a
   separate working copy on the feature's branch, unless your project's
   instructions say to work in place. Crucible uses your host's own
@@ -198,14 +203,16 @@ adapters are in `docs/dual-runtime.md`.
 
 Once a feature finishes, its process records (review rounds, reports,
 rulings) live only in your host's session transcripts, so they last only
-as long as your host keeps those.
+as long as your host keeps those; the work it left open is in its
+`open-items.md`.
 
 ## Configuration
 
 Crucible has no config file. Your instruction files (`CLAUDE.md` on Claude
 Code, `AGENTS.md` on Codex, user-level or the project's) and your direct
 requests outrank the skills, so that is how you change a default: name
-another folder for feature folders, say to work in place rather than in
+another folder for feature folders, name another home for the work a
+feature leaves open, say to work in place rather than in
 worktrees, name a worktree directory, or change a review's size.
 
 ## Cost, models and permissions
@@ -287,7 +294,8 @@ both hosts.
   and a recommendation.
 - **Preset** (also **route**) — standard, folded or very small (§ How it
   works).
-- **Feature folder** — the committed folder with a feature's spec and plan.
+- **Feature folder** — the committed folder with a feature's spec, plan
+  and open items.
 - **Umbrella** — the committed document holding an effort of several
   features: what they share, what each delivers, and which have landed.
 - **Workspace** — the untracked folder with a feature's process records,

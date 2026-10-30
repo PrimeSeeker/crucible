@@ -25,9 +25,13 @@ to install it: `README.md`; the layout: `docs/dual-runtime.md`.
   remains open.
 - `docs/crucible/<date>-<slug>/` — one folder per feature: its spec, plan or
   lane note, or, for an effort of several features, its umbrella
-  (`umbrella.md`). Frozen once the feature ships; follow-ups go to the
-  backlog. An umbrella is edited in place until it closes
-  (`skills/brainstorming/references/umbrellas.md`).
+  (`umbrella.md`); and `open-items.md`, the work it left open. Frozen once
+  the feature ships; follow-ups go to the backlog. Open items stay in that
+  file, crucible's default, and one becomes a backlog item on the
+  operator's word; before committing the file, the controller checks it
+  against the no-local-context rule (below). An umbrella is edited in place
+  until it closes (`skills/brainstorming/references/umbrellas.md`); a
+  closed umbrella's folder gains only its closing review's `open-items.md`.
 
 ## You are editing the process you run under
 
