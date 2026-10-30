@@ -207,13 +207,12 @@ points to the test's one home instead. The proposer each entry names,
 as the binding-and-marks review had already ruled, is the brainstorm
 decision record's, kept for attribution, and the premise line that
 routed on it went on 2026-10-30 (`docs/decisions/evidence-and-findings.md`).
-An answer leaving the call to the controller is recorded as delegated
-because one such answer, tentative and posed as a question, was entered
-as the operator's amendment and only a terminal pass's check of the
-record corrected it. Each an agent's proposal, which the maintainer
-accepted. (Basis: measured, for the missed exclusion; a single
-incident, for the delegated entry; judgment, accepted by the
-maintainer, 2026-10-30.)
+An answer leaving the call to the controller is recorded as delegated,
+never as the operator's ruling or choice, so that the record keeps
+apart the calls the maintainer made and those the maintainer left to
+the agent. Each an agent's proposal, which the maintainer accepted at
+the brainstorm. (Basis: measured, for the missed exclusion; judgment,
+accepted by the maintainer, 2026-10-29.)
 
 ### The request
 

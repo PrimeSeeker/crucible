@@ -177,9 +177,9 @@ feature's spec is always campaigned and a note never is, an umbrella
 approved without a campaign being a spec of its own kind. The wider
 question of how far the choices separate is the skill-text rewrite's
 (`docs/backlog/skill-text-rewrite.md`). An agent's proposal, which the
-maintainer accepted. (Basis: the maintainer's preference, for the
-words; measured, for the audit's findings; judgment, accepted by the
-maintainer, for the rest.)
+maintainer accepted. (Basis: judgment, accepted by the maintainer, for
+returning to the maintainer's original words and for the rest;
+measured, for the audit's findings.)
 
 ### The origin question's answer
 

@@ -127,14 +127,13 @@ strength apart was an agent's proposal, the maintainer leaving the call
 to it ("your call"). (Basis: judgment, accepted by the maintainer,
 2026-10-28.)
 
-The brainstorm decision record has recorded a call left to the
-controller as `accepted — delegated to the controller` since
-2026-10-30, after one such answer had been entered as the operator's
-amendment (`docs/decisions/the-spec.md`). The attribution rule named
-only the operator and the controller as proposers, so the delegated
-form, which the paragraph above already used, became part of it. An
-agent's proposal, which the maintainer accepted. (Basis: judgment,
-accepted by the maintainer, 2026-10-30.)
+The brainstorm decision record records a call left to the controller
+as `accepted — delegated to the controller`, never as the operator's
+ruling or choice (`docs/decisions/the-spec.md`). The attribution rule
+named only the operator and the controller as proposers, so the
+delegated form, which the paragraph above already used, became part of
+it. An agent's proposal, which the maintainer accepted. (Basis:
+judgment, accepted by the maintainer, 2026-10-29.)
 
 ## Rejected
 
