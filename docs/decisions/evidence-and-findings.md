@@ -25,8 +25,9 @@ is the finding
 Hygiene and Severity; `skills/requesting-code-review/code-reviewer.md` §
 Calibration).
 
-**Premise findings.** A redteam seat, the branch reviewer or an
-implementer may claim, with evidence, that one of three things is wrong:
+**Premise findings.** A redteam seat, the terminal pass, the branch
+reviewer, an umbrella's closing-review seat or an implementer may claim,
+with evidence, that one of three things is wrong:
 the request, what the Intent asks for, or a firm decision. Each is
 readable from the document: the request and the Intent are its
 sections, and a firm decision says so in its rationale. On the
@@ -432,7 +433,10 @@ records that cite "the audit" draw on these figures. (Basis: measured.)
   the binding-item and unrecorded-choice clauses moved to the shared
   reference, reaching the branch reviewer and the terminal pass; after
   an audit of the hypothesis-specs umbrella. The one home's basis is
-  labelled an agent's call the maintainer has not ruled on.
+  labelled an agent's call the maintainer has not ruled on. The
+  terminal pass and an umbrella's closing-review seats are named among
+  the seats that raise premise findings, as the shared reference names
+  them.
 - 2026-10-29: premise findings, the goal check and a widened `Questions`
   section: a seat may claim that the operator's premise is wrong, as a
   decision ask that holds no gate; a premise finding's location is the
