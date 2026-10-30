@@ -32,10 +32,19 @@ chain of umbrellas, each read where it lives
 (`skills/brainstorming/references/umbrellas.md` § Children).
 Every statement of what binds, in the skills and the seat templates,
 names the umbrella; that clause is the one rule of the umbrella that
-crucible's text states at each of its sites rather than once.
+crucible's text states at each of its sites rather than once. The rule
+for the umbrella's Intent is the exception that joins none of those
+statements: the Intent is protected as the child's own is, a seat
+raising a premise finding against what it asks, and a change on a
+child's branch to what it asks is a finding; both are stated once, in
+the shared reference beside the premise line, which § Children points
+to (`skills/subagent-driven-development/references/premise-and-questions.md`
+§ Premise findings).
 
 **Edited by weight until it closes.** Lightly held edits travel on a
-child's branch. A binding change, a change to a firm decision included,
+child's branch, a correction to the umbrella's Intent among them only
+where it leaves what the Intent asks for unchanged. A binding change, a
+change to a firm decision or to what the Intent asks for included,
 never does: it goes to the operator, lands on a branch of its own, and
 each child in flight takes it in from the base
 (`skills/brainstorming/references/umbrellas.md` § Edits;
@@ -49,7 +58,38 @@ change to umbrella content itself, however contained the change looks
 commit that lands it (`skills/brainstorming/references/umbrellas.md`
 § Marks; `crucible:subagent-driven-development § Finish`). An umbrella
 has closed when its marks say so, read down the chain; from then it is
-frozen (`skills/brainstorming/references/umbrellas.md` § Closing).
+frozen, its folder gaining at most its closing review's `open-items.md`
+(`skills/brainstorming/references/umbrellas.md` § Closing).
+
+**One closing review, a step and not a gate.** Once an umbrella is
+complete by its marks, one review reads its children's landings, from
+the umbrella's own to the one that completed it, unrelated landings on
+a shared base aside, against the umbrella: its request, its entries,
+its Constraints & invariants and its decisions. The controller whose
+landing completes it, a landed drop included, announces it and runs it
+right after; its width is that controller's call, the review itself is
+not optional; where a child's landing completes it, that child's close
+readout names it as the step after the landing. Where the completing
+landing may happen outside a session, the close readout of each child
+whose landing could complete the umbrella says the review is due once
+they have all landed, and the operator starts it by asking. A nested
+umbrella's review runs at its own completion and, where that completes
+its parent, before the parent's, whose range covers it again. It takes two or three seats the
+controller composes on the default role, read-only, each with a lens
+that reads across children (fidelity to the request, the seams between
+children, a walkthrough of the workflows the effort changed), with no
+instrument or template of its own. Its readout proposes keeping or
+dropping each finding, a premise finding being a decision ask there;
+after the answer, the findings kept, each premise finding with its
+ruling, and those dropped, named as such, go to the umbrella folder's
+`open-items.md` or the home the project's instructions name, committed
+on a branch of its own landed on the operator's go-ahead; where nothing
+is kept and no premise finding was raised, nothing is committed and the
+readout names each finding dropped. Closing is still read from the
+marks, nothing waits on the review, and it writes nothing into
+`umbrella.md`; a feature that fixes its findings is a feature of its
+own. An umbrella approved without a campaign takes it too
+(`skills/brainstorming/references/umbrellas.md` § Closing review).
 
 **An open premise ask at the landing.** A premise finding still open
 when an umbrella lands goes to the operator with the landing ask, and
@@ -61,6 +101,14 @@ else as open for its dialogue, and the child removes the note as a
 clarification its spec states (`skills/brainstorming/references/umbrellas.md`
 § Landing, § Children; `skills/redteaming/references/flip-paths.md`
 § Premise findings).
+
+**Work left open at the landing.** An umbrella has no ledger, so what
+its brainstorm and campaign left open is written at its landing to an
+`open-items.md` in its folder, each item with its source, or to the
+home the project's instructions name, and committed on its branch;
+where nothing was left open, nothing is written. The closing review
+appends to that file (`skills/brainstorming/references/umbrellas.md`
+§ Landing; `docs/decisions/records-and-workspace.md`).
 
 **Kept in the merged tree.** An umbrella's own pull request never
 offers `umbrella.md` for removal; the trade-off is in
@@ -131,10 +179,11 @@ the others being a campaign for every umbrella and a campaign for none.
 The split first followed the line the routes then drew, by whether a
 design decision deserved review before code. When the overturn question
 replaced that line for features (`docs/decisions/routes.md`), it did not
-take over here: it asks whether code could overturn a mechanism, and an
-umbrella has no code of its own, so its review stays chosen by its
-content. Once an umbrella's campaign runs, the question stops it as any
-campaign's, read against its children's code
+take over here: it asks whether overturning a major mechanism after code
+is reasonably expected, and an umbrella has no code of its own, so its
+review stays chosen by its content. Once an umbrella's campaign runs,
+the question stops it as any campaign's, read against its children's
+code
 (`skills/subagent-driven-development/references/premise-and-questions.md`
 § The arrangement questions). (Basis: judgment, accepted by the
 maintainer, 2026-10-29.)
@@ -168,6 +217,25 @@ could otherwise travel on one child's branch. Umbrella content stays
 outside what a child's controller may confirm as a contained amendment,
 keeping the decision ask it had. (Basis: judgment, accepted by the
 maintainer, 2026-10-28.)
+
+Until 2026-10-30 a child could edit the umbrella's Intent on its own
+branch as a lightly held edit. Since then a premise finding protects
+what the document itself shows, the request, what the Intent asks for
+and firm decisions (`docs/decisions/evidence-and-findings.md`). For a
+child, its request includes the effort's request its Request section
+quotes, and the umbrella's Intent counts as its own, so no child's
+branch changes what the effort asks for without the operator. A
+correction that leaves what the Intent asks unchanged stays a lightly
+held edit; a change to what it asks is a binding change. (Basis: judgment, accepted by the maintainer.)
+
+As the spec campaign first wrote that rule, it joined the binding
+clause at each of the clause's sites. The plan phase counted thirteen
+skill sites, several in no task's file list, and its controller
+confirmed a contained amendment giving the rule one home, in the shared
+reference beside the premise line, which § Children points to; the
+restated clause itself is the skill-text rewrite's to collapse
+(`docs/backlog/skill-text-rewrite.md`). (Basis: judgment, a contained
+amendment the agent confirmed.)
 
 ### Binding changes off the child's branch
 
@@ -216,6 +284,49 @@ landing and that brainstorm is written nowhere until the child's
 decision record takes it in. (Basis: judgment, accepted by the
 maintainer, 2026-10-29.)
 
+### Work left open at the landing
+
+An umbrella has no ledger, and its workspace is deleted at its landing,
+so what its brainstorm and campaign left open would otherwise have no
+durable home, and no deferral counts as done until it has one
+(`docs/decisions/records-and-workspace.md`). It goes
+to the umbrella's folder as a feature's goes to its own, and the
+closing review appends to the same file, the one file a closed
+umbrella's folder gains. (Basis: judgment, accepted by the maintainer.)
+
+### The closing review
+
+Each child's branch review grades that child against its own plan, and
+the audit found that nothing read across the children, in 5 of its 10
+clusters of lost or unseen findings
+(`docs/decisions/evidence-and-findings.md` § The audit of the
+hypothesis-specs umbrella). The controller first proposed widening the
+last child's branch review; the maintainer asked instead, "Might be
+worth a separate wider review?", and accepted the form the controller
+then detailed. A widened child review would also have mixed its
+siblings' defects into its own wave cap. (Basis: measured, for the
+audit; the maintainer's preference, for a separate review; judgment,
+accepted by the maintainer, for its form.)
+
+At the spec campaign's first round the maintainer accepted making the
+review a step after the last landing rather than a gate before the
+umbrella is marked closed. That ask overstated a gate's cost: the step
+has since gained the recursive completion rule and the committed
+findings file, so a gate would add only a landing ask where the review
+finds nothing and a check on resume, against a step that can be
+skipped where a landing happens outside a session and nobody acts on
+the readout. Put back on that trade-off after the campaign, the
+maintainer left the choice to the controller, which kept the step; a
+session resuming the effort is pointed to the review. (Basis:
+judgment, accepted by the maintainer, for the step; the final choice a
+call the maintainer left to the agent.)
+
+The form first detailed had one seat on the other host. As shipped, a
+seat on the other host is the operator's own instruction where it
+applies, and the skills compose none
+(`docs/backlog/second-runtime-seat.md`). (Basis: judgment, a contained
+amendment the agent confirmed on a call the maintainer left to it.)
+
 ## Rejected
 
 - **A frozen parent amended from its children**, and **a frozen parent
@@ -227,9 +338,27 @@ maintainer, 2026-10-29.)
   record what changed.
 - **An effort's plan held in a backlog item or in agent memory**: the
   improvised form this record replaces (§ Why).
+- **Widening the last child's branch review** to read the whole effort:
+  it grades against that child's plan and would spend that child's wave
+  cap on its siblings' defects (§ Why).
+- **The closing review as a gate** before the umbrella is marked
+  closed: it would add a landing ask where the review finds nothing and
+  a check on resume (§ Why).
 
 ## Changes
 
+- 2026-10-30: an umbrella gets one closing review across its children's
+  landings, a step after the landing that completes it and not a gate,
+  its findings kept or dropped at its readout and written to the
+  umbrella folder's `open-items.md`, the one file a closed umbrella's
+  folder gains; the umbrella's landing writes what its brainstorm and
+  campaign left open to that file; the umbrella's Intent is protected
+  as a child's own, a correction to it travelling as a lightly held edit
+  only where it leaves what the Intent asks unchanged, and that rule is
+  stated once, the exception to the binding clause stated at each site;
+  the overturn question reads "reasonably expected". The audit of the
+  hypothesis-specs umbrella found nothing reading across children, and
+  the maintainer asked for a separate wider review.
 - 2026-10-29: review by content no longer rests on the routes' retired
   "worth reviewing" line: the overturn question selects a feature's
   review, and an umbrella, with no code of its own, keeps review by

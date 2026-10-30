@@ -2,12 +2,13 @@
 
 ## Decision
 
-**The feature folder.** A feature commits its spec and, on the standard
-route, its plan, in one feature folder, `docs/crucible/<YYYY-MM-DD>-<slug>/`
+**The feature folder.** A feature commits its spec, on the standard
+route its plan, and at its finish its `open-items.md` (below), in one
+feature folder, `docs/crucible/<YYYY-MM-DD>-<slug>/`
 by default, a root the project's instruction files name overriding the
 default. The spec is the agents' coordination artifact: its audience is
 the agent fleet, and it says what binds and what is advice
-(`docs/decisions/the-spec.md`). Both are committed on the feature branch,
+(`docs/decisions/the-spec.md`). All are committed on the feature branch,
 where agents in other checkouts can read them. Brainstorming creates the
 folder by a birth step that refuses a slug some folder already carries;
 every later consumer finds it by a resolve step that creates nothing and
@@ -16,10 +17,12 @@ reports none or several (`skills/redteaming/references/formats.md`
 the forensic record, and a route that replaces it writes a successor
 beside it. The exception is an umbrella's `umbrella.md`, edited in place
 after it lands until it closes (`docs/decisions/umbrellas.md`). In a pull
-request, finishing lists the files the branch adds to its feature folder
-and asks the operator whether they go in, saying first that the branch's
-commits carry them anyway; an umbrella's own pull request leaves
-`umbrella.md` off that list, so it stays in the merged tree
+request, the operator is asked whether the files the branch adds to its
+feature folder go in, told first that the branch's commits carry them
+anyway and that leaving `open-items.md` out leaves the work left open
+only in the branch's history: by the close readout where it recommends
+a pull request, otherwise by finishing. An umbrella's own pull request
+leaves `umbrella.md` off that list, so it stays in the merged tree
 (`crucible:finishing-a-development-branch § Step 5: Execute Choice`).
 
 **The workspace.** A feature's process records (round records, seat
@@ -33,27 +36,82 @@ archived, and `.crucible/` holds workspaces only. SDD Setup looks for the
 workspace before its worktree and provisioning steps, and continues in
 the checkout that holds it. A workspace's life has three ends, SDD
 Finish, an umbrella's landing and the feature's abandonment, and each
-deletes it (`skills/redteaming/references/formats.md` § Feature
-workspace root and layout). A workspace lost mid-feature restarts the
-in-flight phase from the committed spec or plan and `git log`.
+deletes it, the work left open written out first at the first two, a
+discard aside; an umbrella's closing review keeps a workspace of its own
+under the umbrella's slug, deleted once its findings are written
+(`skills/redteaming/references/formats.md` § Feature workspace root and
+layout). A workspace lost mid-feature restarts the in-flight phase from
+the committed spec or plan and `git log`.
 
-**No committed summary.** A feature's committed record is its spec, its
-plan and its commit messages. Nothing summarizes a campaign or a feature
-into the repository, and nothing parses records to assemble one; the
-records' process rules still bind, and their layout is guidance. The
-session transcripts hold the raw records for as long as the host keeps
-them (`README.md` § What it writes into your repository).
+**What is committed.** A feature's committed record is its spec, its
+plan, its open-items file and its commit messages. Nothing summarizes a
+campaign or a feature into the repository, and nothing parses records
+to assemble one: the open-items file lists work left open, each item
+with its source, not what the feature did. The records' process rules
+still bind, and their layout is guidance. The session transcripts hold
+the raw records for as long as the host keeps them (`README.md` § What
+it writes into your repository).
 
-**Finish.** SDD Finish runs in a fixed order: record checks, the
-feature's mark in its umbrella where an umbrella names it, the full
-suite or the project's declared merge gate on HEAD, a close readout to
-the operator, deletion of `.crucible/<slug>/` and nothing else, then
-finishing; any loop activity restarts it at the record checks. A red run
-is a BLOCKER for the branch-review loop, never classified away; the close
-readout, assembled from the ledger, is the only hand-over of work left
-open (`crucible:subagent-driven-development § Finish`). Finishing accepts
-a full run on exactly the HEAD being integrated whose output it can still
-show, and otherwise re-runs. In a pull request the repository's
+**Work left open.** What a phase leaves open travels to Finish in the
+ledger: at the close that seeds it (the plan phase's, the folded
+campaign's, or SDD Setup on the very-small lane), the controller also
+seeds under `## Questions` what the brainstorm, the spec campaign and
+the plan phase left open, each as `<phase>: <item> — carried`
+(`skills/redteaming/references/plan-phase.md`). At Finish, after the
+operator's answer to the close readout, the work left open (minors,
+leads, questions, declined improvements, unruled asks, parked BLOCKER or
+MAJOR findings with their rulings, and what earlier phases carried) is
+written to `<feature-folder>/open-items.md`, each item with its source,
+those the readout proposed to drop and the answer did not keep named
+dropped, and committed on the branch; where nothing was left open, no
+file is written. No item takes a ruling of its own. Where the project's
+instructions name where open items go, they go there instead: an
+in-repository home on the branch, or an outside tracker as the
+instructions say, those being the operator's word for it; a mode that
+commits no feature-folder files is such a case
+(`docs/backlog/records-retention-config.md`). An umbrella, which has no
+ledger, writes what its brainstorm and campaign left open to an
+`open-items.md` in its folder at its landing, and its closing review
+appends to it (`docs/decisions/umbrellas.md`). A deferral counts as
+done only once it is in an open-items file or the home the instructions
+name, or is named dropped; no item is left only in the workspace. In
+this repository `AGENTS.md` keeps the default, an open item becoming a
+backlog item on the operator's word, and has the controller check the
+file against its no-local-context rule before committing it
+(`crucible:subagent-driven-development § Finish`).
+
+**Finish.** SDD Finish runs in a fixed order. Record checks come first,
+then the close readout to the operator, the decision point: it lists
+the work left open, each item with the controller's proposal to keep or
+drop it, and ends with a recommendation, one of the options finishing
+offers on that branch or more work, with its reason; recommending a
+pull request, it also asks the feature folder's files question. The
+controller waits for the answer. An answer that asks for more work, or
+a ruling that opens a wave, reopens the loop first, and Finish restarts
+at the record checks. An answer that chooses an integration option, or
+that leaves the work in place and chooses none, runs in order: the
+open-items file and the feature's mark in its umbrella, where an
+umbrella names it, committed on the branch; the full suite or the
+project's declared merge gate on that HEAD; deletion of
+`.crucible/<slug>/` and nothing else; then finishing, which carries out
+the answer without presenting its menu again and asks only what the
+answer left open, or, where the answer chose no option, presents its
+options with the recommendation. An answer that discards the work skips
+the file and the suite; finishing's typed `discard` confirmation comes
+before the workspace's deletion, and an answer whose discard is left
+unconfirmed counts as one that chose no option. After loop activity
+that follows an answer, a red suite's included, the next readout says
+what changed, and the earlier answer stands only where nothing new was
+left open. A red run is a BLOCKER for the branch-review loop, never
+classified away; one the adjudicator dismissed is shown to the operator,
+and an answer that accepts it lets finishing proceed past its suite
+check (`crucible:subagent-driven-development § Finish`). Where no close
+readout precedes finishing, as at an umbrella's landing or after a
+standalone review, finishing presents its options with a recommendation.
+Finishing accepts a full run on exactly the HEAD being integrated whose
+output it can still show, and otherwise re-runs; it removes any
+feature-folder files the answer leaves out of a pull request in a final
+commit and re-runs the suite. In a pull request the repository's
 conventions come first, and changing commits already made to meet one is
 the operator's decision; PR feedback is handled in the kept worktree
 under `crucible:receiving-review`
@@ -131,9 +189,14 @@ An umbrella's landing became the third end on 2026-10-27. An umbrella
 takes no plan and no execution, so it never reaches SDD Finish, and its
 workspace would otherwise outlive it; it is deleted before the landing,
 after the campaign records are checked, as SDD Finish deletes a
-feature's. (Basis: judgment, accepted by the maintainer.)
+feature's. (Basis: judgment, accepted by the maintainer.) An umbrella's
+closing review, added on 2026-10-30, runs after that workspace and every
+child's are gone, so it provisions one of its own under the umbrella's
+slug, deleted once its findings are written
+(`docs/decisions/umbrellas.md`). (Basis: judgment, accepted by the
+maintainer.)
 
-### No committed summary
+### What is committed
 
 Until 2026-10-10 a script parsed the agents' records into a committed
 feature summary. The records are open input, and the parser grew a case
@@ -145,6 +208,55 @@ wrote them or by other production work, and two or three times to learn
 what an earlier feature did. The record checks built into the summary
 step, shipped on 2026-10-07, never fired in the 125 runs after.
 (Basis: measured.)
+
+From 2026-10-30 a feature also commits its open-items file, which
+reverses the position that its committed record was its spec, its plan
+and its commit messages alone. The file is a list the controller writes
+from the ledger as the operator's answer left it, not a summary parsed
+from records, so the parser's cost does not return (§ Work left open).
+(Basis: judgment, accepted by the maintainer.)
+
+### Work left open
+
+Until 2026-10-30 the close readout was the only hand-over of work left
+open, and filing it was left to the operator or the repository's
+conventions. The audit of the hypothesis-specs umbrella found what that
+cost: in 4 of its 10 clusters of lost or unseen findings, findings
+arrived after a batched landing approval, were handed over only in
+chat, and were lost when Finish deleted the ledger
+(`docs/decisions/evidence-and-findings.md` § The audit of the
+hypothesis-specs umbrella). What earlier phases left open, such as work
+a disposition sent to a follow-up outside the feature or a parked entry
+the operator had not ruled on, had no carrier to Finish: the plan
+phase's close seeded the ledger with routed items, contained amendments
+and open premise asks only. (Basis: measured, for the audit, and by
+reading the plan phase's close as it then stood, for the seeding.)
+
+Where the work goes was settled in steps. The maintainer ruled out an
+in-repository backlog as the default, "in-repo backlog is not a
+universal pattern", and work left open was to be filed into the
+project's own home for deferred work. That home was unknown to
+crucible, and each spec round found holes in the rules for when filing
+it was authorized and how long it was kept. The controller proposed a
+file in the feature folder, which every project crucible runs in has;
+the maintainer answered tentatively, "Possibly this by default,
+overridable by instructions?", and after two further re-shapings left
+the final form to the controller, which kept a default file overridable
+only by instructions that name where open items go. (Basis: measured,
+for the rounds' findings; the maintainer's preference, for no
+project-specific home and, tentatively, for the override; judgment,
+accepted by the maintainer, for the file, its final form a call the
+maintainer left to the agent.)
+
+Writing the file after the operator's answer lets the readout propose
+keeping or dropping each item without a ruling per item, and lets the
+file record the answer. The file is committed before the suite, as the
+umbrella mark is, so the suite runs on the tree that lands. No review
+reads it unless the loop reopens, so the readout lists every item, and
+this repository has the controller check it against the
+no-local-context rule. The commit adds a little work to every feature,
+which word counts do not show. (Basis: judgment, accepted by the
+maintainer.)
 
 ### Finish
 
@@ -159,16 +271,37 @@ Crucible keeps upstream's point, that a run proves only the tree it ran
 on, and relaxes the rule: a run on exactly the HEAD being integrated,
 whose output can still be shown, counts, so finishing does not repeat
 SDD Finish's run; the maintainer reported crucible's own suite taking 7
-to 39 minutes in that day's lane runs. The close readout replaced the
-committed summary as the hand-over of open work; filing that work is
-left to the operator or the repository's conventions. (Basis: external,
-for upstream; judgment, accepted by the maintainer; measured, by the
-maintainer's report, for the run times.)
+to 39 minutes in that day's lane runs. (Basis: external, for upstream;
+judgment, accepted by the maintainer; measured, by the maintainer's
+report, for the run times.)
 
 The umbrella mark, added on 2026-10-27, comes before the suite so that
 the suite runs on the tree that lands, mark included; a mark committed
 after it would land untested. (Basis: judgment, accepted by the
 maintainer.)
+
+Until 2026-10-30 Finish ran the suite before the close readout and
+deleted the workspace after it, and finishing then presented its menu
+"exactly as written". The maintainer found that the flow "railroads
+towards the merge very hard", while the close readout was already the
+decision point in practice. It now comes before the suite, carries the controller's
+recommendation, and waits for the answer; an answer asking for more
+work reopens the loop before anything is written, deleted or run, and
+finishing carries out the answer instead of asking again. Integration
+stays the operator's decision: nothing lands, pushes, opens a pull
+request or discards work without that answer. (Basis: the maintainer's
+preference, for loosening the flow; judgment, accepted by the
+maintainer, for its order.)
+
+The order was written for answers that integrate. On a discard, it
+would have deleted the workspace before finishing's typed `discard`
+confirmation, and a discard never confirmed would have left the work
+left open nowhere durable. A task review in the feature that wrote the
+order found this; the controller ruled that the confirmation comes
+before the deletion and that an unconfirmed discard counts as an answer
+that chose no option, so Finish resumes at the open-items file and the
+suite. (Basis: judgment, a controller's ruling within that feature, on
+a conflict its task review found.)
 
 Repository conventions come first in a pull request (2026-10-08), with no
 attempt to detect who owns the repository; a convention that rewrites
@@ -182,7 +315,14 @@ worktree. (Basis: judgment, accepted by the maintainer.)
 
 - **A committed feature or campaign summary**, per-round summary
   commits, and the parser, index and record checks that served them:
-  rarely read, and costly to keep parsing open input (§ Why).
+  rarely read, and costly to keep parsing open input (§ Why). The
+  open-items file is no such summary.
+- **The close readout as the only hand-over of work left open**, with
+  filing left to the operator or the repository's conventions: work
+  handed over only in chat was lost (§ Why).
+- **Filing work left open into a project's own home by default**, such
+  as an in-repository backlog: not every project has one, and its rules
+  for authorizing and keeping a filing never held up in review (§ Why).
 - **Archiving the workspace**: archives would pile up even on a small
   project (§ Why).
 - **Living specs** kept true after the feature ships: a shipped spec is a
@@ -202,9 +342,28 @@ worktree. (Basis: judgment, accepted by the maintainer.)
   hooks), which override crucible's defaults.
 - Its merge gate, which SDD Finish and finishing run in place of the full
   suite.
+- Where open items go, named in its instruction files: an
+  in-repository home on the branch, or an outside tracker as the
+  instructions say; a mode committing no feature-folder files is such a
+  case.
 
 ## Changes
 
+- 2026-10-30: the close readout is Finish's decision point, before the
+  suite: it lists the work left open with a keep-or-drop proposal for
+  each item and recommends one of finishing's options or more work; the
+  answer's integration runs the open-items file and the umbrella mark,
+  the suite, deletion and finishing, which carries the answer out
+  instead of presenting a fixed menu; a discard takes finishing's typed
+  confirmation before deletion, an unconfirmed one counting as no
+  option chosen. Work left open is written to the feature folder's
+  `open-items.md` unless the project's instructions name another home,
+  and what earlier phases left open reaches Finish through the ledger;
+  this reverses the close readout as the only hand-over, filing left to
+  the operator, and a committed record of spec, plan and commits alone.
+  An umbrella's closing review keeps a workspace of its own. The
+  maintainer found finish too rigid, and the audit of the
+  hypothesis-specs umbrella found work handed over in chat lost.
 - 2026-10-28: umbrellas (`docs/decisions/umbrellas.md`): an umbrella's
   landing as the workspace's third end, since an umbrella never reaches
   SDD Finish; the umbrella mark in SDD Finish before the suite, so the
