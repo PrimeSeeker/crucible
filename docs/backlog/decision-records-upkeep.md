@@ -14,9 +14,6 @@
   - The rules crucible declined (`docs/decisions/rejected-machinery.md`)
     are restated in `shared-tree.md`, `git-steps.md` and
     `evidence-and-findings.md`. The copies agree today.
-  - `routes.md` says "inline implementation" where the very-small lane
-    also allows one implementer
-    (`skills/subagent-driven-development/references/very-small-lane.md`).
   - `the-spec.md` says "contradiction" without redteaming's "with binding
     content".
   - `authoring-crucible.md` ("the scanner checks it exists") and the

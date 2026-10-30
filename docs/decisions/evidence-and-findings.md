@@ -264,8 +264,9 @@ reference beside the premise line, rather than at each site restating
 the umbrella's binding clause: an agent's call, confirmed as a contained
 amendment at the plan phase and reported in its readout. (Basis:
 measured, for the audit's findings; judgment, accepted by the
-maintainer, for the line; judgment, a contained amendment the agent
-confirmed, for the one home.)
+maintainer, for the line; judgment, an agent's call the maintainer has
+not ruled on, for the one home: a contained amendment the agent
+confirmed.)
 
 Doubts stopped at the controller. A seat question could be carried to
 the readout, but the readout's list had no item for it, and a doubt
@@ -430,7 +431,8 @@ records that cite "the audit" draw on these figures. (Basis: measured.)
   item that adds or changes a rule is traced before its list freezes;
   the binding-item and unrecorded-choice clauses moved to the shared
   reference, reaching the branch reviewer and the terminal pass; after
-  an audit of the hypothesis-specs umbrella.
+  an audit of the hypothesis-specs umbrella. The one home's basis is
+  labelled an agent's call the maintainer has not ruled on.
 - 2026-10-29: premise findings, the goal check and a widened `Questions`
   section: a seat may claim that the operator's premise is wrong, as a
   decision ask that holds no gate; a premise finding's location is the

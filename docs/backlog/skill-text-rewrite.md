@@ -75,7 +75,9 @@
   - the request block copied into each umbrella child's spec.
 - **Two findings that predate the effort**, found by the same audit:
   the folded lane gives "the fold requires a code baseline" as the reason
-  round 0 always runs, a claim the audit flagged; and the very-small
+  round 0 always runs, but nothing in the fold's entry requires one, and
+  `crucible:redteaming` § Round 0 gives a greenfield artifact no round-0
+  agent; and the very-small
   lane's upgrade hatch moves the work to the standard route without
   naming the skill that runs next.
 - **A minor defect the placement audit found, unfixed:** the re-review
@@ -91,8 +93,9 @@
 
 - Re-audit at the current tree, then bring the skills into line with the
   placement rule: one owner text per rule; a shared seat reference the
-  templates point to, once a release has shown seats reading plugin files
-  through `[PLUGIN_ROOT]`; history and long rationale to the decision
+  templates point to, which released seats can read, as they read
+  `premise-and-questions.md` through `[PLUGIN_ROOT]`; history and long
+  rationale to the decision
   records; host-neutral rules out of the adapters.
 - For each mechanism, weigh what it costs in always-loaded text against
   what it has caught (one data point: in one subagent-driven run, the
@@ -104,8 +107,8 @@
   targets of the rewrite, and fix its two predating findings on the way.
 - Consider moving the right-sizing lens, with its over-subtraction guard
   and re-seat trigger, from the spec campaign to the branch review.
-- Restructure how a tension a review finds gets closed, now by adding a
-  distinction. For a fix-list clause asking whether a removing or
+- Restructure how a tension a review finds gets closed, today by adding
+  a distinction. For a fix-list clause asking whether a removing or
   merging resolution exists, the maintainer agreed it looked weak and
   deferred the restructuring ("probably later").
 - Fix the minor defect above on the way, and give the breaker's sense of

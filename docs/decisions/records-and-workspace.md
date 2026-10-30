@@ -57,7 +57,8 @@ ledger: at the close that seeds it (the plan phase's, the folded
 campaign's, or SDD Setup on the very-small lane), the controller also
 seeds under `## Questions` what the brainstorm, the spec campaign and
 the plan phase left open, each as `<phase>: <item> — carried`
-(`skills/redteaming/references/plan-phase.md`). At Finish, after the
+(`skills/redteaming/references/plan-phase.md`); SDD's Setup seeds any
+such item, or open premise ask, that the ledger lacks. At Finish, after the
 operator's answer to the close readout, the work left open (minors,
 leads, questions, declined improvements, unruled asks, parked BLOCKER or
 MAJOR findings with their rulings, and what earlier phases carried) is
@@ -257,8 +258,8 @@ reads it unless the loop reopens, so the readout lists every item, and
 this repository has the controller check it against the
 no-local-context rule. The commit adds a little work to every feature,
 which word counts do not show. (Basis: judgment, accepted by the
-maintainer, for the order and the commit before the suite; a call the
-maintainer left to the agent, for writing the file after the answer.)
+maintainer: writing the file after the answer, the order and the commit
+before the suite, a call the maintainer left to the agent.)
 
 ### Finish
 
@@ -302,8 +303,9 @@ left open nowhere durable. A task review in the feature that wrote the
 order found this; the controller ruled that the confirmation comes
 before the deletion and that an unconfirmed discard counts as an answer
 that chose no option, so Finish resumes at the open-items file and the
-suite. (Basis: judgment, a controller's ruling within that feature, on
-a conflict its task review found.)
+suite. (Basis: judgment, an agent's call the maintainer has not ruled
+on: a controller's ruling within that feature, on a conflict its task
+review found.)
 
 Repository conventions come first in a pull request (2026-10-08), with no
 attempt to detect who owns the repository; a convention that rewrites
@@ -365,7 +367,11 @@ worktree. (Basis: judgment, accepted by the maintainer.)
   the operator, and a committed record of spec, plan and commits alone.
   An umbrella's closing review keeps a workspace of its own. The
   maintainer found finish too rigid, and the audit of the
-  hypothesis-specs umbrella found work handed over in chat lost.
+  hypothesis-specs umbrella found work handed over in chat lost. SDD's
+  Setup seeds a carried item or open premise ask the ledger lacks; the
+  file's order and pre-suite commit are attributed to the delegated
+  final form, and the discard ruling's basis is labelled an agent's
+  call the maintainer has not ruled on.
 - 2026-10-28: umbrellas (`docs/decisions/umbrellas.md`): an umbrella's
   landing as the workspace's third end, since an umbrella never reaches
   SDD Finish; the umbrella mark in SDD Finish before the suite, so the

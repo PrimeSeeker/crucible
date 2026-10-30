@@ -30,8 +30,9 @@
   answer, each seat forecasting it and the terminal pass checking the
   stop against the forecasts; the threshold's wording is in
   `docs/decisions/spec-campaign.md` § Stop rule and cap. The trigger is a
-  hypothesis with no demonstrated accuracy: three stops under it, all on
-  prose changes to crucible's skills, with no counterfactual. The cap of
+  hypothesis with no demonstrated accuracy: four stops under it, one
+  coinciding with the cap, all on prose changes to crucible's skills,
+  with no counterfactual. The cap of
   four stays.
 - Nothing records, after code, whether a stopped campaign's mechanisms
   were overturned: the forecasts are checked at the stop, never against

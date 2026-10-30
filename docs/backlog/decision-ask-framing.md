@@ -16,7 +16,8 @@
   arrangements feature (2026-10-29), the round-0 fixes made the campaign
   stop the controller's judgment where the spec approved at its digest
   gate had made it the operator's to confirm, and the change was never
-  put to the operator. The terminal pass's check of the brainstorm decision record
+  put to the operator; the maintainer has since confirmed it
+  (`docs/decisions/spec-campaign.md`). The terminal pass's check of the brainstorm decision record
   catches a withdrawn approval only as far as the records go: a change
   recorded in a readout passes it whether or not that readout reached
   the operator, and nothing checks delivery.

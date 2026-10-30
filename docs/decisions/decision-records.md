@@ -18,7 +18,8 @@ A record's sections, in order:
   **external** (a host's documentation, an upstream file, another cited
   source), **the maintainer's preference** (quoted where it helps),
   **judgment** (an agent's proposal the maintainer accepted, attributed
-  as such) or **a single incident**.
+  as such, or "judgment, an agent's call the maintainer has not ruled
+  on", naming the call) or **a single incident**.
 - `## Rejected`: only where an alternative would plausibly be proposed
   again: what, and why not.
 - `## What a project may change`: only where a project's instruction
@@ -149,7 +150,9 @@ judgment, accepted by the maintainer, 2026-10-29.)
 - 2026-10-30: an entry recorded `accepted — delegated to the
   controller` is attributed as judgment, accepted by the maintainer,
   saying the maintainer left the call to the agent, since the
-  attribution rule named no form for it.
+  attribution rule named no form for it; and an agent's call the
+  maintainer has not ruled on gets its own judgment form, since the
+  plain label reads as the maintainer's acceptance.
 - 2026-10-28: a position is stated as firmly held only on the
   maintainer's word, the maintainer's preference naming its origin, not
   its strength; a task writing a record attributes each basis from the

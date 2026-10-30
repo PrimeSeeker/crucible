@@ -125,7 +125,8 @@ branch review or its close readout opens a branch-review wave, counted
 against the cap, and SDD's Finish restarts after it. A ruling that
 keeps the decision opens nothing. Work the operator's close-readout
 answer asks for opens a wave the same way where the spec and plan
-already require it or the readout listed it as an improvement or lead;
+already require it or the readout listed it as a minor, improvement or
+lead;
 other work is new scope, a feature of its own. Where the cap is spent,
 the operator's answer is the escalation's answer and may open the wave
 (`skills/redteaming/references/flip-paths.md` § Premise findings;
@@ -275,9 +276,9 @@ be flagged every time, since each item names its source by the ledger's
 prefixes; the spec and plan are build records too. The task that wired
 the open-items commit into the reviewer's range widened the exemption
 to the feature folder's files, which the build-history rule already
-names as a home for that history. (Basis: judgment, an implementer's
-call in that feature that its task review upheld; the maintainer has
-not ruled on it.)
+names as a home for that history. (Basis: judgment, an agent's call
+the maintainer has not ruled on: an implementer's, in that feature,
+that its task review upheld.)
 
 ### One owner, and a standalone use
 
@@ -377,12 +378,14 @@ accepted by the maintainer.)
   never adjudicated; a lead confirmed as an intent or scope gap opens a
   wave and an unruled lead is a missing verdict; a premise ruling in
   execution lands as a plan change during the task loop and as a
-  branch-review wave after it; the reviewer reports a wrong binding
+  branch-review wave after it, as does a listed minor the operator's
+  answer asks to fix; the reviewer reports a wrong binding
   item and an unrecorded consequential choice; these close gaps the
   audit of the hypothesis-specs umbrella found. The reviewer also takes
   Finish's open-items commit as part of a reopened range and exempts
   the feature folder's files from its build-history check, since that
-  file names each item's source.
+  file names each item's source; that exemption's basis is labelled an
+  agent's call the maintainer has not ruled on.
 - 2026-10-29: the branch reviewer is the first review of each task
   completed branch review only, named in a new slot: it makes the task
   review's four judgments over the task's range and checks its decision

@@ -234,8 +234,9 @@ skill sites, several in no task's file list, and its controller
 confirmed a contained amendment giving the rule one home, in the shared
 reference beside the premise line, which § Children points to; the
 restated clause itself is the skill-text rewrite's to collapse
-(`docs/backlog/skill-text-rewrite.md`). (Basis: judgment, a contained
-amendment the agent confirmed.)
+(`docs/backlog/skill-text-rewrite.md`). (Basis: judgment, an agent's
+call the maintainer has not ruled on: a contained amendment the agent
+confirmed.)
 
 ### Binding changes off the child's branch
 
@@ -327,9 +328,9 @@ such a seat, and its fix dropped the seat from the shipped default,
 naming the drop in that round's readout: a seat on the other host is
 the operator's own instruction where it applies, and the skills compose
 none (`docs/backlog/second-runtime-seat.md`). (Basis: judgment, an
-agent's fix in the spec campaign's round 0, named in that round's
-readout and departing from a detail of the form the maintainer
-accepted; the maintainer gave no separate ruling on it.)
+agent's call the maintainer has not ruled on: a fix in the spec
+campaign's round 0, named in that round's readout and departing from a
+detail of the form the maintainer accepted.)
 
 ## Rejected
 
@@ -362,7 +363,9 @@ accepted; the maintainer gave no separate ruling on it.)
   stated once, the exception to the binding clause stated at each site;
   the overturn question reads "reasonably expected". The audit of the
   hypothesis-specs umbrella found nothing reading across children, and
-  the maintainer asked for a separate wider review.
+  the maintainer asked for a separate wider review. The one home's and
+  the dropped other-host seat's bases are labelled agents' calls the
+  maintainer has not ruled on.
 - 2026-10-29: review by content no longer rests on the routes' retired
   "worth reviewing" line: the overturn question selects a feature's
   review, and an umbrella, with no code of its own, keeps review by

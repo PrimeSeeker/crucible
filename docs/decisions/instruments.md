@@ -239,7 +239,8 @@ classes a premise finding as the other seats do: a controller's ruling
 during the execution of the feature that moved the clauses, when the
 task that wrote the section found the pass reading the arrangement
 questions alone.
-(Basis: judgment, a controller's ruling within that feature.) The
+(Basis: judgment, an agent's call the maintainer has not ruled on: a
+controller's ruling within that feature.) The
 pass's card gained the decision-record slot the same day, for its check
 of the operator's approvals (`docs/decisions/terminal-pass.md`). (Basis:
 judgment, accepted by the maintainer.)
@@ -272,7 +273,8 @@ judgment, accepted by the maintainer.)
   terminal pass also reads § Premise findings, and its card gains
   `{decision-record-path}`; the record names what each seat reads of
   the reference; after an audit found the branch reviewer without the
-  clauses.
+  clauses. The basis for the terminal pass reading § Premise findings
+  is labelled an agent's call the maintainer has not ruled on.
 - 2026-10-29: the shared reference also holds the arrangement questions,
   and the terminal pass's card gains `{plugin-root}` to read them for its
   stop check, so each definition has one home every reader reaches.
