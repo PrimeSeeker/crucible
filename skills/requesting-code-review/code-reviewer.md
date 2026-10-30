@@ -21,8 +21,9 @@ top-level router. The plugin files this template names below,
 `skills/subagent-driven-development/writing-good-tests.md` and
 `skills/subagent-driven-development/references/premise-and-questions.md`
 (the shared reference), are under the plugin root your dispatch names
-(absolute); read the shared reference's § Premise findings, § The goal
-check, § Questions, § Location and § The arrangement questions.
+(absolute); read the shared reference's § Premise findings, § Binding
+items and unrecorded choices, § The goal check, § Questions, § Location
+and § The arrangement questions.
 
 ## Where You Work
 
@@ -85,7 +86,11 @@ case its author plainly did not consider, whether the branch applies it
 there or departs from it, report a finding labeled literal-reading
 naming the item and the case: it goes to the controller as a plan
 conflict. That the premise behind the binding content is wrong is a
-premise finding (the shared reference, § Premise findings).
+premise finding (the shared reference, § Premise findings). What else a
+binding item or an unrecorded choice draws as a finding is in the
+shared reference's § Binding items and unrecorded choices; here, a
+consequential choice is one the code makes with no decision recording
+it.
 [[when lane = very-small]]
 This branch is on the very-small lane, so the pointer above names its
 lane note, not a spec. What binds is the note's Intent, Acceptance and
@@ -98,8 +103,8 @@ ordinary finding at its staked severity, not DRIFT — on this lane the
 fix wave handles it. Add a `### Lane Fit` section after Ledger Triage
 with two verdicts, each with one line of reasoning: EXCEEDS SHAPE where,
 now that the change is coded, overturning a major mechanism of it is
-plausible (the shared reference's § The arrangement questions), one the
-note states included, and WITHIN SHAPE where it is not; and GOAL
+reasonably expected (the shared reference's § The arrangement
+questions), one the note states included, and WITHIN SHAPE where it is not; and GOAL
 MATCHES or GOAL DIFFERS — what your Goal Check found, a difference
 naming the premise finding or question it raised.
 [[end]]
@@ -126,6 +131,11 @@ named here.
 
 Your dispatch's description summarizes what was built; its
 requirements source is a plan file path, task text, or requirements.
+Where the review reopened after the controller's finish, the range holds
+what that finish committed, and it is part of the branch like the rest:
+the feature's umbrella entry marked `landed`, and `open-items.md` in the
+feature folder (the folder holding the spec), the work left open with
+each item's source.
 
 ## The Goal Check
 
@@ -147,9 +157,11 @@ Among the deferred items are leads, carried to you for a ruling: lines
 marked `lead (<kind>):` after their prefix, as in
 `Task <N>: lead (question):`, `<kind>` being `question`, `proposal` or
 `concern`. Rule on each lead: CONFIRMED — a finding, written under
-Issues at the severity you stake; RECOMMENDED — an improvement you back,
-which the controller may adopt; or LEFT, with one line of reasoning. A
-concern is CONFIRMED or LEFT.
+Issues at the severity you stake, and named an intent gap or a scope
+gap where it is one, by the intent and scope judgments below; RECOMMENDED
+— an improvement you back, which the controller may adopt; or LEFT, with
+one line of reasoning. A concern is CONFIRMED or LEFT. A lead left
+unruled is a missing verdict.
 
 Triage every other deferred item: PROMOTE (it compounds across tasks or is
 worse than its label — restake the severity), FIX-IN-WAVE (trivial,
@@ -190,10 +202,12 @@ four judgments a task review makes:
 
 Where a decision record is named, also check each position's stated
 basis against its entry's proposer and status there. The task's
-concerns reach you as leads among the deferred items. A failed
+concerns reach you as leads among the deferred items; one you confirm
+as an intent or scope gap fails that judgment. A failed
 judgment is an entry under Issues at the severity you stake, naming the
 task and the judgment: the controller opens a fix wave on a failed
-intent, scope or deviation audit whatever its severity.
+intent, scope or deviation audit whatever its severity, and on a lead
+confirmed as an intent or scope gap in any task.
 
 ## Git Range to Review
 
@@ -244,7 +258,8 @@ touches, integration seams. Name what you checked in your report.
   carry build history: plan task numbers, spec section numbers,
   feature decision ids, pointers to a feature's spec or plan, rulings
   carrying names or dates, wave names, what was retired when? Decision
-  records and changelogs are exempt, since they exist to hold it.
+  records, changelogs and the feature folder's files are exempt, since
+  they exist to hold it.
 - Does anything the branch ships carry local context — a personal
   path, an account name or email address, a private machine's setup —
   or break a rule the project's instruction files set for committed
@@ -342,7 +357,8 @@ names no task.
 
 ### Ledger Triage
 
-Per lead: CONFIRMED (naming the issue it became), RECOMMENDED or LEFT,
+Per lead: CONFIRMED (naming the issue it became, and `intent gap` or
+`scope gap` where it is one), RECOMMENDED or LEFT,
 one line each. Per other deferred item — parked minors and routed
 items alike: PROMOTE / FIX-IN-WAVE / LEAVE-PARKED, one line each,
 naming the owning task for a routed item. Per ruling: CONSISTENT or
