@@ -214,7 +214,8 @@ reverses the position that its committed record was its spec, its plan
 and its commit messages alone. The file is a list the controller writes
 from the ledger as the operator's answer left it, not a summary parsed
 from records, so the parser's cost does not return (§ Work left open).
-(Basis: judgment, accepted by the maintainer.)
+(Basis: judgment, accepted by the maintainer, the file's final form a
+call the maintainer left to the agent.)
 
 ### Work left open
 
@@ -256,7 +257,8 @@ reads it unless the loop reopens, so the readout lists every item, and
 this repository has the controller check it against the
 no-local-context rule. The commit adds a little work to every feature,
 which word counts do not show. (Basis: judgment, accepted by the
-maintainer.)
+maintainer, for the order and the commit before the suite; a call the
+maintainer left to the agent, for writing the file after the answer.)
 
 ### Finish
 

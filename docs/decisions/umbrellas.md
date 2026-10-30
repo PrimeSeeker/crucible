@@ -321,11 +321,15 @@ session resuming the effort is pointed to the review. (Basis:
 judgment, accepted by the maintainer, for the step; the final choice a
 call the maintainer left to the agent.)
 
-The form first detailed had one seat on the other host. As shipped, a
-seat on the other host is the operator's own instruction where it
-applies, and the skills compose none
-(`docs/backlog/second-runtime-seat.md`). (Basis: judgment, a contained
-amendment the agent confirmed on a call the maintainer left to it.)
+The form the maintainer accepted at the brainstorm had one seat on the
+other host. The spec campaign's round 0 found that no skill composes
+such a seat, and its fix dropped the seat from the shipped default,
+naming the drop in that round's readout: a seat on the other host is
+the operator's own instruction where it applies, and the skills compose
+none (`docs/backlog/second-runtime-seat.md`). (Basis: judgment, an
+agent's fix in the spec campaign's round 0, named in that round's
+readout and departing from a detail of the form the maintainer
+accepted; the maintainer gave no separate ruling on it.)
 
 ## Rejected
 
