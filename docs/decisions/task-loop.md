@@ -143,9 +143,10 @@ the task is overdetermined, in the sense
 `skills/subagent-driven-development/references/premise-and-questions.md`
 § The arrangement questions defines, and fits its remaining context
 without pushing out the coordination state it needs through the branch
-review; otherwise it dispatches, the default. On the very-small lane,
-whose change brainstorming already found settled, the context test
-alone decides, inline being the lane's default
+review; otherwise it dispatches, the default. On the very-small lane
+the same test decides, only its review clause not applying, since the
+lane has no task review; the lane's branch-review fix waves stay the
+controller's, a cleanup wave's included
 (`skills/subagent-driven-development/references/very-small-lane.md`).
 Review applies unchanged, and any loop-entering finding, at any
 severity, converts the task to standard dispatch, a fresh implementer
@@ -378,6 +379,20 @@ maintainer accepted ("OK, I guess"). (Basis: the maintainer's
 preference, for not expanding the mode; judgment, accepted by the
 maintainer, for the criterion.)
 
+That left the lane's inline test looser than everywhere else, context
+alone, while the lane's population widened to changes with non-trivial
+impact whose mechanism is settled (`docs/decisions/routes.md`). The
+controller's brainstorm argument for widening the lane had relied on
+inline work being limited to overdetermined changes, and a spec-round
+fix removed that safeguard (the audit,
+`docs/decisions/evidence-and-findings.md`). Since
+2026-10-30 the lane takes the same test as any task, the change
+overdetermined and fitting the controller's context, and dispatches its
+implementer otherwise, as it already could; the lane's fix waves stay
+inline by the lane's own design. An agent's proposal, which the
+maintainer accepted. (Basis: measured, for the audit's finding;
+judgment, accepted by the maintainer, for the test.)
+
 ## Rejected
 
 - **A stuck trigger** escalating a seat past the default role, for now
@@ -394,6 +409,11 @@ maintainer, for the criterion.)
 
 ## Changes
 
+- 2026-10-30: the very-small lane implements inline only where the
+  inline test holds, the change overdetermined and fitting the
+  controller's context, reversing the 2026-10-29 lane dispatch by
+  context alone; its fix waves stay inline, a cleanup wave's included;
+  after an audit found the lane's test looser than everywhere else.
 - 2026-10-29: a task the plan marks `Review: branch only`, dispatched,
   runs no task review where its report passes the widened gates and no
   concern touches a later task's ground, its concerns becoming leads and

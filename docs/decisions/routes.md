@@ -7,8 +7,9 @@ choices: review before code, the plan's form, per-task review, and
 inline or subagent execution. The branch review is no choice: every
 arrangement runs it, at full scope. The routes are presets over the
 choices, standard the usual one, folded and very small the others, and
-a combination with no known use is unsupported; the presets and the
-unsupported list are stated once, in `skills/brainstorming/SKILL.md`
+the other combinations are unsupported, each for the reason the list
+gives it; the presets and the unsupported list are stated once, in
+`skills/brainstorming/SKILL.md`
 § Proposing the arrangement (step 4). Each choice is made where its
 information exists: the preset at brainstorming's present-the-design
 step, per-task review in the plan (`docs/decisions/plans.md`), execution
@@ -31,11 +32,13 @@ it carries, and each of its children takes a preset of its own
 (`docs/decisions/umbrellas.md`).
 
 **The overturn question chooses.** A feature takes a spec campaign where
-overturning one of its major mechanisms after code is plausible, and
-none where it is not; the question, and the two cases in which it
-answers no before any review, are defined in
+overturning a major mechanism after code is reasonably expected, and
+none where it is not and one implementer can carry it; the question,
+and the two usual cases in which it answers no before any review, are
+defined in
 `skills/subagent-driven-development/references/premise-and-questions.md`
-§ The arrangement questions. Between the campaign presets, folded fits
+§ The arrangement questions, and a no for any other reason states that
+reason. Between the campaign presets, folded fits
 a plan of one or two tasks with no seam worth its own review, standard
 the rest. Width is no test of risk, since the branch review reads the
 whole diff whatever its width, but it shapes the arrangement where work
@@ -48,14 +51,17 @@ first round. File and line counts are not the test.
   and every review instrument unchanged
   (`skills/redteaming/references/folded-lane.md`).
 - **Very small:** a frozen lane note (the request, intent, change list,
-  acceptance as runnable checks, out of scope), implemented inline by
-  default, the repository's own gates and the branch review, with no
-  spec campaign, plan, digest or per-task review
+  acceptance as runnable checks, out of scope), implemented inline
+  where the change is overdetermined and fits the controller's context,
+  by the inline test of `docs/decisions/task-loop.md`, and by a
+  dispatched implementer otherwise; the repository's own gates and the
+  branch review, with no spec campaign, plan, digest or per-task review
   (`skills/subagent-driven-development/references/very-small-lane.md`).
   The branch reviewer, the lane's first review, states in its Lane Fit
-  whether overturning a major mechanism of the change is plausible now
-  that it is coded, EXCEEDS SHAPE opening the upgrade hatch and WITHIN
-  SHAPE keeping the lane, and whether the note's Intent matches the goal
+  whether overturning a major mechanism of the change is reasonably
+  expected now that it is coded, EXCEEDS SHAPE opening the upgrade
+  hatch and WITHIN SHAPE keeping the lane, and whether the note's
+  Intent matches the goal
   its request asks for; it rules on a dispatched implementer's concerns,
   questions and proposals, which the controller transcribes to the
   ledger as leads.
@@ -101,9 +107,10 @@ but don't have to be always aligned" (2026-10-28). (Basis: the
 maintainer's preference, for separating them.) Of three forms an agent
 offered, presets over the choices, the choices as fields alone, and the
 routes plus two toggles, the maintainer took presets ("Agreed on form"),
-and only combinations with a known use are supported. The step-4
-confirmation covers the preset alone because per-task review needs the
-tasks and execution needs the task in hand, which only the plan and the
+and the other combinations are unsupported, each for a stated reason.
+The step-4 confirmation covers the preset alone because per-task review
+needs the tasks and execution needs the task in hand, which only the
+plan and the
 task loop have. (Basis: judgment, accepted by the maintainer,
 2026-10-29.)
 
@@ -113,12 +120,16 @@ project. Whether the overturn question leaves it a niche is left for
 later. (Basis: measured, for the count; judgment, accepted by the
 maintainer, for keeping it.)
 
-A lane note with a plan, for a settled change that needs several
-coordinated tasks, and a spec implemented with no plan after its
+A lane note with a plan and a spec implemented with no plan after its
 campaign were both left out, each an agent's proposal the maintainer
 accepted ("your call", and "Agreed"); both wait in
-`docs/backlog/lane-entry-and-downshift.md`, the first with its trigger: a
-settled change campaigned only to get a plan. (Basis: judgment, accepted
+`docs/backlog/lane-entry-and-downshift.md`, the first with its trigger:
+a settled change campaigned only to get a plan. As first recorded, the
+first had no known use; it has one, a settled change that needs several
+coordinated tasks, and is unsupported
+for its stated reason, that work needing a plan takes a campaign preset
+(corrected 2026-10-30, after the audit,
+`docs/decisions/evidence-and-findings.md`). (Basis: judgment, accepted
 by the maintainer, 2026-10-29.)
 
 ### The overturn question as the selector
@@ -149,6 +160,26 @@ the question. (Basis: judgment, accepted by the maintainer, 2026-10-29.)
 Lane Fit asks the same question of the diff, and keeps its verdict words
 because other files, and features in flight on older installs, read
 them. (Basis: judgment, accepted by the maintainer, 2026-10-29.)
+
+The umbrella the maintainer approved had reworded the threshold, and
+the skills followed it; on 2026-10-30 it returned to the
+maintainer's own words, "reasonably expected", which the README's
+"likely" already matched. The audit
+(`docs/decisions/evidence-and-findings.md`) also found step 4 stating
+the selector absolutely, no campaign wherever the reference's two cases
+held, and then overriding it for a settled change that needs several
+tasks, and giving an unsupported reason for leaving out a campaign on a
+lane note or a spec with no campaign. The two cases are now the usual
+grounds for a no, not the only ones, a no on other grounds stating
+them; the selector keys on the answer, a no taking no campaign where
+one implementer can carry the work; and the reason given is that a
+feature's spec is always campaigned and a note never is, an umbrella
+approved without a campaign being a spec of its own kind. The wider
+question of how far the choices separate is the skill-text rewrite's
+(`docs/backlog/skill-text-rewrite.md`). An agent's proposal, which the
+maintainer accepted. (Basis: the maintainer's preference, for the
+words; measured, for the audit's findings; judgment, accepted by the
+maintainer, for the rest.)
 
 ### The origin question's answer
 
@@ -200,6 +231,12 @@ open. So for a change with nothing left to decide before code, the diff
 is the review object and the branch-review loop iterates on it to its
 severity floor. The comparison offers no counterfactual for what a spec
 round would have caught. (Basis: measured.)
+
+Since 2026-10-30 the lane implements inline only where the inline test
+every route uses holds, the change overdetermined and fitting the
+controller's context, in place of the context test alone
+(`docs/decisions/task-loop.md`, which gives the reasons). (Basis:
+judgment, accepted by the maintainer.)
 
 The note binds through its intent, acceptance and out of scope; a
 departure from its change list is logged, and a Lane Fit verdict of
@@ -263,6 +300,15 @@ small preset or the waiver for its work.
 
 ## Changes
 
+- 2026-10-30: the overturn question asks whether an overturn after code
+  is reasonably expected, the maintainer's words, its two cases the
+  usual grounds for a no rather than the only ones; step 4 keys on the
+  answer, for work one implementer can carry, with a supported reason
+  for a spec always campaigned and a note never; a lane note with a
+  plan has a known use and is unsupported for its stated reason,
+  correcting "no known use"; the lane implements inline only where the
+  change is overdetermined, replacing the context-only test; after an
+  audit of the hypothesis-specs umbrella.
 - 2026-10-29: the routes became presets over four choices, each made
   where its information exists, the step-4 proposal naming a preset and
   the route entry written for every preset; the overturn question

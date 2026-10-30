@@ -26,23 +26,33 @@ Hygiene and Severity; `skills/requesting-code-review/code-reviewer.md` §
 Calibration).
 
 **Premise findings.** A redteam seat, the branch reviewer or an
-implementer may claim, with evidence, that something the operator asked
-for or decided is wrong: the request itself, what the Intent asks for,
-or a decision the operator made or holds firm, the chosen approach
-included where the operator chose it. The finding carries the label
-`premise` after its staked severity. A finding against a decision the
-operator only accepted from the controller's proposal is an ordinary
-one, and so is a correction of the Intent's wording or facts that leaves
-what it asks for unchanged; a `literal-reading` finding keeps its own
-label, since it questions an application, not the premise. A task
-reviewer raises none: its doubt about a premise is a question
+implementer may claim, with evidence, that one of three things is wrong:
+the request, what the Intent asks for, or a firm decision. Each is
+readable from the document: the request and the Intent are its
+sections, and a firm decision says so in its rationale. On the
+very-small lane the lane note's Intent stands for the spec's; for an
+umbrella's child the request includes the effort's request, the
+umbrella's Intent is protected as the child's own is, and a change on
+the child's branch to what that Intent asks is a finding. The finding
+carries the label `premise` after its staked severity. Every other
+decision, whoever proposed it, is lightly held: a finding against it is
+an ordinary one, and so is a correction of an Intent's wording or facts
+that leaves what it asks for unchanged. Any other binding item shown
+wrong, a Constraint or a mark, keeps its own route, and a
+`literal-reading` finding keeps its own label, since it questions an
+application, not the premise. No rule routes on who proposed a
+decision. A task reviewer raises none: its doubt about a premise is a question
 (`skills/subagent-driven-development/references/premise-and-questions.md`
-§ Premise findings). Every premise finding goes to the operator as a
-decision ask with a recommendation. It is an open decision ask, not an
-open BLOCKER or MAJOR: it holds open no gate keyed on one, opens no fix
-wave and consumes no cap, the readouts carry it until it is ruled, and
-work goes on except what builds on the challenged premise. An open one
-is carried across each phase's close until ruled
+§ Premise findings). The controller corrects a label in either
+direction, its reason recorded with it. Every premise finding goes to
+the operator as a decision ask with a recommendation. It is an open
+decision ask, not an open BLOCKER or MAJOR: it holds open no gate keyed
+on one, opens no fix wave and consumes no cap, the readouts carry it
+until it is ruled, and work goes on except what builds on the
+challenged premise. In a spec campaign, one whose upholding would
+re-shape a major mechanism holds the stop until it is ruled
+(`docs/decisions/spec-campaign.md`). An open one is carried across each
+phase's close until ruled
 (`skills/redteaming/references/flip-paths.md` § Premise findings).
 
 **The goal check.** Before reading the Intent, a redteam seat and the
@@ -71,14 +81,24 @@ readout, rejected with a ruling or adopted; a task reviewer's or an
 implementer's becomes a lead the branch reviewer rules on
 (`docs/decisions/branch-review.md`); the branch reviewer's own go under
 the ledger's `## Questions` with the controller's disposition, for the
-close readout; a standalone branch review's report is their record. An
-improvement the controller adopts is a lightly held change it names in
-the readout, and rides the next fix wave as one of its items, in a
-campaign a fix-list item naming the question id; it never opens a wave
-by itself, the controller never applies one itself outside the
-very-small lane, and one with no wave to ride goes to the operator in
-the readout (`crucible:redteaming § Merge and finding hygiene`;
-`crucible:subagent-driven-development § What a report voices`).
+close readout; a standalone branch review's report is their record. A
+redteam seat's question that doubts the request, what the Intent asks
+for or a firm decision is always carried to the readout, round 0's
+included, since the operator settles such a doubt and the controller is
+the Intent's author; the readout quotes each carried question verbatim.
+An improvement the controller adopts is a lightly held change it names
+in the readout, and rides the next fix wave: in a campaign as a
+fix-list item naming the question id; at the branch review as a
+labelled change, `Change (improvement)`, which the fixer applies or
+declines with a reason, with no defect to confirm and nothing for the
+adjudicator, an operator's ruling and work the operator asked for
+riding a wave the same way. It never opens a wave by itself, the branch
+review's one cleanup wave aside (`docs/decisions/branch-review.md`); the
+controller never applies one itself outside the very-small lane; one
+with no wave to ride goes to the operator in the readout, and one a
+fixer declines is work left open (`crucible:redteaming § Merge and
+finding hygiene`; `crucible:requesting-code-review § The branch-review
+loop`; `crucible:subagent-driven-development § What a report voices`).
 
 **Evidence on the author's side.** Whoever writes the text under review
 carries the seats' rule. A spec's author checks each claim about
@@ -97,7 +117,13 @@ a defect in the ask. The implementer's report gives each code-shaped
 claim its command and output, or `UNVERIFIED`
 (`skills/subagent-driven-development/implementer-prompt.md` § Report
 Format). Before a fix list freezes, each item names every artifact site
-restating the content it changes, and a fix landing at fewer sites than
+restating the content it changes, and an item that adds or changes a
+rule, a seat's suggested wording included, also names each site that
+brainstorming's consumer sweep and trace find for it: who produces the
+rule's input, who reads its output, and which routes and phases reach
+it. Every spec-campaign and plan-phase fix list takes the trace, round
+0's, a terminal pass's follow-up wave's and a plan-phase repair's
+included; execution's waves do not. A fix landing at fewer sites than
 its item names has not landed (`crucible:redteaming § Fix application
 and blind verification`). `UNVERIFIED` is the one marker; it tags a
 claim and never admits a finding to a fix list.
@@ -123,9 +149,14 @@ the requirements' silence as no permission: a failure on an input they
 imply but never name is a defect, graded by its effect on a reasonable
 person using the software (`skills/requesting-code-review/code-reviewer.md`
 § What to Check; `skills/subagent-driven-development/task-reviewer-prompt.md`
-§ Verdict 4: Quality). A panel seat reports a consequential choice the
-artifact takes for granted with no decision recording it
-(`skills/redteaming/seat-prompt.md`). The implementer's test evidence
+§ Verdict 4: Quality). A redteam seat, the terminal pass and the branch
+reviewer report a consequential choice the artifact takes for granted
+with no decision recording it, for the branch reviewer one the code
+makes, and a binding item that is itself wrong; both clauses have one
+home, the shared reference's § Binding items and unrecorded choices
+(`skills/subagent-driven-development/references/premise-and-questions.md`),
+which the task reviewer and the implementer do not read. The
+implementer's test evidence
 names every failing test, whether its change caused it or not
 (`skills/subagent-driven-development/implementer-prompt.md` § Report
 Format), and the task reviewer and the re-reviewer re-read evidence that
@@ -163,6 +194,19 @@ accepted by the maintainer, for the 2026-08-06 rule and the shared
 section; external, for upstream; the maintainer's preference, for
 reopening it.)
 
+An adopted improvement then rode a branch-review fix wave "as one of its
+findings", while the fixer's contract is to confirm a defect before
+editing and answer each finding fixed or NOT CONFIRMED: an improvement
+has no defect, so a fixer that declined it could only dispute it to the
+adjudicator (the audit below, at MINOR). Since 2026-10-30 an
+improvement, an operator's ruling and requested work ride a wave
+labelled as changes, applied or declined with a reason, and an applied
+one reaches the re-review, which checks it landed and broke nothing. The
+implementer's and re-reviewer's cards name the label, overriding their
+templates' two-answer rule for labelled items, so neither template grew.
+An agent's proposal, which the maintainer accepted. (Basis: measured,
+for the finding; judgment, accepted by the maintainer, for the form.)
+
 ### Premise findings, the goal check and questions
 
 The maintainer judged the execution reviewers' mandate narrower than
@@ -195,12 +239,44 @@ The `premise` label, its route to the operator as a decision ask that
 holds no gate, a location that may be a passage, the goal check against
 a quoted request, and one `Questions` section for questions, doubts and
 improvements across seats are an agent's proposals, which the maintainer
-accepted. The line between a premise finding and an ordinary one
-follows who stands behind the decision challenged: one the operator only
-accepted from the controller's proposal is lightly held
-(`docs/decisions/the-spec.md`), so a finding against it is flipped with
-a logged rationale like any other. (Basis: judgment, accepted by the
-maintainer.)
+accepted. (Basis: judgment, accepted by the maintainer.)
+
+As first written, the line between a premise finding and an ordinary one
+followed who stood behind the decision challenged: a finding against a
+decision the operator made was a premise finding, against one the
+operator only accepted from the controller's proposal an ordinary one.
+The audit below found that line unworkable: the spec contract made every
+decision neither firm nor marked lightly held, while the shared
+reference made a finding against "a decision the operator made" an
+operator ask; seats never see a decision's proposer; the mislabel rule
+corrected one direction only; and routing on the proposer reversed in
+effect the declined mark of who decided (§ What the requirements leave
+unsaid). Since 2026-10-30 a premise finding protects what the document
+itself shows, the request, what the Intent asks for and firm decisions,
+and every other decision is lightly held whoever proposed it, which
+matches the maintainer's reading of an approval as "this until new
+evidence arrives" (`docs/decisions/the-spec.md`). The proposer stays in
+the brainstorm decision record, for attribution only, and the controller
+corrects a mislabel in either direction. An agent's proposal, which the
+maintainer accepted. That a change on a child's branch to what its
+umbrella's Intent asks is a finding is stated once, in the shared
+reference beside the premise line, rather than at each site restating
+the umbrella's binding clause: an agent's call, confirmed as a contained
+amendment at the plan phase and reported in its readout. (Basis:
+measured, for the audit's findings; judgment, accepted by the
+maintainer, for the line; judgment, a contained amendment the agent
+confirmed, for the one home.)
+
+Doubts stopped at the controller. A seat question could be carried to
+the readout, but the readout's list had no item for it, and a doubt
+about the Intent could be answered or rejected by the Intent's own
+author: across the three features the audit read, seat questions were
+answered 47 times, adopted 12, rejected once and carried never. Such a
+doubt is now always carried, and the readout quotes each carried
+question verbatim, so the operator reads the seat's words rather than
+the controller's account of them; every other question keeps its four
+dispositions. An agent's proposal, which the maintainer accepted.
+(Basis: measured; judgment, accepted by the maintainer.)
 
 A branch's prose review once ran two waves of line-wrap fixes, each
 seeding the next; with formatting no tool enforces out of scope, ragged
@@ -232,6 +308,22 @@ claims waits until the prose rules are seen eroding
 (`docs/backlog/claims-lint-untagged-code-claims.md`), a deferral the
 maintainer ratified on 2026-08-27. (Basis: judgment, accepted by the
 maintainer.)
+
+The propagation sweep finds the sites that restate what a fix changes;
+it does not follow the change to what consumes it. In the audit below,
+6 of the 10 clusters of lost or unseen findings began with a fix wave
+that created the defect while nothing traced its consequences. From
+2026-10-30 each fix item that adds or changes a rule takes
+brainstorming's consumer sweep and trace before the list freezes, a
+seat's suggested wording being a proposal traced like the controller's
+own, and what the trace finds lands as restating sites, which the blind
+verifier already checks, with no new record field. Execution's waves
+are left out by choice: each is followed by a scoped re-review and, at
+the branch review, a full-scope pass, while a campaign's last wave is
+read only by the verifier and the terminal pass. The trace adds a little
+work to every fix list of every feature, which word counts do not show.
+An agent's proposal, which the maintainer accepted. (Basis: measured,
+for the clusters; judgment, accepted by the maintainer, for the rule.)
 
 ### Evidence before claims
 
@@ -272,7 +364,37 @@ also had brainstorming record which choices the person made and which
 the agent made; the maintainer declined it, since a mark saying the
 operator decided invites deference to the choice, and took the seats'
 clause in its place, which asks for the missing decision instead.
-(Basis: external; judgment, accepted by the maintainer.)
+(Basis: external; judgment, accepted by the maintainer.) The premise
+line of 2026-10-29, keyed on who proposed a decision, undid that decline
+in effect, and since 2026-10-30 no rule routes on the proposer
+(§ Premise findings, the goal check and questions).
+
+The clause asking for a missing decision, and the one that a binding
+item is itself wrong, sat in the redteam seat's template alone, so the
+branch reviewer had neither (the audit below). On 2026-10-30 both moved
+to a section of the shared reference that the redteam seat, the
+terminal pass and the branch reviewer read; for the branch reviewer the
+missing decision is one the code makes. The task reviewer's and the
+implementer's templates do not name the section, so the rejection of a
+premise-finding mandate for task reviewers stands (§ Rejected). An
+agent's proposal, which the maintainer accepted. (Basis: measured, for
+the gap; judgment, accepted by the maintainer, for the move.)
+
+### The audit of the hypothesis-specs umbrella
+
+The umbrella shipped three features through the full process. At the
+maintainer's request (2026-10-29), five fresh auditors read the shipped
+tree blind to the review records, and two more traced each finding back
+through the records. Of 23 distinct correctness findings, 11 had been
+raised during development and lost (6 dropped, 3 dismissed, 2 "fixed"
+into the defect) and 12 were never seen. Grouped into 10 clusters, the
+misses had five patterns: a fix wave created the defect and nothing
+traced its consequences (6 of 10); findings arrived after a batched
+landing approval, were handed over only in chat and were lost when
+Finish deleted the ledger (4); reviewers read the diff, not the
+unchanged text it contradicts (5); nothing read across the children
+(5); and the operator's approvals were in no reviewer's inputs (4). The
+records that cite "the audit" draw on these figures. (Basis: measured.)
 
 ## Rejected
 
@@ -288,10 +410,27 @@ clause in its place, which asks for the missing decision instead.
   nor forbids, which `Questions`, the default role and the decision-record
   basis check cover (§ Why).
 - **Improvements as findings**: a finding can open a fix wave, and an
-  improvement never does (§ Why).
+  improvement never does by itself (§ Why).
+- **A premise line keyed on a decision's proposer**, the form of
+  2026-10-29: seats cannot see the proposer, and it undid the declined
+  mark of who decided (§ Why).
 
 ## Changes
 
+- 2026-10-30: a premise finding protects the request, what the Intent
+  asks for and firm decisions, readable from the document, every other
+  decision being lightly held whoever proposed it, and the controller
+  corrects a mislabel in either direction; this reverses the 2026-10-29
+  line by who stands behind a decision, which had undone the declined
+  attribution mark, and that decline holds again; a doubt about the
+  request, the Intent or a firm decision is always carried to the
+  readout, quoted verbatim; adopted improvements, rulings and requested
+  work ride a branch-review wave as labelled changes, applied or
+  declined, an improvement opening none but the cleanup wave; each fix
+  item that adds or changes a rule is traced before its list freezes;
+  the binding-item and unrecorded-choice clauses moved to the shared
+  reference, reaching the branch reviewer and the terminal pass; after
+  an audit of the hypothesis-specs umbrella.
 - 2026-10-29: premise findings, the goal check and a widened `Questions`
   section: a seat may claim that the operator's premise is wrong, as a
   decision ask that holds no gate; a premise finding's location is the

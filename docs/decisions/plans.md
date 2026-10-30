@@ -44,9 +44,14 @@ review (`docs/decisions/task-loop.md`). Marks are plan content: the
 review that grades the plan grades them, the plan phase's coherence
 seats or, on the folded preset, the spec campaign's seats, and that
 phase's close readout lists the marked tasks for the operator as
-information. Marking a task that has not run after that review has
-closed is a downshift from the arrangement the operator confirmed: never
-a contained amendment, it goes to the operator as a decision ask
+information. A mark is added only in an edit a seat grading marks reads
+afterwards: never in the last fix wave of the review that grades the
+plan, a terminal pass's follow-up wave or a plan-phase repair, where a
+seat question proposing one is answered or carried, never adopted
+(`crucible:redteaming § Merge and finding hygiene`). Marking a task
+that has not run after that review has closed is a downshift from the
+arrangement the operator confirmed: never a contained amendment, it
+goes to the operator as a decision ask
 (`skills/redteaming/references/flip-paths.md` § The containment test;
 `crucible:writing-plans § Per-task structure — four fields, all
 required`).
@@ -69,7 +74,14 @@ a mechanical pre-pass whose report carries the seat id `p0` and whose
 arithmetic is run rather than read, one coherence seat reading spec and
 plan together (two for a large plan), one merged fix wave, the blind
 verifier and the plan phase's terminal pass
-(`docs/decisions/terminal-pass.md`). After a not-landed verdict or a
+(`docs/decisions/terminal-pass.md`). The pre-pass also takes a set
+census: for each set the plan adds a member to, every place in the
+repository's tracked text that enumerates the set, and that place's
+consumers, that text joining its supporting inputs; round 0's pre-pass
+on the folded lane takes it for the plan half, and the controller's
+post-wave re-run of the arithmetic leaves it out
+(`skills/redteaming/references/plan-phase.md`;
+`skills/redteaming/references/folded-lane.md`). After a not-landed verdict or a
 terminal-pass finding, one scoped repair; anything still open goes to the
 operator as a decision ask, and a finding that shows the spec wrong takes
 the flip path against the spec. A correction to the spec that the
@@ -86,9 +98,11 @@ plan phase, never a campaign; its directory `campaigns/plan/` and
 argument value `plan` keep their names. At close the controller seeds
 SDD's ledger from the routing table, with each contained amendment as
 one of its own rulings, the item and its reason together, which SDD's
-setup copies there if the ledger lacks it, and with each premise finding
-still open as open (`docs/decisions/evidence-and-findings.md`), and
-hands off to execution (`skills/redteaming/references/plan-phase.md`).
+setup copies there if the ledger lacks it, with each premise finding
+still open as open (`docs/decisions/evidence-and-findings.md`), and with
+what the brainstorm and the review phases left open under the ledger's
+`## Questions`, and hands off to execution
+(`skills/redteaming/references/plan-phase.md`).
 
 ## Why
 
@@ -161,6 +175,15 @@ maintainer's preference, for the choice; judgment, accepted by the
 maintainer, for the mark, its grading and the downshift rule,
 2026-10-29.)
 
+A mark written in the plan review's own last wave passed that review in
+name only: no seat with the mandate to grade marks read the wave after
+it (the audit, `docs/decisions/evidence-and-findings.md`). Since
+2026-10-30 no mark is added in an edit no such seat reads, and the plan
+stays the one source execution reads marks from, so execution needed no
+change. An agent's proposal, which the maintainer accepted. (Basis:
+measured, for the finding; judgment, accepted by the maintainer, for
+the rule.)
+
 ### Self-review
 
 Upstream's plan author runs a self-review: spec coverage, a placeholder
@@ -183,6 +206,19 @@ pass then on record had caught a MAJOR that the campaign's own last fix
 wave had just introduced, which no earlier round could have seen, and the
 maintainer confirmed adding the closing pass during that design's
 campaign. (Basis: measured; judgment, accepted by the maintainer.)
+
+In 5 of the 10 clusters of missed findings in the audit
+(`docs/decisions/evidence-and-findings.md`), reviewers had read a diff,
+not the unchanged text it contradicts; a change that adds a member to a
+set leaves stale each other place spelling the set out unless someone
+lists those places. The plan stage is
+where the set census meets that, before any code, the branch review
+already reading the whole branch; a census needs the repository's text,
+so the pre-pass's inputs widened to it, and the controller's post-wave
+re-run, a check of arithmetic, does not repeat it. It adds one table to
+every feature's plan phase, which word counts do not show. An agent's
+proposal, which the maintainer accepted. (Basis: measured, for the
+clusters; judgment, accepted by the maintainer, for the census.)
 
 The plan phase called a finding that shows the spec's premise wrong
 "structural", while the containment test calls a change structural when
@@ -224,6 +260,12 @@ directory and the argument value are interfaces that records and
 
 ## Changes
 
+- 2026-10-30: no `Review: branch only` mark is added in an edit no
+  mark-grading seat reads afterwards, a question proposing one there
+  answered or carried; the plan phase's pre-pass, and the folded lane's
+  round 0 for the plan half, take a set census over the repository's
+  tracked text; the plan phase's close also seeds what earlier phases
+  left open; after an audit of the hypothesis-specs umbrella.
 - 2026-10-29: a task may carry `Review: branch only — <reason>` where it
   meets the mark's criterion, graded as plan content and listed at the
   close of the phase that reviews the plan; marking an unrun task later

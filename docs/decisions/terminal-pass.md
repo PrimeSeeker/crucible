@@ -8,13 +8,28 @@ two mandates, in this order: a re-read of the artifact, recorded before
 it opens any record, then decision-ask fidelity, checking each ask
 against the findings behind it and, in a spec campaign, the stop: the
 stated basis against every forecast line in the numbered rounds' seat
-verdicts, each forecast overturn answered by the mechanism it names, and
+verdicts, each forecast overturn answered by the mechanism it names,
 the stop round's fix list against the rule that a round whose wave
-re-shapes a major mechanism is no stop round
+re-shapes a major mechanism is no stop round, and the stop against the
+hold of a pending premise ask whose upholding would re-shape one
 (`docs/decisions/spec-campaign.md`). For that check its inputs gain
-every numbered round's seat reports, their verdict sections only, and
-its card the plugin root through which it reads the overturn question.
-It reports counted record corrections,
+every numbered round's seat reports, their verdict sections only.
+Decision-ask fidelity also checks, in both phases, that each question a
+round record carries to readout is quoted verbatim in that readout,
+reading it in its seat report's `Questions`, and that a call the
+operator left to the controller is entered as delegated, never as the
+operator's ruling or choice; and, in a spec campaign, each `accepted`
+or `firm` entry of the brainstorm decision record whose decision the
+artifact states, process entries such as the route and the campaign
+shape aside: the decision still holds in the artifact, or a later entry
+or a round readout naming the change and what it withdraws records its
+change, an approval withdrawn with no such record being flagged
+`CONCLUSION-CHANGING`. The record reaches it through its card's
+`{decision-record-path}` slot, the spec phase's brainstorm decision
+record and `none` in the plan phase. Its card carries the plugin root,
+through which it reads the shared reference's overturn question,
+§ Premise findings and § Binding items and unrecorded choices
+(`docs/decisions/instruments.md`). It reports counted record corrections,
 and only a correction flagged `CONCLUSION-CHANGING` reaches the operator
 as a decision ask. Its directional-bias statement is mandatory and
 unconditional, and escalates only above its threshold. Its tail is
@@ -67,6 +82,30 @@ verdict sections, so whole seat reports stay outside its inputs.
 (Basis: measured, for the probe; judgment, accepted by the maintainer,
 for the check.)
 
+The audit of the hypothesis-specs umbrella
+(`docs/decisions/evidence-and-findings.md`) found the maintainer's
+approvals in no reviewer's inputs, in 4 of its 10 clusters of missed
+findings. Two approvals had been withdrawn without the change reaching
+the maintainer: the very-small lane's inline test
+(`docs/decisions/task-loop.md`) and the campaign stop's form
+(`docs/decisions/spec-campaign.md`). From 2026-10-30 the spec
+campaign's pass reads the brainstorm decision record and checks each
+approval the artifact states against the artifact and the records of
+its change. It would have caught the first, and the second as far as
+the records go: a change recorded in a readout passes whether or not
+that readout reached the maintainer, and nothing checks delivery
+(`docs/backlog/decision-ask-framing.md`). The same audit found doubts
+stopping at the controller, so the pass also checks that each carried
+question reaches the readout in its seat's words, reading those
+questions alone of the seat reports, and that a call left to the
+controller is not recorded as the maintainer's ruling. A premise ask
+that holds the stop entered the stop check with the hold
+(`docs/decisions/spec-campaign.md`). Each check adds a little work to
+every feature's terminal pass, which word counts do not show. Agents'
+proposals, which the maintainer accepted. (Basis: measured, for the
+audit's findings; judgment, accepted by the maintainer, for the
+checks.)
+
 The re-read comes first because reading the records' account of the
 artifact before the artifact turns a confirming read into a re-derivation
 of someone else's conclusion (2026-08-16). Counted corrections replaced
@@ -110,8 +149,9 @@ the maintainer, for the rest.)
 - **A fidelity seat every round**: the same check at higher cost
   (§ Why).
 - **Ruling-consistency, conservation-walk and whole-seat-report
-  mandates for the pass**, removed on 2026-10-07 (§ Why); the stop
-  check of 2026-10-29 reads the seats' verdict sections and no more.
+  mandates for the pass**, removed on 2026-10-07 (§ Why); of the seat
+  reports, the stop check reads the verdict sections and the fidelity
+  check the questions carried to readout, and no more.
 - **Escalating every correction**, or every directional-bias statement,
   to the operator (§ Why).
 - **A standing-stance line below the threshold** (§ Why).
@@ -119,6 +159,15 @@ the maintainer, for the rest.)
 
 ## Changes
 
+- 2026-10-30: decision-ask fidelity also checks that each question
+  carried to readout is quoted verbatim, reading it in its seat report,
+  and that a call left to the controller is recorded as delegated; in a
+  spec campaign, each accepted or firm approval the artifact states
+  against the artifact and the records of its change, through a new
+  `{decision-record-path}` slot on its card, and a stop called while a
+  premise ask holding it was pending; the pass reads the shared
+  reference's § Premise findings and § Binding items and unrecorded
+  choices; after an audit found approvals in no reviewer's inputs.
 - 2026-10-29: in a spec campaign, decision-ask fidelity also checks the
   stop's basis against every numbered round's forecast lines and the
   stop round's fix list against the re-shape rule, a mismatch that would

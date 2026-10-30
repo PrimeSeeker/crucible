@@ -10,9 +10,9 @@ declares binding, and the umbrella content its umbrella line brings in.
 Binding means never changed silently, not never changed without the
 operator, and binding text is read for its intent: a case its literal
 reading reaches that its author plainly did not consider is raised for a
-ruling, never applied literally. Everything else is lightly held, and
-downstream work may flip it with a logged rationale
-(`crucible:brainstorming § Spec contract`).
+ruling, never applied literally. Everything else is lightly held,
+whoever proposed it, and downstream work may flip it with a logged
+rationale (`crucible:brainstorming § Spec contract`).
 
 **The request.** A `## Request` section precedes the Intent of every
 spec, folded document, lane note and umbrella: the message that asked
@@ -39,11 +39,16 @@ convention: the skills place none on their own text.
 
 **Approval strength.** The brainstorm decision record and the design
 digest record each decision `open`, `accepted` or `firm`, and each
-record entry names its proposer, the operator or the controller.
-`accepted`, the default for any approval, a "+", an "OK" or a "your
-call" included, means "this until new evidence arrives"; `firm` is
-recorded only on the operator's explicit word, never inferred from an
-approval. A firm decision that reaches a spec or an umbrella is stated
+entry of the brainstorm decision record names its proposer, the
+operator or the controller, for attribution only: decision records
+attribute each position's basis from it (`docs/decisions/decision-records.md`),
+and no rule routes on it. `accepted`, the default for any approval, a
+"+", an "OK" or a "your call" included, means "this until new evidence
+arrives"; an answer that leaves the call to the controller is recorded
+`accepted — delegated to the controller`, in the proposer's place,
+never as the operator's ruling or choice; `firm` is recorded only on
+the operator's explicit word, never inferred from an approval. A firm
+decision that reaches a spec or an umbrella is stated
 there as the operator's firm preference and binds without a mark. A
 route entry confirms its route only when `accepted` or `firm`. Every
 operator ruling on a decision ask after the brainstorm enters the
@@ -58,20 +63,20 @@ mechanism that stands; no new campaign or plan phase) or a supersede (a
 successor with its own review). Every change to binding content, a
 ruling that patches the plan included, is either contained or put to
 the operator as a decision ask. It is contained when everything that
-builds on or consumes the changed item lies inside the feature, and it
-changes no umbrella content and no firm decision, makes no failing
-check pass on the same work, and redefines no mechanism, which takes a
-supersede. The controller confirms a contained scoped amendment itself
-and records it as its own ruling, which reaches the branch review and
-the close readout; reversing one is a scoped amendment the operator
-confirms. The procedure and the test are stated once, in
+builds on or consumes the changed item lies inside the feature and none
+of the exclusions the test lists applies. The controller confirms a
+contained scoped amendment itself and records it as its own ruling,
+which reaches the branch review and the close readout; reversing one is
+a scoped amendment the operator confirms. The procedure, the test and
+its exclusions are stated once, in
 `skills/redteaming/references/flip-paths.md` (§ The containment test).
-A premise finding, a claim that something the operator asked for or
-decided is wrong, goes to the operator as a decision ask at any phase,
-the spec campaign included, never confirmed as contained; where it is
-also a binding item found wrong, a firm decision or a lane note's
-Intent, its route governs (`skills/redteaming/references/flip-paths.md`
-§ Premise findings).
+A premise finding, a claim that the request, what the Intent asks for
+or a firm decision is wrong, goes to the operator as a decision ask at
+any phase, the spec campaign included, never confirmed as contained;
+where it is also a binding item found wrong, a firm decision or a lane
+note's Intent, its route governs
+(`skills/redteaming/references/flip-paths.md` § Premise findings;
+`docs/decisions/evidence-and-findings.md`).
 
 **Requirements by pointer.** The converged spec is a shared input every
 downstream agent reads for itself; isolation covers the campaign's
@@ -194,6 +199,22 @@ maintainer, for the test, the mark's form and the statuses, 2026-10-28;
 measured, for the two exclusions' cases; judgment, a branch review's
 proposal accepted by the maintainer, for testing a literal-reading ruling.)
 
+This record once restated the test's exclusions, and when the test
+gained one, marking `Review: branch only` a task that has not run once
+the plan's review has closed, the restatement missed it (the audit,
+`docs/decisions/evidence-and-findings.md`). Since 2026-10-30 the record
+points to the test's one home instead. The proposer each entry names,
+as the binding-and-marks review had already ruled, is the brainstorm
+decision record's, kept for attribution, and the premise line that
+routed on it went on 2026-10-30 (`docs/decisions/evidence-and-findings.md`).
+An answer leaving the call to the controller is recorded as delegated
+because one such answer, tentative and posed as a question, was entered
+as the operator's amendment and only a terminal pass's check of the
+record corrected it. Each an agent's proposal, which the maintainer
+accepted. (Basis: measured, for the missed exclusion; a single
+incident, for the delegated entry; judgment, accepted by the
+maintainer, 2026-10-30.)
+
 ### The request
 
 Until 2026-10-29 no step recorded the operator's request and no seat saw
@@ -280,6 +301,13 @@ measured.)
 
 ## Changes
 
+- 2026-10-30: the containment test's exclusions are no longer restated
+  here, the record pointing to the test's one home, after an audit found
+  the restatement missing the newest; the proposer an entry names is the
+  brainstorm decision record's, for attribution only, no rule routing
+  on it; a call left to the controller is recorded
+  `accepted — delegated to the controller`; a premise finding is a claim
+  that the request, the Intent or a firm decision is wrong.
 - 2026-10-29: a `## Request` section, outside the binding parts, before
   every spec's, folded document's, lane note's and umbrella's Intent; a
   premise finding goes to the operator at any phase; check 5 traces each

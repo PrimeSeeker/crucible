@@ -34,7 +34,10 @@ record among its inputs, and each position's basis is attributed from
 its entry's proposer and status, the maintainer's preference where the
 operator proposed it and judgment, accepted by the maintainer, where the
 controller did (`crucible:writing-plans § Per-task structure — four
-fields, all required`).
+fields, all required`). An entry recorded `accepted — delegated to the
+controller` is judgment, accepted by the maintainer, its text saying
+that the maintainer left the call to the agent, never stating it as the
+maintainer's ruling or choice.
 
 A section carries content or is absent; none says "N/A". Every edit adds
 its Changes line in the same commit. At the port, a record got one
@@ -124,6 +127,15 @@ strength apart was an agent's proposal, the maintainer leaving the call
 to it ("your call"). (Basis: judgment, accepted by the maintainer,
 2026-10-28.)
 
+The brainstorm decision record has recorded a call left to the
+controller as `accepted — delegated to the controller` since
+2026-10-30, after one such answer had been entered as the operator's
+amendment (`docs/decisions/the-spec.md`). The attribution rule named
+only the operator and the controller as proposers, so the delegated
+form, which the paragraph above already used, became part of it. An
+agent's proposal, which the maintainer accepted. (Basis: judgment,
+accepted by the maintainer, 2026-10-30.)
+
 ## Rejected
 
 - **An append-only log** whose entries supersede earlier ones by naming
@@ -135,6 +147,10 @@ to it ("your call"). (Basis: judgment, accepted by the maintainer,
 
 ## Changes
 
+- 2026-10-30: an entry recorded `accepted — delegated to the
+  controller` is attributed as judgment, accepted by the maintainer,
+  saying the maintainer left the call to the agent, since the
+  attribution rule named no form for it.
 - 2026-10-28: a position is stated as firmly held only on the
   maintainer's word, the maintainer's preference naming its origin, not
   its strength; a task writing a record attributes each basis from the

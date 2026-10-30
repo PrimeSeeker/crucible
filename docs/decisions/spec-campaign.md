@@ -61,13 +61,14 @@ infrastructure escalation (`crucible:redteaming § Panels`).
 
 **Stop rule and cap.** The campaign stops after the first numbered
 panel round once overturning a major mechanism after code is no longer
-plausible: the overturn question, defined with its reading for an
-umbrella's campaign in
+reasonably expected: the overturn question, defined with its reading
+for an umbrella's campaign in
 `skills/subagent-driven-development/references/premise-and-questions.md`
-§ The arrangement questions. The call is the controller's judgment over
-the round's records, the seats' forecasts included, never conversation
-memory; finding counts and finding provenance are not signals, and
-severity is not the trigger: a BLOCKER that would overturn a mechanism
+§ The arrangement questions. The call is the controller's judgment, not
+put to the operator to confirm, over the round's records, the seats'
+forecasts included, never conversation memory; finding counts and
+finding provenance are not signals, and severity is not the trigger: a
+BLOCKER that would overturn a mechanism
 keeps the campaign going by the question itself. A round whose own fix
 wave adds, removes or re-shapes a major mechanism is never the stop
 round, since no seat has read the result, and once a campaign is chosen
@@ -79,18 +80,24 @@ panel seat's verdict carries a line forecasting the answer, naming the
 mechanism where it forecasts an overturn
 (`skills/redteaming/seat-prompt.md`), and every numbered
 round's readout, the folded lane's and an umbrella's included, states
-whether an overturn is still plausible and why, answering each plausible
-forecast by the mechanism it names. The cap is 4 rounds, degraded rounds
-excluded, counted from the records, the campaign's guarantee that it
-ends; it bounds rounds, not spend. An overturn still plausible at the
-cap, or a cap round whose own wave adds, removes or re-shapes a major
+whether an overturn is still reasonably expected and why, answering
+each forecast that one is by the mechanism it names. The cap is 4
+rounds, degraded rounds excluded, counted from the records, the
+campaign's guarantee that it ends; it bounds rounds, not spend. An
+overturn still reasonably expected at the cap, or a cap round whose own
+wave adds, removes or re-shapes a major
 mechanism, goes to the operator as a decision ask: another round, a
 supersede, or acceptance with parked rulings; so does any BLOCKER or
 MAJOR still open at the cap
 (`crucible:redteaming § Stop rule and terminal pass`). A premise finding
 (`docs/decisions/evidence-and-findings.md`) is merged `parked` as a
 decision ask to the operator and is never an open finding here, and an
-open one joins neither cap ask. One still
+open one joins neither cap ask, with one hold: where upholding a
+pending premise ask would re-shape a major mechanism, the campaign
+pauses at that round's close until the operator rules and does not stop
+while it is pending, and the terminal pass counts a stop called while
+such an ask was pending as a mismatch. The ask still opens no fix wave
+and holds no cap, and at the cap it is put to the operator alone. One still
 open at the campaign's close is carried in the digest's
 `## Open judgments`, or in the close readout of a minor design, and
 seeded into the ledger as open at the plan phase's close, or at the
@@ -298,6 +305,25 @@ it is ruled, and each close passes it to the next phase's record: an
 agent's proposal, which the maintainer accepted. (Basis: judgment,
 accepted by the maintainer, 2026-10-29.)
 
+A sentence written when the stop keyed on open BLOCKERs exempted a
+pending premise ask from the stop judgment altogether, so a campaign
+could stop while an ask whose upholding would re-shape a mechanism
+waited on the operator (the audit, `docs/decisions/evidence-and-findings.md`).
+Since 2026-10-30 such an ask holds the stop: the campaign pauses at the
+round's close until the operator rules, and the ask still costs no wave
+or cap. An agent's proposal, which the maintainer accepted. (Basis:
+measured, for the finding; judgment, accepted by the maintainer, for
+the hold.)
+
+The arrangements spec, as approved at its digest gate, made the stop a
+downshift for the operator to confirm, never the controller's alone;
+that feature's round-0 fixes made the stop the controller's judgment,
+and the change was never put to the maintainer. The audit found it, and
+the maintainer then confirmed the stop as the controller's call
+("Agreed with the recommendations"); only this record changed. An
+agent's proposal, which the maintainer accepted. (Basis: judgment,
+accepted by the maintainer.)
+
 ### Focused checks
 
 A round-0 pre-pass once started a package-wide suite run of over 30
@@ -331,6 +357,9 @@ trim.)
 - **Severity and the structural judgment as the stop trigger**, alone
   or beside the overturn question: a round repairing its predecessor's
   drift kept the campaign going (§ Why).
+- **The stop as a downshift the operator confirms**: the form the
+  arrangements spec was approved with, replaced in its round 0 and the
+  replacement confirmed by the maintainer afterwards (§ Why).
 - **A verifier for round 0's fixes**: the next dispatch is a full-scope
   panel (§ Why).
 - **A mechanical growth gate**, a token counter or a hard cap on
@@ -340,6 +369,13 @@ trim.)
 
 ## Changes
 
+- 2026-10-30: the stop trigger asks whether an overturn is still
+  reasonably expected, the maintainer's words; a pending premise ask
+  whose upholding would re-shape a major mechanism holds the stop until
+  ruled, replacing the exemption of premise asks from the stop
+  judgment; the stop as the controller's call, made in the arrangements
+  campaign's round 0 without an ask, recorded as confirmed by the
+  maintainer; after an audit of the hypothesis-specs umbrella.
 - 2026-10-29: the stop trigger is the overturn question, replacing
   "zero BLOCKERs and no structural finding": every spec-campaign seat
   forecasts it, every numbered round's readout answers the forecasts,

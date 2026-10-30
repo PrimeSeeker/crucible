@@ -58,16 +58,30 @@ and branch reviewer's cards carry `[PLUGIN_ROOT]`, and the redteam
 seat's `{plugin-root}`, filled with the plugin root the controller read
 the card from. Through it the implementer reads systematic-debugging,
 `writing-good-tests.md` and writing-skills, and the reviewers read
-`writing-good-tests.md`, in any repository; the implementer, the task
-reviewer, the branch reviewer and the redteam seat read the shared
-reference `skills/subagent-driven-development/references/premise-and-questions.md`,
-which states once what a seat may raise beyond an ordinary finding
+`writing-good-tests.md`, in any repository. Through it seats read the
+shared reference
+`skills/subagent-driven-development/references/premise-and-questions.md`,
+which states once what a seat may raise beyond a defect in the work
 (`docs/decisions/evidence-and-findings.md`) and the arrangement
-questions (`docs/decisions/routes.md`). The terminal pass's card carries
-`{plugin-root}` too, and the pass reads that reference's arrangement
-questions for its stop check (`docs/decisions/terminal-pass.md`), under
-the same grant of the shared reference as the redteam seat
-(`crucible:redteaming § Dispatch composition`).
+questions (`docs/decisions/routes.md`); each template names the
+sections it reads. The redteam seat and the branch reviewer read all
+six: § Premise findings, § Binding items and unrecorded choices, § The
+goal check, § Questions, § Location and § The arrangement questions.
+The terminal pass reads § Premise findings, § Binding items and
+unrecorded choices and § The arrangement questions, through
+`{plugin-root}` on its card, under the same grant of the shared
+reference as the redteam seat (`crucible:redteaming § Dispatch
+composition`). The implementer reads § Premise findings, § Questions and
+§ Location, and the task reviewer § Premise findings and § Questions;
+neither reads § Binding items and unrecorded choices. An umbrella's
+closing-review seats, composed by the controller, read § Premise
+findings, § Binding items and unrecorded choices, § Questions and
+§ Location (`skills/brainstorming/references/umbrellas.md`).
+
+**The terminal pass's card** also carries `{decision-record-path}`: in
+the spec phase the brainstorm decision record, which its decision-record
+check reads, and `none` in the plan phase
+(`docs/decisions/terminal-pass.md`).
 
 ## Why
 
@@ -210,6 +224,26 @@ reader already reaches keeps them stated once. The terminal pass, which
 checks the stop against them, gained the plugin-root slot to reach it.
 (Basis: judgment, accepted by the maintainer.)
 
+On 2026-10-30 the two clauses that a binding item may itself be wrong
+and that a consequential choice taken for granted is a finding moved
+from the redteam seat's template into a section of the shared
+reference, so the branch reviewer, which had neither, gained them by a
+pointer and the template text stayed in one home
+(`docs/decisions/evidence-and-findings.md`). The redteam seat's, the
+terminal pass's and the branch reviewer's templates name the section;
+the task reviewer's and the implementer's do not. An agent's proposal,
+which the maintainer accepted. (Basis: judgment, accepted by the
+maintainer.) The terminal pass, which re-reads the artifact and raises
+findings as a seat does, also gained § Premise findings, so that it
+classes a premise finding as the other seats do: a controller's ruling
+during the execution of the feature that moved the clauses, when the
+task that wrote the section found the pass reading the arrangement
+questions alone.
+(Basis: judgment, a controller's ruling within that feature.) The
+pass's card gained the decision-record slot the same day, for its check
+of the operator's approvals (`docs/decisions/terminal-pass.md`). (Basis:
+judgment, accepted by the maintainer.)
+
 ## Rejected
 
 - **Composing every dispatch by hand**: the measured cost of carrying
@@ -232,6 +266,13 @@ checks the stop against them, gained the plugin-root slot to reach it.
 
 ## Changes
 
+- 2026-10-30: the shared reference gains § Binding items and unrecorded
+  choices, the clauses moved from the redteam seat's template, read by
+  the redteam seat, the terminal pass and the branch reviewer; the
+  terminal pass also reads § Premise findings, and its card gains
+  `{decision-record-path}`; the record names what each seat reads of
+  the reference; after an audit found the branch reviewer without the
+  clauses.
 - 2026-10-29: the shared reference also holds the arrangement questions,
   and the terminal pass's card gains `{plugin-root}` to read them for its
   stop check, so each definition has one home every reader reaches.
