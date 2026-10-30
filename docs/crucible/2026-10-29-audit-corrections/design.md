@@ -396,8 +396,10 @@ firm. Each names the audit finding it answers.
   dispatched waiting for it. A ruling that keeps the decision changes
   nothing and opens no wave. A request for more work opens a wave the
   same way where the work is what the spec and plan already require, or
-  is an improvement or lead the readout listed; anything else is new
-  scope, a new feature, as finishing says now. A ruling or requested
+  is a minor, improvement or lead the readout listed; anything else is new
+  scope, a new feature, as finishing says now.
+  Amended 2026-10-30 at the branch review (contained, controller-confirmed):
+  a listed minor added, the case the request named. A ruling or requested
   change the fixer declines (D14) goes back to the operator in the next
   readout, not into the open items. Where the cap is spent, the operator's answer is
   the escalation's answer and may open the wave (C2). SDD Setup also seeds each open premise ask that the plan record
