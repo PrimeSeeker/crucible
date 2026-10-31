@@ -294,6 +294,13 @@ durable home, and no deferral counts as done until it has one
 to the umbrella's folder as a feature's goes to its own, and the
 closing review appends to the same file, the one file a closed
 umbrella's folder gains. (Basis: judgment, accepted by the maintainer.)
+The maintainer has since judged that a feature's open items stored in
+its folder's file "are definitely going to be lost" (2026-10-30) and
+left that default, which this file follows, to be changed later, an
+open question in
+`docs/backlog/open-items-location.md`
+(`docs/decisions/records-and-workspace.md` § Work left open). (Basis:
+the maintainer's preference.)
 
 ### The closing review
 
@@ -352,6 +359,10 @@ detail of the form the maintainer accepted.)
 
 ## Changes
 
+- 2026-11-01: § Work left open at the landing names the maintainer's
+  2026-10-30 view that a feature's open items kept in its folder's file
+  will be lost, a default this file follows, and points to `docs/backlog/open-items-location.md`; the record had given
+  the default as accepted without the maintainer's later doubt.
 - 2026-10-30: an umbrella gets one closing review across its children's
   landings, a step after the landing that completes it and not a gate,
   its findings kept or dropped at its readout and written to the

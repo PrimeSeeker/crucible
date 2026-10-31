@@ -247,8 +247,15 @@ the final form to the controller, which kept a default file overridable
 only by instructions that name where open items go. (Basis: measured,
 for the rounds' findings; the maintainer's preference, for no
 project-specific home and, tentatively, for the override; judgment,
-accepted by the maintainer, for the file, its final form a call the
-maintainer left to the agent.)
+accepted tentatively by the maintainer, for the file, its final form a
+call the maintainer left to the agent.) At the close readout of the
+feature that set this default (2026-10-30), the maintainer said of
+the file: "In retrospect, open items stored like this are
+definitely going to be lost. Backlog, please, we'll find a better
+location later." The maintainer sent that feature's work left open to
+the backlog and left the default to be changed later, an open question
+in `docs/backlog/open-items-location.md`. (Basis: the maintainer's
+preference.)
 
 Writing the file after the operator's answer lets the readout propose
 keeping or dropping each item without a ruling per item, and lets the
@@ -353,6 +360,11 @@ worktree. (Basis: judgment, accepted by the maintainer.)
 
 ## Changes
 
+- 2026-11-01: § Work left open names the maintainer's 2026-10-30 view
+  that open items kept in the feature folder's file will be lost, and
+  points to `docs/backlog/open-items-location.md`; the file's basis
+  reads accepted tentatively. The record had given the default as
+  accepted without the maintainer's later doubt.
 - 2026-10-30: the close readout is Finish's decision point, before the
   suite: it lists the work left open with a keep-or-drop proposal for
   each item and recommends one of finishing's options or more work; the
