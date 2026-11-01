@@ -58,8 +58,7 @@ change to umbrella content itself, however contained the change looks
 commit that lands it (`skills/brainstorming/references/umbrellas.md`
 § Marks; `crucible:subagent-driven-development § Finish`). An umbrella
 has closed when its marks say so, read down the chain; from then it is
-frozen, its folder gaining at most its closing review's `open-items.md`
-(`skills/brainstorming/references/umbrellas.md` § Closing).
+frozen (`skills/brainstorming/references/umbrellas.md` § Closing).
 
 **One closing review, a step and not a gate.** Once an umbrella is
 complete by its marks, one review reads its children's landings, from
@@ -79,13 +78,14 @@ controller composes on the default role, read-only, each with a lens
 that reads across children (fidelity to the request, the seams between
 children, a walkthrough of the workflows the effort changed), with no
 instrument or template of its own. Its readout proposes keeping or
-dropping each finding, a premise finding being a decision ask there;
-after the answer, the findings kept, each premise finding with its
-ruling, and those dropped, named as such, go to the umbrella folder's
-`open-items.md` or the home the project's instructions name, committed
-on a branch of its own landed on the operator's go-ahead; where nothing
-is kept and no premise finding was raised, nothing is committed and the
-readout names each finding dropped. Closing is still read from the
+dropping each finding, a premise finding being a decision ask there,
+and, where the project's instructions name no home for open items,
+asks where the findings kept go; after the answer, the findings kept
+and each premise finding with its ruling go to the project's home or
+the one the answer named, an in-repository one's committed on a branch
+of its own landed on the operator's go-ahead; where nothing is kept and
+no premise finding was raised, nothing is written and the readout names
+each finding dropped. Closing is still read from the
 marks, nothing waits on the review, and it writes nothing into
 `umbrella.md`; a feature that fixes its findings is a feature of its
 own. An umbrella approved without a campaign takes it too
@@ -103,12 +103,14 @@ clarification its spec states (`skills/brainstorming/references/umbrellas.md`
 § Premise findings).
 
 **Work left open at the landing.** An umbrella has no ledger, so what
-its brainstorm and campaign left open is written at its landing to an
-`open-items.md` in its folder, each item with its source, or to the
-home the project's instructions name, and committed on its branch;
-where nothing was left open, nothing is written. The closing review
-appends to that file (`skills/brainstorming/references/umbrellas.md`
-§ Landing; `docs/decisions/records-and-workspace.md`).
+its brainstorm and campaign left open goes at its landing, each item
+with its source, to the home the project's instructions name for open
+items, an in-repository one's committed on its branch; where they name
+none, the landing ask asks where the items go or whether to drop them,
+with the offer to record the answer, and the workspace is not deleted
+before it. Where nothing was left open, nothing is asked or written
+(`skills/brainstorming/references/umbrellas.md` § Landing;
+`docs/decisions/records-and-workspace.md`).
 
 **Kept in the merged tree.** An umbrella's own pull request never
 offers `umbrella.md` for removal; the trade-off is in
@@ -290,17 +292,17 @@ maintainer, 2026-10-29.)
 An umbrella has no ledger, and its workspace is deleted at its landing,
 so what its brainstorm and campaign left open would otherwise have no
 durable home, and no deferral counts as done until it has one
-(`docs/decisions/records-and-workspace.md`). It goes
-to the umbrella's folder as a feature's goes to its own, and the
-closing review appends to the same file, the one file a closed
-umbrella's folder gains. (Basis: judgment, accepted by the maintainer.)
-The maintainer has since judged that a feature's open items stored in
-its folder's file "are definitely going to be lost" (2026-10-30) and
-left that default, which this file follows, to be changed later, an
-open question in
-`docs/backlog/open-items-location.md`
-(`docs/decisions/records-and-workspace.md` § Work left open). (Basis:
-the maintainer's preference.)
+(`docs/decisions/records-and-workspace.md`). It goes where a
+feature's goes, and so do the closing review's findings kept. (Basis:
+judgment, accepted by the maintainer.) Until 2026-11-01 that was an
+`open-items.md` in the umbrella's folder, the one file a closed
+umbrella's folder gained; the maintainer judged that a feature's open
+items stored in such a file "are definitely going to be lost"
+(2026-10-30), and the maintainer's brainstorm of 2026-11-01 replaced
+the file with the project's own home or, where none is named, the
+operator's answer (`docs/decisions/records-and-workspace.md` § Work
+left open). A closed umbrella's folder now gains nothing. (Basis: the
+maintainer's preference.)
 
 ### The closing review
 
@@ -359,10 +361,18 @@ detail of the form the maintainer accepted.)
 
 ## Changes
 
+- 2026-11-01: an umbrella's landing and its closing review send their
+  open items to the project's home for them or, with none named, where
+  the operator's answer sends them, the workspace kept until it comes;
+  the closing review no longer writes the findings dropped; a closed
+  umbrella's folder gains nothing. The maintainer's brainstorm retired
+  the default `open-items.md`
+  (`docs/decisions/records-and-workspace.md`).
 - 2026-11-01: § Work left open at the landing names the maintainer's
   2026-10-30 view that a feature's open items kept in its folder's file
-  will be lost, a default this file follows, and points to `docs/backlog/open-items-location.md`; the record had given
-  the default as accepted without the maintainer's later doubt.
+  will be lost, a default this file follows, and points to the backlog
+  item that held the question; the record had given the default as
+  accepted without the maintainer's later doubt.
 - 2026-10-30: an umbrella gets one closing review across its children's
   landings, a step after the landing that completes it and not a gate,
   its findings kept or dropped at its readout and written to the

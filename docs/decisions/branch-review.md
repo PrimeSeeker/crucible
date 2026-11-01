@@ -26,9 +26,9 @@ branch ties to a trigger asks whether every route and phase that must
 apply it reaches it when the trigger occurs. Where the review reopens
 after SDD's Finish has committed, the range holds that commit and the
 reviewer reads it as part of the branch: the feature's umbrella mark and
-its `open-items.md`. Its check for build history in what the branch
-ships exempts decision records, changelogs and the feature folder's
-files, which exist to hold it
+the open items written to an in-repository home. Its check for build
+history in what the branch ships exempts decision records, changelogs,
+the feature folder's files and those open items, which exist to hold it
 (`skills/requesting-code-review/code-reviewer.md` § What Was Built,
 Against What, § What to Check). It runs on the default
 role, never lowered to save cost
@@ -271,14 +271,18 @@ maintainer.)
 The branch reviewer flags build history (task numbers, wave names,
 rulings carrying dates) in what a branch ships, decision records and
 changelogs exempt (`docs/decisions/authoring-crucible.md`). Once a
-review that reopens after Finish reads `open-items.md`, the file would
-be flagged every time, since each item names its source by the ledger's
-prefixes; the spec and plan are build records too. The task that wired
-the open-items commit into the reviewer's range widened the exemption
-to the feature folder's files, which the build-history rule already
-names as a home for that history. (Basis: judgment, an agent's call
-the maintainer has not ruled on: an implementer's, in that feature,
-that its task review upheld.)
+review that reopens after Finish reads the open items Finish wrote,
+they would be flagged every time, since each item names its source by
+the ledger's prefixes; the spec and plan are build records too. The
+task that wired Finish's commit into the reviewer's range widened the
+exemption to the feature folder's files, which the build-history rule
+already names as a home for that history, and the open items were then
+one of them. (Basis: judgment, an agent's call the maintainer has not
+ruled on: an implementer's, in that feature, that its task review
+upheld.) When open items moved out of the feature folder to the
+project's own home (2026-11-01), the exemption followed them, for the
+same reason. (Basis: judgment, an agent's call the maintainer has not
+ruled on: the implementer's, in that feature.)
 
 ### One owner, and a standalone use
 
@@ -370,6 +374,10 @@ accepted by the maintainer.)
 
 ## Changes
 
+- 2026-11-01: a reopened range holds the open items Finish wrote to an
+  in-repository home, and the build-history check exempts them, since
+  open items no longer live in the feature folder whose files it
+  exempted (`docs/decisions/records-and-workspace.md`).
 - 2026-10-30: the rejection of minors opening waves is narrowed to
   minors opening them by themselves: the controller may open one
   cleanup wave per branch, counted against the cap, after the

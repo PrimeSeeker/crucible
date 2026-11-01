@@ -164,9 +164,7 @@ nothing to ask.
 Unless the close readout asked this and the answer settled it, tell the
 operator that the branch's commits carry these files, so the PR shows
 them under any merge strategy and removing them now keeps them out of
-the merged tree only, and that leaving `<feature-folder>/open-items.md`
-out leaves the work left open only in the branch's history; then ask
-whether they go into the PR. If not, remove exactly the listed files in a final commit
+the merged tree only; then ask whether they go into the PR. If not, remove exactly the listed files in a final commit
 (`git rm`, then commit) and re-run Step 1's suite on the new HEAD.
 
 Then push:

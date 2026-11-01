@@ -124,16 +124,15 @@ three ends — SDD Finish, an umbrella's landing (an umbrella never reaches
 SDD), or feature abandonment. At each, the controller deletes
 `.crucible/<feature-slug>/` and nothing else, and reports to the operator
 anything it could not delete. No item left open stays only in the
-workspace: at Finish and at an umbrella's landing, the work left open is
-first written to `open-items.md` (§ Feature folder), or the home the
-project's instructions name, unless the work is discarded, the deletion
-following in the order `crucible:subagent-driven-development` § Finish or
+workspace: at Finish and at an umbrella's landing, the deletion waits
+until the work left open has gone where § Open items sends it, in the
+order `crucible:subagent-driven-development` § Finish or
 `skills/brainstorming/references/umbrellas.md` § Landing gives; at
 abandonment, the operator's call (a late split's included), the readout
 asking for it lists what the records hold open. An umbrella's closing
 review has a workspace of its own under the umbrella's slug, in the
-checkout the session works in, deleted once its findings are written
-(`skills/brainstorming/references/umbrellas.md`). No orphan workspaces. Workspace lost mid-feature: the in-flight phase restarts
+checkout the session works in, deleted once its findings have gone where
+§ Open items sends them (`skills/brainstorming/references/umbrellas.md`). No orphan workspaces. Workspace lost mid-feature: the in-flight phase restarts
 from the committed spec or plan and `git log`; the session transcripts hold
 the lost records if they are needed.
 
@@ -364,8 +363,8 @@ record's subset is skipped by definition):
 ## Feature folder
 
 This section is the binding definition of where a feature's committed
-documents live — its spec, its plan and its open items — and skill prose
-points here rather than restating it.
+documents live — its spec and its plan — and skill prose points here
+rather than restating it.
 
 **Feature folder (binding):** each feature's committed documents live
 together in one tracked directory of the target repo, the feature's
@@ -387,11 +386,6 @@ so a filename carries only its role.
   route), `folded.md` (the folded spec+plan), `note.md` (the very-small lane)
   or `umbrella.md` (an umbrella, `skills/brainstorming/references/umbrellas.md`).
 - `plan.md`, on the standard route only.
-- `open-items.md`, the work left open, each item with its source: written
-  and committed at SDD's Finish (`crucible:subagent-driven-development`
-  § Finish), and for an umbrella at its landing and after its closing
-  review (`skills/brainstorming/references/umbrellas.md`), unless the
-  project's instructions name another home for open items.
 - A route that replaces a spec keeps the predecessor in place as the
   forensic record and writes the successor into the same folder: a supersede
   successor takes a numeric suffix (`design-2.md`, `plan-2.md`, …); an
@@ -418,6 +412,32 @@ slug, so slug `diet` never matches `2026-09-27-cost-diet`. A
   than one, is reported to the operator.
 - Nothing but the birth creates a feature folder, so a feature never has a
   second home.
+
+## Open items
+
+The binding definition of where the work left open goes; skill prose
+points here. Crucible keeps no store of its own for it: open items stay
+in the workspace until the project's home receives them or the operator
+drops them. They leave it at SDD's Finish, an umbrella's landing and an
+umbrella's closing review. Each goes with its source; an item the
+operator's answer drops goes nowhere, the readout having named it.
+Where nothing was left open, nothing is asked or written.
+
+- **The project's instruction files name a home for open items:** they go
+  there, an in-repository home committed on the branch the step names,
+  an outside tracker used as the instructions say.
+- **They name none:** the readout listing the items asks the operator
+  where they go, or whether to drop them, and offers to record the answer
+  in an instruction file the operator picks (your runtime reference names
+  them), committed in the project or private and uncommitted, so the
+  question does not recur; a line in a user-level file names its
+  project. The home the answer names is then used as a named one; a
+  line recorded in a committed file is committed with the items.
+
+**Deletion waits (binding).** A workspace holding open items is not
+deleted until they have gone to their home or been dropped; a session
+that ends before the answer leaves it, and the next returns to the
+question. An answer that discards the work drops its open items too.
 
 ## Design digest format
 

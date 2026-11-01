@@ -18,20 +18,18 @@ to install it: `README.md`; the layout: `docs/dual-runtime.md`.
   `<YYYY-MM-DD>: <what changed, and why>`, which the branch reviewer
   checks. Git history is the log. The record shape and the rest of the
   rules: `docs/decisions/decision-records.md`.
-- `docs/backlog/` — deferred work, one file per item. Copy the shape of an
-  existing item: title, observation, follow-up, and a link to the GitHub
-  issue where one exists. An item states the current state, not a progress
-  log. A resolved item is deleted; a partly resolved one keeps only what
-  remains open.
+- `docs/backlog/` — deferred work, one file per item, and the home for
+  open items, the work a feature or an umbrella leaves open. Copy the
+  shape of an existing item: title, observation, follow-up, and a link to
+  the GitHub issue where one exists. An item states the current state,
+  not a progress log. A resolved item is deleted; a partly resolved one
+  keeps only what remains open. Before committing open items, the
+  controller checks them against the no-local-context rule (below).
 - `docs/crucible/<date>-<slug>/` — one folder per feature: its spec, plan or
   lane note, or, for an effort of several features, its umbrella
-  (`umbrella.md`); and `open-items.md`, the work it left open. Frozen once
-  the feature ships; follow-ups go to the backlog. Open items stay in that
-  file, crucible's default, and one becomes a backlog item on the
-  operator's word; before committing the file, the controller checks it
-  against the no-local-context rule (below). An umbrella is edited in place
-  until it closes (`skills/brainstorming/references/umbrellas.md`); a
-  closed umbrella's folder gains only its closing review's `open-items.md`.
+  (`umbrella.md`). Frozen once the feature ships; follow-ups go to the
+  backlog. An umbrella is edited in place until it closes
+  (`skills/brainstorming/references/umbrellas.md`).
 
 ## You are editing the process you run under
 
