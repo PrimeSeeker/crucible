@@ -134,9 +134,11 @@ All lightly held.
     decisions, and, for a child, its own entry and its umbrella's.
   - The design digest dropped; the campaign shape goes into the
     approval at brainstorming's step 4.
-  - Premise findings replaced by one round-1 seat whose lens reads the
-    design from outside its frame; a premise doubt is an ordinary
-    decision ask, and implementers keep raising one as a concern.
+  - Premise findings keep their label and routes to the operator,
+    losing the holds a pending premise ask puts on the campaign's stop
+    and on execution work, and the umbrella's landing note; one
+    round-1 seat carries a lens that reads the design from outside its
+    frame.
   - The directional-bias statement folded into the terminal pass's
     record check as one line.
   - The containment test keeps its rule and drops the exclusions added
@@ -154,7 +156,10 @@ All lightly held.
   seat-replacement gate, the controller's call after the campaign's
   seats found their outright retirement in conflict with D2, delegated
   by the maintainer, and the record-only read, the controller's
-  proposal accepted by the maintainer.
+  proposal accepted by the maintainer; for premise findings kept, the
+  controller's call after `review-retirements`' campaign found that
+  each route a doubt takes without the label needs a rule of its own,
+  delegated by the maintainer.
 - **D5. Kept.** Round 0; the first panel round with the right-sizing
   seat and the alternate-role seat; the plan phase; the terminal pass
   with its stop check and the seats' forecast lines, and its second read
@@ -251,7 +256,7 @@ The Children list, in order:
   conservation and its script, the terminal pass's narrower follow-up
   wave and the second read's two runs (D4), the re-seat line counts,
   the digest, `[LOAD-BEARING]`
-  marks, premise findings replaced by the round-1 lens, the bias
+  marks, premise findings simplified beside the round-1 lens, the bias
   statement folded, the containment test's exclusions, the goal check's
   narrower reach, small fix lists and how deferred MINORs travel
   (Interfaces & boundaries), and decision asks apart from every readout
