@@ -109,8 +109,10 @@ All lightly held.
   - The terminal pass's follow-up wave fixes only BLOCKER and MAJOR
     findings and MINORs against binding text; its other MINORs travel
     as deferred campaign MINORs (Interfaces & boundaries). The second
-    read stays, running whenever that wave runs: it alone caught MAJORs
-    a MAJOR repair introduced and records leaning toward the controller
+    read stays: it runs whenever that wave runs, and as a record-only
+    read of the controller's records and asks after every terminal pass
+    that corrects records or re-puts asks. It alone caught MAJORs a
+    MAJOR repair introduced and records leaning toward the controller
     after the terminal pass.
   - The seat-replacement gate (subagent-driven-development § Shared-tree
     rules; redteaming § Panels, Topping up is gated): one stop-and-ask
@@ -128,8 +130,8 @@ All lightly held.
     checks.
   - Snapshot blessing: one line.
   - `[LOAD-BEARING]` marks retired; what binds is Constraints &
-    invariants and firm decisions, and, for a child, its own entry and
-    its umbrella's.
+    invariants, preamble conventions the spec declares binding and firm
+    decisions, and, for a child, its own entry and its umbrella's.
   - The design digest dropped; the campaign shape goes into the
     approval at brainstorming's step 4.
   - Premise findings replaced by one round-1 seat whose lens reads the
@@ -151,11 +153,12 @@ All lightly held.
   they were used too liberally; for the second read and the
   seat-replacement gate, the controller's call after the campaign's
   seats found their outright retirement in conflict with D2, delegated
-  by the maintainer.
+  by the maintainer, and the record-only read, the controller's
+  proposal accepted by the maintainer.
 - **D5. Kept.** Round 0; the first panel round with the right-sizing
   seat and the alternate-role seat; the plan phase; the terminal pass
   with its stop check and the seats' forecast lines, and its second read
-  after a follow-up wave (D4); the round cap; the blind verifier, for
+  (D4); the round cap; the blind verifier, for
   now, its seat text trimmed by placement; task review; the branch
   review with ledger triage and the cleanup wave; implementers'
   status and concerns; the umbrella closing review; umbrellas, condensed.
@@ -176,12 +179,14 @@ All lightly held.
   - Readouts: decision asks stand apart from the readout body.
 
   Basis: the controller's proposals on the audit's misses, accepted by
-  the maintainer.
+  the maintainer; for the carve-out on MINORs against binding text, the
+  controller's call, delegated by the maintainer.
 - **D7. Order: retire, then place, then fit.** Retiring deletes text,
   so placement does not polish what goes; fit depends on the final
   sizes. Placement and fit are separate children because fit widens
   the authoring rule on what a `SKILL.md` holds, and placement changes
-  no rule beyond the one its entry names. Basis: the controller's call, delegated by the maintainer.
+  no rule beyond the one its entry names. Basis: the controller's
+  call, delegated by the maintainer.
 - **D8. Each child runs under its predecessors' rules.** Before a
   child's brainstorm, the maintainer's installs carry every child landed
   before it; "waits on" below means landed and installed. Claude Code
@@ -208,8 +213,8 @@ All lightly held.
 - **C3. A kept mechanism keeps its function.** A child may move,
   reword or merge a mechanism D5 keeps; removing or weakening one, or
   a guard D3 or D4 keeps (the tree check's status check, adjudication's
-  independent read, the snapshot-blessing line, the second read after a
-  follow-up wave, each stop-and-ask line, the seat-replacement line
+  independent read, the snapshot-blessing line, the second read in both
+  its runs, each stop-and-ask line, the seat-replacement line
   among them), takes an operator ruling.
 - **C4. The branch review stays mandatory on every arrangement, at full
   scope.**
@@ -244,7 +249,8 @@ The Children list, in order:
 
 - `review-retirements` — the campaign side of D3, D4 and D6: merge
   conservation and its script, the terminal pass's narrower follow-up
-  wave with the second read after it, the re-seat line counts, the digest, `[LOAD-BEARING]`
+  wave and the second read's two runs (D4), the re-seat line counts,
+  the digest, `[LOAD-BEARING]`
   marks, premise findings replaced by the round-1 lens, the bias
   statement folded, the containment test's exclusions, the goal check's
   narrower reach, small fix lists and how deferred MINORs travel
@@ -298,8 +304,9 @@ The Children list, in order:
 - `compaction-fit` — G3: token counts measured with a tokenizer and the
   line checked against the host's current documentation; each
   `SKILL.md` brought under it by moving always-run sections into
-  references read at their step, widening the authoring rule in
-  `docs/decisions/authoring-crucible.md` a decision of the child's own;
+  references read at their step, with whether to widen the authoring
+  rule in `docs/decisions/authoring-crucible.md` a decision of the
+  child's own;
   a structural test holding each `SKILL.md` under the line; resident
   tokens per route before and after, reported as the effort's outcome
   (D1), and the resident-cost re-open trigger of
