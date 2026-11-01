@@ -93,15 +93,6 @@ All lightly held.
 - **D3. Retired.**
   - Merge conservation and `skills/redteaming/scripts/conserve.py`,
     with the round record's conservation line.
-  - The seat-replacement gate (subagent-driven-development § Shared-tree
-    rules; redteaming § Panels, Topping up is gated).
-  - The terminal pass's second read, together with a rule that the
-    terminal pass's follow-up wave fixes only BLOCKER and MAJOR
-    findings, its MINORs travelling to execution as notes. The second
-    read mostly re-read MINOR fixes, but it also caught MAJORs a repair
-    introduced and records leaning toward the controller; without it,
-    the follow-up wave is checked for landing by the blind verifier and
-    read in full only by the next phase's reviews.
   - The wave line counts that signal a re-seat.
   - Lane Fit's shape verdict (its goal half is the branch review's goal
     check, D4); the very-small lane's upgrade hatch becomes one
@@ -113,9 +104,19 @@ All lightly held.
     operator ask.
 
   Basis: the controller's proposals on the audit's counts, accepted by
-  the maintainer; for the second read, the coupling above rather than
-  its counts.
+  the maintainer.
 - **D4. Simplified.**
+  - The terminal pass's follow-up wave fixes only BLOCKER and MAJOR
+    findings and MINORs against binding text; its other MINORs travel
+    as deferred campaign MINORs (Interfaces & boundaries). The second
+    read stays, running whenever that wave runs: it alone caught MAJORs
+    a MAJOR repair introduced and records leaning toward the controller
+    after the terminal pass.
+  - The seat-replacement gate (subagent-driven-development § Shared-tree
+    rules; redteaming § Panels, Topping up is gated): one stop-and-ask
+    line, never start a replacement until the host confirms the first
+    has stopped; a replacement started early gives two writers on one
+    tree.
   - The tree check: one status check after each review seat, before the
     next commit, in place of readings around every review window;
     reviewers have written into the tree, and an unseen write would land
@@ -147,13 +148,16 @@ All lightly held.
 
   Basis: the controller's proposals on the audit's evidence, accepted
   by the maintainer; for marks, also the maintainer's judgment that
-  they were used too liberally.
+  they were used too liberally; for the second read and the
+  seat-replacement gate, the controller's call after the campaign's
+  seats found their outright retirement in conflict with D2, delegated
+  by the maintainer.
 - **D5. Kept.** Round 0; the first panel round with the right-sizing
   seat and the alternate-role seat; the plan phase; the terminal pass
-  with its stop check and the seats' forecast lines; the round cap; the
-  blind verifier, for now, its seat text trimmed by placement; task
-  review; the
-  branch review with ledger triage and the cleanup wave; implementers'
+  with its stop check and the seats' forecast lines, and its second read
+  after a follow-up wave (D4); the round cap; the blind verifier, for
+  now, its seat text trimmed by placement; task review; the branch
+  review with ledger triage and the cleanup wave; implementers'
   status and concerns; the umbrella closing review; umbrellas, condensed.
   Basis: the controller's proposal on the audit's catches, accepted by
   the maintainer; the verifier kept for now on the maintainer's word, on
@@ -164,7 +168,8 @@ All lightly held.
 - **D6. Structural fixes.**
   - Fix-wave drift: fix lists stay small, MINORs deferred to execution
     rather than fixed in a campaign, as Interfaces & boundaries states;
-    a MINOR against binding text stays on the fix list.
+    a MINOR against binding text stays on the fix list, in a round and
+    in the terminal pass's follow-up wave alike (D4).
   - Landing: the landing ask comes after the final branch pass, and
     findings parked at triage are filed before the workspace is
     deleted.
@@ -176,7 +181,7 @@ All lightly held.
   so placement does not polish what goes; fit depends on the final
   sizes. Placement and fit are separate children because fit widens
   the authoring rule on what a `SKILL.md` holds, and placement changes
-  no rule. Basis: the controller's call, delegated by the maintainer.
+  no rule beyond the one its entry names. Basis: the controller's call, delegated by the maintainer.
 - **D8. Each child runs under its predecessors' rules.** Before a
   child's brainstorm, the maintainer's installs carry every child landed
   before it; "waits on" below means landed and installed. Claude Code
@@ -203,8 +208,9 @@ All lightly held.
 - **C3. A kept mechanism keeps its function.** A child may move,
   reword or merge a mechanism D5 keeps; removing or weakening one, or
   a guard D3 or D4 keeps (the tree check's status check, adjudication's
-  independent read, the snapshot-blessing line, each stop-and-ask
-  line), takes an operator ruling.
+  independent read, the snapshot-blessing line, the second read after a
+  follow-up wave, each stop-and-ask line, the seat-replacement line
+  among them), takes an operator ruling.
 - **C4. The branch review stays mandatory on every arrangement, at full
   scope.**
 
@@ -219,14 +225,15 @@ All lightly held.
   generated agents that read a retired mechanism's text are inside the
   retiring child's scope.
 - **Deferred campaign MINORs.** `review-retirements` defines how a
-  MINOR a campaign defers (D3, D6) travels: by the existing carriage of
+  MINOR a campaign defers (D4, D6) travels: by the existing carriage of
   what earlier phases left open (`skills/redteaming/references/plan-phase.md`)
   to a stage in execution that reads it before landing, and, for an
   umbrella's campaign, with what the campaign left open to its
   landing's open-items step. `execution-retirements` keeps that
   carriage when it simplifies the deferral chain.
 - **Evidence.** Before this umbrella lands, the audit's brief and its
-  mechanism inventory, local paths removed, are committed in its
+  mechanism inventory, brought within the no-local-context rule
+  (`AGENTS.md`), are committed in its
   feature folder as D9's method and baseline. The readers' reports,
   which name a private project, are not: they go with the workspace,
   and children cite this umbrella's figures in their place.
@@ -236,8 +243,8 @@ All lightly held.
 The Children list, in order:
 
 - `review-retirements` — the campaign side of D3, D4 and D6: merge
-  conservation and its script, the second read with the terminal pass's
-  MAJOR-only wave, the re-seat line counts, the digest, `[LOAD-BEARING]`
+  conservation and its script, the terminal pass's narrower follow-up
+  wave with the second read after it, the re-seat line counts, the digest, `[LOAD-BEARING]`
   marks, premise findings replaced by the round-1 lens, the bias
   statement folded, the containment test's exclusions, the goal check's
   narrower reach, small fix lists and how deferred MINORs travel
@@ -258,7 +265,8 @@ The Children list, in order:
   size part of `docs/backlog/umbrella-followups.md`. Waits on nothing
 
 - `execution-retirements` — the execution side of D3, D4 and D6: the
-  tree check simplified, the seat-replacement gate, the pre-flight scan,
+  tree check simplified, the seat-replacement gate reduced to its line,
+  the pre-flight scan,
   the task review's cannot-verify items, snapshot blessing,
   adjudication, revert-and-replan, the fix ladder and breaker, Lane Fit
   and the upgrade hatch, whose stop-and-ask line names the skill that
