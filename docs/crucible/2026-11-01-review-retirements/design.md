@@ -22,8 +22,8 @@ round-0 inconsistency that predates the audit.
 - **G2.** The text stays consistent: no shipped skill text, template,
   generated agent, test or live decision record states a retired
   mechanism as current.
-- **G3.** The skills shrink (the umbrella's C1 and C2), and the landing
-  states the net change and the sizes.
+- **G3.** The skills do not grow (the umbrella's C1 and C2), and the
+  landing states the net change and the sizes.
 
 **Non-goals.**
 
@@ -36,8 +36,8 @@ round-0 inconsistency that predates the audit.
 - Consolidating restatements into one owner text (`placement`): where
   this child edits a restatement, it changes its content only.
 - New mechanisms beyond the four this child needs: the round-1
-  outside-the-frame lens, the `carried` disposition, the second read's
-  record-only run and the umbrella's `open ask:` note.
+  outside-the-frame lens, the `deferred-minor` disposition, the second
+  read's record-only run and the umbrella's `open ask:` note.
 
 ## Decisions
 
@@ -46,62 +46,80 @@ the brainstorm decision record.
 
 - **R1. Merge conservation retired.** The script
   `skills/redteaming/scripts/conserve.py`, its tests and helper, the
+  parts of other tests that load it or name it as their reader, the
   round record's `conservation:` line and the rules that run or read it
   go. A merged entry keeps its `origins:` element, which the terminal
-  pass reads to find the findings behind each decision ask; every seat
-  question keeps its disposition; seat ids stay unique within a feature,
-  for the same reader. Nothing mechanical checks the merge. Crucible then
-  ships no Python script, so the README's Python requirement and the
-  Python-floor reasoning tied to the script go. Basis: the umbrella's D3.
-- **R2. Small fix lists; MINORs carried.** A fix list — a numbered
-  round's, the plan phase's, and the terminal pass's follow-up wave's —
-  takes BLOCKER and MAJOR findings and MINOR findings against binding
-  text. Any other MINOR takes a new disposition, `carried`, and is not
-  fixed in the campaign. Round 0's claim corrections are unaffected: its
-  claim table carries no severities. At the close that seeds the SDD
-  ledger (the plan phase's, or a folded campaign's), each `carried`
-  entry of the spec campaign and the plan phase is seeded under the
-  ledger's `## Deferred minors` with its source, `Spec round <n>` or
-  `Plan`, where the branch reviewer triages it with the task reviews'
-  minors and the cleanup wave can fix it. An umbrella's campaign sends
-  its `carried` entries with what it left open to its landing's
+  pass reads to find the findings behind each decision ask, and every
+  seat question keeps its disposition. Seat ids stay unique within a
+  feature, the plan phase's `p0` aside, because a replacement seat
+  writes to a fresh report path. Nothing mechanical checks the merge. No
+  workflow step then runs Python, so the README's Python requirement and
+  the Python-floor reasoning tied to the script go. Basis: the
+  umbrella's D3.
+- **R2. Small fix lists; MINORs deferred to the branch review.** A fix
+  list — a numbered round's, the plan phase's, the spec terminal pass's
+  follow-up wave's — and the plan phase's terminal-pass repair take
+  BLOCKER and MAJOR findings and MINOR findings against binding text.
+  Any other MINOR the controller accepts takes a new disposition,
+  `deferred-minor`, and is not fixed in the campaign; a MINOR the
+  controller finds wrong, or outside the finding scope, stays
+  `rejected`. Round 0's claim corrections are unaffected: its claim
+  table carries no severities. The spec terminal-pass record lists the
+  pass's `deferred-minor` findings with their dispositions, as a
+  numbered round's merged list does. At the close that seeds the SDD
+  ledger (the plan phase's, or a folded campaign's), each
+  `deferred-minor` entry of the spec campaign and the plan phase is
+  seeded under the ledger's `## Deferred minors` with its source, and
+  SDD's resume check seeds any the ledger lacks. There the branch
+  reviewer triages it against the code: where it bears on the code, the
+  cleanup wave fixes the code; otherwise it is dropped, since frozen spec
+  and plan text is not edited for a MINOR. An umbrella's campaign sends
+  its `deferred-minor` entries with what it left open to its landing's
   open-items step. Basis: the umbrella's D6 and its interface on
   deferred campaign MINORs; the destination record 3.
-- **R3. The terminal pass's wave and its second read.** The pass's
+- **R3. The terminal pass's wave and its second read.** The spec pass's
   follow-up wave takes R2's fix list. The second read runs in two cases:
-  after that wave, full-scope as now, and as a record-only read whenever
-  the pass's report carries a record correction or the controller puts a
-  decision ask to the operator again on it, reading the records and asks
-  the controller wrote after the pass against the pass's report and the
-  seat findings behind each ask. Where both apply, one second read does
-  both. This holds in the spec campaign and the plan phase alike. Basis:
-  the umbrella's D4.
+  after that wave (in the plan phase, after the repair), as now; and as
+  a record-only read whenever the pass's report carries a record
+  correction or the controller puts a decision ask to the operator again
+  on it, reading the records and asks the controller wrote after the
+  pass against the pass's report and the seat findings behind each ask.
+  Where both apply, one second read does both. Each pass gets at most
+  one second read; what that read leaves open goes to the operator. This
+  holds in the spec campaign and the plan phase alike. Basis: the
+  umbrella's D4.
 - **R4. The bias statement folded.** The terminal pass's record check
   closes with one line stating whether its corrections share a direction
-  favouring the record's author. It has no escalation rule of its own: a
+  favouring the record's author, and goes to the operator as a decision
+  ask only where the pass states the record is materially misleading. A
   correction that changes a conclusion is flagged `CONCLUSION-CHANGING`
-  and is a decision ask already. The operating-stance section of the
-  redteaming skill keeps its heading, which another skill cites, and
-  drops its sentences on the conservation check and the bias statement.
-  Basis: the umbrella's D4.
+  and is a decision ask on its own, so the bias line has no second
+  trigger. The operating-stance section of the redteaming skill keeps
+  its heading, which another skill cites, and drops its sentences on the
+  conservation check and the bias statement. Basis: the umbrella's D4;
+  the kept trigger, the umbrella's D2.
 - **R5. Premise findings retired.** The `premise` label, its routing
   and carrying, the hold a pending premise ask put on the campaign's
-  stop, and the umbrella's `open premise ask:` note go. A seat's doubt
-  about the request, what the Intent asks for (for a child, its
-  umbrella's Intent too) or a firm decision is a question, and a
-  question of that kind is always carried to the operator verbatim, by
-  every seat whose report has questions. An implementer raises such a
-  doubt as a concern. The operator's ruling on it takes the route any
-  change of its kind takes. The hold goes because an open ask that could
-  overturn a major mechanism already keeps the overturn question's
-  answer at "still expected". Basis: the umbrella's D4.
+  stop and on execution work building on it, and the umbrella's
+  `open premise ask:` note go. A doubt about the request, what the
+  Intent asks for (for a child, its umbrella's Intent too) or a firm
+  decision, raised by any seat or implementer, reaches the operator as a
+  decision ask, quoted as raised: a seat writes it as a question (the
+  terminal pass in its `## Notes`), an implementer as a concern. In a
+  campaign the controller carries it to the readout; once the ledger
+  exists, it writes it under the ledger's `## Adjudication rulings` as
+  open, and the close readout puts it to the operator. The operator's
+  ruling takes the route any change of its kind takes. The holds go
+  because a pending ask's failure is loud: it still reaches the operator,
+  and a ruling that upholds it after the stop takes the flip paths.
+  Basis: the umbrella's D4; the holds' basis, its D2.
 - **R6. The outside-the-frame lens.** One seat of a spec campaign's
   round 1 carries a lens that reads the design from outside its frame:
   whether it solves the problem the request poses, and whether another
   framing, or no change, would serve the request better. In a one-seat
-  round 1 that seat carries it beside general. Its doubts are questions
-  (R5). No later round and no plan-phase seat carries it. Basis: the
-  umbrella's D4.
+  round 1 that seat carries it beside general. Its doubts follow R5. No
+  later round and no plan-phase seat carries it. Basis: the umbrella's
+  D4.
 - **R7. The goal check narrowed.** It runs at a spec campaign's round-1
   seats and at the branch review only; later rounds and plan-phase seats
   drop it, with the shared reference's sentence on reviewing a plan.
@@ -114,7 +132,8 @@ the brainstorm decision record.
   umbrella's Constraints & invariants and firm decisions, up the chain.
   Every statement of what binds is updated to that content; the
   containment test judges what builds on any item, with no mark to read
-  it from. Basis: the umbrella's D4.
+  it from. The umbrella entry marks (`landed`, `umbrella`, `dropped`)
+  stay. Basis: the umbrella's D4.
 - **R9. The containment test's exclusions.** It keeps four: a change to
   umbrella content, to a firm decision, a change after which the same
   work passes a check it failed, and a structural change. It drops the
@@ -126,19 +145,21 @@ the brainstorm decision record.
   right-sizing lens returns in a later round is the controller's
   judgment on how far the artifact has grown; the readout's trace
   records no line counts. Basis: the umbrella's D3.
-- **R11. Decision asks apart.** Every readout that puts a decision ask
-  to the operator — round readouts, the closes of the spec campaign and
-  the plan phase, SDD's close readout, the branch review's readouts, an
-  umbrella's landing ask and its closing review's readout — puts its
-  asks in a block of their own after the readout's body, each with its
-  options and recommendation. Basis: the umbrella's D6.
+- **R11. Decision asks apart.** Every message that puts a decision ask
+  to the operator — the gate before a spec campaign, round readouts, the
+  closes of the spec campaign and the plan phase, the branch review's
+  cap escalation, SDD's close readout, an umbrella's landing ask and its
+  closing review's readout — puts its asks in a block of their own after
+  the message's body, each with its options and recommendation. Basis:
+  the umbrella's D6.
 - **R12. Round 0 on every spec campaign.** Round 0 runs whatever the
   artifact; with no code baseline it checks the artifact's claims
   against its inputs (the request, the decision record, the documents
   it cites) and the liveness of its mechanisms. The round-1 seat
-  variant that hunted those first, with its selector, goes. The folded
-  lane's reason for round 0 is corrected: its pre-pass also covers the
-  plan half. Basis: record 4.
+  variant that hunted those first goes, with the `ordered-first` value
+  of the seat's `worksheet` selector; the selector's `pre-pass` value,
+  the plan phase's, stays. The folded lane's reason for round 0 is
+  corrected: its pre-pass also covers the plan half. Basis: record 4.
 - **R13. The digest retired; a short gate kept.** The design digest,
   its format and its readout item go. The gate stays: before the
   campaign, the operator sees the decision record's decisions and open
@@ -148,7 +169,8 @@ the brainstorm decision record.
 - **R14. Umbrellas.** The landing's carrier for a decision ask still
   open becomes `open ask: <the ask>`, noted in the first entry with no
   mark of its own Children list, for any decision ask, not only a
-  premise ask; the marks' clauses and premise-finding clauses leave
+  premise ask; the `[LOAD-BEARING]` marks' clauses and the
+  premise-finding clauses leave
   `skills/brainstorming/references/umbrellas.md`. Basis: the umbrella's
   entry for this child.
 - **R15. The vocabulary list.** The labels, record lines and statuses
@@ -159,52 +181,66 @@ the brainstorm decision record.
 ## Constraints & invariants
 
 - **I1. No finding is dropped silently.** Every finding a campaign does
-  not fix reaches a stage that reads it: a `carried` MINOR the branch
+  not fix reaches a stage that reads it: a `deferred-minor` the branch
   review's triage, or for an umbrella its landing's open-items step; a
-  question doubting the request, the Intent or a firm decision the
-  operator; any other disposition as today.
+  doubt about the request, the Intent or a firm decision, from any seat
+  or implementer, the operator; any other disposition as today.
 - **I2. The kept guards keep their function** (the umbrella's C3): the
   second read in both its runs, the containment test's check-passing
-  exclusion, and the rule carrying every doubting question to the
-  operator.
+  exclusion, the bias line's escalation on a materially misleading
+  record, and the route carrying every such doubt to the operator.
 - **I3. Nothing states a retired mechanism as current.** After the
   branch, no shipped skill text, template, generated agent, test, live
   decision record, `docs/authoring.md`, `README.md` or `AGENTS.md`
   states one; a decision record may keep it as history. Frozen feature
-  folders are exempt.
+  folders and the scanner's byte-exact corpus
+  (`tests/claudeism_scanner_corpus/`) are exempt.
 
 ## Interfaces & boundaries
 
 - **With `execution-retirements`.** This child does not change the
   mechanisms that child owns (Non-goals). Where a passage mixes them,
-  this child edits only its own mechanism's words. The seeding of
-  `carried` entries into `## Deferred minors` is the carriage that child
-  keeps when it simplifies the deferral chain.
+  this child edits only its own mechanism's words: it drops marks from
+  the pre-flight scan's statement of what binds, and leaves the backlog
+  bullet on statements of what binds
+  (`docs/backlog/umbrella-followups.md`) to that child. The seeding of
+  `deferred-minor` entries into `## Deferred minors` is the carriage that
+  child keeps when it simplifies the deferral chain.
 - **With `placement`.** Restatements of what binds keep their number
-  and place; only their content changes.
-- **The umbrella on this branch.** Two lightly held edits to its D4
-  (the umbrella's § Edits): the campaign shape stays at the gate (R13),
-  and the containment test keeps its check-passing exclusion (R9). The
-  entry's `landed` mark comes at Finish.
-- **Ledger lines.** A seeded `carried` entry takes the form of a
-  `## Deferred minors` line with the source `Spec round <n>` or `Plan`
-  beside the existing `Task <N>`, `Lane` and `Branch wave <n>` sources.
-- **Anchors.** Removing `skills/redteaming/references/formats.md`
-  § Design digest format and
-  `skills/subagent-driven-development/references/premise-and-questions.md`
-  § Premise findings is an interface change (`docs/authoring.md`
-  § Anchor stability): every citation of either is updated in the same
-  change, and the anchor test (`tests/test_references.py`) holds it.
+  and place; only their content changes. The shared reference keeps its
+  file name, `premise-and-questions.md`, which `placement` renames.
+- **The umbrella on this branch.** Lightly held edits by
+  `skills/brainstorming/references/umbrellas.md` § Edits: to its D4, the
+  campaign shape stays at the gate (R13) and the containment test keeps
+  its check-passing exclusion (R9); to its Interfaces & boundaries,
+  deferred campaign MINORs reach the branch review's triage through the
+  closes that seed the ledger (R2). The entry's `landed` mark comes at
+  Finish.
+- **Ledger lines and the branch reviewer.** A seeded `deferred-minor`
+  entry is a `## Deferred minors` line whose source is `Spec round <n>`,
+  `Spec terminal pass` or `Plan`, beside the existing `Task <N>`, `Lane`
+  and `Branch wave <n>` sources. The branch reviewer's ledger input and
+  its triage take that source where they now name an owning task.
+- **Removed headings.** `skills/redteaming/references/formats.md`
+  § Design digest format is a frozen anchor (`docs/authoring.md`
+  § Anchor stability); `premise-and-questions.md` § Premise findings and
+  `skills/redteaming/references/flip-paths.md` § Premise findings are
+  widely cited. Removing any of them updates every citation in the same
+  change, path-form citations, which the anchor test
+  (`tests/test_references.py`) holds, and prose forms such as "the
+  shared reference's § Premise findings", which only A1's search finds.
 
 ## Acceptance
 
 - **A1. No retired mechanism stated.** One-time check: a search of
-  `skills/`, `agents/`, `tests/`, `docs/decisions/`,
-  `docs/authoring.md`, `README.md` and `AGENTS.md` for `conserve`,
-  `conservation:`, `LOAD-BEARING`, `open premise ask`, the `premise`
-  label, `digest`, `ordered-first` and `numstat` finds only history in
-  decision records; the command and its output are recorded. No later
-  change is planned that could undo it.
+  `skills/`, `agents/`, `tests/` (the scanner's corpus excluded),
+  `docs/decisions/`, `docs/authoring.md`, `README.md` and `AGENTS.md`
+  for `conserve`, `conservation:`, `LOAD-BEARING`, `open premise ask`,
+  the premise label's forms (`] premise`, `` `premise` ``,
+  `premise finding`, `premise ask`), `digest`, `ordered-first` and
+  `numstat` finds only history in decision records and senses unrelated
+  to the retired mechanisms; the command and its output are recorded.
+  No later change is planned that could undo it.
 - **A2. The suite passes.** One-time at Finish: `python -m pytest
   tests/`, its summary line quoted with the skip count; the generated
   agents match their templates (the suite's check mode).
@@ -213,16 +249,18 @@ the brainstorm decision record.
   the subagent-driven-development, redteaming and brainstorming
   `SKILL.md` files each no larger than at `8c14505` (46,565, 40,662 and
   24,257 bytes), by `git cat-file -s`.
-- **A4. The campaign paths walked.** One-time, recorded at the branch
-  review: for the standard route's spec campaign and plan phase, the
-  folded campaign and an umbrella's campaign, where a `carried` MINOR, a
-  doubting question, an open decision ask and each second-read run go,
-  each ending at a stage that reads it (I1).
+- **A4. The paths walked.** One-time, recorded at the branch review:
+  for the standard route's spec campaign and plan phase, the folded
+  campaign, an umbrella's campaign and the task loop, where a
+  `deferred-minor`, a doubt about the request, the Intent or a firm
+  decision, an open decision ask and each second-read run go, each
+  ending at a stage that reads it (I1).
 - **A5. The backlog.** One-time: each item the umbrella's entry names
   for this child is resolved and deleted, or trimmed to what stays open,
   and the landing says which: the campaign side of
   `docs/backlog/skill-text-rewrite.md` (its vocabulary point, round-0
-  finding and containment-test point included), the digest follow-up of
+  finding, containment-test point and the mark's half of its two senses
+  of "load-bearing" included), the digest follow-up of
   `docs/backlog/lane-entry-and-downshift.md`,
   `docs/backlog/decision-ask-framing.md`, the `conserve` half of
   `docs/backlog/claude-code-mod.md` with its re-open trigger, the
@@ -235,8 +273,8 @@ Advisory. One task per mechanism or close cluster, each across every
 site that states it, its tests, generated agents and decision records
 (each changed record taking its dated `## Changes` line), in this order:
 marks (R8); premise findings, the lens and the goal check (R5–R7);
-conservation (R1); fix lists, `carried`, the terminal pass's wave, the
-second read and the bias line (R2–R4); the digest, the gate and the
-asks block (R11, R13); round 0 (R12); the containment test and the
-re-seat (R9, R10); umbrellas and the umbrella's D4 edits (R14); the
+conservation (R1); fix lists, `deferred-minor`, the terminal pass's
+wave, the second read and the bias line (R2–R4); the digest, the gate
+and the asks block (R11, R13); round 0 (R12); the containment test and
+the re-seat (R9, R10); umbrellas and the umbrella's edits (R14); the
 backlog (R15, A5). Each task lowers the prose-budget lines it shrinks.
