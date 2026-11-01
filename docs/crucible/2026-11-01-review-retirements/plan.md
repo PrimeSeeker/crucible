@@ -124,7 +124,7 @@ An implementer's own BLOCKED on a premise it cannot go on without (SDD's task lo
 **Acceptance.**
 - Happy: the stop rule, mandate 2 and the terminal pass's stop check name no premise hold; § Premise findings keeps the label, routes, carrying and the umbrella note; the execution rule says the controller tells the operator when a premise finding is raised; the roster carries the outside-the-frame lens, round 1 only.
 - Edge: a one-seat round 1 carries the lens beside general (R6); the folded lane's round-1 seat names it.
-- Error: a plan-phase seat dispatched from the card runs no goal check; a later-round spec seat runs none; a round-1 seat and the branch reviewer still do.
+- Error: a plan-phase seat dispatched from the card runs no goal check; a later-round spec seat runs none; a round-1 seat and the branch reviewer still do. One-time search for `Reviewing a plan, compare` before (one hit, `premise-and-questions.md`) and after (none).
 - Error: one-time search, case-insensitive, for the holds' wording (`holds the stop`, `pending premise ask`, `premise ask was pending`, `waits for the ruling`, `does not stop while`) over `skills/`, `agents/` and `docs/decisions/`, run before (hits, among them `flip-paths.md` § Premise findings, the terminal-pass template's stop check and its agent, `evidence-and-findings.md`, `spec-campaign.md`) and after (history only); these terms join A1's search in T10.
 - Integration: the full suite passes; agents regenerated; budget lines current.
 
@@ -171,7 +171,7 @@ The spec's Interfaces "Terminal-pass records" fixes the file name and the states
 **Acceptance.**
 - Happy: the record-only second read runs whenever the pass's report carries a record correction or an ask is put again, on the close recorded before it and delivered after it; one second read covers both runs; at most one per pass; its leftover non-binding MINORs take `deferred-minor`.
 - Edge: in the plan phase the post-pass close is recorded under `## Terminal pass` and a repair lands before the second read; the spec terminal-pass record reaches `verified` for a record-only read.
-- Error: the bias line escalates only where the pass states the record is materially misleading.
+- Error: the bias line escalates only where the pass states the record is materially misleading; one-time search for `sharing that direction` over `skills/`, `agents/` and `docs/decisions/` before (hits in the template, its agent and the redteaming skill) and after (history only).
 - Integration: the full suite passes, the selector-resolution test included; agent regenerated; budget line current.
 
 ### T6. Retire the digest; the short gate; decision asks apart
@@ -203,7 +203,7 @@ A renumbered Flow updates every step citation.
 **Acceptance.**
 - Happy: round 0 runs on every spec campaign; with no code baseline it checks claims against the inputs and liveness.
 - Edge: the plan phase's pre-pass, which uses `worksheet: pre-pass`, is unchanged.
-- Error: one-time search for `ordered-first` before (hits) and after (none outside history).
+- Error: one-time search for `ordered-first` and `greenfield` before (hits) and after (none outside history).
 - Integration: the full suite passes, the selector test included; agent regenerated; budget line current.
 
 ### T8. The containment exclusion and the re-seat
@@ -217,7 +217,7 @@ A renumbered Flow updates every step citation.
 **Acceptance.**
 - Happy: the containment test lists four exclusions, the check-passing one included; the re-seat is the controller's judgment on growth.
 - Edge: the mark's other text in writing-plans and the records is unchanged but for the exclusion's words.
-- Error: one-time search for `numstat` and `line counts` before (hits) and after (the preset-test sense and history only).
+- Error: one-time search for `numstat` and `line counts` before (hits) and after (the preset-test sense and history only), and for `a task that has not run` before (hits in `flip-paths.md` and a history line of `the-spec.md`) and after (history only).
 - Integration: the full suite passes; budget lines current.
 
 ### T9. Umbrellas and the umbrella's edits
