@@ -71,11 +71,9 @@ for an item not landed (`docs/backlog/verifier-verdict-repair-path.md`).
 rejected, parked or partly-applied BLOCKER or MAJOR with its ruling, in
 words; the controller checks that coverage against the merged list
 before recording the readout, and nothing checks it afterwards. The
-delivered readout carries no merged-list, seat-finding or question id
-and no line counts. Those go in the record-only trace after it: each
-decision ask's merged-list ids, which the terminal pass reads, and, in a
-numbered spec-campaign round, the wave's line counts, which the
-right-sizing re-seat reads. A readout delivered again after compaction
+delivered readout carries no merged-list, seat-finding or question id.
+Those go in the record-only trace after it: each decision ask's
+merged-list ids, which the terminal pass reads. A readout delivered again after compaction
 leaves its trace out (`crucible:redteaming § Round readout`).
 
 ## Why
@@ -215,7 +213,9 @@ entry, and they went with the parser on 2026-10-10. The readout's reader
 is the operator, who acts on words; the ids serve the terminal pass and
 the line counts the right-sizing judgment, so on 2026-10-13 both moved
 to a trace the operator is not sent. (Basis: measured, for the check;
-judgment, accepted by the maintainer, for the trace.)
+judgment, accepted by the maintainer, for the trace.) The line counts
+left the trace on 2026-11-02, when the re-seat they served became the
+controller's judgment (`docs/decisions/spec-campaign.md`).
 
 ## Rejected
 
@@ -235,6 +235,10 @@ judgment, accepted by the maintainer, for the trace.)
 
 ## Changes
 
+- 2026-11-02: the readout's trace loses its line for the wave's line
+  counts, and the delivered readout its rule against carrying them,
+  the right-sizing re-seat they served having become the controller's
+  judgment (`docs/decisions/spec-campaign.md`).
 - 2026-11-02: fix lists, a plan-phase repair included, take only
   BLOCKER, MAJOR and binding-text MINOR findings; the disposition
   `deferred-minor` is added for the other MINORs, after

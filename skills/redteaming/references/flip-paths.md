@@ -20,7 +20,6 @@ From the spec campaign's close, every change to binding content, a ruling that p
 - a change to umbrella content, this feature's own entry included;
 - a change to a decision the spec or an umbrella records as the operator's firm preference;
 - a change after which the same work, unchanged, passes a verification gate or an acceptance check it failed;
-- marking `Review: branch only` a task that has not run, once the review grading the plan has closed: a downshift from the arrangement the operator confirmed;
 - a structural change, one that redefines a mechanism rather than correcting content inside one that stands: it takes a supersede.
 
 Any other change keeps the operator's decision ask, as does a plan conflict that is a design judgment.

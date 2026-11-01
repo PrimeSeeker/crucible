@@ -25,8 +25,7 @@ decision record, written for every preset. The operator confirms the
 preset only: a departure expected later, such as tasks the plan may
 route to the branch review alone, is a heads-up. The controller never
 declares a preset, and no feature enters one mid-flight; the lane's
-upgrade hatch and an operator-confirmed downshift (`docs/decisions/plans.md`)
-are the exceptions. An umbrella, the document holding an effort of
+upgrade hatch is the exception. An umbrella, the document holding an effort of
 several features, takes no preset: it is campaigned or approved by what
 it carries, and each of its children takes a preset of its own
 (`docs/decisions/umbrellas.md`).
@@ -302,6 +301,9 @@ small preset or the waiver for its work.
 
 ## Changes
 
+- 2026-11-02: the exceptions to entering a preset mid-flight drop the
+  operator-confirmed downshift, a late `Review: branch only` mark, which
+  the containment test no longer excludes (`docs/decisions/plans.md`).
 - 2026-11-02: the digest gate is the campaign gate, and the very-small
   lane's list of what it lacks drops the design digest, which is retired
   (`docs/decisions/operator-steering.md`).

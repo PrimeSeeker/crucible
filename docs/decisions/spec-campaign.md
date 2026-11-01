@@ -48,10 +48,8 @@ one-seat round 1 carries outside-the-frame beside general.
 
 **Right-sizing.** The right-sizing seat's product is scope-cut
 decisions, and it is judged by them. It sits in round 1 and is
-re-seated mid-campaign or when the artifact has grown, a soft judgment
-on the net of the line counts the round records' trace holds (git's
-lines added minus lines removed between the round's base and head), a
-reflow's noise tolerated. It carries the over-subtraction guard: what it
+re-seated mid-campaign or when the controller judges the artifact has
+grown far enough to need it. It carries the over-subtraction guard: what it
 attests as right-sized is cut only by a logged ruling. A fix that
 removes machinery outranks one that adds it, all else equal.
 
@@ -240,7 +238,11 @@ the soft gate.) A mechanical token count once drove the re-seat; it ran
 MAJORs in an amendment just applied. It went on 2026-10-10 with the
 script that parsed the records, and git's line counts took its place,
 moving into the round record's trace on 2026-10-13. (Basis: measured;
-judgment, accepted by the maintainer.)
+judgment, accepted by the maintainer.) On 2026-11-02 the skill text
+rewrite retired the counts, among the campaign mechanisms its audit
+found catching little or never running, and the re-seat became the
+controller's judgment on how far the artifact has grown. (Basis:
+judgment, an agent's proposal accepted by the maintainer.)
 
 ### Quorum and degraded rounds
 
@@ -394,12 +396,18 @@ trim.)
 - **A round-1 seat in place of round 0 where there is no code
   baseline**: two rules where one serves (§ Why).
 - **A mechanical growth gate**, a token counter or a hard cap on
-  growth: the re-seat stays a soft judgment on git's line counts
+  growth: the re-seat stays the controller's judgment on growth
   (§ Why).
 - **A package-wide suite run from a campaign seat** (§ Why).
 
 ## Changes
 
+- 2026-11-02: the right-sizing re-seat is the controller's judgment on
+  how far the artifact has grown, and the round record's trace loses its
+  line for the wave's line counts; because the skill text rewrite
+  retired the counts among the campaign mechanisms its audit found
+  catching little or never running
+  (`docs/decisions/fix-verification-and-merge.md`).
 - 2026-11-02: round 0 runs on every spec campaign, with no code
   baseline checking the artifact's claims against its inputs and
   liveness, and its prompt stakes each finding's severity; the seat

@@ -297,8 +297,8 @@ Fields, in order:
    plan phase and of a folded campaign, the tasks the plan marks
    `Review: branch only`, with their reasons, as information. The
    delivered readout's own words carry no internal id — merged-list,
-   seat-finding or question id — and no line counts; a carried question
-   is quoted as written, ids included.
+   seat-finding or question id; a carried question is quoted as written,
+   ids included.
 
    **Trace** (record only, never delivered): the field ends with a part
    opened by a line `Trace:`, after the readout, holding the bookkeeping
@@ -306,19 +306,6 @@ Fields, in order:
    - in a numbered round record and the plan record, each decision ask's
      merged-list ids, the entries it turns on, which the terminal pass
      reads;
-   - in a numbered spec-campaign round record only, the wave's line counts:
-     the lines it added to the artifact and the lines it removed, as git
-     counts them between `<base-rev>`, the revision the round reviewed
-     (field 1), and `<head-rev>`, the revision the wave landed at —
-
-     ```
-     git diff --numstat <base-rev> <head-rev> -- <artifact-path>
-     ```
-
-     — two numbers, added then removed, with no justification prose. Their
-     net is the signal the right-sizing re-seat trigger judges
-     (`crucible:redteaming` § Panels); where the wave was not committed, the
-     trace records the counts as not taken;
    - in a numbered spec-campaign round record only, beside each mechanism
      the overturn item answers, the ids of the seats whose forecasts named
      it as reasonably expected to be overturned.

@@ -48,13 +48,7 @@ information. A mark is added only in an edit a seat grading marks reads
 afterwards: never in the last fix wave of the review that grades the
 plan, a terminal pass's follow-up wave or a plan-phase repair, where a
 seat question proposing one is answered or carried, never adopted
-(`crucible:redteaming § Merge and finding hygiene`). Marking a task
-that has not run after that review has closed is a downshift from the
-arrangement the operator confirmed: never a contained amendment, it
-goes to the operator as a decision ask
-(`skills/redteaming/references/flip-paths.md` § The containment test;
-`crucible:writing-plans § Per-task structure — four fields, all
-required`).
+(`crucible:redteaming § Merge and finding hygiene`).
 
 **Task sizing.** A task is the smallest unit with its own test cycle and
 its own review verdict, a fresh task reviewer's gate or, for a marked
@@ -174,11 +168,17 @@ where the tasks exist to choose it for. A mark carries its reason so the
 seats grading the plan can judge it, and the criterion asks what a late
 review would cost: the branch review runs after every later task, too
 late for a detail something else builds on. Marks written at plan time
-pass that review; a mark added later changes a reviewed plan, so it is
-the operator's to confirm, a deliberate asymmetry. (Basis: the
-maintainer's preference, for the choice; judgment, accepted by the
-maintainer, for the mark, its grading and the downshift rule,
+pass that review. (Basis: the maintainer's preference, for the choice;
+judgment, accepted by the maintainer, for the mark and its grading,
 2026-10-29.)
+
+A mark added after that review had closed was a downshift from the
+arrangement the operator confirmed, so the containment test excluded it
+from the controller's confirmation from 2026-10-29. On 2026-11-02 the
+skill text rewrite dropped that exclusion: of the test's two exclusions
+added after single incidents, it kept only the one whose failure would
+be silent, a change after which the same work passes a check it failed.
+(Basis: judgment, an agent's proposal accepted by the maintainer.)
 
 A mark written in the plan review's own last wave passed that review in
 name only: no seat with the mandate to grade marks read the wave after
@@ -265,6 +265,11 @@ slot cards' paths and `phase` selector read, as `conserve.py` did until
 
 ## Changes
 
+- 2026-11-02: the review mark's statement drops its rule that marking an
+  unrun task after the plan's review has closed is a downshift the
+  operator confirms, the containment test's exclusion for it being
+  removed; because the skill text rewrite kept, of the exclusions added
+  after single incidents, only the one whose failure would be silent.
 - 2026-11-02: the plan phase's fix wave and its repair take only
   BLOCKER, MAJOR and binding-text MINOR findings, and its close seeds
   each `deferred-minor` entry under the ledger's `## Deferred minors`
