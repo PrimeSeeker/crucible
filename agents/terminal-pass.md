@@ -194,15 +194,6 @@ flagged correction is itself a decision ask to the operator; an unflagged one
 is reported and goes no further. A mismatch in `## Notes` that meets the same
 test is flagged there and is a decision ask likewise.
 
-Where your corrections share a direction that favors the record author's
-narrative, state that pattern — the observed direction of the corrections,
-never an attribution of intent. Stating it is unconditional: the statement
-is the guard, and it is never dropped, softened, or made contingent on how
-many corrections you found. It escalates to a decision ask to the operator
-where a correction sharing that direction is flagged `CONCLUSION-CHANGING`,
-or where you state that the record is materially misleading; below that
-threshold it is not an ask.
-
 A discrepancy you find is a record correction, not a verdict on its author: the
 process assumes a baseline error rate in authored records, and this pass is the
 instrument that catches it.
@@ -224,15 +215,27 @@ instead.
 **Report:** write to the report path your dispatch names, and no other.
 
 [[when follow-up = second-read]]
-This is the pass's second read: its report is a new file, `second-read.md`
-beside the pass's first report, which you never overwrite or append to. In
-the spec campaign it follows the one further fix wave the first report
-triggered and is the campaign's last report; whatever it leaves open goes to
-the operator. In the plan phase — and only there — you are resumed from your
-first read after the sanctioned repair of a finding of yours, the resume
-message names the report path, and the re-read is **full-scope over the
-repaired region**: the whole section the repair touched, never the flagged
-item alone, since the repair is itself unreviewed text.
+This is the pass's one second read, a new file, `second-read.md`, beside
+the first report, which you never overwrite or append to. Its inputs gain
+that report and the close the controller recorded after it: the spec
+campaign's terminal-pass record (`terminal-pass/record.md` in your phase
+directory) or the plan record's `## Terminal pass`. In the plan phase you
+are resumed from your first read, the resume message naming the report
+path. It does one or both of two reads:
+
+- **The re-read**, where a fix wave (spec) or a repair (plan) landed
+  after the first report: in the spec campaign both mandates, as a first
+  read; in the plan phase mandate 1, **full-scope over the repaired
+  region**: the whole section the repair touched, never the flagged item
+  alone, since the repair is itself unreviewed text.
+- **The record read**, where the first report carries a record
+  correction or the close puts a decision ask to the operator again: the
+  close checked against the first report and the seat findings behind
+  each ask, as mandate 2 checks a readout.
+
+Record the re-read before opening the close. A record read alone
+performs no other mandate; its `## Artifact verdict` says in one line
+that no re-read was due.
 [[end]]
 
 Write this exact structure, short by shape: a check that came back clean is
@@ -250,9 +253,10 @@ attested in one line, never narrated.
    naming the decision asks, carried questions and delegated calls
    checked and, in a spec campaign, the stop
    round and the decision-record entries checked, is the clean outcome.
-   Close with a directional-bias line: either "corrections share no
-   direction" or the direction they share, stated as an observation — and raised as a decision ask only
-   where it meets the escalation threshold above.
+   Close with one bias line: "corrections share no direction", or the
+   direction they share favoring the record's author, as an observation,
+   never an attribution of intent; where you find the record materially
+   misleading, the line says so, which makes it a decision ask.
 3. `## Notes` — record mismatches outside mandate 2, and anything else
    material to the close decision; else `none`.
 

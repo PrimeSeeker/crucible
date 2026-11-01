@@ -102,11 +102,11 @@ round-NN/                     # NN zero-padded, sequential; round 0 = round-00
                               #   plan phase's pre-pass report is seat-p0.md)
   verifier.md                 # blind verifier report
   terminal-pass.md            # plan round-01 ONLY: its terminal pass's report
-  second-read.md              # plan round-01 ONLY, after a sanctioned repair
+  second-read.md              # plan round-01 ONLY: its terminal pass's second read
 terminal-pass/
   record.md
   pass.md                     # the terminal pass's report
-  second-read.md              # only after the one further fix wave: the spec
+  second-read.md              # the pass's second read, if one runs: the spec
                               #   campaign's last report
 ```
 
@@ -335,16 +335,22 @@ record's subset is skipped by definition):
   under the panel's rule for which are always carried.
   States: `dispatched → returned → fix-applied → readout`.
 - **Terminal pass** (`terminal-pass/record.md`): fields 1, 2, 6 and 8, with
-  a pointer to `pass.md` in its preamble. Field 6 is present only when the
-  pass's artifact findings trigger the at-most-one further fix wave, whose
-  second read lands as `second-read.md`; no second wave is recordable.
-  States: `dispatched → returned → readout`, or with the wave
-  `dispatched → returned → fix-applied → verified → readout`, `verified`
-  meaning the second read is on disk.
+  a pointer to `pass.md` in its preamble, and `## Deferred minors`, the
+  pass's `deferred-minor` findings, a second read's included, each with
+  its disposition. Field 6 is present only
+  when the pass's findings trigger the at-most-one further fix wave; no
+  second wave is recordable. Field 8, the close, is recorded before any
+  second read and delivered after it, its corrections added. States:
+  `dispatched → returned → readout`, with the wave
+  `dispatched → returned → fix-applied → verified → readout`, or with a
+  record-only read `dispatched → returned → verified → readout`;
+  `verified` means `second-read.md` is on disk.
 - **Plan-phase record** (`campaigns/plan/round-01/record.md`): the plan
   phase's only record, with fields 1–8 and `## Terminal pass` — the pass's
-  `Record corrections: <N>` outcome, any sanctioned repair and second read,
-  and the final check before `confirmed`. The quorum block is kept for lost
+  `Record corrections: <N>` outcome, any sanctioned repair, the close
+  delivered after the pass, recorded as the terminal-pass record's is,
+  any second read, the pass's `deferred-minor` findings, and the final
+  check before `confirmed`. The quorum block is kept for lost
   seats; no cap arithmetic applies, since the phase never loops. States: the
   full sequence through `confirmed`, a sanctioned repair re-advancing the
   record through `fix-applied → verified` before `confirmed` is written

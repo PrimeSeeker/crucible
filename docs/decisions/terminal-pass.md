@@ -30,11 +30,21 @@ through which it reads the shared reference's overturn question,
 § Premise findings and § Binding items and unrecorded choices
 (`docs/decisions/instruments.md`). It reports counted record corrections,
 and only a correction flagged `CONCLUSION-CHANGING` reaches the operator
-as a decision ask. Its directional-bias statement is mandatory and
-unconditional, and escalates only above its threshold. Its tail is
-bounded: in the spec campaign one further fix wave and a second read, in
-the plan phase one scoped repair and a resumed second read. The
-mandates, inputs, flag test and threshold are stated in full only in
+as a decision ask. Its report closes with a bias line, whether its
+corrections share a direction favoring the record's author, a decision
+ask only where the pass states the record is materially misleading. Its
+tail is bounded: in the spec campaign one further fix wave, taking what
+any fix list takes (`docs/decisions/fix-verification-and-merge.md`), in
+the plan phase one scoped repair, and one second read. The second read
+follows that wave or repair, and runs record-only after a pass whose
+report carries a record correction or on which the controller puts a
+decision ask again: it reads the close the controller recorded after the
+pass against the pass's report and the seat findings behind each ask,
+and the controller delivers that close after it, its corrections added.
+One read covers both cases. Of what it leaves open, a MINOR not against
+binding text takes `deferred-minor`, which the spec terminal-pass record
+and the plan record's `## Terminal pass` list; the rest goes to the
+operator. The mandates, inputs and flag test are stated in full only in
 `skills/redteaming/terminal-pass-prompt.md`
 (`crucible:redteaming § Stop rule and terminal pass`).
 
@@ -133,6 +143,16 @@ threshold, went on 2026-10-13: its reader was the committed record
 trail, which crucible no longer keeps. (Basis: judgment, accepted by the
 maintainer.)
 
+On 2026-11-02 the statement folded to one line, its apparatus (the
+unconditional guard, the operating stance's pointer, the note on drift
+auditing) retired by the skill text rewrite. Its trigger on a
+`CONCLUSION-CHANGING` correction sharing the direction went, since such
+a correction is a decision ask on its own; its trigger on a materially
+misleading record stayed, since nothing else escalates that and its
+failure would be silent. (Basis: judgment, accepted by the maintainer,
+for the fold; the controller's, on a call the maintainer delegated, for
+the kept trigger.)
+
 ### The tail
 
 One campaign ran a re-pass and then appended six re-checks after it, so
@@ -143,6 +163,15 @@ plan phase the repaired text is itself unreviewed, which is why the
 second read covers the whole repaired region, never the flagged item
 alone. (Basis: a single incident, for the bound; judgment, accepted by
 the maintainer, for the rest.)
+
+The record-only run came with the skill text rewrite (2026-11-02). Its
+audit found the second read catching new defects in most of the runs
+read, among them MAJORs a repair had introduced and records leaning
+toward the controller; run only after a wave, it never read the records
+of a pass that corrected them without one. The follow-up wave narrowed
+with every fix list (`docs/decisions/fix-verification-and-merge.md`).
+(Basis: measured, for the catches; the controller's proposal, accepted
+by the maintainer, for the record-only run.)
 
 ## Rejected
 
@@ -159,6 +188,19 @@ the maintainer, for the rest.)
 
 ## Changes
 
+- 2026-11-02: the directional-bias statement becomes the report's bias
+  line, a decision ask only where the pass states the record is
+  materially misleading; its trigger on a `CONCLUSION-CHANGING`
+  correction sharing the direction, its unconditional guard and the note
+  on drift auditing removed. The second read gains its record-only run
+  after a pass whose report carries a record correction or after which
+  an ask is put again, checking the close the controller records before
+  it and delivers after it; at most one per pass; its leftover MINORs
+  not against binding text take `deferred-minor`, listed in the spec
+  terminal-pass record's new `## Deferred minors` and the plan record's
+  `## Terminal pass`; the spec terminal-pass record's states gain
+  `dispatched → returned → verified → readout`. The follow-up wave
+  takes what any fix list takes. From the skill text rewrite.
 - 2026-11-02: the stop check no longer counts a stop called while a
   premise ask was pending as a mismatch, the hold on the stop being
   retired (`docs/decisions/spec-campaign.md`).

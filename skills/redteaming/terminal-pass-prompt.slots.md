@@ -22,7 +22,7 @@
   - yes: mandate 1 as a full-scope re-read; set when the final round produced a fix wave
   - no: mandate 1 as a confirmation read; set when it produced none
 - follow-up: second-read | off
-  - second-read: the second-read passage; spec, dispatched after the pass's one further fix wave; plan, stated with the report path in the message resuming the pass after its sanctioned repair
+  - second-read: the second-read passage; the pass's one second read, after its further wave or repair, a record correction or an ask put again; spec, a fresh dispatch; plan, stated with the report path in the message resuming the pass
   - off: none; the pass's first dispatch
 
 ## Dispatch

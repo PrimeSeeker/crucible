@@ -357,13 +357,14 @@ prosecuted its own error rate while its subagents' reports did not, and
 the errors it disclosed leaned in the flattering direction, which shame
 rewards. The stance makes a caught error the loop working, so disclosure
 stays cheap; the paragraph on disclosure keeps it from being read as a
-licence to soften records, and the terminal pass's directional-bias
-statement is the instrument that detects shading
-(`docs/decisions/terminal-pass.md`). On 2026-10-13 the block lost four
+licence to soften records, and the terminal pass's bias line is the
+instrument that detects shading (`docs/decisions/terminal-pass.md`).
+On 2026-10-13 the block lost four
 sentences on the recommendation of the controller, its reader, keeping
 that paragraph unchanged; on 2026-10-28 the paragraph lost its
 [LOAD-BEARING] mark, its wording kept, when marks became a spec
-convention (`docs/decisions/the-spec.md`). (Basis: a single incident, for
+convention (`docs/decisions/the-spec.md`); on 2026-11-02 the block lost
+its sentence pointing to that statement, folded to one line. (Basis: a single incident, for
 the motive; judgment, accepted by the maintainer, for the stance and the
 trim.)
 
@@ -386,6 +387,10 @@ trim.)
 
 ## Changes
 
+- 2026-11-02: the operating stance drops its sentence pointing to the
+  terminal pass's directional-bias statement, which became the report's
+  one bias line (`docs/decisions/terminal-pass.md`); the heading stays,
+  since another skill cites it.
 - 2026-11-02: round 0's and the stop round's fix lists take only what
   any fix list takes, BLOCKER, MAJOR and binding-text MINOR findings,
   the stop round's no longer every open finding of any severity; the
