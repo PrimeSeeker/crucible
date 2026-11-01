@@ -39,6 +39,10 @@
     rule that attributes a basis from the brainstorm decision record's
     proposer and status (`decision-records.md`); neither was checked
     against a decision record entry.
+  - `records-and-workspace.md` states that a home for open items
+    recorded in a user-level file counts as the project's only in its
+    Changes line; its Decision ("Work left open") and "What a project
+    may change" leave it out.
 - `docs/backlog/second-runtime-seat.md` says no skill text mentions
   cross-runtime seats; `skills/redteaming/SKILL.md` § Panels does.
 

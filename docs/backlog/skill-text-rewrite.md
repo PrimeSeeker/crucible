@@ -104,6 +104,12 @@
     (brainstorm exit), defines no status but a form of `accepted`,
     `accepted — delegated to the controller`, written in the proposer's
     place.
+- **Brainstorming's open-items reader points nowhere.** Its context
+  gathering reads "open items in the home the project's instructions
+  name for them" (`skills/brainstorming/SKILL.md` § Context gathering)
+  without pointing to `skills/redteaming/references/formats.md`
+  § Open items, which counts a user-level file's line naming the project
+  as such a home; a strict reader may skip a home kept only there.
 - **"Load-bearing" means two things in SDD:** the spec's `[LOAD-BEARING]`
   mark, and the fix loop's breaker, where a "real and load-bearing"
   finding is one a later task builds on or one that reveals a plan

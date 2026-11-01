@@ -32,10 +32,24 @@ none blocking:
   record**, which its landing deletes: ceremony for a document no
   campaign reviews.
 - **The implementer slot card is at 2,966 of its 3,000 characters.**
+- **A pending open-items ask at an umbrella has no carrier.** With no
+  home for open items configured, an umbrella's landing and its closing
+  review ask the operator where they go and keep the workspace until the
+  answer (`skills/redteaming/references/formats.md` § Open items); an
+  umbrella has no ledger, so a session that ends before the answer
+  leaves nothing telling the next one the ask is pending.
+- **The branch reviewer's build-history exemption covers only Finish's
+  open items.** `skills/requesting-code-review/code-reviewer.md` exempts
+  the open items the controller's finish wrote; those an umbrella's
+  landing or closing review writes to an in-repository home, carrying
+  ledger-style sources, would draw findings in a review of those
+  branches.
 
 ## Follow-up
 
 Fix the first four in one small change; rule on the FIX_BASE wording
 and on whether the mark or an approval-only umbrella's workspace should
-change. Take the size of the umbrella text into
+change. Close the two open-items gaps: a carrier for a pending ask
+(the umbrella's workspace, or a note in `umbrella.md`) and the
+exemption's reach. Take the size of the umbrella text into
 `docs/backlog/skill-text-rewrite.md`.
