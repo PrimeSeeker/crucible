@@ -24,7 +24,6 @@
 ## Follow-up
 
 - Introduce it properly, as a feature of its own.
-- Design the opt-in seat: how its report enters seat records and
-  `conserve`, verification against the files, quota and time-box
-  discipline.
+- Design the opt-in seat: how its report enters seat records and the
+  merge, verification against the files, quota and time-box discipline.
 - Record the decision on the single-family panel's bias risk.

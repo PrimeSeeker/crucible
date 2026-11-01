@@ -51,5 +51,4 @@ Fix the first four in one small change; rule on the FIX_BASE wording
 and on whether the mark or an approval-only umbrella's workspace should
 change. Close the two open-items gaps: a carrier for a pending ask
 (the umbrella's workspace, or a note in `umbrella.md`) and the
-exemption's reach. Take the size of the umbrella text into
-`docs/backlog/skill-text-rewrite.md`.
+exemption's reach.

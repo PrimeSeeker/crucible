@@ -69,22 +69,20 @@
     treat them as separate choices, while a feature's spec is always
     campaigned and a note never is;
   - signal and vocabulary sprawl: the labels, statuses and marks a
-    reader must know;
+    reader must know, among them the severities and the `premise`,
+    `literal-reading` and `CONCLUSION-CHANGING` labels, the merged
+    list's dispositions (`deferred-minor` included), the decision
+    statuses (`open`, `accepted`, `firm`), the terminal-pass records'
+    states, the umbrella entry marks (`landed`, `umbrella`, `dropped`)
+    and the `Review: branch only` mark;
   - the check on a check: each seat forecasts the overturn answer, the
     round readout answers the forecasts, and the terminal pass checks
     the stop against both;
   - the binding clause restated at many sites (the umbrellas bullet
-    above);
-  - the containment test's incident rules: exclusions in
-    `skills/redteaming/references/flip-paths.md` § The containment test,
-    each added after one incident.
-- **Two findings that predate the effort**, found by the same audit:
-  the folded lane gives "the fold requires a code baseline" as the reason
-  round 0 always runs, but nothing in the fold's entry requires one, and
-  `crucible:redteaming` § Round 0 gives a greenfield artifact no round-0
-  agent; and the very-small
-  lane's upgrade hatch moves the work to the standard route without
-  naming the skill that runs next.
+    above).
+- **A finding that predates the effort**, found by the same audit: the
+  very-small lane's upgrade hatch moves the work to the standard route
+  without naming the skill that runs next.
 - **A minor defect the placement audit found, unfixed:** the re-review
   template's comment rule is a fragment of the implementer's and task reviewer's.
   Copying the whole rule in would add one more restatement; the shared
@@ -109,10 +107,13 @@
   without pointing to `skills/redteaming/references/formats.md`
   § Open items, which counts a user-level file's line naming the project
   as such a home; a strict reader may skip a home kept only there.
-- **"Load-bearing" means two things in SDD:** the spec's `[LOAD-BEARING]`
-  mark, and the fix loop's breaker, where a "real and load-bearing"
-  finding is one a later task builds on or one that reveals a plan
-  defect. A reader can take the breaker's STOP as tied to the mark.
+- **"Load-bearing" is a defined term in SDD's breaker only:** in the fix
+  loop's breaker a "real and load-bearing" finding is one a later task
+  builds on or one that reveals a plan defect, while elsewhere the word
+  keeps its everyday sense (`crucible:redteaming` § Flip paths —
+  load-bearing content mid-campaign or mid-execution, the lens for what
+  an artifact makes load-bearing). A reader can take the breaker's STOP
+  as tied to those.
 
 ## Follow-up
 
@@ -129,7 +130,7 @@
   the resident-cost re-open trigger above as resident tokens per route, or
   retire it.
 - Take the umbrella audit's design-level findings above as design
-  targets of the rewrite, and fix its two predating findings on the way.
+  targets of the rewrite, and fix its predating finding on the way.
 - Consider moving the right-sizing lens, with its over-subtraction guard
   and re-seat trigger, from the spec campaign to the branch review.
 - Restructure how a tension a review finds gets closed, today by adding
