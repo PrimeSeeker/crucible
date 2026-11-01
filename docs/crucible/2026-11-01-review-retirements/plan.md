@@ -203,7 +203,7 @@ A renumbered Flow updates every step citation.
 **Acceptance.**
 - Happy: round 0 runs on every spec campaign; with no code baseline it checks claims against the inputs and liveness.
 - Edge: the plan phase's pre-pass, which uses `worksheet: pre-pass`, is unchanged.
-- Error: one-time search for `ordered-first` and `greenfield` before (hits) and after (none outside history).
+- Error: one-time search for `ordered-first` before (hits) and after (none outside history), and for `greenfield` before (hits) and after (none naming the retired seat variant or its hunt; new text for the no-baseline case may use the word).
 - Integration: the full suite passes, the selector test included; agent regenerated; budget line current.
 
 ### T8. The containment exclusion and the re-seat
@@ -217,7 +217,7 @@ A renumbered Flow updates every step citation.
 **Acceptance.**
 - Happy: the containment test lists four exclusions, the check-passing one included; the re-seat is the controller's judgment on growth.
 - Edge: the mark's other text in writing-plans and the records is unchanged but for the exclusion's words.
-- Error: one-time search for `numstat` and `line counts` before (hits) and after (the preset-test sense and history only), and for `a task that has not run` before (hits in `flip-paths.md` and a history line of `the-spec.md`) and after (history only).
+- Error: one-time search for `numstat` and `line counts` before (hits) and after (the preset-test sense and history only), and for `a task that has not run` before (hits in `flip-paths.md` and a history line of `the-spec.md`) and after (history only), and for `after that review has closed` before (hits in `skills/writing-plans/SKILL.md` and `docs/decisions/plans.md`) and after (history only).
 - Integration: the full suite passes; budget lines current.
 
 ### T9. Umbrellas and the umbrella's edits
