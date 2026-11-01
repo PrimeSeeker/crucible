@@ -101,17 +101,6 @@ judged sound but did not attest there is unprotected, and silence is never
 read as an attestation.
 [[end]]
 
-[[when worksheet = ordered-first]]
-**Ordered-first hunt (do this before anything else):** build the
-claims-vs-inputs table — every claim the artifact makes about its inputs →
-TRUE/FALSE with evidence — and run the internal liveness check: every
-mechanism the artifact declares must have both a producer and a consumer
-named within the artifact; an orphan on either side is a finding. The
-table and the check's results go in your report's `## Worksheet` section
-(below); each FALSE claim or orphan that is a finding is also written as its
-own entry under `## Findings`.
-[[end]]
-
 [[when worksheet = pre-pass]]
 **Set census (beside your arithmetic):** for each set the plan adds a
 member to — a value of an enumeration, a case a dispatch or a table
@@ -190,12 +179,6 @@ instead.
    opens a finding's body only where the merge needs it, so the line must
    let a reader rule on the finding without it. With no findings, write
    only `none` here.
-[[when worksheet = ordered-first]]
-4. `## Worksheet` — the worked content your mandate asks for: the
-   claims-vs-inputs table and the liveness check's results. Tables, lists
-   and sub-headings are fine here; a finding the work turns up is written
-   as an entry under `## Findings`, not left here.
-[[end]]
 [[when worksheet = pre-pass]]
 4. `## Worksheet` — the worked content your mandate asks for: the
    pre-pass's liveness, ownership-closure and overlap arithmetic, and

@@ -9,16 +9,16 @@ issue-mining is out of its scope, and whole-branch review of
 implemented code belongs to `crucible:requesting-code-review`
 (`crucible:redteaming § Overview`).
 
-**Round 0.** Before any panel on an artifact with a code baseline, one
-standalone agent, the campaign's one controller-composed dispatch,
-builds a claim table (every claim about the code, TRUE or FALSE with
-evidence), checks liveness (every declared mechanism has a producer and
-a consumer within the artifact) and runs the artifact's regex and CLI
-claims rather than reading them. Its fix list, which takes what any
-fix list takes (`docs/decisions/fix-verification-and-merge.md`), lands
-before round 1 with no verifier of its own. A greenfield artifact gets no round-0 agent: one
-round-1 seat takes the claim table and the liveness check as its
-ordered-first hunt. Round 0 consumes no round of the cap
+**Round 0.** Before any panel on every spec campaign, one standalone
+agent, the campaign's one controller-composed dispatch, builds a claim
+table (every claim about the code, or with no code baseline every claim
+about the artifact's inputs, TRUE or FALSE with evidence), checks
+liveness (every declared mechanism has a producer and a consumer within
+the artifact) and runs the artifact's regex and CLI claims rather than
+reading them. Its prompt has it stake each finding's severity, and its
+fix list, which takes what any fix list takes
+(`docs/decisions/fix-verification-and-merge.md`), lands before round 1
+with no verifier of its own. Round 0 consumes no round of the cap
 (`crucible:redteaming § Round 0 — mechanical pre-pass`).
 
 **Panels.** Panel size tracks the artifact's maturity and size, never a
@@ -161,6 +161,17 @@ When templated seats became generated instruments (2026-09-30), the
 pre-pass, one per campaign, stayed controller-composed. (Basis:
 measured, for the classes; judgment, accepted by the maintainer, for the
 pass.)
+
+Until 2026-11-02 an artifact with no code baseline got no round-0 agent,
+one round-1 seat checking its claims against its inputs first, and the
+folded lane gave a code baseline as its reason for always running round
+0. The skill text rewrite made round 0 one rule for every spec
+campaign: its audit counted round 0 among the reads that catch real
+defects, an artifact with no code baseline is rare, and one rule
+replaces two. Its prompt stakes severities since then too, because
+severity now decides whether a fix list takes a finding. (Basis: the
+controller's proposal, accepted by the maintainer, for the rule;
+judgment, for the severities.)
 
 ### Panels and lenses
 
@@ -380,6 +391,8 @@ trim.)
   replacement confirmed by the maintainer afterwards (§ Why).
 - **A verifier for round 0's fixes**: the next dispatch is a full-scope
   panel (§ Why).
+- **A round-1 seat in place of round 0 where there is no code
+  baseline**: two rules where one serves (§ Why).
 - **A mechanical growth gate**, a token counter or a hard cap on
   growth: the re-seat stays a soft judgment on git's line counts
   (§ Why).
@@ -387,6 +400,13 @@ trim.)
 
 ## Changes
 
+- 2026-11-02: round 0 runs on every spec campaign, with no code
+  baseline checking the artifact's claims against its inputs and
+  liveness, and its prompt stakes each finding's severity; the seat
+  `worksheet` selector's `ordered-first` value and its round-1 hunt are
+  removed, `pre-pass` kept; the folded lane's stated reason for round 0
+  (a code baseline) goes; because one rule replaces two and the skill
+  text rewrite's audit counted round 0 among the reads that catch.
 - 2026-11-02: a premise ask open at the campaign's close is carried in
   the close readout alone, the design digest and its `## Open judgments`
   being retired, and the round readout drops its digest-update item

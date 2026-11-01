@@ -6,7 +6,7 @@ The folded preset **folds the plan into the spec**: one combined spec+plan docum
 
 **The round loop** gains three lines:
 
-- **Round 0 always runs** — the fold requires a code baseline — and its pre-pass **also covers the plan half**: ownership closure and the overlap arithmetic over the task list, and the set census of the plan phase's pre-pass (`skills/redteaming/seat-prompt.md`, its pre-pass passage), its inputs widened to the repository's tracked text for it.
+- **Round 0's pre-pass also covers the plan half**: ownership closure and the overlap arithmetic over the task list, and the set census of the plan phase's pre-pass (`skills/redteaming/seat-prompt.md`, its pre-pass passage), its inputs widened to the repository's tracked text for it.
 - **After every fix wave**, the terminal pass's included, you re-run the liveness, ownership and overlap arithmetic yourself, booking no dispatch, and record it in that record's `Verifier block`, or under its `Fix list` where it has none.
 - **The round-1 seat carries the right-sizing and outside-the-frame lenses** alongside general.
 

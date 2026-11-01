@@ -326,8 +326,9 @@ Fields, in order:
 **Special records** — field sets and reachable states (a state outside a
 record's subset is skipped by definition):
 
-- **Round-00:** fields 1, 2, 6 and 8 plus `## Claim table` (baseline claims
-  → TRUE/FALSE with evidence). Its findings and the fixes applied before
+- **Round-00:** fields 1, 2, 6 and 8 plus `## Claim table` (claims about the
+  code, or with no code baseline about the inputs, → TRUE/FALSE with
+  evidence). Its findings and the fixes applied before
   round 1 are in its fix list, each finding the list does not take
   named after its items with its disposition. It has no merge and so no question
   dispositions: the round-0 agent's questions are answered in its readout,

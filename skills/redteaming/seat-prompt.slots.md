@@ -24,8 +24,7 @@
 - goal-check: on | off
   - on: the goal check and its `## Goal check` report item; set for each seat of a spec campaign's round 1
   - off: none
-- worksheet: ordered-first | pre-pass | off
-  - ordered-first: the ordered-first hunt and its `## Worksheet` report item; set for the greenfield round-1 seat (§ Round 0)
+- worksheet: pre-pass | off
   - pre-pass: the set census and the pre-pass `## Worksheet` report item; set for the plan phase's mechanical pre-pass
   - off: none
 
