@@ -81,10 +81,13 @@ consumers, that text joining its supporting inputs; round 0's pre-pass
 on the folded lane takes it for the plan half, and the controller's
 post-wave re-run of the arithmetic leaves it out
 (`skills/redteaming/references/plan-phase.md`;
-`skills/redteaming/references/folded-lane.md`). After a not-landed verdict or a
-terminal-pass finding, one scoped repair; anything still open goes to the
-operator as a decision ask, and a finding that shows the spec wrong takes
-the flip path against the spec. A correction to the spec that the
+`skills/redteaming/references/folded-lane.md`). The phase's fix wave
+and its repair take what any fix list takes
+(`docs/decisions/fix-verification-and-merge.md`). After a not-landed
+verdict or a terminal-pass finding a fix list would take, one scoped
+repair; anything still open goes to the operator as a decision ask,
+and a finding that shows the spec wrong takes the flip path against the
+spec. A correction to the spec that the
 containment test finds contained lands in the phase's own fix wave, as a
 `Contained amendment:` item of its fix list naming the binding item and
 the change, and is named in its readout as a technical call
@@ -99,9 +102,11 @@ argument value `plan` keep their names. At close the controller seeds
 SDD's ledger from the routing table, with each contained amendment as
 one of its own rulings, the item and its reason together, which SDD's
 setup copies there if the ledger lacks it, with each premise finding
-still open as open (`docs/decisions/evidence-and-findings.md`), and with
+still open as open (`docs/decisions/evidence-and-findings.md`), with
 what the brainstorm and the review phases left open under the ledger's
-`## Questions`, and hands off to execution
+`## Questions`, and with each `deferred-minor` entry of the spec
+campaign and the plan phase under `## Deferred minors`, its source
+`Spec` or `Plan`; then it hands off to execution
 (`skills/redteaming/references/plan-phase.md`).
 
 ## Why
@@ -260,6 +265,13 @@ slot cards' paths and `phase` selector read, as `conserve.py` did until
 
 ## Changes
 
+- 2026-11-02: the plan phase's fix wave and its repair take only
+  BLOCKER, MAJOR and binding-text MINOR findings, and its close seeds
+  each `deferred-minor` entry under the ledger's `## Deferred minors`
+  with source `Spec` or `Plan`, apart from what earlier phases left
+  open; because the skill text rewrite's audit found fix waves the main
+  source of process-introduced defects
+  (`docs/decisions/fix-verification-and-merge.md`).
 - 2026-11-02: the `campaigns/` directory's names no longer cite
   `conserve.py` as a reader, the script retired with merge conservation
   by the skill text rewrite.

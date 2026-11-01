@@ -14,8 +14,9 @@ standalone agent, the campaign's one controller-composed dispatch,
 builds a claim table (every claim about the code, TRUE or FALSE with
 evidence), checks liveness (every declared mechanism has a producer and
 a consumer within the artifact) and runs the artifact's regex and CLI
-claims rather than reading them. Its fixes land before round 1 with no
-verifier of their own. A greenfield artifact gets no round-0 agent: one
+claims rather than reading them. Its fix list, which takes what any
+fix list takes (`docs/decisions/fix-verification-and-merge.md`), lands
+before round 1 with no verifier of its own. A greenfield artifact gets no round-0 agent: one
 round-1 seat takes the claim table and the liveness check as its
 ordered-first hunt. Round 0 consumes no round of the cap
 (`crucible:redteaming § Round 0 — mechanical pre-pass`).
@@ -78,7 +79,7 @@ keeps the campaign going by the question itself. A round whose own fix
 wave adds, removes or re-shapes a major mechanism is never the stop
 round, since no seat has read the result, and once a campaign is chosen
 at least one numbered panel round runs. The stop round's open findings
-of any severity, premise findings aside, get one fix wave and blind
+that a fix list takes, premise findings aside, get one fix wave and blind
 verification, and the terminal pass always follows and checks the stop's
 basis (`docs/decisions/terminal-pass.md`). In a spec campaign every
 panel seat's verdict carries a line forecasting the answer, naming the
@@ -385,6 +386,13 @@ trim.)
 
 ## Changes
 
+- 2026-11-02: round 0's and the stop round's fix lists take only what
+  any fix list takes, BLOCKER, MAJOR and binding-text MINOR findings,
+  the stop round's no longer every open finding of any severity; the
+  other MINORs take `deferred-minor` or an earlier disposition; because
+  the skill text rewrite's audit found fix waves the main source of
+  process-introduced defects
+  (`docs/decisions/fix-verification-and-merge.md`).
 - 2026-11-02: the operating stance no longer budgets the conservation
   check, retired with `conserve.py` because the skill text rewrite's
   audit found about one trivial catch in about 73 runs

@@ -56,10 +56,12 @@ it writes into your repository).
 ledger: at the close that seeds it (the plan phase's, the folded
 campaign's, or SDD Setup on the very-small lane), the controller also
 seeds under `## Questions` what the brainstorm, the spec campaign and
-the plan phase left open, each as `<phase>: <item> — carried`
-(`skills/redteaming/references/plan-phase.md`); SDD's Setup seeds any
-such item, or open premise ask, that the ledger lacks. Crucible keeps no
-store of its own for open items. At Finish, after the operator's answer
+the plan phase left open, each as `<phase>: <item> — carried`, apart
+from `deferred-minor` entries, which go under `## Deferred minors` for
+the branch review's triage (`docs/decisions/branch-review.md`;
+`skills/redteaming/references/plan-phase.md`); SDD's Setup seeds any
+such item, entry or open premise ask that the ledger lacks. Crucible
+keeps no store of its own for open items. At Finish, after the operator's answer
 to the close readout, the work left open (minors, leads, questions,
 declined improvements, unruled asks, parked BLOCKER or MAJOR findings
 with their rulings, and what earlier phases carried) goes, each item
@@ -401,6 +403,11 @@ worktree. (Basis: judgment, accepted by the maintainer.)
 
 ## Changes
 
+- 2026-11-02: what earlier phases left open no longer includes
+  `deferred-minor` entries, which the close that seeds the ledger seeds
+  under `## Deferred minors` for the branch review's triage; because
+  that triage judges each against the code
+  (`docs/decisions/fix-verification-and-merge.md`).
 - 2026-11-01: the workspace holds the quoted request, `request.md`,
   written at brainstorm exit and deleted with the workspace; because
   quoting it in committed feature folders published the operator's

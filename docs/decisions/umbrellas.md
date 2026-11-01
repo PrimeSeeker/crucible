@@ -103,12 +103,13 @@ clarification its spec states (`skills/brainstorming/references/umbrellas.md`
 § Premise findings).
 
 **Work left open at the landing.** An umbrella has no ledger, so what
-its brainstorm and campaign left open goes at its landing, each item
-with its source, to the home the project's instructions name for open
-items, an in-repository one's committed on its branch; where they name
-none, the landing ask asks where the items go or whether to drop them,
-with the offer to record the answer, and the workspace is not deleted
-before it. Where nothing was left open, nothing is asked or written
+its brainstorm and campaign left open, its campaign's `deferred-minor`
+entries included, goes at its landing, each item with its source, to the
+home the project's instructions name for open items, an in-repository
+one's committed on its branch; where they name none, the landing ask
+asks where the items go or whether to drop them, with the offer to
+record the answer, and the workspace is not deleted before it. Where
+nothing was left open, nothing is asked or written
 (`skills/brainstorming/references/umbrellas.md` § Landing;
 `docs/decisions/records-and-workspace.md`).
 
@@ -360,6 +361,10 @@ detail of the form the maintainer accepted.)
 
 ## Changes
 
+- 2026-11-02: an umbrella's campaign sends its `deferred-minor`
+  entries, the MINORs its fix lists no longer take, with what it left
+  open to the landing's open-items step, having no ledger or branch
+  review to take them (`docs/decisions/fix-verification-and-merge.md`).
 - 2026-11-02: the umbrella's binding content no longer includes
   `[LOAD-BEARING]` marks, which are retired: what binds a child is its
   entry and the umbrella's Constraints & invariants and firm decisions;

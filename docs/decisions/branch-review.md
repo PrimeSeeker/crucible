@@ -6,7 +6,8 @@
 loop and states it once. It is mandatory when SDD hands over a branch
 whose tasks are complete, and before merging any branch. SDD's handoff
 passes the ledger's deferred minors, the plan's routed items still open
-among them, and the adjudication rulings
+and the spec and plan reviews' `deferred-minor` entries among them, and
+the adjudication rulings
 (`crucible:subagent-driven-development § Whole-Branch Review`).
 
 **The reviewer.** A fresh branch reviewer reads MERGE_BASE..HEAD
@@ -15,7 +16,9 @@ integration, drift accumulated across the branch, and anything the gates
 let through. It may read beyond the diff where correctness depends on it,
 triages every deferred item (promote, fix in a wave, or leave parked),
 a task's routed items aside where that task was completed branch review
-only (below),
+only (below), and a `deferred-minor` entry for its effect on the code
+alone, never editing spec or plan text for it
+(`docs/decisions/fix-verification-and-merge.md`),
 checks each ruling against the final code, and flags undisclosed drift
 from binding content in a completed task as DRIFT. It runs the goal
 check, may raise premise findings, reports a binding item that is itself
@@ -374,6 +377,11 @@ accepted by the maintainer.)
 
 ## Changes
 
+- 2026-11-02: the handoff and the triage take the spec and plan
+  reviews' `deferred-minor` entries, ledger lines with source `Spec` or
+  `Plan`, each judged for its effect on the code alone; because fix
+  lists no longer take the review MINORs not against binding text
+  (`docs/decisions/fix-verification-and-merge.md`).
 - 2026-11-01: a reopened range holds the open items Finish wrote to an
   in-repository home, and the build-history check exempts them, since
   open items no longer live in the feature folder whose files it

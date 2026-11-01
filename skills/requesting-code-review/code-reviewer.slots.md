@@ -10,7 +10,7 @@
 - [REQUEST_FILE]: the workspace's `request.md`, absolute; "none" if absent, standalone mode included.
 - [DESCRIPTION]: a brief summary of what was built.
 - [REQUIREMENTS]: what it should do — plan file path, task text, or requirements; on the very-small lane, the lane note at its pinned revision.
-- [LEDGER_MINORS]: the SDD ledger's deferred minors, leads included, **and the plan's unresolved routed deferred items**, verbatim, each labelled with its owning task; "none" in standalone mode.
+- [LEDGER_MINORS]: the SDD ledger's deferred minors, leads included, **and the plan's unresolved routed deferred items**, verbatim, each labelled with its owning task or source; "none" in standalone mode.
 - [RULINGS]: the adjudication rulings from execution and the branch review's own so far, verbatim; on the very-small lane, followed by the ledger's `Departure:` lines, verbatim; "none" in standalone mode.
 - [BRANCH_ONLY_TASKS]: the tasks this pass owes a line (`crucible:requesting-code-review` § Tasks completed branch review only), each with its range, its latest attempt's report, the brainstorm decision record where its plan section names it, and its range's amendment commits; else "none".
 - [REPORT_FILE]: this pass's output, in the feature workspace: `sdd/branch-review/pass-<k>.md` for full-scope pass <k>. A replacement seat adds `-r<R>` before `.md`. "none" in standalone mode.

@@ -143,7 +143,7 @@ the lost records if they are needed.
 ## Round record format
 
 `record.md` in each round directory, one per round. All bookkeeping —
-stop-rule inputs, cap arithmetic, parked minors,
+stop-rule inputs, cap arithmetic, parked and deferred minors,
 quorum status — is computed from these records. What the controller writes
 in them is under record hygiene (`crucible:redteaming` § Merge and finding
 hygiene).
@@ -225,9 +225,9 @@ Fields, in order:
    originating seat(s), an `origins:` element (below), one-line
    substance, the `UNVERIFIED` tag where staked without evidence, and one
    `disposition: <value>` element — `applied` | `partly-applied` |
-   `parked` | `rejected` | `deferred-to-implementation` — plus the ruling a
-   partly-applied, parked or rejected entry owes and an `UNVERIFIED` entry's
-   verification outcome (`crucible:redteaming` § Merge and finding hygiene).
+   `parked` | `rejected` | `deferred-to-implementation` | `deferred-minor`
+   — plus the ruling a partly-applied, parked or rejected entry owes and
+   an `UNVERIFIED` entry's verification outcome (`crucible:redteaming` § Merge and finding hygiene).
    An entry merged from a premise finding carries the label `premise`
    after its severity, `- F4 MAJOR premise`: a decision ask whatever its
    severity, never an open finding the stop rule or the cap reads.
@@ -251,10 +251,11 @@ Fields, in order:
      is never derived from the records — disposition: applied
    ```
 
-   **Deferral:** which findings take `deferred-to-implementation` is ruled
-   in `crucible:redteaming` § Merge and finding hygiene, and what their fix
-   items land in `crucible:redteaming` § Fix application and blind
-   verification; a deferred entry keeps its row.
+   **Deferral:** which findings take `deferred-to-implementation` or
+   `deferred-minor` is ruled in `crucible:redteaming` § Merge and finding
+   hygiene, and what a deferral's fix items land in `crucible:redteaming`
+   § Fix application and blind verification; a deferred entry keeps its
+   row.
 
    **Question dispositions** (`## Question dispositions`, after the merged
    finding list): every question a seat report raises, by its id
@@ -268,7 +269,9 @@ Fields, in order:
 6. **Fix list** (`## Fix list`) — enumerated fix items, each naming the
    finding id(s) it resolves, or the question id `<seat-id>-q<n>` of an
    adopted improvement it carries: the blind verifier's sole mandate input (fix
-   list + diff, never rationale). **Restating sites** (binding): each item
+   list + diff, never rationale). Which findings and items a fix list takes
+   is ruled in `crucible:redteaming` § Fix application and blind
+   verification. **Restating sites** (binding): each item
    also names every other artifact site restating the content it changes,
    found by the propagation sweep run before the list freezes, and for an
    item that adds or changes a rule each site its trace finds
@@ -326,7 +329,8 @@ record's subset is skipped by definition):
 
 - **Round-00:** fields 1, 2, 6 and 8 plus `## Claim table` (baseline claims
   → TRUE/FALSE with evidence). Its findings and the fixes applied before
-  round 1 are in its fix list. It has no merge and so no question
+  round 1 are in its fix list, each finding the list does not take
+  named after its items with its disposition. It has no merge and so no question
   dispositions: the round-0 agent's questions are answered in its readout,
   under the panel's rule for which are always carried.
   States: `dispatched → returned → fix-applied → readout`.

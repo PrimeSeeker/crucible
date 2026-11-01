@@ -19,11 +19,11 @@ across rounds by its id (`crucible:redteaming § Merge and finding
 hygiene`).
 
 **Dispositions and rulings.** Each merged entry takes one disposition:
-applied, partly-applied, parked, rejected or deferred-to-implementation.
-Every partly-applied, parked or rejected entry carries a ruling, a
-partly-applied one naming the part not acted on; nothing is silently
-discarded. When the controller opens a finding's body to author its
-fix, it checks each sub-point against the fix item, for a BLOCKER or
+applied, partly-applied, parked, rejected, deferred-to-implementation or
+deferred-minor. Every partly-applied, parked or rejected entry carries a
+ruling, a partly-applied one naming the part not acted on; nothing is
+silently discarded. When the controller opens a finding's body to author
+its fix, it checks each sub-point against the fix item, for a BLOCKER or
 MAJOR the body of every origin. An entry whose fix reverses an earlier
 round's applied fix names that round and entry.
 
@@ -31,6 +31,27 @@ round's applied fix names that round and entry.
 round record and applies it to the spec or plan itself; no agent applies
 a fix wave (`crucible:redteaming § Fix application and blind
 verification`).
+
+**Small fix lists.** Every fix list (round 0's, a numbered round's, the
+plan phase's, the spec terminal pass's follow-up wave's) and a
+plan-phase repair take, of the findings, BLOCKER and MAJOR ones and
+MINORs against binding text, those whose fix changes the artifact's own
+binding content (in a spec what
+`skills/redteaming/references/flip-paths.md` states binds, in a plan its
+inter-task contracts and a task's required fields and acceptance); a
+child's fix list never changes umbrella content. Deferral markers,
+adopted improvements, operator rulings and contained amendments ride it
+as before. Any other MINOR the controller accepts lands in Interfaces &
+boundaries where it names missing non-local mechanism, else takes
+deferred-to-implementation where its resolution needs local mechanism,
+else parked where it is a design judgment for the operator, else
+deferred-minor: it is not fixed in the artifact, and the close that
+seeds the SDD ledger seeds it under `## Deferred minors` with source
+`Spec` or `Plan`, for the branch reviewer's triage against the code
+(`docs/decisions/branch-review.md`); an umbrella's campaign sends it to
+its landing's open-items step. A repeat of one closes as its duplicate.
+A MINOR the controller finds wrong or outside the finding scope stays
+rejected (`crucible:redteaming § Merge and finding hygiene`).
 
 **Blind verification after every wave.** After every apply, MINOR-only
 waves included, the blind verifier receives the fix list and the diff,
@@ -131,6 +152,22 @@ be priced well above the model an applier would run on, or a measured
 per-wave controller cost rose above a blind verifier's median. (Basis:
 measured; judgment, accepted by the maintainer.)
 
+### Small fix lists
+
+The skill text rewrite's audit (2026-11-01) found fix waves the main
+source of the defects the process itself introduces: late-round
+findings often corrected earlier waves' text, at least six campaign
+MAJORs in one set of runs and six of ten correctness clusters of one
+after-the-fact audit in another. A MINOR fixed in a campaign buys
+little and risks such a defect, so fix lists keep only what must be
+right before code: BLOCKER and MAJOR findings, and MINORs against
+binding text, which no later stage may edit silently. Other MINORs go
+to the branch review, whose triage judges each against the code that
+was built, rather than to the close readout, where nobody would check
+them against code. (Basis: measured, for the audit; judgment, accepted
+by the maintainer, for the rule and the destination, and for the
+carve-out for binding text, a call the maintainer left to the agent.)
+
 ### Blind verification
 
 A study of the maintainer's earlier redteaming on another project
@@ -198,6 +235,13 @@ judgment, accepted by the maintainer, for the trace.)
 
 ## Changes
 
+- 2026-11-02: fix lists, a plan-phase repair included, take only
+  BLOCKER, MAJOR and binding-text MINOR findings; the disposition
+  `deferred-minor` is added for the other MINORs, after
+  Interfaces & boundaries, deferred-to-implementation and parked in
+  precedence, seeded into the ledger's `## Deferred minors` with source
+  `Spec` or `Plan`; because the skill text rewrite's audit found fix
+  waves the main source of process-introduced defects.
 - 2026-11-02: merge conservation retired with `conserve.py`: the round
   record's `conservation:` line and its `unaccounted:` element go, and
   the merge keeps `origins:` and question dispositions; seat ids stay
