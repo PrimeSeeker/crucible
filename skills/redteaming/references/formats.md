@@ -348,9 +348,8 @@ record's subset is skipped by definition):
 - **Plan-phase record** (`campaigns/plan/round-01/record.md`): the plan
   phase's only record, with fields 1–8 and `## Terminal pass` — the pass's
   `Record corrections: <N>` outcome, any sanctioned repair, the close
-  delivered after the pass, recorded as the terminal-pass record's is,
-  any second read, the pass's `deferred-minor` findings, and the final
-  check before `confirmed`. The quorum block is kept for lost
+  delivered after the pass, any second read, the pass's `deferred-minor`
+  findings, and the final check before `confirmed`. The quorum block is kept for lost
   seats; no cap arithmetic applies, since the phase never loops. States: the
   full sequence through `confirmed`, a sanctioned repair re-advancing the
   record through `fix-applied → verified` before `confirmed` is written

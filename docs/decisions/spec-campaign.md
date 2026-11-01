@@ -364,7 +364,8 @@ sentences on the recommendation of the controller, its reader, keeping
 that paragraph unchanged; on 2026-10-28 the paragraph lost its
 [LOAD-BEARING] mark, its wording kept, when marks became a spec
 convention (`docs/decisions/the-spec.md`); on 2026-11-02 the block lost
-its sentence pointing to that statement, folded to one line. (Basis: a single incident, for
+its sentence pointing to the directional-bias statement, which folded
+into the bias line. (Basis: a single incident, for
 the motive; judgment, accepted by the maintainer, for the stance and the
 trim.)
 

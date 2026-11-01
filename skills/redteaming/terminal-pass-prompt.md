@@ -214,22 +214,21 @@ the first report, which you never overwrite or append to. Its inputs gain
 that report and the close the controller recorded after it: the spec
 campaign's terminal-pass record (`terminal-pass/record.md` in your phase
 directory) or the plan record's `## Terminal pass`. In the plan phase you
-are resumed from your first read, the resume message naming the report
-path. It does one or both of two reads:
+are resumed from your first read. Your dispatch, or the resume message,
+says whether a re-read is due. It does one or both of two reads:
 
-- **The re-read**, where a fix wave (spec) or a repair (plan) landed
-  after the first report: in the spec campaign both mandates, as a first
-  read; in the plan phase mandate 1, **full-scope over the repaired
-  region**: the whole section the repair touched, never the flagged item
-  alone, since the repair is itself unreviewed text.
+- **The re-read**, where it is due: in the spec campaign both mandates,
+  as a first read; in the plan phase mandate 1, **full-scope over the
+  repaired region**: the whole section the repair touched, never the
+  flagged item alone, since the repair is itself unreviewed text.
 - **The record read**, where the first report carries a record
   correction or the close puts a decision ask to the operator again: the
   close checked against the first report and the seat findings behind
   each ask, as mandate 2 checks a readout.
 
-Record the re-read before opening the close. A record read alone
-performs no other mandate; its `## Artifact verdict` says in one line
-that no re-read was due.
+Record the re-read before opening the close. Where no re-read is due,
+the record read replaces both mandates above, and `## Artifact verdict`
+says so in one line.
 [[end]]
 
 Write this exact structure, short by shape: a check that came back clean is
@@ -248,8 +247,8 @@ attested in one line, never narrated.
    checked and, in a spec campaign, the stop
    round and the decision-record entries checked, is the clean outcome.
    Close with one bias line: "corrections share no direction", or the
-   direction they share favoring the record's author, as an observation,
-   never an attribution of intent; where you find the record materially
+   direction they share, as an observation, never an attribution of
+   intent; where you find the record materially
    misleading, the line says so, which makes it a decision ask.
 3. `## Notes` — record mismatches outside mandate 2, and anything else
    material to the close decision; else `none`.

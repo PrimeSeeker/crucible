@@ -11,6 +11,7 @@
 - {binding-revision}: that artifact's revision.
 - {decision-record-path}: `spec` phase, `{workspace-path}/brainstorm-decisions.md`; `plan` phase, `none`.
 - {umbrella-paths}: where the binding artifact's preamble carries an `Umbrella:` line, the umbrella it names and each one up the chain, by path; else `none`.
+- {re-read}: `due` where the pass's further wave or repair landed after its first report, else `not due`; a first dispatch, `none`.
 - {report-path}: `spec` phase, `{workspace-path}/campaigns/spec/terminal-pass/pass.md`; `plan` phase, `{workspace-path}/campaigns/plan/round-01/terminal-pass.md`; a second read, `second-read.md` beside the first report, which it never overwrites.
 
 ## Selectors
@@ -22,7 +23,7 @@
   - yes: mandate 1 as a full-scope re-read; set when the final round produced a fix wave
   - no: mandate 1 as a confirmation read; set when it produced none
 - follow-up: second-read | off
-  - second-read: the second-read passage; the pass's one second read, after its further wave or repair, a record correction or an ask put again; spec, a fresh dispatch; plan, stated with the report path in the message resuming the pass
+  - second-read: the second-read passage; the pass's one second read; spec, a fresh dispatch; plan, stated with the report path and `{re-read}` in the message resuming the pass
   - off: none; the pass's first dispatch
 
 ## Dispatch

@@ -36,7 +36,8 @@ ask only where the pass states the record is materially misleading. Its
 tail is bounded: in the spec campaign one further fix wave, taking what
 any fix list takes (`docs/decisions/fix-verification-and-merge.md`), in
 the plan phase one scoped repair, and one second read. The second read
-follows that wave or repair, and runs record-only after a pass whose
+follows that wave or repair, its dispatch saying whether a re-read is
+due (the card's `{re-read}` slot), and runs record-only after a pass whose
 report carries a record correction or on which the controller puts a
 decision ask again: it reads the close the controller recorded after the
 pass against the pass's report and the seat findings behind each ask,
@@ -199,7 +200,8 @@ by the maintainer, for the record-only run.)
   not against binding text take `deferred-minor`, listed in the spec
   terminal-pass record's new `## Deferred minors` and the plan record's
   `## Terminal pass`; the spec terminal-pass record's states gain
-  `dispatched → returned → verified → readout`. The follow-up wave
+  `dispatched → returned → verified → readout`; the card gains a
+  `{re-read}` slot saying whether a re-read is due. The follow-up wave
   takes what any fix list takes. From the skill text rewrite.
 - 2026-11-02: the stop check no longer counts a stop called while a
   premise ask was pending as a mismatch, the hold on the stop being
