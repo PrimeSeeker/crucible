@@ -9,9 +9,8 @@ it opens any record, then decision-ask fidelity, checking each ask
 against the findings behind it and, in a spec campaign, the stop: the
 stated basis against every forecast line in the numbered rounds' seat
 verdicts, each forecast overturn answered by the mechanism it names,
-the stop round's fix list against the rule that a round whose wave
-re-shapes a major mechanism is no stop round, and the stop against the
-hold of a pending premise ask whose upholding would re-shape one
+and the stop round's fix list against the rule that a round whose wave
+re-shapes a major mechanism is no stop round
 (`docs/decisions/spec-campaign.md`). For that check its inputs gain
 every numbered round's seat reports, their verdict sections only.
 Decision-ask fidelity also checks, in both phases, that each question a
@@ -98,8 +97,9 @@ that readout reached the maintainer, and nothing checks delivery
 stopping at the controller, so the pass also checks that each carried
 question reaches the readout in its seat's words, reading those
 questions alone of the seat reports, and that a call left to the
-controller is not recorded as the maintainer's ruling. A premise ask
-that holds the stop entered the stop check with the hold
+controller is not recorded as the maintainer's ruling. A stop called
+while a premise ask holding it was pending entered the stop check with
+that hold, and left it when the hold was retired on 2026-11-02
 (`docs/decisions/spec-campaign.md`). Each check adds a little work to
 every feature's terminal pass, which word counts do not show. Agents'
 proposals, which the maintainer accepted. (Basis: measured, for the
@@ -159,6 +159,9 @@ the maintainer, for the rest.)
 
 ## Changes
 
+- 2026-11-02: the stop check no longer counts a stop called while a
+  premise ask was pending as a mismatch, the hold on the stop being
+  retired (`docs/decisions/spec-campaign.md`).
 - 2026-10-30: decision-ask fidelity also checks that each question
   carried to readout is quoted verbatim, reading it in its seat report,
   and that a call left to the controller is recorded as delegated; in a

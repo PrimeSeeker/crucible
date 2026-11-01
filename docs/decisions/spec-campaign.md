@@ -27,8 +27,12 @@ artifact, 1–2 for a round reading the result of a wave that added,
 removed or re-shaped a major mechanism. Every seat reads the whole
 artifact, its lens only ordering the search, and no seat sees another's
 report. The roster is correctness, evidence-and-inference, general,
-contract-fidelity where interfaces are dense, right-sizing, and
-abstraction-level for specs; lenses rotate across rounds and mix per
+contract-fidelity where interfaces are dense, right-sizing,
+abstraction-level for specs, and outside-the-frame, which asks whether
+the design solves the problem the request poses (for a child, with its
+umbrella's Intent and its entry) and whether another framing, or no
+change, would serve it better, carried by one seat of a spec campaign's
+round 1 and no other; lenses rotate across rounds and mix per
 artifact, and the controller may add a lens for what the artifact makes
 load-bearing, with a one-line description in the seat's lens slot
 (`crucible:redteaming § Panels`). Nothing tallies lenses to demote one;
@@ -38,7 +42,8 @@ architecture-heavy runs on the alternate role
 (`docs/decisions/model-roles-and-effort.md`).
 
 **The general lens.** Every multi-seat round has at least one general
-seat, with no box, and a one-seat round is general by default.
+seat, with no box, and a one-seat round is general by default; a
+one-seat round 1 carries outside-the-frame beside general.
 
 **Right-sizing.** The right-sizing seat's product is scope-cut
 decisions, and it is judged by them. It sits in round 1 and is
@@ -91,13 +96,10 @@ supersede, or acceptance with parked rulings; so does any BLOCKER or
 MAJOR still open at the cap
 (`crucible:redteaming § Stop rule and terminal pass`). A premise finding
 (`docs/decisions/evidence-and-findings.md`) is merged `parked` as a
-decision ask to the operator and is never an open finding here, and an
-open one joins neither cap ask, with one hold: where upholding a
-pending premise ask would re-shape a major mechanism, the campaign
-pauses at that round's close until the operator rules and does not stop
-while it is pending, and the terminal pass counts a stop called while
-such an ask was pending as a mismatch. The ask still opens no fix wave
-and holds no cap, and at the cap it is put to the operator alone. One still
+decision ask to the operator and is never an open finding here: it
+opens no fix wave, holds no cap and joins neither cap ask, and at the
+cap it is put to the operator alone. A pending one holds no stop; a
+ruling that upholds it after the stop takes the flip paths. One still
 open at the campaign's close is carried in the digest's
 `## Open judgments`, or in the close readout of a minor design, and
 seeded into the ledger as open at the plan phase's close, or at the
@@ -187,6 +189,14 @@ inform demotion and retired when no decision ever used one
 (`docs/decisions/rejected-machinery.md`); demotion was ruled the
 maintainer's call, never the controller's, on 2026-08-07. (Basis:
 judgment, accepted by the maintainer.)
+
+The outside-the-frame lens came on 2026-11-02 with the skill text
+rewrite, beside premise findings kept without their holds. The
+rewrite's audit of recorded runs found real catches coming from first
+reads of a design, the first panel round among them, and the lens sits
+in round 1 alone. (Basis: measured, for where catches come from;
+judgment, an agent's proposal accepted by the maintainer, for the lens
+and its seat.)
 
 Every panel runs on one host's model family. A model judging outputs
 can favour its own: "Self-Preference Bias in LLM-as-a-Judge" found a
@@ -309,11 +319,17 @@ A sentence written when the stop keyed on open BLOCKERs exempted a
 pending premise ask from the stop judgment altogether, so a campaign
 could stop while an ask whose upholding would re-shape a mechanism
 waited on the operator (the audit, `docs/decisions/evidence-and-findings.md`).
-Since 2026-10-30 such an ask holds the stop: the campaign pauses at the
-round's close until the operator rules, and the ask still costs no wave
-or cap. An agent's proposal, which the maintainer accepted. (Basis:
-measured, for the finding; judgment, accepted by the maintainer, for
-the hold.)
+From 2026-10-30 such an ask held the stop: the campaign paused at the
+round's close until the operator ruled. On 2026-11-02 the hold went,
+among the campaign mechanisms the skill text rewrite retired: a pending
+ask's failure is loud, since it still reaches the operator and a ruling
+that upholds it after the stop takes the flip paths. The label and its
+routes stayed, since without the label each place a doubt arises would
+need a rule of its own, as that feature's campaign found. (Basis:
+measured, for the finding; judgment, an agent's proposal accepted by the
+maintainer, for the hold and for its retirement; judgment, accepted by
+the maintainer, for keeping the label, a call the maintainer left to the
+agent.)
 
 The arrangements spec, as approved at its digest gate, made the stop a
 downshift for the operator to confirm, never the controller's alone;
@@ -369,6 +385,11 @@ trim.)
 
 ## Changes
 
+- 2026-11-02: the hold a pending premise ask put on the stop is
+  retired, the `premise` label and its routes kept; the lens roster
+  adds `outside-the-frame`, one seat of a spec campaign's round 1 only,
+  beside general in a one-seat round 1; because the skill text rewrite
+  retired the holds, whose failure is loud, and added the round-1 lens.
 - 2026-10-30: the stop trigger asks whether an overturn is still
   reasonably expected, the maintainer's words; a pending premise ask
   whose upholding would re-shape a major mechanism holds the stop until

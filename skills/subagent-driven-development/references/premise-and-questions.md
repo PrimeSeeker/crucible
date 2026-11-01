@@ -55,9 +55,6 @@ stand behind is a premise finding; a vaguer one is a question. The
 request is evidence of what was asked, not the standard: you may find
 the request itself wrong.
 
-Reviewing a plan, compare your sentence with the Intent of the spec its
-header names and with the plan's Goal.
-
 For a child of an umbrella, the request holds only what was asked in the
 child's own brainstorm and after it: compare your sentence with the
 child's Intent, the umbrella's Intent and the child's entry in the

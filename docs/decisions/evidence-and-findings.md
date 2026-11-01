@@ -29,8 +29,8 @@ Calibration).
 reviewer, an umbrella's closing-review seat or an implementer may claim,
 with evidence, that one of three things is wrong:
 the request, what the Intent asks for, or a firm decision. The request
-is the feature workspace's `request.md`, which the seats running the
-goal check receive by path (`docs/decisions/the-spec.md`); the Intent is
+is the feature workspace's `request.md`, which redteam seats and the
+branch reviewer receive by path (`docs/decisions/the-spec.md`); the Intent is
 a section of the document, and a firm decision says so in its
 rationale. On the very-small lane the lane note's Intent stands for the
 spec's; for an umbrella's child the umbrella's Intent is protected as
@@ -49,22 +49,24 @@ decision. A task reviewer raises none: its doubt about a premise is a question
 direction, its reason recorded with it. Every premise finding goes to
 the operator as a decision ask with a recommendation. It is an open
 decision ask, not an open BLOCKER or MAJOR: it holds open no gate keyed
-on one, opens no fix wave and consumes no cap, the readouts carry it
-until it is ruled, and work goes on except what builds on the
-challenged premise. In a spec campaign, one whose upholding would
-re-shape a major mechanism holds the stop until it is ruled
-(`docs/decisions/spec-campaign.md`). An open one is carried across each
+on one, holds no stop, opens no fix wave and consumes no cap, the
+readouts carry it until it is ruled, and work goes on while it is open
+(`docs/decisions/spec-campaign.md`). In execution the controller tells
+the operator of one in a one-line message when it is raised, not
+waiting for the close readout. An open one is carried across each
 phase's close until ruled
 (`skills/redteaming/references/flip-paths.md` § Premise findings).
 
-**The goal check.** Before reading the Intent, a redteam seat and the
-branch reviewer restate in one sentence the goal that the request file
-their dispatch names asks for (`docs/decisions/the-spec.md`), then
-compare it with the Intent: a mismatch the seat can stand behind is a
-premise finding, a vaguer one a question. A plan-phase seat compares it
-with the Intent of the spec the plan's header names and the plan's
-Goal; an umbrella child's seat with the child's Intent, the umbrella's
-Intent and the child's entry. With no request file, the seat restates
+**The goal check.** Before reading the Intent, each seat of a spec
+campaign's round 1 and the branch reviewer restate in one sentence the
+goal that the request file their dispatch names asks for
+(`docs/decisions/the-spec.md`), then compare it with the Intent: a
+mismatch the seat can stand behind is a premise finding, a vaguer one a
+question. An umbrella child's seat compares it with the child's Intent,
+the umbrella's Intent and the child's entry. Later rounds' seats and
+plan-phase seats run no goal check, their card's `goal-check` selector
+set off, and keep the request among their inputs as grounds for a
+premise finding. With no request file, the seat restates
 the goal from the Intent and says the request was unavailable.
 On the very-small lane the check is part of the branch reviewer's Lane
 Fit (`docs/decisions/routes.md`;
@@ -274,6 +276,22 @@ maintainer, for the line; judgment, an agent's call the maintainer has
 not ruled on, for the one home: a contained amendment the agent
 confirmed.)
 
+On 2026-11-02 the skill text rewrite kept premise findings and dropped
+their holds. A pending ask had held the campaign's stop and the
+execution work that built on its premise; a pending ask's failure is
+loud, since it still reaches the operator, and a ruling that upholds it
+later takes the flip paths. Retiring the label as well was proposed and
+withdrawn: that feature's campaign found that each place a doubt arises
+would then need a rule of its own. In execution the controller tells
+the operator of a premise finding when it is raised, so it no longer
+waits for the close readout, a seat's proposal that the agent adopted.
+The goal check narrowed to a spec campaign's round-1 seats and the
+branch review. (Basis:
+judgment, an agent's proposal accepted by the maintainer, for the holds'
+retirement and the goal check's reach; judgment, accepted by the
+maintainer, for keeping the label and for the timing, calls the
+maintainer left to the agent.)
+
 Doubts stopped at the controller. A seat question could be carried to
 the readout, but the readout's list had no item for it, and a doubt
 about the Intent could be answered or rejected by the Intent's own
@@ -424,6 +442,14 @@ records that cite "the audit" draw on these figures. (Basis: measured.)
 
 ## Changes
 
+- 2026-11-02: a pending premise ask no longer holds the stop or the
+  work that builds on its premise, the `premise` label and its routes
+  kept; in execution the controller tells the operator of a premise
+  finding when it is raised; the goal check runs only at a spec
+  campaign's round-1 seats and the branch review, the plan-phase
+  comparison with the plan's Goal removed; because the skill text
+  rewrite retired the holds, whose failure is loud, and narrowed the
+  goal check.
 - 2026-11-02: a mark no longer appears among the binding items shown
   wrong that keep their own route: `[LOAD-BEARING]` marks are retired
   (`docs/decisions/the-spec.md`).

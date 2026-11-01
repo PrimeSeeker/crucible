@@ -149,9 +149,7 @@ round's readout or a later one, by the mechanism it names. One left
 unanswered is a mismatch, even where every seat of the stop round
 forecast `not reasonably expected`. So is a stop round whose fix list
 adds, removes or re-shapes a major mechanism: no seat has read the
-result. So is a stop called while a premise ask was pending whose
-upholding would re-shape a major mechanism: such an ask holds the stop
-until the operator rules. Each mismatch is a correction, flagged
+result. Each mismatch is a correction, flagged
 `CONCLUSION-CHANGING` where it would have changed the stop. A campaign
 closed on the operator's ruling of the cap ask has no stop to check.
 

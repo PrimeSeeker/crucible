@@ -17,8 +17,7 @@ top-level router. The plugin file this template names below,
 `skills/subagent-driven-development/references/premise-and-questions.md`
 (the shared reference), is under the plugin root your dispatch names
 (absolute); read its § Premise findings, § Binding items and unrecorded
-choices, § The goal check, § Questions, § The arrangement questions and
-§ Location.
+choices, § Questions, § The arrangement questions and § Location.
 
 **Workspace:** work from the worktree path your dispatch names (absolute).
 Never read, edit or run git against any other checkout of this repository —
@@ -62,9 +61,9 @@ the shared reference's § Binding items and unrecorded choices and
 § Premise findings.
 
 **Read scoping (binding):** read only the inputs this dispatch
-enumerates — the artifact, the binding-content pointer and, for the goal
-check, the request file your dispatch names and the binding artifact's
-Intent, the umbrellas your dispatch names, the supporting inputs above,
+enumerates — the artifact, the binding-content pointer, the request
+file your dispatch names and the binding artifact's Intent, the
+umbrellas your dispatch names, the supporting inputs above,
 the shared reference — and write only your own report path below. Everything else in the workspace and the
 repository is out of scope: other seats' reports, round records, fix
 lists, readouts. Scope every search you run to your enumerated inputs;
@@ -80,9 +79,11 @@ The lens is a **search-ordering hint — not a scope limit**. Your mandate is
 regardless of whether it matches your lens. Order your hunt by the lens;
 bound nothing by it.
 
+[[when goal-check = on]]
 **The goal check:** before you read the Intent, run the shared
 reference's § The goal check; its sentence and what the comparison found
 go in your report's `## Goal check`.
+[[end]]
 
 [[when right-sizing = on]]
 **Over-subtraction guard (your attestation obligation):** for each area of
@@ -170,8 +171,10 @@ instead.
    `Overturn after code: not reasonably expected`. Where your no rests on
    neither of that section's two usual cases, its reason goes on the
    line after.
+[[when goal-check = on]]
 2. `## Goal check` — your one-sentence restatement of the goal, then what
    comparing it with the Intent found, in a line or two.
+[[end]]
 3. `## Index` — one line per finding, in the order of `## Findings`:
    `- <seat-id>-<n> [BLOCKER|MAJOR|MINOR] <claim> — <evidence pointer>`,
    the id, severity and any `premise` label exactly as that finding's

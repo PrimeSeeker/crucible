@@ -66,7 +66,10 @@ which states once what a seat may raise beyond a defect in the work
 questions (`docs/decisions/routes.md`); each template names the
 sections it reads. The redteam seat and the branch reviewer read all
 six: § Premise findings, § Binding items and unrecorded choices, § The
-goal check, § Questions, § Location and § The arrangement questions.
+goal check, § Questions, § Location and § The arrangement questions;
+the redteam seat reads § The goal check only where its card's
+`goal-check` selector is on, set for each seat of a spec campaign's
+round 1 (`docs/decisions/evidence-and-findings.md`).
 The terminal pass reads § Premise findings, § Binding items and
 unrecorded choices and § The arrangement questions, through
 `{plugin-root}` on its card, under the same grant of the shared
@@ -267,6 +270,11 @@ judgment, accepted by the maintainer.)
 
 ## Changes
 
+- 2026-11-02: the redteam seat's card gains the `goal-check` selector
+  (`on`, `off`), on for each seat of a spec campaign's round 1, keying
+  the goal check and its `## Goal check` report item; the seat keeps the
+  request file among its inputs either way; because the goal check
+  narrowed to a spec campaign's round 1 and the branch review.
 - 2026-10-30: the shared reference gains § Binding items and unrecorded
   choices, the clauses moved from the redteam seat's template, read by
   the redteam seat, the terminal pass and the branch reviewer; the
