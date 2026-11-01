@@ -136,9 +136,8 @@ All lightly held.
     approval at brainstorming's step 4.
   - Premise findings keep their label and routes to the operator,
     losing the holds a pending premise ask puts on the campaign's stop
-    and on execution work, and the umbrella's landing note; one
-    round-1 seat carries a lens that reads the design from outside its
-    frame.
+    and on execution work; one round-1 seat carries a lens that reads
+    the design from outside its frame.
   - The directional-bias statement folded into the terminal pass's
     record check as one line.
   - The containment test keeps its rule and drops the exclusions added

@@ -83,7 +83,7 @@ the brainstorm decision record.
   dispositions. At the close that seeds the SDD ledger (the plan phase's,
   or a folded campaign's), each `deferred-minor` entry of the spec
   campaign and the plan phase is seeded under the ledger's
-  `## Deferred minors` with its source, and SDD's resume check seeds any
+  `## Deferred minors` with its source, and SDD's Setup seeds any
   the ledger lacks. The branch reviewer triages it for its effect on the
   code alone: where the code went wrong because of it, PROMOTE or
   FIX-IN-WAVE fixes the code; otherwise it is LEAVE-PARKED and reaches
@@ -120,10 +120,10 @@ the brainstorm decision record.
   conservation check and the bias statement. Basis: the umbrella's D4;
   the kept trigger, record 12.
 - **R5. Premise findings simplified.** The `premise` label and its
-  routes to the operator stay. Two parts go: the hold a pending premise
-  ask put on the campaign's stop and on execution work that builds on
-  its premise, and the umbrella's `open premise ask:` note (R14). The
-  holds go because a pending ask's failure is loud: it still reaches the
+  routes to the operator stay, the umbrella's `open premise ask:` note
+  among them (R14). What goes is the hold a pending premise ask put on
+  the campaign's stop and on execution work that builds on its
+  premise. The holds go because a pending ask's failure is loud: it still reaches the
   operator, and a ruling that upholds it after the stop takes the flip
   paths. In execution, the controller tells the operator when a premise
   finding is raised, so it does not wait for the close readout. Basis:
@@ -194,15 +194,17 @@ the brainstorm decision record.
   today. A decision ask still open at a spec campaign's close travels in
   its close readout, and on as today. Basis: the umbrella's D4; the gate
   record 2.
-- **R14. Umbrellas.** A decision ask still open at an umbrella's
-  landing, a premise ask included, is put to the operator with the
-  landing ask, and an unruled one goes with what the campaign left open
-  to the open-items home, by the landing's existing step for it; an ask
-  ruled before the landing leaves that step's items. That step is the
-  carrier the entry keeps, and no note goes into a Children entry. The
-  `[LOAD-BEARING]` marks' clauses leave
+- **R14. Umbrellas.** A premise ask still open at an umbrella's landing
+  keeps today's carrier: the `open premise ask:` note in the first
+  unmarked entry, which that child's brainstorm takes up. Any other
+  decision ask still open there is put to the operator with the landing
+  ask, and an unruled one goes with what the campaign left open to the
+  open-items home, by the landing's existing step for it; an ask ruled
+  before the landing leaves that step's items. Those two are the
+  carriers the entry keeps; no other note goes into a Children entry.
+  The `[LOAD-BEARING]` marks' clauses leave
   `skills/brainstorming/references/umbrellas.md`. Basis: the umbrella's
-  entry for this child; record 13.
+  entry for this child; records 13 and 17.
 - **R15. The vocabulary list.** The labels, record lines and statuses
   this child removes or adds are listed in its landing and in the
   decision records' `## Changes` lines; the backlog's vocabulary point
@@ -242,14 +244,17 @@ the brainstorm decision record.
 - **The umbrella on this branch.** Lightly held edits by
   `skills/brainstorming/references/umbrellas.md` § Edits: to its D4,
   the campaign shape stays at the gate (R13) and the containment test
-  keeps its check-passing exclusion (R9); to its Intent, the non-goal on
+  keeps its check-passing exclusion (R9), and its premise bullet keeps
+  the umbrella's landing note (R14); to its Intent, the non-goal on
   added mechanisms no longer says the round-1 lens replaces premise
   findings, which stay, simplified (R5; that change to D4 and to this
   child's entry landed on the base as a binding change); to its Interfaces &
   boundaries, deferred campaign MINORs reach the branch review's triage
-  through the closes that seed the ledger (R2). The carrier for a
-  decision ask open at an umbrella's landing is the landing's open-items
-  step, a clarification of this child's entry (R14). The entry's
+  through the closes that seed the ledger (R2). Two clarifications of this child's entry: the carriers for a decision
+  ask open at an umbrella's landing are the premise note and the
+  landing's open-items step (R14); and since premise notes stay, only
+  the `[LOAD-BEARING]` marks' clauses leave `umbrellas.md` where the
+  entry has "the marks and premise notes leave" it. The entry's
   `landed` mark comes at Finish.
 - **Ledger lines and the branch reviewer.** A seeded `deferred-minor`
   is a `## Deferred minors` line whose source is `Spec` or `Plan`,
@@ -273,7 +278,7 @@ the brainstorm decision record.
   case-insensitive search of `skills/`, `agents/`, `tests/` (the
   scanner's corpus excluded), `docs/decisions/`, `docs/authoring.md`,
   `README.md` and `AGENTS.md` for at least `conserve`, `conservation`,
-  `LOAD-BEARING`, `open premise ask`, `digest`, `ordered-first`,
+  `LOAD-BEARING`, `digest`, `ordered-first`,
   `numstat`, `line counts` and `Python 3.8`, with the terms the plan
   names for each Decision's sites (the premise holds' among them), finds
   only history in decision records and senses unrelated to the retired
