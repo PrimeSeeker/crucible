@@ -12,8 +12,7 @@ brainstorming (24,257) (sizes by `git cat-file -s` at `a3db87f`; the
 line: `docs/backlog/skill-size-after-compaction.md`).
 `docs/backlog/skill-text-rewrite.md` records that size follows
 mechanisms: placement alone, worth about 11% of the text, will not
-reduce it much, and retiring mechanisms that do not pay is the larger
-lever.
+halve it, and retiring mechanisms that do not pay is the larger lever.
 
 **The audit behind this umbrella.** Before this umbrella was written, a
 read-only audit (2026-11-01) inventoried 147 mechanisms in the shipped
@@ -34,14 +33,16 @@ and one reader of the other model family. Its findings, in short:
   800, Lane Fit 2 "exceeds" verdicts in about 42, both on one lane.
 - Real catches come from first reads of the design (round 0, the first
   panel round), the plan phase, the terminal pass's check of the
-  records against the seats' reports, the branch review and
-  implementers' concerns. The terminal pass's second read found new
+  records against the seats' reports, task review, the branch review
+  and implementers' concerns. The terminal pass's second read found new
   defects in most of the runs read, among them MAJORs a repair had
   introduced and records leaning toward the controller.
 - Several mechanisms never ran: the breaker, revert-and-replan,
   `Review: branch only`; adjudication ran 5 times and upheld nothing.
 - Of 23 defects an after-the-fact audit of one umbrella found, 11 had
-  been raised during development and lost, mostly at landing.
+  been raised during development and lost (6 dropped, 3 dismissed, 2
+  "fixed" into the defect); in 4 of its 10 clusters the loss came at
+  landing.
 
 The audit's limits: counts are lower bounds; whether a later stage
 would have caught a finding is the readers' judgment; the newest
@@ -77,8 +78,8 @@ All lightly held.
 
 - **D1. Exploratory, evidence-led reduction.** No total target. Hard
   limits are the Constraints below; each child reports its counts, and
-  resident tokens per route are measured before and after as the
-  effort's outcome. Basis: the controller's proposal, chosen by the
+  resident tokens per route are measured before (at `a3db87f`, from
+  git) and after as the effort's outcome. Basis: the controller's proposal, chosen by the
   maintainer, who added the exploratory framing.
 - **D2. Silent and loud failures.** Where a mechanism's target failure
   would be loud, or another mechanism covers it, the mechanism is
@@ -126,7 +127,8 @@ All lightly held.
     checks.
   - Snapshot blessing: one line.
   - `[LOAD-BEARING]` marks retired; what binds is Constraints &
-    invariants and firm decisions, and, for a child, its umbrella's.
+    invariants and firm decisions, and, for a child, its own entry and
+    its umbrella's.
   - The design digest dropped; the campaign shape goes into the
     approval at brainstorming's step 4.
   - Premise findings replaced by one round-1 seat whose lens reads the
@@ -136,7 +138,8 @@ All lightly held.
     record check as one line.
   - The containment test keeps its rule and drops the exclusions added
     after single incidents.
-  - The goal check runs at round-1 seats and the branch review only.
+  - The goal check runs at the spec campaign's round-1 seats and the
+    branch review only.
   - The deferral chain: the marker, and a plan task that owns it; no
     routing-table chain.
   - `Review: branch only`: one plan field with its reason; no grading
@@ -148,18 +151,20 @@ All lightly held.
 - **D5. Kept.** Round 0; the first panel round with the right-sizing
   seat and the alternate-role seat; the plan phase; the terminal pass
   with its stop check and the seats' forecast lines; the round cap; the
-  blind verifier, its seat text trimmed by placement; task review; the
+  blind verifier, for now, its seat text trimmed by placement; task
+  review; the
   branch review with ledger triage and the cleanup wave; implementers'
   status and concerns; the umbrella closing review; umbrellas, condensed.
   Basis: the controller's proposal on the audit's catches, accepted by
-  the maintainer; the verifier kept on the maintainer's word, on
+  the maintainer; the verifier kept for now on the maintainer's word, on
   uncertain evidence: an earlier recount, not re-verified by the audit,
   found last-wave misses falling from 20 of 90 campaigns to 0 of 21 and
   1–2 of 28 when its current form arrived, and whether it or better fix
   waves did that is unknown.
 - **D6. Structural fixes.**
   - Fix-wave drift: fix lists stay small, MINORs deferred to execution
-    rather than fixed in a campaign.
+    rather than fixed in a campaign, as Interfaces & boundaries states;
+    a MINOR against binding text stays on the fix list.
   - Landing: the landing ask comes after the final branch pass, and
     findings parked at triage are filed before the workspace is
     deleted.
@@ -169,9 +174,9 @@ All lightly held.
   the maintainer.
 - **D7. Order: retire, then place, then fit.** Retiring deletes text,
   so placement does not polish what goes; fit depends on the final
-  sizes. Placement and fit are separate children because fit changes
-  what loads when, and placement changes no behaviour. Basis: the
-  controller's call, delegated by the maintainer.
+  sizes. Placement and fit are separate children because fit widens
+  the authoring rule on what a `SKILL.md` holds, and placement changes
+  no rule. Basis: the controller's call, delegated by the maintainer.
 - **D8. Each child runs under its predecessors' rules.** Before a
   child's brainstorm, the maintainer's installs carry every child landed
   before it; "waits on" below means landed and installed. Claude Code
@@ -179,9 +184,11 @@ All lightly held.
   so each install bumps it. Basis: the previous umbrella's practice;
   the controller's call, delegated by the maintainer.
 - **D9. A re-audit follows.** After the retirement children have run on
-  a few features, the audit is repeated on the new runs to check
-  whether a retired mechanism's failure reached a later stage. It is an
-  open item the umbrella's landing files, not a child. Basis: the
+  a few features, the audit is repeated on the new runs, with the brief
+  and against the inventory committed beside this umbrella (Interfaces
+  & boundaries), to check whether a retired mechanism's failure reached
+  a later stage and whether the verifier earns its keep. It is an open
+  item the umbrella's landing files, not a child. Basis: the
   controller's proposal, accepted by the maintainer.
 
 ## Constraints & invariants
@@ -195,7 +202,9 @@ All lightly held.
   the effort's close each is under the line (`compaction-fit`).
 - **C3. A kept mechanism keeps its function.** A child may move,
   reword or merge a mechanism D5 keeps; removing or weakening one, or
-  a guard D2 keeps, takes an operator ruling.
+  a guard D3 or D4 keeps (the tree check's status check, adjudication's
+  independent read, the snapshot-blessing line, each stop-and-ask
+  line), takes an operator ruling.
 - **C4. The branch review stays mandatory on every arrangement, at full
   scope.**
 
@@ -206,10 +215,21 @@ All lightly held.
 - **`placement` provides** the shared seat reference the templates
   point to, which `compaction-fit` may move text into or out of.
 - **Shared files.** All four children edit the same skills; they run in
-  order, each from a base that holds its predecessors (D8).
-- **Evidence.** The audit's inventory and readers' reports are kept in
-  this umbrella's workspace while it lives; children cite this
-  umbrella's figures, never the reports, which name a private project.
+  order, each from a base that holds its predecessors (D8). Tests and
+  generated agents that read a retired mechanism's text are inside the
+  retiring child's scope.
+- **Deferred campaign MINORs.** `review-retirements` defines how a
+  MINOR a campaign defers (D3, D6) travels: by the existing carriage of
+  what earlier phases left open (`skills/redteaming/references/plan-phase.md`)
+  to a stage in execution that reads it before landing, and, for an
+  umbrella's campaign, with what the campaign left open to its
+  landing's open-items step. `execution-retirements` keeps that
+  carriage when it simplifies the deferral chain.
+- **Evidence.** Before this umbrella lands, the audit's brief and its
+  mechanism inventory, local paths removed, are committed in its
+  feature folder as D9's method and baseline. The readers' reports,
+  which name a private project, are not: they go with the workspace,
+  and children cite this umbrella's figures in their place.
 
 ## Acceptance
 
@@ -220,45 +240,52 @@ The Children list, in order:
   MAJOR-only wave, the re-seat line counts, the digest, `[LOAD-BEARING]`
   marks, premise findings replaced by the round-1 lens, the bias
   statement folded, the containment test's exclusions, the goal check's
-  narrower reach, small fix lists, and decision asks apart from every
-  readout body, close readouts included; umbrellas condensed where the
-  marks and premise notes leave `skills/brainstorming/references/umbrellas.md`;
-  and the round-0 defect that predates the umbrella audit (the fold's
-  stated reason for round 0; no round-0 agent for a greenfield
-  artifact). Takes up the mechanism part of
-  `docs/backlog/skill-text-rewrite.md` on this side, the digest
-  follow-up of `docs/backlog/lane-entry-and-downshift.md`,
+  narrower reach, small fix lists and how deferred MINORs travel
+  (Interfaces & boundaries), and decision asks apart from every readout
+  body, close readouts included; umbrellas condensed where the marks
+  and premise notes leave `skills/brainstorming/references/umbrellas.md`,
+  keeping a carrier for a decision ask still open at an umbrella's
+  landing; the round-0 defect that predates the umbrella audit (the
+  fold's stated reason for round 0; no round-0 agent for a greenfield
+  artifact); and the labels and statuses its retirements remove,
+  listed, for the backlog's vocabulary point. Takes up the campaign
+  side of `docs/backlog/skill-text-rewrite.md`, the digest follow-up of
+  `docs/backlog/lane-entry-and-downshift.md`,
   `docs/backlog/decision-ask-framing.md` (resolved or trimmed where D3,
   D4 and D6 answer it), the `conserve` half of
   `docs/backlog/claude-code-mod.md` with its re-open trigger, the
-  `conserve` mention in `docs/backlog/second-runtime-seat.md`, and in
-  `docs/backlog/umbrella-followups.md` the size part and the bullet on
-  statements of what binds. Waits on nothing
+  `conserve` mention in `docs/backlog/second-runtime-seat.md`, and the
+  size part of `docs/backlog/umbrella-followups.md`. Waits on nothing
 
 - `execution-retirements` — the execution side of D3, D4 and D6: the
   tree check simplified, the seat-replacement gate, the pre-flight scan,
-  the task review's cannot-verify items, snapshot blessing, adjudication, revert-and-replan,
-  the fix ladder and breaker, Lane Fit and the upgrade hatch, the
-  deferral chain, `Review: branch only`, and the landing ask after the
-  final pass with parked findings filed first. Takes up
-  `docs/backlog/implementer-dispute-channel.md` and the rest of the
-  mechanism part of `docs/backlog/skill-text-rewrite.md`. Waits on
-  `review-retirements`
+  the task review's cannot-verify items, snapshot blessing,
+  adjudication, revert-and-replan, the fix ladder and breaker, Lane Fit
+  and the upgrade hatch, whose stop-and-ask line names the skill that
+  runs next, the deferral chain, keeping the carriage of deferred
+  MINORs, `Review: branch only`, and the landing ask after the final
+  pass with parked findings filed first. Takes up
+  `docs/backlog/implementer-dispute-channel.md`, the execution side of
+  `docs/backlog/skill-text-rewrite.md`, and the bullet of
+  `docs/backlog/umbrella-followups.md` on statements of what binds.
+  Waits on `review-retirements`
 
 - `placement` — G2 on the text the retirements leave: one owner text
-  per rule; one shared seat reference in place of the clauses copied
-  into the templates; history and long rationale to the decision
-  records; host-neutral rules out of the adapters; upstream-derived
-  supporting files brought to crucible's grain; the verifier's seat
-  text trimmed; the re-review comment-rule defect, the two numbering and
-  naming slips, the open-items pointer and the two senses of
-  "load-bearing" `docs/backlog/skill-text-rewrite.md` lists. No
-  behaviour changes. Takes up the placement part of
-  `skill-text-rewrite.md` and those defects, and
-  `docs/backlog/cross-skill-anchor-citations.md`; the item's
-  separability and tension-closing points stay open in the backlog, and
-  D5 settles its right-sizing question. Waits on
-  `execution-retirements`
+  per rule; one shared seat reference, grown from
+  `skills/subagent-driven-development/references/premise-and-questions.md`
+  and renamed clear of the host's report-name filter, in place of the
+  clauses copied into the templates; history and long rationale to the
+  decision records; host-neutral rules out of the adapters;
+  upstream-derived supporting files brought to crucible's grain; the
+  verifier's seat text trimmed; the re-review comment-rule defect, the
+  two numbering and naming slips and the open-items pointer
+  `docs/backlog/skill-text-rewrite.md` lists. No rule changes, but one:
+  the re-review seat takes the full comment rule through the shared
+  reference. Takes up the rest of `skill-text-rewrite.md` and
+  `docs/backlog/cross-skill-anchor-citations.md`; the separability and
+  tension-closing points of `skill-text-rewrite.md` stay open in the
+  backlog, and D5 settles its right-sizing and check-on-a-check
+  points. Waits on `execution-retirements`
 
 - `compaction-fit` — G3: token counts measured with a tokenizer and the
   line checked against the host's current documentation; each
