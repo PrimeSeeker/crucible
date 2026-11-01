@@ -14,7 +14,7 @@ gives it; the presets and the unsupported list are stated once, in
 information exists: the preset at brainstorming's present-the-design
 step, per-task review in the plan (`docs/decisions/plans.md`), execution
 per task (`docs/decisions/task-loop.md`). A campaign's width stays where
-it was chosen, at the digest gate and by the stop rule
+it was chosen, at the campaign gate and by the stop rule
 (`docs/decisions/spec-campaign.md`).
 
 **The preset is the operator's.** The controller proposes a preset as it
@@ -55,7 +55,7 @@ first round. File and line counts are not the test.
   where the change is overdetermined and fits the controller's context,
   by the inline test of `docs/decisions/task-loop.md`, and by a
   dispatched implementer otherwise; the repository's own gates and the
-  branch review, with no spec campaign, plan, digest or per-task review
+  branch review, with no spec campaign, plan or per-task review
   (`skills/subagent-driven-development/references/very-small-lane.md`).
   The branch reviewer, the lane's first review, states in its Lane Fit
   whether overturning a major mechanism of the change is reasonably
@@ -302,6 +302,9 @@ small preset or the waiver for its work.
 
 ## Changes
 
+- 2026-11-02: the digest gate is the campaign gate, and the very-small
+  lane's list of what it lacks drops the design digest, which is retired
+  (`docs/decisions/operator-steering.md`).
 - 2026-11-02: the reason the size test's `[LOAD-BEARING]` clause went
   names an umbrella's binding content, no longer its marks, which are
   retired (`docs/decisions/the-spec.md`).

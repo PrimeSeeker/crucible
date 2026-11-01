@@ -35,10 +35,9 @@ meets. A decision binds only where it is the operator's firm preference;
 no mark makes a decision binding, and what builds on an item is judged
 where a change to it is weighed (§ Flip paths).
 
-**Approval strength.** The brainstorm decision record and the design
-digest record each decision `open`, `accepted` or `firm`, and each
-entry of the brainstorm decision record names its proposer, the
-operator or the controller, for attribution only: decision records
+**Approval strength.** The brainstorm decision record records each
+decision `open`, `accepted` or `firm`, and each entry names its
+proposer, the operator or the controller, for attribution only: decision records
 attribute each position's basis from it (`docs/decisions/decision-records.md`),
 and no rule routes on it. `accepted`, the default for any approval, a
 "+", an "OK" or a "your call" included, means "this until new evidence
@@ -337,6 +336,9 @@ measured.)
 
 ## Changes
 
+- 2026-11-02: approval strength is recorded in the brainstorm decision
+  record alone, the design digest being retired
+  (`docs/decisions/operator-steering.md`).
 - 2026-11-02: `[LOAD-BEARING]` marks retired: what binds is the
   Constraints & invariants, declared preamble conventions and firm
   decisions, and for a child its entry and the umbrella's Constraints

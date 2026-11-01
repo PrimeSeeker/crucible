@@ -55,7 +55,7 @@ token figure: the only cost data was one maintainer's work on one
 project, so a range would have been false precision. On 2026-10-19 the
 maintainer supplied figures for the README's comparisons, "comparisons
 on vibes" in the maintainer's words, and they stand as labelled guesses;
-the design digest still shows none
+the campaign gate still shows none
 (`docs/decisions/operator-steering.md`). That no effect is stated as
 measured unless it was is a rule of the same design. (Basis: the
 maintainer's preference, for the figures; judgment, accepted by the
@@ -119,6 +119,8 @@ accepted by the maintainer.)
 
 ## Changes
 
+- 2026-11-02: the gate showing no token figure is the campaign gate, the
+  design digest being retired (`docs/decisions/operator-steering.md`).
 - 2026-10-20: the exception also admits a description of what crucible
   itself did in a run on another project.
 - 2026-10-20: aggregate figures about another project may be published,

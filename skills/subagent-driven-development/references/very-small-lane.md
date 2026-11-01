@@ -1,6 +1,6 @@
 ## The very-small lane
 
-The very-small preset (`crucible:brainstorming` § Proposing the arrangement (step 4)): a settled change one implementer can carry, executed from a **lane note** — with no spec campaign, no plan, no digest and no per-task review. The diff is the review object, and the branch-review loop of `crucible:requesting-code-review` reviews it. This reference states where the lane differs; everything else runs as elsewhere.
+The very-small preset (`crucible:brainstorming` § Proposing the arrangement (step 4)): a settled change one implementer can carry, executed from a **lane note** — with no spec campaign, no plan and no per-task review. The diff is the review object, and the branch-review loop of `crucible:requesting-code-review` reviews it. This reference states where the lane differs; everything else runs as elsewhere.
 
 **Entry is the operator's, and only at brainstorming.** You arrive here from `crucible:brainstorming`'s handoff, after the operator confirmed the lane at its present-the-design step and the brainstorm decision record carries that confirmation. You never declare the lane, and nothing converts to it mid-flight: without that record entry this section does not apply, and the change goes back to brainstorming.
 

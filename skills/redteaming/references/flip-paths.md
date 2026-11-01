@@ -27,7 +27,7 @@ Any other change keeps the operator's decision ask, as does a plan conflict that
 
 A ruling on a case a binding item's literal reading reaches, or on a BLOCKED report about a binding item, passes this test whichever way it goes. One that leaves the text standing goes to the operator as a decision ask where applying it as written changes behaviour something outside this feature builds on or consumes, and is otherwise recorded as your ruling.
 
-A contained change to the spec is a scoped amendment you confirm with no decision ask, and one in every other respect — marker, plan patch, re-pin, named commit — so every rule naming a scoped amendment covers it. Record each contained change as one of your rulings under the ledger's `## Adjudication rulings` — the item, what changed and why, why it is contained, the commit — so the branch review receives it and the close readout lists it; in the plan phase it lands as `skills/redteaming/references/plan-phase.md` states. It reaches the operator through readouts, never the design digest, which records decision asks. Reversing one is a scoped amendment the operator confirms, made before the branch lands.
+A contained change to the spec is a scoped amendment you confirm with no decision ask, and one in every other respect — marker, plan patch, re-pin, named commit — so every rule naming a scoped amendment covers it. Record each contained change as one of your rulings under the ledger's `## Adjudication rulings` — the item, what changed and why, why it is contained, the commit — so the branch review receives it and the close readout lists it; in the plan phase it lands as `skills/redteaming/references/plan-phase.md` states. It reaches the operator through readouts. Reversing one is a scoped amendment the operator confirms, made before the branch lands.
 
 ### Premise findings
 
@@ -44,7 +44,7 @@ What a premise finding is, and its label `premise`, is in `skills/subagent-drive
 **Carrying an open ask.** Until it is ruled, an open premise ask is kept with the records of the phase it is open in, and passes on at each close:
 
 - raised by a plan-phase seat: in the plan record, until the plan phase's close seeds it into the ledger's `## Adjudication rulings` as open;
-- open when a spec campaign closes: in the digest's `## Open judgments`, or the close readout of a minor design, which has no digest; the plan phase's close seeds it into the ledger as open, or on the folded lane the campaign's close;
+- open when a spec campaign closes: in its close readout; the plan phase's close seeds it into the ledger as open, or on the folded lane the campaign's close;
 - raised once the ledger exists: written under its `## Adjudication rulings` directly, from where SDD's close readout carries it; you also tell the operator of it in a one-line message when it is raised, not waiting for that readout;
 - still open when an umbrella lands, with no ledger to hold it: put to the operator with the landing ask; unruled, it enters the first child's brainstorm decision record as open, and that child's dialogue takes it up. No landing waits on it.
 

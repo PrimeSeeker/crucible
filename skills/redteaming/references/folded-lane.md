@@ -2,7 +2,7 @@
 
 The folded preset **folds the plan into the spec**: one combined spec+plan document, `folded.md` in the feature folder, and **no plan phase**. The spec campaign in `crucible:redteaming` applies **unchanged** — panels sized by the existing dials, the lens roster, the stop rule, the cap, blind verification and the terminal pass; only the artifact and the handoff differ.
 
-**Entry is not yours to declare.** The fold is proposed at brainstorming's present-the-design step (`crucible:brainstorming` § Proposing the arrangement (step 4)) and **confirmed or vetoed by the operator there**, before any artifact is written; the confirmation is the route entry in the brainstorm decision record, which reaches you in the workspace. Read it there. A folded feature is a **minor design by construction**: it has no digest, and the round readout omits its digest item (`crucible:redteaming` § Round readout).
+**Entry is not yours to declare.** The fold is proposed at brainstorming's present-the-design step (`crucible:brainstorming` § Proposing the arrangement (step 4)) and **confirmed or vetoed by the operator there**, before any artifact is written; the confirmation is the route entry in the brainstorm decision record, which reaches you in the workspace. Read it there.
 
 **The round loop** gains three lines:
 

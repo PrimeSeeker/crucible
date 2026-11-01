@@ -239,7 +239,6 @@ def test_router_index_names_every_skill_exactly_once() -> None:
 NON_REPO_FILE_MENTIONS = {
     "ledger.md",              # SDD ledger, created in the feature workspace
     "record.md",              # round record, feature workspace
-    "digest.md",              # design digest, feature workspace
     "brainstorm-decisions.md",  # brainstorm record, feature workspace
     "CLAUDE.md",              # host-project instruction files
     "AGENTS.md",

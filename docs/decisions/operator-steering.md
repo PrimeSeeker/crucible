@@ -15,18 +15,22 @@ plan, code or a diff, none is withheld, and a decision ask may quote the
 few lines it turns on. The controller makes technical calls itself and
 reports them; design judgments reach the operator as plain-language
 decision asks with a recommendation (`crucible:redteaming § Round
-readout`). The README states the stance to newcomers (`README.md` § Who
+readout`). Every readout that puts decision asks to the operator puts
+them in a block of their own after its body, each with its options and
+recommendation; the rule is stated once, in that section, and the other
+readouts point to it, but for SDD's close readout, which states it in a
+sentence of its own because the very-small lane's controller never loads
+the redteaming skill. The README states the stance to newcomers (`README.md` § Who
 it is for). There is no profile switch: the router's precedence line is
 the override.
 
-**The digest gate approves the launch.** At brainstorming's digest gate
-the operator reviews the digest (major designs) or the decision record's
-decisions, the open asks, and the campaign shape: seats, lenses, models
-and expected rounds. Approving the design approves that shape, which the
+**The campaign gate approves the launch.** At brainstorming's campaign
+gate the operator reviews the decision record's decisions, its open asks
+and the campaign shape: seats, lenses, models and expected rounds, all
+presented inline. Approving the design approves that shape, which the
 decision record keeps; the campaign then starts with an announcement
 naming any departure, not a pause. The gate shows no token figure
-(`crucible:brainstorming § Digest gate`). The digest's format is stated
-once (`skills/redteaming/references/formats.md` § Design digest format).
+(`crucible:brainstorming § Campaign gate`).
 
 ## Why
 
@@ -71,7 +75,7 @@ single incident, 2026-10-08.)
 
 ### One gate for design and launch
 
-The digest replaced the maintainer's habit of mining an intermediate spec
+The gate replaced the maintainer's habit of mining an intermediate spec
 revision for its decisions, trade-offs and omitted but material details.
 Upstream's brainstorming has the user review the written spec file
 before planning (`superpowers/skills/brainstorming/SKILL.md` at v6.2.0,
@@ -81,14 +85,31 @@ approve the campaign launch had been, in the maintainer's words, only a
 visibility checkpoint: "I basically never adjusted the shape". (Basis:
 the maintainer's preference, 2026-08-06 and 2026-08-07.)
 
-Launch approval moved into the digest gate on 2026-10-07. The only cost
-data is the maintainer's runs on one project, so a token range at the
-gate would be false precision. The shape has named each seat's model
+Launch approval moved into the gate, then the digest gate, on
+2026-10-07. The only cost data is the maintainer's runs on one project,
+so a token range at the gate would be false precision. The shape has named each seat's model
 since 2026-10-09. (Basis: judgment, accepted by the maintainer.) Round
 1's alternate-role seat has been named in it since 2026-10-13, at the
 maintainer's request for a round-1 replacement of the highest-level
 seat (`crucible:redteaming § Panels`). (Basis: the maintainer's
 preference.)
+
+Until 2026-11-02 a design digest, a derived file collating a major
+design's decisions, flipped positions and open asks from the decision
+record and the readouts, was shown at the gate. The skill text rewrite
+retired it on its audit's evidence
+(`docs/crucible/2026-11-01-skill-text-rewrite/umbrella.md`, D4). The gate stayed, short: the operator wanted a stop before the
+campaign "in case of something coming up". (Basis: judgment, accepted
+by the maintainer, for the retirement; the maintainer's preference, over
+the controller's recommendation to fold the shape into the design's
+approval, for the gate.)
+
+### Decision asks apart
+
+The audit behind that umbrella found decision asks buried in readout
+bodies among the structural failures it fixes, so every readout now
+puts them in a block after its body. (Basis: judgment, accepted by the
+maintainer.)
 
 ## Rejected
 
@@ -97,6 +118,8 @@ preference.)
   precedence line already does it (§ Why).
 - **A separate approval pause before the campaign**: never used to
   change the shape (§ Why).
+- **Folding the campaign shape into the design's approval**, with no
+  gate: the operator kept a stop before the campaign (§ Why).
 - **A token estimate at the gate**: false precision (§ Why). The README's
   comparisons carry token figures as the maintainer's labelled
   impressions; the gate does not (`docs/decisions/publication.md`).
@@ -110,6 +133,13 @@ shows them; nothing is ever withheld.
 
 ## Changes
 
+- 2026-11-02: the design digest retired, with its `digest.md`, its
+  format with its `## Decisions`, `## Positions flipped` and
+  `## Open judgments` sections, the round readout's digest-update item
+  and the major and minor design distinction; brainstorming's "Digest
+  gate" section renamed "Campaign gate", showing the decision record's decisions and open asks inline; decision
+  asks stand in a block of their own after every readout's body; on the
+  umbrella audit's evidence and its structural fix for buried asks.
 - 2026-10-19: the analyst stance stated openly in the README: reading is
   never required and nothing is withheld.
 - 2026-10-13: the digest gate approves the campaign launch, its shape

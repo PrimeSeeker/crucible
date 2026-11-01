@@ -101,8 +101,7 @@ decision ask to the operator and is never an open finding here: it
 opens no fix wave, holds no cap and joins neither cap ask, and at the
 cap it is put to the operator alone. A pending one holds no stop; a
 ruling that upholds it after the stop takes the flip paths. One still
-open at the campaign's close is carried in the digest's
-`## Open judgments`, or in the close readout of a minor design, and
+open at the campaign's close is carried in its close readout, and
 seeded into the ledger as open at the plan phase's close, or at the
 campaign's own close on the folded lane; an umbrella's goes to the
 operator with the landing ask (`docs/decisions/umbrellas.md`;
@@ -388,6 +387,10 @@ trim.)
 
 ## Changes
 
+- 2026-11-02: a premise ask open at the campaign's close is carried in
+  the close readout alone, the design digest and its `## Open judgments`
+  being retired, and the round readout drops its digest-update item
+  (`docs/decisions/operator-steering.md`).
 - 2026-11-02: the operating stance drops its sentence pointing to the
   terminal pass's directional-bias statement, which became the report's
   one bias line (`docs/decisions/terminal-pass.md`); the heading stays,

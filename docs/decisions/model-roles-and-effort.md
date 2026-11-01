@@ -38,7 +38,7 @@ bounded role or better (`crucible:subagent-driven-development
 **The alternate role has exactly three triggers:** round 1's swap, where
 in a spec campaign's round 1 with two or more seats on the host the seat
 the controller judges most architecture-heavy runs on it, named in the
-campaign shape at the digest gate, with no swap in a one-seat round 1 or
+campaign shape at the campaign gate, with no swap in a one-seat round 1 or
 the plan phase; work of a kind the host map lists as a weak spot of its
 default role, at an implementer, reviewer or redteam seat, never the
 blind verifier; and the operator's request, at any seat. A host map
@@ -232,6 +232,9 @@ operator's config key.
 
 ## Changes
 
+- 2026-11-02: round 1's swap is named at the campaign gate, the digest
+  gate's new name, the design digest being retired
+  (`docs/decisions/operator-steering.md`).
 - 2026-10-29: the task reviewer's row reads "every task it reviews", a
   plan's task marked branch review only having no task review
   (`docs/decisions/task-loop.md`).

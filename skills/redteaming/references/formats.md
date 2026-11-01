@@ -1,9 +1,9 @@
 # Crucible formats reference
 
 What a controller or seat writes and reads, defined once so writers and
-readers are built against one text: the feature workspace, the round record,
-the feature folder and the design digest. Provisioning the workspace and
-finding the feature folder are steps stated here.
+readers are built against one text: the feature workspace, the round record
+and the feature folder. Provisioning the workspace and finding the feature
+folder are steps stated here.
 
 Field lists are binding where their section does not say otherwise, and file
 and directory names are fixed: consumers depend on them. Content marked *advisory* may be refined by its implementer
@@ -59,7 +59,6 @@ workspace):
                               #   included (crucible:brainstorming)
     request.md                # the request, quoted (crucible:brainstorming);
                               #   the goal check reads it
-    digest.md                 # design digest (format below)
     campaigns/
       spec/                   # the spec campaign
         round-00/             # round 0 mechanical pre-pass (consumes no cap round)
@@ -288,11 +287,11 @@ Fields, in order:
 8. **Round readout** (`## Round readout`) — the readout as delivered to the
    operator, compact, with the items `crucible:redteaming` § Round readout
    defines: key findings, every rejected, parked or partly-applied
-   BLOCKER/MAJOR named with its ruling; technical calls; decision asks; the
-   round's `deferred-to-implementation` count; the questions carried to
-   readout, each quoted verbatim; the digest-update note; in
-   every numbered spec-campaign round, whether overturning a major
-   mechanism after code is still reasonably expected, and why, answering
+   BLOCKER/MAJOR named with its ruling; technical calls; decision asks,
+   delivered last in a block of their own; the round's
+   `deferred-to-implementation` count; the questions carried to readout,
+   each quoted verbatim; in every numbered spec-campaign round, whether
+   overturning a major mechanism after code is still reasonably expected, and why, answering
    each seat forecast that it is reasonably expected by the mechanism it
    names; and, at the close of the
    plan phase and of a folded campaign, the tasks the plan marks
@@ -437,33 +436,3 @@ deleted until they have gone to their home or been dropped, a discard of
 the work dropping them; a session
 that ends before the answer leaves it, and the next returns to the
 question.
-
-## Design digest format
-
-`digest.md` at the feature-workspace root. Operator-facing collation for
-major designs. Audience: the operator as tech analyst — analyst language,
-decision asks with recommendations; no step requires reading spec, plan,
-code or diffs, and a decision ask may quote the few lines it turns on.
-
-**Derivation rule (binding):** derived, never independently authored.
-Exactly three source classes, and every entry cites its source record:
-
-1. the brainstorm dialogue's decision record;
-2. round readouts and their decision asks;
-3. scoped-amendment decision-ask records (so the digest legally tracks
-   mid-execution flips).
-
-Material spec internals reach the digest by being included in a readout —
-never by side-authoring against the spec.
-
-Sections:
-
-- `## Decisions` — each: the decision, the trade-off it resolves, status,
-  source pointer (which readout or record). The status is `open`,
-  `accepted` or `firm`, read as the brainstorm decision record defines
-  them, a call the operator left to the controller recorded as delegated
-  (`crucible:brainstorming` § Workspace provisioning (brainstorm exit)).
-- `## Positions flipped` — what flipped, why, and where (source pointer).
-- `## Open judgments` — pending decision asks, each with its recommendation.
-
-Updated at round closes (the round readout names the digest update).
