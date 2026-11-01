@@ -231,15 +231,15 @@ request must not. (Basis: judgment, accepted by the maintainer.)
 On 2026-11-01 the request moved out of the committed documents into
 the feature workspace. Feature folders are committed and often pushed,
 so a quoted request published the operator's private messages in every
-project running crucible. The workspace is already uncommitted, reaches every seat by an absolute
-path, and lives past the branch review, the last seat that runs the
-goal check. Pointing seats at the host's session transcripts instead
-was rejected: their formats are host-specific, a feature can span
-several sessions, they cost a seat time and noise to read, and they
-expose the seat to the controller's framing of the work. A request
-store of its own that outlives the workspace was rejected by the
-maintainer as a hack. For an umbrella the request goes with its
-workspace at the landing, before any child starts, so a child checks
+project running crucible. The workspace is already uncommitted,
+reaches every seat by an absolute path, and lives past the branch
+review, the last seat that runs the goal check. Pointing seats at the
+host's session transcripts instead was rejected: their formats are
+host-specific, a feature can span several sessions, they cost a seat
+time and noise to read, and they expose the seat to the controller's
+framing of the work. A request store of its own that outlives the
+workspace was rejected by the maintainer as a hack. For an umbrella
+the request goes with its workspace at the landing, so a child checks
 its Intent against its own brainstorm's request, the umbrella's Intent
 and its own entry, and the closing review reads fidelity to the
 umbrella's Intent. The accepted cost: no child's seats can catch an
