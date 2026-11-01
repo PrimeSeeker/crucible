@@ -242,20 +242,19 @@ the brainstorm decision record.
 - **With `placement`.** Existing restatements of what binds keep their
   number and place; only their content changes.
 - **The umbrella on this branch.** Lightly held edits by
-  `skills/brainstorming/references/umbrellas.md` § Edits: to its D4,
-  the campaign shape stays at the gate (R13) and the containment test
-  keeps its check-passing exclusion (R9), and its premise bullet keeps
-  the umbrella's landing note (R14); to its Intent, the non-goal on
-  added mechanisms no longer says the round-1 lens replaces premise
-  findings, which stay, simplified (R5; that change to D4 and to this
-  child's entry landed on the base as a binding change); to its Interfaces &
-  boundaries, deferred campaign MINORs reach the branch review's triage
-  through the closes that seed the ledger (R2). Two clarifications of this child's entry: the carriers for a decision
-  ask open at an umbrella's landing are the premise note and the
-  landing's open-items step (R14); and since premise notes stay, only
-  the `[LOAD-BEARING]` marks' clauses leave `umbrellas.md` where the
-  entry has "the marks and premise notes leave" it. The entry's
-  `landed` mark comes at Finish.
+  `skills/brainstorming/references/umbrellas.md` § Edits, made on this
+  branch: to its D4, the campaign shape stays at the gate (R13) and the
+  containment test keeps its check-passing exclusion (R9); to its
+  Intent, the non-goal on added mechanisms no longer says the round-1
+  lens replaces premise findings; to its Interfaces & boundaries,
+  deferred campaign MINORs reach the branch review's triage through the
+  closes that seed the ledger (R2). Two binding changes to D4's premise
+  bullet and this child's entry, premise findings kept and simplified
+  (R5) and the premise note kept at an umbrella's landing (R14), landed
+  on the base on branches of their own. One clarification of this
+  child's entry: the carriers for a decision ask open at an umbrella's
+  landing are the premise note and the landing's open-items step (R14).
+  The entry's `landed` mark comes at Finish.
 - **Ledger lines and the branch reviewer.** A seeded `deferred-minor`
   is a `## Deferred minors` line whose source is `Spec` or `Plan`,
   beside the existing `Task <N>`, `Lane` and `Branch wave <n>` sources;
