@@ -287,10 +287,10 @@ maintainer.)
 Sending the items after the operator's answer lets the readout propose
 keeping or dropping each item without a ruling per item. Items the
 answer drops are not written: a project's home holds work still to do,
-and the readout has named each one. (Basis: judgment, an agent's call
-the maintainer has not ruled on: the implementer's, in the feature that
-removed the default file, reading the Intent that open items end in the
-project's home or the operator's drop.) Items in an in-repository home
+and the readout has named each one. (Basis: judgment, accepted by the
+maintainer at that feature's close readout: the implementer's call, in
+the feature that removed the default file, reading the Intent that open
+items end in the project's home or the operator's drop.) Items in an in-repository home
 are committed before the suite, as the umbrella mark is, so the suite
 runs on the tree that lands. No review reads them unless the loop
 reopens, so the readout lists every item, and this repository has the
@@ -401,7 +401,9 @@ worktree. (Basis: judgment, accepted by the maintainer.)
   it comes; items the answer drops are not written; brainstorming reads
   the home; this repository names `docs/backlog/`. The maintainer's
   brainstorm resolved the 2026-10-30 view that the feature folder's
-  `open-items.md` would be lost, and that default file is retired.
+  `open-items.md` would be lost, and that default file is retired. At
+  its close readout the maintainer accepted that dropped items are not
+  written, and a home recorded in a user-level file counts as named.
 - 2026-11-01: § Work left open names the maintainer's 2026-10-30 view
   that open items kept in the feature folder's file will be lost, and
   points to the backlog item that held the question; the file's basis

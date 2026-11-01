@@ -422,7 +422,9 @@ closing review, each with its source; an item the
 operator's answer drops goes nowhere, the readout having named it.
 Where nothing was left open, nothing is asked or written.
 
-- **The project's instruction files name a home for open items:** they go
+- **The project's instructions name a home for open items** — wherever
+  the skills say so, a user-level file's line naming the project counts:
+  they go
   there, an in-repository home committed on the branch the step names,
   an outside tracker used as the instructions say.
 - **They name none:** the readout listing the items asks the operator

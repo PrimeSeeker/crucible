@@ -134,7 +134,8 @@ requirements source is a plan file path, task text, or requirements.
 Where the review reopened after the controller's finish, the range holds
 what that finish committed, and it is part of the branch like the rest:
 the feature's umbrella entry marked `landed`, the work left open written
-to an in-repository home the project names, each item with its source,
+to an in-repository home the project or the operator's answer names,
+each item with its source,
 and any instruction-file line recording that home.
 
 ## The Goal Check
