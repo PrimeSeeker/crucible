@@ -4,7 +4,7 @@ Spec: `docs/crucible/2026-11-01-review-retirements/design.md` @ `18d5bd6` — bi
 
 ## Goal
 
-The installed-to-be skill text, its templates, generated agents, tests, decision records and the backlog items the umbrella's entry names all state the campaign side of the umbrella as the spec's Decisions R1–R15 give it, with nothing stating a retired mechanism as current (I3), and the prose budget's sum at or below 65,978 words.
+The skill text, its templates, generated agents, tests, decision records and the backlog items the umbrella's entry names all state the campaign side of the umbrella as the spec's Decisions R1–R15 give it, with nothing stating a retired mechanism as current (I3), the prose budget's sum at or below 65,978 words, and the three `SKILL.md` files over the compaction line no larger than at `8c14505` (X8).
 
 ## Task dependency order
 
@@ -71,13 +71,14 @@ Each file against the tasks that edit it, in run order; a file edited by several
 - **X4. What binds.** T1 leaves every statement of what binds without marks (R8); T4's definition of "a MINOR against binding text" (R2) refers to that content, not to marks.
 - **X5. Prose budget and generated agents.** Each task that changes a skill directory's word count sets that line of `tests/prose-budget.txt` to the new count, and each task that edits a template regenerates `agents/`; the suite (`tests/test_prose_budget.py`, `tests/test_instrument_agents.py`) passes on every task's tree.
 - **X6. Decision records and the vocabulary list.** Each task that changes a decision updates its record in place with a dated `## Changes` line (`AGENTS.md`), which names the labels, record lines or statuses the task removes or adds (spec R15); T10 collects them for the landing message.
-- **X7. Removed anchors.** T6 removes `formats.md` § Design digest format and renames or keeps `crucible:brainstorming` § Digest gate; every citation of either is updated in the same task, and `tests/test_references.py` passes. T3's deletion of `conserve.py` leaves no plugin-root path to it in scanned text (skills, hooks, `docs/decisions/`, `docs/upstream.md`); a record keeping it as history names it bare.
+- **X7. Removed anchors.** T6 removes `formats.md` § Design digest format and renames `crucible:brainstorming` § Digest gate; every citation of either is updated in the same task, and `tests/test_references.py` passes. T3's deletion of `conserve.py` leaves no plugin-root path to it in scanned text (skills, hooks, `docs/decisions/`, `docs/upstream.md`); a record keeping it as history names it bare.
+- **X8. Oversized `SKILL.md` files do not grow** (the umbrella's C2, spec A3). Every task that edits `skills/subagent-driven-development/SKILL.md`, `skills/redteaming/SKILL.md` or `skills/brainstorming/SKILL.md` leaves it no larger in bytes than at `8c14505` (46,565, 40,662 and 24,257), measured on its own tree; where its own additions would grow one, it offsets them within its own mechanism's text in that file, and where it cannot, it stops and reports BLOCKED with the figures. Its report records the three sizes.
 
 ## Acceptance mapping
 
 - **A1** (no retired mechanism stated) → one-time check, T10, run after T1–T9 on the final tree; each of T1–T9 also runs its own terms' search over its sites (their Acceptance).
 - **A2** (the suite passes) → one-time check at Finish by the controller (SDD § Finish); every task also runs the full suite on its own tree (X5).
-- **A3** (the sizes) → one-time check at Finish by the controller; X5 keeps the budget's numbers current task by task.
+- **A3** (the sizes) → one-time check at Finish by the controller; X5 keeps the budget's numbers current and X8 the three `SKILL.md` byte sizes within their limits, task by task.
 - **A4** (the paths walked) → one-time check by the controller, recorded in the branch review's records (the spec assigns it there); no task discharges it.
 - **A5** (the backlog) → one-time check, T10.
 
@@ -96,7 +97,7 @@ Each file against the tasks that edit it, in run order; a file edited by several
 
 **Why.** Marks are the first retirement because statements of what binds appear in nearly every template and many skills; later tasks edit those same files and should find the marks gone. The spec retires marks and keeps the rest of what binds, the umbrella entry marks (`landed`, `umbrella`, `dropped`) untouched.
 
-**Files.** Statements of what binds and the mark's definition: `skills/brainstorming/SKILL.md` (Spec contract Decisions bullet, Constraints bullet, What binds); `skills/redteaming/references/flip-paths.md` (opening paragraph; the containment test's "a mark names what builds on it" clause); `skills/brainstorming/references/umbrellas.md` (§ Children's umbrella line paragraph, § Edits' lightly held and binding-change bullets); `skills/redteaming/seat-prompt.md`, `terminal-pass-prompt.md`; `skills/requesting-code-review/code-reviewer.md`, `SKILL.md` (inputs paragraph); `skills/subagent-driven-development/SKILL.md` (pre-flight scan's statement only, Deviations, adjudicator inputs), `implementer-prompt.md`, `task-reviewer-prompt.md`, `re-review-prompt.md`, `references/dispatch-composition.md` (item 4), `references/very-small-lane.md`, `references/premise-and-questions.md` ("or a mark"); `skills/writing-plans/SKILL.md` (Spec pointer); the regenerated agents of the four templates; `tests/test_instrument_agents.py` (the comment using `[LOAD-BEARING]` as its example); `tests/prose-budget.txt`; decision records `the-spec.md`, `umbrellas.md`, `evidence-and-findings.md`, `routes.md` where they state marks as current. Inputs: the brainstorm decision record (`.crucible/review-retirements/brainstorm-decisions.md`) for each changed record's basis.
+**Files.** Statements of what binds and the mark's definition: `skills/brainstorming/SKILL.md` (Spec contract Decisions bullet, Constraints bullet, What binds); `skills/redteaming/references/flip-paths.md` (opening paragraph; the containment test's "a mark names what builds on it" clause); `skills/brainstorming/references/umbrellas.md` (§ Children's umbrella line paragraph, § Edits' lightly held and binding-change bullets); `skills/redteaming/seat-prompt.md`, `terminal-pass-prompt.md`; `skills/requesting-code-review/code-reviewer.md`, `SKILL.md` (inputs paragraph); `skills/subagent-driven-development/SKILL.md` (pre-flight scan's statement only, Deviations, adjudicator inputs), `implementer-prompt.md`, `task-reviewer-prompt.md`, `re-review-prompt.md`, `references/dispatch-composition.md` (item 4), `references/very-small-lane.md`, `references/premise-and-questions.md` ("or a mark"); `skills/writing-plans/SKILL.md` (Spec pointer); the regenerated agents of the six templates; `tests/test_instrument_agents.py` (the comment using `[LOAD-BEARING]` as its example); `tests/prose-budget.txt`; decision records `the-spec.md`, `umbrellas.md`, `evidence-and-findings.md`, `routes.md` where they state marks as current. Inputs: the brainstorm decision record (`.crucible/review-retirements/brainstorm-decisions.md`) for each changed record's basis.
 
 **Contract.** Enacts R8. Produces X4. "load-bearing" in other senses (the flip-paths heading, the lens "for whatever this artifact makes load-bearing", the breaker's "real and load-bearing") is not the mark and stays.
 
@@ -112,19 +113,26 @@ Each file against the tasks that edit it, in run order; a file edited by several
 
 **Files.** `skills/redteaming/SKILL.md` (stop rule's hold; mandate 2's "and the hold above"; lens roster; the one-seat round 1); `skills/redteaming/references/flip-paths.md` (§ Premise findings: the stop hold, the execution hold; the execution carrying bullet as the likely home of the tell-the-operator rule); `skills/redteaming/terminal-pass-prompt.md` (stop check's pending-ask mismatch); `skills/redteaming/seat-prompt.md`, `seat-prompt.slots.md` (goal check passages and read scoping); `skills/redteaming/references/folded-lane.md` (round-1 seat's lenses); `skills/subagent-driven-development/references/premise-and-questions.md` (the plan sentence of § The goal check); `skills/subagent-driven-development/SKILL.md` where the execution rule lands, if there; regenerated agents; `tests/prose-budget.txt`; decision records `spec-campaign.md`, `terminal-pass.md`, `evidence-and-findings.md`, `instruments.md`. Inputs: the brainstorm decision record (entries 14, 15).
 
-**Contract.** Enacts R5, R6, R7. Deferred to implementation: how the seat template limits the goal check to a spec campaign's round 1 (D1). Deferred to implementation: where the execution rule lives (D2). An implementer's own BLOCKED on a premise it cannot go on without (SDD's task loop, the implementer template) is not the retired hold and stays.
+**Contract.** Enacts R5, R6, R7. Plan-phase and later-round seats keep the request file among their inputs, as grounds for a premise finding; only the goal check's step leaves them.
+
+Deferred to implementation: how the seat template limits the goal check to a spec campaign's round 1 (D1).
+
+Deferred to implementation: where the execution rule lives (D2).
+
+An implementer's own BLOCKED on a premise it cannot go on without (SDD's task loop, the implementer template) is not the retired hold and stays.
 
 **Acceptance.**
 - Happy: the stop rule, mandate 2 and the terminal pass's stop check name no premise hold; § Premise findings keeps the label, routes, carrying and the umbrella note; the execution rule says the controller tells the operator when a premise finding is raised; the roster carries the outside-the-frame lens, round 1 only.
 - Edge: a one-seat round 1 carries the lens beside general (R6); the folded lane's round-1 seat names it.
 - Error: a plan-phase seat dispatched from the card runs no goal check; a later-round spec seat runs none; a round-1 seat and the branch reviewer still do.
+- Error: one-time search, case-insensitive, for the holds' wording (`holds the stop`, `pending premise ask`, `premise ask was pending`, `waits for the ruling`, `does not stop while`) over `skills/`, `agents/` and `docs/decisions/`, run before (hits, among them `flip-paths.md` § Premise findings, the terminal-pass template's stop check and its agent, `evidence-and-findings.md`, `spec-campaign.md`) and after (history only); these terms join A1's search in T10.
 - Integration: the full suite passes; agents regenerated; budget lines current.
 
 ### T3. Retire merge conservation
 
 **Why.** The script and its rule caught almost nothing (umbrella Intent); retiring it removes crucible's only workflow Python (R1).
 
-**Files.** Delete `skills/redteaming/scripts/conserve.py` and `tests/test_conserve.py`; `tests/instrument_corpus.py` (`load_conserve`, the docstring), `tests/test_dispatch_contracts_templates.py` (the conserve-based tests and helpers only they use), `tests/test_report_filenames.py` (the conserve reader comment and what it asserts); `skills/redteaming/SKILL.md` (the plan phase's reuse line; seat-id reason; the deferral's conservation clause; Merge conservation, Check it and degraded-verdict paragraphs; the stance's "conservation check"); `skills/redteaming/references/formats.md` (intro, bookkeeping list, field 3's conservation line); `skills/redteaming/references/plan-phase.md` ("merge-conservation rules"); `README.md` (Python requirement); `docs/authoring.md` (the script-invocation example); `tests/prose-budget.txt`; decision records `fix-verification-and-merge.md`, `session-start-hook.md`, `plans.md`, `spec-campaign.md`. Inputs: the brainstorm decision record.
+**Files.** Delete `skills/redteaming/scripts/conserve.py` and `tests/test_conserve.py`; `tests/instrument_corpus.py` (`load_conserve`, the docstring), `tests/test_dispatch_contracts_templates.py` (the conserve-based tests and helpers only they use), `tests/test_report_filenames.py` (the conserve reader comment and what it asserts); `skills/redteaming/SKILL.md` (the plan phase's reuse line; seat-id reason; the deferral's conservation clause; Merge conservation, Check it and degraded-verdict paragraphs; the stance's "conservation check"); `skills/redteaming/references/formats.md` (intro, bookkeeping list, field 3's conservation line); `skills/redteaming/references/plan-phase.md` ("merge-conservation rules"); `README.md` (Python requirement); `docs/authoring.md` (the script-invocation example; "cited by other skills and scripts" where no script cites the headings any more); `tests/prose-budget.txt`; decision records `fix-verification-and-merge.md`, `session-start-hook.md`, `plans.md`, `spec-campaign.md`. Inputs: the brainstorm decision record.
 
 **Contract.** Enacts R1. Keeps the `origins:` element, question dispositions, the always-carried rule and Adopted. Seat ids stay unique within a feature, `p0` aside, with the stop check as the reason. Honors X7 for the deleted path. `AGENTS.md`'s Interpreters bullet is a general rule and stays.
 
@@ -154,7 +162,11 @@ Each file against the tasks that edit it, in run order; a file edited by several
 
 **Files.** `skills/redteaming/SKILL.md` (Mechanics of the terminal pass; the directional-bias sentences; § Operating stance body, heading kept); `skills/redteaming/terminal-pass-prompt.md` (second-read passage; bias paragraph and report line), `terminal-pass-prompt.slots.md` (`follow-up`, report path); `skills/redteaming/references/plan-phase.md` (repair, second read, record); `skills/redteaming/references/formats.md` (`second-read.md` rows; `confirmed`; the terminal-pass record's states and `deferred-minor` list; the plan record's `## Terminal pass`); `agents/terminal-pass.md`; `tests/prose-budget.txt`; decision records `terminal-pass.md`, `spec-campaign.md`. Inputs: the brainstorm decision record (entries 6, 12, 19).
 
-**Contract.** Enacts R3, R4; consumes X1. Deferred to implementation: how the card selects the record-only run (D3). The spec's Interfaces "Terminal-pass records" fixes the file name and the states.
+**Contract.** Enacts R3, R4; consumes X1.
+
+Deferred to implementation: how the card selects the record-only run (D3).
+
+The spec's Interfaces "Terminal-pass records" fixes the file name and the states.
 
 **Acceptance.**
 - Happy: the record-only second read runs whenever the pass's report carries a record correction or an ask is put again, on the close recorded before it and delivered after it; one second read covers both runs; at most one per pass; its leftover non-binding MINORs take `deferred-minor`.
@@ -168,7 +180,11 @@ Each file against the tasks that edit it, in run order; a file edited by several
 
 **Files.** `skills/brainstorming/SKILL.md` (opening; Flow steps; the folded and very-small route lines; the gate; § Design digest; § Digest gate; the decision record's derivation sentence); `skills/redteaming/SKILL.md` (formats intro mention; the gate mentions; readout consumers; the digest readout item; § Round readout's asks rule; Exit's open-judgments clause); `skills/redteaming/references/formats.md` (intro; layout `digest.md`; field 8's digest note and asks block; § Design digest format); `skills/redteaming/references/flip-paths.md` (the digest clauses); `skills/redteaming/references/folded-lane.md`; `skills/redteaming/references/plan-phase.md` (readout pointers); `skills/brainstorming/references/umbrellas.md` (§ Review's digest clause and step numbers; § Landing step 1's digest; the landing ask and closing-review readout pointers); `skills/subagent-driven-development/SKILL.md` (Finish record checks; close readout's own asks sentence); `skills/subagent-driven-development/references/very-small-lane.md`; `tests/test_structure.py` (`digest.md` entry); `tests/prose-budget.txt`; decision records `operator-steering.md`, `the-spec.md`, `spec-campaign.md`, `routes.md`, `model-roles-and-effort.md`, `publication.md`. Inputs: the brainstorm decision record (entries 2, 6).
 
-**Contract.** Enacts R11, R13. Produces X3; honors X7. Deferred to implementation: the short gate's heading and wording (D4). A renumbered Flow updates every step citation.
+**Contract.** Enacts R11, R13. Produces X3; honors X7. The gate's heading drops the word "digest", and every citation of `crucible:brainstorming` § Digest gate is updated with it (X7).
+
+Deferred to implementation: the short gate's heading and wording (D4).
+
+A renumbered Flow updates every step citation.
 
 **Acceptance.**
 - Happy: brainstorming writes no digest; its gate shows the decision record's decisions and open asks inline and the campaign shape; § Round readout states the asks-apart rule once, the other readouts point to it, SDD's close readout states it in a sentence of its own.
@@ -215,12 +231,12 @@ Each file against the tasks that edit it, in run order; a file edited by several
 **Acceptance.**
 - Happy: an open premise ask at landing keeps the note; any other open ask goes to the operator and, unruled, to the open-items home with the `deferred-minor` entries.
 - Edge: an ask ruled before the landing leaves step 3's committed items.
-- Error: the umbrella's Constraints & invariants, the entry and the umbrella's other Decisions are unchanged (a diff of `umbrella.md` shows only D4's two bullets and the Interfaces bullet).
+- Error: the umbrella's Constraints & invariants, its Children entries and its other Decisions are unchanged: a diff of `umbrella.md` from the tree T9 starts on shows only D4's two bullets and the Interfaces bullet. The spec's clarification of this child's entry is stated in the spec, not written into the entry; the entry's `landed` mark is Finish's.
 - Integration: the full suite passes; budget line current.
 
 ### T10. The backlog and the final search
 
-Review: branch only — it edits backlog items only, builds no mechanism, and nothing later builds on how it words them.
+Review: branch only — it edits backlog items and runs a read-only search, builds no mechanism, and nothing later builds on how it words them.
 
 **Why.** The umbrella's entry names the backlog items this child resolves or trims (A5), and A1's search runs on the final tree.
 
@@ -231,5 +247,6 @@ Review: branch only — it edits backlog items only, builds no mechanism, and no
 **Acceptance.**
 - Happy: each named item resolved or trimmed, the report saying which; the vocabulary list (X6) assembled for the landing message.
 - Edge: a bullet the umbrella leaves to `execution-retirements` (the hatch, the breaker's word, the statements-of-what-binds bullet) stays.
+- Error: a hit A1's search finds outside history and unrelated senses is not fixed in T10: it goes in the report as a concern naming the site and the mechanism, and the controller routes it as a plan change, a fix task before the branch review.
 - Error: A1's search, case-insensitive, over `skills/`, `agents/`, `tests/` (corpus excluded), `docs/decisions/`, `docs/authoring.md`, `README.md`, `AGENTS.md`, for the spec's terms and the terms T1–T9 named, finds only history and unrelated senses; command and output recorded.
 - Integration: the full suite passes.
