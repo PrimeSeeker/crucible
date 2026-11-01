@@ -194,11 +194,12 @@ adapters are in `docs/dual-runtime.md`.
   dropped. When it merges, anything its brainstorm and review left open
   goes where open items go; once it closes, a closing review reads the
   whole effort, and what it finds that you keep goes there too.
-- **A workspace,** `.crucible/<feature-name>/`, holding the review rounds'
-  records, agents' reports and the execution ledger. It is untracked
-  (crucible writes a `.crucible/.gitignore` that ignores it all) and is
-  deleted when the feature finishes, once the work left open has gone to
-  its home or you have dropped it.
+- **A workspace,** `.crucible/<feature-name>/`, holding your messages
+  that asked for the feature, quoted for the reviewers' goal check, the
+  review rounds' records, agents' reports and the execution ledger. It
+  is untracked (crucible writes a `.crucible/.gitignore` that ignores it
+  all) and is deleted when the feature finishes, once the work left open
+  has gone to its home or you have dropped it.
 - **Worktrees.** By default every feature gets its own worktree, a
   separate working copy on the feature's branch, unless your project's
   instructions say to work in place. Crucible uses your host's own

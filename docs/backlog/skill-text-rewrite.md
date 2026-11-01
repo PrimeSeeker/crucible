@@ -77,8 +77,7 @@
     above);
   - the containment test's incident rules: exclusions in
     `skills/redteaming/references/flip-paths.md` § The containment test,
-    each added after one incident;
-  - the request block copied into each umbrella child's spec.
+    each added after one incident.
 - **Two findings that predate the effort**, found by the same audit:
   the folded lane gives "the fold requires a code baseline" as the reason
   round 0 always runs, but nothing in the fold's entry requires one, and

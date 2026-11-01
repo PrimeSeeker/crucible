@@ -10,6 +10,7 @@
 - {supporting-inputs}: verification-only sources (for a plan, the spec it implements; referenced code paths; for the plan phase's mechanical pre-pass, also the repository's tracked text, for its set census), or `none`.
 - {binding-artifact-path}: the artifact carrying what binds; for a plan, the spec its header names.
 - {binding-revision}: that artifact's revision.
+- {request-path}: `{workspace-path}/request.md`, the request the goal check reads; `none` where the workspace holds none.
 - {umbrella-paths}: where the binding artifact's preamble carries an `Umbrella:` line, the umbrella it names and each one up the chain, by path; else `none`.
 - {mandate-reminder}: one line naming the seat's binding output: a full-scope read of the artifact, findings with staked severity and evidence, written to the report path; for the plan phase's mechanical pre-pass, its liveness, ownership-closure and overlap arithmetic and its set census, run rather than read. Where the artifact carries `Review: branch only` marks, a full-scope seat's line adds grading each against the mark's criterion in `skills/subagent-driven-development/references/premise-and-questions.md` § The arrangement questions.
 - {lens}: a lens from the § Panels roster, or one you add for what this artifact makes load-bearing, and its one-line description.

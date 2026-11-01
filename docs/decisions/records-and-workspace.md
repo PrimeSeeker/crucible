@@ -23,9 +23,9 @@ a pull request, otherwise by finishing. An umbrella's own pull request
 leaves `umbrella.md` off that list, so it stays in the merged tree
 (`crucible:finishing-a-development-branch § Step 5: Execute Choice`).
 
-**The workspace.** A feature's process records (round records, seat
-reports, the execution ledger, scratch) live in `.crucible/<slug>/` at the
-root of the checkout the controller works in. It ignores itself through a
+**The workspace.** A feature's process records (the quoted request, round
+records, seat reports, the execution ledger, scratch) live in
+`.crucible/<slug>/` at the root of the checkout the controller works in. It ignores itself through a
 `.crucible/.gitignore` holding `*`, written by a prose provisioning step
 and confirmed with `git check-ignore` on a file path
 (`skills/redteaming/references/formats.md` § Feature workspace root and
@@ -204,6 +204,13 @@ closing review, added on 2026-10-30, runs after that workspace and every
 child's are gone, so it provisions one of its own under the umbrella's
 slug, deleted once its findings have gone to their home or been
 dropped (`docs/decisions/umbrellas.md`). (Basis: judgment, accepted by the
+maintainer.)
+
+The operator's request joined the workspace on 2026-11-01, as
+`request.md`, after quoting it in committed feature folders published the
+operator's messages: the workspace is uncommitted, reaches seats by path
+and lives past the branch review, the last seat that reads the request
+(`docs/decisions/the-spec.md`). (Basis: judgment, accepted by the
 maintainer.)
 
 ### What is committed
@@ -394,6 +401,10 @@ worktree. (Basis: judgment, accepted by the maintainer.)
 
 ## Changes
 
+- 2026-11-01: the workspace holds the quoted request, `request.md`,
+  written at brainstorm exit and deleted with the workspace; because
+  quoting it in committed feature folders published the operator's
+  messages.
 - 2026-11-01: crucible keeps no store of its own for open items. They
   go to the home the project's instructions name or, with none named,
   where the operator's answer sends them, the readout offering to

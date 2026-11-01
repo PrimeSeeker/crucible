@@ -28,13 +28,14 @@ Calibration).
 **Premise findings.** A redteam seat, the terminal pass, the branch
 reviewer, an umbrella's closing-review seat or an implementer may claim,
 with evidence, that one of three things is wrong:
-the request, what the Intent asks for, or a firm decision. Each is
-readable from the document: the request and the Intent are its
-sections, and a firm decision says so in its rationale. On the
-very-small lane the lane note's Intent stands for the spec's; for an
-umbrella's child the request includes the effort's request, the
-umbrella's Intent is protected as the child's own is, and a change on
-the child's branch to what that Intent asks is a finding. The finding
+the request, what the Intent asks for, or a firm decision. The request
+is the feature workspace's `request.md`, which the seats running the
+goal check receive by path (`docs/decisions/the-spec.md`); the Intent is
+a section of the document, and a firm decision says so in its
+rationale. On the very-small lane the lane note's Intent stands for the
+spec's; for an umbrella's child the umbrella's Intent is protected as
+the child's own is, and a change on the child's branch to what that
+Intent asks is a finding. The finding
 carries the label `premise` after its staked severity. Every other
 decision, whoever proposed it, is lightly held: a finding against it is
 an ordinary one, and so is a correction of an Intent's wording or facts
@@ -57,13 +58,14 @@ phase's close until ruled
 (`skills/redteaming/references/flip-paths.md` § Premise findings).
 
 **The goal check.** Before reading the Intent, a redteam seat and the
-branch reviewer restate in one sentence the goal that the document's
-`## Request` section asks for (`docs/decisions/the-spec.md`), then
+branch reviewer restate in one sentence the goal that the request file
+their dispatch names asks for (`docs/decisions/the-spec.md`), then
 compare it with the Intent: a mismatch the seat can stand behind is a
-premise finding, a vaguer one a question. A plan-phase seat restates it
-from the Request of the spec the plan's header names and compares it
-with that spec's Intent and the plan's Goal. With no Request, the seat
-restates the goal from the Intent and says the request was unavailable.
+premise finding, a vaguer one a question. A plan-phase seat compares it
+with the Intent of the spec the plan's header names and the plan's
+Goal; an umbrella child's seat with the child's Intent, the umbrella's
+Intent and the child's entry. With no request file, the seat restates
+the goal from the Intent and says the request was unavailable.
 On the very-small lane the check is part of the branch reviewer's Lane
 Fit (`docs/decisions/routes.md`;
 `skills/subagent-driven-development/references/premise-and-questions.md`
@@ -240,7 +242,10 @@ The `premise` label, its route to the operator as a decision ask that
 holds no gate, a location that may be a passage, the goal check against
 a quoted request, and one `Questions` section for questions, doubts and
 improvements across seats are an agent's proposals, which the maintainer
-accepted. (Basis: judgment, accepted by the maintainer.)
+accepted. (Basis: judgment, accepted by the maintainer.) Since
+2026-11-01 the quoted request is the feature workspace's `request.md`,
+not a section of the committed document, which published the operator's
+messages (`docs/decisions/the-spec.md`).
 
 As first written, the line between a premise finding and an ordinary one
 followed who stood behind the decision challenged: a finding against a
@@ -252,8 +257,8 @@ reference made a finding against "a decision the operator made" an
 operator ask; seats never see a decision's proposer; the mislabel rule
 corrected one direction only; and routing on the proposer reversed in
 effect the declined mark of who decided (§ What the requirements leave
-unsaid). Since 2026-10-30 a premise finding protects what the document
-itself shows, the request, what the Intent asks for and firm decisions,
+unsaid). Since 2026-10-30 a premise finding protects what a seat can
+read for itself, the request, what the Intent asks for and firm decisions,
 and every other decision is lightly held whoever proposed it, which
 matches the maintainer's reading of an approval as "this until new
 evidence arrives" (`docs/decisions/the-spec.md`). The proposer stays in
@@ -419,6 +424,13 @@ records that cite "the audit" draw on these figures. (Basis: measured.)
 
 ## Changes
 
+- 2026-11-01: the goal check reads the request from the feature
+  workspace's `request.md`, named in the seat's dispatch, no longer from
+  a section of the document; an umbrella child's seats compare the goal
+  its own request asks for with its Intent, the umbrella's Intent and
+  its entry; because the
+  quoted request in committed feature folders published the operator's
+  messages.
 - 2026-10-30: a premise finding protects the request, what the Intent
   asks for and firm decisions, readable from the document, every other
   decision being lightly held whoever proposed it, and the controller

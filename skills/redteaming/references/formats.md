@@ -59,6 +59,8 @@ workspace):
   <feature-slug>/             # the feature workspace
     brainstorm-decisions.md   # brainstorm decision record, the gate entry
                               #   included (crucible:brainstorming)
+    request.md                # the request, quoted (crucible:brainstorming);
+                              #   the goal check reads it
     digest.md                 # design digest (format below)
     campaigns/
       spec/                   # the spec campaign
@@ -88,6 +90,10 @@ that record's entry form (`crucible:brainstorming` § Workspace provisioning
 records it. An answer that leaves the call to the controller is entered
 with the delegated status that section defines, never as the operator's
 ruling or choice.
+
+**Later changes to the ask enter `request.md` (binding).** While the
+workspace lives, the controller appends to it, quoted verbatim, each
+operator message after brainstorm exit that changes what was asked.
 
 Per-round directory contents:
 

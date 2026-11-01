@@ -9,16 +9,15 @@ the sections that apply to you.
 ## Premise findings
 
 A premise finding claims, with evidence, that one of three things is
-wrong: the request, what the Intent asks for, or a firm decision. Each
-is readable from the document: the request and the Intent are its
-sections, and a firm decision says so in its rationale. On the
-very-small lane the lane note's Intent stands for the spec's. For a
-child of an umbrella, the request includes the effort's request that its
-`## Request` section quotes, and the umbrella's Intent is protected as
-the child's own is. Mark a premise finding with the label `premise`
-after the finding's severity, as in `FINDING s2-3 [MAJOR] premise`, and
-stake that severity as for any finding: it is for the operator's
-weighing.
+wrong: the request, what the Intent asks for, or a firm decision. The
+request is the request file your dispatch names, if any (§ The goal
+check); the Intent is a section of the document, and a firm decision
+says so in its rationale. On the very-small lane the lane note's Intent
+stands for the spec's. For a child of an umbrella, the umbrella's Intent
+is protected as the child's own is. Mark a premise finding with the
+label `premise` after the finding's severity, as in
+`FINDING s2-3 [MAJOR] premise`, and stake that severity as for any
+finding: it is for the operator's weighing.
 
 Every other decision, whoever proposed it, is lightly held: a finding
 against it is an ordinary one, structural or not, and so is a correction
@@ -49,20 +48,24 @@ Two findings a reviewer raises beyond a defect in the work:
 ## The goal check
 
 Before you read the Intent, restate in one sentence the goal that the
-`## Request` section asks for: the section of the document whose Intent
-you grade against, which quotes the messages that asked for the work.
-Then compare your sentence with the Intent. A mismatch you can stand
-behind is a premise finding; a vaguer one is a question. The request is
-evidence of what was asked, not the standard: you may find the request
-itself wrong.
+request asks for: the request file your dispatch names, the feature
+workspace's `request.md`, which quotes the messages that asked for the
+work. Then compare your sentence with the Intent. A mismatch you can
+stand behind is a premise finding; a vaguer one is a question. The
+request is evidence of what was asked, not the standard: you may find
+the request itself wrong.
 
-Reviewing a plan, restate the goal from the `## Request` section of the
-spec its header names, and compare it with that spec's Intent and with
-the plan's Goal.
+Reviewing a plan, compare your sentence with the Intent of the spec its
+header names and with the plan's Goal.
 
-Where no `## Request` section exists, as in a document written before
-the section was required or a standalone branch review, restate the goal
-from the Intent and say that the request was unavailable.
+For a child of an umbrella, the request holds only what was asked in the
+child's own brainstorm and after it: compare your sentence with the
+child's Intent, the umbrella's Intent and the child's entry in the
+umbrella's Children list.
+
+Where your dispatch names no request file or the file is missing, as in
+a standalone branch review, restate the goal from the Intent and say
+that the request was unavailable.
 
 Write the sentence and what the comparison found where your template's
 report format places them.

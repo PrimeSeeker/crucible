@@ -112,9 +112,10 @@ naming the premise finding or question it raised.
 ## Read Scoping
 
 Read only what this dispatch enumerates — the spec at that pinned
-revision, the umbrellas it names, the requirements source, the diff you
-build, the execution-trail items below, the files its branch-review-only
-list names and the plugin files Runtime names — plus the code in this
+revision, the umbrellas it names, the request file, the requirements
+source, the diff you build, the execution-trail items below, the files
+its branch-review-only list names and the plugin files Runtime names —
+plus the code in this
 worktree, which you may read beyond the diff wherever the branch's
 correctness depends on it. Out of scope:
 `.crucible/<feature-slug>/campaigns/` — round records, seat reports, fix
@@ -141,8 +142,9 @@ and any instruction-file line recording that home.
 ## The Goal Check
 
 Before you read the Intent of the document your spec pointer names, run
-the shared reference's § The goal check; with no spec, restate the goal
-from the requirements source and say that the request was unavailable.
+the shared reference's § The goal check on the request file your
+dispatch names; with no spec, restate the goal from the requirements
+source, and with no request file say that the request was unavailable.
 Your report's Goal Check holds the result.
 
 ## Execution Trail

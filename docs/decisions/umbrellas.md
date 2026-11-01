@@ -9,11 +9,11 @@ Acceptance is the ordered list of its children, each entry saying what
 that child delivers, what it waits on, and whether it has landed. A
 child that splits becomes an umbrella itself, at any depth; every
 child's folder is born at the root like any feature's, and the list is
-the index. Its Request quotes the effort's request; a child's Request
-points to it and quotes only what was asked of that child, or the
-effort's whole request where the umbrella has none
-(`skills/brainstorming/references/umbrellas.md` § Shape;
-`docs/decisions/the-spec.md`).
+the index. Like a spec, it quotes no message from the operator: the
+effort's request lives in the umbrella's workspace and goes with it at
+the landing, and a child's request holds only the messages of its own
+brainstorm, so a child's seats check its Intent against that request,
+the umbrella's Intent and its own entry (`docs/decisions/the-spec.md`).
 
 **Reviewed by what it carries, on no route.** An umbrella takes none of
 the three presets (`docs/decisions/routes.md`). One that carries
@@ -63,7 +63,7 @@ frozen (`skills/brainstorming/references/umbrellas.md` § Closing).
 **One closing review, a step and not a gate.** Once an umbrella is
 complete by its marks, one review reads its children's landings, from
 the umbrella's own to the one that completed it, unrelated landings on
-a shared base aside, against the umbrella: its request, its entries,
+a shared base aside, against the umbrella: its Intent, its entries,
 its Constraints & invariants and its decisions. The controller whose
 landing completes it, a landed drop included, announces it and runs it
 right after; its width is that controller's call, the review itself is
@@ -75,7 +75,7 @@ they have all landed, and the operator starts it by asking. A nested
 umbrella's review runs at its own completion and, where that completes
 its parent, before the parent's, whose range covers it again. It takes two or three seats the
 controller composes on the default role, read-only, each with a lens
-that reads across children (fidelity to the request, the seams between
+that reads across children (fidelity to the umbrella's Intent, the seams between
 children, a walkthrough of the workflows the effort changed), with no
 instrument or template of its own. Its readout proposes keeping or
 dropping each finding, a premise finding being a decision ask there,
@@ -222,11 +222,10 @@ maintainer, 2026-10-28.)
 
 Until 2026-10-30 a child could edit the umbrella's Intent on its own
 branch as a lightly held edit. Since then a premise finding protects
-what the document itself shows, the request, what the Intent asks for
+what a seat can read for itself, the request, what the Intent asks for
 and firm decisions (`docs/decisions/evidence-and-findings.md`). For a
-child, its request includes the effort's request its Request section
-quotes, and the umbrella's Intent counts as its own, so no child's
-branch changes what the effort asks for without the operator. A
+child, the umbrella's Intent counts as its own, so no child's branch
+changes what the effort asks for without the operator. A
 correction that leaves what the Intent asks unchanged stays a lightly
 held edit; a change to what it asks is a binding change. (Basis: judgment, accepted by the maintainer.)
 
@@ -361,6 +360,12 @@ detail of the form the maintainer accepted.)
 
 ## Changes
 
+- 2026-11-01: the umbrella quotes no request; the effort's request
+  lives in the umbrella's workspace and is deleted at its landing, a
+  child's request holds only its own brainstorm's messages, and the
+  closing review reads fidelity to the umbrella's Intent; because the
+  quoted request in committed feature folders published the operator's
+  messages (`docs/decisions/the-spec.md`).
 - 2026-11-01: an umbrella's landing and its closing review send their
   open items to the project's home for them or, with none named, where
   the operator's answer sends them, the workspace kept until it comes;

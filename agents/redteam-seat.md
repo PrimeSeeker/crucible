@@ -69,9 +69,9 @@ the shared reference's § Binding items and unrecorded choices and
 
 **Read scoping (binding):** read only the inputs this dispatch
 enumerates — the artifact, the binding-content pointer and, for the goal
-check, the `## Request` section and Intent of the document it names, the
-umbrellas your dispatch names, the supporting inputs above, the shared
-reference — and write only your own report path below. Everything else in the workspace and the
+check, the request file your dispatch names and the binding artifact's
+Intent, the umbrellas your dispatch names, the supporting inputs above,
+the shared reference — and write only your own report path below. Everything else in the workspace and the
 repository is out of scope: other seats' reports, round records, fix
 lists, readouts. Scope every search you run to your enumerated inputs;
 an unscoped grep is the measured way review exhaust reaches a seat that

@@ -50,8 +50,8 @@ first round. File and line counts are not the test.
 - **Folded:** spec and plan in one document, `folded.md`, no plan phase,
   and every review instrument unchanged
   (`skills/redteaming/references/folded-lane.md`).
-- **Very small:** a frozen lane note (the request, intent, change list,
-  acceptance as runnable checks, out of scope), implemented inline
+- **Very small:** a frozen lane note (intent, change list, acceptance
+  as runnable checks, out of scope), implemented inline
   where the change is overdetermined and fits the controller's context,
   by the inline test of `docs/decisions/task-loop.md`, and by a
   dispatched implementer otherwise; the repository's own gates and the
@@ -61,10 +61,9 @@ first round. File and line counts are not the test.
   whether overturning a major mechanism of the change is reasonably
   expected now that it is coded, EXCEEDS SHAPE opening the upgrade
   hatch and WITHIN SHAPE keeping the lane, and whether the note's
-  Intent matches the goal
-  its request asks for; it rules on a dispatched implementer's concerns,
-  questions and proposals, which the controller transcribes to the
-  ledger as leads.
+  Intent matches the goal the request in the feature workspace asks
+  for; it rules on a dispatched implementer's concerns, questions and
+  proposals, which the controller transcribes to the ledger as leads.
 
 **The origin question.** A feature with non-trivial impact may skip
 review before code where the overturn question answers no at
@@ -253,7 +252,10 @@ Fit gained the goal check beside its other verdict, read against the
 note's quoted request
 (`docs/decisions/evidence-and-findings.md`): an agent's proposal, which
 the maintainer accepted. (Basis: the maintainer's preference, for the
-aim; judgment, accepted by the maintainer, for the form.)
+aim; judgment, accepted by the maintainer, for the form.) Since
+2026-11-01 the request is quoted in the feature workspace's
+`request.md` rather than in the committed note
+(`docs/decisions/the-spec.md`).
 
 The note and the lane proposal share one gate (2026-10-07): a separate
 gate re-presented decisions just made and never showed the note whose
@@ -300,6 +302,10 @@ small preset or the waiver for its work.
 
 ## Changes
 
+- 2026-11-01: the lane note no longer carries the request, which the
+  feature workspace's `request.md` holds, and Lane Fit's goal check
+  reads it there; because the quoted request in committed feature
+  folders published the operator's messages.
 - 2026-10-30: the overturn question asks whether an overturn after code
   is reasonably expected, the maintainer's words, its two cases the
   usual grounds for a no rather than the only ones; step 4 keys on the

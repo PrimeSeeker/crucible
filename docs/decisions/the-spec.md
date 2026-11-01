@@ -14,19 +14,20 @@ ruling, never applied literally. Everything else is lightly held,
 whoever proposed it, and downstream work may flip it with a logged
 rationale (`crucible:brainstorming § Spec contract`).
 
-**The request.** A `## Request` section precedes the Intent of every
-spec, folded document, lane note and umbrella: the message that asked
-for the work and each later message that changed what was asked,
-verbatim, a message the controller is unsure about included. It stands
-outside the parts any route makes binding: it is evidence of what was
-asked, not the standard, and a seat may find the request itself wrong.
-A part the project's rules for committed text keep out is replaced by
-`[redacted: <kind>]`, and where no rule settles a part, the controller
-asks the operator once, as it writes the section. A child's Request
-points to its umbrella's and quotes only what was asked of the child, or
-the effort's whole request where its umbrella has none. Seats check the
-Intent against it (`docs/decisions/evidence-and-findings.md`, the goal
-check).
+**The request.** No spec, folded document, lane note or umbrella quotes
+a message from the operator: the Intent states the goal in its own
+words. The message that asked for the work and each later message that
+changed what was asked, verbatim, a message the controller is unsure
+about included, go to the feature workspace's `request.md`, written at
+brainstorm exit, appended to while the workspace lives and deleted with
+it (`crucible:brainstorming § Workspace provisioning (brainstorm exit)`;
+`skills/redteaming/references/formats.md` § Feature workspace root and
+layout). It is evidence of what was asked, not the standard, and a seat
+may find the request itself wrong. An umbrella's request lives in the
+umbrella's own workspace and goes with it at the landing; a child's
+holds only the messages of its own brainstorm and after. Seats that run
+the goal check receive the file by path and check the Intent against it
+(`docs/decisions/evidence-and-findings.md`, the goal check).
 
 **Decision weights.** A mark, `[LOAD-BEARING: <what builds on it>]`,
 binds exactly the sentence or bullet it annotates, and is earned only
@@ -227,6 +228,26 @@ maintainer accepted; the placement moved there from the opening of the
 Intent during the spec's campaign, since a lane note's Intent binds and the
 request must not. (Basis: judgment, accepted by the maintainer.)
 
+On 2026-11-01 the request moved out of the committed documents into
+the feature workspace. Feature folders are committed and often pushed,
+so a quoted request published the operator's private messages in every
+project running crucible. The workspace is already uncommitted, reaches every seat by an absolute
+path, and lives past the branch review, the last seat that runs the
+goal check. Pointing seats at the host's session transcripts instead
+was rejected: their formats are host-specific, a feature can span
+several sessions, they cost a seat time and noise to read, and they
+expose the seat to the controller's framing of the work. A request
+store of its own that outlives the workspace was rejected by the
+maintainer as a hack. For an umbrella the request goes with its
+workspace at the landing, before any child starts, so a child checks
+its Intent against its own brainstorm's request, the umbrella's Intent
+and its own entry, and the closing review reads fidelity to the
+umbrella's Intent. The accepted cost: no child's seats can catch an
+umbrella Intent that misread the effort's request; that check is left
+to the umbrella's own review, its campaign or the operator's approval.
+(Basis: the maintainer's preference, for the rejected store; judgment,
+accepted by the maintainer, for the rest.)
+
 ### The trace
 
 On crucible's umbrella-specs feature (2026-10-28), the spec campaign and
@@ -297,9 +318,20 @@ measured.)
   one (§ Why).
 - **A mark for the operator's preference**: it is recorded `firm`
   (§ Why).
+- **The request quoted in committed documents**, redacted where a
+  project's rules keep a part out, the form of 2026-10-29: it published
+  the operator's messages (§ Why).
+- **Seats reading the session transcripts for the request**, and **a
+  request store that outlives the workspace** (§ Why).
 
 ## Changes
 
+- 2026-11-01: the request moves from a section of every committed
+  document to the feature workspace's `request.md`, with no redaction;
+  an umbrella's request goes with its workspace at the landing and a
+  child's holds only its own brainstorm's messages; because quoting it
+  in committed, often pushed feature folders published the operator's
+  private messages.
 - 2026-10-30: the containment test's exclusions are no longer restated
   here, the record pointing to the test's one home, after an audit found
   the restatement missing the newest; the proposer an entry names is the
