@@ -260,9 +260,9 @@ The Children list, in order:
   narrower reach, small fix lists and how deferred MINORs travel
   (Interfaces & boundaries), and decision asks apart from every readout
   body, close readouts included; umbrellas condensed where the marks
-  and premise notes leave `skills/brainstorming/references/umbrellas.md`,
-  keeping a carrier for a decision ask still open at an umbrella's
-  landing; the round-0 defect that predates the umbrella audit (the
+  leave `skills/brainstorming/references/umbrellas.md`, keeping the
+  premise note as the carrier for a premise ask still open at an
+  umbrella's landing; the round-0 defect that predates the umbrella audit (the
   fold's stated reason for round 0; no round-0 agent for a greenfield
   artifact); and the labels and statuses its retirements remove,
   listed, for the backlog's vocabulary point. Takes up the campaign
