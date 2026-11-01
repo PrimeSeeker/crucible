@@ -111,7 +111,11 @@ asks where the items go or whether to drop them, with the offer to
 record the answer, and the workspace is not deleted before it. Where
 nothing was left open, nothing is asked or written
 (`skills/brainstorming/references/umbrellas.md` § Landing;
-`docs/decisions/records-and-workspace.md`).
+`docs/decisions/records-and-workspace.md`). A decision ask still open
+at the landing, a premise ask aside, goes to the operator with the
+landing ask; unruled at the landing, it goes with those items, and
+ruled before it, it leaves them. The premise note is the only note a
+landing writes into a Children entry.
 
 **Kept in the merged tree.** An umbrella's own pull request never
 offers `umbrella.md` for removal; the trade-off is in
@@ -304,6 +308,17 @@ operator's answer (`docs/decisions/records-and-workspace.md` § Work
 left open). A closed umbrella's folder now gains nothing. (Basis: the
 maintainer's preference.)
 
+The first design of the skill-text rewrite's `review-retirements`
+generalized the premise note to every decision ask open at the landing.
+Its campaign narrowed that: an
+ask other than a premise one goes to the operator with the landing ask
+and, unruled, to the open-items home by the step that already sends
+work left open there, where the next child's brainstorm finds it by
+reading the home without being bound to take it up; a premise ask,
+which questions what the effort asks for, keeps the note its next
+child's brainstorm takes up. (Basis: judgment, accepted by the
+maintainer, who left both calls to the agent, 2026-11-01.)
+
 ### The closing review
 
 Each child's branch review grades that child against its own plan, and
@@ -361,6 +376,13 @@ detail of the form the maintainer accepted.)
 
 ## Changes
 
+- 2026-11-02: a decision ask other than a premise ask still open at an
+  umbrella's landing goes to the operator with the landing ask and,
+  unruled, with the work left open to the open-items home, a ruled one
+  leaving those items; the premise note stays the only note in a
+  Children entry. The first design's note for every open ask was
+  narrowed in its campaign, the maintainer leaving the call to the
+  agent.
 - 2026-11-02: an umbrella's campaign sends its `deferred-minor`
   entries, the MINORs its fix lists no longer take, with what it left
   open to the landing's open-items step, having no ledger or branch

@@ -77,7 +77,9 @@ unanswered returns to the question. Items the answer drops go nowhere,
 the readout having named them; where nothing was left open, nothing is
 asked or written. No item takes a ruling of its own. An umbrella, which
 has no ledger, sends what its brainstorm and campaign left open the same
-way at its landing, the landing ask carrying the question, and its
+way at its landing, its campaign's `deferred-minor` entries and the
+decision asks still unruled there, premise asks aside, among them, the
+landing ask carrying the question, and its
 closing review sends the findings kept the same way
 (`docs/decisions/umbrellas.md`). A deferral counts as done only once it
 is in the home or dropped; no item is left only in the workspace
@@ -403,6 +405,10 @@ worktree. (Basis: judgment, accepted by the maintainer.)
 
 ## Changes
 
+- 2026-11-02: an umbrella's landing sends its campaign's
+  `deferred-minor` entries and its decision asks still unruled, premise
+  asks aside, with the work left open, since it has no ledger or branch
+  review to take them (`docs/decisions/umbrellas.md`).
 - 2026-11-02: what earlier phases left open no longer includes
   `deferred-minor` entries, which the close that seeds the ledger seeds
   under `## Deferred minors` for the branch review's triage; because

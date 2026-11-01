@@ -132,16 +132,20 @@ All lightly held.
   - `[LOAD-BEARING]` marks retired; what binds is Constraints &
     invariants, preamble conventions the spec declares binding and firm
     decisions, and, for a child, its own entry and its umbrella's.
-  - The design digest dropped; the campaign shape goes into the
-    approval at brainstorming's step 4.
+  - The design digest dropped; the gate before the campaign stays,
+    showing the decision record's decisions and open asks inline with
+    the campaign shape (the maintainer's choice, at
+    `review-retirements`' brainstorm).
   - Premise findings keep their label and routes to the operator,
     losing the holds a pending premise ask puts on the campaign's stop
     and on execution work; one round-1 seat carries a lens that reads
     the design from outside its frame.
   - The directional-bias statement folded into the terminal pass's
     record check as one line.
-  - The containment test keeps its rule and drops the exclusions added
-    after single incidents.
+  - The containment test keeps its rule and, of the exclusions added
+    after single incidents, keeps the one for a change after which the
+    same work passes a check it failed, a silent failure (D2), and
+    drops the one on marking `Review: branch only` late.
   - The goal check runs at the spec campaign's round-1 seats and the
     branch review only.
   - The deferral chain: the marker, and a plan task that owns it; no
@@ -234,11 +238,12 @@ All lightly held.
   generated agents that read a retired mechanism's text are inside the
   retiring child's scope.
 - **Deferred campaign MINORs.** `review-retirements` defines how a
-  MINOR a campaign defers (D4, D6) travels: by the existing carriage of
-  what earlier phases left open (`skills/redteaming/references/plan-phase.md`)
-  to a stage in execution that reads it before landing, and, for an
-  umbrella's campaign, with what the campaign left open to its
-  landing's open-items step. `execution-retirements` keeps that
+  MINOR a campaign defers (D4, D6) travels: as a `deferred-minor`
+  entry, which the closes that seed the SDD ledger seed under its
+  `## Deferred minors` for the branch review's triage
+  (`skills/redteaming/references/plan-phase.md`), and which an
+  umbrella's campaign sends with what it left open to its landing's
+  open-items step. `execution-retirements` keeps that
   carriage when it simplifies the deferral chain.
 - **Evidence.** Before this umbrella lands, the audit's brief and its
   mechanism inventory, brought within the no-local-context rule
