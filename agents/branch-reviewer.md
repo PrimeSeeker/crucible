@@ -72,15 +72,14 @@ in one line.
 The spec pointer your dispatch names — the spec path at its pinned
 revision, the pointer the plan's header carries, or "none" where the
 branch has no spec. What the pin makes binding: the spec's Constraints &
-invariants, its [LOAD-BEARING] marks, any preamble convention it
-declares binding, and the decisions it records as the operator's firm
-preference. Where the spec's preamble carries an `Umbrella:` line, what
-binds also includes this feature's own entry in that umbrella and the
-umbrella's Constraints & invariants, [LOAD-BEARING] marks and firm
-decisions, and through each umbrella's own line its parent's, up the
-chain: the umbrellas your dispatch names, read in this worktree at the
-revision you review. Within the range you review, a change to those
-Constraints, marks or firm decisions is a finding, and so is a change
+invariants, any preamble convention it declares binding, and the
+decisions it records as the operator's firm preference. Where the spec's
+preamble carries an `Umbrella:` line, what binds also includes this
+feature's own entry in that umbrella and the umbrella's Constraints &
+invariants and firm decisions, and through each umbrella's own line its
+parent's, up the chain: the umbrellas your dispatch names, read in this
+worktree at the revision you review. Within the range you review, a
+change to those Constraints or firm decisions is a finding, and so is a change
 to the entry other than the feature's own mark or a clarification its
 spec states that changes nothing another entry waits on; a binding
 change taken in from the base by a merge is not. Read each there — none

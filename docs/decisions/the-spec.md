@@ -4,9 +4,9 @@
 
 **The spec is a hypothesis.** A spec is read as probably subtly wrong
 and certainly locally imperfect. What binds in it, from its campaign's
-close, is its Constraints & invariants, its marks, the decisions it
-records as the operator's firm preference, the preamble conventions it
-declares binding, and the umbrella content its umbrella line brings in.
+close, is its Constraints & invariants, the decisions it records as the
+operator's firm preference, the preamble conventions it declares
+binding, and the umbrella content its umbrella line brings in.
 Binding means never changed silently, not never changed without the
 operator, and binding text is read for its intent: a case its literal
 reading reaches that its author plainly did not consider is raised for a
@@ -29,14 +29,11 @@ holds only the messages of its own brainstorm and after. Seats that run
 the goal check receive the file by path and check the Intent against it
 (`docs/decisions/evidence-and-findings.md`, the goal check).
 
-**Decision weights.** A mark, `[LOAD-BEARING: <what builds on it>]`,
-binds exactly the sentence or bullet it annotates, and is earned only
-where something beyond that sentence builds on the decision: other
-tasks, other features or children, an outside commitment. A wording, a
-threshold only the feature uses and the operator's preference earn none.
-Constraints & invariants binds by construction and holds invariants
-every task must keep, not a requirement one site meets. Marks are a spec
-convention: the skills place none on their own text.
+**Decision weights.** Constraints & invariants binds by construction
+and holds invariants every task must keep, not a requirement one site
+meets. A decision binds only where it is the operator's firm preference;
+no mark makes a decision binding, and what builds on an item is judged
+where a change to it is weighed (§ Flip paths).
 
 **Approval strength.** The brainstorm decision record and the design
 digest record each decision `open`, `accepted` or `firm`, and each
@@ -50,7 +47,7 @@ arrives"; an answer that leaves the call to the controller is recorded
 never as the operator's ruling or choice; `firm` is recorded only on
 the operator's explicit word, never inferred from an approval. A firm
 decision that reaches a spec or an umbrella is stated
-there as the operator's firm preference and binds without a mark. A
+there as the operator's firm preference and binds. A
 route entry confirms its route only when `accepted` or `firm`. Every
 operator ruling on a decision ask after the brainstorm enters the
 brainstorm decision record too (`crucible:brainstorming § Workspace
@@ -186,10 +183,10 @@ test whichever way it goes, since the controller that rules on it is
 the role that applied the text literally in the sample. An agent
 proposed the controller as confirmer, one of three options with a
 fresh adjudicator per correction and a batched, non-blocking operator
-ask, and the maintainer agreed. A mark names what
-builds on it, which is what the test reads off it; the operator's
-preference is recorded as a status, `firm`, not a mark: a mark records
-what builds on a decision, `firm` the operator's preference. The two
+ask, and the maintainer agreed. A mark then named what
+built on it, which the test read off it; the operator's preference was
+recorded as a status, `firm`, not a mark: a mark recorded what built on
+a decision, `firm` the operator's preference. The two
 marks the skills had placed on
 their own text, on the redteaming reporting stance and the branch
 review's wave cap, went with their wording kept. Approvals default to
@@ -199,6 +196,19 @@ maintainer's preference, for the aim; judgment, accepted by the
 maintainer, for the test, the mark's form and the statuses, 2026-10-28;
 measured, for the two exclusions' cases; judgment, a branch review's
 proposal accepted by the maintainer, for testing a literal-reading ruling.)
+
+On 2026-11-02 the marks were retired, among the campaign mechanisms the
+skill text rewrite retired. What binds is the Constraints & invariants,
+the preamble conventions a spec declares binding and the firm decisions,
+and for a child of an umbrella also its entry and the umbrella's
+Constraints and firm decisions; the containment test judges what builds
+on any item, with no mark to read it from. The sample above had found 3
+of 29 marks with any binding event after their campaign closed, and the
+maintainer had judged them used too liberally. Every statement of what
+binds dropped its marks and kept the rest. (Basis: judgment, an agent's
+proposal accepted by the maintainer, for the retirement; the
+maintainer's preference, for marks being used too liberally; measured,
+for the sample.)
 
 This record once restated the test's exclusions, and when the test
 gained one, marking `Review: branch only` a task that has not run once
@@ -316,8 +326,9 @@ measured.)
   until 2026-10-28, and **a fresh adjudicator per correction or a
   batched, non-blocking operator ask** as the confirmer of a contained
   one (§ Why).
-- **A mark for the operator's preference**: it is recorded `firm`
-  (§ Why).
+- **`[LOAD-BEARING]` marks**, binding the sentence they annotated, the
+  rule until 2026-11-02, and **a mark for the operator's preference**,
+  which is recorded `firm` (§ Why).
 - **The request quoted in committed documents**, redacted where a
   project's rules keep a part out, the form of 2026-10-29: it published
   the operator's messages (§ Why).
@@ -326,6 +337,11 @@ measured.)
 
 ## Changes
 
+- 2026-11-02: `[LOAD-BEARING]` marks retired: what binds is the
+  Constraints & invariants, declared preamble conventions and firm
+  decisions, and for a child its entry and the umbrella's Constraints
+  and firm decisions; the containment test judges what builds on any
+  item; because the marks were used too liberally and rarely fired.
 - 2026-11-01: the request moves from a section of every committed
   document to the feature workspace's `request.md`, with no redaction;
   an umbrella's request goes with its workspace at the landing and a

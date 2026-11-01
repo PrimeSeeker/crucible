@@ -26,9 +26,9 @@ children carry both (`skills/brainstorming/references/umbrellas.md`
 
 **Binding through one line.** A child names its umbrella in a line of
 its preamble, and through that line its own entry and the umbrella's
-binding content, its Constraints & invariants, its marks and the
-decisions it records as the operator's firm preference, bind it, up the
-chain of umbrellas, each read where it lives
+binding content, its Constraints & invariants and the decisions it
+records as the operator's firm preference, bind it, up the chain of
+umbrellas, each read where it lives
 (`skills/brainstorming/references/umbrellas.md` § Children).
 Every statement of what binds, in the skills and the seat templates,
 names the umbrella; that clause is the one rule of the umbrella that
@@ -360,6 +360,10 @@ detail of the form the maintainer accepted.)
 
 ## Changes
 
+- 2026-11-02: the umbrella's binding content no longer includes
+  `[LOAD-BEARING]` marks, which are retired: what binds a child is its
+  entry and the umbrella's Constraints & invariants and firm decisions;
+  the entry marks (`landed`, `umbrella`, `dropped`) stay.
 - 2026-11-01: the umbrella quotes no request; the effort's request
   lives in the umbrella's workspace and is deleted at its landing, a
   child's request holds only its own brainstorm's messages, and the

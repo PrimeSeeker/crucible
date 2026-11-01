@@ -94,15 +94,15 @@ Work from the worktree path your dispatch names (absolute). Binding:
 ## Binding vs Advisory: the Deviation License
 
 - **Binding** — what the pin names: the spec's Constraints & invariants,
-  its [LOAD-BEARING] marks, any preamble convention it declares binding
-  and the decisions it records as the operator's firm preference, at the
-  pinned revision; plus values marked verbatim. Where the spec's
-  preamble carries an `Umbrella:` line, it also includes this feature's
-  own entry in that umbrella and the umbrella's Constraints &
-  invariants, [LOAD-BEARING] marks and firm decisions, and through each
-  umbrella's own line its parent's, up the chain, read in your worktree.
-  Within the range under review, a change to those Constraints, marks or
-  firm decisions is a finding, and so is a change to the entry other
+  any preamble convention it declares binding and the decisions it
+  records as the operator's firm preference, at the pinned revision;
+  plus values marked verbatim. Where the spec's preamble carries an
+  `Umbrella:` line, it also includes this feature's own entry in that
+  umbrella and the umbrella's Constraints & invariants and firm
+  decisions, and through each umbrella's own line its parent's, up the
+  chain, read in your worktree. Within the range under review, a change
+  to those Constraints or firm decisions is a finding, and so is a
+  change to the entry other
   than the feature's own mark or a clarification its spec states that
   changes nothing another entry waits on; a binding change taken in from
   the base by a merge is not. The spec is a hypothesis, probably subtly

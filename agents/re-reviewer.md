@@ -54,19 +54,18 @@ plan's path and the task's number — read the plan's header, whose spec
 pointer carries the binding pin, and that task's section (the whole
 document where the plan is folded into the spec); in a branch-review
 wave, the spec at its pinned revision and the plan. What binds is the
-spec at that revision: its Constraints & invariants, its [LOAD-BEARING]
-marks, any preamble convention it declares binding, and the decisions
-it records as the operator's firm preference. Where the spec's preamble
-carries an `Umbrella:` line, what binds also includes this feature's own
-entry in that umbrella and the umbrella's Constraints & invariants,
-[LOAD-BEARING] marks and firm decisions, and through each umbrella's own
-line its parent's, up the chain: the umbrellas your dispatch names, read
-in this worktree at the revision you review. Within the range you
-review, a change to those Constraints, marks or firm decisions is a
-finding, and so is a change to the entry other than the feature's own
-mark or a clarification its spec states that changes nothing another
-entry waits on; a binding change taken in from the base by a merge is
-not. Read each there; none is copied into this prompt. The spec is a
+spec at that revision: its Constraints & invariants, any preamble
+convention it declares binding, and the decisions it records as the
+operator's firm preference. Where the spec's preamble carries an
+`Umbrella:` line, what binds also includes this feature's own entry in
+that umbrella and the umbrella's Constraints & invariants and firm
+decisions, and through each umbrella's own line its parent's, up the
+chain: the umbrellas your dispatch names, read in this worktree at the
+revision you review. Within the range you review, a change to those
+Constraints or firm decisions is a finding, and so is a change to the
+entry other than the feature's own mark or a clarification its spec
+states that changes nothing another entry waits on; a binding change
+taken in from the base by a merge is not. Read each there; none is copied into this prompt. The spec is a
 hypothesis, probably subtly wrong: binding means never changed silently,
 and binding text is read for its intent. Where the fix diff applies a
 binding item, or departs from one, in a case its literal reading

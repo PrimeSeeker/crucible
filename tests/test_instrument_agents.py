@@ -284,8 +284,8 @@ _UNKEYED_CONDITIONAL = re.compile(
 _CODE_SPAN = re.compile(r"`[^`\n]*`")
 #: A dispatch-time slot token as the SDD family spells one in a prompt,
 #: bare (``[REPORT_FILE]``) or carrying an inline fill rule
-#: (``[SPEC_POINTER — ...]``). ``[LOAD-BEARING]`` is prose; its hyphen
-#: keeps it out.
+#: (``[SPEC_POINTER — ...]``). A hyphenated bracketed word, such as
+#: ``[NOT-A-SLOT]``, is prose; its hyphen keeps it out.
 _SDD_BODY_SLOT_RE = re.compile(r"\[[A-Z][A-Z0-9_]*(?=\]| —)")
 
 

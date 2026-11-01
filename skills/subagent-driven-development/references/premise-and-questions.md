@@ -24,7 +24,7 @@ against it is an ordinary one, structural or not, and so is a correction
 of an Intent's wording or facts, the umbrella's included, that leaves
 what it asks for unchanged. A change on a child's branch to what its
 umbrella's Intent asks, in the spec, the plan or the code, is a finding.
-Any other binding item shown wrong, such as a Constraint or a mark, is
+Any other binding item shown wrong, such as a Constraint, is
 no premise finding: it keeps the route your template gives it. A
 `literal-reading` finding keeps its own label: it questions how a
 binding item applies to a case, not the premise behind it.

@@ -20,15 +20,14 @@ same seven items:
 4. the **pointer to the binding content** and a **one-line mandate
    reminder** — the path of the artifact that carries what binds, at its
    pinned revision, plus one line naming what the pin makes binding: its
-   Constraints & invariants, its [LOAD-BEARING] marks, any preamble
-   convention it declares binding and the decisions it records as the
-   operator's firm preference; and, where its preamble carries an
-   `Umbrella:` line, the feature's own entry in that umbrella and the
-   umbrella's Constraints & invariants, [LOAD-BEARING] marks and firm
-   decisions, and through each umbrella's own line its parent's, up the
-   chain, each read in the seat's worktree at the revision its review
+   Constraints & invariants, any preamble convention it declares binding
+   and the decisions it records as the operator's firm preference; and,
+   where its preamble carries an `Umbrella:` line, the feature's own
+   entry in that umbrella and the umbrella's Constraints & invariants and
+   firm decisions, and through each umbrella's own line its parent's, up
+   the chain, each read in the seat's worktree at the revision its review
    reads. Within the range the seat reviews, a change to those
-   Constraints, marks or firm decisions is a finding, and so is a change
+   Constraints or firm decisions is a finding, and so is a change
    to the entry other than the feature's own mark or a clarification its
    spec states that changes nothing another entry waits on; a binding
    change taken in from the base by a merge is not. A pointer, never a

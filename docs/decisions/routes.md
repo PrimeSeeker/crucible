@@ -149,9 +149,9 @@ deserved review before code, so a change with non-trivial impact whose
 mechanism was already settled went to a campaign for its size. The
 question replaces both. Width moved to the plan and execution choices,
 where coordination is what it costs. The [LOAD-BEARING] clause went:
-shipped specs are frozen, and under an umbrella a change to its marks is
-already a binding change with its own path; the residual, a lane outside
-any umbrella changing what another feature in flight builds on, is
+shipped specs are frozen, and under an umbrella a change to its
+binding content is already a binding change with its own path; the
+residual, a lane outside any umbrella changing what another feature in flight builds on, is
 accepted as rare and visible at the merge. The alternatives offered were
 the question plus a blast-radius limit, and the shape test kept beside
 the question. (Basis: judgment, accepted by the maintainer, 2026-10-29.)
@@ -302,6 +302,9 @@ small preset or the waiver for its work.
 
 ## Changes
 
+- 2026-11-02: the reason the size test's `[LOAD-BEARING]` clause went
+  names an umbrella's binding content, no longer its marks, which are
+  retired (`docs/decisions/the-spec.md`).
 - 2026-11-01: the lane note no longer carries the request, which the
   feature workspace's `request.md` holds, and Lane Fit's goal check
   reads it there; because the quoted request in committed feature

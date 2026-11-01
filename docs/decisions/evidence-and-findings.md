@@ -40,7 +40,7 @@ carries the label `premise` after its staked severity. Every other
 decision, whoever proposed it, is lightly held: a finding against it is
 an ordinary one, and so is a correction of an Intent's wording or facts
 that leaves what it asks for unchanged. Any other binding item shown
-wrong, a Constraint or a mark, keeps its own route, and a
+wrong, such as a Constraint, keeps its own route, and a
 `literal-reading` finding keeps its own label, since it questions an
 application, not the premise. No rule routes on who proposed a
 decision. A task reviewer raises none: its doubt about a premise is a question
@@ -424,6 +424,9 @@ records that cite "the audit" draw on these figures. (Basis: measured.)
 
 ## Changes
 
+- 2026-11-02: a mark no longer appears among the binding items shown
+  wrong that keep their own route: `[LOAD-BEARING]` marks are retired
+  (`docs/decisions/the-spec.md`).
 - 2026-11-01: the goal check reads the request from the feature
   workspace's `request.md`, named in the seat's dispatch, no longer from
   a section of the document; an umbrella child's seats compare the goal
