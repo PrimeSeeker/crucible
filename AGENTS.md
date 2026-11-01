@@ -23,7 +23,8 @@ to install it: `README.md`; the layout: `docs/dual-runtime.md`.
   shape of an existing item: title, observation, follow-up, and a link to
   the GitHub issue where one exists. An item states the current state,
   not a progress log. A resolved item is deleted; a partly resolved one
-  keeps only what remains open. Before committing open items, the
+  keeps only what remains open. An open item joins the item it belongs
+  to, or takes a file of its own; before committing open items, the
   controller checks them against the no-local-context rule (below).
 - `docs/crucible/<date>-<slug>/` — one folder per feature: its spec, plan or
   lane note, or, for an effort of several features, its umbrella

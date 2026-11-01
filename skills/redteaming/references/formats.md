@@ -416,10 +416,9 @@ slug, so slug `diet` never matches `2026-09-27-cost-diet`. A
 ## Open items
 
 The binding definition of where the work left open goes; skill prose
-points here. Crucible keeps no store of its own for it: open items stay
-in the workspace until the project's home receives them or the operator
-drops them. They leave it at SDD's Finish, an umbrella's landing and an
-umbrella's closing review. Each goes with its source; an item the
+points here. Crucible keeps no store of its own for it. Open items leave
+the workspace at SDD's Finish, an umbrella's landing and an umbrella's
+closing review, each with its source; an item the
 operator's answer drops goes nowhere, the readout having named it.
 Where nothing was left open, nothing is asked or written.
 
@@ -435,9 +434,10 @@ Where nothing was left open, nothing is asked or written.
   line recorded in a committed file is committed with the items.
 
 **Deletion waits (binding).** A workspace holding open items is not
-deleted until they have gone to their home or been dropped; a session
+deleted until they have gone to their home or been dropped, a discard of
+the work dropping them; a session
 that ends before the answer leaves it, and the next returns to the
-question. An answer that discards the work drops its open items too.
+question.
 
 ## Design digest format
 

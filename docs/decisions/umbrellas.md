@@ -321,8 +321,8 @@ accepted by the maintainer, for its form.)
 At the spec campaign's first round the maintainer accepted making the
 review a step after the last landing rather than a gate before the
 umbrella is marked closed. That ask overstated a gate's cost: the step
-has since gained the recursive completion rule and the committed
-findings file, so a gate would add only a landing ask where the review
+has since gained the recursive completion rule and the written-down
+findings, so a gate would add only a landing ask where the review
 finds nothing and a check on resume, against a step that can be
 skipped where a landing happens outside a session and nobody acts on
 the readout. Put back on that trade-off after the campaign, the
