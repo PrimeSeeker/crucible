@@ -169,9 +169,9 @@ folded lane gave a code baseline as its reason for always running round
 campaign: its audit counted round 0 among the reads that catch real
 defects, an artifact with no code baseline is rare, and one rule
 replaces two. Its prompt stakes severities since then too, because
-severity now decides whether a fix list takes a finding. (Basis: the
-controller's proposal, accepted by the maintainer, for the rule;
-judgment, for the severities.)
+severity now decides whether a fix list takes a finding. (Basis:
+judgment, accepted by the maintainer, for the rule; judgment, an agent's
+call the maintainer has not ruled on: round 0 stakes severities.)
 
 ### Panels and lenses
 
