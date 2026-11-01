@@ -64,8 +64,8 @@ not tokens.
 
 - A total size target. The effort is exploratory: it goes as low as
   the evidence allows (D1).
-- Adding mechanisms, apart from the round-1 lens that replaces premise
-  findings (D4) and the structural fixes (D6).
+- Adding mechanisms, apart from the round-1 lens (D4) and the
+  structural fixes (D6).
 - Cross-family seats, on the panel (`docs/backlog/second-runtime-seat.md`)
   or beside the branch review, and the test rules' effect on suite size, whose rules were revised on
   2026-10-15 (`docs/decisions/test-rules.md`); both stay outside this

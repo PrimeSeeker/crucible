@@ -8,8 +8,8 @@ Umbrella: `docs/crucible/2026-11-01-skill-text-rewrite/umbrella.md`
 little or never ran, and three structural failures (the umbrella's
 Intent holds the figures). Its entry for this child lists the campaign
 side of what goes: merge conservation, the re-seat line counts, the
-design digest, `[LOAD-BEARING]` marks, premise findings, the
-directional-bias statement's apparatus, the containment test's
+design digest, `[LOAD-BEARING]` marks, the holds of premise findings,
+the directional-bias statement's apparatus, the containment test's
 incident exclusions, the goal check outside round 1 and the branch
 review, large fix lists, decision asks buried in readout bodies, and a
 round-0 inconsistency that predates the audit.
@@ -60,14 +60,21 @@ the brainstorm decision record.
 - **R2. Small fix lists; MINORs deferred to the branch review.** A fix
   list — round 0's, a numbered round's, the plan phase's, the spec
   terminal pass's follow-up wave's — and the plan phase's terminal-pass
-  repair take BLOCKER and MAJOR findings and MINOR findings against
-  binding text: a MINOR whose fix changes what binds, in a spec what R8
-  lists, in a plan its inter-task contracts and a task's required
-  fields and acceptance. For any other MINOR the controller accepts, the
-  dispositions take precedence in this order: one whose resolution
-  needs local mechanism keeps `deferred-to-implementation`; one that is
-  a design judgment for the operator keeps `parked`; the rest take a new
-  disposition, `deferred-minor`, and are not fixed in the campaign. The
+  repair take, of the findings, BLOCKER and MAJOR ones and MINOR ones
+  against binding text: a MINOR whose fix changes the artifact's own
+  binding items, in a spec what R8 lists for it, in a plan its
+  inter-task contracts and a task's required fields and acceptance
+  (umbrella content is never changed by a child's fix list). The other
+  items a fix list carries today ride it as before: deferral markers,
+  adopted improvements, operator rulings and contained amendments. For
+  any other MINOR the controller accepts, the dispositions take
+  precedence in this order: one naming missing non-local mechanism lands
+  in the artifact's Interfaces & boundaries, as today; one whose
+  resolution needs local mechanism keeps `deferred-to-implementation`;
+  one that is a design judgment for the operator keeps `parked`; the
+  rest take a new disposition, `deferred-minor`, and are not fixed in
+  the campaign. A later finding repeating a `deferred-minor` is closed
+  as its duplicate, so each is seeded once. The
   rule that a correction of artifact text is `applied` holds for what a
   fix list takes. A MINOR the controller finds wrong, or outside the
   finding scope, stays `rejected`. The spec terminal-pass record, and
@@ -167,8 +174,10 @@ the brainstorm decision record.
   an umbrella's landing ask and its closing review's readout — puts them
   in a block of their own after the readout's body, each with its
   options and recommendation. The rule is stated once, in
-  `crucible:redteaming` § Round readout, and the other readouts point to
-  it. Basis: the umbrella's D6.
+  `crucible:redteaming` § Round readout, with the other readouts
+  pointing to it, except SDD's close readout, which states it in one
+  sentence of its own: the very-small lane's controller never loads the
+  redteaming skill. Basis: the umbrella's D6.
 - **R12. Round 0 on every spec campaign.** Round 0 runs whatever the
   artifact; with no code baseline it checks the artifact's claims
   against its inputs (the request, the decision record, the documents
@@ -232,9 +241,11 @@ the brainstorm decision record.
   number and place; only their content changes.
 - **The umbrella on this branch.** Lightly held edits by
   `skills/brainstorming/references/umbrellas.md` § Edits: to its D4,
-  the campaign shape stays at the gate (R13), premise findings stay,
-  simplified, beside the round-1 lens (R5), and the containment test
-  keeps its check-passing exclusion (R9); to its Interfaces &
+  the campaign shape stays at the gate (R13) and the containment test
+  keeps its check-passing exclusion (R9); to its Intent, the non-goal on
+  added mechanisms no longer says the round-1 lens replaces premise
+  findings, which stay, simplified (R5; that change to D4 and to this
+  child's entry landed on the base as a binding change); to its Interfaces &
   boundaries, deferred campaign MINORs reach the branch review's triage
   through the closes that seed the ledger (R2). The carrier for a
   decision ask open at an umbrella's landing is the landing's open-items
