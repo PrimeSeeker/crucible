@@ -1,0 +1,22 @@
+# Re-audit the mechanisms after the retirement children
+
+## Observation
+
+- The skill text rewrite (`docs/crucible/2026-11-01-skill-text-rewrite/umbrella.md`)
+  retires and simplifies mechanisms on an audit of recorded runs whose
+  limits it states: counts are lower bounds, whether a later stage
+  would have caught a finding is the readers' judgment, and the newest
+  mechanisms ran only on crucible's own text.
+- Its D2 retires a mechanism outright only where the failure it targets
+  would be loud, so a regression should show; nothing yet checks that
+  it did.
+- The blind verifier was kept for now on uncertain evidence (D5).
+
+## Follow-up
+
+After `review-retirements` and `execution-retirements` have run on a
+few features, repeat the audit on the new runs with
+`audit-brief.md`, against `inventory.md` (both beside the umbrella):
+did a retired mechanism's failure reach a later stage or the operator,
+and does the verifier earn its keep. Report aggregate figures only for
+any other project.
