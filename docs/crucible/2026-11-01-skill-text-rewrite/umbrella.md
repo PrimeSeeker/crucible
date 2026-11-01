@@ -136,9 +136,8 @@ All lightly held.
     approval at brainstorming's step 4.
   - Premise findings keep their label and routes to the operator,
     losing the holds a pending premise ask puts on the campaign's stop
-    and on execution work, and the umbrella's landing note; one
-    round-1 seat carries a lens that reads the design from outside its
-    frame.
+    and on execution work; one round-1 seat carries a lens that reads
+    the design from outside its frame.
   - The directional-bias statement folded into the terminal pass's
     record check as one line.
   - The containment test keeps its rule and drops the exclusions added
@@ -261,9 +260,9 @@ The Children list, in order:
   narrower reach, small fix lists and how deferred MINORs travel
   (Interfaces & boundaries), and decision asks apart from every readout
   body, close readouts included; umbrellas condensed where the marks
-  and premise notes leave `skills/brainstorming/references/umbrellas.md`,
-  keeping a carrier for a decision ask still open at an umbrella's
-  landing; the round-0 defect that predates the umbrella audit (the
+  leave `skills/brainstorming/references/umbrellas.md`, keeping the
+  premise note as the carrier for a premise ask still open at an
+  umbrella's landing; the round-0 defect that predates the umbrella audit (the
   fold's stated reason for round 0; no round-0 agent for a greenfield
   artifact); and the labels and statuses its retirements remove,
   listed, for the backlog's vocabulary point. Takes up the campaign
