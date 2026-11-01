@@ -3,9 +3,7 @@
 What a controller or seat writes and reads, defined once so writers and
 readers are built against one text: the feature workspace, the round record,
 the feature folder and the design digest. Provisioning the workspace and
-finding the feature folder are steps stated here;
-`skills/redteaming/scripts/conserve.py` checks a round's merge, and its
-`--help` is its contract.
+finding the feature folder are steps stated here.
 
 Field lists are binding where their section does not say otherwise, and file
 and directory names are fixed: consumers depend on them. Content marked *advisory* may be refined by its implementer
@@ -145,7 +143,7 @@ the lost records if they are needed.
 ## Round record format
 
 `record.md` in each round directory, one per round. All bookkeeping —
-stop-rule inputs, cap arithmetic, merge conservation, parked minors,
+stop-rule inputs, cap arithmetic, parked minors,
 quorum status — is computed from these records. What the controller writes
 in them is under record hygiene (`crucible:redteaming` § Merge and finding
 hygiene).
@@ -217,22 +215,6 @@ Fields, in order:
 
    A round that lost any dispatched seat and was not topped back up is
    `degraded: yes`.
-
-   **Conservation line** (binding; every numbered panel round, at merge
-   time): the reconciliation of raw seat findings against the merged list,
-   on its own line in this block —
-
-   ```
-   conservation: <raw seat findings> → <merged entries>; <what accounts for the rest>; <verdict>
-   ```
-
-   — the three-part arithmetic, then `<verdict>`, the latest result of the
-   conservation check (`crucible:redteaming` § Merge and finding hygiene):
-   `clean` where it exits 0, or on exit 1 its printed `unaccounted:` line
-   verbatim. **A recorded `unaccounted:` element is written on a single line**
-   (binding): the check reads it line by line, so an id wrapped onto the
-   next line would count as accounted. Conservation is a per-round step
-   recorded here, never as a bullet in the merged finding list.
 
 4. **Panel roster** (`## Panel roster`) — per seat: seat id, model, assigned
    lens and its `seat-<id>.md` file; and the seats' tree-check readings.

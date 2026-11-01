@@ -49,11 +49,9 @@ characters, which `tests/test_session_start.py` asserts; an overrun is
 trimmed in the prose, never met by raising the bound.
 
 **Interpreters.** A hook's script is bash; a script a workflow step runs
-may be stdlib Python (`AGENTS.md`, Interpreters). The one such script is
-`skills/redteaming/scripts/conserve.py`, at Python 3.8 or newer, invoked
-from skill prose as `python <plugin-root>/...` with the resolved root put
-in; where it cannot run, the redteaming controller stops and tells the
-operator. The suite needs Python 3.10 or newer. writing-skills keeps the
+may be stdlib Python (`AGENTS.md`, Interpreters). No workflow step runs
+Python now, so a user's host needs none; the suite needs Python 3.10 or
+newer. writing-skills keeps the
 general rule in one line: forward slashes, and an interpreter the users'
 hosts have, named in the invocation.
 
@@ -160,13 +158,18 @@ regression. (Basis: a single incident; measured, for the runs.)
 
 The plugin's Python floor fell from 3.10 to 3.8 on 2026-10-11, when the
 hook stopped needing Python: 3.10 had come from a helper script that has
-since gone, and 3.8 is the floor `conserve.py`'s own code states. The
-trade was accepted: a host with bash but no usable Python loads the
-router and learns of the missing interpreter only at the first
-`conserve.py` run, where the controller stops. On 2026-10-12 the
+since gone, and 3.8 was the floor `conserve.py`'s own code stated. The
+trade was accepted: a host with bash but no usable Python loaded the
+router and learned of the missing interpreter only at the first
+`conserve.py` run, where the controller stopped. On 2026-10-12 the
 interpreter rules moved from writing-skills into `AGENTS.md`, as rules
 for crucible's contributors, and writing-skills kept one neutral line.
 (Basis: judgment, accepted by the maintainer.)
+
+On 2026-11-02 the skill text rewrite retired merge conservation and
+`conserve.py`, the one workflow script, and with it the plugin's Python
+requirement for users (`docs/decisions/fix-verification-and-merge.md`).
+(Basis: judgment, an agent's proposal accepted by the maintainer.)
 
 ### No runtime port
 
@@ -196,6 +199,9 @@ reasons and the triggers that would reopen it, is in the backlog item.
 
 ## Changes
 
+- 2026-11-02: interpreters: no workflow step runs Python, `conserve.py`
+  and the Python 3.8 floor for users retired with merge conservation,
+  which the skill text rewrite retired.
 - 2026-10-27: writing-skills' rule now names the interpreter in the
   invocation, since packagers can strip executable bits (upstream,
   v7.0.1 review).

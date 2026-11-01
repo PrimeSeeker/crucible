@@ -116,8 +116,8 @@ the full suite (`skills/subagent-driven-development/implementer-prompt.md`
 § Tests: Test-First, Evidence Before Done).
 
 **Operating stance.** Redteaming assumes a baseline error rate in
-controller-authored text and budgets blind verification, the
-conservation check and the terminal pass for it; errors, the
+controller-authored text and budgets blind verification and the
+terminal pass for it; errors, the
 controller's own included, are reported in the flat register of any
 other finding. Its paragraph on disclosure makes shading a record, not
 erring in it, the only reportable failure of the reporting duty, and
@@ -385,6 +385,10 @@ trim.)
 
 ## Changes
 
+- 2026-11-02: the operating stance no longer budgets the conservation
+  check, retired with `conserve.py` because the skill text rewrite's
+  audit found about one trivial catch in about 73 runs
+  (`docs/decisions/fix-verification-and-merge.md`).
 - 2026-11-02: the hold a pending premise ask put on the stop is
   retired, the `premise` label and its routes kept; the lens roster
   adds `outside-the-frame`, one seat of a spec campaign's round 1 only,

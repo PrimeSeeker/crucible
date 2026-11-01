@@ -7,20 +7,16 @@ line per finding: id, severity, a one-sentence claim, an evidence
 pointer. The controller merges from the indexes and opens a finding's
 body only to author its fix, to rule on a contested finding or a
 collision between seats, or where the line is not enough; questions are
-read in full. Each merged entry names the per-seat finding ids it
-absorbs in an `origins:` element
+read in full. Every raw seat finding is merged into an entry or closed
+as a duplicate of one, and each merged entry names the per-seat finding
+ids it absorbs in an `origins:` element, which the terminal pass reads
+to find the findings behind each decision ask
 (`skills/redteaming/references/formats.md` § Round record format).
-
-**Conservation by token presence.** At merge time in every numbered
-panel round, the controller runs `conserve.py`: every finding and
-question id the round's seat reports carry must occur in the round
-record outside a recorded `unaccounted:` line. It reads no markdown
-structure and refuses no layout; exit 2 means only a usage error or a
-missing or unreadable input. The controller's own run is the only
-conservation check, and where the script cannot run at all the
-controller stops and tells the operator rather than reconciling by hand.
-Seat ids are never reused within a feature, the plan phase's pre-pass id
-`p0` excepted (`crucible:redteaming § Merge and finding hygiene`).
+Every seat question takes a disposition. Nothing mechanical checks the
+merge. Seat ids are never reused within a feature, the plan phase's
+pre-pass id `p0` excepted, so the stop check traces each seat's forecast
+across rounds by its id (`crucible:redteaming § Merge and finding
+hygiene`).
 
 **Dispositions and rulings.** Each merged entry takes one disposition:
 applied, partly-applied, parked, rejected or deferred-to-implementation.
@@ -72,7 +68,7 @@ lets the controller rule on most findings without opening their bodies
 conservation check stopped parsing reports (2026-10-10), an accepted
 gap. (Basis: measured; judgment, accepted by the maintainer.)
 
-### Conservation
+### Conservation, retired
 
 Merge conservation began as a reconciliation the controller did by hand,
 and it failed once, silently, costing a forced extra fix wave; on
@@ -85,20 +81,29 @@ features: the check exited 1 seven times, three or four of them parser
 false positives, two bookkeeping misses whose substance had been merged
 and one left unresolved, with at most one real catch of a dropped
 finding; it exited 2 nine times, each a seat-report format problem
-costing a repair cycle. Checking token presence keeps the cheap part and
-gives up the rest: a mistyped id, a mention counted as accounted and an
-index that disagrees with its findings all go unchecked. An independent
+costing a repair cycle. Checking token presence kept the cheap part and
+gave up the rest: a mistyped id, a mention counted as accounted and an
+index that disagreed with its findings all went unchecked. An independent
 re-run in the terminal pass was designed and grew, under review, into
-contract changes across four files, so the controller's own run stays
+contract changes across four files, so the controller's own run stayed
 the only one. (Basis: measured; judgment, accepted by the maintainer.)
 
 The check moved to `conserve.py` under its own name on 2026-10-11. The
-trade accepted there: a host with bash but no usable Python learns of
+trade accepted there: a host with bash but no usable Python learned of
 the missing interpreter only at the first `conserve.py` run, where the
-controller stops and tells the operator. Unique seat ids keep a mention
+controller stopped and told the operator. Unique seat ids kept a mention
 of one round's id from accounting for another round's finding; the
 plan phase's `p0` exception was the controller's call, delegated by the
 maintainer (2026-10-10). (Basis: judgment, accepted by the maintainer.)
+
+On 2026-11-02 the skill text rewrite retired the check, `conserve.py`
+and the round record's `conservation:` line. Its audit of recorded runs
+(`docs/crucible/2026-11-01-skill-text-rewrite/umbrella.md`) counted
+about one trivial catch in about 73 runs of the script. The merge
+keeps its `origins:` elements and question dispositions, and seat ids
+stay unique because the stop check reads each seat's forecast lines by
+id across rounds. (Basis: measured, for the catches; judgment, an
+agent's proposal accepted by the maintainer, for the retirement.)
 
 ### Dispositions and the sub-point check
 
@@ -186,13 +191,18 @@ judgment, accepted by the maintainer, for the trace.)
   removed on 2026-10-13; an entry whose fix reverses an earlier applied
   fix names it instead. (Basis: measured; judgment, accepted by the
   maintainer.)
-- **An independent conservation re-run** in the terminal pass or at
-  round close (§ Why).
+- **A mechanical merge check**, by hand or by script: retired on
+  2026-11-02 after about one trivial catch in about 73 runs (§ Why).
 - **Parsing seat reports and records** to refuse shapes, exact headings
   or index mismatches (§ Why).
 
 ## Changes
 
+- 2026-11-02: merge conservation retired with `conserve.py`: the round
+  record's `conservation:` line and its `unaccounted:` element go, and
+  the merge keeps `origins:` and question dispositions; seat ids stay
+  unique, now for the stop check; because the skill text rewrite's audit
+  found about one trivial catch in about 73 runs.
 - 2026-10-26: the blind-verification reason adds a 2026 study of
   anchoring in LLM judges beside the 2023 Chain-of-Verification result,
   whose models are two generations old; the position is unchanged.

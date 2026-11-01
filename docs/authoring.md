@@ -6,7 +6,7 @@ never needs them.
 
 ## Anchor stability
 
-These headings are cited by other skills and scripts as interfaces, so
+These headings are cited by other skills and docs as interfaces, so
 renaming one is an interface change, not an edit:
 
 - the `##` headings of `skills/redteaming/references/formats.md`;
@@ -60,11 +60,7 @@ within-skill sibling files may additionally be named bare (superpowers'
 structural convention), but the plugin-root-anchored form is always valid and
 is the citable one. A script invocation carries the script's
 plugin-root-anchored path behind the `<plugin-root>` placeholder, never a
-dirname-relative path:
-
-```
-python <plugin-root>/skills/redteaming/scripts/conserve.py <feature-slug> <phase> <round>
-```
+dirname-relative path.
 
 ### 3. Anchor citations
 

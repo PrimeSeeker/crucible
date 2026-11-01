@@ -30,8 +30,8 @@ REPO_ROOT = Path(__file__).resolve().parent.parent
 
 
 def load_module(relpath: str, name: str) -> ModuleType:
-    """A repository script loaded by path (``tools/`` and the skills'
-    ``scripts/`` are not packages). Registered in ``sys.modules`` before
+    """A repository script loaded by path (``tools/`` is not a
+    package). Registered in ``sys.modules`` before
     execution: dataclasses resolve their annotations through it."""
     if name in sys.modules:
         return sys.modules[name]
@@ -49,12 +49,6 @@ def load_generator() -> ModuleType:
     slot of each family, and the render the committed agents are checked
     against."""
     return load_module("tools/instrument_agents.py", "crucible_instrument_agents")
-
-
-def load_conserve() -> ModuleType:
-    """``skills/redteaming/scripts/conserve.py``: the conservation
-    check that collects seat ids from seat reports."""
-    return load_module("skills/redteaming/scripts/conserve.py", "crucible_conserve")
 
 
 # --- reading files --------------------------------------------------------

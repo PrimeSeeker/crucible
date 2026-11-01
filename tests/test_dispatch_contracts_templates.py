@@ -5,9 +5,6 @@ The seven instrument templates (``tools/instrument_agents.py``'s
 their wording. What it checks is where a template's text meets a reader
 that is not a model:
 
-- **the interfaces** -- the seat report's entry headers, as the seat
-  prompt shows them, carry ids ``conserve.py``'s conservation check
-  collects;
 - **the selectors** -- each selector-keyed passage of a template reaches
   the instrument exactly when its card's selector is set to its value,
   checked by resolving the template under every declared value;
@@ -22,14 +19,11 @@ passages, runtime slots) are checked once, over all seven, in
 
 from __future__ import annotations
 
-import re
-
 import pytest
 
 from instrument_corpus import (
     card_path,
     instruments,
-    load_conserve,
     normalize,
     passages,
     raw,
@@ -39,66 +33,7 @@ from instrument_corpus import (
 )
 
 TEMPLATES = sorted(instruments().values())
-SEAT_PROMPT = "skills/redteaming/seat-prompt.md"
 CODEX_ADAPTER = "skills/using-crucible/references/codex.md"
-
-
-def instantiate(shape: str) -> str:
-    """A shape the prompt writes with placeholders, filled in the way a
-    seat fills it: ``<seat-id>`` -> ``a1``, ``<n>`` -> ``1``, any other
-    ``<x>`` -> ``x``, and an alternation ``[A|B]`` -> its first option."""
-    shape = shape.replace("<seat-id>", "a1").replace("<n>", "1")
-    shape = re.sub(r"<([^<>]+)>", lambda m: m.group(1).replace(" ", "-"), shape)
-    return re.sub(r"\[([^\]|]+)(?:\|[^\]]*)\]", r"[\1]", shape)
-
-
-_FENCE_RE = re.compile(r"^ {0,3}(`{3,}|~{3,}).*?^ {0,3}\1", re.M | re.S)
-_CODE_SPAN_RE = re.compile(r"(`+)(?!`)((?:(?!\n[ \t]*\n).)+?)(?<!`)\1(?!`)", re.S)
-
-
-def backticked(text: str) -> list[str]:
-    """Every inline code span of *text* outside fenced blocks, its
-    backtick runs paired by length as markdown pairs them, its content
-    whitespace-flattened and trimmed."""
-    text = _FENCE_RE.sub("", text)
-    return [normalize(m.group(2)).strip() for m in _CODE_SPAN_RE.finditer(text)]
-
-
-# --- interfaces: what the seat prompt teaches, conserve collects -----------
-
-
-def test_seat_report_entry_headers_carry_ids_conserve_collects() -> None:
-    """Break: the seat prompt teaching a finding or question header whose
-    id the merge-conservation check does not collect -- a finding a seat
-    writes as told is then invisible to the check, and dropping it at
-    merge passes as clean.
-
-    The shapes are taken from the prompt (its backticked ``FINDING`` and
-    ``QUESTION`` spans), instantiated as a seat would fill them, and run
-    through the check's collector for the seat they name.
-    """
-    check = load_conserve()
-    seat = raw(SEAT_PROMPT)
-    # Consumer: conserve.py _report_ids collects a seat's own ids from its
-    # report; the header lines a seat writes in these shapes carry them.
-    findings = [s for s in backticked(seat) if s.startswith("FINDING ")]
-    questions = [s for s in backticked(seat) if s.startswith("QUESTION ")]
-    assert findings and questions, "the prompt shows no entry header shape"
-
-    for shape in findings:
-        assert list(check._report_ids(instantiate(shape), "a1")) == ["a1-1"], shape
-    for shape in questions:
-        assert list(check._report_ids(instantiate(shape), "a1")) == ["a1-q1"], shape
-
-
-def test_instantiate_fills_placeholders_as_a_seat_does() -> None:
-    """The helper the interface checks lean on, pinned on its own."""
-    assert instantiate("FINDING <seat-id>-<n> [BLOCKER|MAJOR|MINOR]") == (
-        "FINDING a1-1 [BLOCKER]"
-    )
-    assert instantiate("- <seat-id>-<n> [A|B] <claim> — <evidence pointer>") == (
-        "- a1-1 [A] claim — evidence-pointer"
-    )
 
 
 # --- selectors: a value's passage reaches the instrument only when set -----

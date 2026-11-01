@@ -246,9 +246,9 @@ the plan phase kept proceeding without one. (Basis: the maintainer's
 preference.)
 
 On 2026-10-09 "campaign" came to name the spec's review only. The
-directory and the argument value are interfaces that records and
-`skills/redteaming/scripts/conserve.py` read, so they kept their names.
-(Basis: judgment, accepted by the maintainer.)
+directory and the argument value are interfaces that records and the
+slot cards' paths and `phase` selector read, as `conserve.py` did until
+2026-11-02, so they kept their names. (Basis: judgment, accepted by the maintainer.)
 
 ## Rejected
 
@@ -260,6 +260,9 @@ directory and the argument value are interfaces that records and
 
 ## Changes
 
+- 2026-11-02: the `campaigns/` directory's names no longer cite
+  `conserve.py` as a reader, the script retired with merge conservation
+  by the skill text rewrite.
 - 2026-10-30: no `Review: branch only` mark is added in an edit no
   mark-grading seat reads afterwards, a question proposing one there
   answered or carried; the plan phase's pre-pass, and the folded lane's

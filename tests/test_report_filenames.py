@@ -63,10 +63,8 @@ def test_collectors_see_the_known_report_names():
     surfaces. (``Per-round directory contents:`` is this module's anchor
     into formats.md, not a pinned sentence; reworded, the collector fails
     loudly here.)"""
-    # Consumer: conserve.py reads seat reports by file name
-    # (`seat-*.md`); `verifier.md`, `terminal-pass.md` and `second-read.md`
-    # are instruments' write targets, which the host's Write tool admits or
-    # refuses by name (the filter below).
+    # Consumer: Claude Code's Write tool, which admits or refuses each of
+    # these instruments' write targets by name (the filter below).
     slot_names = {name for name, _ in _slot_card_report_names()}
     layout_names = {name for name, _ in _formats_round_layout_names()}
     assert {"verifier.md", "terminal-pass.md", "second-read.md"} <= slot_names

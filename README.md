@@ -59,8 +59,6 @@ files can override them (§ Configuration).
 - **git:** crucible works on branches and worktrees.
 - **bash 3.2 or newer**, on Claude Code only: the startup hook is a bash
   script. On Windows it is Git Bash's.
-- **Python 3.8 or newer:** one review step runs a small standard-library
-  script.
 
 ## Quickstart
 
