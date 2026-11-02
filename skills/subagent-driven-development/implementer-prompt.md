@@ -194,8 +194,8 @@ run it once and quote its command and output in Test evidence, with a
 failing run before the change where it checks a state the change brings
 about. Outcomes seen on one run are one test's assertions. Each test or
 parametrized case you delete takes a Decision Log entry (in a fix wave,
-your fix report) naming one justification § Tests in review lists, a
-remaining test by file and name, a warning sign quoted. Weakening a test
+your fix report) naming one justification § Tests in review lists (a
+remaining test by file and name, a warning sign quoted). Weakening a test
 is a scope finding whatever you log.
 
 Where your task changes text that instructs agents — a skill, a

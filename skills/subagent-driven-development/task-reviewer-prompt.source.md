@@ -131,7 +131,7 @@ attributable to this task's requirements or to a Decision Log entry.
 **A weakened test is a scope finding** (§ Tests in review), regardless
 of what the report says about it. **So is a deleted test**, or a deleted
 case of a parametrized one, unless the Decision Log names one
-justification § Tests in review lists, a warning sign quoted, and the
+justification § Tests in review lists (a warning sign quoted) and the
 code bears it out. So is any change in the range to the plan,
 a folded document or the spec, other than a commit your dispatch names
 as a scoped amendment or a plan-patching ruling.

@@ -10,7 +10,7 @@
 - [FINDINGS]: the findings this wave's fix report answers fixed, copied verbatim from the review that raised them, one per bullet — never those it answers NOT CONFIRMED, which are ruled on separately; and each `Change (…)` it applied, ADDRESSED where it landed and broke nothing.
 - [FIX_REPORT]: in a task's fix wave, the implementer's report file, this wave's fix report appended; in a branch-review wave, `sdd/branch-review/wave-<n>-fix.md` — on the very-small lane the controller's own, held to the same fix-report contract.
 - [REPORT_FILE]: this re-review's output, in the feature workspace: `sdd/reports/task-<N>-re-review-w<W>.md` for task fix wave <W>, `sdd/reports/task-<N>-x<X>-re-review-w<W>.md` in re-run <X> after a revert; `sdd/branch-review/wave-<n>-re-review.md` for branch-review wave <n>. A replacement seat adds `-r<R>` before `.md`, as in `sdd/reports/task-<N>-re-review-w<W>-r<R>.md`.
-- [FIX_BASE_SHA]: the head the previous review saw.
+- [FIX_BASE_SHA]: in a task's fix wave, the head the previous review saw; in a branch-review wave, the FIX_BASE recorded as the wave opened.
 - [HEAD_SHA]: the current commit.
 
 ## Selectors

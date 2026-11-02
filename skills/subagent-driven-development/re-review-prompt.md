@@ -158,8 +158,9 @@ plan, a folded document or the spec is a scope finding, reported as new
 breakage, unless your dispatch names its commit as a scoped amendment
 or a plan-patching ruling. A test the fix weakens is new breakage; so
 is a test or case it deletes, unless the fix report names one
-justification § Tests in review lists that holds, a warning sign
-quoted, a remaining test read where it lies outside the fix diff. Do
+justification § Tests in review lists that holds (a warning sign
+quoted); read a remaining test the report names even where it lies
+outside the fix diff. Do
 NOT re-review code the fix did not touch: an issue entirely outside the
 fix diff goes under Out-of-Scope Observations, and neither blocks this
 wave nor extends the loop.

@@ -53,7 +53,7 @@ Where the spec's preamble (on the lane, the note's) carries an `Umbrella:` line,
 
 **Drift**, off the lane — on it, drift goes as `skills/subagent-driven-development/references/very-small-lane.md` states. Undisclosed drift from binding content that a pass finds in a completed task (flagged DRIFT) goes to the operator as `crucible:subagent-driven-development § Drift found after the fact` states. A repair rides a fix wave, counted against the cap: one ruled before the branch review begins rides its first fix wave, opening one after the first full-scope pass where that pass opens none; one ruled once the review has begun rides the next wave, opening it where none is open. After a revert, the full-scope pass the review resumes with re-grades the rest of that pass's findings.
 
-**Finish's red suite.** A red run `crucible:subagent-driven-development § Finish` hands over is a BLOCKER finding against the branch: it opens the next wave, counted against the same cap, its FIX_BASE being the HEAD the suite ran on. That the failure is not the branch's is a dispute you may raise before the wave opens, ruled and recorded as that section's step 5 states; a failure ruled not the branch's is not raised again while it fails the same way, in this loop too.
+**Finish's red suite.** A red run `crucible:subagent-driven-development § Finish` hands over is a BLOCKER finding against the branch: it opens the next wave, counted against the same cap, its FIX_BASE being the HEAD the suite ran on. That the failure is not the branch's is a dispute you may raise before the wave opens, ruled and recorded as that section's step 5, The suite, states; a failure ruled not the branch's is not raised again while it fails the same way, in this loop too.
 
 **Fixes are never yours** off the very-small lane (`crucible:subagent-driven-development § The Task Loop`, step 5). On the lane you apply each wave's fixes inline and write `wave-<n>-fix.md` yourself; the lane's inputs and its other differences are in `crucible:subagent-driven-development § The very-small lane`, and the rest of this loop runs there as stated here, route conditions included.
 
@@ -64,7 +64,7 @@ When the review ends, return to `crucible:subagent-driven-development § Finish`
 For a branch with no SDD run: no ledger, no workspace, no loop.
 
 1. Dispatch the branch reviewer as above, its card filled by its standalone-mode rules. It returns its report as its final message: with no ledger, that report is the record of everything it raises, its questions included.
-2. Handle the findings yourself, under `crucible:receiving-review`; you are not an SDD controller. Fix the BLOCKER and MAJOR findings you confirm, and after substantial fixes run this mode again. A premise finding goes to the operator as a decision ask with your recommendation, never to a fix. There is no wave loop and no cap: the operator decides what remains open.
+2. Handle the findings yourself, under `crucible:receiving-review`; you are not an SDD controller. Fix the BLOCKER and MAJOR findings you confirm, and after substantial fixes run this mode again. A premise finding goes to the operator as a decision ask, never to a fix. There is no wave loop and no cap: the operator decides what remains open.
 
 ## Common Rationalizations
 

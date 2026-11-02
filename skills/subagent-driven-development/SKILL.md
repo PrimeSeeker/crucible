@@ -119,7 +119,7 @@ Once the wave's re-review, if any, and the rulings on its disputes are in, appen
 
 Never fix findings yourself in the controller session: your context stays clean for coordination, and controller fixes skip review. Inline mode is the sanctioned path for a task you implement, and the very-small lane's inline fix waves are the one other exception.
 
-**After the third wave.** Findings it leaves open stop the task: put them to the operator as a decision ask with your recommendation — park a finding, with its reason; block the work; or another approach — recorded under `## Adjudication rulings` as open, the answer beside it. Park: a `Task <N>: parked — <finding> — ruling: <the answer>` line per finding, then the completion line with its parked count. Block: `Task <N>: BLOCKED — <the ruling>`, and execution stops at that task until the operator rules again. Another approach: the answer names it — a plan change (§ Plan changes mid-execution) or a revert (§ Drift found after the fact), whose re-run starts at wave 1. Further waves are not an answer.
+**After the third wave.** Findings it leaves open stop the task: put them to the operator as a decision ask — park a finding, with its reason; block the work; or another approach — recorded under `## Adjudication rulings` as open, the answer beside it. Park: a `Task <N>: parked — <finding> — ruling: <the answer>` line per finding, then the completion line with its parked count. Block: `Task <N>: BLOCKED — <the ruling>`, and execution stops at that task until the operator rules again. Another approach: the answer names it — a plan change (§ Plan changes mid-execution) or a revert (§ Drift found after the fact), whose re-run starts at wave 1. Further waves are not an answer.
 
 ### 6. Complete the task
 
@@ -164,7 +164,7 @@ A task reviewer's `Questions` items are leads too. Write each lead in § Setup's
 
 ### Drift found after the fact
 
-Work found off-plan without a logged decision — by the task review's deviation audit, by you, or by a branch-review pass flagging it DRIFT in a completed task — within the **materiality bound**, an undisclosed deviation from *binding* content or one with cross-task blast radius, is a decision ask to the operator, with your recommendation:
+Work found off-plan without a logged decision — by the task review's deviation audit, by you, or by a branch-review pass flagging it DRIFT in a completed task — within the **materiality bound**, an undisclosed deviation from *binding* content or one with cross-task blast radius, is a decision ask to the operator:
 
 - **Revert** the task, with the later tasks the ask names as building on it, by `git revert` of each one's range, never a reset, and run them again from step 1 of the task loop. Append `Task <N>: reverted — <the ruling>` for each, which reopens it. A task run again takes `-x<X>` after `task-<N>` in every report path, `<X>` one more than its `reverted` lines, so its reports and wave numbers start fresh. Reverted at the branch review, return the branch to `crucible:requesting-code-review` once the re-run tasks complete; it resumes with a full-scope pass.
 - **Repair** it: in its own fix loop while the task is open; for a completed task, recorded under `## Adjudication rulings`, which the resume rule does not read, and riding a branch-review fix wave as a ruling change counted against its cap, as `crucible:requesting-code-review` § The branch-review loop states.
