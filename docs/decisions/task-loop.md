@@ -116,7 +116,7 @@ a task gets three, each resuming the recorded implementer, or, where the
 host exposes no resume operation, a fresh one given the open findings
 and the task's report file. Each finding is answered fixed, with its
 covering run and sibling instances, or NOT CONFIRMED with evidence for
-the adjudicator (`docs/decisions/adjudication.md`). Findings still open
+a ruling (`docs/decisions/adjudication.md`). Findings still open
 after the third wave stop the task: the controller puts them to the
 operator as a decision ask with a recommendation, park a finding with
 its reason, block the work, or another approach (a plan change or a
@@ -156,6 +156,9 @@ controller's, a cleanup wave's included
 Review applies unchanged, and any loop-entering finding, at any
 severity, converts the task to standard dispatch, a fresh implementer
 owning the fixes (`crucible:subagent-driven-development § Inline mode`).
+The ledger records the task as `Task <N>: inline`, where a dispatched
+task's implementer line goes, so a dispute on its diff reaches the
+adjudicator after a compaction too (`docs/decisions/adjudication.md`).
 
 ## Why
 
@@ -433,6 +436,11 @@ judgment, accepted by the maintainer, for the test.)
 
 ## Changes
 
+- 2026-11-02: a NOT CONFIRMED answer goes to a ruling, the
+  controller's or the adjudicator's, no longer always the adjudicator's;
+  an inline task gets the ledger line `Task <N>: inline`, which keeps
+  the adjudicator's read on its diff after a compaction
+  (`docs/decisions/adjudication.md`).
 - 2026-11-02: the fix loop: three resumed waves, the `<W>/5` fix-wave
   line now `<W>/3`, then an operator ask with park, block or another
   approach, recorded under `## Adjudication rulings`; the fresh

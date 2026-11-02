@@ -123,9 +123,11 @@ readouts you were given, and the decision to stop, were faithful to the
 findings. Then a plan is written and checked once, and execution
 starts: a fresh agent implements each task, a fresh reviewer checks it
 unless the plan leaves that task to the whole-branch review, and
-disagreements go to an adjudicator. A whole-branch review closes the
-work, and you choose, on crucible's recommendation, whether to merge,
-open a pull request or keep the branch.
+crucible rules on disagreements, or a fresh adjudicator does where one
+touches the spec's binding parts or intent, or work crucible wrote
+itself. A whole-branch review closes the work, and you choose, on
+crucible's recommendation, whether to merge, open a pull request or keep
+the branch.
 
 **Three presets.** At the end of the design dialogue crucible proposes
 how the work is arranged, and you confirm or veto it. The question that

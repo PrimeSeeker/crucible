@@ -87,8 +87,7 @@ on a task completed branch review only or a lead confirmed as an intent
 or scope gap, and otherwise only as the cleanup wave or for a ruling or
 requested work (below): one fresh implementer with the complete
 findings list, then a scoped re-review of the findings answered fixed,
-the disputed ones going to the adjudicator
-(`docs/decisions/adjudication.md`). A wave that leaves no BLOCKER or
+the disputed ones ruled as `docs/decisions/adjudication.md` states. A wave that leaves no BLOCKER or
 MAJOR open is followed by a full-scope pass, skipped only when nothing
 changed since the last one; the pass that ends the review is the branch
 review's terminal pass, a branch-reviewer dispatch. The cap is three
@@ -112,7 +111,7 @@ operator's ruling and work the operator asked for enter a wave's
 findings list as labelled changes, `Change (<kind>): <the change> —
 apply it, or decline it with a reason`, `<kind>` being `improvement`,
 `ruling` or `requested`. With no defect to confirm, none is answered NOT
-CONFIRMED or reaches the adjudicator; one applied goes to the re-review,
+CONFIRMED or disputed; one applied goes to the re-review,
 which checks that it landed and broke nothing. The implementer's and
 the re-reviewer's cards name the label and override, for labelled
 items, their templates' two answers and defect wording; the templates
@@ -383,6 +382,11 @@ accepted by the maintainer.)
 
 ## Changes
 
+- 2026-11-02: a wave's disputed findings are ruled as
+  `docs/decisions/adjudication.md` now states, by the controller or,
+  where a dispute touches binding content or the Intent or concerns a
+  diff the controller wrote, the adjudicator; no longer always the
+  adjudicator.
 - 2026-11-02: a DRIFT finding is an operator ask, revert or repair, a
   repair riding a fix wave against the cap; the rule that a DRIFT pass
   spends a wave (its `Branch wave` line with `commits none`) and the

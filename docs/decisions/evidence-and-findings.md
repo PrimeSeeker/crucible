@@ -95,8 +95,8 @@ An improvement the controller adopts is a lightly held change it names
 in the readout, and rides the next fix wave: in a campaign as a
 fix-list item naming the question id; at the branch review as a
 labelled change, `Change (improvement)`, which the fixer applies or
-declines with a reason, with no defect to confirm and nothing for the
-adjudicator, an operator's ruling and work the operator asked for
+declines with a reason, with no defect to confirm and nothing to
+dispute, an operator's ruling and work the operator asked for
 riding a wave the same way. It never opens a wave by itself, the branch
 review's one cleanup wave aside (`docs/decisions/branch-review.md`); the
 controller never applies one itself outside the very-small lane; one
@@ -442,6 +442,9 @@ records that cite "the audit" draw on these figures. (Basis: measured.)
 
 ## Changes
 
+- 2026-11-02: a labelled change has nothing to dispute, worded without
+  the adjudicator, since a dispute no longer always reaches one
+  (`docs/decisions/adjudication.md`).
 - 2026-11-02: a pending premise ask no longer holds the stop or the
   work that builds on its premise, the `premise` label and its routes
   kept; in execution the controller tells the operator of a premise

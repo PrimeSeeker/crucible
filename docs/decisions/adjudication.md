@@ -4,49 +4,55 @@
 
 **One dispute rule on every SDD route.** A finding is fixed or disputed,
 never dropped. The implementer answers a finding it disputes NOT
-CONFIRMED, with evidence, and edits nothing for it. Disputes go in
-batches, one wave's NOT CONFIRMED findings or the controller's own
-disputes raised together, to one fresh adjudicator seat, at any wave, on
-the standard route, the folded lane and the very-small lane, in the task
-loop and the branch review. The seat builds the diff of each finding's
-review range itself and rules each finding UPHELD or DISMISSED with a
-ruling. An upheld finding re-enters the loop, or after a task's third wave
-the operator ask, and cannot be disputed again. A dismissed finding
-is closed by its ruling. Every outcome is written under the ledger's
-`## Adjudication rulings`. A ruling the adjudicator marks as touching
-binding content, what binds in the spec or its umbrellas
-(`docs/decisions/the-spec.md`), passes the containment test before the
-controller acts on it: a contained one the controller records as its own
-ruling, and any other goes to the operator as a decision ask, the
-finding open until the answer; on the very-small lane, one changing the
-note's binding parts is the operator's. Adjudication adds no wave; a wave whose fix
-dispatch only disputes is still a wave. Every dismissed or parked BLOCKER
-or MAJOR reaches the operator with its ruling in the close readout, and
-so does every ruling the controller made itself, with its reason. The
-adjudicator runs on the default role
-(`docs/decisions/model-roles-and-effort.md`;
-`crucible:subagent-driven-development § Rules every route shares`).
-
-**What the controller rules on.** One kind only: a plan-conflict finding
-on a diff it did not write (is the plan or the work wrong?). A reviewer's finding
-that a binding item's literal reading reaches a case its author did not
-consider is such a plan conflict. A plan conflict that is a design judgment
-goes to the operator as a decision ask instead, and a ruling of the
-controller's that touches binding content or answers a literal-reading
-finding passes the containment test,
-one it does not find contained going to the operator as a decision ask
+CONFIRMED, with evidence, and edits nothing for it. The rule holds at
+any wave, on the standard route, the folded lane and the very-small
+lane, in the task loop and the branch review. An upheld finding
+re-enters the loop, or after a task's third wave the operator ask, and
+cannot be disputed again. A dismissed finding is closed by its ruling.
+Every outcome is written under the ledger's `## Adjudication rulings`,
+with its reason and the evidence or the adjudicator's report. A ruling
+that touches binding content, what binds in the spec or its umbrellas
+(`docs/decisions/the-spec.md`), or answers a literal-reading finding,
+the controller's or the adjudicator's, passes the containment test
+before the controller acts on it: a contained one the controller
+records as its own ruling, and any other goes to the operator as a
+decision ask, the finding open until the answer; on the very-small
+lane, one changing the note's binding parts is the operator's
 (`skills/redteaming/references/flip-paths.md` § The containment test).
-The contained amendments the controller confirms, the plan phase's
-included, are among its rulings in the ledger and the close readout. Everything else contested goes to the
-adjudicator: an implementer's NOT CONFIRMED, a finding the controller
-judges wrong, at the cap included, and any plan-conflict finding on a
-diff the controller wrote (inline mode, the very-small lane).
-A finding that both fails a verdict and conflicts with plan text is ruled
-first as a plan conflict; if the plan stands, the verdict failure enters
-the loop. The pre-flight scan before Task 1, which has no diff yet, is
-ruled on by the controller as plan conflicts. The controller never parks
-a BLOCKER or MAJOR on its own ruling: in the task loop a finding is
-parked on the operator's answer after the third wave.
+A ruling adds no wave; a wave whose fix dispatch only disputes is still
+a wave. Every ruling the controller makes, with its reason, and every
+dismissed or parked BLOCKER or MAJOR reach the operator in the close
+readout (`crucible:subagent-driven-development § Rules every route
+shares`).
+
+**Who rules.** The controller rules, with its evidence, on an
+implementer's NOT CONFIRMED, a finding it judges wrong and a plan
+conflict (is the plan or the work wrong?); a reviewer's finding that a
+binding item's literal reading reaches a case its author did not
+consider is such a plan conflict. A fresh adjudicator seat, on the
+default role (`docs/decisions/model-roles-and-effort.md`), rules
+instead on a NOT CONFIRMED or a finding the controller judges wrong
+that touches binding content or the Intent, and on every dispute about
+a diff the controller wrote: a task it implemented inline, which its
+ledger line `Task <N>: inline` records, and any very-small-lane diff.
+Its disputes go in batches, one wave's or those the controller raises
+together; the seat builds the diff of each finding's review range
+itself, and its inputs point to the one full statement of what binds,
+the Deviations paragraph of `crucible:subagent-driven-development § The
+Task Loop`, rather than restating it. A plan conflict that is a design
+judgment goes to the operator as a decision ask. The contained
+amendments the controller confirms, the plan phase's included, are
+among its rulings in the ledger and the close readout. A finding that
+both fails a verdict and conflicts with plan text is ruled first as a
+plan conflict; if the plan stands, the verdict failure enters the loop.
+The pre-flight scan before Task 1, which has no diff yet, is ruled on
+by the controller as plan conflicts. The controller never parks a
+BLOCKER or MAJOR on its own ruling: in the task loop a finding is
+parked on the operator's answer after the third wave. A red suite at
+Finish that the controller judges not the branch's is a dispute under
+the same rule, and the red run goes to the operator with its ruling,
+whoever made it: the operator's acceptance, not the ruling, lets
+finishing proceed.
 
 **Outside the loops.** The standalone branch review is not an SDD route:
 the invoking agent handles its findings, and a disagreement that survives
@@ -114,11 +120,37 @@ reading changes no binding content and would otherwise go untested.
 (Basis: judgment, accepted by the maintainer, 2026-10-28; judgment, a
 branch review's proposal accepted by the maintainer, for testing the ruling.)
 
+### The controller rules, with three independent reads
+
+From 2026-10-07 every contested finding went to a fresh adjudicator,
+and the controller ruled only on plan conflicts in diffs it did not
+write. The skill-text-rewrite umbrella's audit found adjudication had
+run 5 times and upheld nothing, and the controller's lean toward its own
+position documented repeatedly in the terminal pass's record checks.
+(Basis: measured.) Since 2026-11-02 the controller rules on a dispute with its
+evidence, and the independent read stays where that lean would cost
+most: a dispute touching binding content or the Intent (the umbrella's
+D4), and one on a diff the controller wrote, since a ruling on its own
+diff that only the close readout lists would be silent to an operator
+who does not read diffs (the umbrella's D2). The `Task <N>: inline`
+line keeps that trigger readable after a compaction. A literal-reading
+finding stays the plan conflict it is, with the containment test its
+check either way. The adjudicator's inputs point to the Deviations
+paragraph, so no partial restatement of what binds can drop a clause.
+A red suite judged not the branch's needs the operator's acceptance
+whoever ruled, so the controller's ruling never lets finishing proceed
+by itself. (Basis: the umbrella's D4, the controller's proposal
+accepted by the maintainer; the read on the controller's own diff, the
+controller's proposal accepted by the maintainer at this change's
+brainstorm.)
+
 ## Rejected
 
 - **Adjudicating only at the cap**, upstream's rule (§ Why).
+- **Every dispute to a fresh adjudicator**, the rule from 2026-10-07 to
+  2026-11-02 (§ Why).
 - **The controller ruling on findings against its own diff**, or parking
-  a branch-review BLOCKER or MAJOR on its own ruling (§ Why).
+  a BLOCKER or MAJOR on its own ruling (§ Why).
 - **Asking the operator which governs** on every plan conflict: only a
   design judgment, or a change to binding content the containment test
   does not find contained, reaches the operator (§ Why).
@@ -127,6 +159,16 @@ branch review's proposal accepted by the maintainer, for testing the ruling.)
 
 ## Changes
 
+- 2026-11-02: the controller rules on disputes with its evidence; a
+  fresh adjudicator rules only where a dispute touches binding content
+  or the Intent, or concerns a diff the controller wrote, which the new
+  ledger line `Task <N>: inline` records; the adjudicator's inputs point
+  to the Deviations paragraph instead of restating what binds; a red
+  suite ruled not the branch's goes to the operator with its ruling,
+  whoever made it, the operator's acceptance letting finishing proceed.
+  The every-dispute-to-a-fresh-seat rule goes, and
+  the Rejected bullet on parking now covers every route. After the
+  skill-text-rewrite umbrella's audit (§ Why).
 - 2026-11-02: the breaker retired: the controller no longer rules on
   consequences at the task-loop cap or parks a finding there, and a
   finding upheld after a task's third wave joins the operator ask that

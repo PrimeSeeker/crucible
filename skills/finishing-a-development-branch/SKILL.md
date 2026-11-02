@@ -34,7 +34,7 @@ Tests failing (<N> failures). Must fix before completing:
 [Show failures]
 ```
 
-The one exception: a red run the adjudicator dismissed, which the operator was shown and accepted (`crucible:subagent-driven-development` § Finish). Continue to Step 2 on it.
+The one exception: a red run ruled not the branch's, shown to the operator with its ruling and accepted (`crucible:subagent-driven-development` § Finish). Continue to Step 2 on it.
 
 **If tests pass:** continue to Step 2.
 

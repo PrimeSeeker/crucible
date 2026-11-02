@@ -89,7 +89,7 @@ yours. Scope every search you run to the files named here.
 
 The findings your dispatch lists, verbatim from the review that raised
 them, one per bullet: those the fix report answers fixed. A finding it
-answers NOT CONFIRMED goes to an adjudicator and is not yours to
+answers NOT CONFIRMED is ruled on separately and is not yours to
 verdict.
 
 ## The Fix

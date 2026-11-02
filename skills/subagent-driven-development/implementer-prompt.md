@@ -236,8 +236,9 @@ finding one of two ways:
   pattern you found in the diff the findings are against, or none;
 - **NOT CONFIRMED** — the defect is not there or the finding is wrong:
   give the evidence (command output, the code or requirement it
-  contradicts) and edit nothing for it. An adjudicator rules on it; a
-  finding that comes back upheld is fixed, never disputed again.
+  contradicts) and edit nothing for it. The controller or an adjudicator
+  rules on it; a finding that comes back upheld is fixed, never disputed
+  again.
 
 Append this fix report to your report file, creating it if this
 dispatch is the first to write it; it carries concerns, questions, a

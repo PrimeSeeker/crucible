@@ -117,9 +117,9 @@ unconfirmed counts as one that chose no option. After loop activity
 that follows an answer, a red suite's included, the next readout says
 what changed, and the earlier answer stands only where nothing new was
 left open. A red run is a BLOCKER for the branch-review loop, never
-classified away; one the adjudicator dismissed is shown to the operator,
-and an answer that accepts it lets finishing proceed past its suite
-check (`crucible:subagent-driven-development § Finish`). Where no close
+classified away; one ruled not the branch's, whoever ruled, is shown to
+the operator with its ruling, and only an answer that accepts it lets
+finishing proceed past its suite check (`crucible:subagent-driven-development § Finish`). Where no close
 readout precedes finishing, as at an umbrella's landing or after a
 standalone review, finishing presents its options with a recommendation.
 Finishing accepts a full run on exactly the HEAD being integrated whose
@@ -316,8 +316,10 @@ to the agent.)
 The suite runs before the workspace is deleted, because a failure found
 afterwards has no ledger to land in (2026-10-07). A red run is handed to
 the branch-review loop like any other BLOCKER: classifying it as not the
-branch's own is a dispute the adjudicator rules on
-(`docs/decisions/adjudication.md`). Upstream's finishing runs the full
+branch's own is a dispute, ruled as any other
+(`docs/decisions/adjudication.md`), and since 2026-11-02 the operator
+sees the red run with its ruling whoever made it, so a ruling of the
+controller's own never lets finishing proceed by itself. Upstream's finishing runs the full
 suite at its Step 1 every time
 (`superpowers/skills/finishing-a-development-branch/SKILL.md`).
 Crucible keeps upstream's point, that a run proves only the tree it ran
@@ -405,6 +407,10 @@ worktree. (Basis: judgment, accepted by the maintainer.)
 
 ## Changes
 
+- 2026-11-02: a red suite at Finish may be ruled not the branch's by
+  the controller as well as by the adjudicator; either way it goes to
+  the operator with its ruling, and only the operator's acceptance lets
+  finishing proceed (`docs/decisions/adjudication.md`).
 - 2026-11-02: an umbrella's landing sends its campaign's
   `deferred-minor` entries and its decision asks still unruled, premise
   asks aside, with the work left open, since it has no ledger or branch
