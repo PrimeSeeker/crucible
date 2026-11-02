@@ -108,7 +108,8 @@ All lightly held. Each records its basis.
   paragraph telling the seat how to read the template. The list of
   justifications for a deleted test joins § Tests in review, so it stays
   inside the text of each seat that carries it today. Basis: the entry,
-  and the controller's design, accepted by the operator.
+  and the controller's design, accepted by the operator; the list's home,
+  first `writing-good-tests.md`, the controller's call after round 1.
 - **D5. Shared clauses are spliced at build time.** A seat receives the
   shared sections inside its own text, never by reading a file at
   startup: each template has a hand-edited source naming the shared
@@ -179,7 +180,8 @@ All lightly held. Each records its basis.
   controller composes; its diff procedure becomes the shared reference's
   § Building the diff, which the controller copies into its prompt
   (Interfaces & boundaries, Composed seats), and its mandate stays in
-  SDD. Basis: the controller's design, accepted by the operator.
+  SDD. Basis: the controller's design, accepted by the operator; how its
+  sections reach it, the controller's calls after rounds 0, 1 and 2.
 - **D11. Rationalization tables and red-flag lists stay** as a form
   writing-skills endorses; only an exact duplicate goes
   (requesting-code-review's Red Flags list, finishing's Quick
@@ -218,8 +220,12 @@ All lightly held. Each records its basis.
   would count spliced text twice and say nothing about what an author
   maintains. What a seat carries at dispatch, the rendered size, is
   reported beside it as information, the umbrella's resident-token
-  measure being `compaction-fit`'s. Basis: the controller's proposal
-  after round 1, accepted by the operator.
+  measure being `compaction-fit`'s. It changes an authoring check, not
+  a rule the skills state, and so stands beside the entry's "no rule
+  changes, but one" as the operator's ruling on how the umbrella's C1
+  reads once a generated tree sits under `skills/`; `compaction-fit` and
+  every later commit count the same way. Basis: the controller's
+  proposal after round 1, ruled by the operator on a decision ask.
 
 ## Constraints & invariants
 
@@ -288,7 +294,8 @@ different seats it splits under further headings, these staying:
   branch reviewer;
 - § Findings — severities, evidence, what is no finding; the seats
   raising findings;
-- § Location — kept as today; its takers as today;
+- § Location — kept as today; its takers as today, and the terminal
+  pass, which the corrections give a location on its findings;
 - § Finding scope — redteam seat and terminal pass;
 - § What shipped work carries — build history (R3) and the comment
   rule; implementer, task reviewer, re-reviewer and branch reviewer;
