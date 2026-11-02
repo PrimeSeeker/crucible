@@ -27,5 +27,5 @@
 
 ## Dispatch
 
-- Operation: a fresh-seat dispatch of instrument `terminal-pass` with this card filled — each slot's rule replaced by its value, each selector line cut to its one value and its sub-bullets dropped — through your adapter's instrument-dispatch operation.
-- Model: Dispatch it with an explicit model, and an effort level only on the operator's request — see SKILL.md § Panels. The default role, or the alternate role where one of its triggers selects this seat.
+- Operation: a fresh-seat dispatch of instrument `terminal-pass`, this card filled (`skills/subagent-driven-development/references/dispatch-composition.md` § Filling a card).
+- Model: the default role, or the alternate role where one of its triggers selects this seat.

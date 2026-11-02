@@ -26,16 +26,12 @@ same seven items:
    entry in that umbrella and the umbrella's Constraints & invariants and
    firm decisions, and through each umbrella's own line its parent's, up
    the chain, each read in the seat's worktree at the revision its review
-   reads. Within the range the seat reviews, a change to those
-   Constraints or firm decisions is a finding, and so is a change
-   to the entry other than the feature's own mark or a clarification its
-   spec states that changes nothing another entry waits on; a binding
-   change taken in from the base by a merge is not. A pointer, never a
-   copied block: a copy drifts against the artifact it copies. The seat's
-   requirements input carries the pin — the spec pointer in a plan's
-   header, which the dispatch points at without restating the revision;
-   for a seat given no plan, the artifact's own path at its pinned
-   revision. The seat's template states how it reads what binds and the
+   reads. A pointer, never a copied block: a copy drifts against the
+   artifact it copies. The seat's requirements input carries the pin —
+   the spec pointer in a plan's header, which the dispatch points at
+   without restating the revision; for a seat given no plan, the
+   artifact's own path at its pinned revision. The seat's template
+   states how it reads what binds and the
    report it raises against it; a change to binding content that a
    report leads to passes `skills/redteaming/references/flip-paths.md`
    § The containment test;
@@ -56,6 +52,17 @@ Each instrument's slot card and template carry all seven together, item 4
 through the plan where the seat has one. Fill every slot; never trim one to
 shorten a dispatch. Where a seat departs from this list, the skill that
 dispatches it says so beside the dispatch.
+
+## Filling a card
+
+An instrument is dispatched from its slot card, the `.slots.md` file beside
+its template: read the card, not the template. Replace each slot's rule
+with its value, and set each selector to one value, cutting its line to
+that value and dropping its sub-bullets: a passage left unselected, `off`
+or a value you did not pick, is dropped, not narrated. Dispatch the
+instrument with the filled card through your adapter's instrument-dispatch
+operation. The card's Model line names the role its seat runs on;
+§ Models and effort holds what every dispatch shares, effort included.
 
 ## Models and effort
 
@@ -82,3 +89,29 @@ These rules bind every dispatch; each skill names its own seats' rows.
   unless the operator asks for one; no flow sets or raises it on its own.
   An escalation is the tier bump alone; where that is not enough, the
   dispatching skill's stop points take it to the operator.
+
+## Shared-tree rules
+
+These bind every controller that dispatches seats into a worktree; the
+dispatching skill names its windows.
+
+- **No commits while a seat works.** While a dispatched seat works in the
+  worktree, commit nothing there: the index is shared, so a bare commit
+  sweeps in whatever it staged. Queue the commit until the seat returns.
+- **The status check, after every window your skill names.** Dispatch the
+  window's seats with no tracked or staged change, first writing the output
+  of `git rev-parse HEAD` and `git status --porcelain --untracked-files=all`
+  to `<workspace>/tree-check.txt`, overwriting it, unless a seat still out
+  opened the window: seats out at the same time are one window, the file
+  written before the first and checked after the last. When the window's
+  last seat returns, before the next commit, run the two commands again:
+  output differing from the file's voids every report from the window
+  until it runs again on a clean tree. Untracked paths present at dispatch,
+  such as an implementer's test leftovers, are tolerated. A controller
+  resumed after a compaction reads the dispatch-time state in the file.
+  Seats' `scratch/` lives in the gitignored workspace and never shows.
+- **Replacing a seat.** Never start a replacement until the host confirms
+  the first seat has stopped: one started early puts two writers on one
+  tree. It writes to a fresh report path, as its skill names it, and reads
+  the first's file, which stays as the record. A seat whose state the host
+  cannot confirm is a stop-and-ask.

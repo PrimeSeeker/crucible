@@ -13,7 +13,7 @@ Execute a plan by dispatching a fresh implementer subagent per task and a single
 
 **Continuous execution:** do not pause to check in with the operator between tasks. Stop only for a BLOCKED status you cannot resolve, a stop-and-ask trigger, a decision ask that genuinely needs the operator, or all tasks complete — never a "should I continue?". A decision ask is analyst-language with a recommendation: it never requires reading plan, code or a diff, and may quote the few lines it turns on.
 
-**Dispatch reference:** read `skills/using-crucible/references/<runtime>-dispatch.md` from the plugin root when this skill starts, and again after compaction — it holds your adapter's instrument-dispatch, resume and effort operations.
+**Dispatch references:** when this skill starts, and again after compaction, read from the plugin root `skills/subagent-driven-development/references/dispatch-composition.md`, the rules every dispatch shares, and your adapter's `skills/using-crucible/references/<runtime>-dispatch.md`; both bind as if written here.
 
 ## Setup
 
@@ -45,11 +45,11 @@ The workspace's `sdd/` subtree holds this plan's execution state: `ledger.md`, `
 
 ## Runtime identity in every dispatch
 
-Every seat you start carries the seven-item dispatch composition in `skills/subagent-driven-development/references/dispatch-composition.md` — read it before your first dispatch and again after compaction; it binds as if written here. In the task loop the plan header's spec pointer carries the binding pin for every seat: point at the plan and restate no revision.
+Every seat you start carries the seven items of the dispatch composition. In the task loop the plan header's spec pointer carries the binding pin for every seat: point at the plan and restate no revision.
 
-**Instruments.** Three seats are instruments, each with a slot card beside its template: instrument `implementer` ([implementer-prompt.slots.md](implementer-prompt.slots.md)) for every implementer seat, a fresh fix-wave one included; instrument `task-reviewer` ([task-reviewer-prompt.slots.md](task-reviewer-prompt.slots.md)); instrument `re-reviewer` ([re-review-prompt.slots.md](re-review-prompt.slots.md)). Read the card, not the template ([implementer-prompt.md](implementer-prompt.md), [task-reviewer-prompt.md](task-reviewer-prompt.md), [re-review-prompt.md](re-review-prompt.md)), and dispatch the instrument with its filled card through your adapter's instrument-dispatch operation. Set every selector to one value; a passage left unselected — `lane` set `off` — is dropped, not narrated. The two controller-composed dispatches no template serves, the adjudicator (§ Disputes and adjudication) and the snapshot-blessing blind agent (§ The Task Loop, step 4), carry the seven items in the prompt you compose.
+**Instruments.** Three seats are instruments, each with a slot card beside its template: instrument `implementer` ([implementer-prompt.slots.md](implementer-prompt.slots.md)) for every implementer seat, a fresh fix-wave one included; instrument `task-reviewer` ([task-reviewer-prompt.slots.md](task-reviewer-prompt.slots.md)); instrument `re-reviewer` ([re-review-prompt.slots.md](re-review-prompt.slots.md)). Fill the card, not the template ([implementer-prompt.md](implementer-prompt.md), [task-reviewer-prompt.md](task-reviewer-prompt.md), [re-review-prompt.md](re-review-prompt.md)), as `skills/subagent-driven-development/references/dispatch-composition.md` § Filling a card states. The two controller-composed dispatches no template serves, the adjudicator (§ Disputes and adjudication) and the snapshot-blessing blind agent (§ The Task Loop, step 4), carry the seven items in the prompt you compose.
 
-**Report files.** Every review seat and the adjudicator writes its own report file, at a path no earlier dispatch used, and replies with a short verdict and that path. Confirm the file is on disk before taking the reply as the report; a missing file follows the dispatch composition's item 5.
+**Report files.** Each review seat and the adjudicator writes its report file at a path no earlier dispatch used. Confirm every seat's report file, an implementer's included, as the dispatch composition's item 5 states.
 
 ## Models
 
@@ -90,7 +90,7 @@ Whatever the status, route what the report voices beyond its work by § What a r
 
 One fresh-context reviewer per task, a task completed branch review only aside (step 2). Never skip it, never accept a report missing any verdict — a concern the implementer reported and the review left unruled is a missing verdict; implementer self-review never replaces it.
 
-Dispatch instrument `task-reviewer` with its card filled: the plan pointer, the implementer's report (its Decision Log and its concerns are the deviation audit's input), the range BASE..HEAD, and `sdd/reports/task-<N>-review.md` as its report file. Use the BASE you recorded — never `HEAD~1`, which silently drops all but the last commit of a multi-commit task. The reviewer builds the diff itself, so it never enters your context. The status check applies (§ Shared-tree rules).
+Dispatch instrument `task-reviewer` with its card filled: the plan pointer, the implementer's report (its Decision Log and its concerns are the deviation audit's input), the range BASE..HEAD, and `sdd/reports/task-<N>-review.md` as its report file. Use the BASE you recorded — never `HEAD~1`, which silently drops all but the last commit of a multi-commit task. The reviewer builds the diff itself, so it never enters your context. The status check applies (§ Rules every route shares).
 
 **Mandate:** adversarial — "attempt to reject this task". The stance governs the search, not the conclusion: a clean verdict is a legitimate outcome, and a manufactured finding costs a fix wave. Severity vocabulary everywhere: **BLOCKER / MAJOR / MINOR**, staked with evidence; improvements, style and formatting no repo tool enforces are not findings — an improvement goes in the reviewer's `Questions`, which you write as leads (§ What a report voices).
 
@@ -146,6 +146,8 @@ Mark the todo complete and move on. Never move to the next task while an open BL
 
 These hold in the task loop, in the branch review `crucible:requesting-code-review` runs, and on the very-small lane.
 
+**The shared tree.** `skills/subagent-driven-development/references/dispatch-composition.md` § Shared-tree rules bind every seat you start. The status check's windows are the review seats — task reviewer, re-reviewer, adjudicator, snapshot-blessing agent, branch reviewer — and a replacement seat's fresh report path is its card's path with `-r<R>` before `.md`.
+
 ### Disputes and adjudication
 
 A finding is fixed or disputed, never dropped: a silent discard is forbidden, and every ruling is a ledger entry.
@@ -171,12 +173,6 @@ Any implementer's report, a fix report included, may carry beside its work:
 
 A task reviewer's `Questions` items are leads too. Write each lead in § Setup's form; none opens a fix wave by itself or consumes a cap: what the branch reviewer's ruling on a lead opens is `crucible:requesting-code-review` § The branch-review loop's to say.
 
-### Shared-tree rules
-
-- **No commits while a seat works.** While a dispatched seat works in the worktree, commit nothing there: the index is shared, so a bare commit sweeps in whatever it staged. Queue the commit until the seat returns.
-- **The status check, after every review seat** — task reviewer, re-reviewer, adjudicator, snapshot-blessing agent, branch reviewer. Dispatch it with no tracked or staged change, first writing the output of `git rev-parse HEAD` and `git status --porcelain --untracked-files=all` to `<workspace>/tree-check.txt`, overwriting it, unless a seat still out opened the window: seats out at the same time are one window, the file written before the first and checked after the last. When the window's last seat returns, before the next commit, run the two commands again: output differing from the file's voids every review in the window until it runs again on a clean tree. Untracked paths present at dispatch, such as an implementer's test leftovers, are tolerated; an edit inside one goes unseen, an accepted residual. A controller resumed after a compaction reads the dispatch-time state in the file. Seats' `scratch/` lives in the gitignored workspace and never shows.
-- **Replacing a seat.** Never start a replacement until the host confirms the first seat has stopped: one started early puts two writers on one tree. It writes to a fresh report path, its card's path with `-r<R>` before `.md`, and reads the first's file, which stays as the record. A seat whose state the host cannot confirm is a stop-and-ask.
-
 ### Drift found after the fact
 
 Work found off-plan without a logged decision — by the task review's deviation audit, by you, or by a branch-review pass flagging it DRIFT in a completed task — within the **materiality bound**, an undisclosed deviation from *binding* content or one with cross-task blast radius, is a decision ask to the operator, with your recommendation:
@@ -196,7 +192,7 @@ Executing defective or superseded plan text produces reviewable-but-wrong work, 
 
 ## Whole-Branch Review
 
-After the last task completes, run `crucible:requesting-code-review`: it owns the branch-review loop. Hand it the ledger's deferred minors — the `deferred-minor` entries and the leads included, since its triage is the last stage that reads them — and execution's adjudication rulings: a roll-up nobody reads would be a silent discard. Its disputes follow § Disputes and adjudication, its seats § Shared-tree rules, and drift it finds in a completed task § Drift found after the fact. When it ends, after its cleanup wave where you open one, go to § Finish.
+After the last task completes, run `crucible:requesting-code-review`: it owns the branch-review loop. Hand it the ledger's deferred minors — the `deferred-minor` entries and the leads included, since its triage is the last stage that reads them — and execution's adjudication rulings: a roll-up nobody reads would be a silent discard. Its disputes follow § Disputes and adjudication, its seats the shared tree (§ Rules every route shares), and drift it finds in a completed task § Drift found after the fact. When it ends, after its cleanup wave where you open one, go to § Finish.
 
 ## The very-small lane
 

@@ -21,7 +21,6 @@
 
 ## Dispatch
 
-- Operation: a fresh-seat dispatch of instrument `re-reviewer` with this card filled — each slot's rule replaced by its value, each selector line cut to its one value and its sub-bullets dropped — through your adapter's instrument-dispatch operation.
+- Operation: a fresh-seat dispatch of instrument `re-reviewer`, this card filled (`skills/subagent-driven-development/references/dispatch-composition.md` § Filling a card).
 - Description: `Re-review Task <N> fix wave <W>`, or `Re-review branch wave <n>` for a branch-review wave.
-- Model: REQUIRED: per SDD SKILL.md Models — the re-reviewer runs on the bounded role or better, always, scoped re-reviews of small fix diffs included.
-- Effort: per `skills/subagent-driven-development/references/dispatch-composition.md` § Models and effort.
+- Model: the bounded role or better, always, scoped re-reviews of small fix diffs included.

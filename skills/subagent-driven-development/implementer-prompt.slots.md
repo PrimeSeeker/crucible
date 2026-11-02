@@ -19,7 +19,6 @@
 
 ## Dispatch
 
-- Operation: a fresh-seat dispatch of instrument `implementer` with this card filled — each slot's rule replaced by its value, each selector line cut to its one value and its sub-bullets dropped — through your adapter's instrument-dispatch operation. Every implementer seat goes this way: a task's, its fresh fix-wave one, a branch-review fix wave's.
+- Operation: a fresh-seat dispatch of instrument `implementer`, this card filled (`skills/subagent-driven-development/references/dispatch-composition.md` § Filling a card). Every implementer seat goes this way: a task's, its fresh fix-wave one, a branch-review fix wave's.
 - Description: `Implement Task <N>: <task name>`; for a branch-review fix wave, `Fix branch wave <n>`.
-- Model: REQUIRED: per SDD SKILL.md Models — the default role, or the alternate role where one of its triggers selects this seat; a clearly bounded task may drop to the bounded role.
-- Effort: per `skills/subagent-driven-development/references/dispatch-composition.md` § Models and effort.
+- Model: the default role, or the alternate role where one of its triggers selects this seat; a clearly bounded task may drop to the bounded role.

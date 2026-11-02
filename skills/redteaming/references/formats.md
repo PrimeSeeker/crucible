@@ -61,7 +61,8 @@ workspace):
                               #   the goal check reads it
     tree-check.txt            # HEAD and status output at the latest window,
                               #   overwritten at each; the status check reads
-                              #   it (crucible:subagent-driven-development
+                              #   it (subagent-driven-development's
+                              #   dispatch-composition.md
                               #   § Shared-tree rules)
     campaigns/
       spec/                   # the spec campaign

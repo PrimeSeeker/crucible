@@ -25,7 +25,6 @@
 
 ## Dispatch
 
-- Operation: a fresh-seat dispatch of instrument `branch-reviewer` with this card filled — each slot's rule replaced by its value, each selector line cut to its one value and its sub-bullets dropped — through your adapter's instrument-dispatch operation.
+- Operation: a fresh-seat dispatch of instrument `branch-reviewer`, this card filled (`skills/subagent-driven-development/references/dispatch-composition.md` § Filling a card).
 - Description: `Whole-branch review`.
-- Model: REQUIRED: the default role, this seat's floor, or the alternate role where one of its triggers selects this seat (`skills/subagent-driven-development/references/dispatch-composition.md` § Models and effort).
-- Effort: per that section.
+- Model: the default role, this seat's floor, or the alternate role where one of its triggers selects this seat.

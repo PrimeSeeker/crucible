@@ -96,7 +96,8 @@ bureaucracy and ruled that only what each one's evidence supported would
 land. The attestation duplicates the controller's own tree check, one
 command per dispatch window instead of a section in every report
 (`crucible:redteaming § Inputs and state`;
-`crucible:subagent-driven-development § Shared-tree rules`). The
+`skills/subagent-driven-development/references/dispatch-composition.md`
+§ Shared-tree rules). The
 before-and-after record is carried by the rule that a check of a state
 the change has not reached must fail on today's tree
 (`crucible:redteaming § Fix application and blind verification`). The
@@ -105,6 +106,8 @@ occurrence. (Basis: judgment, accepted by the maintainer.)
 
 ## Changes
 
+- 2026-11-02: the controller's tree check is cited at its new home, the
+  dispatch composition's § Shared-tree rules.
 - 2026-10-17: the seeded-defect calibration, run once, discharged.
 - 2026-10-13: no position-swap rule, since no step compares old and new
   text side by side.

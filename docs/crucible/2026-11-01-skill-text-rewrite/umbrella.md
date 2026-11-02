@@ -114,8 +114,9 @@ All lightly held.
     that corrects records or re-puts asks. It alone caught MAJORs a
     MAJOR repair introduced and records leaning toward the controller
     after the terminal pass.
-  - The seat-replacement gate (subagent-driven-development § Shared-tree
-    rules; redteaming § Panels, Topping up is gated): one stop-and-ask
+  - The seat-replacement gate (subagent-driven-development's
+    `dispatch-composition.md` § Shared-tree rules; redteaming § Panels,
+    Topping up is gated): one stop-and-ask
     line, never start a replacement until the host confirms the first
     has stopped; a replacement started early gives two writers on one
     tree.

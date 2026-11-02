@@ -31,8 +31,8 @@
   bytes or more. That is about the same line as 5,000 tokens at four
   characters a token, so the three `SKILL.md` files named earlier are over it;
   the others are under 17,500 bytes. In SDD the line falls inside the fix loop:
-  Disputes and adjudication, Shared-tree rules, Drift found after the
-  fact and Finish all lie past it.
+  Disputes and adjudication, Drift found after the fact and Finish all
+  lie past it.
 - Crucible's authoring rule (`docs/decisions/authoring-crucible.md`)
   sends only route-conditional procedures to references; text every
   route runs stays in the skill. Following upstream means widening it.

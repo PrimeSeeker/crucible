@@ -18,7 +18,6 @@ none
 
 ## Dispatch
 
-- Operation: a fresh-seat dispatch of instrument `task-reviewer` with this card filled — each slot's rule replaced by its value — through your adapter's instrument-dispatch operation.
+- Operation: a fresh-seat dispatch of instrument `task-reviewer`, this card filled (`skills/subagent-driven-development/references/dispatch-composition.md` § Filling a card).
 - Description: `Review Task <N> (intent + scope + deviations + quality)`.
-- Model: REQUIRED: per SDD SKILL.md Models — the task reviewer runs on the default role, every task it reviews, or the alternate role where one of its triggers selects this seat.
-- Effort: per `skills/subagent-driven-development/references/dispatch-composition.md` § Models and effort.
+- Model: the default role, every task it reviews, or the alternate role where one of its triggers selects this seat.

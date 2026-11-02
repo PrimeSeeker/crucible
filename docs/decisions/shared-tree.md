@@ -19,7 +19,8 @@ present at dispatch are tolerated, and an edit inside one of them goes
 unseen, an accepted residual. Nothing about the check is recorded; a
 controller resumed after a compaction finds the dispatch-time state in
 the file (`crucible:redteaming § Inputs and state`;
-`crucible:subagent-driven-development § Shared-tree rules`). A
+`skills/subagent-driven-development/references/dispatch-composition.md`
+§ Shared-tree rules). A
 campaign seat's input paths are the artifact, its workspace paths, the
 supporting inputs its card lists and, for the blind verifier, the
 tracked files a delta claim names. Read-only seats run the code they
@@ -33,7 +34,7 @@ confirmation, and a seat whose state the host cannot confirm is a
 stop-and-ask, as any unresolvable state is. The replacement writes to a
 fresh report path, and the first seat's file stays as the record. In
 execution the fresh path is the card's path with `-r<R>` before `.md`
-(`crucible:subagent-driven-development § Shared-tree rules`); the same
+(`crucible:subagent-driven-development § Rules every route shares`); the same
 gate tops up a campaign round that lost a seat, where the replacement
 takes a seat id no earlier seat of the feature used and writes that
 seat's `seat-<id>.md` (`crucible:redteaming § Panels`;
@@ -92,6 +93,16 @@ one, and checking for a clean tree alone would again void reviews over
 implementers' test leftovers. (Basis: measured, by the audit; judgment,
 the controller's proposal accepted by the maintainer, for the shape.)
 
+### One home for both phases
+
+Until 2026-11-02 the shared-tree rules lived in
+subagent-driven-development, and redteaming restated the no-commit rule
+and the status check beside its pointer there: its controller acts on
+both but never reads the other skill. They moved to the dispatch
+composition, which every dispatching controller reads when its skill
+starts and after compaction, and each skill keeps only its windows.
+(Basis: judgment, accepted by the maintainer.)
+
 ### Replacing a seat
 
 A timeout, a transport error or a missing reply does not show that a
@@ -128,6 +139,10 @@ delegated by the maintainer.)
 
 ## Changes
 
+- 2026-11-02: the no-commit rule, the status check and the replacement
+  line are stated once, in the dispatch composition's § Shared-tree
+  rules, read by every dispatching controller; subagent-driven-development
+  and redteaming keep their windows and replacement paths.
 - 2026-11-02: `tree-check.txt` is overwritten at each window, not each
   dispatch, matching the window rule beside it; a standalone branch
   review keeps it in the host's temporary directory, having no

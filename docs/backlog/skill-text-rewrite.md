@@ -134,7 +134,7 @@
     review has closed" stands in four places (writing-plans, the plan
     phase, the folded lane, SDD's step 2); writing-plans states the
     spec-marker naming rule twice; redteaming's shared-tree paragraph
-    restates SDD § Shared-tree rules beside its pointer; the lane
+    restates the shared-tree rules beside its pointer; the lane
     reference holds the hatch's route entry, which belongs with
     brainstorming's route entry once that file has room.
 
