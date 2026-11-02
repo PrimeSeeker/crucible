@@ -13,8 +13,7 @@ Every outcome is written under the ledger's `## Adjudication rulings`,
 with its reason and the evidence or the adjudicator's report. A ruling
 that touches binding content, what binds in the spec or its umbrellas
 (`docs/decisions/the-spec.md`), or answers a literal-reading finding,
-the controller's or the adjudicator's, passes the containment test
-before the controller acts on it: a contained one the controller
+passes the containment test before the controller acts on it: a contained one the controller
 records as its own ruling, and any other goes to the operator as a
 decision ask, the finding open until the answer; on the very-small
 lane, one changing the note's binding parts is the operator's
@@ -31,8 +30,9 @@ conflict (is the plan or the work wrong?); a reviewer's finding that a
 binding item's literal reading reaches a case its author did not
 consider is such a plan conflict. A fresh adjudicator seat, on the
 default role (`docs/decisions/model-roles-and-effort.md`), rules
-instead on a NOT CONFIRMED or a finding the controller judges wrong
-that touches binding content or the Intent, and on every dispute about
+instead on any of these that touches binding content, as a
+literal-reading finding always does, or the Intent, and on every
+dispute about
 a diff the controller wrote: a task it implemented inline, which its
 ledger line `Task <N>: inline` records, and any very-small-lane diff.
 Its disputes go in batches, one wave's or those the controller raises
@@ -110,11 +110,11 @@ to the operator. With the spec read as a hypothesis
 content passes the containment test instead, so the adjudicator marks
 what touches binding content and the controller confirms what is
 contained. A reviewer's finding that a binding item's
-literal reading reaches a case its author did not consider is ruled on
-as the plan conflict it is, whether the binding text or the work is
-wrong, and not sent to the adjudicator as an ordinary dispute; on a
-diff the controller wrote it goes to the adjudicator, as every plan
-conflict there does. Either seat's ruling on such a finding passes the
+literal reading reaches a case its author did not consider is a plan
+conflict, whether the binding text or the work is wrong; until
+2026-11-02 the controller ruled on it, not sending it to the
+adjudicator as an ordinary dispute, except on a diff it wrote (§ The
+controller rules, with three independent reads). Either seat's ruling on such a finding passes the
 containment test whichever way it goes, since upholding the literal
 reading changes no binding content and would otherwise go untested.
 (Basis: judgment, accepted by the maintainer, 2026-10-28; judgment, a
@@ -133,16 +133,21 @@ most: a dispute touching binding content or the Intent (the umbrella's
 D4), and one on a diff the controller wrote, since a ruling on its own
 diff that only the close readout lists would be silent to an operator
 who does not read diffs (the umbrella's D2). The `Task <N>: inline`
-line keeps that trigger readable after a compaction. A literal-reading
-finding stays the plan conflict it is, with the containment test its
-check either way. The adjudicator's inputs point to the Deviations
+line keeps that trigger readable after a compaction. A plan conflict
+is one of the disputes this sorts: one touching binding content, as a
+literal-reading finding always does, or the Intent goes to the
+adjudicator, whose ruling still passes the containment test; one
+touching neither stays the controller's; one that is a design judgment
+goes to the operator. The adjudicator's inputs point to the Deviations
 paragraph, so no partial restatement of what binds can drop a clause.
 A red suite judged not the branch's needs the operator's acceptance
 whoever ruled, so the controller's ruling never lets finishing proceed
 by itself. (Basis: the umbrella's D4, the controller's proposal
 accepted by the maintainer; the read on the controller's own diff, the
 controller's proposal accepted by the maintainer at this change's
-brainstorm.)
+brainstorm; for plan conflicts, the controller's ruling on a task
+review's finding against a narrower first draft, read from the
+umbrella's D4 and this change's spec.)
 
 ## Rejected
 
@@ -160,8 +165,9 @@ brainstorm.)
 ## Changes
 
 - 2026-11-02: the controller rules on disputes with its evidence; a
-  fresh adjudicator rules only where a dispute touches binding content
-  or the Intent, or concerns a diff the controller wrote, which the new
+  fresh adjudicator rules only where a dispute, a plan conflict
+  included, touches binding content or the Intent (a literal-reading
+  finding always does), or concerns a diff the controller wrote, which the new
   ledger line `Task <N>: inline` records; the adjudicator's inputs point
   to the Deviations paragraph instead of restating what binds; a red
   suite ruled not the branch's goes to the operator with its ruling,

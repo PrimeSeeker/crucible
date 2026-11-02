@@ -79,7 +79,7 @@ reviewer takes the reported test output as given and builds its own diff
 (`docs/decisions/branch-review.md`). Where a binding item's literal
 reading reaches a case its author plainly did not consider, it reports a
 literal-reading finding naming the item and the case, for the
-controller's ruling (`docs/decisions/adjudication.md`). The task
+controller to send to the adjudicator (`docs/decisions/adjudication.md`). The task
 reviewer runs on the default role, every task it reviews, and the
 re-reviewer on the bounded role or better
 (`docs/decisions/model-roles-and-effort.md`). An open premise finding is
@@ -439,8 +439,9 @@ judgment, accepted by the maintainer, for the test.)
 - 2026-11-02: a NOT CONFIRMED answer goes to a ruling, the
   controller's or the adjudicator's, no longer always the adjudicator's;
   an inline task gets the ledger line `Task <N>: inline`, which keeps
-  the adjudicator's read on its diff after a compaction
-  (`docs/decisions/adjudication.md`).
+  the adjudicator's read on its diff after a compaction; a
+  literal-reading finding goes to the adjudicator, not the controller's
+  ruling (`docs/decisions/adjudication.md`).
 - 2026-11-02: the fix loop: three resumed waves, the `<W>/5` fix-wave
   line now `<W>/3`, then an operator ask with park, block or another
   approach, recorded under `## Adjudication rulings`; the fresh
