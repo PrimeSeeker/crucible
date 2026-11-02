@@ -218,8 +218,8 @@ All lightly held. Each records its basis.
   would count spliced text twice and say nothing about what an author
   maintains. What a seat carries at dispatch, the rendered size, is
   reported beside it as information, the umbrella's resident-token
-  measure being `compaction-fit`'s. Basis: the controller's call after
-  round 1.
+  measure being `compaction-fit`'s. Basis: the controller's proposal
+  after round 1, accepted by the operator.
 
 ## Constraints & invariants
 
