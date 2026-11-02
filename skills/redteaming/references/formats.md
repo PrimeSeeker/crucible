@@ -59,6 +59,10 @@ workspace):
                               #   included (crucible:brainstorming)
     request.md                # the request, quoted (crucible:brainstorming);
                               #   the goal check reads it
+    tree-check.txt            # HEAD and status output at the latest dispatch,
+                              #   overwritten at each; the status check reads
+                              #   it (crucible:subagent-driven-development
+                              #   § Shared-tree rules)
     campaigns/
       spec/                   # the spec campaign
         round-00/             # round 0 mechanical pre-pass (consumes no cap round)
@@ -156,12 +160,8 @@ names. Any record may also carry
 `## Rulings and corrections`: dated entries added after the round closed —
 operator rulings on its decision asks, corrections to the record.
 
-**Where dispatch items go.** A dispatch's tree-check readings go in its own
-section: `Panel roster` for seats, `Verifier block` for the verifier,
-`Terminal pass` for the plan record's pass, the terminal-pass record's
-preamble for its pass, round 0's preamble for its pre-pass. A run
-predicate's command and output go under its item in `Fix list`. A plan-half
-or pre-pass re-run (the plan record, the folded lane) goes in the
+**Where dispatch items go.** A run predicate's command and output go under
+its item in `Fix list`. A plan-half or pre-pass re-run (the plan record, the folded lane) goes in the
 `Verifier block` of the record whose wave it follows, or under its
 `Fix list` where that record has no verifier block (round 0, the
 terminal-pass record); one after a sanctioned plan-phase repair goes under
@@ -216,7 +216,7 @@ Fields, in order:
    `degraded: yes`.
 
 4. **Panel roster** (`## Panel roster`) — per seat: seat id, model, assigned
-   lens and its `seat-<id>.md` file; and the seats' tree-check readings.
+   lens and its `seat-<id>.md` file.
 
 5. **Merged finding list** (`## Merged finding list`) — entries only: one
    list item per finding, opening `- <id> <SEVERITY>` (BLOCKER, MAJOR or
@@ -285,7 +285,7 @@ Fields, in order:
    verdict; a verdict per delta claim (each new "the code does X" claim the
    wave introduced): TRUE or FALSE with evidence, or not checked with the
    reason, and for each claim not checked, the controller's own check and
-   its outcome; and the verifier's tree-check readings.
+   its outcome.
 
 8. **Round readout** (`## Round readout`) — the readout as delivered to the
    operator, compact, with the items `crucible:redteaming` § Round readout

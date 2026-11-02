@@ -9,7 +9,7 @@ A plan gets **one verification round**, recorded as the single record `campaigns
 3. **Blind verifier** (instrument `blind-verifier`) on the fix wave, under its unchanged input contract; its fix-list scope is the coherence seat's items.
 4. **Terminal pass** (instrument `terminal-pass`, `phase` set `plan`) — one fresh seat after the fix wave, scoped to this single round.
 
-**Every dispatch follows `crucible:redteaming` § Panels and § Dispatch composition** — model, effort, roster and filled slot card — and the tree check in `crucible:redteaming` § Inputs and state. **Announce the phase shape** — seats, lenses, dispatch count — in the phase-start readout and proceed; the announcement is not an approval gate.
+**Every dispatch follows `crucible:redteaming` § Panels and § Dispatch composition** — model, effort, roster and filled slot card — and the status check in `crucible:redteaming` § Inputs and state. **Announce the phase shape** — seats, lenses, dispatch count — in the phase-start readout and proceed; the announcement is not an approval gate.
 
 **Marks are plan content.** Where a task carries `Review: branch only` (its form: `crucible:writing-plans` § Per-task structure — four fields, all required), the coherence seats grade each mark, by their mandate reminder (`skills/redteaming/seat-prompt.slots.md`); the close readout lists the marked tasks (`crucible:redteaming` § Round readout). No seat grading marks reads this phase's fix wave or a repair, so neither adds a mark; a question proposing one is answered or carried (`crucible:redteaming` § Merge and finding hygiene).
 

@@ -55,10 +55,9 @@ removes machinery outranks one that adds it, all else equal.
 
 **Quorum and degraded rounds.** Every lost or crashed seat is recorded,
 and a round that lost one is topped back up or recorded degraded. A
-top-up starts only when the host confirms the lost seat terminal or
-absent, or that it acknowledged an interrupt; ambiguous liveness is
-BLOCKED and goes to the operator, and the replacement writes a fresh
-report under a fresh seat id. A degraded round never counts toward
+top-up starts only when the host confirms the lost seat has stopped; a
+seat whose state the host cannot confirm is a stop-and-ask, and the
+replacement writes a fresh report under a fresh seat id. A degraded round never counts toward
 convergence or against the cap, a one-seat round that loses its seat is
 degraded, and two consecutive degraded rounds go to the operator as an
 infrastructure escalation (`crucible:redteaming § Panels`).
@@ -256,7 +255,9 @@ is the seat-replacement rule execution uses
 2026-08-16: a timeout or a missing reply does not prove the first seat
 stopped, a replacement beside a live original makes two writers, and a
 fresh report path keeps a late return from overwriting its successor.
-(Basis: judgment, accepted by the maintainer.)
+(Basis: judgment, accepted by the maintainer.) The skill text rewrite
+reduced it to one line on 2026-11-02, the ambiguous-liveness BLOCKED
+entry in the quorum block going (`docs/decisions/shared-tree.md`).
 
 ### Stop rule and cap
 
@@ -402,6 +403,11 @@ trim.)
 
 ## Changes
 
+- 2026-11-02: the top-up gate is the one-line replacement rule: the
+  host's confirmation that the lost seat has stopped, an unconfirmable
+  seat a stop-and-ask; the ambiguous-liveness BLOCKED entry in the
+  quorum block removed, because the skill text rewrite reduced seat
+  replacement to its line (`docs/decisions/shared-tree.md`).
 - 2026-11-02: the right-sizing re-seat is the controller's judgment on
   how far the artifact has grown, and the round record's trace loses its
   line for the wave's line counts; because the skill text rewrite

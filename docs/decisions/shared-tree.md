@@ -5,15 +5,20 @@
 **Read windows.** While any seat, verifier or pass reads a spec or plan,
 the artifact is frozen: fixes land between dispatches. While a dispatched
 agent works in the worktree, the controller commits nothing there and
-queues the commit until it returns. Every read-only dispatch window, in
-the campaigns and in execution alike, runs one tree check: it starts with
-no tracked or staged change, and the controller records `git rev-parse
-HEAD` and `git status --porcelain --untracked-files=all` before and
-after. A moved HEAD, any tracked or staged change, or an untracked path
-that appeared or disappeared voids every report from the window until it
-is re-run on a clean tree; untracked files present at the start are
-tolerated, and an edit inside one of them goes unseen, an accepted
-residual (`crucible:redteaming § Inputs and state`;
+queues the commit until it returns. Every review seat in execution and
+every dispatch window in the campaigns ends in one status check. The
+seat is dispatched with no tracked or staged change, the controller
+first writing the output of `git rev-parse HEAD` and `git status
+--porcelain --untracked-files=all` to `<workspace>/tree-check.txt`,
+overwritten at each dispatch; seats out at the same time are one window,
+the file written before the first and checked after the last. When the
+window's last seat returns, before the next commit, the controller runs
+both commands again: output differing from the file's voids every report
+from the window until it is re-run on a clean tree. Untracked files
+present at dispatch are tolerated, and an edit inside one of them goes
+unseen, an accepted residual. Nothing about the check is recorded; a
+controller resumed after a compaction finds the dispatch-time state in
+the file (`crucible:redteaming § Inputs and state`;
 `crucible:subagent-driven-development § Shared-tree rules`). A
 campaign seat's input paths are the artifact, its workspace paths, the
 supporting inputs its card lists and, for the blind verifier, the
@@ -22,15 +27,12 @@ check claims with under the workspace's `scratch/`, one subdirectory per
 report; a standalone branch review, which has no workspace, uses the
 host's temporary directory.
 
-**Replacing a seat is gated.** A replacement for a seat that already
-holds work starts only when the host confirms the prior seat terminal or
-absent, or confirms that it acknowledged an interrupt; that confirmation
-revokes its right to write, and silence or a timeout does not. Where
-liveness is ambiguous, the controller records the seat BLOCKED, escalates
-to the operator, and never dispatches a replacement to find out. A
-sanctioned replacement writes to a fresh report path, and the revoked
-seat's file stays as the record. In execution the fresh path is the
-card's path with `-r<R>` before `.md`
+**Replacing a seat: one line.** A replacement for a seat never starts
+until the host confirms the first has stopped; silence or a timeout is no
+confirmation, and a seat whose state the host cannot confirm is a
+stop-and-ask, as any unresolvable state is. The replacement writes to a
+fresh report path, and the first seat's file stays as the record. In
+execution the fresh path is the card's path with `-r<R>` before `.md`
 (`crucible:subagent-driven-development § Shared-tree rules`); the same
 gate tops up a campaign round that lost a seat, where the replacement
 takes a seat id no earlier seat of the feature used and writes that
@@ -76,6 +78,20 @@ second rule; the maintainer reaffirmed one rule on a corrected
 description. (Basis: judgment, accepted by the maintainer, for the
 comparison; the maintainer's preference, for keeping one rule.)
 
+The skill text rewrite's audit of crucible's runs counted about 1 catch
+for the tree check in more than 800
+(`docs/crucible/2026-11-01-skill-text-rewrite/umbrella.md`), its readings
+taken and recorded around every window. On 2026-11-02 it became one status
+check after each review seat, kept because reviewers have written into
+the tree and an unseen write would land unreviewed, a silent failure:
+the readings in the round record and their fields went, and the
+dispatch-time HEAD and status output moved to a workspace file, which a
+resumed controller reads. The comparison with the dispatch-time untracked
+list stays, since a seat can delete an untracked file as well as add
+one, and checking for a clean tree alone would again void reviews over
+implementers' test leftovers. (Basis: measured, by the audit; judgment,
+the controller's proposal accepted by the maintainer, for the shape.)
+
 ### Replacing a seat
 
 A timeout, a transport error or a missing reply does not show that a
@@ -86,7 +102,15 @@ than survive it: BLOCKED is the whole mechanism, and a fresh report path
 keeps a late return from the revoked seat from overwriting its
 successor's report. The gate landed in SDD's fix loop on 2026-08-16, was
 applied to campaign seats the same day, and became a rule for every
-seat on 2026-10-07. (Basis: judgment, accepted by the maintainer.)
+seat on 2026-10-07. (Basis: judgment, accepted by the maintainer.) On
+2026-11-02 the skill text rewrite reduced the gate to one line: the
+host's confirmation and the fresh report path stay, since a replacement
+started early fails silently, and the ambiguous-liveness BLOCKED line and
+its escalation text went, a seat whose state the host cannot confirm
+being a stop-and-ask like any other unresolvable state. (Basis:
+judgment, the controller's proposal accepted by the maintainer, for the
+line; keeping the gate rather than retiring it, the controller's call,
+delegated by the maintainer.)
 
 ## Rejected
 
@@ -104,6 +128,15 @@ seat on 2026-10-07. (Basis: judgment, accepted by the maintainer.)
 
 ## Changes
 
+- 2026-11-02: the tree check became one status check after each review
+  seat against the HEAD and status output written at dispatch to
+  `<workspace>/tree-check.txt`, seats out together one window; the
+  tree-check readings and their round-record fields removed. Seat
+  replacement became one line, the ambiguous-liveness BLOCKED line
+  (`Task <N>: BLOCKED — ambiguous seat liveness`) and its escalation
+  removed, an unconfirmable seat a stop-and-ask; because the tree
+  check caught about 1 in more than 800 and each guard needs only its
+  check or its trigger, its function kept.
 - 2026-10-12: read windows: the artifact frozen while read, no controller
   commit while a seat works, one comparing tree check for every
   read-only window, a seat's input paths including its supporting
