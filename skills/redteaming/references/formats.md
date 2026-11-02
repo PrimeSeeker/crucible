@@ -227,6 +227,9 @@ Fields, in order:
    `parked` | `rejected` | `deferred-to-implementation` | `deferred-minor`
    — plus the ruling a partly-applied, parked or rejected entry owes and
    an `UNVERIFIED` entry's verification outcome (`crucible:redteaming` § Merge and finding hygiene).
+   An entry closing a repeat of an earlier round's `deferred-minor` takes
+   `deferred-minor` too and names that round and entry; the close seeds
+   the two once.
    An entry merged from a premise finding carries the label `premise`
    after its severity, `- F4 MAJOR premise`: a decision ask whatever its
    severity, never an open finding the stop rule or the cap reads.

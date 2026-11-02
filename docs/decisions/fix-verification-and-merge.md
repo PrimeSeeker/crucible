@@ -15,8 +15,7 @@ to find the findings behind each decision ask
 Every seat question takes a disposition. Nothing mechanical checks the
 merge. Seat ids are never reused within a feature, the plan phase's
 pre-pass id `p0` excepted, so the stop check traces each seat's forecast
-across rounds by its id (`crucible:redteaming § Merge and finding
-hygiene`).
+across rounds by its id (`crucible:redteaming § Panels`).
 
 **Dispositions and rulings.** Each merged entry takes one disposition:
 applied, partly-applied, parked, rejected, deferred-to-implementation or

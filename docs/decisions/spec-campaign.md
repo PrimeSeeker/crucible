@@ -414,7 +414,9 @@ trim.)
   `worksheet` selector's `ordered-first` value and its round-1 hunt are
   removed, `pre-pass` kept; the folded lane's stated reason for round 0
   (a code baseline) goes; because one rule replaces two and the skill
-  text rewrite's audit counted round 0 among the reads that catch.
+  text rewrite's audit counted round 0 among the reads that catch real
+  defects, and round 0 stakes severities because severity now decides
+  whether a fix list takes a finding.
 - 2026-11-02: a premise ask open at the campaign's close is carried in
   the close readout alone, the design digest and its `## Open judgments`
   being retired, and the round readout drops its digest-update item

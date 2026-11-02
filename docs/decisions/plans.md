@@ -92,7 +92,7 @@ from its plan-side hunks, the re-pin and any plan patch, and the
 controller confirms that the amendment commit landed. The shape is
 announced and the phase proceeds, with no approval gate. It is called the
 plan phase, never a campaign; its directory `campaigns/plan/` and
-argument value `plan` keep their names. At close the controller seeds
+selector value `plan` keep their names. At close the controller seeds
 SDD's ledger from the routing table, with each contained amendment as
 one of its own rulings, the item and its reason together, which SDD's
 setup copies there if the ledger lacks it, with each premise finding
@@ -251,9 +251,11 @@ the plan phase kept proceeding without one. (Basis: the maintainer's
 preference.)
 
 On 2026-10-09 "campaign" came to name the spec's review only. The
-directory and the argument value are interfaces that records and the
-slot cards' paths and `phase` selector read, as `conserve.py` did until
-2026-11-02, so they kept their names. (Basis: judgment, accepted by the maintainer.)
+directory and the argument value are interfaces that records and
+`conserve.py` read, so they kept their names. (Basis: judgment, accepted
+by the maintainer.) Since `conserve.py` retired on 2026-11-02, the
+records and the slot cards read them: the cards' paths name the
+directory, and `plan` is a value of their `phase` selector.
 
 ## Rejected
 
@@ -277,9 +279,10 @@ slot cards' paths and `phase` selector read, as `conserve.py` did until
   open; because the skill text rewrite's audit found fix waves the main
   source of process-introduced defects
   (`docs/decisions/fix-verification-and-merge.md`).
-- 2026-11-02: the `campaigns/` directory's names no longer cite
-  `conserve.py` as a reader, the script retired with merge conservation
-  by the skill text rewrite.
+- 2026-11-02: the `campaigns/` directory's names have the records and
+  the slot cards as their readers, `plan` now a selector value, since
+  `conserve.py` retired with merge conservation by the skill text
+  rewrite; the reason they kept their names on 2026-10-09 stands.
 - 2026-10-30: no `Review: branch only` mark is added in an edit no
   mark-grading seat reads afterwards, a question proposing one there
   answered or carried; the plan phase's pre-pass, and the folded lane's

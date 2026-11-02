@@ -85,7 +85,7 @@ approve the campaign launch had been, in the maintainer's words, only a
 visibility checkpoint: "I basically never adjusted the shape". (Basis:
 the maintainer's preference, 2026-08-06 and 2026-08-07.)
 
-Launch approval moved into the gate, then the digest gate, on
+Launch approval moved into the gate, then called the digest gate, on
 2026-10-07. The only cost data is the maintainer's runs on one project,
 so a token range at the gate would be false precision. The shape has named each seat's model
 since 2026-10-09. (Basis: judgment, accepted by the maintainer.) Round
