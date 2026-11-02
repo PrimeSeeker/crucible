@@ -78,7 +78,10 @@ the brainstorm decision record.
   still re-enters the loop. This holds in
   the task loop, the branch review and on the lane; a red suite at
   Finish that the controller judges not the branch's is a dispute under
-  the same rule. Basis: the umbrella's D4; the own-diff read, record 1,
+  the same rule, and the red run goes to the operator with its ruling,
+  whoever made it: the operator's acceptance is what lets
+  `crucible:finishing-a-development-branch` proceed past its Step 1,
+  whose exception names the ruling rather than the adjudicator. Basis: the umbrella's D4; the own-diff read, record 1,
   since a ruling on its own diff that only the close readout lists
   would be silent to an operator who does not read diffs (the
   umbrella's D2).
@@ -87,21 +90,28 @@ the brainstorm decision record.
   audit, by the controller, or by a branch-review pass flagging it
   DRIFT — within the materiality bound (an undisclosed deviation from
   binding content, or one with cross-task blast radius) is a decision
-  ask to the operator: revert the task and run it again from step 1, or
-  repair it in the fix loop or, at the branch review, in a wave counted
-  against its cap; the controller recommends one. Below the bound,
+  ask to the operator: revert the task, with the later tasks the ask
+  names as building on it, and run them again from step 1, or repair it
+  in the fix loop or, at the branch review, in a wave counted against
+  its cap; the controller recommends one. A revert at the branch review
+  returns to it once the re-run tasks complete, and it resumes with a
+  full-scope pass. Below the bound,
   undisclosed advisory choices and disclosed-but-unjustified Decision
   Log entries enter the fix loop, as today. The revert-and-replan
-  section, its attempt numbering (the `-x<X>` report names and the
-  `reverted` line's attempt number) and the rule that a DRIFT pass
-  consumes a wave go. On the very-small lane,
+  section, the `reverted` line's attempt number and the rule that a
+  DRIFT pass consumes a wave go. A task run again after a revert keeps
+  today's `-x<X>` report names, `<X>` one more than the task's
+  `reverted` lines, so its reports and wave numbers start fresh and
+  Finish's record check reads the latest run's. On the very-small lane,
   drift from the note stays a wave finding. Basis: the umbrella's D3;
   resolves `docs/backlog/implementer-dispute-channel.md`.
 - **E4. Small retirements.**
   - The pre-flight plan-conflict scan goes; conflicts that emerge are
     the review loop's, as today.
   - The task review's cannot-verify items go, from the skill and the
-    task-reviewer template, with the loop trigger they fed.
+    task-reviewer template, with the loop trigger they fed; the reviewer
+    checks a requirement outside the diff in the code it needs, and its
+    verdicts carry the result.
   - Snapshot blessing becomes one line: a behaviour-preservation claim
     that rests on changed snapshot or golden output is never blessed by
     the controller; a fresh blind seat, on the bounded role or better,
@@ -120,6 +130,9 @@ the brainstorm decision record.
   no longer recorded around each window, and the round record's fields
   for them go. The rule that nothing is committed while a seat works
   stays. Basis: the umbrella's D4.
+  Deferred to implementation: how the dispatch-time HEAD and untracked
+  set stay available to the after-check across a compaction, and the
+  wording of the clean-tree precondition at dispatch.
 - **E6. Seat replacement: one line.** In both skills: a replacement for
   a seat is never started until the host confirms the first has stopped,
   and it writes to a fresh report path. The procedure around it — the
@@ -171,14 +184,17 @@ the brainstorm decision record.
   between staying on the lane and moving to the standard route, which
   starts at `crucible:brainstorming` with the note and the existing diff
   as its incoming document, writing its spec into the lane's feature
-  folder beside the note. On the move, the lane ledger is moved aside
+  folder beside the note; where the note's preamble carries an
+  `Umbrella:` line, the spec's carries the same line, the duty
+  `skills/brainstorming/references/umbrellas.md` gives the hatch's text.
+  On the move, the lane ledger is moved aside
   and the standard route's ledger links it as its predecessor
   (`crucible:subagent-driven-development` § Setup), so execution does
   not take it for another run's. The `Hatch:` ledger line and the rest
   of the hatch's procedure go. Basis: the umbrella's D3 and its entry
   (the line names the skill that runs next); the predecessor link,
-  the controller's call during spec writing, departing from design
-  part 2's presentation.
+  record 8, the controller's proposal accepted at the campaign gate,
+  departing from design part 2's presentation.
 - **E10. The landing ask after the final pass.** The close readout, the
   landing ask, comes after the branch review's last full-scope pass, and
   the findings parked at triage are filed, as open items, before the
@@ -205,7 +221,9 @@ the brainstorm decision record.
   loop's after three waves, drift, the hatch), the seat-replacement
   line, and the carriage of `deferred-minor` entries.
 - **I3. Every loop still terminates.** The task loop at three waves and
-  the operator's answer; the branch review at its cap.
+  the operator's answer; the branch review at its cap; a revert, at
+  either, is the operator's answer each time, so drift adds no cycle
+  the operator did not choose.
 - **I4. Nothing states a retired mechanism as current.** After the
   branch, no shipped skill text, template, generated agent, test, live
   decision record, `docs/authoring.md`, `README.md` or `AGENTS.md`
@@ -225,15 +243,53 @@ the brainstorm decision record.
   BLOCKED line and the `Hatch:` line go; the
   predecessor link stays, used by a supersede and by the hatch (E9).
   Report paths keep the rule that each dispatch writes a path no earlier
-  dispatch used, which a task run again after a revert follows with no
-  attempt numbering.
-- **Slot cards, templates and generated agents.** A slot removed or
-  reshaped (E8's, the implementer card's fix-only and attempt rules,
-  the report-path rules naming `-x<X>`) changes in its card and its
-  template together, and `agents/` is regenerated.
-- **A removed heading.** `crucible:subagent-driven-development`
-  § Revert-and-replan goes; every citation of it changes in the same
-  change, which the anchor test (`tests/test_references.py`) holds.
+  dispatch used, which a task run again after a revert follows by the
+  `-x<X>` names (E3). A task the controller implements inline gets a
+  `Task <N>: inline` line where a dispatched task's implementer line
+  goes, so E2's own-diff trigger survives a compaction.
+- **The answers after the third wave (E1).** Park: a `Task <N>: parked`
+  line per finding and the completion line's parked count. Block: a
+  `Task <N>: BLOCKED — <the ruling>` line, and execution stops at that
+  task until the operator rules again. Another approach: the operator's
+  answer names it, a plan change by
+  `crucible:subagent-driven-development` § Plan changes mid-execution or
+  a revert (E3), whose re-run starts again at wave 1.
+- **The hatch's move (E9).** The controller moves the lane ledger aside
+  when the operator chooses the move; the plan phase's close, seeding
+  the standard route's ledger, writes its line 2 linking it. The trigger
+  is the controller's to raise; a reviewer's finding or question may
+  prompt it.
+- **Deferral ownership (E7).** The ownership closure the plan phase's
+  pre-pass runs means every file in the census and every `Deferred to
+  implementation:` marker, the spec's and the plan's, has exactly one
+  owning task. On the folded lane the round-0 pre-pass and its re-run
+  after each wave run it, in place of the routing table's close check,
+  and the folded close seeds no deferred list. A deferral is misplaced
+  where it sits in, or is named by, a task other than the one whose
+  scope it falls in.
+- **The marked task at the branch review (E8).** The branch reviewer's
+  card keeps one slot for tasks completed branch review only, each with
+  its range and its report path, and every full-scope pass reads them;
+  no line is owed per task. A marked task's step-4 gate keeps its check
+  of RED output before GREEN, or the logged exception; the routed-item
+  part goes with E7. The plan phase's and the folded campaign's close
+  readouts list the marked tasks.
+- **Slot cards, templates and generated agents.** A slot or card line
+  removed or reshaped changes in its card and its template together,
+  and `agents/` is regenerated: E8's slot, the branch-reviewer card's
+  `[MANDATE_REMINDER]` (the task lines owed) and its `lane` selector
+  text (Lane Fit), the redteam seat card's mark-grading clause and the
+  seat template's pre-pass passage (`skills/redteaming/seat-prompt.md`,
+  E7's owner check), and the implementer card's fix-only and
+  wave-4–5 rules. A card stays within the card budget the suite checks.
+- **Removed headings.** `crucible:subagent-driven-development`
+  § Revert-and-replan, `crucible:requesting-code-review` § Tasks
+  completed branch review only, and the branch-reviewer template's
+  § Tasks With No Task Review, § Task Lines and Lane Fit section go;
+  every citation of each changes in the same change. The anchor test
+  (`tests/test_references.py`) holds the `<file> § <heading>` and
+  `crucible:<skill> § <heading>` citations, and A1's terms the bare
+  ones.
 - **The umbrella on this branch.** A lightly held edit to its D4, by
   `skills/brainstorming/references/umbrellas.md` § Edits: a dispute on a
   diff the controller wrote also gets the independent read (E2). The
@@ -242,18 +298,25 @@ the brainstorm decision record.
 ## Acceptance
 
 - **A1. No retired mechanism stated.** One-time check: a
-  case-insensitive search of `skills/`, `agents/`, `tests/` (the
-  scanner's corpus excluded), `docs/decisions/`, `docs/authoring.md`,
-  `README.md` and `AGENTS.md` for at least `pre-flight`,
-  `cannot-verify`, `cannot verify`, `revert-and-replan`, `replanned`,
-  `-x<X>`, `breaker`, `wave 4`, `waves 4`, `/5`, `routing table`,
-  `routing-table`, `routed`, `T<N>`, `Routed deferred items`,
-  `Lane Fit`, `EXCEEDS SHAPE`, `WITHIN SHAPE`, `Hatch:`,
-  `ambiguous seat liveness`, `BRANCH_ONLY` and `Task Lines`, with the terms
-  the plan names for each Decision's sites, finds only history in
-  decision records, the kept one-line forms and senses unrelated to the
-  retired mechanisms; the command and its output are recorded. No later
-  change is planned that could undo it.
+  case-insensitive fixed-string search of `skills/`, `agents/`,
+  `tests/` (the scanner's corpus excluded), `docs/decisions/`,
+  `docs/authoring.md`, `README.md` and `AGENTS.md`, run where the shell
+  rewrites no leading-slash argument, for at least `pre-flight`,
+  `cannot-verify`, `revert-and-replan`, `replanned`, `replanning`,
+  `attempt <X>`, `breaker`, `wave-4`, `waves 4`, `<W>/5`,
+  `routing table`, `routing-table`, `routed item`, `routed deferred`,
+  `T<N>`, `Lane Fit`, `EXCEEDS SHAPE`, `WITHIN SHAPE`, `Hatch:`,
+  `ambiguous liveness`, `ambiguous seat liveness`, `BRANCH_ONLY`,
+  `Task Lines`, `branch-review-only list`, `Tasks With No Task Review`,
+  `patch forward`, `patched forward`, `readings`, `grade each mark`,
+  `grading marks`, `adds grading`, `widened as that step states`,
+  `audit of a task completed branch review only`,
+  `and for a task completed branch review only` and
+  `adjudicator dismissed`, with the terms the plan names for each
+  Decision's sites, finds only history in decision records, the kept
+  one-line forms and senses unrelated to the retired mechanisms; the
+  command and its output are recorded. No later change is planned that
+  could undo it.
 - **A2. The suite passes.** One-time at Finish: `python -m pytest
   tests/`, its summary line quoted with the skip count; the generated
   agents match their templates (the suite's check mode).
@@ -261,7 +324,8 @@ the brainstorm decision record.
   `tests/prose-budget.txt` below 65,246 with the net stated, and the
   subagent-driven-development, redteaming and brainstorming `SKILL.md`
   files each no larger than at `10cd3f5` (46,563, 39,855 and 22,725
-  bytes), by `git cat-file -s`.
+  bytes), and no other `SKILL.md` over 20,000 bytes, by
+  `git cat-file -s`.
 - **A4. The paths walked.** One-time, by the controller, recorded in
   the branch review's records: for the task loop, inline mode, the
   very-small lane, the branch review and Finish, where a disputed
@@ -300,7 +364,8 @@ and its template and card; `crucible:writing-plans`;
 `references/folded-lane.md`, `references/flip-paths.md`,
 `references/formats.md` and the seat card; `crucible:brainstorming` and
 `references/folded-lane-document.md` and `references/umbrellas.md`;
-`README.md`'s line on adjudication; and every decision record that
+`crucible:finishing-a-development-branch`; `README.md`'s line on
+adjudication; and every decision record that
 states them, by search — at least the task loop, adjudication, the
 branch review, plans, routes, the shared tree, model roles and effort,
 records and workspace, instruments, test rules, the spec, evidence and
