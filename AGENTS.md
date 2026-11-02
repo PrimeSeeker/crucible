@@ -10,7 +10,7 @@ to install it: `README.md`; the layout: `docs/dual-runtime.md`.
 - `docs/dual-runtime.md` — the runtime separation, adapter references, model
   floor, upgrades and rollback.
 - `docs/authoring.md` — rules for writing crucible's own files: anchor
-  stability and the reference convention.
+  stability, the paired texts and the reference convention.
 - `docs/decisions/` — the decision records: why crucible is as it is, one
   record per family of decisions, named by slug. A record states the
   current position and is edited in place when the decision changes; the

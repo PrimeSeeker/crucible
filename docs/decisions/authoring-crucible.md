@@ -282,8 +282,8 @@ dangling citation. Records point at skill sections more than the skills
 point at each other, and a record is edited with the change it records,
 so any heading may be cited and the scanner checks it exists. The skills
 had the same freedom only for headings `docs/authoring.md` listed as
-frozen, one in all, while they cited 42 others (counted by 2026-10-27,
-when the gap was filed as a backlog item); since the
+frozen, one in all, while they cited 42 others (as counted on
+2026-10-27); since the
 scanner fails a citation whose heading is gone whether listed or not,
 and placement moved enough text that a hand-kept list would lag, the
 restriction was retired on 2026-11-02. An agent's proposal, which the
@@ -336,10 +336,13 @@ the build-history rule included (`skills/using-crucible/SKILL.md`).
 
 ## Changes
 
-- 2026-11-03: placement of shared rules: seat rules in the shared seat
-  reference, spliced into the templates; controller-shared dispatch
-  rules in `dispatch-composition.md`; host-neutral dispatch rules and
-  the decision ask in the router; the paired texts listed in
+- 2026-11-03: the cross-skill citation count is dated as counted, not as
+  filed: the filing date is not known.
+- 2026-11-03: placement of shared rules, so that each rule has one owner
+  and its copies stop drifting: seat rules in the shared seat reference,
+  spliced into the templates; controller-shared dispatch rules in
+  `dispatch-composition.md`; host-neutral dispatch rules and the
+  decision ask in the router; the paired texts listed in
   `docs/authoring.md`; skill text not generated; any skill heading
   citable from a skill, the frozen list having lagged the citations.
 - 2026-11-02: the prose budget counts hand-edited text, every `*.md` of

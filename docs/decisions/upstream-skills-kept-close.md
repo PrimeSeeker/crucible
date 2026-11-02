@@ -15,14 +15,14 @@ crucible's loops, keeping its core.
 every independent agent before waiting for any of them, through the
 host's parallel fan-out operation, starting the rest as capacity frees;
 tasks are independent only where they share no state, need no ordering
-and neither reads the other's output, and tasks that are not run one at
-a time, whatever the host permits; and its review steps, where each agent's diff is checked, not
-only its summary, a check from upstream's verification-before-completion.
+and neither reads the other's output, and tasks that are not
+independent run one at a time, whatever the host permits; and its
+review steps, where each agent's diff is checked, not only its summary, a check from upstream's verification-before-completion.
 It carries none of crucible's seat machinery. Redteaming starts
 its seats and leaves the rest of the fan-out mechanics to it
 (`crucible:redteaming § Panels`).
 
-**systematic-debugging** is upstream's text except four lines of its
+**systematic-debugging** is upstream's text except five lines of its
 `SKILL.md`, a note in each of two references, and root-cause-tracing's
 script invocation and dead-end edges. Test-first reads "Write
 the failing test before the fix; where no test or script can reproduce
@@ -180,6 +180,10 @@ accepted by the maintainer.)
 
 ## Changes
 
+- 2026-11-03: systematic-debugging's departures are counted as five
+  lines, the count having missed the 2026-11-02 removal, and step 3's
+  clause on tasks that are not independent says so again: a wording
+  correction.
 - 2026-11-02: systematic-debugging drops upstream's "MUST have before
   fixing", which contradicted its conditional test-first line: a defect.
 - 2026-11-02: step 3 defines independent tasks (no shared state, no
