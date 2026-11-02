@@ -192,14 +192,13 @@ def test_instrument_agent_write_mode_regenerates_to_a_clean_check(
 
 # --- the splice ------------------------------------------------------------
 
-#: A shared seat reference written for these tests, so each expected
-#: rendering is a literal rather than a read of the shipped reference.
-_FIXTURE_REFERENCE = (
-    "# Fixture reference\n"
+#: Sections appended to a copy of the shipped shared seat reference, under
+#: headings no real section uses, so each expected rendering is a literal
+#: and the real sources' own includes keep resolving beside them. The H1
+#: between them checks that a ``#`` heading ends a section.
+_FIXTURE_SECTIONS = (
     "\n"
-    "Intro text no source can take.\n"
-    "\n"
-    "## Alpha rules\n"
+    "## Splice fixture alpha\n"
     "\n"
     "Alpha line one.\n"
     "\n"
@@ -207,17 +206,21 @@ _FIXTURE_REFERENCE = (
     "## Inside a fence, not a heading\n"
     "```\n"
     "\n"
-    "### Alpha detail\n"
+    "### Splice fixture alpha detail\n"
     "\n"
     "Alpha detail line.\n"
     "\n"
     "\n"
-    "## Beta rules\n"
+    "# Splice fixture part\n"
+    "\n"
+    "Text under an H1, in no section.\n"
+    "\n"
+    "## Splice fixture beta\n"
     "\n"
     "Beta line.\n"
 )
 _ALPHA = (
-    "## Alpha rules\n"
+    "## Splice fixture alpha\n"
     "\n"
     "Alpha line one.\n"
     "\n"
@@ -225,79 +228,91 @@ _ALPHA = (
     "## Inside a fence, not a heading\n"
     "```\n"
     "\n"
-    "### Alpha detail\n"
+    "### Splice fixture alpha detail\n"
     "\n"
     "Alpha detail line."
 )
-_BETA = "## Beta rules\n\nBeta line."
+_BETA = "## Splice fixture beta\n\nBeta line."
 
 
-def _seed_splice_tree(tmp_path: Path, reference: str = _FIXTURE_REFERENCE) -> None:
+def _seed_splice_tree(tmp_path: Path, extra: str = "") -> None:
+    """The generator inputs under *tmp_path*, the shared seat reference
+    keeping every real section and gaining the fixture sections, then
+    *extra*."""
     copy_generator_inputs(tmp_path)
-    (tmp_path / SHARED).write_bytes(reference.encode("utf-8"))
+    reference = tmp_path / SHARED
+    real = reference.read_bytes().decode("utf-8")
+    assert "Splice fixture" not in real, "a real section shadows the fixture"
+    text = real.rstrip("\n") + "\n" + _FIXTURE_SECTIONS + extra
+    reference.write_bytes(text.encode("utf-8"))
 
 
-def _insert_after(rel: str, root: Path, anchor_line: str, new: str) -> str:
+def _insert_after(rel: str, root: Path, anchor_line: str, new: str) -> None:
     """Insert *new* after the first line equal to *anchor_line* in *rel*
-    under *root*; return the source text before the edit."""
+    under *root*."""
     path = root / rel
-    text = path.read_bytes().decode("utf-8")
-    lines = text.split("\n")
+    lines = path.read_bytes().decode("utf-8").split("\n")
     at = lines.index(anchor_line) + 1
     path.write_bytes("\n".join([*lines[:at], new, *lines[at:]]).encode("utf-8"))
-    return text
 
 
 def test_splice_replaces_each_include_with_its_section(tmp_path: Path) -> None:
     """Break: an include left as a marker, a section cut short at its
     ``###`` subsection or at a ``##`` line inside a code fence, or run on
-    into the next ``##`` section, its heading
-    dropped, or the agent rendered from anything but the spliced template."""
+    into the next ``#`` or ``##`` heading, its heading dropped, or the
+    agent rendered from anything but the spliced template.
+
+    The expected text is the source's own render, whatever includes it
+    already holds, with the fixture sections where the new includes sit."""
     _seed_splice_tree(tmp_path)
+    assert run_generator("write", "--root", str(tmp_path)).returncode == 0
+    baseline = (tmp_path / SEAT).read_text("utf-8").split("\n")
     source = source_path(SEAT)
-    title = _raw(source).split("\n", 1)[0]
-    original = _insert_after(
-        source, tmp_path, title, "\n[[include Alpha rules]]\n\n[[include Beta rules]]"
+    _insert_after(
+        source,
+        tmp_path,
+        _raw(source).split("\n", 1)[0],
+        "\n[[include Splice fixture alpha]]\n\n[[include Splice fixture beta]]",
     )
 
     assert run_generator("write", "--root", str(tmp_path)).returncode == 0
     rendered = (tmp_path / SEAT).read_text("utf-8")
-    lines = original.split("\n")
-    expected = "\n".join([lines[0], "", _ALPHA, "", _BETA, *lines[1:]])
+    expected = "\n".join([baseline[0], "", _ALPHA, "", _BETA, *baseline[1:]])
     assert rendered == expected
     assert _BETA in (tmp_path / agent_file("redteam-seat")).read_text("utf-8")
     assert run_generator("check", "--root", str(tmp_path)).returncode == 0
 
 
 @pytest.mark.parametrize(
-    "include, reference, named",
+    "include, extra, named",
     [
-        ("[[include Gamma rules]]", _FIXTURE_REFERENCE, "Gamma rules"),
-        ("[[include Alpha detail]]", _FIXTURE_REFERENCE, "Alpha detail"),
-        ("[[include]]", _FIXTURE_REFERENCE, "[[include]]"),
-        ("[[include: Alpha rules]]", _FIXTURE_REFERENCE, "[[include: Alpha rules]]"),
+        ("[[include Splice fixture gamma]]", "", "Splice fixture gamma"),
+        ("[[include Splice fixture alpha detail]]", "", "Splice fixture alpha detail"),
+        ("[[include]]", "", "[[include]]"),
+        ("[[include: Splice fixture alpha]]", "", "[[include: Splice fixture alpha]]"),
         (
-            "[[include Beta rules]]",
-            _FIXTURE_REFERENCE + "\n## Beta rules\n\nA second Beta.\n",
-            "Beta rules",
+            "[[include Splice fixture beta]]",
+            "\n## Splice fixture beta\n\nA second beta.\n",
+            "Splice fixture beta",
         ),
         (
-            "[[include Beta rules]]",
-            _FIXTURE_REFERENCE + "[[when lane = very-small]]\n",
-            "Beta rules",
+            "[[include Splice fixture beta]]",
+            "[[when lane = very-small]]\n",
+            "Splice fixture beta",
         ),
     ],
     ids=["missing-heading", "subsection-heading", "no-heading", "malformed",
          "duplicate-heading", "marker-in-section"],
 )
 def test_splice_refuses_an_include_it_cannot_resolve(
-    tmp_path: Path, include: str, reference: str, named: str
+    tmp_path: Path, include: str, extra: str, named: str
 ) -> None:
     """Break: a source naming a heading the shared reference lacks (or a
     ``###`` one, or one it holds twice), a malformed include, or a section
     holding a marker line rendering anyway -- or a failed render writing a
     partial tree. Both modes stop with exit 2 and name the include."""
-    _seed_splice_tree(tmp_path, reference)
+    _seed_splice_tree(tmp_path, extra)
+    assert run_generator("check", "--root", str(tmp_path)).returncode == 0
     source = source_path(INSTRUMENTS["implementer"])
     _insert_after(source, tmp_path, _raw(source).split("\n", 1)[0], include)
     before = (tmp_path / INSTRUMENTS["implementer"]).read_bytes()
@@ -322,7 +337,9 @@ def test_splice_inside_a_selector_passage_follows_the_selector(
     selector, value, _ = passages(_raw(template))[0]
     marker = f"[[when {selector} = {value}]]"
     _seed_splice_tree(tmp_path)
-    _insert_after(source_path(template), tmp_path, marker, "[[include Beta rules]]")
+    _insert_after(
+        source_path(template), tmp_path, marker, "[[include Splice fixture beta]]"
+    )
 
     assert run_generator("write", "--root", str(tmp_path)).returncode == 0
     rendered = (tmp_path / template).read_text("utf-8")
