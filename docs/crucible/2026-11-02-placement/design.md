@@ -458,8 +458,8 @@ file (SDD, redteaming, `dispatch-composition.md`); the plan orders them.
   `docs/decisions/runtime-adapters.md`, any record receiving moved text)
   carries the change and its Changes line, `instruments.md` dropping its
   rejection of a generator include and stating the verifier and
-  re-reviewer exception to its rejected report-write wording; the three texts under Template
-  consumers say what D5 makes true; every citation of a renamed file or
+  re-reviewer exception to its rejected report-write wording; the texts Template
+  consumers names say what D5 makes true and D16 changes; every citation of a renamed file or
   heading resolves; `docs/authoring.md` states D14 and lists the paired
   texts.
 - **A7. The backlog.** One-time: `docs/backlog/skill-text-rewrite.md`
