@@ -8,7 +8,7 @@ The skill text, its templates, generated agents, tests, decision records and the
 
 ## Task dependency order
 
-T1 → T2 → T3 → T4 → T5 → T6 → T7 → T8 → T9 → T10, strictly in sequence: most tasks edit the same few files (census below), and each runs from the tree its predecessor left.
+T1 → T2 → T3 → T4 → T5 → T6 → T7 → T8 → T9 → T10 → T11, strictly in sequence: most tasks edit the same few files (census below), and each runs from the tree its predecessor left.
 
 ## File ownership + overlap census
 
@@ -62,6 +62,7 @@ Each file against the tasks that edit it, in run order; a file edited by several
 | `docs/decisions/operator-steering.md`, `docs/decisions/model-roles-and-effort.md`, `docs/decisions/publication.md` | T6 |
 | `docs/crucible/2026-11-01-skill-text-rewrite/umbrella.md` | T9 |
 | `docs/backlog/skill-text-rewrite.md`, `lane-entry-and-downshift.md`, `decision-ask-framing.md`, `claude-code-mod.md`, `second-runtime-seat.md`, `umbrella-followups.md` | T10 |
+| `docs/decisions/adjudication.md` | T11 |
 
 ## Inter-task contracts
 
@@ -249,4 +250,19 @@ Review: branch only — it edits backlog items and runs a read-only search, buil
 - Edge: a bullet the umbrella leaves to `execution-retirements` (the hatch, the breaker's word, the statements-of-what-binds bullet) stays.
 - Error: a hit A1's search finds outside history and unrelated senses is not fixed in T10: it goes in the report as a concern naming the site and the mechanism, and the controller routes it as a plan change, a fix task before the branch review.
 - Error: A1's search, case-insensitive, over `skills/`, `agents/`, `tests/` (corpus excluded), `docs/decisions/`, `docs/authoring.md`, `README.md`, `AGENTS.md`, for the spec's terms and the terms T1–T9 named, finds only history and unrelated senses; command and output recorded.
+- Integration: the full suite passes.
+
+### T11. The final search's stray hit
+
+Amendment (2026-11-02, controller's ruling, contained): added mid-execution as T10's Error scenario routes a stray hit.
+
+**Why.** T10 reported `docs/decisions/adjudication.md:104`: a present-tense rule still says "not only a mark", stating the retired marks as binding content (R8, I3). No earlier task's Files held it.
+
+**Files.** `docs/decisions/adjudication.md`. Inputs: the brainstorm decision record (entry 6).
+
+**Contract.** Enacts R8 at that site. History sentences stay.
+
+**Acceptance.**
+- Happy: the rule names binding content without marks; a dated `## Changes` line records it.
+- Error: one-time search for `not only a mark` over `docs/decisions/` before (one hit) and after (none).
 - Integration: the full suite passes.
