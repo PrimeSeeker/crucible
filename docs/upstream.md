@@ -39,7 +39,7 @@ the backlog item that decides it.
 | `superpowers/skills/test-driven-development/SKILL.md` | the implementer and task-reviewer prompts (`skills/subagent-driven-development/implementer-prompt.md`, `skills/subagent-driven-development/task-reviewer-prompt.md`) |
 | `superpowers/skills/test-driven-development/writing-good-tests.md` | `skills/subagent-driven-development/writing-good-tests.md` |
 | `superpowers/skills/verification-before-completion/` | the router's evidence line (`skills/using-crucible/SKILL.md`), the implementer's quoted-run rule, and the full suite run in `crucible:subagent-driven-development § Finish` |
-| `superpowers/skills/subagent-driven-development/references/` (batching, cannot-verify, final-review, fix-loop, handling-reports, preflight, resuming) | `skills/subagent-driven-development/`, rewritten; batching is declined (`docs/crucible/2026-10-27-upstream-review/dispositions.md`) |
+| `superpowers/skills/subagent-driven-development/references/` (batching, cannot-verify, final-review, fix-loop, handling-reports, preflight, resuming) | `skills/subagent-driven-development/`, rewritten; batching is declined (`docs/crucible/2026-10-27-upstream-review/dispositions.md`); cannot-verify and preflight are not carried (`docs/decisions/task-loop.md`, `docs/decisions/adjudication.md`) |
 | `superpowers/skills/subagent-driven-development/scripts/sdd-workspace` | the workspace provisioning step in `skills/redteaming/references/formats.md` |
 
 ## Not carried

@@ -162,9 +162,9 @@ its letter? Compare the diff against What Was Requested:
 - **Misunderstood:** right feature built the wrong way, wrong problem
   solved
 
-If a requirement cannot be verified from this diff alone (it lives in
-unchanged code or spans tasks), report it as a ⚠️ cannot-verify item
-instead of broadening your search — the controller resolves each one.
+Check a requirement living outside the diff (in unchanged code, or
+spanning tasks) in the code it needs, one focused check named in your
+report, and grade it here.
 
 ## Verdict 2: Scope
 
@@ -285,9 +285,6 @@ the write, say so and put the full report in that reply instead.
 
 - ✅ Intent met | ❌ Issues found: [what's missing/extra/misunderstood,
   with file:line references]
-- ⚠️ Cannot verify from diff: [requirements you could not verify from the
-  diff alone, and what the controller should check — report alongside the
-  ✅/❌ verdict for everything you could verify]
 
 ### Scope
 

@@ -45,8 +45,7 @@ amendments the controller confirms, the plan phase's included, are
 among its rulings in the ledger and the close readout. A finding that
 both fails a verdict and conflicts with plan text is ruled first as a
 plan conflict; if the plan stands, the verdict failure enters the loop.
-The pre-flight scan before Task 1, which has no diff yet, is ruled on
-by the controller as plan conflicts. The controller never parks a
+The controller never parks a
 BLOCKER or MAJOR on its own ruling: in the task loop a finding is
 parked on the operator's answer after the third wave. A red suite at
 Finish that the controller judges not the branch's is a dispute under
@@ -75,6 +74,14 @@ BLOCKER or MAJOR stays visible to the operator with its ruling, and no
 self-adjudication, a fresh adjudicator seat ruling on findings against a
 diff the controller wrote. Ending a fix loop by adjudication stayed
 cap-gated. (Basis: external; judgment, accepted by the maintainer.)
+
+Crucible kept upstream's pre-flight scan, the controller reading the
+plan once before Task 1 for tasks contradicting each other, the spec or
+what binds, and ruling on each as a plan conflict. It went on
+2026-11-02: conflicts that emerge from implementation are the review
+loop's, as they already were. (Basis: the skill-text-rewrite umbrella's
+D3, the controller's proposal on its audit's counts, accepted by the
+maintainer.)
 
 ### Disputes at any wave
 
@@ -161,9 +168,14 @@ umbrella's D4 and this change's spec.)
   does not find contained, reaches the operator (§ Why).
 - **An operator ask for every ruling touching a mark**, the rule until
   2026-10-28 (§ Why).
+- **A pre-flight plan-conflict scan** before Task 1, the rule until
+  2026-11-02 (§ Why).
 
 ## Changes
 
+- 2026-11-02: the pre-flight plan-conflict scan retired, with its
+  rulings and the close readout's "pre-flight" plan conflicts; after the
+  skill-text-rewrite umbrella's audit (§ Why).
 - 2026-11-02: the controller rules on disputes with its evidence; a
   fresh adjudicator rules only where a dispute, a plan conflict
   included, touches binding content or the Intent (a literal-reading

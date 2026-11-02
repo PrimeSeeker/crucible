@@ -73,9 +73,9 @@ concerns, and a wave that only disputes, which has no re-review, turns
 its concerns into leads. The ruling duty adds to what the reviewer
 accounts for, never narrowing what it looks for. Its own `Questions`
 items, a premise doubt among them, become leads
-(`docs/decisions/evidence-and-findings.md`). Cannot-verify items go to
-the controller, and one it confirms is a failed intent verdict. The
-reviewer takes the reported test output as given and builds its own diff
+(`docs/decisions/evidence-and-findings.md`). The reviewer checks a
+requirement living outside the diff in the code it needs, and grades it
+in its verdicts. It takes the reported test output as given and builds its own diff
 (`docs/decisions/branch-review.md`). Where a binding item's literal
 reading reaches a case its author plainly did not consider, it reports a
 literal-reading finding naming the item and the case, for the
@@ -139,9 +139,8 @@ choices and disclosed but unjustified entries go to the fix loop instead
 **Snapshot blessing.** Where a task claims behaviour is preserved, a
 changed snapshot or golden output is never blessed autonomously: a fresh
 blind agent given only the old and new output and the preservation claim
-verdicts the change, and one it judges intent-visible goes to the
-operator as a decision ask saying what changed and why it matters, never
-a raw diff.
+rules on the change, and one it finds visible goes to the operator as a
+decision ask saying what changed and why it matters, never a raw diff.
 
 **Inline mode.** The controller may implement a task itself only where
 the task is overdetermined, in the sense
@@ -257,6 +256,15 @@ legitimate outcome because a manufactured finding costs a fix wave.
 Adequacy became the reviewer's own judgment, and RED before GREEN part
 of the deviation audit, on 2026-10-07 (`docs/decisions/test-rules.md`).
 
+From 2026-10-07 to 2026-11-02 a requirement the reviewer could not
+verify from the diff came back as a cannot-verify item, after upstream's
+cannot-verify reference, for the controller to resolve, a confirmed gap
+failing the intent verdict and entering the fix loop. Since 2026-11-02
+the reviewer checks such a requirement in the code it needs, one focused
+check, and its verdicts carry the result. (Basis: the skill-text-rewrite
+umbrella's D3, the controller's proposal on its audit's counts, accepted
+by the maintainer.)
+
 The task reviewer moved to the default role on 2026-10-29, after a
 differential probe of past task reviews found the reviews on the bounded
 role missing what a default-role seat with no rubric saw, on small
@@ -370,7 +378,10 @@ rationale, as blind fix verification does
 requires the operator to read a diff, an intent-visible change reaches
 them in words (`docs/decisions/operator-steering.md`). The mutation half
 went on 2026-10-12; this half stands. (Basis: judgment, accepted by the
-maintainer.)
+maintainer.) On 2026-11-02 its procedure became one line: the seat, its
+inputs, its report path and the operator ask, the verdict's two labels
+dropped (the skill-text-rewrite umbrella's D4, the controller's
+proposal, accepted by the maintainer).
 
 ### Inline mode
 
@@ -433,9 +444,17 @@ judgment, accepted by the maintainer, for the test.)
   controller** (§ Why).
 - **Autonomous snapshot blessing** by the implementer or the controller
   (§ Why).
+- **Cannot-verify items for the controller**, the rule from 2026-10-07
+  to 2026-11-02 (§ Why).
 
 ## Changes
 
+- 2026-11-02: the task review's cannot-verify items retired, with the
+  report's "Cannot verify from diff" line and the fix-loop trigger they
+  fed: the reviewer checks a requirement outside the diff in the code it
+  needs. Snapshot blessing stated as one line, its verdict labels
+  `preserved` and `intent-visible` dropped. After the
+  skill-text-rewrite umbrella's audit (§ Why).
 - 2026-11-02: a NOT CONFIRMED answer goes to a ruling, the
   controller's or the adjudicator's, no longer always the adjudicator's;
   an inline task gets the ledger line `Task <N>: inline`, which keeps
