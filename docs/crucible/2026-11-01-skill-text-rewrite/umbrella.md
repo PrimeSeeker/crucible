@@ -277,7 +277,7 @@ The Children list, in order:
   D4 and D6 answer it), the `conserve` half of
   `docs/backlog/claude-code-mod.md` with its re-open trigger, the
   `conserve` mention in `docs/backlog/second-runtime-seat.md`, and the
-  size part of `docs/backlog/umbrella-followups.md`. Waits on nothing
+  size part of `docs/backlog/umbrella-followups.md`. Waits on nothing — landed
 
 - `execution-retirements` — the execution side of D3, D4 and D6: the
   tree check simplified, the seat-replacement gate reduced to its line,

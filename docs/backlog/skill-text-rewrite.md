@@ -114,6 +114,25 @@
   load-bearing content mid-campaign or mid-execution, the lens for what
   an artifact makes load-bearing). A reader can take the breaker's STOP
   as tied to those.
+- **Left open by `review-retirements`** (2026-11-02):
+  - a late `Review: branch only` mark: with the containment test's
+    exclusion for it retired, `skills/writing-plans/SKILL.md` § Per-task
+    structure — four fields, all required ("a mark is added only in an edit a seat grading marks
+    reads afterwards") bars a mark once the plan's review has closed,
+    while `docs/decisions/plans.md` and `docs/decisions/routes.md` read
+    as if the containment test governs one; the effect errs safe, since
+    the task keeps its review;
+  - `skills/subagent-driven-development/references/premise-and-questions.md`
+    § Premise findings points into § The goal check for what the request
+    file is, so a seat whose goal check is off may follow it into the
+    procedure;
+  - a plan-phase second read is a resume of the terminal pass, so it
+    keeps its first dispatch's "re-read the entire artifact" wording
+    beside the second-read passage's narrower scope; the narrower one
+    governs, at the cost of extra reading;
+  - whether a clause-sized binding change to an umbrella entry needs a
+    landing of its own on the base branch first: the feature needed two
+    such landings for one-clause edits.
 
 ## Follow-up
 
@@ -139,3 +158,7 @@
   deferred the restructuring ("probably later").
 - Fix the minor defect and the two slips above on the way, and give the
   breaker's sense of "load-bearing" a word of its own.
+- `execution-retirements`: settle the late `Review: branch only` mark
+  above in its rewrite of that mark. `placement`: the two wording
+  conflicts above. The umbrella-landing question: weigh it when the
+  umbrella procedure is next edited.
