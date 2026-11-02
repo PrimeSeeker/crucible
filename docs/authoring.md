@@ -11,11 +11,7 @@ renaming one is an interface change, not an edit:
 
 - the `##` headings of `skills/redteaming/references/formats.md`;
 - `Hook registration per runtime` in `hooks/README.md`;
-- the `##` headings of this file, which `hooks/README.md` cites;
-- one heading outside those files, `Operating stance — baseline error rate`
-  in `skills/redteaming/SKILL.md`, cited cross-skill as
-  `crucible:redteaming § Operating stance — baseline error rate`. That names
-  one target; it does not freeze `###` headings generally.
+- the `##` headings of this file, which `hooks/README.md` cites.
 
 ## Reference convention
 
@@ -68,21 +64,18 @@ Citations into `skills/redteaming/references/formats.md`, `hooks/README.md`
 and this file use the exact `##` heading text (e.g.
 "see `formats.md` § Feature folder"). These headings are
 frozen interfaces (§ Anchor stability). Cross-skill anchor citations take
-the form `crucible:<skill> § <exact full heading text>` and are sanctioned
-for the headings named as frozen citation targets in § Anchor stability;
-that naming is the scope — the form is not opened to `###` headings
-generally.
+the form `crucible:<skill> § <exact full heading text>` and may cite any
+heading of the skill's `SKILL.md`. The reference scanner fails a citation
+whose text after `§` does not begin with a heading of the cited file, so
+a heading rename is an edit the suite checks: the same change updates the
+heading's citers. The form marks no end to the heading, so the check
+cannot catch words appended to a real heading.
 
 ### 4. Decision records and the upstream map
 
 The records and the map follow classes 1–3, with these differences:
 
-- They cite a skill heading as `crucible:<skill> § <exact heading text>`,
-  any heading, frozen or not. The scanner checks every citation: it fails
-  one whose text after `§` does not begin with a heading of the cited
-  file. The form marks no end to the heading, so the check cannot catch
-  words appended to a real heading. They cite each other as
-  `docs/decisions/<slug>.md`.
+- They cite each other as `docs/decisions/<slug>.md`.
 - In them a bare `README.md § <heading>` cites the root `README.md`; in
   `skills/` and `hooks/` it cites `hooks/README.md`.
 - An upstream path carries the prefix `superpowers/`, as
