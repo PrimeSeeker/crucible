@@ -89,7 +89,7 @@ No code beyond illustrative fragments in advisory sections. Mechanism detail cre
 
 `<feature-slug>` names the branch, the folder and the workspace step 7 provisions, so it is chosen before the worktree. Commit the spec on the feature branch (worktree agents can't read gitignored files). A shipped spec is never silently edited.
 
-**Deferral device.** Detail an implementer at the code will judge better is deferred, not pinned: mark it `Deferred to implementation: <what>` on its own line or bullet, in the section that owns it. The marker is grep-able, so the plan's routing table is assembled from these markers mechanically and each one is assigned an owning task there — until then a deferred item is owner-pending, which is the only stage at which it may be unowned. Binding and cross-task content is never deferrable. How the campaign reviews a deferral is `crucible:redteaming` § Merge and finding hygiene.
+**Deferral device.** Detail an implementer at the code will judge better is deferred, not pinned: mark it `Deferred to implementation: <what>` on its own line or bullet, in the section that owns it. The plan names each marker, by its site, in the Contract of each task that owns it, and a mechanical pre-pass checks that each has one — until then a deferred item is owner-pending, the only stage at which it may be unowned. Binding and cross-task content is never deferrable. How the campaign reviews a deferral is `crucible:redteaming` § Merge and finding hygiene.
 
 ### The folded lane — the combined spec+plan document (step 5)
 

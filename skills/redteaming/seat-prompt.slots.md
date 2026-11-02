@@ -25,7 +25,7 @@
   - on: the goal check and its `## Goal check` report item; set for each seat of a spec campaign's round 1
   - off: none
 - worksheet: pre-pass | off
-  - pre-pass: the set census and the pre-pass `## Worksheet` report item; set for the plan phase's mechanical pre-pass
+  - pre-pass: the ownership closure, the set census and the pre-pass `## Worksheet` report item; set for the plan phase's mechanical pre-pass
   - off: none
 
 ## Dispatch

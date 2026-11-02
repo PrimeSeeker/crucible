@@ -6,6 +6,6 @@ On top of that shape, the document carries the plan half **in the formats `cruci
 
 - **Task entries** in its per-task format.
 - **Every plan-header section, at lane scale.** **Goal** folds into Intent and is not repeated, and the **Spec pointer** takes the folded form, `Spec: this document`, under that skill's rules for it. Every other section is present, a one-liner where trivially satisfied; the ownership census is the round-0 pre-pass's arithmetic input and is never omitted.
-- **The deferred-items routing table** whenever any deferral is recorded, under the heading and in the row format that skill fixes.
+- **Deferral owners** as that skill's § Deferring detail places them, a spec-half marker named in each owning task's Contract.
 
 Persistence: `folded.md` in the feature folder, created by the birth step at this first write exactly as for a spec (the spec contract's persistence rule in `crucible:brainstorming`; layout in `skills/redteaming/references/formats.md` § Feature folder), committed like any spec. The rest of the flow is unchanged — self-review, provisioning, the gate, and the handoff to `crucible:redteaming`, which runs the standard campaign on this artifact.

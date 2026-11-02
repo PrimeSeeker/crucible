@@ -26,8 +26,8 @@ and § Location.
 ## Requirements
 
 Read the requirements your dispatch names first. A task's are the plan's
-path and the task's number: read the plan's header — its spec pointer,
-inter-task contracts and routing table — and your task's section; where
+path and the task's number: read the plan's header — its spec pointer
+and inter-task contracts — and your task's section; where
 the plan is folded into the spec, the whole document. The spec pointer
 names the spec at its pinned revision and what that pin makes binding; a
 branch-review fix wave hands you the spec at its pinned revision and the
@@ -111,14 +111,12 @@ Work from the worktree path your dispatch names (absolute). Binding:
   lightly-held positions. Deviate, or flip a lightly-held position,
   where the codebase contradicts its assumptions; **every deviation
   goes in your report's Decision Log**: what, why, blast radius.
-- **Deferred to you** — each routing-table row your task owns, left
-  open on purpose for the implementer at the code.
-  The call is your job, not a deviation, and **each routed item gets
-  its own Decision Log entry** naming the item and the call: that entry
-  closes it, your reviewer checks for it, and an item your log skips
-  goes to the branch review as unresolved. Where your task's section
-  carries `Review: branch only`, the controller checks the entry is
-  there, and your first reviewer may be the branch reviewer.
+- **Deferred to you** — each `Deferred to implementation:` marker in
+  your task's section or named in its Contract, left open on purpose
+  for the implementer at the code. The call is your job, not a
+  deviation: log it where it departs from advisory content. Where your
+  task's section carries `Review: branch only`, your first reviewer may
+  be the branch reviewer.
 
 An unlogged deviation is indistinguishable from drift, and drift from
 binding content goes to the operator, who may have it reverted. When in
@@ -250,9 +248,8 @@ contract below.
 
 Write your full report to the report file your dispatch names:
 - What you implemented (or attempted, if blocked)
-- **Decision Log** — every deviation: what / why / blast radius; plus
-  one entry per deferred item routed to this task, naming the item and
-  the call. With neither, write "Decision Log: none" (the reviewer
+- **Decision Log** — every deviation: what / why / blast radius. With
+  none, write "Decision Log: none" (the reviewer
   audits this section either way).
 - **Test evidence** — covering tests, the commands run and their
   output; for test-first work, the failing (RED) output before

@@ -155,9 +155,8 @@ Your report's Goal Check holds the result.
 ## Execution Trail
 
 Your dispatch lists the deferred items from the execution ledger —
-the minors parked during execution, the deferred minors of the spec
-and plan reviews and the plan's routed deferred items still open at
-the end of it, each labelled with its source: its owning task, or
+the minors parked during execution and the deferred minors of the
+spec and plan reviews, each labelled with its source: its task, or
 `Spec` or `Plan` for a review's — and the adjudication rulings,
 execution's and this branch review's own. They reached you deliberately: a roll-up nobody reads is a silent
 discard.
@@ -174,18 +173,12 @@ unruled is a missing verdict.
 
 Triage every other deferred item: PROMOTE (it compounds across tasks or is
 worse than its label — restake the severity), FIX-IN-WAVE (trivial,
-ride along), or LEAVE-PARKED (with one line of reasoning). A routed
-item reaching you still open means its owning task made no recorded
-call, or made one its task review left contested — say which, and judge
-the item on the final code rather than on the row's wording. A task on
-your branch-review-only list had no task review: its routed items are
-judged in its deviation audit (below), not here. A `Spec` or `Plan`
+ride along), or LEAVE-PARKED (with one line of reasoning). A `Spec` or `Plan`
 item is a MINOR the spec or plan review did not fix: judge it for its
 effect on the code alone — PROMOTE or FIX-IN-WAVE where the code went
 wrong because of it, the fix landing in the code; otherwise
-LEAVE-PARKED. Spec and plan text are never edited for it. This sweep is the
-last link of these items' closure chain; nothing after
-it looks at them again. Check each ruling against the code it covers:
+LEAVE-PARKED. Spec and plan text are never edited for it. Nothing after
+this triage looks at these items again. Check each ruling against the code it covers:
 a ruling the final code contradicts is a finding.
 
 ## Tasks With No Task Review
@@ -207,8 +200,7 @@ four judgments a task review makes:
   document or the spec other than a named amendment commit;
 - **deviation audit** — each Decision Log entry justified, no deviation
   undisclosed, the test-first evidence real (RED before GREEN, or the
-  exception logged with its reason), and each routed item's entry a
-  call the code bears out, not a restated row;
+  exception logged with its reason);
 - **quality** — defects, as What to Check lists them, a file the task
   grew past one clear responsibility, the adequacy of its new tests and
   noise in its reported test output included.
@@ -372,9 +364,9 @@ names no task.
 
 Per lead: CONFIRMED (naming the issue it became, and `intent gap` or
 `scope gap` where it is one), RECOMMENDED or LEFT,
-one line each. Per other deferred item — parked minors, `Spec` and
-`Plan` items and routed items alike: PROMOTE / FIX-IN-WAVE / LEAVE-PARKED,
-one line each, naming the owning task for a routed item. Per ruling: CONSISTENT or
+one line each. Per other deferred item — parked minors and `Spec` and
+`Plan` items alike: PROMOTE / FIX-IN-WAVE / LEAVE-PARKED,
+one line each. Per ruling: CONSISTENT or
 CONTRADICTED (file:line); per ask still open with the operator: OPEN.
 "None provided" if the dispatch carried no
 ledger items.

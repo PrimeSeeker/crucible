@@ -12,16 +12,21 @@ else starts at brainstorming (`crucible:writing-plans § Overview`).
 **The header.** A spec pointer, the header's only pin (`Spec: this
 document` where the plan is folded into the spec); the goal; the task
 dependency order; a file-ownership and overlap census; the inter-task
-contracts; the acceptance mapping; and the deferred-items routing table,
-under its own `## Deferred-items routing table` heading, one backticked
-row per owning task with `T<N>` alone in the owner cell, assembled from
-the `Deferred to implementation:` markers. Each row's closure chain is the
-owning implementer's Decision Log entry, that task's review (for a task
-completed branch review only, the controller's presence check and then
-the branch reviewer) and the branch review's sweep. There is no
-test-namespace allocation and no parallelizable tier
-(`crucible:writing-plans § Plan header`;
-`crucible:writing-plans § Deferring detail`).
+contracts; and the acceptance mapping. There is no test-namespace
+allocation and no parallelizable tier
+(`crucible:writing-plans § Plan header`).
+
+**Deferral owners.** A plan's `Deferred to implementation:` marker sits
+in the task that owns it; a spec marker is named, by its site, in the
+Contract of each task that owns it, each owner making the call for its
+own sites. The plan phase's mechanical pre-pass checks, as part of its
+ownership closure, that every marker has an owning task, and on the
+folded lane round 0's pre-pass and the controller's re-run after each
+wave do. A deferral is misplaced where a task names it whose scope it
+does not touch, or where it sits in a task other than one whose scope
+it falls in. The call is the owning implementer's, logged in its
+Decision Log where it departs from advisory content
+(`crucible:writing-plans § Deferring detail`).
 
 **Four task fields.** Why, Files, Contract and Acceptance, all required,
 and no per-task constraints field. Files enumerates, by search, the
@@ -93,9 +98,9 @@ controller confirms that the amendment commit landed. The shape is
 announced and the phase proceeds, with no approval gate. It is called the
 plan phase, never a campaign; its directory `campaigns/plan/` and
 selector value `plan` keep their names. At close the controller seeds
-SDD's ledger from the routing table, with each contained amendment as
-one of its own rulings, the item and its reason together, which SDD's
-setup copies there if the ledger lacks it, with each premise finding
+SDD's ledger with each contained amendment as one of its own rulings,
+the item and its reason together, which SDD's setup copies there if the
+ledger lacks it, with each premise finding
 still open as open (`docs/decisions/evidence-and-findings.md`), with
 what the brainstorm and the review phases left open under the ledger's
 `## Questions`, and with each `deferred-minor` entry of the spec
@@ -144,6 +149,22 @@ too, a single accepted shape and a fail-closed rule against rival pins;
 what readers find things by stayed: the routing table's heading, its row
 format, one owner per row and the folded pointer. (Basis: judgment,
 accepted by the maintainer.)
+
+Until 2026-11-02 the plan's header carried a deferred-items routing
+table, one row per owning task with `T<N>` alone in the owner cell,
+assembled from the markers; the plan phase's close seeded SDD's ledger
+with a deferred list from it, the folded lane appended rows each round,
+and each row had a closure chain: the implementer's Decision Log entry
+per routed item, the task review's row-by-row check and the branch
+review's sweep of routed items still open. The skill-text-rewrite
+umbrella's D4, on its audit's finding that checks on checks catch
+little, simplified the chain to the marker and a plan task that owns it: the
+owner is named in the task, where its implementer reads it, and the
+pre-pass's ownership closure keeps the one check that a deferral is not
+silently left unowned. A deferred call that departs from no advisory
+content is not a deviation, so it needs no log entry. (Basis:
+judgment, the controller's proposals on the audit and at the
+brainstorm, accepted by the maintainer.)
 
 The edge and error scenarios name the inputs a spec implies but never
 names, after the Review Focus section of upstream's writing-plans
@@ -267,6 +288,16 @@ directory, and `plan` is a value of their `phase` selector.
 
 ## Changes
 
+- 2026-11-02: the deferred-items routing table retired, with its
+  heading, its row format and `T<N>` owner cell, the plan phase's and
+  the folded lane's appending of rows, the close's seeding of the
+  ledger's deferred list, the implementer's Decision Log entry per
+  routed item, the task review's per-row check and its `Routed deferred
+  items` report line, and the branch review's sweep of routed items;
+  a plan marker sits in its owning task, a spec marker is named in each
+  owning task's Contract, and the pre-pass's ownership closure checks
+  every marker has an owner; because the skill-text-rewrite umbrella's
+  D4 reduced the deferral chain to the marker and its owning task.
 - 2026-11-02: the review mark's statement drops its rule that marking an
   unrun task after the plan's review has closed is a downshift the
   operator confirms, the containment test's exclusion for it being

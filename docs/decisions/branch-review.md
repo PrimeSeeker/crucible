@@ -5,9 +5,8 @@
 **One owner.** `crucible:requesting-code-review` owns the branch-review
 loop and states it once. It is mandatory when SDD hands over a branch
 whose tasks are complete, and before merging any branch. SDD's handoff
-passes the ledger's deferred minors, the plan's routed items still open
-and the spec and plan reviews' `deferred-minor` entries among them, and
-the adjudication rulings
+passes the ledger's deferred minors, the spec and plan reviews'
+`deferred-minor` entries among them, and the adjudication rulings
 (`crucible:subagent-driven-development § Whole-Branch Review`).
 
 **The reviewer.** A fresh branch reviewer reads MERGE_BASE..HEAD
@@ -15,9 +14,7 @@ full-scope, for what task-scoped gates cannot see: cross-task
 integration, drift accumulated across the branch, and anything the gates
 let through. It may read beyond the diff where correctness depends on it,
 triages every deferred item (promote, fix in a wave, or leave parked),
-a task's routed items aside where that task was completed branch review
-only (below), and a `deferred-minor` entry for its effect on the code
-alone, never editing spec or plan text for it
+a `deferred-minor` entry for its effect on the code alone, never editing spec or plan text for it
 (`docs/decisions/fix-verification-and-merge.md`),
 checks each ruling against the final code, and flags undisclosed drift
 from binding content in a completed task as DRIFT. It runs the goal
@@ -47,9 +44,8 @@ makes the task review's four judgments, intent, scope (a deleted or
 weakened test against the Decision Log included, and a change to the
 plan or spec other than a named amendment commit), the deviation audit
 and quality, checks each decision-record position's basis against the
-brainstorm decision record, judges the task's routed items in its
-deviation audit rather than in the sweep, and rules on its leads. The
-first full-scope pass after each such completion, the review's first
+brainstorm decision record, and rules on its leads. The first
+full-scope pass after each such completion, the review's first
 pass or the pass resuming it after a revert, writes one line
 per task naming the judgments and what they raised; a pass missing a
 line it owes is refused as a review missing a verdict is, and SDD's
@@ -351,8 +347,10 @@ line became owed by the first full-scope pass after each such
 completion, a redone task's included. A task's routed items were first
 to reach the reviewer through the sweep as before; the task that
 shipped the reviewer's mandate judged them in the task's own deviation
-audit instead, where the task loop checks each routed item at its
-task's review, and the controller ruled that reading stands. (Basis:
+audit instead, where the task loop then checked each routed item at
+its task's review, and the controller ruled that reading stands; routed
+items retired with the plan's routing table on 2026-11-02
+(`docs/decisions/plans.md`). (Basis:
 judgment, accepted by the maintainer, 2026-10-29.)
 
 ### Review seats build their own diff
@@ -382,6 +380,12 @@ accepted by the maintainer.)
 
 ## Changes
 
+- 2026-11-02: the handoff and the triage no longer take the plan's
+  routed items still open, and a task completed branch review only no
+  longer has its routed items judged in its deviation audit: routed
+  items retired with the plan's routing table
+  (`docs/decisions/plans.md`); the `[LEDGER_MINORS]` slot lost its
+  clause on routed deferred items.
 - 2026-11-02: a wave's disputed findings are ruled as
   `docs/decisions/adjudication.md` now states, by the controller or,
   where a dispute touches binding content or the Intent or concerns a

@@ -48,10 +48,9 @@ in one line.
 ## What Was Requested
 
 Your dispatch names the plan's path and this task's number. Read the
-plan's header — its spec pointer, inter-task contracts and routing table
-— and this task's section; where the plan is folded into the spec, the
-whole document. The task's routed deferred items are the routing-table
-rows it owns. What binds this task is what the spec pointer names: the
+plan's header — its spec pointer and inter-task contracts — and this
+task's section; where the plan is folded into the spec, the whole
+document. What binds this task is what the spec pointer names: the
 spec at that revision, specifically its Constraints & invariants, any
 preamble convention it declares binding, and the decisions it records as
 the operator's firm preference. Where the spec's preamble carries an
@@ -201,11 +200,6 @@ Audit the report's Decision Log against the diff:
   finding. A removal shows no failing run: its failing step is the
   removed path's own tests failing or deleted with it, not a new test
   that the removed thing is absent.
-- **Every deferred item routed to this task has its own Decision Log
-  entry**, naming the item and the call made. Check the task's
-  routing-table rows against the log, row by row; a routed item the
-  log passes over is a finding. Judge the entry's substance too — a call that contradicts the code,
-  or restates the row without deciding anything, is not closure.
 
 ## Verdict 4: Quality
 
@@ -291,9 +285,6 @@ the write, say so and put the full report in that reply instead.
 - ✅ Decision Log accounts for the diff | ❌ Findings: [unjustified
   entries; undisclosed deviations; test-first work with neither RED
   evidence nor a logged exception — with file:line]
-- Routed deferred items: [one line per routing-table row the task
-  owns — LOGGED (with the entry) or MISSING; "none routed" if it owns
-  none]
 - Implementer concerns: [one line per concern the report raises —
   CONFIRMED (naming the finding it became) or DISMISSED (with the
   reason); "none raised" if it raises none]

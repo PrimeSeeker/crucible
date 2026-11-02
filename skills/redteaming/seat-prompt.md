@@ -96,6 +96,12 @@ read as an attestation.
 [[end]]
 
 [[when worksheet = pre-pass]]
+**Ownership closure:** every file in the plan's census has exactly one
+owning task, and every `Deferred to implementation:` marker, the spec's
+and the plan's, at least one: a plan marker sits in its owning task,
+and a spec marker is named, by its site, in the Contract of each task
+that owns it. A marker no task owns is a finding.
+
 **Set census (beside your arithmetic):** for each set the plan adds a
 member to — a value of an enumeration, a case a dispatch or a table
 handles, an item of a list several places spell out — list every place

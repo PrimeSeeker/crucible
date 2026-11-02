@@ -17,8 +17,8 @@ included (`docs/decisions/the-spec.md`), with requirements, interfaces,
 non-goals and acceptance; the approach is advice. Binding text is read
 for its intent. The implementer may depart from advisory content,
 logging each departure in its report's Decision Log with what, why and
-blast radius, and logs its call on every deferred item routed to its
-task; changing or contradicting binding content, or applying it
+blast radius, and makes the call on each deferral its task owns,
+logged where it departs from advisory content; changing or contradicting binding content, or applying it
 literally to a case its author plainly did not consider, is BLOCKED,
 the report naming the item, the evidence that shows it wrong and a
 proposed correction
@@ -62,8 +62,8 @@ completed branch review only aside (below). Its stance
 is adversarial, "attempt to reject this task", governing the search and
 not the conclusion. Four verdicts, all required: intent, scope, the
 deviation audit (each Decision Log entry justified, nothing undisclosed,
-each concern the implementer reports ruled on, every routed item's call
-recorded, RED before GREEN or a logged exception) and quality (defects,
+each concern the implementer reports ruled on, RED before GREEN or a
+logged exception) and quality (defects,
 not style; new-test adequacy is the reviewer's own judgment). A concern
 is confirmed as a finding at a staked severity, an intent or scope gap
 failing that verdict and a quality defect going by its severity, or
@@ -90,9 +90,8 @@ completion by itself.
 `Review: branch only` (`docs/decisions/plans.md`) runs no task review and
 no fix loop where its report passes the verification gates, widened to
 what the task review would have read in the report: each acceptance
-check, RED output before GREEN or a logged exception, and a Decision Log
-entry for each deferred item routed to it. The controller checks that
-each is there; the branch reviewer judges its substance. The
+check, and RED output before GREEN or a logged exception. The
+controller checks that each is there; the branch reviewer judges its substance. The
 implementer's concerns, `Questions` items and out-of-task proposals
 become leads for the branch reviewer, and its premise finding goes where
 any does. A report that fails a gate, or a concern touching something a
@@ -449,6 +448,12 @@ judgment, accepted by the maintainer, for the test.)
 
 ## Changes
 
+- 2026-11-02: the implementer's Decision Log entry per routed deferred
+  item, the task review's per-row check of routed items and its
+  `Routed deferred items` report line, and the routed-item entry in a
+  marked task's gate retired with the plan's routing table; a deferred
+  call is logged where it departs from advisory content
+  (`docs/decisions/plans.md`).
 - 2026-11-02: the task review's cannot-verify items retired, with the
   report's "Cannot verify from diff" line and the fix-loop trigger they
   fed: the reviewer checks a requirement outside the diff in the code it

@@ -23,27 +23,20 @@ Every plan opens with these sections, each required:
 - **File ownership + overlap census** — every file the plan touches, against exactly one owning task. State the overlaps and how they are ordered, or state that there are none. This section is arithmetic, and the plan phase runs it rather than reading it.
 - **Inter-task contracts** — the seams: signatures, formats, and pins one task produces and another consumes, each stated with both sides named. This is how a task's implementer learns what neighboring tasks provide and expect.
 - **Acceptance mapping** — each spec acceptance criterion against the task that discharges it, or a stated why-not.
-- **Deferred-items routing table** — under its own heading, `## Deferred-items routing table`, where every seat looks for it. Every deferred item, one row per owning task, in this binding format:
-
-  `| id | source (spec or plan site) | one-line intent | owning task |`
-
-  The owning-task cell carries the canonical form `T<N>` and nothing else — each seat finds its task's rows by it. Assemble the table from the `Deferred to implementation:` markers alone — the spec's and the plan's own — each row's source cell naming the spec or plan site its marker sits at. Every campaign deferral lands its marker in the artifact under review, so the markers are the whole input. From plan time on, an empty owner cell is a defect: assigning owners is what plan time is for.
 
 The advisory register — the shape of the solution, the sketch an implementer may replace — lives in the spec's Mechanism sketches, not in the plan.
 
 ## Deferring detail
 
-Detail is deferred to implementers by default; the plan pins only what is binding or crosses tasks. Mark any non-binding detail `Deferred to implementation: <what>` on its own line or bullet — the marker is grep-able, which is what lets the routing table be assembled mechanically rather than remembered.
+Detail is deferred to implementers by default; the plan pins only what is binding or crosses tasks. Mark any non-binding detail `Deferred to implementation: <what>` on its own line or bullet, in the task that owns it. Name each of the spec's markers, by its site, in the Contract of each task that owns it; one whose call spans several tasks is named in each, each owner making the call for its own sites. Every campaign deferral lands its marker in the artifact under review, and the markers are grep-able, so the plan phase's pre-pass checks mechanically that each has an owning task. The call is the owning implementer's, logged in its Decision Log where it departs from advisory content.
 
-Every marker earns its routing-table rows (§ Plan header), and each row is the item's closure chain for its owning task: the implementer records the call in their Decision Log; the task's reviewer checks it, or, for a task completed branch review only, the controller's gate checks the entry is there and the branch reviewer judges it; anything still open is swept at branch review.
-
-Binding or cross-task content is never deferrable — a deferral covering it is a defect in the plan, and so is a deferral whose content sits in a section the routing table would hand to the wrong owner. "The detail is missing" is not a defect in a recorded deferral; it is the point of one.
+Binding or cross-task content is never deferrable — a deferral covering it is a defect in the plan, and so is a misplaced one: named by a task whose scope it does not touch, or sitting in a task other than one whose scope it falls in. "The detail is missing" is not a defect in a recorded deferral; it is the point of one.
 
 ## Per-task structure — four fields, all required
 
 - **Why** — one paragraph: the task's role in the design, and the rationale it inherits.
 - **Files** — touch list, matching this task's row in the ownership census. Enumerate the existing consumers of every symbol, file, or interface the task changes or deletes — mechanically, by search, not from memory — and account for each: it lands in this list or in the census, or the task is not yet scoped. A rule stated in more than one place — docs, prompts, templates — is such an interface, and every site that states it is a consumer. A task that writes or edits a decision record names the brainstorm decision record (`.crucible/<feature-slug>/brainstorm-decisions.md`) among its inputs, so its implementer attributes, and its task reviewer (for a task completed branch review only, the branch reviewer) checks, each position's basis from its entry's proposer and status.
-- **Contract** — interfaces consumed and produced: signatures, not bodies; plus the spec decisions this task enacts, named by their ids. Naming is the mechanism — a task never quotes the spec's binding text.
+- **Contract** — interfaces consumed and produced: signatures, not bodies; plus the spec decisions this task enacts, named by their ids, and the spec's deferral markers it owns, named by their sites (§ Deferring detail). Naming is the mechanism — a task never quotes the spec's binding text.
 - **Acceptance** — observable behaviors, plus test scenarios by category — happy / edge / error / integration — as scenario descriptions, not test code. The edge and error scenarios name the inputs the spec implies but never names (an empty file, a missing directory, a second run).
 
 **The review mark** is optional and not a field. A task that meets the mark's criterion (`skills/subagent-driven-development/references/premise-and-questions.md` § The arrangement questions) may carry, on its own line below the task's heading, `Review: branch only — <reason>`, the reason saying how the task meets it. Dispatched, a marked task takes the branch review as its first review, unless its report sends it to a task review after all (`crucible:subagent-driven-development` § The Task Loop). A task with no mark is reviewed. Marks are plan content, graded by the review that grades the plan, so a mark is added only in an edit a seat grading marks reads afterwards, never in that review's last fix wave, a terminal pass's follow-up wave or a plan-phase repair.
@@ -56,7 +49,7 @@ Explicitly excluded: function bodies, test code, shell sequences, TDD step scrip
 
 ## Binding vs advisory
 
-**Binding:** requirements, interfaces, non-goals, acceptance, the routing table's rows, and everything the header's spec pointer names as binding in the spec, the decisions it records as the operator's firm preference included. The spec is a hypothesis, probably subtly wrong: binding means never changed silently, and binding text is read for its intent. An implementer who cannot implement binding content, or finds its literal reading reaching a case its author plainly did not consider, stops and escalates (BLOCKED) with the evidence and a proposed correction — changing or contradicting it is never theirs to improvise. A change it leads to passes `skills/redteaming/references/flip-paths.md` § The containment test.
+**Binding:** requirements, interfaces, non-goals, acceptance, and everything the header's spec pointer names as binding in the spec, the decisions it records as the operator's firm preference included. The spec is a hypothesis, probably subtly wrong: binding means never changed silently, and binding text is read for its intent. An implementer who cannot implement binding content, or finds its literal reading reaching a case its author plainly did not consider, stops and escalates (BLOCKED) with the evidence and a proposed correction — changing or contradicting it is never theirs to improvise. A change it leads to passes `skills/redteaming/references/flip-paths.md` § The containment test.
 
 **Advisory:** everything about *how*, and every item marked `Deferred to implementation:`. Implementers may deviate from advisory content when the codebase contradicts its assumptions, logging every deviation in their Decision Log.
 
