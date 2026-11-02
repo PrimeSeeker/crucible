@@ -13,9 +13,10 @@ them, accepted when the fallback was restored:
   Step 1b, § Safety Verification). From another feature's worktree the
   same check commits nothing and reports instead. Not reachable in
   crucible's own repository, whose `.worktrees/` is ignored.
-- `crucible:finishing-a-development-branch` Step 6 removes only worktrees
-  under `.worktrees/` or `worktrees/`. A worktree in any other declared
-  directory is left in place; nothing is destroyed.
+- `crucible:finishing-a-development-branch` § Step 6: Remove the Worktree
+  removes only worktrees under `.worktrees/` or `worktrees/`. A worktree
+  in any other declared directory is left in place; nothing is
+  destroyed.
 
 ## Follow-up
 

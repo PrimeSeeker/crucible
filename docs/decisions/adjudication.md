@@ -38,9 +38,11 @@ it implemented inline, which its ledger line `Task <N>: inline`
 records, or Finish's open items, and any very-small-lane diff.
 Its disputes go in batches, one wave's or those the controller raises
 together; the seat builds the diff of each finding's review range
-itself, and its inputs point to the one full statement of what binds,
-the Deviations paragraph of `crucible:subagent-driven-development § The
-Task Loop`, rather than restating it. A plan conflict that is a design
+itself. The controller copies into its prompt the shared seat
+reference's statements of what binds in a range and of building the
+diff (`skills/subagent-driven-development/references/seat-rules.md`
+§ What binds in a range, § Building the diff), so the seat depends on
+no read at startup and the controller's skill restates neither. A plan conflict that is a design
 judgment goes to the operator as a decision ask. The contained
 amendments the controller confirms, the plan phase's included, are
 among its rulings in the ledger and the close readout. A finding that
@@ -174,6 +176,12 @@ umbrella's D4 and this change's spec.)
 
 ## Changes
 
+- 2026-11-02: the adjudicator's prompt carries the shared seat
+  reference's sections on what binds in a range and on building the
+  diff, copied by the controller, in place of a pointer to SDD's
+  Deviations paragraph and the diff procedure written out in SDD: one
+  owner text for each, and no read at startup for a composed seat
+  (judgment, accepted by the maintainer).
 - 2026-11-02: a diff the controller wrote covers any commit it made
   itself, Finish's open items included, not only an inline task's and a
   lane diff; the branch review found the list, read as exhaustive, left

@@ -27,9 +27,9 @@ undone with `git merge --abort`; one that completed and fails its tests
 stays local and recoverable while the agent investigates. Force-deleting
 a branch belongs to an explicitly requested, typed-out discard
 (`crucible:finishing-a-development-branch § Step 5: Execute Choice`,
-§ Step 6: Cleanup Workspace), and a force-push to the operator's
-explicit request (`crucible:finishing-a-development-branch § Common
-Rationalizations`).
+§ Step 6: Remove the Worktree), and a force-push to the operator's
+explicit request (`crucible:finishing-a-development-branch § Step 5:
+Execute Choice`, Option 2).
 
 **Crucible's own repository.** Contributors work on a feature branch in
 a worktree under `.worktrees/`, never commit on `master` directly, and
@@ -100,6 +100,11 @@ release lands on it, is tagged and then promoted to `stable`
 
 ## Changes
 
+- 2026-11-02: finishing's Step 6 is named Remove the Worktree, so it is
+  told apart from the step of SDD's Finish that deletes the feature
+  workspace, both reached at one Finish; the force-push rule, which only
+  a rationalization row stated, is stated in Option 2's body, which the
+  record now cites (judgment, accepted by the maintainer).
 - 2026-10-27: the identity incident no longer says whose address the
   seat used, which is private context.
 - 2026-10-15: finishing's guards: no `-D` past a `branch -d` refusal, no

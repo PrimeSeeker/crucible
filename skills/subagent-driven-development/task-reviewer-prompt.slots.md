@@ -9,7 +9,7 @@
 - [UMBRELLAS]: where the spec's preamble carries an `Umbrella:` line, the umbrella it names and each one up the chain, by path; else "none".
 - [IMPLEMENTER_REPORT]: the implementer's report file, as its card named it; its Decision Log is the deviation audit's input.
 - [REPORT_FILE]: this review's output, in the feature workspace: `sdd/reports/task-<N>-review.md`; `sdd/reports/task-<N>-x<X>-review.md` for re-run <X> after a revert. A replacement seat adds `-r<R>` before `.md`, as in `sdd/reports/task-<N>-review-r<R>.md`.
-- [BASE_SHA]: the commit before this task.
+- [BASE_SHA]: the commit before this task, as recorded at its implementer's dispatch — never `HEAD~1`, which drops all but the last commit of a multi-commit task.
 - [HEAD_SHA]: the current commit.
 
 ## Selectors

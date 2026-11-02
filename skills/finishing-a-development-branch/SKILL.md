@@ -11,7 +11,7 @@ description: Use when implementation is complete, all tests pass, and you need t
 
 **Announce at start:** "I'm using the finishing-a-development-branch skill to complete this work."
 
-**After a close readout** (`crucible:subagent-driven-development` § Finish), the operator has already chosen: carry out the option their answer chose without presenting the menu again, and ask only what the answer left open — the base branch where it is unconfirmed (Step 3), the records question where the readout did not ask it (Option 2). Where no close readout precedes this skill, as at an umbrella's landing or after a standalone review, or the answer chose no option, Step 4 presents the options. A discard answer, confirmed before the workspace was deleted, runs Step 2 and then "If your human partner asks to discard the work" past its confirmation; Steps 1, 3 and 4 do not run.
+**After a close readout** (`crucible:subagent-driven-development` § Finish), the operator has already chosen: carry out the option their answer chose without presenting the menu again, and ask only what the answer left open — the base branch where it is unconfirmed (Step 3), the records question where the readout did not ask it (Option 2). Where no close readout precedes this skill, as at an umbrella's landing or after a standalone review, or the answer chose no option, Step 4 presents the options. A discard answer, confirmed before `crucible:subagent-driven-development` § Finish deleted the feature workspace, runs Step 2 and then "If your human partner asks to discard the work" past its confirmation; Steps 1, 3 and 4 do not run.
 
 **Every command below is a single invocation** — no shell program, no
 command substitution, no captured variables. Run each one, keep its output
@@ -40,7 +40,7 @@ The one exception: a red run ruled not the branch's, shown to the operator with 
 
 ## Step 2: Detect Environment
 
-Run these three now, while you are still inside the workspace — Step 6 needs the third value after you have moved out of it:
+Run these three now, while you are still inside the worktree — Step 6 needs the third value after you have moved out of it:
 
 ```
 git rev-parse --absolute-git-dir
@@ -48,7 +48,7 @@ git rev-parse --path-format=absolute --git-common-dir
 git rev-parse --show-toplevel
 ```
 
-Both `rev-parse` path forms print an absolute path; compare the first two yourself. The third is the workspace root — write it down as `<worktree-path>`.
+Both `rev-parse` path forms print an absolute path; compare the first two yourself. The third is the worktree root — write it down as `<worktree-path>`.
 
 This determines which menu to show and how cleanup works:
 
@@ -84,7 +84,7 @@ I recommend <option>: <reason>. Which option?
 **Detached HEAD — these 2 options:**
 
 ```
-Implementation complete. You're on a detached HEAD (externally managed workspace).
+Implementation complete. You're on a detached HEAD (externally managed worktree).
 
 1. Push as new branch and create a Pull Request
 2. Keep as-is (I'll handle it later)
@@ -123,7 +123,7 @@ leave the worktree and branch in place, and investigate — nothing has been
 pushed, so the merge is local and recoverable. A merge that stopped on a
 conflict is undone with `git merge --abort`.
 
-Once the merged result is green: clean up the worktree (Step 6), then
+Once the merged result is green: remove the worktree (Step 6), then
 delete the branch:
 
 ```
@@ -179,6 +179,9 @@ From a detached HEAD, name the new branch on the remote instead:
 git push origin HEAD:refs/heads/<new-branch>
 ```
 
+A rejected push means the remote moved: investigate, and force-push only
+on your human partner's explicit request.
+
 Open the pull/merge request against <base-branch> with the forge's tooling
 and report its URL.
 
@@ -207,14 +210,14 @@ Type 'discard' to confirm.
 ```
 
 Wait for that exact confirmation. When it arrives, change your working
-directory to the main checkout root (Option 1 shows how to find it), clean
-up the worktree (Step 6), and force-delete the branch:
+directory to the main checkout root (Option 1 shows how to find it),
+remove the worktree (Step 6), and force-delete the branch:
 
 ```
 git branch -D <feature-branch>
 ```
 
-## Step 6: Cleanup Workspace
+## Step 6: Remove the Worktree
 
 **Runs for Option 1 and confirmed discards.** Options 2 and 3 always
 preserve the worktree. Both callers have already changed directory to the
@@ -238,17 +241,8 @@ files: that is the guard working. Nothing is deleted. Report what is
 uncommitted and ask the operator — never pass `--force` to get past
 it on your own.
 
-**Otherwise:** The host environment owns this workspace — leave it in
-place. If your platform provides a workspace-exit tool, use it.
-
-## Quick Reference
-
-| Option | Merge | Push | Keep Worktree | Cleanup Branch |
-|--------|-------|------|---------------|----------------|
-| 1. Merge locally | yes | - | - | yes |
-| 2. Create PR | - | yes | yes | - |
-| 3. Keep as-is | - | - | yes | - |
-| Discard (explicit request only) | - | - | - | yes (force) |
+**Otherwise:** The host environment owns this worktree — leave it in
+place. If your platform provides a tool for leaving a worktree, use it.
 
 ## Common Rationalizations
 
