@@ -40,8 +40,14 @@ the other eight between 1,001 and 3,951; 2.66 to 3.18 bytes a token.
 
 **Goals.**
 
-- **G1.** Every `SKILL.md` fits under the line, so the host re-attaches
-  it whole; a structural test keeps it there (umbrella G3).
+- **G1.** Every `SKILL.md` fits under the line, so a copy the host
+  re-attaches is whole; a structural test keeps it there (umbrella G3).
+  Two limits stay. The combined budget can still drop an older skill
+  entirely (D10). And text moved into references is not re-attached at
+  all: after compaction a controller reaches it only through its stub's
+  re-read line, whose following is as unmeasured as the router's
+  re-invoke line; in exchange, the stub and everything the spine keeps
+  (D3) come back whole.
 - **G2.** The effort's outcome figure: resident tokens per route before
   the effort, before this child and after it (umbrella D1).
 - **G3.** Settle the open items the umbrella entry and `placement` left
@@ -51,16 +57,18 @@ the other eight between 1,001 and 3,951; 2.66 to 3.18 bytes a token.
 
 **Non-goals.**
 
-- Changing any rule. Text moves; what it requires stays (umbrella C3).
+- Changing any rule, D9's narrowing of what an off-lane branch reviewer
+  reads aside. Text moves; what it requires stays (umbrella C3).
 - New skills. No step becomes a skill of its own (D2).
 - The other open items in `docs/backlog/skill-text-rewrite.md`: the two
   rule gaps, the action on a review missing a verdict, the closing-review
   seats' report form, the plugin-root exception, the umbrella-landing
   question. They are not size questions and stay in the backlog.
-- Stale skill copies after a plugin update (D10): a separate failure,
+- Stale skill copies after a plugin update, and a skill dropped
+  entirely by the combined re-attach budget (D10): separate failures,
   left open.
 - Claims about how Codex treats skills across compaction: unknown, and
-  not needed by the design (D11).
+  not needed by the design (D7).
 
 ## Decisions
 
@@ -70,10 +78,18 @@ the other eight between 1,001 and 3,951; 2.66 to 3.18 bytes a token.
   counted together. The structural test holds each `SKILL.md` body,
   frontmatter excluded, at or under **18,000 characters**; the margin
   covers long install paths, which the header carries, and small edits.
-  The decision record keeps both the documentation's wording and the
-  measured cut, with their dates, citing upstream #2481 as the public
-  record of the cut. Basis: measured; the controller's proposal,
-  accepted by the maintainer.
+  The unit is characters: two copies cut at the same 19,902 characters
+  while their sizes in bytes differ (20,046 and 20,040), whatever a
+  later comment on #2481 says of bytes; the 18,000 line holds under
+  bytes too, a body's bytes exceeding its characters by under 1%. The
+  documented 5,000 tokens would be about 14,500 characters at the
+  measured 2.66 to 3.18 bytes a token; the measured cut governs, being
+  what the host does, and a host that moved to the documented figure
+  would cut copies the router's re-invoke line (D11) still catches.
+  The decision record keeps the documentation's wording, the measured
+  cut and this reasoning, with their dates, citing upstream #2481 as
+  the public record of the cut. Basis: measured; the controller's
+  proposal, accepted by the maintainer.
 - **D2. Step references, no split.** An oversized `SKILL.md` keeps its
   spine (D3) and moves long step bodies into references beside it, as
   route-conditional procedures moved before. No step becomes a skill:
@@ -85,34 +101,47 @@ the other eight between 1,001 and 3,951; 2.66 to 3.18 bytes a token.
   landing, a standalone branch) have no ledger or workspace to check.
   Basis: the controller's proposal, accepted by the maintainer, who
   asked for split-off candidates; the controller's weighing of them.
-- **D3. What the spine keeps.** A `SKILL.md` keeps what a controller
-  needs before it knows which step it is in, and what bounds its loop:
-  the overview; the steps in order, each with its trigger and, for a
-  moved step, its stub; the resume and rehydration rules; every cap and
-  termination guarantee (a loop's cap, the rule that a phase ends with
-  its terminal pass); the operator gates, the points where the flow
-  itself waits for the operator's answer before going on (brainstorming's
-  hard gate and campaign gate, the close readout's answer); the
-  rationalization and red-flag tables. A rule that applies only within
-  one step moves with that step, a stop-and-ask line that fires on a
-  condition met inside the step included (the seat-replacement line
-  moves with § Panels; `dispatch-composition.md` § Shared-tree rules
-  stays its owner). A moved step's trigger, its cap with what follows
-  the cap (SDD's ask after the third fix wave) and its operator gate
-  (brainstorming's step-4 confirmation of the preset, the close
-  readout's answer) stay as sentences of its stub's one paragraph, and
-  the reference does not restate them. Basis:
-  the controller's proposal, accepted by the maintainer; caps stay in
-  the spine because upstream's incident was a lost cap.
-- **D4. The read convention is unchanged.** A moved step keeps its
-  heading in the `SKILL.md` with a stub that names the reference, says
-  when to read it in full, says it binds as if written there and is
-  re-read after compaction: the form route-conditional stubs use, which
-  `tests/skill_corpus.py` follows. A reference is read in full when its
-  step first comes, not before every round as upstream reads its fix
-  loop: it stays in context until compaction, and the stub sends the
-  controller back after. Basis: the controller's proposal, accepted by
-  the maintainer.
+- **D3. What the spine keeps.** A `SKILL.md` keeps exactly these:
+  - the overview, and the steps in order, each with its trigger and, for
+    a moved step, its stub;
+  - the resume and rehydration rules (SDD's ledger rules, redteaming's
+    rehydration);
+  - the loop bounds: SDD's cap of three fix waves per task with the ask
+    that follows it; redteaming's round cap, the escalation after two
+    consecutive degraded rounds (the bound on the rounds the cap
+    excludes) and the terminal pass that closes every campaign;
+  - the flow gates, waits every run reaches: brainstorming's hard gate,
+    its step-4 confirmation of the preset and its campaign gate; SDD's
+    consent before implementing on a main or master checkout, and the
+    close readout's answer;
+  - the rationalization and red-flag tables, which answer a skip-thought
+    at any step.
+
+  Everything else moves with the step it belongs to where the line
+  needs it, a decision ask or stop-and-ask line raised by a condition
+  inside one step included (a BLOCKED escalation, a wait on a premise
+  ruling, a dispute pending the operator, a drift ask, the
+  seat-replacement line, whose owner `dispatch-composition.md`
+  § Shared-tree rules stays): the stub sends the controller to the
+  reference whenever the step runs. A moved step's kept items sit as
+  sentences in its stub's one paragraph or, where long (SDD's ledger
+  rules), in a kept section of their own beside the stub; the reference
+  does not restate them. Basis: the controller's proposal, accepted by
+  the maintainer; caps stay because upstream's incident was a lost cap,
+  gates and tables because a controller acts on them before it knows
+  which reference applies.
+- **D4. The read convention, stated once.** A moved step keeps its
+  heading in the `SKILL.md` with a stub: one sentence naming its
+  reference, in the form `tests/skill_corpus.py` follows, and when to
+  read it. What every stub means is stated once per skill, near its top:
+  a stubbed reference is read in full when its step comes, binds as if
+  written there, and is re-read when its step next comes after a
+  compaction, one reference at a time rather than all at once. The
+  existing route stubs keep their triggers and drop the wording that
+  statement now carries. A reference is read when its step first comes,
+  not before every round as upstream reads its fix loop: it stays in
+  context until compaction. Basis: the controller's proposal, accepted
+  by the maintainer.
 - **D5. The authoring rule widens.** The paragraph "Route-conditional
   procedures live in references" in `docs/decisions/authoring-crucible.md`
   § Decision becomes the rule for both: a `SKILL.md` stays under the line; route-conditional
@@ -122,14 +151,18 @@ the other eight between 1,001 and 3,951; 2.66 to 3.18 bytes a token.
   after compaction, and `AGENTS.md` states the line beside the
   always-loaded budget. Basis: the umbrella entry leaves the widening
   to this child; the controller's proposal, accepted by the maintainer.
-- **D6. The prose budget's offset.** The stubs add words, about 50 to
-  80 each (the existing stubs run 29 to 72 words, more where a trigger
-  or cap sits in the stub). Umbrella C1 forbids net growth: the offset comes from wording
-  the move makes redundant (a pointer between sections that end up in
-  one file, a restated context the reference no longer needs), never
-  from weakening a rule. Where it cannot be met that way, the shortfall
-  goes to the operator as a decision ask. Basis: the controller's
-  proposal, accepted by the maintainer.
+- **D6. The prose budget.** Stubs, their references' opening headings
+  and the citations a move qualifies add words, and umbrella C1 forbids
+  net growth. Two means keep the additions few: SDD's § The Task Loop
+  moves as one reference (no site cites a loop step's heading), and
+  stubs are one sentence under D4's statement, which also shortens the
+  existing route stubs (29 to 72 words today). The forecast after both
+  is about 250 to 450 words of growth. The rest is offset by removing
+  text that another passage of the same skill already states, never a
+  rule's only statement, each removal naming the passage that still
+  states it; a shortfall goes to the operator before landing. Basis:
+  the controller's proposal, accepted by the maintainer; the forecast
+  from the existing stubs' measured sizes.
 - **D7. Resident tokens per route.** For each route (standard, folded,
   very-small, an umbrella's own campaign), a manifest lists the files a
   controller loads, by phase: the session-start text (router and host
@@ -138,10 +171,12 @@ the other eight between 1,001 and 3,951; 2.66 to 3.18 bytes a token.
   `a3db87f` (the effort's baseline), `d78398c` (this child's base) and
   this child's head, with the token-counting endpoint, and the figures
   go into the decision record and the close readout. A file renamed
-  between those points is counted under its role. The manifests are
-  Claude Code's: the tokenizer is Anthropic's, and the host files
-  counted are this host's; the skill text is shared, so Codex's figures
-  would differ only by its host map and dispatch reference. Basis: umbrella D1;
+  between those points is counted under its role. A manifest is a
+  static inventory: each file a controller loads on the route, counted
+  once, under the phase that first loads it; compaction and re-reads are
+  not modelled. The manifests are Claude Code's, counted with
+  Anthropic's tokenizer; they say nothing about Codex, whose host files
+  and tokenizer differ. Basis: umbrella D1;
   the controller's proposal, accepted by the maintainer.
 - **D8. The resident-cost re-open trigger is retired.** It said when a
   full rewrite of the controller skills would be worth reopening; that
@@ -151,6 +186,10 @@ the other eight between 1,001 and 3,951; 2.66 to 3.18 bytes a token.
   characters), which covers the trigger's second clause, a rule change
   with no headroom left there; D7's figures go into the
   decision record as the baseline a later measurement compares with.
+  That later measurement is the umbrella's re-audit
+  (`docs/backlog/skill-rewrite-reaudit.md`): it re-counts D7's manifests
+  and looks for controllers re-reading a moved step's reference after
+  compaction, the behaviour G1's trade rests on.
   Basis: the umbrella entry leaves restating or retiring to this child;
   the controller's proposal, accepted by the maintainer.
 - **D9. The branch reviewer's arrangement section, on the lane only.**
@@ -166,14 +205,19 @@ the other eight between 1,001 and 3,951; 2.66 to 3.18 bytes a token.
   the reviewer card's `lane` description names the section. Basis: `placement`'s open item, left to this
   child; the controller's proposal, accepted by the maintainer.
 - **D10. Backlog dispositions.** `docs/backlog/skill-size-after-compaction.md`
-  is resolved but for one point, which it keeps: a session spanning a
+  is resolved but for two points, which it keeps: a session spanning a
   plugin update gets the old version's copies re-attached after
   compaction (seen again in the maintainer session of 2026-11-03,
-  copies from 0.13.0 and 0.12.0 re-attached under 0.14.0).
+  copies from 0.13.0 and 0.12.0 re-attached under 0.14.0); and the
+  combined budget can drop an older skill entirely, which the router's
+  line, firing only on a cut copy, does not catch (upstream #2481
+  records one). With every skill under the line about five fit the
+  budget, which makes a drop rarer, not impossible.
   `docs/backlog/skill-text-rewrite.md` loses its resident-cost
   observation with the trigger (D8) and `placement`'s arrangement item
-  (D9), each with its matching Follow-up line, and keeps the rest. Basis: the controller's proposal, accepted
-  by the maintainer.
+  (D9), each with its matching Follow-up line, and keeps the rest.
+  `docs/backlog/skill-rewrite-reaudit.md` gains D8's two tasks. Basis:
+  the controller's proposal, accepted by the maintainer.
 - **D11. The router's re-invoke line stays.** `skills/using-crucible/SKILL.md`
   keeps "a skill whose text came back cut short … is invoked again": a
   skill that grows past the line between test runs, or a host whose cut
@@ -186,12 +230,12 @@ the other eight between 1,001 and 3,951; 2.66 to 3.18 bytes a token.
 
 - **No rule changes.** Moved text keeps every rule it states; a moved
   passage differs from what left the `SKILL.md` only by wording the move
-  makes redundant or a pointer the move needs. The one change of
-  substance is D9's, which narrows what an off-lane branch reviewer
-  reads, not what any seat does.
-- **The spine (D3) stays in each `SKILL.md`**: no trigger, cap,
-  termination guarantee, operator gate or resume rule sits only in a
-  reference.
+  makes redundant or a pointer the move needs. Text removed to offset
+  the prose budget (D6) is only text another passage of the same skill
+  still states. The one change of substance is D9's, which narrows what
+  an off-lane branch reviewer reads, not what any seat does.
+- **The spine (D3) stays in each `SKILL.md`**: no item of D3's list sits
+  only in a reference.
 - **Every `SKILL.md` body is at or under 18,000 characters** at this
   child's landing, and no new skill is added.
 - **Headings stay citable.** A moved section's heading stays in its
@@ -208,8 +252,10 @@ the other eight between 1,001 and 3,951; 2.66 to 3.18 bytes a token.
   holds a stub to one paragraph under its heading, each reference to one
   stub (a shared reference aside) and each reference to opening with its
   stub's heading; so each moved heading gets a reference of its own, and
-  the spine sentences D3 keeps for a moved step sit in that one
-  paragraph. No rule of that test changes; its fixed stub set
+  the items D3 keeps for a moved step sit in that one paragraph or in a
+  kept section of their own beside the stub. D4's statement of what a
+  stub means sits once near each skill's top, outside any stub. No rule
+  of that test changes; its fixed stub set
   (`EXPECTED`) gains each new pair.
 - **The structural test** reads every `skills/*/SKILL.md`; its reader is
   the host's re-attachment after compaction, named in a comment beside
@@ -259,19 +305,20 @@ the other eight between 1,001 and 3,951; 2.66 to 3.18 bytes a token.
 - **A2.** The decision record states the line: the documentation's
   wording, the measured cut and the 18,000-character test line, with
   dates. One-time check: the record read in review.
-- **A3.** The spine: each moved step's stub carries its trigger; no cap,
-  termination guarantee, operator gate or resume rule sits only in a
-  reference. Why not a test: prose fidelity, judged by task review and
+- **A3.** The spine: each moved step's stub carries its trigger; no item
+  of D3's list sits only in a reference. Why not a test: prose fidelity, judged by task review and
   the branch review.
 - **A4.** No rule changes: a one-time check compares, word by word, each
   passage that left a `SKILL.md` with the reference text it went to,
-  and lists every difference; review judges each one redundant wording
-  or a needed pointer.
+  and lists every difference, and lists each passage removed to offset
+  the prose budget with the passage of the same skill that still states
+  it; review judges each difference redundant wording or a needed
+  pointer, and each removal stated elsewhere.
 - **A5.** The stub set test passes with the new pairs (standing:
   `tests/test_skill_references.py`).
 - **A6.** The prose budget sum at the head is at or below its value at
-  `d78398c`, the net change and what offset the stubs stated in the
-  close readout (standing: `tests/test_prose_budget.py`; the sum, a
+  `d78398c`, or the operator has ruled on the shortfall (D6); the net
+  change and what offset the stubs stated in the close readout (standing: `tests/test_prose_budget.py`; the sum, a
   one-time check).
 - **A7.** The rule sites of D5 and D8 state the widened rule and the
   retired trigger, the decision record carrying its `## Changes` line. Why not a test: prose, judged
@@ -285,9 +332,11 @@ the other eight between 1,001 and 3,951; 2.66 to 3.18 bytes a token.
   record and the close readout. One-time check: the counting run's
   output quoted in its task report.
 - **A10.** The backlog matches D10: `skill-size-after-compaction.md`
-  holds only the stale-copy point; `skill-text-rewrite.md` holds neither
-  the resident-cost observation nor the arrangement item, nor their
-  Follow-up lines. One-time check: the files read in review.
+  holds only the stale-copy and dropped-skill points;
+  `skill-text-rewrite.md` holds neither the resident-cost observation
+  nor the arrangement item, nor their Follow-up lines;
+  `skill-rewrite-reaudit.md` carries D8's two tasks. One-time check: the
+  files read in review.
 - **A11.** The full suite passes on the head.
 
 ## Mechanism sketches
@@ -298,29 +347,30 @@ Advisory; implementers may replace them.
   figures moved are net of the spine sentences D3 keeps, and each stub's
   own pointer text is taken at about 400 characters, the existing stubs
   running 210 to 506):
-  - SDD (37,483; shed at least 19,483): Setup less its ledger identity,
-    sections, resume rule, predecessor links and after-compaction line
-    (about 3,900 of 5,658 move); step 2 Handle the report (2,791); step
-    3 Review the task (1,176); step 4 Verification gates (946); step 5
-    the fix loop, its trigger, cap and after-the-third-wave ask staying
-    in the stub (about 1,700 of 3,220); § Disputes and adjudication
-    (4,119); § What a report voices (1,347); § Drift found after the
-    fact (1,463); § Inline mode (1,077); § Finish, its order rule and
-    the answer staying in the stub (about 5,450 of 6,642). Net shed
-    about 20,000, leaving a body near 17,500. Further candidates:
-    § Instruments and report files (991), § Models (751).
-  - Redteaming (33,183; shed at least 15,183): § Panels (5,215),
+  - SDD (37,483; shed at least 19,483): Setup less its ledger rules
+    (identity, sections, resume rule, predecessor links,
+    after-compaction line: a kept section of their own) and its
+    main/master consent (about 3,800 of 5,658 move); § The Task Loop
+    whole, one reference, the cap of three fix waves and the ask after
+    the third staying in its stub (about 8,600 of 9,825); § Disputes and
+    adjudication (4,119); § What a report voices (1,347); § Drift found
+    after the fact (1,463); § Inline mode (1,077); § Finish, its order
+    rule and the answer staying in the stub (about 5,450 of 6,642). Net
+    shed about 23,000, leaving a body near 14,500 before D4's statement.
+  - Redteaming (33,183; shed at least 15,183): § Panels (5,215; the
+    escalation after two degraded rounds staying in its stub),
     § Merge and finding hygiene (5,815; its § Operating stance — baseline
     error rate staying in the spine as its own section, so its two
     citations stand), § Fix application and blind verification (4,563)
     and § Round readout (2,974); § Stop rule and terminal pass stays,
     being mostly spine (trigger, terminal pass, cap). Net shed about
-    17,000, leaving a body near 16,200. Further candidate: § Inputs and
-    state (2,185), less its rehydration rule.
+    16,800, leaving a body near 16,400 before D4's statement. Further
+    candidate: § Inputs and state (2,185), less its rehydration rule.
   - Brainstorming (20,959; shed at least 2,959): § Proposing the
     arrangement (step 4) (5,132), the operator's confirmation of the
     preset staying in its stub. Net shed about 4,300, leaving a body
-    near 16,650.
+    near 16,650 before D4's statement (a few hundred characters per
+    skill).
 
   Deferred to implementation: the exact sections moved and their
   reference file names, within D3, the stub rules (Interfaces & boundaries)
