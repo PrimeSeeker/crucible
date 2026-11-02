@@ -108,8 +108,9 @@ All lightly held. Each records its basis.
   paragraph telling the seat how to read the template. The list of
   justifications for a deleted test joins § Tests in review, so it stays
   inside the text of each seat that carries it today. Basis: the entry,
-  and the controller's design, accepted by the operator; the list's home,
-  first `writing-good-tests.md`, the controller's call after round 1.
+  and the controller's design, accepted by the operator; the list's home
+  in the shared reference, the controller's call after round 1, which
+  the operator confirmed at the spec campaign's close.
 - **D5. Shared clauses are spliced at build time.** A seat receives the
   shared sections inside its own text, never by reading a file at
   startup: each template has a hand-edited source naming the shared
