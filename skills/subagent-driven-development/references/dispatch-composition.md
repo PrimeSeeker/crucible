@@ -61,8 +61,8 @@ dispatches it says so beside the dispatch.
 
 These rules bind every dispatch; each skill names its own seats' rows.
 
-- **Name the model** on every dispatch: an omitted model silently inherits
-  the session's.
+- **Name the model** on every dispatch (`crucible:using-crucible`
+  § The Rule, Dispatching an agent).
 - **Roles, not rosters.** A row names one of three roles, always with the
   word "role". Your host map's **Model roles** entry names this host's
   model for each, and the floor no dispatch goes below.
@@ -79,6 +79,6 @@ These rules bind every dispatch; each skill names its own seats' rows.
     fix list against a diff; and the operator's request, at any seat. A
     host map naming no alternate skips all three.
 - **Effort is the operator's.** Leave a dispatch's reasoning effort unset
-  unless the operator asks for one, `ultra` included; no flow sets or
-  raises it on its own. An escalation is the tier bump alone; where that is
-  not enough, the dispatching skill's stop points take it to the operator.
+  unless the operator asks for one; no flow sets or raises it on its own.
+  An escalation is the tier bump alone; where that is not enough, the
+  dispatching skill's stop points take it to the operator.

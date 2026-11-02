@@ -21,15 +21,10 @@ entering it.
 - **Dispatch a fresh agent** — `spawn_agent` with `fork_turns: "none"`, so
   the agent gets your task text and none of this session's history. The
   fresh-context guarantee is never left to a host default: with
-  `fork_turns` omitted the host forks the full history. Name the model
-  every time.
+  `fork_turns` omitted the host forks the full history.
 - **Wait** — `wait_agent` waits for agents to reach a final status and
-  returns it; the final answer also arrives as a notification. Never
-  predict or paraphrase the result of an agent that has not returned.
-- **Parallel fan-out** — only where the tasks are genuinely independent: no
-  shared state, no ordering, neither reading the other's output. Where that
-  holds, spawn each and then `wait_agent`; otherwise run them one at a time
-  whatever the host permits.
+  returns it; the final answer also arrives as a notification.
+- **Parallel fan-out** — spawn each, then `wait_agent`.
 - **Select model** — `model` on the dispatch; roles below.
 - **Edit** — `apply_patch`.
 - **Shell** — `exec_command`. The dispatch tools above are direct tool

@@ -13,8 +13,7 @@ map beside this file, `claude-code.md`, carries the rest.
   at dispatch, where the harness exposes one; its context is intact. Where
   it does not, dispatch fresh with the requirements, the report-file path
   and the open findings — the report file is the persistent memory either way.
-- **Select effort** — the Agent tool's `effort` setting, used only on the
-  operator's request.
+- **Select effort** — the Agent tool's `effort` setting.
 - **Report-name filter** — this host's Write tool refuses a subagent's
   write to any file whose basename matches
   `^(REPORT|SUMMARY|FINDINGS|ANALYSIS).*\.md$`, case-blind ("Subagents

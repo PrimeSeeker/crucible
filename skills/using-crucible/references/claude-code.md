@@ -17,15 +17,11 @@ brainstorm-before-planning rule covers entering it.
   TodoWrite, keep the checklist in your messages.
 - **Dispatch a fresh agent** — the Agent tool. A dispatch starts an agent
   carrying none of this session's history, which is the fresh-context
-  guarantee the workflows depend on. Name the model every time; an omitted
-  model silently inherits the session's.
+  guarantee the workflows depend on.
 - **Wait** — a dispatch returns that agent's final report when it finishes,
-  and you are notified then. Never predict or paraphrase the result of an
-  agent that has not returned.
-- **Parallel fan-out** — only where the tasks are genuinely independent: no
-  shared state, no ordering, neither reading the other's output. Where that
-  holds this host can run several dispatches concurrently; otherwise run
-  them one at a time whatever the host permits.
+  and you are notified then.
+- **Parallel fan-out** — this host can run several dispatches
+  concurrently.
 - **Select model** — stated on the dispatch itself; roles below.
 - **Edit** — the Edit and Write tools.
 - **Shell** — the host shell tool (`Bash`, or `PowerShell` where the

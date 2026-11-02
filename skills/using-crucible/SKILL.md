@@ -23,7 +23,13 @@ Your instruction files — user-level, project and any other the host loads (you
 
 **Evidence before claims:** before saying work is complete, fixed or passing, run the check that shows it and report what its output said.
 
+**Dispatching an agent:** name its model on every dispatch, since an omitted model silently inherits the session's; never predict or paraphrase the result of an agent that has not returned.
+
 **After compaction:** a skill whose text came back cut short — it ends in a truncation notice — is invoked again before you act on it.
+
+## Decision asks
+
+A decision ask puts a choice to the operator in analyst language with your recommendation: it never requires reading the spec, plan, code or a diff, may quote the few lines it turns on, lists every option the findings behind it propose, and states what its change withdraws from an earlier operator approval.
 
 ## Skill Priority
 

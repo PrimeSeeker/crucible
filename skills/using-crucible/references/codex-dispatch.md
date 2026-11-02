@@ -9,17 +9,15 @@ map beside this file, `codex.md`, carries the rest.
   `spawn_agent` with `fork_turns: "none"`.
 - **Resume an agent** — `followup_task` gives an agent you spawned a new
   task and triggers a turn; `send_message` passes a message without one.
-  Address it by the canonical task name recorded at spawn — record that
-  identity before relying on continuation.
-- **Select effort** — `reasoning_effort` on the dispatch, used only on the
-  operator's request. `ultra` is a reasoning level, not a model, and
-  carries automatic task delegation, which breaks a seat's no-delegation
-  instruction. With `reasoning_effort` omitted and the model named, a
-  seat runs at `default_subagent_reasoning_effort` from the `[agents]`
-  table of the operator's Codex config, else at its model's default
-  (`low` for the default role's model), never at your own effort
-  (measured on codex-cli 0.162.1). Before your first dispatch in a
-  session, read `config.toml` once in the Codex home that holds this
+  Address it by the canonical task name recorded at spawn.
+- **Select effort** — `reasoning_effort` on the dispatch. `ultra` is one
+  of its levels, not a model, and carries automatic task delegation,
+  which breaks a seat's no-delegation instruction. With
+  `reasoning_effort` omitted and the model named, a seat runs at
+  `default_subagent_reasoning_effort` from the `[agents]` table of the
+  operator's Codex config, else at its model's default (`low` for the
+  default role's model), never at your own effort. Before your first
+  dispatch in a session, read `config.toml` once in the Codex home that holds this
   plugin: the directory above `plugins/cache/` in the plugin root's
   path, not `~` or `CODEX_HOME`, which a Windows sandbox maps to its own
   account. If you cannot read it, or the key is absent, tell the

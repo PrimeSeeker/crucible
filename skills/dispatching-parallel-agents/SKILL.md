@@ -74,7 +74,7 @@ Agent 3 → "Fix tool-approval-race-conditions.test.ts failures"
 # all three started, then wait on the set
 ```
 
-Your host's parallel fan-out operation starts them; where it admits fewer at once, start the rest as capacity frees. Tasks that are not independent run one at a time, whatever the host permits.
+Your host's parallel fan-out operation starts them; where it admits fewer at once, start the rest as capacity frees. Tasks are independent only where they share no state, need no ordering and neither reads the other's output; tasks that are not run one at a time, whatever the host permits.
 
 ### 4. Review and Integrate
 

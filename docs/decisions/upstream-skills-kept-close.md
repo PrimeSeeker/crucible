@@ -14,8 +14,9 @@ crucible's loops, keeping its core.
 **dispatching-parallel-agents** is upstream's text except step 3: start
 every independent agent before waiting for any of them, through the
 host's parallel fan-out operation, starting the rest as capacity frees;
-tasks that are not independent run one at a time, whatever the host
-permits; and its review steps, where each agent's diff is checked, not
+tasks are independent only where they share no state, need no ordering
+and neither reads the other's output, and tasks that are not run one at
+a time, whatever the host permits; and its review steps, where each agent's diff is checked, not
 only its summary, a check from upstream's verification-before-completion.
 It carries none of crucible's seat machinery. Redteaming starts
 its seats and leaves the rest of the fan-out mechanics to it
@@ -170,6 +171,10 @@ accepted by the maintainer.)
 
 ## Changes
 
+- 2026-11-02: step 3 defines independent tasks (no shared state, no
+  ordering, neither reading the other's output), the host adapters'
+  fuller definition, which left them; the skill's description and its
+  other statement of independence stay upstream's.
 - 2026-10-27: the Decision admits a check from a folded upstream skill
   that nothing else covers; under it, dispatching-parallel-agents checks
   each agent's diff, not only its summary, from upstream's

@@ -25,11 +25,17 @@ The router's § Runtime reference defines the pair as the runtime adapter.
 An adapter maps operations and may not redefine workflow policy: a rule
 that would read differently on the two hosts belongs in neither
 (`docs/dual-runtime.md` § The separation). Adapter text carries no
-reference into crucible's own repository. Some host-neutral rules are
-still restated there (never predicting an agent's result, fan-out
-independence, effort only on request); moving them out is
-`docs/backlog/skill-text-rewrite.md`'s. Host mechanics stay in the
-adapter pair, and model names in it and the generator's alias map; the
+reference into crucible's own repository. The host-neutral rules the
+adapters once restated live where their readers act on them: never
+predicting an agent's result and naming the model on every dispatch in
+the router, which every session loads; what makes tasks independent in
+step 3 of `crucible:dispatching-parallel-agents`; effort only on the
+operator's request in
+`skills/subagent-driven-development/references/dispatch-composition.md`
+§ Models and effort, with `ultra`, a Codex level, named in the Codex
+dispatch reference alone. Each adapter keeps the operation. Host
+mechanics stay in the adapter pair, and model names in it and the
+generator's alias map; the
 claude-ism scanner checks the rest of the shipped text for host-specific
 terms against its allowlist (`AGENTS.md`, Skills stay runtime-neutral;
 one sanctioned exception is in `docs/decisions/worktrees.md`).
@@ -85,6 +91,14 @@ restatement of the escalation rule, which
 sentence stayed while it stated a host fact, that the bounded role used
 the default role's model there, and went on 2026-10-27, when the bounded
 role moved to a model of its own (`docs/decisions/model-roles-and-effort.md`).
+(Basis: judgment, accepted by the maintainer.)
+
+On 2026-11-02 the rest left. Never predicting a result and naming the
+model went to the router rather than to the dispatch composition, which
+only the skills that start crucible's seats read: an ad hoc dispatch,
+one through `crucible:dispatching-parallel-agents` among them, would
+otherwise have lost both. The adapters' fuller definition of independence replaced
+that skill's narrower one in its step 3, crucible's own text there.
 (Basis: judgment, accepted by the maintainer.)
 
 ### Codex as a host
@@ -192,6 +206,11 @@ preference.)
 
 ## Changes
 
+- 2026-11-02: the adapters keep only host mechanics: never predicting an
+  agent's result and naming the model go to the router, fan-out
+  independence to dispatching-parallel-agents' step 3, effort only on
+  request to the dispatch composition, and `ultra` to the Codex dispatch
+  reference, since a host-neutral rule in an adapter is policy there.
 - 2026-11-02: the dispatch templates join the agents as generated
   artifacts, rendered in place from their sources for both hosts, since
   the seat templates take their shared clauses by a build-time splice

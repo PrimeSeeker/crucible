@@ -134,9 +134,10 @@ none of it.
 - **The rules** —
   `skills/subagent-driven-development/references/dispatch-composition.md`
   § Models and effort: the three roles (default, bounded, alternate), the
-  alternate's triggers, naming the model on every dispatch, and effort as
-  the operator's. Each skill's seat rows and each slot card name a role and
-  point there.
+  alternate's triggers and effort as the operator's. Naming the model on
+  every dispatch is the router's (`skills/using-crucible/SKILL.md`),
+  which every session loads, ad hoc dispatches included. Each skill's seat
+  rows and each slot card name a role and point there.
 - **The models** — each host map's **Model roles** entry
   (`skills/using-crucible/references/claude-code.md`,
   `skills/using-crucible/references/codex.md`): this host's model for each
