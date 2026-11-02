@@ -7,11 +7,12 @@
   re-attached, keeping its first 5,000 tokens, within a combined budget
   of 25,000 tokens filled from the most recently invoked skill; older
   skills can be dropped entirely.
-- `skills/redteaming/SKILL.md` is about 33,700 characters and
-  `skills/subagent-driven-development/SKILL.md` about 31,200, roughly
-  8,400 and 7,800 tokens at four characters a token (an estimate, not a
-  tokenizer count). Both are above the budget; the other skills are
-  below it.
+- `skills/redteaming/SKILL.md` is about 39,000 bytes,
+  `skills/subagent-driven-development/SKILL.md` about 43,900 and
+  `skills/brainstorming/SKILL.md` about 22,700 (2026-11-02), roughly
+  9,800, 11,000 and 5,700 tokens at four characters a token (an
+  estimate, not a tokenizer count). All three are above the budget; the
+  other skills are below it.
 - In maintainer sessions on 2026-10-20, 2026-10-27 and 2026-10-28 the
   re-attached copy of the subagent-driven-development skill ended in a
   truncation notice after compaction.
@@ -28,9 +29,8 @@
   always-run sections into references read at their step, the fix loop's
   before every round, and added a test failing any `SKILL.md` of 20,000
   bytes or more. That is about the same line as 5,000 tokens at four
-  characters a token. Redteaming's `SKILL.md` is about 39,000 bytes,
-  SDD's about 43,500 and brainstorming's about 22,700 (2026-11-02); the
-  others are under 17,500. In SDD the line falls inside the fix loop:
+  characters a token, so the three `SKILL.md` files named earlier are over it;
+  the others are under 17,500 bytes. In SDD the line falls inside the fix loop:
   Disputes and adjudication, Shared-tree rules, Drift found after the
   fact and Finish all lie past it.
 - Crucible's authoring rule (`docs/decisions/authoring-crucible.md`)

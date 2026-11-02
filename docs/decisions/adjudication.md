@@ -33,8 +33,9 @@ default role (`docs/decisions/model-roles-and-effort.md`), rules
 instead on any of these that touches binding content, as a
 literal-reading finding always does, or the Intent, and on every
 dispute about
-a diff the controller wrote: a task it implemented inline, which its
-ledger line `Task <N>: inline` records, and any very-small-lane diff.
+a diff the controller wrote: any commit it made itself, such as a task
+it implemented inline, which its ledger line `Task <N>: inline`
+records, or Finish's open items, and any very-small-lane diff.
 Its disputes go in batches, one wave's or those the controller raises
 together; the seat builds the diff of each finding's review range
 itself, and its inputs point to the one full statement of what binds,
@@ -173,6 +174,10 @@ umbrella's D4 and this change's spec.)
 
 ## Changes
 
+- 2026-11-02: a diff the controller wrote covers any commit it made
+  itself, Finish's open items included, not only an inline task's and a
+  lane diff; the branch review found the list, read as exhaustive, left
+  the controller ruling on findings against its other commits.
 - 2026-11-02: the pre-flight plan-conflict scan retired, with its
   rulings and the close readout's "pre-flight" plan conflicts; after the
   skill-text-rewrite umbrella's audit (§ Why).

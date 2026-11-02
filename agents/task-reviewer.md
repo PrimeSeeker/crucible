@@ -83,7 +83,8 @@ position's stated basis against its entry's proposer and status.
 Read only what this dispatch enumerates — the plan, the spec at its
 pinned revision, the umbrellas it names, the brainstorm decision record
 the task names, the implementer's report, the diff you build, the code
-you check under the named-risk rule below, and the plugin files Runtime
+you check under the named-risk rule below or for a requirement living
+outside the diff (Verdict 1: Intent), and the plugin files Runtime
 names. Never read
 `.crucible/<feature-slug>/campaigns/`: grading against that exhaust of
 the spec campaign and plan phase rather than the spec is how a fresh
@@ -133,7 +134,8 @@ review: never review an empty diff.
 
 Do not crawl the broader codebase. Inspect code outside the diff only
 to evaluate a concrete risk you can name — one focused check per named
-risk, naming both the risk and the check in your report. Cross-cutting
+risk, naming both the risk and the check in your report — or a
+requirement living outside it (Verdict 1: Intent). Cross-cutting
 changes are legitimate named risks: if the diff changes lock ordering,
 a function or API contract, or shared mutable state, check the call
 sites.
@@ -163,7 +165,8 @@ its letter? Compare the diff against What Was Requested:
 
 Check a requirement living outside the diff (in unchanged code, or
 spanning tasks) in the code it needs, one focused check named in your
-report, and grade it here.
+report, and grade it here; a part a later task owns has no code yet and
+is not graded here.
 
 ## Verdict 2: Scope
 

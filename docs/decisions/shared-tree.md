@@ -10,7 +10,7 @@ every dispatch window in the campaigns ends in one status check. The
 seat is dispatched with no tracked or staged change, the controller
 first writing the output of `git rev-parse HEAD` and `git status
 --porcelain --untracked-files=all` to `<workspace>/tree-check.txt`,
-overwritten at each dispatch; seats out at the same time are one window,
+overwritten at each window; seats out at the same time are one window,
 the file written before the first and checked after the last. When the
 window's last seat returns, before the next commit, the controller runs
 both commands again: output differing from the file's voids every report
@@ -25,7 +25,7 @@ supporting inputs its card lists and, for the blind verifier, the
 tracked files a delta claim names. Read-only seats run the code they
 check claims with under the workspace's `scratch/`, one subdirectory per
 report; a standalone branch review, which has no workspace, uses the
-host's temporary directory.
+host's temporary directory, for `tree-check.txt` too.
 
 **Replacing a seat: one line.** A replacement for a seat never starts
 until the host confirms the first has stopped; silence or a timeout is no
@@ -128,6 +128,10 @@ delegated by the maintainer.)
 
 ## Changes
 
+- 2026-11-02: `tree-check.txt` is overwritten at each window, not each
+  dispatch, matching the window rule beside it; a standalone branch
+  review keeps it in the host's temporary directory, having no
+  workspace.
 - 2026-11-02: the tree check became one status check after each review
   seat against the HEAD and status output written at dispatch to
   `<workspace>/tree-check.txt`, seats out together one window; the
