@@ -40,6 +40,21 @@
   fix-report concern unruled) there for the action; neither says what
   the controller then does: resume the seat for the verdict, dispatch a
   fresh one, or rule itself.
+- **Left open by `placement`** (2026-11-03):
+  - an umbrella's closing-review seats are composed with no template,
+    yet the shared sections copied into their prompts
+    (`skills/subagent-driven-development/references/seat-rules.md`
+    § Premise findings, § Questions) tell them to use "this template's
+    report format", and `skills/brainstorming/references/umbrellas.md`
+    § Closing review gives them no report form;
+  - the branch reviewer's template takes § The arrangement questions
+    (about 330 words) by splice, kept from its earlier read list, but
+    never says what it uses the section for: say so, or drop it, a
+    resident-size question for `compaction-fit`;
+  - `seat-rules.md` § Seat conduct bans every seat from reading another
+    checkout; the plugin files are reached only through each template's
+    read list, which could conflict where the plugin root is itself a
+    checkout of the repository under review (a development install).
 
 ## Follow-up
 
@@ -51,3 +66,7 @@
   verdict, each in the skill that owns the step.
 - The umbrella-landing question: weigh it when the umbrella procedure is
   next edited.
+- `placement`'s open items: give composed seats their report form;
+  settle the branch reviewer's arrangement-questions section with
+  `compaction-fit`; state the plugin-root exception in § Seat conduct if
+  a development install needs it.

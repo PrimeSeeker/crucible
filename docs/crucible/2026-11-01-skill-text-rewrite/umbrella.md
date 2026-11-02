@@ -313,7 +313,7 @@ The Children list, in order:
   `docs/backlog/cross-skill-anchor-citations.md`; the separability and
   tension-closing points of `skill-text-rewrite.md` stay open in the
   backlog, and D5 settles its right-sizing and check-on-a-check
-  points. Waits on `execution-retirements`
+  points. Waits on `execution-retirements` — landed
 
 - `compaction-fit` — G3: token counts measured with a tokenizer and the
   line checked against the host's current documentation; each
