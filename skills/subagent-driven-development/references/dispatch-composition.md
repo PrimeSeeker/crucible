@@ -112,6 +112,6 @@ dispatching skill names its windows.
   Seats' `scratch/` lives in the gitignored workspace and never shows.
 - **Replacing a seat.** Never start a replacement until the host confirms
   the first seat has stopped: one started early puts two writers on one
-  tree. It writes to a fresh report path, as its skill names it, and reads
-  the first's file, which stays as the record. A seat whose state the host
-  cannot confirm is a stop-and-ask.
+  tree. It writes to a fresh report path, as its skill names it; the
+  first's file stays as the record. A seat whose state the host cannot
+  confirm is a stop-and-ask.

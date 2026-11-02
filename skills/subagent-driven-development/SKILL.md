@@ -49,7 +49,7 @@ Every seat you start carries the seven items of the dispatch composition. In the
 
 **Instruments.** Three seats are instruments, each with a slot card beside its template: instrument `implementer` ([implementer-prompt.slots.md](implementer-prompt.slots.md)) for every implementer seat, a fresh fix-wave one included; instrument `task-reviewer` ([task-reviewer-prompt.slots.md](task-reviewer-prompt.slots.md)); instrument `re-reviewer` ([re-review-prompt.slots.md](re-review-prompt.slots.md)). Fill the card, not the template ([implementer-prompt.md](implementer-prompt.md), [task-reviewer-prompt.md](task-reviewer-prompt.md), [re-review-prompt.md](re-review-prompt.md)), as `skills/subagent-driven-development/references/dispatch-composition.md` § Filling a card states. The two controller-composed dispatches no template serves, the adjudicator (§ Disputes and adjudication) and the snapshot-blessing blind agent (§ The Task Loop, step 4), carry the seven items in the prompt you compose.
 
-**Report files.** Each review seat and the adjudicator writes its report file at a path no earlier dispatch used. Confirm every seat's report file, an implementer's included, as the dispatch composition's item 5 states.
+**Report files.** Each review seat and the adjudicator writes its report file at a path no earlier dispatch used, and replies with a short verdict and that path. Confirm every seat's report file, an implementer's included, as the dispatch composition's item 5 states.
 
 ## Models
 
@@ -146,7 +146,7 @@ Mark the todo complete and move on. Never move to the next task while an open BL
 
 These hold in the task loop, in the branch review `crucible:requesting-code-review` runs, and on the very-small lane.
 
-**The shared tree.** `skills/subagent-driven-development/references/dispatch-composition.md` § Shared-tree rules bind every seat you start. The status check's windows are the review seats — task reviewer, re-reviewer, adjudicator, snapshot-blessing agent, branch reviewer — and a replacement seat's fresh report path is its card's path with `-r<R>` before `.md`.
+**The shared tree.** `skills/subagent-driven-development/references/dispatch-composition.md` § Shared-tree rules bind every seat you start. The status check's windows are the review seats — task reviewer, re-reviewer, adjudicator, snapshot-blessing agent, branch reviewer — and a replacement seat writes to its card's path with `-r<R>` before `.md` and reads the first seat's file.
 
 ### Disputes and adjudication
 
