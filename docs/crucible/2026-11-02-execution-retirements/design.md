@@ -92,9 +92,10 @@ the brainstorm decision record.
   DRIFT — within the materiality bound (an undisclosed deviation from
   binding content, or one with cross-task blast radius) is a decision
   ask to the operator: revert the task, with the later tasks the ask
-  names as building on it, and run them again from step 1, or repair it
-  in the fix loop or, at the branch review, in a wave counted against
-  its cap; the controller recommends one. A revert at the branch review
+  names as building on it, and run them again from step 1, or repair
+  it, in its own fix loop while the task is still open and otherwise in
+  a branch-review wave counted against its cap; the controller
+  recommends one. A revert at the branch review
   returns to it once the re-run tasks complete, and it resumes with a
   full-scope pass. Below the bound,
   undisclosed advisory choices and disclosed-but-unjustified Decision
@@ -124,16 +125,21 @@ the brainstorm decision record.
   adjudicator, branch reviewer, the snapshot seat, and in a campaign or
   plan phase each panel seat or concurrent batch, the round-0 pre-pass,
   the blind verifier and the terminal pass — and before the next
-  commit, the controller confirms the status is empty, untracked paths
-  included, and HEAD is the commit the seat's own inputs already name
-  (the round's revision, the head of the seat's range); otherwise the
-  seat's report is void until it runs again on a clean tree. A seat is
-  dispatched only on an empty status, so no dispatch-time state is kept:
-  an untracked path present before a dispatch is the operator's to
-  clear or have committed, and the controller asks. The readings around
-  each window and the round record's fields for them go. The rule that
-  nothing is committed while a seat works stays. Basis: the umbrella's
-  D4.
+  commit, the controller runs one status check: no tracked or staged
+  change, and HEAD and the untracked paths as they were at dispatch;
+  otherwise the seat's report is void until it runs again on a clean
+  tree. A seat is dispatched with no tracked or staged change, and
+  untracked paths present then, such as an implementer's test
+  leftovers, are tolerated. The dispatch-time HEAD and untracked list
+  are written to `<workspace>/tree-check.txt`, overwritten at each
+  dispatch, where a controller resumed after a compaction finds them.
+  The readings in the round record and its fields for them go. The rule
+  that nothing is committed while a seat works stays. Basis: the
+  umbrella's D4, its after-check as one status check; the comparison
+  with the dispatch-time untracked list keeps the guard's function (the
+  umbrella's C3), since a seat can delete an untracked file as well as
+  add one, and execution dropped a clean-tree precondition once because
+  implementers' test leftovers voided undisturbed reviews.
 - **E6. Seat replacement: one line.** In both skills: a replacement for
   a seat is never started until the host confirms the first has stopped,
   and it writes to a fresh report path. The procedure around it — the
@@ -184,17 +190,19 @@ the brainstorm decision record.
   The upgrade hatch becomes one stop-and-ask line: where overturning a
   major mechanism of the change is reasonably expected now that it is
   coded, found by a reviewer or by the controller, the operator chooses
-  between staying on the lane and leaving it for a campaign preset,
-  which starts at `crucible:brainstorming` with the note and the
-  existing diff as its incoming document, brainstorming proposing the
-  preset as for any feature and writing its spec into the lane's
-  feature folder beside the note; where the note's preamble carries an
+  between staying on the lane and moving to the standard route, the
+  operator's answer being its route entry; it starts at
+  `crucible:brainstorming` with the note and the existing diff as its
+  incoming document, writing its spec into the lane's feature folder
+  beside the note, and the plan's tasks build on the carried-over diff,
+  which the branch review reads with the rest of the branch; the folded
+  lane stays no hatch target. Where the note's preamble carries an
   `Umbrella:` line, the spec's carries the same line, the duty
   `skills/brainstorming/references/umbrellas.md` gives the hatch's text.
   On the move, the lane ledger is moved aside
-  and the successor route's ledger links it as its predecessor
+  and the standard route's ledger links it as its predecessor
   (`crucible:subagent-driven-development` § Setup), so the lane's
-  rulings, departures and leads reach the successor's close readout,
+  rulings, departures and leads reach that route's close readout,
   which follows that link, and execution does not take the lane ledger
   for another run's. The `Hatch:` ledger line and the rest
   of the hatch's procedure go. Basis: the umbrella's D3 and its entry
@@ -245,9 +253,14 @@ the brainstorm decision record.
   latest `Task <N>` line under `## Progress` is a completion line, so a
   revert the operator rules (E3), recorded there as
   `Task <N>: reverted — <the ruling>`, reopens it with no attempt number
-  for the resume rule to read, and a repair the operator rules for a
-  completed task, recorded as `Task <N>: repair — <the ruling>`, reopens
-  it into the fix loop from wave 1 under the same three-wave cap. The ledger's deferred list, the ambiguous-liveness
+  for the resume rule to read. A repair the operator rules for a
+  completed task is recorded as `Task <N>: repair — <the ruling>` and
+  rides the branch review's next fix wave as a ruling change
+  (`crucible:requesting-code-review` § The branch-review loop, changes
+  that ride a wave), so its fix base and report names are that wave's.
+  After a `3/3` fix-wave line, a resumed controller goes to the
+  operator ask (E1), recorded open under `## Adjudication rulings`, not
+  to a fourth wave. The ledger's deferred list, the ambiguous-liveness
   BLOCKED line and the `Hatch:` line go; the
   predecessor link stays, used by a supersede and by the hatch (E9).
   Report paths keep the rule that each dispatch writes a path no earlier
@@ -263,13 +276,15 @@ the brainstorm decision record.
   task until the operator rules again. Another approach: the operator's
   answer names it, a plan change by
   `crucible:subagent-driven-development` § Plan changes mid-execution or
-  a revert (E3), whose re-run starts again at wave 1.
+  a revert (E3), whose re-run starts again at wave 1 under its `-x<X>`
+  names. Further waves are not an answer.
 - **The hatch's move (E9).** The controller moves the lane ledger aside
-  when the operator chooses the move; the close that seeds the
-  successor's ledger, the plan phase's or the folded campaign's, writes
-  its line 2 linking it. The successor's spec is written into the
-  existing feature folder by the folder's resolve step, the one first
-  spec write the birth step does not make. The trigger is the
+  when the operator chooses the move; the plan phase's close, seeding
+  the standard route's ledger, writes its line 2 linking it.
+  Brainstorming takes the operator's answer as its route entry and
+  proposes no preset. The spec is written into the existing feature
+  folder by the folder's resolve step, the one first spec write the
+  birth step does not make. The trigger is the
   controller's to raise; a reviewer's finding or question may prompt
   it.
 - **Deferral ownership (E7).** The ownership closure the plan phase's
@@ -311,8 +326,10 @@ the brainstorm decision record.
   ones.
 - **The umbrella on this branch.** A lightly held edit to its D4, by
   `skills/brainstorming/references/umbrellas.md` § Edits: a dispute on a
-  diff the controller wrote also gets the independent read (E2). The
-  entry's `landed` mark comes at Finish.
+  diff the controller wrote also gets the independent read (E2); and the
+  tree check's one status check compares with the HEAD and untracked
+  list taken at dispatch, kept in the workspace rather than recorded
+  (E5). The entry's `landed` mark comes at Finish.
 
 ## Acceptance
 
