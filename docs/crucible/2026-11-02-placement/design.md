@@ -89,9 +89,11 @@ All lightly held. Each records its basis.
   wording-test measurements (`docs/decisions/authoring-crucible.md`).
   The entry's "upstream-derived supporting files brought to crucible's
   grain" reads, for this child, "where no decision record keeps
-  upstream's text": a clarification of its own entry that changes
-  nothing another entry waits on. Basis: the controller's proposal, the
-  call delegated by the operator.
+  upstream's text": the entry's literal reading reaches a case its
+  author did not consider, a standing decision record, and this
+  clarification, stated here and changing nothing another entry waits
+  on, is the reading the operator's call settled. Basis: the
+  controller's proposal, the call delegated by the operator.
 - **D4. The shared seat reference.**
   `skills/subagent-driven-development/references/premise-and-questions.md`
   grows into the shared seat reference and is renamed
@@ -122,7 +124,10 @@ All lightly held. Each records its basis.
   mechanism, the controller's, accepted by the operator. Why: a seat
   that skipped a startup read would lose the rules it carries, and
   nothing measures how often that happens; spliced text also gives each
-  seat only its sections.
+  seat only its sections. It reverses the generator include
+  `docs/decisions/instruments.md` lists as rejected: that objection, a
+  resolution step on Codex, does not arise when the rendered template
+  sits at the path Codex dispatch reads.
 - **D6. Stdlib generator, no template engine.** The generator stays
   standard-library Python: it fills one slot and splices named sections.
   Reopen: adopt a template engine (Jinja2) once the generator needs
@@ -152,11 +157,11 @@ All lightly held. Each records its basis.
   definition R1 settles lives there, in one sentence; redteaming,
   SDD, requesting-code-review, flip-paths and receiving-review point to
   it. Basis: the controller's call under D2's ruling.
-- **D10. The adjudicator stays templateless.** It is the dispatch the
-  controller composes; its diff procedure becomes the shared
-  reference's, which the controller reads when composing it, and its
-  mandate stays in SDD. Basis: the controller's design, accepted by the
-  operator.
+- **D10. The adjudicator stays templateless.** It is a dispatch the
+  controller composes; its diff procedure becomes the shared reference's
+  § Building the diff, which its prompt names for the seat to read
+  (Interfaces & boundaries, composed seats), and its mandate stays in
+  SDD. Basis: the controller's design, accepted by the operator.
 - **D11. Rationalization tables and red-flag lists stay** as a form
   writing-skills endorses; only an exact duplicate goes
   (requesting-code-review's Red Flags list, finishing's Quick
@@ -212,12 +217,16 @@ its heading in the shared seat reference; the generator renders each
 template to its current path and each agent from its rendered template.
 The rendered templates keep their paths, so every reader of a template
 path (the dispatch references, the slot cards, the Codex dispatch, the
-tests) is unchanged. The prose budget counts each hand-edited file once
-and no rendered file.
+tests) is unchanged. Each template source lives under `skills/`, beside
+the template it renders, so the claude-ism scanner and the prose budget
+reach it. The prose budget counts each hand-edited file once and no
+rendered file.
 
-- Deferred to implementation: the source files' naming and location, the
-  include marker's form, and how the existing tests that read template
-  text read it after the change.
+- Deferred to implementation: the source files' naming, the include
+  marker's form, how an include works inside a selector passage and
+  beside the cards' slot tokens, how the structural check that every
+  non-`SKILL.md` file under `skills/` is cited reaches a source, and how
+  the existing tests that read template text read it after the change.
 
 **The shared seat reference's sections.** Other tasks cite these headings,
 so they are pinned:
@@ -226,33 +235,45 @@ so they are pinned:
 - § Read-only seats — all seats but the implementer: scratch, the suite
   bound, no re-run of a suite a report evidences, truncated evidence;
 - § Report file — all seats;
-- § What binds — every seat but the blind verifier, in a form for a seat
-  reviewing a document and one for a seat reviewing a range;
-- § Findings — severities, evidence, what is no finding, location;
+- § What binds in a document — redteam seat and terminal pass;
+- § What binds in a range — implementer, task reviewer, re-reviewer and
+  branch reviewer;
+- § Findings — severities, evidence, what is no finding, and location,
+  which takes in today's § Location;
 - § Finding scope — redteam seat and terminal pass;
 - § What shipped work carries — build history (R3), the comment rule,
   silence is not permission;
 - § Tests in review — test-first exceptions, a removal's failing step;
 - § Building the diff — task reviewer, re-reviewer, branch reviewer, and
-  the adjudicator through its controller;
+  the adjudicator;
 - § Concerns — task reviewer and re-reviewer;
 - the existing § Premise findings, § Binding items and unrecorded
   choices, § The goal check, § Questions and § The arrangement
   questions, the last read by controllers directly.
 
+**Composed seats.** A dispatch the controller composes, with no template
+(the round-0 pre-pass, the adjudicator, an umbrella's closing-review
+seats), names the shared sections its seat follows, and the seat reads
+them in the shared seat reference by path, as the closing-review seats
+read today's reference: the skill that composes the dispatch names the
+sections (redteaming § Round 0, SDD § Disputes and adjudication,
+`umbrellas.md` § Closing review).
+
 **The owner map.** Each row: the rule, its owner, and what the other
 sites become. A site not named keeps nothing of the rule beyond a
 pointer where its reader needs one. The audit reports give the sites by
-line at `8332a00`.
+line at `8332a00`. An owner that is a paragraph rather than a heading is
+cited by the heading above it and the paragraph's label, since the
+reference scanner checks a `§` citation against headings only.
 
 | Rule | Owner | Other sites |
 |---|---|---|
 | Seat-side shared clauses (the sections above) | the shared seat reference | spliced into the templates; `dispatch-composition.md` item 4 keeps its pointer and mandate line |
-| What binds, controller side; "the spec is a hypothesis, read for intent" | `skills/redteaming/references/flip-paths.md`, its opening | brainstorming's spec contract, writing-plans' spec-pointer bullet and Binding vs advisory, SDD § Deviations: pointers |
+| What binds, controller side; "the spec is a hypothesis, read for intent" | `skills/redteaming/references/flip-paths.md`, its opening | brainstorming's spec contract, writing-plans' spec-pointer bullet and Binding vs advisory, the Deviations paragraph of SDD § 2. Handle the report: pointers |
 | The umbrella chain and its finding rule (R2) | `umbrellas.md` § Children and § Edits | SDD, requesting-code-review, `very-small-lane.md`, writing-plans: pointers |
 | Weakened and deleted tests, the justification list | `writing-good-tests.md` | each code-review template keeps its one-line angle |
 | Dispatch reference read at start and after compaction; read the card, not the template; card Operation line; card Model and Effort lines; effort only on request; report file confirmed | `dispatch-composition.md` | SDD, redteaming, requesting-code-review, the seven cards: removed or a pointer |
-| Never predict an agent's result; name the model on every dispatch; the decision ask's form (R1) | the router | the adapters keep the mechanics; redteaming, SDD, requesting-code-review, flip-paths, receiving-review: pointers |
+| Never predict an agent's result; name the model on every dispatch; the decision ask's form (R1) | the router | the adapters keep the mechanics; `dispatch-composition.md` § Models and effort, redteaming, SDD, requesting-code-review, flip-paths, receiving-review: pointers |
 | Independent tasks, for fan-out | dispatching-parallel-agents, step 3 | the adapters keep one clause each |
 | Card inputs | the slot cards | SDD and requesting-code-review keep what the controller does with each seat's output |
 | Task reviewer's rubric; terminal pass's mandates; re-reviewer's verdicts | their templates | SDD and redteaming keep the verdict names, the loop wiring and the inputs |
@@ -266,7 +287,7 @@ line at `8332a00`.
 | Standing test and one-time check | writing-plans § Acceptance maps to checks | brainstorming's spec contract: a pointer |
 | The plan phase is one round | `plan-phase.md` | redteaming: the read instruction |
 | The folded preset | `folded-lane.md` (campaign); brainstorming § Proposing the arrangement (step 4) (entry) | redteaming, writing-plans: pointers |
-| Ledger seeding at a close | `plan-phase.md` § Close | redteaming § Exit and `folded-lane.md`: one-way pointers |
+| Ledger seeding at a close | `plan-phase.md`, its Close paragraph | redteaming § Exit and `folded-lane.md`: one-way pointers |
 | An open premise ask at an umbrella's landing | `umbrellas.md` § Landing | flip-paths, redteaming § Exit: pointers |
 | A premise ask opens no wave and is never an open finding | flip-paths § Premise findings | redteaming, `formats.md`, SDD, requesting-code-review: pointers |
 | Round readout contents | redteaming § Round readout | `formats.md`'s readout field: a pointer |
@@ -276,9 +297,9 @@ line at `8332a00`.
 | The controller fixes nothing off the lane | SDD, once | requesting-code-review: a pointer |
 | Deferred minors and leads reach the branch reviewer | requesting-code-review, its inputs | SDD: a pointer |
 | Finish's red suite | SDD § Finish (classification and dispute); requesting-code-review (the wave) | finishing: a pointer |
-| Drift found after the fact | SDD § Drift; requesting-code-review (how a repair rides a wave) | — |
+| Drift found after the fact | SDD § Drift found after the fact; requesting-code-review (how a repair rides a wave) | — |
 | Drift on the lane | `very-small-lane.md` | SDD, requesting-code-review: pointers |
-| The umbrella's receiving step | requesting-code-review (branch side); SDD (task side) | `very-small-lane.md`: a pointer |
+| The umbrella's receiving step | flip-paths § Under an umbrella: binding changes and late splits, its Receiving paragraph | requesting-code-review and SDD keep their checkpoints (before each pass and wave; before each task's BASE); `very-small-lane.md`: a pointer |
 | A lost workspace | `formats.md` | SDD: a pointer |
 
 **The corrections.** What the text says after placement, where the copies
@@ -304,9 +325,7 @@ names that is not listed here is a restatement only.
   requesting-code-review's controller reads `dispatch-composition.md`.
 - A red-suite failure ruled not the branch's is recorded and not raised
   again while it fails the same way, in the branch review too.
-- Every report-writing seat writes its report file even where the host
-  advises returning findings as text; the suite bound is the task
-  reviewer's fuller form; the terminal pass's findings carry a location
+- The suite bound is the task reviewer's fuller form; the terminal pass's findings carry a location
   (`docs/decisions/evidence-and-findings.md`).
 - systematic-debugging's test-first copies follow its conditional line
   (`docs/decisions/upstream-skills-kept-close.md`).
@@ -320,14 +339,27 @@ names that is not listed here is a restatement only.
   read's "re-read the entire artifact" beside its narrower scope;
   brainstorming's open-items reader points to `formats.md` § Open items.
 
-**Renames.** The rename of `premise-and-questions.md` reaches every file
-citing it: the skills, the decision records and `docs/upstream.md` (no
-test or tool names it at `8332a00`).
+**Not a correction.** The sentence that a report file is required even
+where the host advises returning findings as text stays where it stands,
+in the verifier and re-reviewer templates alone, not in § Report file:
+`docs/decisions/instruments.md` rejects seat-facing wording against
+skipped report writes, and those two seats carry it as a targeted fix
+(`docs/backlog/review-seat-report-write.md`).
 
-**Template consumers.** A template source is a new non-`SKILL.md` file
-under `skills/`, so the structural checks that every such file is cited
-and the claude-ism scanner reach it; the tests that read template text,
-the generator's check mode and `agents/` read the rendered files.
+**Renames.** The rename of `premise-and-questions.md`, and the move of
+§ Location into § Findings, reach every file citing either: the skills,
+the decision records, `docs/upstream.md`, `docs/backlog/skill-text-rewrite.md`
+and the generated `agents/` (no test or tool names the file at
+`8332a00`). A renamed heading (D15) reaches its citers the same way,
+`docs/decisions/git-steps.md` among them.
+
+**Template consumers.** The tests that read template text, the
+generator's check mode and `agents/` read the rendered files. Three
+texts call the template the hand-edited home of its text and `agents/`
+the one generated artifact, and change with D5: `AGENTS.md` (Authoring
+rules, `agents/` is generated), `docs/dual-runtime.md` (its layout and
+its statement that no runtime gets a generated skill tree) and the
+generator's own docstring.
 
 **Shared files.** Every task edits skill text, and several edit the same
 file (SDD, redteaming, `dispatch-composition.md`); the plan orders them.
@@ -348,23 +380,29 @@ file (SDD, redteaming, `dispatch-composition.md`); the plan orders them.
 - **A4. The suite.** Standing: the full suite passes, the reference
   scanner, the claude-ism scanner and the session-start budget among it.
 - **A5. Sizes.** One-time, at the landing: the net word change against
-  `8332a00`, the `SKILL.md` sizes against the 20,000-byte line, the
+  `8332a00`, on the old counting basis (every `*.md` under each skill
+  directory, rendered templates included) and on the new one, the
+  `SKILL.md` sizes against the 20,000-byte line, the
   envelope's size; `tests/prose-budget.txt` lowered to the new counts.
 - **A6. Records and docs.** One-time: every decision record whose
   position moves (the generator and the splice in
   `docs/decisions/instruments.md`, placement of seat rules in
   `docs/decisions/authoring-crucible.md`, the adapters' content in
   `docs/decisions/runtime-adapters.md`, any record receiving moved text)
-  carries the change and its Changes line; `docs/authoring.md` states
-  D14.
+  carries the change and its Changes line, `instruments.md` dropping its
+  rejection of a generator include; the three texts under Template
+  consumers say what D5 makes true; every citation of a renamed file or
+  heading resolves; `docs/authoring.md` states D14.
 - **A7. The backlog.** One-time: `docs/backlog/skill-text-rewrite.md`
-  keeps only what stays open (the separability and tension-closing
-  points, the two rule gaps, the umbrella-landing question, the
-  missing-verdict action); `docs/backlog/cross-skill-anchor-citations.md`
-  is deleted as resolved.
-- **A8. The entry.** The umbrella's entry for `placement` carries D3's and
-  D5's clarifications as this spec states them, and its mark at the
-  finish.
+  keeps only what stays open: the resident-cost reopen trigger, which
+  `compaction-fit` restates or retires; the vocabulary-sprawl,
+  separability and tension-closing points; the two rule gaps; the
+  umbrella-landing question; and, added, the action on a review missing
+  a verdict. `docs/backlog/cross-skill-anchor-citations.md` is deleted
+  as resolved.
+- **A8. The entry.** The umbrella's entry for `placement` is not
+  reworded: D3 and D5 state its clarifications here, and the entry takes
+  only its mark at the finish.
 
 ## Mechanism sketches
 
