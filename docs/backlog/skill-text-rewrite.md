@@ -116,6 +116,27 @@
   - whether a clause-sized binding change to an umbrella entry needs a
     landing of its own on the base branch first: the feature needed two
     such landings for one-clause edits.
+- **Left open by `execution-retirements`** (2026-11-02):
+  - `skills/redteaming/references/flip-paths.md` step 3 still calls a
+    plan or spec change on a task completed branch review only a "scope
+    finding"; the branch reviewer now stakes a severity like any
+    finding, so the term can open a wave on a MINOR;
+  - when the operator answers the after-three-waves ask with another
+    approach by a plan change rather than a revert, nothing says what
+    happens to the task's open findings: its latest line stays
+    `fix wave 3/3`, and the resume rule sends it to an ask already
+    answered;
+  - the plan phase's close after an upgrade hatch seeds every unruled
+    lane lead as `Lane: lead (concern):`, whatever its kind, so the
+    branch reviewer cannot rule a carried question or proposal
+    RECOMMENDED;
+  - restatements for `placement`: "no mark is added once the plan's
+    review has closed" stands in four places (writing-plans, the plan
+    phase, the folded lane, SDD's step 2); writing-plans states the
+    spec-marker naming rule twice; redteaming's shared-tree paragraph
+    restates SDD § Shared-tree rules beside its pointer; the lane
+    reference holds the hatch's route entry, which belongs with
+    brainstorming's route entry once that file has room.
 
 ## Follow-up
 
@@ -140,5 +161,6 @@
   merging resolution exists, the maintainer agreed it looked weak and
   deferred the restructuring ("probably later").
 - Fix the minor defect and the two slips above on the way.
-- `placement`: the two wording conflicts above. The umbrella-landing question: weigh it when the
+- `placement`: the two wording conflicts above, and the items
+  `execution-retirements` left open. The umbrella-landing question: weigh it when the
   umbrella procedure is next edited.

@@ -295,7 +295,7 @@ The Children list, in order:
   `docs/backlog/implementer-dispute-channel.md`, the execution side of
   `docs/backlog/skill-text-rewrite.md`, and the bullet of
   `docs/backlog/umbrella-followups.md` on statements of what binds.
-  Waits on `review-retirements`
+  Waits on `review-retirements` — landed
 
 - `placement` — G2 on the text the retirements leave: one owner text
   per rule; one shared seat reference, grown from
