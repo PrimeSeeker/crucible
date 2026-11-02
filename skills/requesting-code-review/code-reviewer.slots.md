@@ -20,7 +20,7 @@
 ## Selectors
 
 - lane: very-small | off
-  - very-small: the lane text under Binding Content, Lane Fit included; set on the very-small lane
+  - very-small: the lane text under Binding Content; set on the very-small lane
   - off: none; any other branch, standalone mode included
 
 ## Dispatch

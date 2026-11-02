@@ -56,13 +56,13 @@ first round. File and line counts are not the test.
   dispatched implementer otherwise; the repository's own gates and the
   branch review, with no spec campaign, plan or per-task review
   (`skills/subagent-driven-development/references/very-small-lane.md`).
-  The branch reviewer, the lane's first review, states in its Lane Fit
-  whether overturning a major mechanism of the change is reasonably
-  expected now that it is coded, EXCEEDS SHAPE opening the upgrade
-  hatch and WITHIN SHAPE keeping the lane, and whether the note's
-  Intent matches the goal the request in the feature workspace asks
-  for; it rules on a dispatched implementer's concerns, questions and
+  The branch reviewer, the lane's first review, runs the goal check
+  with the note's Intent against the request in the feature workspace,
+  and rules on a dispatched implementer's concerns, questions and
   proposals, which the controller transcribes to the ledger as leads.
+  Where overturning a major mechanism of the change is reasonably
+  expected now that it is coded, the upgrade hatch puts staying on the
+  lane or moving to the standard route to the operator.
 
 **The origin question.** A feature with non-trivial impact may skip
 review before code where the overturn question answers no at
@@ -155,9 +155,11 @@ accepted as rare and visible at the merge. The alternatives offered were
 the question plus a blast-radius limit, and the shape test kept beside
 the question. (Basis: judgment, accepted by the maintainer, 2026-10-29.)
 
-Lane Fit asks the same question of the diff, and keeps its verdict words
-because other files, and features in flight on older installs, read
-them. (Basis: judgment, accepted by the maintainer, 2026-10-29.)
+From 2026-10-29 the branch reviewer's Lane Fit asked the same question
+of the diff, keeping its verdict words because other files, and
+features in flight on older installs, read them. (Basis: judgment,
+accepted by the maintainer, 2026-10-29.) The upgrade hatch's
+stop-and-ask line asks it now (below).
 
 The umbrella the maintainer approved had reworded the threshold, and
 the skills followed it; on 2026-10-30 it returned to the
@@ -237,11 +239,12 @@ controller's context, in place of the context test alone
 judgment, accepted by the maintainer.)
 
 The note binds through its intent, acceptance and out of scope; a
-departure from its change list is logged, and a Lane Fit verdict of
-EXCEEDS SHAPE is an operator decision ask: stay, or move to the standard
-route, never to the folded one, whose entry comes before any artifact is
-written. The note and the lane's ledger carry a `Lane: very-small` line.
-(Basis: judgment, accepted by the maintainer.)
+departure from its change list is logged, and where overturning a major
+mechanism is reasonably expected once the change is coded, the operator
+chooses: stay, or move to the standard route, never to the folded one,
+whose entry comes before any artifact is written. The note and the
+lane's ledger carry a `Lane: very-small` line. (Basis: judgment,
+accepted by the maintainer.)
 
 Nothing checked the lane's goal premise, whether the note's Intent is
 what was asked. The maintainer found it "especially concerning for the
@@ -254,7 +257,34 @@ the maintainer accepted. (Basis: the maintainer's preference, for the
 aim; judgment, accepted by the maintainer, for the form.) Since
 2026-11-01 the request is quoted in the feature workspace's
 `request.md` rather than in the committed note
-(`docs/decisions/the-spec.md`).
+(`docs/decisions/the-spec.md`). Since 2026-11-02 the goal check is the
+branch review's own, run on the lane with the note's Intent, and Lane
+Fit is gone (below).
+
+The skill text rewrite's audit found Lane Fit's shape verdict returning
+"exceeds" twice in about 42 lane reviews, both on one lane
+(`docs/crucible/2026-11-01-skill-text-rewrite/umbrella.md`). The
+verdict went, its goal half being the branch review's goal check, and
+the hatch became one stop-and-ask line, which the controller raises, a
+reviewer's finding or question or its own reading prompting it: the
+operator chooses between staying and moving, and on a move the answer
+is the route entry and brainstorming starts with the note and the
+existing diff, proposing no preset. The hatch's ledger line went with
+the rest of its procedure.
+(Basis: the umbrella's D3, the controller's proposals on the audit's
+counts, accepted by the maintainer, 2026-11-01.) What the move keeps
+was found while the spec was written: without the lane's records moved
+aside and linked, the standard route's execution would find a ledger
+naming the note and escalate it as another run's, and the lane's
+rulings, departures and leads would reach no close readout. So the
+lane's whole `sdd/` moves aside as `sdd-lane/`, the standard route's
+ledger links its ledger as a predecessor, and the plan phase's close
+carries the lane's open findings, at their staked severity, and its
+unruled leads to the standard route's branch reviewer
+(`skills/subagent-driven-development/references/very-small-lane.md`).
+(Basis: judgment, accepted by the maintainer: the agent's proposal,
+approved at the campaign gate; for moving the whole `sdd/` and carrying
+the findings, the maintainer left the call to the agent, 2026-11-02.)
 
 The note and the lane proposal share one gate (2026-10-07): a separate
 gate re-presented decisions just made and never showed the note whose
@@ -301,6 +331,16 @@ small preset or the waiver for its work.
 
 ## Changes
 
+- 2026-11-02: the branch reviewer's Lane Fit section and its shape
+  verdict (EXCEEDS SHAPE, WITHIN SHAPE) go, its goal half being the
+  branch review's goal check, run on the lane with the note's Intent;
+  the upgrade hatch becomes one stop-and-ask line, the operator's answer
+  its route entry, its `Hatch:` ledger line and the rest of its
+  procedure going; on a move the lane's `sdd/` is moved aside as
+  `sdd-lane/` and linked as the standard route's predecessor, its open
+  findings and unruled leads carried to that route's branch reviewer;
+  because the skill text rewrite's audit found the verdict firing twice
+  in about 42 lane reviews, both on one lane.
 - 2026-11-02: the exceptions to entering a preset mid-flight drop the
   operator-confirmed downshift, a late `Review: branch only` mark, which
   the containment test no longer excludes (`docs/decisions/plans.md`).

@@ -60,7 +60,7 @@ Where the spec's preamble (on the lane, the note's) carries an `Umbrella:` line,
 
 **Finish's red suite.** A red run `crucible:subagent-driven-development § Finish` hands over is a BLOCKER finding against the branch: it opens the next wave, counted against the same cap, its FIX_BASE being the HEAD the suite ran on. That the failure is not the branch's — it fails on the merge base too, or is environmental — is a dispute you may raise before the wave opens.
 
-**Fixes are never yours** off the very-small lane: your context stays for coordination, and controller fixes skip review. On the lane you apply each wave's fixes inline and write `wave-<n>-fix.md` yourself; the lane's inputs, its lane-fit statement and its other differences are in `crucible:subagent-driven-development § The very-small lane`, and the rest of this loop runs there as stated here, route conditions included.
+**Fixes are never yours** off the very-small lane: your context stays for coordination, and controller fixes skip review. On the lane you apply each wave's fixes inline and write `wave-<n>-fix.md` yourself; the lane's inputs and its other differences are in `crucible:subagent-driven-development § The very-small lane`, and the rest of this loop runs there as stated here, route conditions included.
 
 When the review ends, return to `crucible:subagent-driven-development § Finish`.
 

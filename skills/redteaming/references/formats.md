@@ -75,6 +75,8 @@ workspace):
       reports/
       branch-review/          # pass-<k>.md per full-scope pass, pass-<k>-r<R>.md
                               #   for a replacement seat's
+    sdd-lane/                 # a very-small lane's sdd/, moved aside at its
+                              #   upgrade hatch
     scratch/                  # what read-only agents build or run to check
                               #   claims, one subdirectory per report;
                               #   deleted with the workspace

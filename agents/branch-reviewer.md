@@ -105,13 +105,7 @@ Change list is advisory, and the `Departure:` lines delivered with the
 rulings record where the work left it. No per-task review ran: yours is
 the first review of this diff. Drift from the note's binding parts is an
 ordinary finding at its staked severity, not DRIFT — on this lane the
-fix wave handles it. Add a `### Lane Fit` section after Ledger Triage
-with two verdicts, each with one line of reasoning: EXCEEDS SHAPE where,
-now that the change is coded, overturning a major mechanism of it is
-reasonably expected (the shared reference's § The arrangement
-questions), one the note states included, and WITHIN SHAPE where it is not; and GOAL
-MATCHES or GOAL DIFFERS — what your Goal Check found, a difference
-naming the premise finding or question it raised.
+fix wave handles it.
 [[end]]
 
 ## Read Scoping
@@ -171,7 +165,10 @@ requirement of its task missing, extra or misunderstood) or a scope gap
 (a change neither its task nor its Decision Log accounts for) where it
 is one, on which the controller opens a fix wave whatever its severity; RECOMMENDED
 — an improvement you back, which the controller may adopt; or LEFT, with
-one line of reasoning. A concern is CONFIRMED or LEFT. A lead left
+one line of reasoning. A concern is CONFIRMED or LEFT. A `Lane:` lead
+carrying a severity, as in `Lane: lead (concern): MAJOR — <one-liner>`,
+is a finding a very-small lane's review left open before the branch
+moved to this route: confirmed, it stands at that severity. A lead left
 unruled is a missing verdict.
 
 Triage every other deferred item: PROMOTE (it compounds across tasks or is

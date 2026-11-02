@@ -62,8 +62,13 @@ ride the next fix wave or which reaches the operator in the close
 readout; or LEFT, with one line. A lead it confirms as an intent or
 scope gap opens a wave whatever its staked severity, as a failed
 verdict does in a task review; a pass that leaves a lead unruled is
-missing a verdict. Its own
-`Questions` items, and a branch-review fix report's, go under the
+missing a verdict. After the very-small lane's upgrade hatch, the
+findings the lane's last pass left open reach the standard route's
+reviewer as `Lane:` leads carrying their staked severity: one it
+confirms stands at that severity, and one at BLOCKER or MAJOR it leaves
+reaches the close readout with its ruling
+(`skills/redteaming/references/plan-phase.md`;
+`docs/decisions/routes.md`). Its own `Questions` items, and a branch-review fix report's, go under the
 ledger's `## Questions` with
 the controller's disposition; the close readout lists them, and the
 branch reviewer's read scoping excludes that section, so a pass's
@@ -379,6 +384,12 @@ accepted by the maintainer.)
 
 ## Changes
 
+- 2026-11-02: after the very-small lane's upgrade hatch, the findings
+  the lane's last pass left open reach the standard route's branch
+  reviewer as `Lane:` leads at their staked severity, a confirmed one
+  standing at it and a BLOCKER or MAJOR left reaching the close
+  readout; because the move to the standard route would otherwise drop
+  them (`docs/decisions/routes.md`).
 - 2026-11-02: for a task completed branch review only, every full-scope
   pass reads its report's Decision Log against the diff, its findings
   opening waves by their staked severity; the per-task line a pass owed,

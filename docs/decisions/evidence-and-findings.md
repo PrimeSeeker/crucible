@@ -68,8 +68,8 @@ plan-phase seats run no goal check, their card's `goal-check` selector
 set off, and keep the request among their inputs as grounds for a
 premise finding. With no request file, the seat restates
 the goal from the Intent and says the request was unavailable.
-On the very-small lane the check is part of the branch reviewer's Lane
-Fit (`docs/decisions/routes.md`;
+On the very-small lane the branch reviewer runs it with the note's
+Intent (`docs/decisions/routes.md`;
 `skills/subagent-driven-development/references/premise-and-questions.md`
 § The goal check).
 
@@ -442,6 +442,9 @@ records that cite "the audit" draw on these figures. (Basis: measured.)
 
 ## Changes
 
+- 2026-11-02: on the very-small lane the goal check is the branch
+  reviewer's own, run with the note's Intent, no longer part of Lane
+  Fit, which is retired (`docs/decisions/routes.md`).
 - 2026-11-02: a labelled change has nothing to dispute, worded without
   the adjudicator, since a dispute no longer always reaches one
   (`docs/decisions/adjudication.md`).
