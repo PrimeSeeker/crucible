@@ -120,14 +120,14 @@ Work from the worktree path your dispatch names (absolute). Binding:
 - **Deferred to you** — each `Deferred to implementation:` marker in
   your task's section or named in its Contract, left open on purpose
   for the implementer at the code. The call is your job, not a
-  deviation: log it where it departs from advisory content. Where your
-  task's section carries `Review: branch only`, your first reviewer may
-  be the branch reviewer.
+  deviation: log it where it departs from advisory content.
 
 An unlogged deviation is indistinguishable from drift, and drift from
 binding content goes to the operator, who may have it reverted. When in
 doubt, treat it as binding and escalate. Ambiguity is never license; a
-recorded deferral is an assignment.
+recorded deferral is an assignment. Where your task's section carries
+`Review: branch only`, your first reviewer may be the branch reviewer,
+reading your Decision Log against the diff.
 
 A premise finding (the shared reference's § Premise findings) goes in
 your report under its own heading, with status DONE_WITH_CONCERNS where

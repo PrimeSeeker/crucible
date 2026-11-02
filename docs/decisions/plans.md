@@ -45,19 +45,17 @@ inputs the spec implies but never names.
 § The arrangement questions, may carry the line `Review: branch only —
 <reason>`, the reason saying how it meets it; a task with no mark is
 reviewed. Dispatched, a marked task takes the branch review as its first
-review (`docs/decisions/task-loop.md`). Marks are plan content: the
-review that grades the plan grades them, the plan phase's coherence
-seats or, on the folded preset, the spec campaign's seats, and that
-phase's close readout lists the marked tasks for the operator as
-information. A mark is added only in an edit a seat grading marks reads
-afterwards: never in the last fix wave of the review that grades the
-plan, a terminal pass's follow-up wave or a plan-phase repair, where a
-seat question proposing one is answered or carried, never adopted
-(`crucible:redteaming § Merge and finding hygiene`).
+review (`docs/decisions/task-loop.md`). A mark is written with the plan,
+and no seat grades marks as such; the close readout of the phase that
+reviews the plan, the plan phase or, on the folded preset, the spec
+campaign, lists the marked tasks for the operator as information. Once
+that review has closed, no mark is added: the task keeps its review
+(`crucible:writing-plans § Per-task structure — four fields, all
+required`).
 
 **Task sizing.** A task is the smallest unit with its own test cycle and
 its own review verdict, a fresh task reviewer's gate or, for a marked
-task, the branch reviewer's judgments over its range: split where a
+task, the branch reviewer's read of its range: split where a
 reviewer could reject one task while approving its neighbour, and fold
 setup into the task that needs it. The calibration, about a page per
 task and plans in the low
@@ -185,13 +183,16 @@ judgment, accepted by the maintainer, for the calibration.)
 
 Per-task review is one of the choices the maintainer asked to separate
 from the route (2026-10-28; `docs/decisions/routes.md`), and the plan is
-where the tasks exist to choose it for. A mark carries its reason so the
-seats grading the plan can judge it, and the criterion asks what a late
-review would cost: the branch review runs after every later task, too
-late for a detail something else builds on. Marks written at plan time
-pass that review. (Basis: the maintainer's preference, for the choice;
-judgment, accepted by the maintainer, for the mark and its grading,
-2026-10-29.)
+where the tasks exist to choose it for. A mark carries its reason, how
+the task meets the criterion, and the criterion asks what a late review
+would cost: the branch review runs after every later task, too late for
+a detail something else builds on. (Basis: the maintainer's preference,
+for the choice; judgment, accepted by the maintainer, for the mark,
+2026-10-29.) From 2026-10-29 the seats reviewing the plan graded each
+mark against the criterion; the skill text rewrite reduced the mark to
+one field and its reason, with no grading chain. (Basis: the
+skill-text-rewrite umbrella's D4, with the maintainer's judgment that
+marks were used too liberally, 2026-11-02.)
 
 A mark added after that review had closed was a downshift from the
 arrangement the operator confirmed, so the containment test excluded it
@@ -199,7 +200,13 @@ from the controller's confirmation from 2026-10-29. On 2026-11-02 the
 skill text rewrite dropped that exclusion: of the test's two exclusions
 added after single incidents, it kept only the one whose failure would
 be silent, a change after which the same work passes a check it failed.
-(Basis: judgment, an agent's proposal accepted by the maintainer.)
+(Basis: judgment, an agent's proposal accepted by the maintainer.) That
+left a late mark governed by the rule on which edits may add one, below,
+while this record read as if the containment test governed it. When the
+grading went, the same day, the rule became that no mark is added once
+the plan's review has closed, the task keeping its review: the error
+then falls on the side of more review. (Basis: judgment, the
+controller's proposal accepted by the maintainer, 2026-11-02.)
 
 A mark written in the plan review's own last wave passed that review in
 name only: no seat with the mandate to grade marks read the wave after
@@ -208,7 +215,9 @@ it (the audit, `docs/decisions/evidence-and-findings.md`). Since
 stays the one source execution reads marks from, so execution needed no
 change. An agent's proposal, which the maintainer accepted. (Basis:
 measured, for the finding; judgment, accepted by the maintainer, for
-the rule.)
+the rule.) The rule went with the grading on 2026-11-02: with no seat
+grading marks, which wave adds one before the review closes no longer
+decides whether a grading seat reads it.
 
 ### Self-review
 
@@ -288,6 +297,14 @@ directory, and `plan` is a value of their `phase` selector.
 
 ## Changes
 
+- 2026-11-02: the `Review: branch only` mark is one field and its
+  reason, written with the plan: the seats reviewing the plan no longer
+  grade marks, the rule on which waves may add one is retired, and no
+  mark is added once the plan's review has closed, the task keeping its
+  review; task sizing names the branch reviewer's read of a marked
+  task's range. Because the skill-text-rewrite umbrella's D4 left the
+  mark no grading chain, and this record read as if the containment
+  test governed a late mark.
 - 2026-11-02: the deferred-items routing table retired, with its
   heading, its row format and `T<N>` owner cell, the plan phase's and
   the folded lane's appending of rows, the close's seeding of the

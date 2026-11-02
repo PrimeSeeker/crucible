@@ -20,8 +20,8 @@ path's own tests failing or deleted with it, never a new test that the
 thing is absent. The task reviewer's deviation audit checks RED output
 before GREEN, or the logged exception, and is the one seat that checks
 it, but for a task completed branch review only, where the controller's
-gate checks the evidence is in the report and the branch reviewer's
-deviation audit judges it (`docs/decisions/task-loop.md`;
+gate checks the evidence is in the report and the branch reviewer judges
+it in its read of the task's report (`docs/decisions/task-loop.md`;
 `skills/subagent-driven-development/implementer-prompt.md` § Tests:
 Test-First, Evidence Before Done). Outside SDD, systematic-debugging
 writes the failing test before the fix and says why where no test or
@@ -41,7 +41,7 @@ justification itself for a task completed branch review only
 (`skills/subagent-driven-development/task-reviewer-prompt.md` § Verdict 2:
 Scope; `skills/subagent-driven-development/re-review-prompt.md` § Scope;
 `skills/requesting-code-review/code-reviewer.md` § What to Check and
-§ Tasks With No Task Review).
+§ Execution Trail).
 
 **Adequacy, and no gate.** New-test adequacy is the task reviewer's own
 judgment, and the branch reviewer's for a task completed branch review
@@ -150,6 +150,11 @@ testing, or other test gates, states them there.
 
 ## Changes
 
+- 2026-11-02: for a task completed branch review only, the branch
+  reviewer judges the test evidence and a deleted test's justification
+  in its read of the task's report and Decision Log, no longer in a
+  deviation audit of its own with a line per task
+  (`docs/decisions/branch-review.md`).
 - 2026-10-29: for a task completed branch review only, the branch
   reviewer takes the task reviewer's test checks, RED before GREEN, a
   deleted test's justification and new-test adequacy, the controller's

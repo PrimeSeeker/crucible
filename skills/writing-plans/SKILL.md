@@ -39,7 +39,7 @@ Binding or cross-task content is never deferrable — a deferral covering it is 
 - **Contract** — interfaces consumed and produced: signatures, not bodies; plus the spec decisions this task enacts, named by their ids, and the spec's deferral markers it owns, named by their sites (§ Deferring detail). Naming is the mechanism — a task never quotes the spec's binding text.
 - **Acceptance** — observable behaviors, plus test scenarios by category — happy / edge / error / integration — as scenario descriptions, not test code. The edge and error scenarios name the inputs the spec implies but never names (an empty file, a missing directory, a second run).
 
-**The review mark** is optional and not a field. A task that meets the mark's criterion (`skills/subagent-driven-development/references/premise-and-questions.md` § The arrangement questions) may carry, on its own line below the task's heading, `Review: branch only — <reason>`, the reason saying how the task meets it. Dispatched, a marked task takes the branch review as its first review, unless its report sends it to a task review after all (`crucible:subagent-driven-development` § The Task Loop). A task with no mark is reviewed. Marks are plan content, graded by the review that grades the plan, so a mark is added only in an edit a seat grading marks reads afterwards, never in that review's last fix wave, a terminal pass's follow-up wave or a plan-phase repair.
+**The review mark** is optional and not a field. A task that meets the mark's criterion (`skills/subagent-driven-development/references/premise-and-questions.md` § The arrangement questions) may carry, on its own line below the task's heading, `Review: branch only — <reason>`, the reason saying how the task meets it. Dispatched, a marked task takes the branch review as its first review, unless its report sends it to a task review after all (`crucible:subagent-driven-development` § The Task Loop). A task with no mark is reviewed. A mark is added only before the plan's review closes; after that, the task keeps its review.
 
 There is no per-task constraints field. Every seat reads the header's spec pointer, so a task's binding content is read from the spec at its pinned revision; a per-task restatement would be a second copy to keep true.
 
@@ -66,7 +66,7 @@ An absence or removal criterion ("X is gone") is a one-time check unless the pla
 
 ## Task sizing
 
-A task is the smallest unit that carries its own test cycle and its own review verdict — a fresh task reviewer's gate, or, for a marked task, the branch reviewer's judgments over its range — split where a reviewer could reject one task while approving its neighbor; fold setup, configuration, and scaffolding into the task whose deliverable needs them. (Calibration, advisory: a task's Why+Contract+Acceptance around a page; plans in the low-teens of tasks.)
+A task is the smallest unit that carries its own test cycle and its own review verdict — a fresh task reviewer's gate, or, for a marked task, the branch reviewer's read of its range — split where a reviewer could reject one task while approving its neighbor; fold setup, configuration, and scaffolding into the task whose deliverable needs them. (Calibration, advisory: a task's Why+Contract+Acceptance around a page; plans in the low-teens of tasks.)
 
 ## Self-review
 

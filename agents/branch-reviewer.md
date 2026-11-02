@@ -118,8 +118,9 @@ naming the premise finding or question it raised.
 
 Read only what this dispatch enumerates — the spec at that pinned
 revision, the umbrellas it names, the request file, the requirements
-source, the diff you build, the execution-trail items below, the files
-its branch-review-only list names and the plugin files Runtime names —
+source, the diff you build, the execution-trail items below, among them
+the files its tasks completed branch review only name, and the plugin
+files Runtime names —
 plus the code in this
 worktree, which you may read beyond the diff wherever the branch's
 correctness depends on it. Out of scope:
@@ -127,7 +128,7 @@ correctness depends on it. Out of scope:
 lists, readouts. Those are the exhaust of the spec campaign and plan
 phase; the branch is graded against the converged spec, not against the
 argument that produced it. Of `.crucible/<feature-slug>/sdd/`, only the
-paths the execution-trail items and the branch-review-only list name —
+paths the execution-trail items name —
 the ledger and the reports they point at — are yours to read, and of
 the ledger not its `## Questions` section, which holds earlier passes'
 questions, never a later pass's input. Scope every search you run to this worktree's code and the files
@@ -165,8 +166,10 @@ Among the deferred items are leads, carried to you for a ruling: lines
 marked `lead (<kind>):` after their prefix, as in
 `Task <N>: lead (question):`, `<kind>` being `question`, `proposal` or
 `concern`. Rule on each lead: CONFIRMED — a finding, written under
-Issues at the severity you stake, and named an intent gap or a scope
-gap where it is one, by the intent and scope judgments below; RECOMMENDED
+Issues at the severity you stake, and named an intent gap (a
+requirement of its task missing, extra or misunderstood) or a scope gap
+(a change neither its task nor its Decision Log accounts for) where it
+is one, on which the controller opens a fix wave whatever its severity; RECOMMENDED
 — an improvement you back, which the controller may adopt; or LEFT, with
 one line of reasoning. A concern is CONFIRMED or LEFT. A lead left
 unruled is a missing verdict.
@@ -181,38 +184,20 @@ LEAVE-PARKED. Spec and plan text are never edited for it. Nothing after
 this triage looks at these items again. Check each ruling against the code it covers:
 a ruling the final code contradicts is a finding.
 
-## Tasks With No Task Review
-
-Your dispatch's branch-review-only list names the tasks whose first
-review is yours, each with its commit range, its implementer's report,
-the brainstorm decision record where the task writes a decision record,
-and the amendment commits its range holds; or "none". For each task
-named, read its plan section and its report, the report's claims
-unverified until its range bears them out, and make over that range the
-four judgments a task review makes:
-
-- **intent** — every requirement of the task implemented, against the
-  plan's intent: nothing missing, extra or misunderstood;
-- **scope** — every hunk attributable to the task or its Decision Log;
-  a weakened test fails it, as do a deleted test or case whose
-  justification (the list under Testing, below) the Decision Log does
-  not name or the code contradicts, and a change to the plan, a folded
-  document or the spec other than a named amendment commit;
-- **deviation audit** — each Decision Log entry justified, no deviation
-  undisclosed, the test-first evidence real (RED before GREEN, or the
-  exception logged with its reason);
-- **quality** — defects, as What to Check lists them, a file the task
-  grew past one clear responsibility, the adequacy of its new tests and
-  noise in its reported test output included.
-
-Where a decision record is named, also check each position's stated
-basis against its entry's proposer and status there. The task's
-concerns reach you as leads among the deferred items; one you confirm
-as an intent or scope gap fails that judgment. A failed
-judgment is an entry under Issues at the severity you stake, naming the
-task and the judgment: the controller opens a fix wave on a failed
-intent, scope or deviation audit whatever its severity, and on a lead
-confirmed as an intent or scope gap in any task.
+Your dispatch also lists the tasks completed branch review only, whose
+first review is yours, each with its commit range, its implementer's
+report, the brainstorm decision record where its plan section names it,
+and the amendment commits its range holds; or "none". For each, read its
+plan section and its report, the report's claims unverified until its
+range bears them out, and its Decision Log against the diff over that
+range, as a task review would: each entry justified, no deviation
+undisclosed, a deleted test or case justified as Testing (below) lists,
+the test-first evidence real (RED before GREEN, or the exception logged
+with its reason), and no change to the plan, a folded document or the
+spec other than a named amendment commit. Where a decision record is
+named, check each position's stated basis against its entry's proposer
+and status there. What you find goes under Issues at the severity you
+stake, naming the task.
 
 ## Git Range to Review
 
@@ -318,8 +303,8 @@ implementation, say so.
 
 Write your report to the report file your dispatch names, in exactly
 the structure below. Begin directly with the Goal Check: every line is
-the goal check, a finding with its location, a question, a task line,
-a triage verdict, or a check you ran — no preamble, no process
+the goal check, a finding with its location, a question, a triage
+verdict, or a check you ran — no preamble, no process
 narration. Then reply with only the merge verdict and the report file's path. If the
 host refuses the write, say so and put the full report in that reply
 instead. In standalone mode the report is your final message.
@@ -352,13 +337,6 @@ For each issue (a premise finding's entry opens with its label,
 
 The items the shared reference's § Questions describes, one per line,
 numbered `Q1`, `Q2`, …; `none` with no items.
-
-### Task Lines
-
-One line per task your branch-review-only list names:
-`Task <N>: intent PASS|FAIL, scope PASS|FAIL, deviation audit PASS|FAIL, quality PASS|FAIL, bases PASS|FAIL|n/a — <the issues they raised, by location, or none>`,
-`bases` judging a decision record's positions; `none` where the list
-names no task.
 
 ### Ledger Triage
 

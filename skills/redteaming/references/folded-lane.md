@@ -10,7 +10,7 @@ The folded preset **folds the plan into the spec**: one combined spec+plan docum
 - **After every fix wave**, the terminal pass's included, you re-run the liveness, ownership and overlap arithmetic yourself, booking no dispatch, and record it in that record's `Verifier block`, or under its `Fix list` where it has none.
 - **The round-1 seat carries the right-sizing and outside-the-frame lenses** alongside general.
 
-**Marks are plan content.** A task of the combined document may carry `Review: branch only` (its form: `crucible:writing-plans` § Per-task structure — four fields, all required); the campaign's seats grade each mark as plan content, by their mandate reminder (`skills/redteaming/seat-prompt.slots.md`), and the close readout lists the marked tasks (`crucible:redteaming` § Round readout). A mark is added only in a wave a later round's seats read — never in the wave of the round the campaign stops at, the cap round's, or the terminal pass's follow-up wave; a question proposing one there is answered or carried (`crucible:redteaming` § Merge and finding hygiene).
+**Marks.** A task of the combined document may carry `Review: branch only` (its form: `crucible:writing-plans` § Per-task structure — four fields, all required); the close readout lists the marked tasks (`crucible:redteaming` § Round readout). Once the campaign has closed, no mark is added.
 
 **Deferral owners.** A fix item that lands a `Deferred to implementation:` marker — round 0's and the terminal pass's wave included — places it in its owning task or, in the spec half, names it in the Contract of each owning task, in the same item; the ownership closure, at round 0's pre-pass and your re-run after every wave, checks that each marker has an owner.
 

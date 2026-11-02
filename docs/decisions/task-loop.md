@@ -39,8 +39,7 @@ about that work, `Questions` items, a premise finding
 status DONE_WITH_CONCERNS, or BLOCKED where it cannot go on without the
 ruling, and a fix it proposes outside its task, naming the site and the
 change, which it never makes. The controller handles none of these
-before review, beyond its check of a marked task's concerns (below):
-the review of the work rules on every concern, the
+before review: the review of the work rules on every concern, the
 controller routes the rest, `Questions` items as leads for the branch
 reviewer, an out-of-task proposal to the task that owns its site, as a
 lead for the branch reviewer or, where it touches binding content, by
@@ -88,19 +87,17 @@ completion by itself.
 
 **Branch review only.** A dispatched task whose plan section carries
 `Review: branch only` (`docs/decisions/plans.md`) runs no task review and
-no fix loop where its report passes the verification gates, widened to
-what the task review would have read in the report: each acceptance
-check, and RED output before GREEN or a logged exception. The
-controller checks that each is there; the branch reviewer judges its substance. The
-implementer's concerns, `Questions` items and out-of-task proposals
-become leads for the branch reviewer, and its premise finding goes where
-any does. A report that fails a gate, or a concern touching something a
-later task builds on, sends the task to the task review after all, and
-it runs the loop from there. Otherwise the ledger records
+no fix loop where its report is DONE, raises no concern and passes the
+verification gates, which for it also check that the report shows RED
+output before GREEN or a logged exception. The controller checks that
+each is there; the branch reviewer judges its substance. A report
+raising a concern or failing a gate sends the task to the task review
+after all, and it runs the loop from there. Otherwise the ledger records
 `Task <N>: complete (commits <base7>..<head7>, branch review only)`, which
-the resume rule reads as any `complete` line, and the branch reviewer is
-the task's first review, making the task review's judgments over its
-range (`docs/decisions/branch-review.md`;
+the resume rule reads as any `complete` line; the implementer's
+`Questions` items and out-of-task proposals become leads, and the branch
+reviewer is the task's first review, every full-scope pass reading the
+report's Decision Log against the diff (`docs/decisions/branch-review.md`;
 `crucible:subagent-driven-development § The Task Loop`). A task worked
 inline keeps its task review whatever its mark
 (`crucible:subagent-driven-development § Inline mode`).
@@ -289,17 +286,24 @@ knowledge, both caught by the branch review
 (`docs/decisions/evidence-and-findings.md`). (Basis: a single incident;
 measured.)
 
-The mark is the plan's call, graded by the review of the plan, so it
-needs no confirmation of its own at brainstorming; a task review is
-dropped only where the plan says why the task meets the criterion, and
-the branch reviewer, who sees every task, owns every judgment the task
-review made, so none goes unowned. The controller's part is a presence
-check, not a ruling: it never rules on the concerns it routes, except to
-send a task whose concern touches what a later task builds on to its own
-review, because the branch review runs too late for that. The
-alternatives offered were leads alone, with no escape to a task review,
-and the controller ruling on the concerns itself. (Basis: judgment,
-accepted by the maintainer, 2026-10-29.) An inline task keeps its task
+The mark is the plan's call, written with the plan, so it needs no
+confirmation of its own at brainstorming; a task review is dropped only
+where the plan says why the task meets the criterion. The controller's
+part is a presence check, not a ruling: it rules on no concern, and any
+concern sends the task to its own review. As first adopted, only a
+concern touching what a later task builds on did, because the branch
+review runs too late for that, the rest becoming leads, and the branch
+reviewer made the task review's four judgments and owed a line per
+task; the alternatives offered then were leads alone, with no escape to
+a task review, and the controller ruling on the concerns itself.
+(Basis: judgment, accepted by the maintainer, 2026-10-29.) The skill
+text rewrite reduced the mark to one field and its reason, with no
+grading chain: every concern goes to the task review, and the
+branch reviewer reads the report's Decision Log against the diff, its
+findings opening waves by their staked severity. (Basis: the
+skill-text-rewrite umbrella's D4, with the maintainer's judgment that
+marks were used too liberally; judgment, the controller's proposal
+accepted by the maintainer, for the defaults, 2026-11-02.) An inline task keeps its task
 review whatever its mark: without it no fresh seat would read the task
 before the branch review, and inline mode stays where the maintainer's
 ruling of 2026-10-27 left it, "not extended for now". That was an
@@ -448,6 +452,14 @@ judgment, accepted by the maintainer, for the test.)
 
 ## Changes
 
+- 2026-11-02: a task marked `Review: branch only` completes branch review
+  only where its report is DONE, raises no concern and passes the
+  gates; any concern sends it to its task review, no longer only one
+  touching what a later task builds on, and its concerns no longer
+  become leads; the branch reviewer reads its report's Decision Log in
+  every full-scope pass, owing no line per task. After the
+  skill-text-rewrite umbrella reduced the mark to one field and its
+  reason (`docs/decisions/branch-review.md`).
 - 2026-11-02: the implementer's Decision Log entry per routed deferred
   item, the task review's per-row check of routed items and its
   `Routed deferred items` report line, and the routed-item entry in a
