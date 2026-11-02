@@ -145,8 +145,9 @@ All lightly held. Each records its basis.
   rubric and verdicts live in its template, a card's inputs on the
   card, and the rules every controller dispatch shares in
   `skills/subagent-driven-development/references/dispatch-composition.md`,
-  which each dispatching skill already reads before its first dispatch
-  and after compaction: reading the card rather than the template,
+  which SDD and redteaming already have their controllers read before
+  the first dispatch and after compaction, and requesting-code-review
+  will (the corrections list): reading the card rather than the template,
   confirming the report file, and the shared-tree rules (the no-commit
   rule, the status check, the replacement line), which the redteaming
   and execution controllers both act on and neither reads from the
