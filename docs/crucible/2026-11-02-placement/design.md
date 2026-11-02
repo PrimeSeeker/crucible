@@ -120,7 +120,9 @@ All lightly held. Each records its basis.
   blind verifier's inputs are unchanged: its sections arrive spliced.
   This is the entry's "one shared seat reference ... in place of the
   clauses copied into the templates", held at the source: a
-  clarification of the entry. A seat's rendered text carries the rules
+  clarification of the entry that changes nothing another entry waits
+  on, since `compaction-fit` can still move text into or out of the
+  shared reference (A8 updates the umbrella's line on it). A seat's rendered text carries the rules
   it carries today and no other (P6). It is build tooling, not a step
   any run performs, so it adds no process mechanism (the umbrella's
   Non-goals). Basis: the operator's question proposing it; the
@@ -234,12 +236,14 @@ All lightly held. Each records its basis.
 - **P4. Host mechanics stay in the adapter pair** (`AGENTS.md`,
   Authoring rules); the claude-ism scanner passes.
 - **P5. The SessionStart envelope stays under 10,000 characters.**
-- **P6. The splice adds no rule to a seat.** A template takes a shared
-  section only where it states every rule in that section today; a rule
-  some of a section's seats lack stays in the templates that carry it or
-  takes a heading of its own. A seat's rendered text differs from its
-  text today only by D1's corrections, D2's rulings and the entry's
-  comment-rule change.
+- **P6. Sharing adds no rule to a seat.** A template, or a dispatch
+  the controller composes, takes a shared section only where each rule in
+  it is one that seat follows today, by its own text or by a reference it
+  reads today, or one the corrections give it; a rule some of a
+  section's seats lack stays in the texts that carry it or takes a
+  heading of its own. The rules a seat's rendered text or composed
+  prompt states are the rules it follows today, changed only by D1's
+  corrections, D2's rulings and the entry's comment-rule change.
 
 The umbrella's Constraints & invariants bind through the umbrella line.
 
@@ -282,8 +286,9 @@ different seats it splits under further headings, these staying:
 - § What binds in a document — redteam seat and terminal pass;
 - § What binds in a range — implementer, task reviewer, re-reviewer and
   branch reviewer;
-- § Findings — severities, evidence, what is no finding, and location,
-  which takes in today's § Location; the seats raising findings;
+- § Findings — severities, evidence, what is no finding; the seats
+  raising findings;
+- § Location — kept as today; its takers as today;
 - § Finding scope — redteam seat and terminal pass;
 - § What shipped work carries — build history (R3) and the comment
   rule; implementer, task reviewer, re-reviewer and branch reviewer;
@@ -301,13 +306,15 @@ different seats it splits under further headings, these staying:
 (the round-0 pre-pass, the adjudicator, an umbrella's closing-review
 seats), carries the text of the shared sections its seat follows,
 copied by the controller from the shared seat reference into the
-prompt, so no seat depends on a read at startup. The skill that
-composes the dispatch names the sections: redteaming § Round 0 — the
-mechanical pre-pass (§ Read-only seats, § Suite bound, § Findings), SDD
-§ Disputes and adjudication (§ Building the diff, § Read-only seats),
-`umbrellas.md` § Closing review (§ Premise findings, § Binding items and
-unrecorded choices, § Questions, § Findings, in place of today's
-§ Location).
+prompt, so no seat depends on a read at startup; P6 binds what it takes.
+The skill that composes the dispatch names the sections, those its seat
+follows today: redteaming § Round 0 — mechanical pre-pass (§ Suite
+bound, and the scratch rule its prompt carries today), SDD § Disputes
+and adjudication (§ Building the diff, § What binds in a range, which
+replaces its pointer into SDD's Deviations paragraph, and its read-only
+limits), `umbrellas.md` § Closing review (§ Premise findings, § Binding
+items and unrecorded choices, § Questions, § Location, as today). The
+snapshot-blessing agent takes none: its one-line mandate is all of it.
 
 **The owner map.** Each row: the rule, its owner, and what the other
 sites become. A site not named keeps nothing of the rule beyond a
@@ -318,17 +325,17 @@ reference scanner checks a `§` citation against headings only.
 
 | Rule | Owner | Other sites |
 |---|---|---|
-| Seat-side shared clauses (the sections above) | the shared seat reference | spliced into the templates; `dispatch-composition.md` item 4 keeps its pointer and mandate line |
+| Seat-side shared clauses (the sections above) | the shared seat reference | spliced into the templates; `dispatch-composition.md` item 4 keeps its pointer and mandate line, and its sentence on what a seat flags under an umbrella goes to the § What binds sections |
 | What binds, controller side; "the spec is a hypothesis, read for intent" | `skills/redteaming/references/flip-paths.md`, its opening | brainstorming's spec contract, writing-plans' spec-pointer bullet and Binding vs advisory, the Deviations paragraph of SDD § 2. Handle the report: pointers |
 | The umbrella chain and its finding rule (R2) | `umbrellas.md` § Children and § Edits | SDD, requesting-code-review, `very-small-lane.md`, writing-plans: pointers |
 | Weakened and deleted tests, the justification list | the shared seat reference, § Tests in review | each code-review template keeps its one-line angle; `writing-good-tests.md` keeps its warning signs |
-| Read the card, not the template; card Operation line; card Model and Effort lines; effort only on request; report file confirmed | `dispatch-composition.md` | SDD, redteaming, requesting-code-review, the seven cards: removed or a pointer |
+| Read the card, not the template; card Operation line; how a card's Model and Effort lines state the shared model rules; effort only on request; report file confirmed | `dispatch-composition.md` | SDD, redteaming, requesting-code-review, the seven cards: removed or a pointer; each card keeps the role its seat runs on |
 | Read `dispatch-composition.md` and the dispatch reference when the skill starts and after compaction | each dispatching skill, one line (D7) | the three paragraphs it replaces in SDD, redteaming and requesting-code-review |
 | Never predict an agent's result; name the model on every dispatch; the decision ask's form (R1) | the router | the adapters keep the mechanics; `dispatch-composition.md` § Models and effort, redteaming, SDD, requesting-code-review, flip-paths, receiving-review: pointers |
 | Independent tasks, for fan-out | dispatching-parallel-agents, step 3 | the adapters keep one clause each |
 | Card inputs | the slot cards | SDD and requesting-code-review keep what the controller does with each seat's output |
 | Task reviewer's rubric; terminal pass's mandates; re-reviewer's verdicts | their templates | SDD and redteaming keep the verdict names, the loop wiring and the inputs |
-| Shared-tree rules: the no-commit rule, the status check, the replacement line | `dispatch-composition.md`, a section of its own | SDD keeps its review-seat windows, redteaming its window list and the fresh seat id, requesting-code-review its pointer; each reaches the rules through its read line (D7) |
+| Shared-tree rules: the no-commit rule, the status check, the replacement line | `dispatch-composition.md`, a section of its own | SDD keeps its review-seat windows, redteaming its window list and the fresh seat id, requesting-code-review its pointer and its standalone-mode rule that `tree-check.txt` sits in the host's temporary directory; each reaches the rules through its read line (D7) |
 | Operator rulings into the decision record and `request.md` | `skills/redteaming/references/formats.md` § Feature workspace root and layout | phase sites: a pointer |
 | The delegated answer's entry form | brainstorming § Workspace provisioning (brainstorm exit) | `formats.md`: removed |
 | Deferral boundaries; what is never deferrable, with the fuller list of non-local mechanism; naming spec markers in Contracts | writing-plans § Deferring detail; for seats, the shared seat reference's § Finding scope (a paired text) | redteaming keeps the disposition rule, its list replaced by a pointer; brainstorming: a pointer |
@@ -377,7 +384,10 @@ names that is not listed here is a restatement only.
   requesting-code-review's controller reads `dispatch-composition.md`.
 - A red-suite failure ruled not the branch's is recorded and not raised
   again while it fails the same way, in the branch review too.
-- The suite bound is the task reviewer's fuller form; the terminal pass's findings carry a location
+- The suite bound is the task reviewer's fuller form of the bound
+  itself (no package-wide suite, race-detector run or repeated or
+  high-count loop; heavy validation recommended instead), not its
+  sentence on when to run a test; the terminal pass's findings carry a location
   (`docs/decisions/evidence-and-findings.md`).
 - systematic-debugging's test-first copies follow its conditional line
   (`docs/decisions/upstream-skills-kept-close.md`).
@@ -396,7 +406,8 @@ controllers and authors who act on them and once, spliced, for the seats
 that do: what binds and "the spec is a hypothesis, read for intent"
 (flip-paths' opening; § What binds in a document and § What binds in a
 range), the umbrella finding rule (`umbrellas.md` § Edits; § What binds
-in a range), and the list of non-local mechanism (writing-plans
+in a document and § What binds in a range), and the list of non-local
+mechanism (writing-plans
 § Deferring detail; § Finding scope). The controller-side text is the
 primary; `docs/authoring.md` lists the pairs, and a change to one side
 changes the other in the same commit.
@@ -408,8 +419,8 @@ in the verifier and re-reviewer templates alone, not in § Report file:
 skipped report writes, and those two seats carry it as a targeted fix
 (`docs/backlog/review-seat-report-write.md`).
 
-**Renames.** The rename of `premise-and-questions.md`, and the move of
-§ Location into § Findings, reach every file citing either: the skills,
+**Renames.** The rename of `premise-and-questions.md` reaches every
+file citing it: the skills,
 the decision records, `docs/upstream.md`, `docs/backlog/skill-text-rewrite.md`
 and the generated `agents/` (no test or tool names the file at
 `8332a00`). A renamed heading (D15), and SDD § Shared-tree rules moved
@@ -424,8 +435,16 @@ rules, `agents/` is generated), `docs/dual-runtime.md` (its layout and
 its statement that no runtime gets a generated skill tree) and the
 generator's own docstring; so do `docs/decisions/runtime-adapters.md`
 and the docstring of `tests/test_codex_manifests.py`, which say the
-same. The counting basis is stated in `tests/prose-budget.txt`'s header
-and `tests/test_prose_budget.py`'s docstring, which change with D16.
+same. The counting basis is stated in `tests/prose-budget.txt`'s header,
+`tests/test_prose_budget.py`'s docstring, `AGENTS.md` (The prose budget)
+and `docs/decisions/authoring-crucible.md` (The prose budget), which
+change with D16; `AGENTS.md`'s Where text goes says the templates
+"point to" the shared reference, which changes with D5. Where no seat
+reads the shared reference at startup any more, a card's plugin-root
+slot whose only use was that read goes, with redteaming § Dispatch
+composition's listing of the reference among the seats' inputs and
+`docs/decisions/instruments.md`'s reason for the slot; a slot still used
+for another file stays.
 
 **Shared files.** Every task edits skill text, and several edit the same
 file (SDD, redteaming, `dispatch-composition.md`); the plan orders them.
@@ -470,7 +489,7 @@ file (SDD, redteaming, `dispatch-composition.md`); the plan orders them.
   question; and, added, the action on a review missing a verdict. The
   vocabulary-sprawl point goes as settled: the retirements removed the
   labels `review-retirements` listed, and those left belong to
-  mechanisms the umbrella's D5 keeps. `docs/backlog/cross-skill-anchor-citations.md` is deleted
+  mechanisms the umbrella keeps (its D4, D5 and D6). `docs/backlog/cross-skill-anchor-citations.md` is deleted
   as resolved.
 - **A8. The umbrella.** The umbrella's entry for `placement` is not
   reworded: D3 and D5 state its clarifications here, and the entry takes
