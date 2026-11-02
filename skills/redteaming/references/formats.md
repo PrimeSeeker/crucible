@@ -91,9 +91,7 @@ operator ruling on a decision ask after the brainstorm — in a campaign, the
 plan phase or execution — is also entered in `brainstorm-decisions.md`, in
 that record's entry form (`crucible:brainstorming` § Workspace provisioning
 (brainstorm exit)) and with its status, beside wherever its own phase
-records it. An answer that leaves the call to the controller is entered
-with the delegated status that section defines, never as the operator's
-ruling or choice.
+records it.
 
 **Later changes to the ask enter `request.md` (binding).** While the
 workspace lives, the controller appends to it, quoted verbatim, each
@@ -234,8 +232,8 @@ Fields, in order:
    `deferred-minor` too and names that round and entry; the close seeds
    the two once.
    An entry merged from a premise finding carries the label `premise`
-   after its severity, `- F4 MAJOR premise`: a decision ask whatever its
-   severity, never an open finding the stop rule or the cap reads.
+   after its severity, `- F4 MAJOR premise`; its route is
+   `skills/redteaming/references/flip-paths.md` § Premise findings.
 
    **Origins element** (binding): every entry names the per-seat finding
    ids it accounts for —
@@ -291,20 +289,8 @@ Fields, in order:
    its outcome.
 
 8. **Round readout** (`## Round readout`) — the readout as delivered to the
-   operator, compact, with the items `crucible:redteaming` § Round readout
-   defines: key findings, every rejected, parked or partly-applied
-   BLOCKER/MAJOR named with its ruling; technical calls; decision asks,
-   delivered last in a block of their own; the round's
-   `deferred-to-implementation` count; the questions carried to readout,
-   each quoted verbatim; in every numbered spec-campaign round, whether
-   overturning a major mechanism after code is still reasonably expected, and why, answering
-   each seat forecast that it is reasonably expected by the mechanism it
-   names; and, at the close of the
-   plan phase and of a folded campaign, the tasks the plan marks
-   `Review: branch only`, with their reasons, as information. The
-   delivered readout's own words carry no internal id — merged-list,
-   seat-finding or question id; a carried question is quoted as written,
-   ids included.
+   operator, compact, with the items and in the form `crucible:redteaming`
+   § Round readout defines.
 
    **Trace** (record only, never delivered): the field ends with a part
    opened by a line `Trace:`, after the readout, holding the bookkeeping
@@ -343,7 +329,7 @@ record's subset is skipped by definition):
   `Record corrections: <N>` outcome, any sanctioned repair, the close
   delivered after the pass, any second read, the pass's `deferred-minor`
   findings, and the final check before `confirmed`. The quorum block is kept for lost
-  seats; no cap arithmetic applies, since the phase never loops. States: the
+  seats; no cap arithmetic applies. States: the
   full sequence through `confirmed`, a sanctioned repair re-advancing the
   record through `fix-applied → verified` before `confirmed` is written
   last. The round directory also holds the pre-pass's `seat-p0.md` (a seat
@@ -353,8 +339,7 @@ record's subset is skipped by definition):
 ## Feature folder
 
 This section is the binding definition of where a feature's committed
-documents live — its spec and its plan — and skill prose points here
-rather than restating it.
+documents live — its spec and its plan.
 
 **Feature folder (binding):** each feature's committed documents live
 together in one tracked directory of the target repo, the feature's
@@ -405,8 +390,7 @@ slug, so slug `diet` never matches `2026-09-27-cost-diet`. A
 
 ## Open items
 
-The binding definition of where the work left open goes; skill prose
-points here. Crucible keeps no store of its own for it. Open items leave
+The binding definition of where the work left open goes. Crucible keeps no store of its own for it. Open items leave
 the workspace at SDD's Finish, an umbrella's landing and an umbrella's
 closing review, each with its source; an item the
 operator's answer drops goes nowhere, the readout having named it.

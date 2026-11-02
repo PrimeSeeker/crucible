@@ -11,8 +11,6 @@ A plan gets **one verification round**, recorded as the single record `campaigns
 
 **Every dispatch follows `crucible:redteaming` § Panels and § Dispatch composition** — model, effort, roster and filled slot card — and the status check in `crucible:redteaming` § Inputs and state. **Announce the phase shape** — seats, lenses, dispatch count — in the phase-start readout and proceed; the announcement is not an approval gate.
 
-**Marks.** Where a task carries `Review: branch only` (its form: `crucible:writing-plans` § Per-task structure — four fields, all required), the close readout lists the marked tasks (`crucible:redteaming` § Round readout). Once this phase has closed, no mark is added.
-
 **One merged wave.** Pre-pass and coherence findings are merged under the spec campaign's finding hygiene, disposition and merge rules, and the wave's fix list takes what `crucible:redteaming` § Fix application and blind verification states. A fix item for a `deferred-to-implementation` finding lands its marker in the task that owns it (`crucible:writing-plans` § Deferring detail).
 
 **A contained amendment** — a correction to the spec that `skills/redteaming/references/flip-paths.md` § The containment test finds contained — lands in the same wave as an item of the record's `## Fix list` opening `Contained amendment:`, naming the binding item and the change and, on an indented continuation line once it is made, the amendment commit. Its reason, and why it is contained, go in the ruling of the merged entry that led to it, never in the item: the fix list is the blind verifier's input. The verifier sees only the item's plan-side hunks, the re-pin and any plan patch; you confirm the amendment commit landed, in the `Verifier block`. The phase readout names it among its technical calls.
@@ -25,7 +23,7 @@ A plan gets **one verification round**, recorded as the single record `campaigns
 
 **Dispatch arithmetic:** at most 4 (pre-pass, coherence seat, blind verifier, terminal pass), 5 with two coherence seats, plus the verifier's re-check and the second read where they run — up to two.
 
-**A degraded round is not a loop:** a lost seat is re-dispatched under the host-confirmed top-up rule (`crucible:redteaming` § Panels); the quorum block is kept for lost seats, and cap arithmetic does not apply.
+**A degraded round is not a loop:** a lost seat is re-dispatched under the host-confirmed top-up rule (`crucible:redteaming` § Panels); the quorum block is kept for lost seats.
 
 **The record.** One record, the plan-phase record of `formats.md` § Round record format, its states running through `confirmed`, written last. The terminal pass's report lands as `campaigns/plan/round-01/terminal-pass.md` and its second read as `second-read.md`; the pass's `Record corrections: <N>` outcome goes under the record's `## Terminal pass`.
 
