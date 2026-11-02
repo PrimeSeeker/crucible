@@ -33,8 +33,8 @@
   adapters restate host-neutral process rules (the never-predict rule,
   fan-out independence, effort-on-request). Redteaming's lens
   roster gives right-sizing its trigger mechanics and the other lenses a
-  line each. SDD specifies the adjudicator inline to git flags and the
-  snapshot-blessing agent in two sentences. Templates explain their own design to maintainers, and
+  line each. SDD specifies the adjudicator inline to git flags.
+  Templates explain their own design to maintainers, and
   the terminal-pass template carries the controller's escalation routing.
 - **Size follows mechanisms.** The three execution and review skills
   (redteaming, SDD, requesting-code-review) grew from 16.3k words to 41.2k
@@ -80,9 +80,6 @@
     the stop against both;
   - the binding clause restated at many sites (the umbrellas bullet
     above).
-- **A finding that predates the effort**, found by the same audit: the
-  very-small lane's upgrade hatch moves the work to the standard route
-  without naming the skill that runs next.
 - **A minor defect the placement audit found, unfixed:** the re-review
   template's comment rule is a fragment of the implementer's and task reviewer's.
   Copying the whole rule in would add one more restatement; the shared
@@ -107,21 +104,7 @@
   without pointing to `skills/redteaming/references/formats.md`
   § Open items, which counts a user-level file's line naming the project
   as such a home; a strict reader may skip a home kept only there.
-- **"Load-bearing" is a defined term in SDD's breaker only:** in the fix
-  loop's breaker a "real and load-bearing" finding is one a later task
-  builds on or one that reveals a plan defect, while elsewhere the word
-  keeps its everyday sense (`crucible:redteaming` § Flip paths —
-  load-bearing content mid-campaign or mid-execution, the lens for what
-  an artifact makes load-bearing). A reader can take the breaker's STOP
-  as tied to those.
 - **Left open by `review-retirements`** (2026-11-02):
-  - a late `Review: branch only` mark: with the containment test's
-    exclusion for it retired, `skills/writing-plans/SKILL.md` § Per-task
-    structure — four fields, all required ("a mark is added only in an edit a seat grading marks
-    reads afterwards") bars a mark once the plan's review has closed,
-    while `docs/decisions/plans.md` and `docs/decisions/routes.md` read
-    as if the containment test governs one; the effect errs safe, since
-    the task keeps its review;
   - `skills/subagent-driven-development/references/premise-and-questions.md`
     § Premise findings points into § The goal check for what the request
     file is, so a seat whose goal check is off may follow it into the
@@ -149,16 +132,13 @@
   the resident-cost re-open trigger above as resident tokens per route, or
   retire it.
 - Take the umbrella audit's design-level findings above as design
-  targets of the rewrite, and fix its predating finding on the way.
+  targets of the rewrite.
 - Consider moving the right-sizing lens, with its over-subtraction guard
   and re-seat trigger, from the spec campaign to the branch review.
 - Restructure how a tension a review finds gets closed, today by adding
   a distinction. For a fix-list clause asking whether a removing or
   merging resolution exists, the maintainer agreed it looked weak and
   deferred the restructuring ("probably later").
-- Fix the minor defect and the two slips above on the way, and give the
-  breaker's sense of "load-bearing" a word of its own.
-- `execution-retirements`: settle the late `Review: branch only` mark
-  above in its rewrite of that mark. `placement`: the two wording
-  conflicts above. The umbrella-landing question: weigh it when the
+- Fix the minor defect and the two slips above on the way.
+- `placement`: the two wording conflicts above. The umbrella-landing question: weigh it when the
   umbrella procedure is next edited.

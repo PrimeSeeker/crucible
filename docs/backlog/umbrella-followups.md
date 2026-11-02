@@ -11,11 +11,6 @@ none blocking:
   Where the Children list ends the file, one branch marking the last
   entry and another appending a child conflict; a line after the list
   avoids it (reproduced in throwaway repositories).
-- **Two statements of what binds carry it partly by pointer.** SDD's
-  pre-flight scan and its adjudicator inputs omit the own-mark and
-  base-merge exemptions, against the rule that every statement of what
-  binds carries the clause; the adjudicator receives the full clause
-  through `dispatch-composition.md` item 4.
 - **No text says how a seat finds the feature's own entry** (by its
   slug).
 - **Brainstorming's Flow step 4 does not point to the umbrella stub**,
@@ -47,7 +42,7 @@ none blocking:
 
 ## Follow-up
 
-Fix the first four in one small change; rule on the FIX_BASE wording
+Fix the first three in one small change; rule on the FIX_BASE wording
 and on whether the mark or an approval-only umbrella's workspace should
 change. Close the two open-items gaps: a carrier for a pending ask
 (the umbrella's workspace, or a note in `umbrella.md`) and the

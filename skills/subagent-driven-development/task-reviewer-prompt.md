@@ -248,7 +248,7 @@ finding.
 If the plan explicitly mandates something this rubric calls a defect
 (a test that asserts nothing, verbatim duplication of a logic block),
 that IS a finding — report it as MAJOR, labeled
-plan-mandated; the controller adjudicates plan-conflict findings.
+plan-mandated; plan-conflict findings are ruled on separately.
 
 How your verdicts are consumed: a failed intent, scope, or
 deviation-audit verdict enters the fix loop regardless of the severity

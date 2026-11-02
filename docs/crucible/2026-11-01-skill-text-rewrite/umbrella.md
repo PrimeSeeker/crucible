@@ -120,14 +120,15 @@ All lightly held.
     has stopped; a replacement started early gives two writers on one
     tree.
   - The tree check: one status check after each review seat, before the
-    next commit, in place of readings around every review window;
-    reviewers have written into the tree, and an unseen write would land
-    unreviewed.
+    next commit, comparing HEAD and the untracked paths with those taken
+    at dispatch and kept in the workspace rather than recorded, in place
+    of readings around every review window; reviewers have written into
+    the tree, and an unseen write would land unreviewed.
   - Adjudication: the controller rules on a dispute with its evidence,
-    and a dispute touching binding text or the Intent gets one
-    independent read; the controller's lean toward its own position is
-    a bias the audit documents repeatedly, in the terminal pass's record
-    checks.
+    and a dispute touching binding text or the Intent, or concerning a
+    diff the controller wrote, gets one independent read; the
+    controller's lean toward its own position is a bias the audit
+    documents repeatedly, in the terminal pass's record checks.
   - Snapshot blessing: one line.
   - `[LOAD-BEARING]` marks retired; what binds is Constraints &
     invariants, preamble conventions the spec declares binding and firm
@@ -162,7 +163,10 @@ All lightly held.
   proposal accepted by the maintainer; for premise findings kept, the
   controller's call after `review-retirements`' campaign found that
   each route a doubt takes without the label needs a rule of its own,
-  delegated by the maintainer.
+  delegated by the maintainer; for the read of a dispute on the
+  controller's own diff and the status check's comparison with the
+  dispatch-time state, the controller's proposals at
+  `execution-retirements`' brainstorm, accepted by the maintainer.
 - **D5. Kept.** Round 0; the first panel round with the right-sizing
   seat and the alternate-role seat; the plan phase; the terminal pass
   with its stop check and the seats' forecast lines, and its second read

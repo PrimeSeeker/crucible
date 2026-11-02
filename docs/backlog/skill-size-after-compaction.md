@@ -28,10 +28,11 @@
   always-run sections into references read at their step, the fix loop's
   before every round, and added a test failing any `SKILL.md` of 20,000
   bytes or more. That is about the same line as 5,000 tokens at four
-  characters a token. Redteaming's `SKILL.md` is 34,196 bytes and SDD's
-  32,026 (2026-10-27); the others are under 17,500. In SDD, most of
-  Disputes and adjudication, and all of Shared-tree rules,
-  Revert-and-replan and Finish, lie past the line.
+  characters a token. Redteaming's `SKILL.md` is about 39,000 bytes,
+  SDD's about 43,500 and brainstorming's about 22,700 (2026-11-02); the
+  others are under 17,500. In SDD the line falls inside the fix loop:
+  Disputes and adjudication, Shared-tree rules, Drift found after the
+  fact and Finish all lie past it.
 - Crucible's authoring rule (`docs/decisions/authoring-crucible.md`)
   sends only route-conditional procedures to references; text every
   route runs stays in the skill. Following upstream means widening it.

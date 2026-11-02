@@ -6,14 +6,12 @@
   triggers are round 1's swap, a weak spot the host map lists and the
   operator's request
   (`skills/subagent-driven-development/references/dispatch-composition.md`
-  § Models and effort). SDD's fix loop tops out at the default role, then
-  fresh eyes at the same tier (SDD § Models), and a BLOCKED reasoning
-  problem at the default role goes to the operator. The maintainer: "Late
-  waves are generally not stuck, just slowly mining the residual issues.
-  We'll probably introduce a stuck trigger later."
-- The same observation questions SDD's reason for a fresh implementer at
-  fix waves 4–5 (SDD § 5. The fix loop): "A loop that survives three
-  resumes usually means the implementer cannot see its own problem."
+  § Models and effort). SDD's fix loop resumes the task's implementer for
+  three waves at most, then puts the findings still open to the operator
+  (SDD § The Task Loop, step 5), and a BLOCKED reasoning problem at the
+  default role goes to the operator. The maintainer: "Late waves are
+  generally not stuck, just slowly mining the residual issues. We'll
+  probably introduce a stuck trigger later."
 - Effort is the operator's: no flow sets or raises a dispatch's reasoning
   effort on either host. The rule is held lightly (the maintainer: "that
   was an expression of uncertainty"), so a measurement can flip it.
@@ -37,8 +35,7 @@
   report.
 - From the records of late fix waves and late campaign rounds, decide
   whether a stuck trigger is wanted and how stuck differs from mining
-  residual issues; with the same evidence, keep or reword SDD's waves-4–5
-  reason.
+  residual issues.
 - If the measurement shows seats running below the session, decide
   whether effort stays the operator's or a rule sets one. A change to the
   operator-only rule, or a new trigger for the alternate role, is a
