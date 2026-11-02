@@ -21,9 +21,8 @@ tag. Improvements and style are not findings: an improvement goes in a
 seat's `Questions` (below). The execution reviewers raise no formatting
 that no repo tool enforces: where a tool enforces it, the tool's failure
 is the finding
-(`skills/subagent-driven-development/task-reviewer-prompt.md` § Finding
-Hygiene and Severity; `skills/requesting-code-review/code-reviewer.md` §
-Calibration).
+(`skills/subagent-driven-development/references/seat-rules.md` § Findings,
+§ Formatting).
 
 **Premise findings.** A redteam seat, the terminal pass, the branch
 reviewer, an umbrella's closing-review seat or an implementer may claim,
@@ -40,9 +39,10 @@ carries the label `premise` after its staked severity. Every other
 decision, whoever proposed it, is lightly held: a finding against it is
 an ordinary one, and so is a correction of an Intent's wording or facts
 that leaves what it asks for unchanged. Any other binding item shown
-wrong, such as a Constraint, keeps its own route, and a
-`literal-reading` finding keeps its own label, since it questions an
-application, not the premise. No rule routes on who proposed a
+wrong, such as a Constraint, keeps its own route, and an execution
+reviewer's `literal-reading` finding keeps its own label, since it
+questions an application, not the premise; a redteam seat raises such a
+case as a finding naming the item and the case. No rule routes on who proposed a
 decision. A task reviewer raises none: its doubt about a premise is a question
 (`skills/subagent-driven-development/references/seat-rules.md`
 § Premise findings). The controller corrects a label in either
@@ -166,9 +166,8 @@ names every failing test, whether its change caused it or not
 (`skills/subagent-driven-development/implementer-prompt.md` § Report
 Format), and the task reviewer and the re-reviewer re-read evidence that
 looks truncated at its stated path before reporting it missing
-(`skills/subagent-driven-development/task-reviewer-prompt.md` § The
-Implementer's Report; `skills/subagent-driven-development/re-review-prompt.md`
-§ Tests).
+(`skills/subagent-driven-development/references/seat-rules.md`
+§ Review evidence).
 
 ## Why
 
@@ -442,6 +441,12 @@ records that cite "the audit" draw on these figures. (Basis: measured.)
 
 ## Changes
 
+- 2026-11-02: the `literal-reading` label is the execution reviewers',
+  a redteam seat raising such a case as a finding naming the item and
+  the case; finding hygiene, formatting and truncated evidence cited at
+  their one home in the shared seat reference; because the reference's
+  sentence on the label reached redteam seats, whose templates define
+  no such label.
 - 2026-11-02: the shared seat reference's citations follow its rename
   to `seat-rules.md`.
 - 2026-11-02: on the very-small lane the goal check is the branch

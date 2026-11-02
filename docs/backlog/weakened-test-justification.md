@@ -6,9 +6,8 @@
   names one justification, a quoted `writing-good-tests.md` warning sign
   among them. A weakened test (more permissive, or an assertion removed)
   is a scope finding whatever the log says
-  (`skills/subagent-driven-development/implementer-prompt.md` § Tests:
-  Test-First, Evidence Before Done; `task-reviewer-prompt.md` Verdict 2;
-  the re-review and branch-review checks).
+  (`skills/subagent-driven-development/references/seat-rules.md` § Tests in
+  review, which each seat's template takes with its own angle on it).
 - `writing-good-tests.md` § Principle 2 tells an author who finds an
   assertion on a mock to "unmock it or delete the assertion". Deleting
   that one assertion is a weakening, so the guide's own remedy fails

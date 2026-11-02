@@ -23,7 +23,8 @@ it, but for a task completed branch review only, where the controller's
 gate checks the evidence is in the report and the branch reviewer judges
 it in its read of the task's report (`docs/decisions/task-loop.md`;
 `skills/subagent-driven-development/implementer-prompt.md` § Tests:
-Test-First, Evidence Before Done). Outside SDD, systematic-debugging
+Test-First, Evidence Before Done; `skills/subagent-driven-development/references/seat-rules.md`
+§ Test-first evidence). Outside SDD, systematic-debugging
 writes the failing test before the fix and says why where no test or
 script can reproduce the bug.
 
@@ -38,7 +39,9 @@ shows. The task reviewer checks the Decision Log's justification against
 the code, the re-reviewer the fix report's, and the branch reviewer judges
 from the code and the requirements, and checks the Decision Log's
 justification itself for a task completed branch review only
-(`skills/subagent-driven-development/task-reviewer-prompt.md` § Verdict 2:
+(`skills/subagent-driven-development/references/seat-rules.md` § Tests in review, the
+list's one home;
+`skills/subagent-driven-development/task-reviewer-prompt.md` § Verdict 2:
 Scope; `skills/subagent-driven-development/re-review-prompt.md` § Scope;
 `skills/requesting-code-review/code-reviewer.md` § What to Check and
 § Execution Trail).
@@ -150,6 +153,10 @@ testing, or other test gates, states them there.
 
 ## Changes
 
+- 2026-11-02: the deleted-test justification list and the test-first
+  exceptions have one home, the shared seat reference, each seat
+  keeping its own angle in its template; because the copies had
+  drifted apart.
 - 2026-11-02: for a task completed branch review only, the branch
   reviewer judges the test evidence and a deleted test's justification
   in its read of the task's report and Decision Log, no longer in a

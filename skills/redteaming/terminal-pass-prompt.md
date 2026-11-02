@@ -22,18 +22,7 @@ it.
 
 **Runtime:** you are running on {runtime}. Use this host's own tools for
 editing files, running commands and loading a skill; do not re-run the
-top-level router. The plugin file this template names below,
-`skills/subagent-driven-development/references/seat-rules.md`
-(the shared reference), is under the plugin root your dispatch names
-(absolute); read its § Premise findings, § Binding items and unrecorded
-choices and § The arrangement questions.
-
-**Workspace:** work from the worktree path your dispatch names (absolute).
-Never read, edit or run git against any other checkout of this repository —
-in particular the main checkout — and never change directory into one.
-
-**No delegation:** do not create agents of your own. This pass is one seat's
-read; delegation is not part of the assignment.
+top-level router.
 
 **Inputs:** the artifact; this phase's round records and the readouts
 recorded in them (`round-*/record.md` in the phase directory your
@@ -54,54 +43,122 @@ reports — the `seat-<id>.md` files of `round-01` onward — their
 
 Nothing else is an input.
 
-**Read scoping (binding):** read only the inputs enumerated above, the
-shared reference and the binding content below, the umbrellas your
-dispatch names included, and write only your own report path below.
-Scope every search you run to them; an unscoped grep across the
-repository is the measured way material this dispatch did not name
-reaches the seat.
-
-**Binding content (pointer, not a copy):** the binding artifact your
-dispatch names, at its revision — its §Constraints & invariants, any
-preamble convention it declares binding, and the decisions it records as
-the operator's firm preference. Where the artifact under review is a
-**plan**, this is the spec the plan's header names; a thin plan carries
-no constraints section of its own. Where the binding artifact's preamble
-carries an `Umbrella:` line, what binds also includes this feature's own
-entry in that umbrella and the umbrella's Constraints & invariants and
-firm decisions, and through each umbrella's own line its parent's, up
-the chain: the umbrellas your dispatch names, read in this worktree at
-the artifact's revision. An artifact calling for a change to those
-Constraints or firm decisions is a finding, and so is one calling for a
-change to
-the entry other than a clarification the spec states that changes
-nothing another entry waits on. Read binding content where it lives —
-it is deliberately not copied into this prompt, because a copy drifts
-against the artifact it copies and you are reading the artifact anyway.
-Both mandates below are graded against it. The spec is a hypothesis,
-probably subtly wrong: binding means never changed silently, and
-binding text is read for its intent; an artifact applying a binding
-item literally to a case its author plainly did not consider is a
-finding, naming the item and the case.
+**Read scoping (binding):** read only the inputs enumerated above and the
+binding content (§ What binds in a document), the umbrellas your
+dispatch names included, and write only your own report path. Scope
+every search you run to them.
 
 **Your mandate, in one line:** the two mandates below, both delivered, with
 the report written verbatim-ready to the report path your dispatch names.
 
-[[when fix-wave = yes]]
-**Mandate 1 — artifact re-read, FULL-SCOPE.** The final round produced a
-fix wave, so a targeted landing check is not enough — landing-verification
-alone is not review. Re-read the entire artifact fresh.
-[[end]]
-[[when fix-wave = no]]
-**Mandate 1 — artifact re-read.** The final round produced no fix wave;
-re-read the artifact as a confirmation read.
-[[end]]
+## Seat conduct
 
-Report any open BLOCKER/MAJOR you find. A phase never converges on
-unreviewed edits; you are the review.
+Work from the worktree path your dispatch names (absolute). Never read,
+edit, write or run git against any other checkout of this repository —
+the main checkout in particular — and never change directory into one.
+Create no agents of your own: delegation is not part of your
+assignment. Read only what this template's read scoping enumerates, and
+keep every search you run within the bounds it sets.
 
-The re-read's finding scope is the review seats', and it binds you as it
-binds them:
+## Read-only seats
+
+You edit nothing: not the artifact or the code under review, not the
+rest of the codebase, not the feature workspace, and on this checkout
+never the working tree, the index, HEAD or branch state. A seat that
+fixes what it finds poisons what the review measures. You write two
+things: your report file, and working material in your scratch
+subdirectory — any diff you build, the code you run to check a claim —
+never in the tracked tree. That subdirectory is your report's path
+within the feature workspace less `.md`, in the workspace's `scratch/`
+directory; what its material shows goes in your report.
+
+From the root of the checkout holding the workspace, the scratch
+subdirectory for `campaigns/spec/terminal-pass/pass.md` is
+`.crucible/<feature-slug>/scratch/campaigns/spec/terminal-pass/pass/`.
+
+## Suite bound
+
+A check you run stays focused: never a package-wide suite, a
+race-detector run, or a repeated or high-count loop. Recommend heavy
+validation in your report instead.
+
+Run a check where a claim needs one.
+
+## What binds in a document
+
+What binds is the binding artifact your dispatch names, at its
+revision: its Constraints & invariants, any preamble convention it
+declares binding, and the decisions it records as the operator's firm
+preference. Where the artifact under review is a plan, that is the spec
+the plan's header names; a thin plan carries no constraints section of
+its own. Where the binding artifact's preamble carries an `Umbrella:`
+line, what binds also includes this feature's own entry in that
+umbrella and the umbrella's Constraints & invariants and firm
+decisions, and through each umbrella's own line its parent's, up the
+chain: the umbrellas your dispatch names, read in this worktree at the
+artifact's revision. Read binding content where it lives, and grade the
+artifact against it.
+
+An artifact calling for a change to any of those Constraints or firm
+decisions, to what an umbrella's Intent asks for, or to the entry of a
+started child, this feature's or another's, is a finding; a child has
+started once its feature folder is born. A clarification of this
+feature's own entry that the spec states, changing nothing another
+entry waits on, is none. The spec is a hypothesis, probably subtly
+wrong: binding means never changed silently, and binding text is read
+for its intent.
+
+Both mandates are graded against it. An artifact applying a binding
+item literally to a case its author plainly did not consider is a
+finding, naming the item and the case.
+
+## Premise findings
+
+A premise finding claims, with evidence, that one of three things is
+wrong: the request, what the Intent asks for, or a firm decision. The
+request is the request file your dispatch names, if any; the Intent is
+a section of the document, and a firm decision says so in its
+rationale. On the very-small lane the lane note's Intent stands for the
+spec's. For a child of an umbrella, the umbrella's Intent is protected
+as the child's own is. Mark a premise finding with the label `premise`
+after the finding's severity, in the place this template's report
+format gives it, and stake that severity as for any finding: it is for
+the operator's weighing.
+
+Every other decision, whoever proposed it, is lightly held: a finding
+against it is an ordinary one, structural or not, and so is a correction
+of an Intent's wording or facts, the umbrella's included, that leaves
+what it asks for unchanged. A change on a child's branch to what its
+umbrella's Intent asks, in the spec, the plan or the code, is a finding.
+Any other binding item shown wrong, such as a Constraint, is no premise
+finding: it keeps the route this template gives it. In the task
+reviewer's, the re-reviewer's and the branch reviewer's reports a
+`literal-reading` finding keeps its own label: it questions how a
+binding item applies to a case, not the premise behind it.
+
+Redteam seats, the terminal pass, the branch reviewer, an umbrella's
+closing-review seats and implementers raise premise findings; a task
+reviewer raises none.
+
+## Binding items and unrecorded choices
+
+Two findings a reviewer raises beyond a defect in the work:
+
+- **A binding item that is itself wrong** is a legitimate finding,
+  naming the item and the evidence that shows it wrong; changing the
+  item is never yours to do. A firm decision shown wrong is a premise
+  finding instead (§ Premise findings).
+- **A consequential choice the artifact you review takes for granted**
+  with no decision recording it (the platform, the language, the form
+  of the deliverable) is a finding.
+
+## Location
+
+Every finding carries its evidence and a location: `file:line`, or, for
+a premise finding, the passage of the spec, plan or request it
+contradicts.
+
+## Finding scope
 
 - The artifact's advisory register — its mechanism sketches, the shape of
   a solution an implementer may replace — is graded only for contradiction
@@ -115,9 +172,63 @@ binds them:
   acceptance, a spec's required sections — is never local detail: its
   absence is a finding.
 - Contradictions and infeasibility are findings at any locality, and so
-  are the two the shared reference's § Binding items and unrecorded
-  choices names; its § Premise findings says when a finding is a premise
-  finding.
+  are the two § Binding items and unrecorded choices names.
+
+## The arrangement questions
+
+Each site that applies one of these says what its answer decides there.
+
+**The overturn question.** Is overturning a major mechanism after code
+reasonably expected? A major mechanism is a part of the design other
+parts build on: a component, a rule others key on, a file role, a data
+flow, an interface between parts. Overturning one replaces, removes or
+re-shapes it; an addition, or a correction that leaves its shape
+standing, does not count. Before code the answer is a forecast from the
+design and its records; after code it is read from the code as well.
+
+Before any review, the answer is no in either of two usual cases:
+
+- the work has no major mechanism: it adds to, corrects or removes
+  within mechanisms that stay as they are;
+- its decisions are overdetermined.
+
+A no for any other reason states that reason.
+
+For an umbrella's campaign, the code is its children's: the question
+asks whether, once the children are implemented, overturning a major
+mechanism the umbrella fixes is reasonably expected, such as its split
+into children, an interface between them or a constraint they share.
+
+**Overdetermined.** Work, a whole design or a single task, is
+overdetermined when every decision in it is forced by what is already
+fixed (the codebase, binding items, decisions taken earlier) so firmly
+that no alternative survives them: a careful independent reader would
+make the same choices, so neither review before code nor a fresh
+reader's pass has one left to change.
+
+**The mark's criterion.** A plan task may take the branch review as its
+first review, with no task review of its own, where it is low in
+mechanism and nothing outside it depends on its details: it builds no
+major mechanism and leaves little of how it works for its implementer
+to decide, and later tasks, contracts and readers build on what it
+delivers, never on how it does it. The branch review runs only after
+every later task, too late for a detail something else builds on.
+
+## The mandates
+
+[[when fix-wave = yes]]
+**Mandate 1 — artifact re-read, FULL-SCOPE.** The final round produced a
+fix wave, so a targeted landing check is not enough — landing-verification
+alone is not review. Re-read the entire artifact fresh.
+[[end]]
+[[when fix-wave = no]]
+**Mandate 1 — artifact re-read.** The final round produced no fix wave;
+re-read the artifact as a confirmation read.
+[[end]]
+
+Report any open BLOCKER/MAJOR you find. A phase never converges on
+unreviewed edits; you are the review. The re-read's finding scope is
+§ Finding scope's, as it is the review seats'.
 
 **Mandate 2 — decision-ask fidelity (unconditional, regardless of mandate
 1's outcome).** Every decision ask in the readouts states the trade-off the
@@ -141,8 +252,8 @@ state as the operator's ruling or choice is a mismatch.
 [[when phase = spec]]
 **The stop check, part of mandate 2.** The campaign stopped where a
 round's readout found overturning a major mechanism after code no
-longer reasonably expected (the shared reference's § The arrangement
-questions). Check that basis against every forecast line in the
+longer reasonably expected (§ The arrangement questions). Check that
+basis against every forecast line in the
 numbered rounds' `## Verdict` sections: each
 `Overturn after code: reasonably expected` line must be answered, in its
 round's readout or a later one, by the mechanism it names. One left
@@ -184,29 +295,14 @@ the phase's close by construction), and never fails to flag merely because the
 operator has not yet ruled, or ruled the same way afterwards on the corrected
 record. The operative question is whether the true fact changes what a reader
 of this record would conclude, or what the pending ask puts to the operator. A
-flagged correction is itself a decision ask to the operator; an unflagged one
-is reported and goes no further. A mismatch in `## Notes` that meets the same
-test is flagged there and is a decision ask likewise.
+mismatch in `## Notes` that meets the same test is flagged there likewise.
 
-A discrepancy you find is a record correction, not a verdict on its author: the
-process assumes a baseline error rate in authored records, and this pass is the
-instrument that catches it.
+## Report file
 
-**Read-only discipline (binding):** you edit nothing — not the artifact, not
-the workspace (its `scratch/` aside), not the codebase. Your only output is your report file, and
-writing that one path is authorized. If your host refuses that write, return
-the report verbatim as text in your final message and say the write was
-refused; the controller saves it with a mark saying so.
-Code you run to check a claim is working material, not output: it goes
-in the feature workspace's `scratch/` directory, at your report's path
-within the workspace less `.md` — from the root of the checkout holding
-the workspace, `.crucible/<feature-slug>/scratch/campaigns/spec/round-02/seat-s1/`
-for `campaigns/spec/round-02/seat-s1.md` — never in the tracked tree, and what
-it shows goes in your report. Run a focused check where a claim needs one,
-never a package-wide suite; recommend heavy validation in your report
-instead.
-
-**Report:** write to the report path your dispatch names, and no other.
+Write your report to the report file your dispatch names, a write this
+dispatch authorizes, in the structure this template gives: the file is
+the deliverable. If the host refuses the write, say so and put the full
+report in your final reply instead.
 
 [[when follow-up = second-read]]
 This is the pass's one second read, a new file, `second-read.md`, beside
@@ -218,9 +314,10 @@ are resumed from your first read. Your dispatch, or the resume message,
 says whether a re-read is due. It does one or both of two reads:
 
 - **The re-read**, where it is due: in the spec campaign both mandates,
-  as a first read; in the plan phase mandate 1, **full-scope over the
-  repaired region**: the whole section the repair touched, never the
-  flagged item alone, since the repair is itself unreviewed text.
+  as a first read; in the plan phase mandate 1 over the repaired region
+  in place of the entire artifact, **full-scope there**: the whole
+  section the repair touched, never the flagged item alone, since the
+  repair is itself unreviewed text.
 - **The record read**, where the first report carries a record
   correction or the close puts a decision ask to the operator again: the
   close checked against the first report and the seat findings behind
@@ -238,8 +335,9 @@ attested in one line, never narrated.
    format's header line `FINDING <seat-id>-<n> [BLOCKER|MAJOR|MINOR]`, a
    premise finding's carrying the label `premise` after the severity —
    `<seat-id>` is your pass id, named above, and `<n>` counts your
-   findings from 1 — then the substance and the evidence; seat-report
-   hygiene applies: staked severity, evidence or `UNVERIFIED`.
+   findings from 1 — then the substance, the evidence and the location
+   § Location gives; seat-report hygiene applies: staked severity,
+   evidence or `UNVERIFIED`.
 2. `## Record corrections` — `Record corrections: <N>`, then one item per
    correction (record text → true state → evidence), flagged
    `CONCLUSION-CHANGING` or not; `Record corrections: 0`, with one line
@@ -249,8 +347,8 @@ attested in one line, never narrated.
    Close with one bias line: "corrections share no direction", or the
    direction they share, as an observation, never an attribution of
    intent; where you find the record materially
-   misleading, the line says so, which makes it a decision ask.
+   misleading, the line says so.
 3. `## Notes` — record mismatches outside mandate 2, and anything else
    material to the close decision; else `none`.
 
-Return a short status message; the report file is the deliverable.
+Return a short status message.

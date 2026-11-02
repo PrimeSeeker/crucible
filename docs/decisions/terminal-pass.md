@@ -25,10 +25,12 @@ or a round readout naming the change and what it withdraws records its
 change, an approval withdrawn with no such record being flagged
 `CONCLUSION-CHANGING`. The record reaches it through its card's
 `{decision-record-path}` slot, the spec phase's brainstorm decision
-record and `none` in the plan phase. Its card carries the plugin root,
-through which it reads the shared reference's overturn question,
-§ Premise findings and § Binding items and unrecorded choices
-(`docs/decisions/instruments.md`). It reports counted record corrections,
+record and `none` in the plan phase. Its template takes, spliced from
+the shared seat reference, the overturn question, § Premise findings,
+§ Binding items and unrecorded choices and § Location, so its findings
+carry a location as every finding does
+(`docs/decisions/instruments.md`;
+`docs/decisions/evidence-and-findings.md`). It reports counted record corrections,
 and only a correction flagged `CONCLUSION-CHANGING` reaches the operator
 as a decision ask. Its report closes with a bias line, whether its
 corrections share a direction favoring the record's author, a decision
@@ -189,6 +191,10 @@ by the maintainer, for the record-only run.)
 
 ## Changes
 
+- 2026-11-02: the pass's shared sections arrive spliced into its
+  template, its card losing the plugin root, and it takes § Location;
+  because no seat reads the shared reference at startup any more, and
+  its template had left out the location every finding carries.
 - 2026-11-02: the directional-bias statement becomes the report's bias
   line, a decision ask only where the pass states the record is
   materially misleading; its trigger on a `CONCLUSION-CHANGING`

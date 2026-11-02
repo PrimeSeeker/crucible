@@ -11,6 +11,8 @@ what makes drift a failing test. This module covers:
 - the splice, on a fixture reference: each include replaced by its
   section, an unresolvable include refused, an include inside a selector
   passage read only under its value;
+- citations of shared sections: a rendered template cites, with a bare
+  ``§``, only shared sections its source takes;
 - the render itself, re-derived here: each agent is its template's body
   with the runtime slot filled, nothing left unfilled and nothing added;
 - the frontmatter, parsed the strict way the host's loader needs it;
@@ -348,6 +350,71 @@ def test_splice_inside_a_selector_passage_follows_the_selector(
     for candidate in selector_values(card)[selector]:
         shown = _BETA in resolve(rendered, {selector: candidate})
         assert shown == (candidate == value), candidate
+
+
+# --- citations of shared sections ------------------------------------------
+
+
+def taken_sections(source_text: str) -> set[str]:
+    """The shared headings *source_text*, a template source, includes."""
+    include = load_generator().INCLUDE_RE
+    return {m.group(1) for line in source_text.split("\n") if (m := include.match(line))}
+
+
+def untaken_shared_citations(template_text: str, source_text: str) -> list[str]:
+    """The shared seat reference's headings that *template_text* (a
+    rendered template) cites with a bare ``§`` and that its source,
+    *source_text*, takes no include of.
+
+    A bare citation names no file: a ``§`` after a ``.md`` path or a
+    ``crucible:<skill>`` token cites that file, not a section of this
+    template. A cited shared heading is the longest one the citation's
+    text starts with, ending at a word boundary."""
+    shared = load_generator().sections(_raw(SHARED))
+    headings = sorted((h for h, _ in shared), key=len, reverse=True)
+    taken = taken_sections(source_text)
+    norm = re.sub(r"\s+", " ", template_text)
+    out: list[str] = []
+    for m in re.finditer("§", norm):
+        before = norm[: m.start()].rstrip().rstrip("`")
+        if before.endswith(".md") or re.search(r"crucible:[a-z0-9-]+$", before):
+            continue
+        tail = norm[m.end():].lstrip()
+        cited = next(
+            (
+                h
+                for h in headings
+                if tail.startswith(h) and not tail[len(h) : len(h) + 1].isalnum()
+            ),
+            None,
+        )
+        if cited is not None and cited not in taken:
+            out.append(cited)
+    return out
+
+
+@pytest.mark.parametrize("template", TEMPLATES)
+def test_shared_citations_name_sections_the_template_takes(template: str) -> None:
+    """Break: a rendered template citing a shared section its seat never
+    receives -- the section left out of its source, or a spliced section
+    pointing at a sibling the seat does not take -- so the citation names
+    text the seat cannot read."""
+    # Consumer: the seat, which reads a bare `§` citation as a section of
+    # its own text, since its shared sections arrive spliced in.
+    assert untaken_shared_citations(_raw(template), _raw(source_path(template))) == []
+
+
+def test_shared_citation_check_fires_on_an_untaken_section() -> None:
+    """The check demonstrably fires on a bare citation of a shared section
+    the source does not take, and passes over one that names its file."""
+    template = INSTRUMENTS["implementer"]
+    source = _raw(source_path(template))
+    taken = taken_sections(source)
+    untaken = next(h for h, _ in load_generator().sections(_raw(SHARED)) if h not in taken)
+    text = _raw(template)
+    assert untaken_shared_citations(f"{text}\nSee § {untaken}.\n", source) == [untaken]
+    cited_file = f"{text}\nSee `{SHARED}` § {untaken}.\n"
+    assert untaken_shared_citations(cited_file, source) == []
 
 
 # --- the render, re-derived ------------------------------------------------

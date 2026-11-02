@@ -13,18 +13,7 @@ it.
 
 **Runtime:** you are running on {runtime}. Use this host's own tools for
 editing files, running commands and loading a skill; do not re-run the
-top-level router. The plugin file this template names below,
-`skills/subagent-driven-development/references/seat-rules.md`
-(the shared reference), is under the plugin root your dispatch names
-(absolute); read its § Premise findings, § Binding items and unrecorded
-choices, § Questions, § The arrangement questions and § Location.
-
-**Workspace:** work from the worktree path your dispatch names (absolute).
-Never read, edit or run git against any other checkout of this repository —
-in particular the main checkout — and never change directory into one.
-
-**No delegation:** do not create agents of your own. This seat's independent
-read is the deliverable; delegation is not part of the assignment.
+top-level router.
 
 **Artifact:** the artifact your dispatch names, at its revision. This is the
 entire review object. The review scope is this artifact — not the
@@ -35,40 +24,14 @@ reviewed themselves).
 **Supporting inputs (verification only):** those your dispatch lists, if
 any.
 
-**Binding content (pointer, not a copy):** the binding artifact your
-dispatch names, at its revision — its §Constraints & invariants, any
-preamble convention it declares binding, and the decisions it records as
-the operator's firm preference. Where the artifact under review is a
-**plan**, this is the spec the plan's header names; a thin plan carries
-no constraints section of its own. Where the binding artifact's preamble
-carries an `Umbrella:` line, what binds also includes this feature's own
-entry in that umbrella and the umbrella's Constraints & invariants and
-firm decisions, and through each umbrella's own line its parent's, up
-the chain: the umbrellas your dispatch names, read in this worktree at
-the artifact's revision. An artifact calling for a change to those
-Constraints or firm decisions is a finding, and so is one calling for a
-change to
-the entry other than a clarification the spec states that changes
-nothing another entry waits on. Read binding content where it lives and
-grade the artifact against it — it is deliberately not copied into this
-prompt, because a copy drifts against the artifact it copies and you are
-reading the artifact anyway. The spec is a hypothesis, probably subtly
-wrong: binding means never changed silently, and binding text is read
-for its intent. An artifact applying a binding item literally to a case
-its author plainly did not consider is a finding, naming the item and
-the case. What else a binding item or a premise draws as a finding is in
-the shared reference's § Binding items and unrecorded choices and
-§ Premise findings.
-
 **Read scoping (binding):** read only the inputs this dispatch
-enumerates — the artifact, the binding-content pointer, the request
-file your dispatch names and the binding artifact's Intent, the
-umbrellas your dispatch names, the supporting inputs above,
-the shared reference — and write only your own report path below. Everything else in the workspace and the
-repository is out of scope: other seats' reports, round records, fix
-lists, readouts. Scope every search you run to your enumerated inputs;
-an unscoped grep is the measured way review exhaust reaches a seat that
-exists to be free of it.
+enumerates — the artifact, the binding content (§ What binds in a
+document), the request file your dispatch names and the binding
+artifact's Intent, the umbrellas your dispatch names, the supporting
+inputs above — and write only your own report path. Everything else in
+the workspace and the repository is out of scope: other seats' reports,
+round records, fix lists, readouts. Scope every search you run to your
+enumerated inputs.
 
 **Your mandate, in one line:** the mandate reminder your dispatch gives —
 the binding output of this seat.
@@ -80,9 +43,9 @@ regardless of whether it matches your lens. Order your hunt by the lens;
 bound nothing by it.
 
 [[when goal-check = on]]
-**The goal check:** before you read the Intent, run the shared
-reference's § The goal check; its sentence and what the comparison found
-go in your report's `## Goal check`.
+**The goal check:** before you read the Intent, run § The goal check;
+its sentence and what the comparison found go in your report's
+`## Goal check`.
 [[end]]
 
 [[when right-sizing = on]]
@@ -111,56 +74,54 @@ workspace. A place where the new member belongs that the plan's file
 census leaves out is a finding.
 [[end]]
 
-**Read-only discipline (binding):** you edit nothing — not the artifact, not
-the workspace (its `scratch/` aside), not the codebase. A seat that "helpfully" fixes what it finds
-poisons the review's measurements. Your only output is your report file,
-and writing that one path is authorized. If your host refuses that write,
-return the report verbatim as text in your final message and say the write
-was refused.
-Code you run to check a claim is working material, not output: it goes
-in the feature workspace's `scratch/` directory, at your report's path
-within the workspace less `.md` — from the root of the checkout holding
-the workspace, `.crucible/<feature-slug>/scratch/campaigns/spec/round-02/seat-s1/`
-for `campaigns/spec/round-02/seat-s1.md` — never in the tracked tree, and what
-it shows goes in your report. Run a focused check where a claim needs one,
-never a package-wide suite; recommend heavy validation in your report
-instead.
+[[include Seat conduct]]
 
-**Finding hygiene (binding):**
+[[include Read-only seats]]
 
-- Stake a severity on every finding: BLOCKER / MAJOR / MINOR — no other
-  vocabulary.
-- A BLOCKER without reproduction or evidence is a question, not a blocker —
-  either downgrade it or phrase it as a question.
-- Code-shaped claims (regexes, CLI invocations, "the code does X") must carry
-  a run transcript, or be tagged `UNVERIFIED`. Run the pattern against the
-  example before writing what it reaches; never assert from reading alone.
-- Improvements and style preferences are not findings; where they go is
-  the shared reference's § Questions.
+From the root of the checkout holding the workspace, the scratch
+subdirectory for `campaigns/spec/round-02/seat-s1.md` is
+`.crucible/<feature-slug>/scratch/campaigns/spec/round-02/seat-s1/`.
 
-**Finding scope (binding):**
+[[include Suite bound]]
 
-- The artifact's advisory register — its mechanism sketches, the shape of
-  a solution an implementer may replace — is graded only for contradiction
-  with binding content or infeasibility; missing or imperfect detail there
-  is not a finding.
-- Missing local mechanism detail — detail inside one implementer's natural
-  scope — is not a finding at spec or plan stage. Missing non-local
-  mechanism is: cross-task or cross-component contracts, shared formats,
-  orderings or state, consumers outside the change's own files.
-- Content a format makes binding — a plan task's required fields and
-  acceptance, a spec's required sections — is never local detail: its
-  absence is a finding.
-- Contradictions and infeasibility are findings at any locality, and so
-  are the two the shared reference's § Binding items and unrecorded
-  choices names.
+Run a check where a claim needs one.
 
-**Report:** write to the report path your dispatch names — a
-`seat-<id>.md` file, `<id>` being your seat id:
+[[include What binds in a document]]
+
+An artifact applying a binding item literally to a case its author
+plainly did not consider is a finding, naming the item and the case.
+
+[[include Premise findings]]
+
+[[include Binding items and unrecorded choices]]
+
+[[when goal-check = on]]
+[[include The goal check]]
+[[end]]
+
+[[include Findings]]
+
+A code-shaped claim (a regex, a CLI invocation, "the code does X")
+carries a run transcript, or the tag `UNVERIFIED`: run the pattern
+against the example before writing what it reaches, never asserting
+from reading alone.
+
+[[include Location]]
+
+[[include Finding scope]]
+
+[[include Questions]]
+
+[[include The arrangement questions]]
+
+[[include Report file]]
+
+Your report path is a `seat-<id>.md` file, `<id>` being your seat id.
+Its sections, in this order:
 
 1. `## Verdict` — one line: your overall read of the artifact's fitness.
-   Where your artifact kind is `spec`, a second line answers the shared
-   reference's overturn question (§ The arrangement questions) as your
+   Where your artifact kind is `spec`, a second line answers the
+   overturn question (§ The arrangement questions) as your
    forecast for this artifact, in exactly one of two forms:
    `Overturn after code: reasonably expected — <which mechanism, why>` or
    `Overturn after code: not reasonably expected`. Where your no rests on
@@ -189,20 +150,18 @@ instead.
    `FINDING <seat-id>-<n> [BLOCKER|MAJOR|MINOR]` on its own line, a
    premise finding's carrying its label after the severity,
    `FINDING <seat-id>-<n> [BLOCKER|MAJOR|MINOR] premise`; then the
-   substance, the evidence (or `UNVERIFIED`), and the location the shared
-   reference's § Location gives.
+   substance, the evidence (or `UNVERIFIED`), and the location
+   § Location gives.
    `<seat-id>` is the `<id>` of your report path above; `<n>` numbers your
    findings from 1; the controller accounts for each finding by that id.
    With no findings, write only `none` here.
-6. `## Questions` — the items the shared reference's § Questions
-   describes, each opened by the header line `QUESTION <seat-id>-q<n>` on
-   its own line, then the item. `<n>` numbers your questions from 1. With
-   no questions, write only `none` here.
+6. `## Questions` — the items § Questions describes, each opened by the
+   header line `QUESTION <seat-id>-q<n>` on its own line, then the item.
+   `<n>` numbers your questions from 1. With no questions, write only
+   `none` here.
 [[when right-sizing = on]]
 7. `## Right-sized — do not cut` — your over-subtraction attestations, per
    area examined.
 [[end]]
 
-Write these sections in this order.
-
-Return a short status message; the report file is the deliverable.
+Return a short status message.

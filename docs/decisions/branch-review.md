@@ -27,10 +27,12 @@ apply it reaches it when the trigger occurs. Where the review reopens
 after SDD's Finish has committed, the range holds that commit and the
 reviewer reads it as part of the branch: the feature's umbrella mark and
 the open items written to an in-repository home. Its check for build
-history in what the branch ships exempts decision records, changelogs,
-the feature folder's files and those open items, which exist to hold it
-(`skills/requesting-code-review/code-reviewer.md` § What Was Built,
-Against What, § What to Check). It runs on the default
+history in what the branch ships exempts decision records, changelogs
+and the feature folder's files, as every execution reviewer's does, and
+those open items too, all of which exist to hold it
+(`skills/subagent-driven-development/references/seat-rules.md`
+§ What shipped work carries; `skills/requesting-code-review/code-reviewer.md`
+§ What Was Built, Against What, § What to Check). It runs on the default
 role, never lowered to save cost
 (`docs/decisions/model-roles-and-effort.md`).
 
@@ -170,9 +172,10 @@ that is not an ancestor of the head, or a failing git command, is
 reported, never reviewed as an empty diff. The
 controller records the base before each dispatch, never uses `HEAD~1`, and
 never takes the diff into its own context
-(`skills/subagent-driven-development/task-reviewer-prompt.md` § Diff Under
-Review; `skills/requesting-code-review/code-reviewer.md` § Git Range to
-Review).
+(`skills/subagent-driven-development/references/seat-rules.md`
+§ Building the diff; `skills/subagent-driven-development/task-reviewer-prompt.md`
+§ Diff Under Review; `skills/requesting-code-review/code-reviewer.md`
+§ Git Range to Review).
 
 ## Why
 
@@ -384,6 +387,12 @@ accepted by the maintainer.)
 
 ## Changes
 
+- 2026-11-02: the build-history exemption for the feature folder's
+  files is every execution reviewer's, the one for Finish's open items
+  the branch reviewer's alone, the shared rule and the diff procedure
+  cited at their one home in the shared seat reference; because the
+  task reviewer's and re-reviewer's copies exempted only decision
+  records and changelogs.
 - 2026-11-02: after the very-small lane's upgrade hatch, the findings
   the lane's last pass left open reach the standard route's branch
   reviewer as `Lane:` leads at their staked severity, a confirmed one

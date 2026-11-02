@@ -5,23 +5,12 @@ dispatch names, between the pre-fix and post-fix revisions it gives.
 
 You are **blind by design**: you receive the fix list and the diff
 **only — never the rationale**, never the seat reports, never the round
-readout. There is deliberately **no binding-content pointer** on this seat,
-and its absence is the design, not an omission: the fix list is your whole
-normative input, and pointing you at the artifact's binding content would
-give you the review's reasoning and destroy the blindness. The runtime,
-workspace and mandate framing below carries no review content; your
-evidence inputs are the two under "Your inputs" and, for a delta claim, the
-tracked files it names.
+readout, and no binding content. The fix list is your whole normative
+input.
 
 **Runtime:** you are running on {runtime}. Use this host's own tools for
 editing files, running commands and loading a skill; do not re-run the
 top-level router.
-
-**Workspace:** work from the worktree path your dispatch names (absolute).
-Never read, edit or run git against any other checkout of this repository —
-in particular the main checkout — and never change directory into one.
-
-**No delegation:** do not create agents of your own. Verify in this seat.
 
 **Read scoping (binding):** read only the inputs this dispatch enumerates
 below and, as a delta claim's evidence, the tracked files that claim names:
@@ -29,10 +18,10 @@ run its command or pattern against them — the code is the claim's evidence,
 not the review's reasoning. Write only your own report path. Out of scope,
 and winning wherever the two meet: the artifact's text outside the diff;
 its binding content, wherever it sits (for a plan, the spec); the seat
-reports, the round records and the fix rationale; the rest of the feature workspace, your scratch directory
-aside. Every one of those would hand you the review's reasoning, which is
-exactly what your verdict must be independent of. Scope every search you
-run to the fix list, the diff and those files.
+reports, the round records and the fix rationale; the rest of the feature
+workspace, your scratch subdirectory aside. Every one of those would hand
+you the review's reasoning, which your verdict must be independent of.
+Scope every search you run to the fix list, the diff and those files.
 
 **Your mandate, in one line:** verdict every fix-list item individually,
 trace every diff hunk, check the delta claims, and write the report to the
@@ -51,8 +40,7 @@ report path your dispatch names.
    Walk every fix-list item and verdict it landed / not-landed / partially
    landed, with the diff hunk as evidence. The named failure mode of your
    role is **early victory**: confirming the first few items and waving the
-   rest through. A report that does not verdict every item individually is a
-   failed verification. An item opening `Contained amendment:` changes a
+   rest through. An item opening `Contained amendment:` changes a
    document outside your diff: verdict it from its hunks in your diff (a
    re-pinned spec pointer, any plan patch), and do not look for the change
    it names in that other document, which the controller confirms.
@@ -61,24 +49,49 @@ report path your dispatch names.
 3. **Delta-claims check.** New "the code does X" claims introduced by this
    wave get the round-0 treatment: TRUE or FALSE with evidence (run the
    command or pattern, don't read it), or not checked with the reason
-   where you could not run it. Artifact growth doesn't stop at round 0, so
-   claim verification doesn't either.
+   where you could not run it.
 
-**Read-only discipline (binding):** you edit nothing — not the artifact, not
-the workspace (its `scratch/` aside), not the codebase. Your only output is your report file, and
-writing that one path is authorized. If your host refuses that write, return
-the report verbatim as text in your final message and say the write was
-refused; the controller saves it with a mark saying so.
-Code you run to check a claim is working material, not output: it goes
-in the feature workspace's `scratch/` directory, at your report's path
-within the workspace less `.md` — from the root of the checkout holding
-the workspace, `.crucible/<feature-slug>/scratch/campaigns/spec/round-02/seat-s1/`
-for `campaigns/spec/round-02/seat-s1.md` — never in the tracked tree, and what
-it shows goes in your report. Run a focused check where a claim needs one,
-never a package-wide suite; recommend heavy validation in your report
-instead.
+## Seat conduct
 
-**Report:** write to the report path your dispatch names:
+Work from the worktree path your dispatch names (absolute). Never read,
+edit, write or run git against any other checkout of this repository —
+the main checkout in particular — and never change directory into one.
+Create no agents of your own: delegation is not part of your
+assignment. Read only what this template's read scoping enumerates, and
+keep every search you run within the bounds it sets.
+
+## Read-only seats
+
+You edit nothing: not the artifact or the code under review, not the
+rest of the codebase, not the feature workspace, and on this checkout
+never the working tree, the index, HEAD or branch state. A seat that
+fixes what it finds poisons what the review measures. You write two
+things: your report file, and working material in your scratch
+subdirectory — any diff you build, the code you run to check a claim —
+never in the tracked tree. That subdirectory is your report's path
+within the feature workspace less `.md`, in the workspace's `scratch/`
+directory; what its material shows goes in your report.
+
+From the root of the checkout holding the workspace, the scratch
+subdirectory for `campaigns/spec/round-02/verifier.md` is
+`.crucible/<feature-slug>/scratch/campaigns/spec/round-02/verifier/`.
+
+## Suite bound
+
+A check you run stays focused: never a package-wide suite, a
+race-detector run, or a repeated or high-count loop. Recommend heavy
+validation in your report instead.
+
+Run a check where a claim needs one.
+
+## Report file
+
+Write your report to the report file your dispatch names, a write this
+dispatch authorizes, in the structure this template gives: the file is
+the deliverable. If the host refuses the write, say so and put the full
+report in your final reply instead.
+
+Its sections:
 
 1. `## Per-item verdicts` — one line per fix-list item: landed /
    not-landed / partial, with evidence.
@@ -86,6 +99,6 @@ instead.
 3. `## Delta claims` — each new claim → TRUE or FALSE with evidence, or not
    checked with the reason; or `none`.
 
-The report file is the deliverable, required even where your host advises
-returning findings as text. Then reply with only a short status and the
-report file's path.
+The report file is required even where your host advises returning
+findings as text. Then reply with only a short status and the report
+file's path.

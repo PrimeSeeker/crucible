@@ -59,32 +59,25 @@ and layout). Report names stay clear of Claude Code's subagent write
 filter, which `tests/test_report_filenames.py` checks for every card.
 
 **The plugin root.** The implementer's, task reviewer's, re-reviewer's
-and branch reviewer's cards carry `[PLUGIN_ROOT]`, and the redteam
-seat's `{plugin-root}`, filled with the plugin root the controller read
-the card from. Through it the implementer reads systematic-debugging,
-`writing-good-tests.md` and writing-skills, and the reviewers read
-`writing-good-tests.md`, in any repository. Through it seats read the
-shared reference
-`skills/subagent-driven-development/references/seat-rules.md`,
-which states once what a seat may raise beyond a defect in the work
+and branch reviewer's cards carry `[PLUGIN_ROOT]`, filled with the
+plugin root the controller read the card from. Through it the
+implementer reads systematic-debugging, `writing-good-tests.md` and
+writing-skills, and the reviewers read `writing-good-tests.md`, in any
+repository. No templated seat reads the shared seat reference
+`skills/subagent-driven-development/references/seat-rules.md`, so the
+redteam seat's and the terminal pass's cards carry no plugin root: each
+template takes by splice the sections its seat follows, as its source
+names them, among them what a seat may raise beyond a defect in the work
 (`docs/decisions/evidence-and-findings.md`) and the arrangement
-questions (`docs/decisions/routes.md`); each template names the
-sections it reads. The redteam seat and the branch reviewer read all
-six: § Premise findings, § Binding items and unrecorded choices, § The
-goal check, § Questions, § Location and § The arrangement questions;
-the redteam seat reads § The goal check only where its card's
-`goal-check` selector is on, set for each seat of a spec campaign's
-round 1 (`docs/decisions/evidence-and-findings.md`).
-The terminal pass reads § Premise findings, § Binding items and
-unrecorded choices and § The arrangement questions, through
-`{plugin-root}` on its card, under the same grant of the shared
-reference as the redteam seat (`crucible:redteaming § Dispatch
-composition`). The implementer reads § Premise findings, § Questions and
-§ Location, and the task reviewer § Premise findings and § Questions;
-neither reads § Binding items and unrecorded choices. An umbrella's
-closing-review seats, composed by the controller, read § Premise
-findings, § Binding items and unrecorded choices, § Questions and
-§ Location (`skills/brainstorming/references/umbrellas.md`).
+questions (`docs/decisions/routes.md`). A section reaches only seats
+that follow every rule in it; a rule some of its takers lack stays in
+the templates that carry it or takes a section of its own, so sharing
+adds no rule to a seat. The redteam seat takes § The goal check only
+where its card's `goal-check` selector is on, set for each seat of a
+spec campaign's round 1 (`docs/decisions/evidence-and-findings.md`).
+An umbrella's closing-review seats, composed by the controller, take
+§ Premise findings, § Binding items and unrecorded choices, § Questions
+and § Location (`skills/brainstorming/references/umbrellas.md`).
 
 **The terminal pass's card** also carries `{decision-record-path}`: in
 the spec phase the brainstorm decision record, which its decision-record
@@ -181,8 +174,8 @@ maintainer.)
 
 The 2026-08-09 design made every fresh seat self-contained and isolated,
 and the no-delegation instruction part of that: a seat's own read is what
-it is dispatched for ("This seat's independent read is the deliverable",
-`skills/redteaming/seat-prompt.md`). On Codex the `ultra` effort level
+it is dispatched for ("Your independent read is the value you
+produce", `skills/redteaming/seat-prompt.md`). On Codex the `ultra` effort level
 carries automatic task delegation, which Codex's own model metadata
 stated on codex-cli 0.146.1, so no flow selects it
 (`skills/using-crucible/references/codex-dispatch.md`). Work that needs
@@ -253,7 +246,10 @@ incident, 2026-10-29; judgment, accepted by the maintainer, for the
 rename.) On 2026-11-02 it was renamed `seat-rules.md`, a name clear of
 that filter, as it became the home of the clauses the seat templates
 share. An agent's proposal, which the maintainer accepted. (Basis:
-judgment, accepted by the maintainer.)
+judgment, accepted by the maintainer.) The same day its sections moved
+into the templates by splice (§ The splice), and the redteam seat's and
+the terminal pass's cards, whose plugin-root slot reached only the
+reference, lost it. (Basis: judgment, accepted by the maintainer.)
 
 The arrangement questions, the overturn question, "overdetermined" and
 the mark's criterion, went into the same reference on 2026-10-29: seats
@@ -302,10 +298,22 @@ judgment, accepted by the maintainer.)
   gone; a first-line mark does the remaining job (§ Why).
 - **Seat-facing wording against skipped report writes**: a control
   without the host's advice did not reproduce the skip; the controller's
-  check and one resume cover it.
+  check and one resume cover it. The exception: the verifier's and the
+  re-reviewer's templates say the report file is required even where the
+  host advises returning findings as text, a targeted fix for the two
+  seats whose misses persisted
+  (`docs/backlog/review-seat-report-write.md`); the shared seat
+  reference's § Report file does not carry it.
 
 ## Changes
 
+- 2026-11-02: the clauses the seven templates copied move into the
+  shared seat reference, each template taking by splice the sections its
+  seat follows; the redteam seat's and the terminal pass's cards lose the
+  plugin-root slot, whose one use was reading the reference; the
+  rejected report-write wording names the verifier and re-reviewer
+  exception; so that a seat no longer depends on a startup read and the
+  copies stop drifting.
 - 2026-11-02: each template is rendered from a hand-edited source beside
   it, the generator splicing in the shared seat reference's sections the
   source names and writing the template at its path, checked by the

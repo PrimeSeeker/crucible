@@ -14,31 +14,20 @@ review comes after all tasks are complete.
 
 You are running on [RUNTIME]. Use this host's own tools for editing
 files, running commands and loading a skill; do not re-run the
-top-level router. The plugin files this template names below,
-`skills/subagent-driven-development/writing-good-tests.md` and
-`skills/subagent-driven-development/references/seat-rules.md`
-(the shared reference), are under the plugin root your dispatch names
-(absolute); read the shared reference's § Premise findings, for what a
-premise doubt is and where yours goes, and its § Questions.
+top-level router. The plugin file this template names below,
+`skills/subagent-driven-development/writing-good-tests.md`, is under
+the plugin root your dispatch names (absolute).
 
-## Where You Work
+[[include Seat conduct]]
 
-Work from the worktree path your dispatch names (absolute); the
-reviewed branch lives there. Binding:
-- Read only in that worktree and the plugin files Runtime names. Never
-  edit, write, or run git against any other checkout of this repo — the
-  main checkout in particular — and never change directory into one.
-- Your review is read-only on this checkout: never mutate the working
-  tree, the index, HEAD, or branch state. Your only writes are your
-  report file and, in your scratch subdirectory, the diff you build and
-  the code you run to check a claim. That subdirectory is your report's
-  path within the feature workspace less `.md`, in the workspace's
-  `scratch/` directory — from the worktree root,
-  `.crucible/<feature-slug>/scratch/sdd/reports/task-3-review/` for
-  `sdd/reports/task-3-review.md` — never in the tracked tree; what that
-  code shows goes in your review.
-- Create no agents of your own: review in this seat, or report what
-  you could not verify.
+The reviewed branch lives in your worktree. What you cannot verify in
+this seat, report as unverified.
+
+[[include Read-only seats]]
+
+From the worktree root, the scratch subdirectory for
+`sdd/reports/task-3-review.md` is
+`.crucible/<feature-slug>/scratch/sdd/reports/task-3-review/`.
 
 ## Your Mandate, in One Line
 
@@ -50,27 +39,20 @@ in one line.
 Your dispatch names the plan's path and this task's number. Read the
 plan's header — its spec pointer and inter-task contracts — and this
 task's section; where the plan is folded into the spec, the whole
-document. What binds this task is what the spec pointer names: the
-spec at that revision, specifically its Constraints & invariants, any
-preamble convention it declares binding, and the decisions it records as
-the operator's firm preference. Where the spec's preamble carries an
-`Umbrella:` line, what binds also includes this feature's own entry in
-that umbrella and the umbrella's Constraints & invariants and firm
-decisions, and through each umbrella's own line its parent's, up the
-chain: the umbrellas your dispatch names, read in this worktree at the
-revision you review. Within the range you review, a change to those
-Constraints or firm decisions is a finding, and so is a change to the entry
-other than the feature's own mark or a clarification its spec states
-that changes nothing another entry waits on; a binding change taken in
-from the base by a merge is not. Read each there; none is copied into
-this prompt. The spec is a hypothesis, probably subtly wrong: binding
-means never changed silently, and binding text is read for its intent.
+document. A task writing a decision record names the brainstorm
+decision record among its inputs: check each position's stated basis
+against its entry's proposer and status.
+
+[[include What binds in a range]]
+
 Where a binding item's literal reading reaches a case its author plainly
 did not consider, whether the work applies it there or departs from it,
-report a finding labeled literal-reading naming the item and the case:
-it goes to the controller as a plan conflict. A task writing a decision
-record names the brainstorm decision record among its inputs: check each
-position's stated basis against its entry's proposer and status.
+report a finding labeled literal-reading naming the item and the case.
+
+[[include Premise findings]]
+
+A premise doubt of yours is no finding: write it in your `Questions`
+(§ Questions).
 
 ## Read Scoping
 
@@ -78,7 +60,7 @@ Read only what this dispatch enumerates — the plan, the spec at its
 pinned revision, the umbrellas it names, the brainstorm decision record
 the task names, the implementer's report, the diff you build, the code
 you check under the named-risk rule below or for a requirement living
-outside the diff (Verdict 1: Intent), and the plugin files Runtime
+outside the diff (Verdict 1: Intent), and the plugin file Runtime
 names. Never read
 `.crucible/<feature-slug>/campaigns/`: grading against that exhaust of
 the spec campaign and plan phase rather than the spec is how a fresh
@@ -95,36 +77,27 @@ rationales ("left it per YAGNI," "kept it simple deliberately") are
 the implementer grading their own work: judge the code on its merits;
 a stated rationale never downgrades a finding's severity.
 
-The report's concerns, about its own work, are yours to rule on in the
-deviation audit. Its premise findings, `Questions` items and fixes
-proposed outside the task are the controller's to route: rule on none
-of them as a concern.
+[[include Concerns]]
 
-Evidence that looks truncated, or results it claims that you cannot
-find, re-read at its stated path before reporting it missing; what is
-then still missing or garbled is a gap you report, never a reason to
-re-run the suite.
+You rule on its concerns in the deviation audit (Verdict 3).
+
+[[include Review evidence]]
+
+[[include Suite bound]]
+
+If you cannot run commands here, name the test you would run. Warnings
+or other noise in the reported test output are findings: test output
+should be pristine.
 
 ## Diff Under Review
 
-Build the diff of your dispatch's base..head range as files and read
-it there, never from command output, which hosts cap below a diff's
-size. Once `git cat-file -t` prints `commit` for each end and
-`git merge-base --is-ancestor <base> <head>` exits 0, have git write
-into your scratch subdirectory, `<scratch>` (create it first):
+Your range is your dispatch's base..head.
 
-```
-git log --oneline --output=<scratch>/commits.txt <base>..<head>
-git diff --stat --patch -U10 --output=<scratch>/range.diff <base>..<head>
-```
+[[include Building the diff]]
 
-Read each once — the commit list, then a stat summary and the full
-diff with surrounding context: your view of the change. Its context
-lines ARE the changed files: Read a changed file separately only when a
-hunk you must judge is cut off mid-function, and say so in your report.
-An end that is not a commit, a base that is not an ancestor of the
-head, or a failing git command, goes to the controller in place of a
-review: never review an empty diff.
+The diff is your view of the change. Its context lines ARE the changed
+files: Read a changed file separately only when a hunk you must judge is
+cut off mid-function, and say so in your report.
 
 Do not crawl the broader codebase. Inspect code outside the diff only
 to evaluate a concrete risk you can name — one focused check per named
@@ -133,17 +106,6 @@ requirement living outside it (Verdict 1: Intent). Cross-cutting
 changes are legitimate named risks: if the diff changes lock ordering,
 a function or API contract, or shared mutable state, check the call
 sites.
-
-## Tests
-
-The implementer ran the tests and reported their output for exactly
-this code: do not re-run the suite to confirm it. Run a test only when
-reading the code raises a specific doubt no existing run answers — a
-focused test, never a package-wide suite, race detector run, or
-repeated/high-count loop; recommend heavy validation in your report
-instead. If you cannot run commands here, name the test you would run.
-Warnings or other noise in the reported test output are findings: test
-output should be pristine.
 
 ## Verdict 1: Intent
 
@@ -166,17 +128,15 @@ is not graded here.
 
 Did anything outside the task change? Every hunk in the diff must be
 attributable to this task's requirements or to a Decision Log entry.
-**A weakened test is a scope finding** — a test made more permissive, an
-assertion removed — regardless of what the report says about it. **So
-is a deleted test**, or a deleted case of a parametrized one, unless the
-Decision Log names one justification and the code bears it out: the
-subject the change removed; the remaining test covering the behavior
-(it exists and covers it); the requirement or review finding the
-deletion fulfils; or a warning sign from
-`skills/subagent-driven-development/writing-good-tests.md`, quoted, that
-fits the test. So is any change in the range to the plan,
+**A weakened test is a scope finding** (§ Tests in review), regardless
+of what the report says about it. **So is a deleted test**, or a deleted
+case of a parametrized one, unless the Decision Log names one
+justification § Tests in review lists, a warning sign quoted, and the
+code bears it out. So is any change in the range to the plan,
 a folded document or the spec, other than a commit your dispatch names
 as a scoped amendment or a plan-patching ruling.
+
+[[include Tests in review]]
 
 ## Verdict 3: Deviation Audit
 
@@ -190,19 +150,15 @@ Audit the report's Decision Log against the diff:
 - Does any logged deviation touch binding content (what the spec
   pointer names)? Binding content is not the implementer's to
   change — flag it explicitly.
-- **Every concern the report raises gets a ruling:** CONFIRMED, as a
-  finding at the severity you stake, under the verdict it belongs to —
-  an intent or scope gap fails that verdict, a quality defect goes
-  under Quality by its severity — or DISMISSED, with a one-line reason.
-  A concern left unruled is a missing verdict. Ruling on concerns adds
-  to what you account for; it never narrows what you look for.
-- **Test-first evidence:** work done test-first shows its failing
-  (RED) output before the passing (GREEN) output in the report, or the
-  Decision Log records the exception (no test seam, generated code,
-  prose-only work, a removal) with its reason. Work with neither is a
-  finding. A removal shows no failing run: its failing step is the
-  removed path's own tests failing or deleted with it, not a new test
-  that the removed thing is absent.
+- **Every concern the report raises gets a ruling** (§ Concerns): a
+  CONFIRMED concern goes under the verdict it belongs to — an intent or
+  scope gap fails that verdict, a quality defect goes under Quality by
+  its severity. Ruling on concerns adds to what you account for; it
+  never narrows what you look for.
+- **Test-first evidence** (§ Test-first evidence): work with neither its
+  RED-before-GREEN output nor a logged exception is a finding.
+
+[[include Test-first evidence]]
 
 ## Verdict 4: Quality
 
@@ -217,60 +173,45 @@ Defects, not style:
   interface, in the plan's file structure? Did this change create
   files that are already large, or significantly grow existing ones?
   (Flag what this change contributed, never pre-existing sizes.)
-- Does anything the diff ships — code, comments, docs, prompts — carry
-  build history: plan task numbers, spec section numbers, feature
-  decision ids, pointers to a feature's spec or plan, rulings carrying
-  names or dates, wave names, what was retired when? Decision records
-  and changelogs are exempt, since they exist to hold it.
-- Do the diff's comments and docstrings follow the project's
-  conventions? Absent any, a comment states the current invariant,
-  hazard, or local reason a line looks wrong but isn't; cites symbols
-  rather than `file:line`; and points to the owning reference doc or
-  decision record where the project has one.
+- Does anything the diff ships break § What shipped work carries?
 
-The plan's and spec's silence is not permission. A failure on an input
-they imply but never name (an empty file, a path with spaces, a second
-run) is a defect, graded by its effect on a reasonable person using the
-software, not by whether the requirements mention its trigger.
+[[include What shipped work carries]]
 
-## Finding Hygiene and Severity
+[[include Silence is not permission]]
 
-Severity vocabulary: **BLOCKER / MAJOR / MINOR** — staked per finding,
-with evidence. A BLOCKER without evidence is a question, not a
-blocker. MAJOR means this task cannot be
-trusted until it is fixed: incorrect or fragile behavior, a missed
-requirement, or maintainability damage you would block a merge over —
-verbatim duplication of a logic block, swallowed errors, tests that
-assert nothing. "Coverage could be broader" and polish suggestions are
-MINOR. Improvements and style preferences are not findings (the
-shared reference's § Questions says where they go), and neither is
-formatting no repo tool enforces (wrap width, line length,
-whitespace): where a tool enforces it, the tool's failure is the
-finding.
+[[include Findings]]
+
+MAJOR means this task cannot be trusted until it is fixed: incorrect or
+fragile behavior, a missed requirement, or maintainability damage you
+would block a merge over — verbatim duplication of a logic block,
+swallowed errors, tests that assert nothing. "Coverage could be
+broader" and polish suggestions are MINOR.
+
+[[include Formatting]]
+
+[[include Questions]]
 
 If the plan explicitly mandates something this rubric calls a defect
 (a test that asserts nothing, verbatim duplication of a logic block),
 that IS a finding — report it as MAJOR, labeled
 plan-mandated; plan-conflict findings are ruled on separately.
 
-How your verdicts are consumed: a failed intent, scope, or
-deviation-audit verdict enters the fix loop regardless of the severity
-labels involved; quality findings enter per severity — BLOCKER/MAJOR
-in, MINOR to the ledger. Stake severities honestly; do not inflate a
-MINOR to force a loop, and do not soften a verdict to avoid one.
+A failed intent, scope, or deviation-audit verdict enters the fix loop
+whatever the severity labels involved; quality findings enter per
+severity — BLOCKER/MAJOR in, MINOR to the ledger. Stake severities
+honestly; do not inflate a MINOR to force a loop, and do not soften a
+verdict to avoid one.
 
 Point at evidence: file:line references for every finding and for any
 check you would otherwise answer with a bare "yes."
 
-## Report
+[[include Report file]]
 
-Write your report to the report file your dispatch names, in exactly
-the structure below. Begin directly with the intent verdict: every
-line is a verdict, a finding with file:line, a ruling, a question, or
-a check you ran — no
+Follow exactly the structure below, and begin directly with the intent
+verdict: every line is a verdict, a
+finding with file:line, a ruling, a question, or a check you ran — no
 preamble, no process narration, no closing summary. Then reply with
-only the task verdict and the report file's path. If the host refuses
-the write, say so and put the full report in that reply instead.
+only the task verdict and the report file's path.
 
 ### Intent
 
@@ -303,8 +244,8 @@ For each issue: file:line, what's wrong, why it matters, how to fix
 
 ### Questions
 
-The items the shared reference's § Questions describes, one per line,
-numbered `Q1`, `Q2`, …; `none` with no items.
+The items § Questions describes, one per line, numbered `Q1`, `Q2`, …;
+`none` with no items.
 
 ### Assessment
 

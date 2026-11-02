@@ -74,8 +74,8 @@ to install it: `README.md`; the layout: `docs/dual-runtime.md`.
   (`docs/decisions/`); host mechanics in the adapter pair (above); text
   about crucible's own text (where a rule lives, why a template omits
   something) in `docs/`. A seat template holds what its seat does and
-  produces; rules every seat follows go in one shared reference the
-  templates point to, once one exists.
+  produces; rules seats share go in the shared seat reference, each
+  template taking by splice the sections its seat follows.
 - **The prose budget.** `tests/prose-budget.txt` holds each skill
   directory's word count of hand-edited text (a rendered template is not
   counted; its source is), and the suite fails when a count rises above it
