@@ -27,7 +27,9 @@ its seats and leaves the rest of the fan-out mechanics to it
 script invocation and dead-end edges. Test-first reads "Write
 the failing test before the fix; where no test or script can reproduce
 the bug, say why", with a pointer to
-`skills/subagent-driven-development/writing-good-tests.md`; the verify
+`skills/subagent-driven-development/writing-good-tests.md`, and
+upstream's unconditional "MUST have before fixing" beside it is gone;
+the verify
 step asks for evidence before done without naming an upstream skill; and
 the example's two lines that printed a secret's value test only for its
 presence. `skills/systematic-debugging/root-cause-tracing.md` says
@@ -95,7 +97,14 @@ subagent-driven development there is no Decision Log to record a skipped
 test in, so the line became "if you skip it, say why" (2026-10-08); on
 2026-10-15 the skip was narrowed to an observable condition, a bug no
 test or script can reproduce, which the maintainer confirmed. (Basis:
-judgment, accepted by the maintainer.)
+judgment, accepted by the maintainer.) That edit left upstream's "MUST
+have before fixing" in the same list, contradicting the condition, and
+on 2026-11-02 it went as a defect. (Basis: judgment, accepted by the
+maintainer, who left the call to the agent: "Your call, I think".) The
+rationalization row "Test first proves it" and the red flag "Skip the
+test" stay: each answers a test that could be written, so neither
+contradicts the condition. (Basis: judgment, an agent's call the
+maintainer has not ruled on.)
 
 The example's `env | grep IDENTITY` printed the variable's value, and so
 did `${IDENTITY:+SET}${IDENTITY:-UNSET}`, whose second expansion yields
@@ -171,6 +180,8 @@ accepted by the maintainer.)
 
 ## Changes
 
+- 2026-11-02: systematic-debugging drops upstream's "MUST have before
+  fixing", which contradicted its conditional test-first line: a defect.
 - 2026-11-02: step 3 defines independent tasks (no shared state, no
   ordering, neither reading the other's output), the host adapters'
   fuller definition, which left them; the skill's description and its

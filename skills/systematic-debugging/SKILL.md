@@ -173,7 +173,6 @@ You MUST complete each phase before proceeding to the next.
    - Simplest possible reproduction
    - Automated test if possible
    - One-off test script if no framework
-   - MUST have before fixing
    - Write the failing test before the fix; where no test or script can reproduce the bug, say why. For test craft, see `skills/subagent-driven-development/writing-good-tests.md` from the plugin root
 
 2. **Implement Single Fix**

@@ -7,7 +7,7 @@ description: Use when starting feature work that needs isolation from current wo
 
 ## Overview
 
-Ensure work happens in an isolated workspace. Prefer your platform's native worktree tools. Fall back to manual git worktrees only when no native tool is available, when brainstorming starts a feature inside another feature's worktree, or when your instructions declare a worktree directory.
+Ensure work happens in an isolated workspace.
 
 **Core principle:** Detect existing isolation first. Then use native tools. Then fall back to git. Never fight the harness.
 
@@ -41,12 +41,9 @@ git rev-parse --show-superproject-working-tree
 ```
 
 Empty output means you are not in a submodule. A printed path means you
-are — treat it as a normal repo checkout, not a worktree. (The absolute
-path forms above already report a submodule's git dir and common dir as
-the *same* path, so the worktree predicate does not misfire there; this
-probe is what confirms it.)
+are — treat it as a normal repo checkout, not a worktree.
 
-**If the two paths differ (and you are not in a submodule):** You are already in a linked worktree. Skip to Step 2 (Project Setup). Do NOT create another worktree.
+**If the two paths differ (and you are not in a submodule):** You are already in a linked worktree. If it is another feature's and you are starting a new one, create this feature's own with Step 1b, on the request below. Otherwise skip to Step 2 (Project Setup) and do NOT create another worktree.
 
 Report with branch state:
 - On a branch: "Already in isolated workspace at `<path>` on branch `<name>`."
@@ -70,7 +67,7 @@ Only proceed to Step 1b if you have no native worktree tool available, if brains
 
 ### 1b. Git Worktree Fallback
 
-**Only use this if Step 1a does not apply** — you have no native worktree tool available, brainstorming starts a feature inside another feature's worktree, or your instructions declare a worktree directory. Create a worktree manually using git.
+**Only use this where Step 0 or Step 1a's last line sends you here.** Create a worktree manually using git.
 
 #### Directory Selection
 
@@ -86,7 +83,7 @@ Follow this priority order. Explicit user preference always beats observed files
 
 **Whatever you selected is `<worktree-dir>` from here on** — the steps below
 verify and create against *that* directory, never against a remembered
-default. Substituting the wrong one is the whole bug this step prevents.
+default.
 
 #### Safety Verification (project-local directories only)
 
@@ -98,19 +95,9 @@ git -C <project-root> check-ignore -q <worktree-dir>/
 
 Read the exit code: **0** means ignored — proceed. **1** means not ignored — add that directory to `.gitignore`, commit the change, then re-run the check against the same directory. From another feature's worktree, commit nothing: report the result to the operator and wait for their answer.
 
-**Substitute your selection, and keep the trailing slash.** Two things go
-wrong here:
-
-- **Checking the wrong directory.** `worktrees/` and `.worktrees/` are
-  separate paths with separate `.gitignore` entries; a project commonly
-  ignores one and not the other. Verifying `.worktrees/` and then creating
-  the worktree in `worktrees/` passes the check and commits the whole
-  worktree anyway.
-- **Dropping the slash.** A `.gitignore` entry written the usual way
-  (`worktrees/`, `.worktrees/`) matches directories only, and for a path
-  that does not exist yet Git learns "this is a directory" solely from the
-  trailing slash on the query. Without it the check reports "not ignored"
-  for a directory that already is, and you commit a redundant entry.
+**Substitute your selection, and keep the trailing slash:** without the
+slash, Git reports an ignored directory that does not exist yet as not
+ignored.
 
 **Why critical:** Prevents accidentally committing worktree contents to repository.
 
@@ -158,25 +145,6 @@ Worktree ready at <full-path>
 Tests passing (<N> tests, 0 failures)
 Ready to implement <feature-name>
 ```
-
-## Quick Reference
-
-| Situation | Action |
-|-----------|--------|
-| Already in linked worktree | Skip creation (Step 0) |
-| In a submodule | Treat as normal repo (Step 0 guard) |
-| Native worktree tool available | Use it (Step 1a), unless Step 1a's last line sends you to Step 1b |
-| No native tool | Git worktree fallback (Step 1b) |
-| `.worktrees/` exists | Use it (verify ignored) |
-| `worktrees/` exists | Use it (verify ignored) |
-| Both exist | Use `.worktrees/` |
-| Neither exists | Check instruction file, then default `.worktrees/` |
-| Running the safety check | Check the directory you selected, with its trailing slash — never a remembered default |
-| `git check-ignore` exits 1 | That directory is not ignored: add it to .gitignore + commit, re-check |
-| Branch name already taken | `worktree add -b` refuses; pick a fresh name |
-| Permission error on create | Sandbox fallback, work in place |
-| Tests fail during baseline | Report failures + ask |
-| No package.json/Cargo.toml | Skip dependency install |
 
 ## Common Rationalizations
 

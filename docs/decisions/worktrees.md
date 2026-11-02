@@ -14,6 +14,10 @@ exists, the skill names the worktree and its base in one line and asks.
 Work happens in place only where the instructions or the operator say so
 (`crucible:using-git-worktrees § Step 0: Detect Existing Isolation`).
 
+**Detection.** Step 0 compares the absolute git dir with the common
+dir, which differ only in a linked worktree; a probe confirms a
+submodule, treated as a normal checkout.
+
 **Native tool or git fallback.** The host's own worktree tool is
 preferred. The git fallback runs where there is none, where brainstorming
 starts a feature inside another feature's linked worktree, or where the
@@ -74,6 +78,16 @@ use gives no evidence either: crucible's own repository declares
 repository that declares a worktree directory but no preference now gets
 a one-line ask where it used to get a worktree by default. (Basis:
 external; judgment, accepted by the maintainer.)
+
+### Detection
+
+In a submodule, `git rev-parse --absolute-git-dir` and
+`git rev-parse --path-format=absolute --git-common-dir` both print the
+superproject's `.git/modules/<name>`, so the comparison never takes a
+submodule for a linked worktree; `--show-superproject-working-tree`,
+which prints the superproject's path there, confirms the case rather
+than correcting it (checked on 2026-11-02 with git 2.56.0). (Basis:
+measured.)
 
 ### The git fallback
 
@@ -156,6 +170,9 @@ that skill already ran them" left a resumed controller unable to tell.
 
 ## Changes
 
+- 2026-11-02: why Step 0's comparison holds in a submodule moved here
+  from the skill, which keeps only the probe's reading, and was checked
+  against git 2.56.0.
 - 2026-10-19: setup and the baseline run at SDD Setup in the checkout it
   works from, recorded as a ledger `Baseline:` line that a resumed
   controller skips on.

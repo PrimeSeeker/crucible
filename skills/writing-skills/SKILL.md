@@ -35,10 +35,8 @@ The host matches the description against the task to decide whether to
 load the skill. Give concrete, discriminating triggers that cover the
 situations where it applies: symptoms, contexts, the words a user or agent
 would use. It may say what the skill is for. It never lists the
-procedure's steps: upstream (superpowers) found an agent following a
-description's workflow summary in place of the body, so a description
-saying "code review between tasks" got one review where the skill's
-flowchart required two. Too narrow a description under-triggers
+procedure's steps: an agent may follow that summary in place of the
+body. Too narrow a description under-triggers
 (Anthropic's guidance); a catchall over-triggers (Codex's). Write it in
 the third person.
 

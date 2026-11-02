@@ -8,8 +8,8 @@ receiving-review 512
 redteaming 15797
 requesting-code-review 4535
 subagent-driven-development 17329
-systematic-debugging 3422
+systematic-debugging 3417
 using-crucible 1989
-using-git-worktrees 1713
+using-git-worktrees 1365
 writing-plans 1558
-writing-skills 1546
+writing-skills 1525
