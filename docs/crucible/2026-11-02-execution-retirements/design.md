@@ -132,7 +132,9 @@ the brainstorm decision record.
   untracked paths present then, such as an implementer's test
   leftovers, are tolerated. The dispatch-time HEAD and untracked list
   are written to `<workspace>/tree-check.txt`, overwritten at each
-  dispatch, where a controller resumed after a compaction finds them.
+  dispatch, where a controller resumed after a compaction finds them;
+  seats dispatched together are one window, the file written before
+  the first and checked after the last.
   The readings in the round record and its fields for them go. The rule
   that nothing is committed while a seat works stays. Basis: the
   umbrella's D4, its after-check as one status check; the comparison
@@ -150,7 +152,7 @@ the brainstorm decision record.
 - **E7. The deferral chain: a marker and its owning task.** A
   `Deferred to implementation:` marker stays the device. A plan's own
   markers sit in the task that owns them; each spec marker is named, by
-  its site, in the Contract of the plan task that owns it, and the plan
+  its site, in the Contract of each plan task that owns it, and the plan
   phase's mechanical pre-pass checks that every spec marker has an
   owning task, as part of its ownership closure. The deferred-items
   routing table goes, with its row format and owner form, the folded
@@ -199,8 +201,8 @@ the brainstorm decision record.
   lane stays no hatch target. Where the note's preamble carries an
   `Umbrella:` line, the spec's carries the same line, the duty
   `skills/brainstorming/references/umbrellas.md` gives the hatch's text.
-  On the move, the lane ledger is moved aside
-  and the standard route's ledger links it as its predecessor
+  On the move, the lane's execution records are moved aside with its
+  ledger, and the standard route's ledger links it as its predecessor
   (`crucible:subagent-driven-development` § Setup), so the lane's
   rulings, departures and leads reach that route's close readout,
   which follows that link, and execution does not take the lane ledger
@@ -240,7 +242,8 @@ the brainstorm decision record.
   the operator did not choose.
 - **I4. Nothing states a retired mechanism as current.** After the
   branch, no shipped skill text, template, generated agent, test, live
-  decision record, backlog item, `docs/authoring.md`, `README.md` or
+  decision record, backlog item, `docs/authoring.md`,
+  `docs/upstream.md`, `README.md` or
   `AGENTS.md` states one; a decision record may keep it as history. Frozen feature
   folders and the scanner's byte-exact corpus
   (`tests/claudeism_scanner_corpus/`) are exempt.
@@ -254,10 +257,11 @@ the brainstorm decision record.
   revert the operator rules (E3), recorded there as
   `Task <N>: reverted — <the ruling>`, reopens it with no attempt number
   for the resume rule to read. A repair the operator rules for a
-  completed task is recorded as `Task <N>: repair — <the ruling>` and
-  rides the branch review's next fix wave as a ruling change
-  (`crucible:requesting-code-review` § The branch-review loop, changes
-  that ride a wave), so its fix base and report names are that wave's.
+  completed task is recorded under `## Adjudication rulings`, where the
+  done rule does not read, and rides the branch review's next fix wave
+  as a ruling change (`crucible:requesting-code-review` § The
+  branch-review loop, changes that ride a wave), opening that wave where
+  none is open, so its fix base and report names are that wave's.
   After a `3/3` fix-wave line, a resumed controller goes to the
   operator ask (E1), recorded open under `## Adjudication rulings`, not
   to a fourth wave. The ledger's deferred list, the ambiguous-liveness
@@ -278,9 +282,16 @@ the brainstorm decision record.
   `crucible:subagent-driven-development` § Plan changes mid-execution or
   a revert (E3), whose re-run starts again at wave 1 under its `-x<X>`
   names. Further waves are not an answer.
-- **The hatch's move (E9).** The controller moves the lane ledger aside
-  when the operator chooses the move; the plan phase's close, seeding
-  the standard route's ledger, writes its line 2 linking it.
+- **The hatch's move (E9).** When the operator chooses the move, the
+  controller moves the lane's `sdd/` directory aside whole, as
+  `sdd-lane/`, its ledger and its branch-review reports together, so
+  the standard route's reports reuse no path the lane wrote; the plan
+  phase's close, seeding the standard route's ledger, writes its line 2
+  linking `sdd-lane/ledger.md`, and seeds each finding the lane's last
+  branch-review pass left open and each lead the lane ledger holds
+  unruled as a `Lane: lead (concern):` line under `## Deferred minors`,
+  which the standard route's branch reviewer rules on. Brainstorming
+  takes that pass with the note and the diff.
   Brainstorming takes the operator's answer as its route entry and
   proposes no preset. The spec is written into the existing feature
   folder by the folder's resolve step, the one first spec write the
@@ -288,14 +299,17 @@ the brainstorm decision record.
   controller's to raise; a reviewer's finding or question may prompt
   it.
 - **Deferral ownership (E7).** The ownership closure the plan phase's
-  pre-pass runs means every file in the census and every `Deferred to
-  implementation:` marker, the spec's and the plan's, has exactly one
-  owning task. On the folded lane the round-0 pre-pass and its re-run
-  after each wave run it, in place of the routing table's close check;
-  a fix item that lands a marker there names the owning task's Contract
-  in the same item; and the folded close seeds no deferred list. A deferral is misplaced
-  where it sits in, or is named by, a task other than the one whose
-  scope it falls in.
+  pre-pass runs means every file in the census has exactly one owning
+  task and every `Deferred to implementation:` marker, the spec's and
+  the plan's, at least one: a spec marker whose call spans several
+  tasks is named in the Contract of each, each owner making the call
+  for its own sites. On the folded lane the round-0 pre-pass and its
+  re-run after each wave run it, in place of the routing table's close
+  check; a fix item that lands a marker there names its owning tasks'
+  Contracts in the same item; and the folded close seeds no deferred
+  list. A deferral is misplaced where a task names it whose scope it
+  does not touch, or where it sits in a task other than one whose scope
+  it falls in.
 - **The marked task at the branch review (E8).** The branch reviewer's
   card keeps one slot for tasks completed branch review only, each with
   its range, its report path, the brainstorm decision record's path
@@ -308,8 +322,9 @@ the brainstorm decision record.
 - **Slot cards, templates and generated agents.** A slot or card line
   removed or reshaped changes in its card and its template together,
   and `agents/` is regenerated: E8's slot, the branch-reviewer card's
-  `[MANDATE_REMINDER]` (the task lines owed) and its `lane` selector
-  text (Lane Fit), the redteam seat card's mark-grading clause and the
+  `[MANDATE_REMINDER]` (the task lines owed), its `[LEDGER_MINORS]`
+  clause on routed deferred items (E7) and its `lane` selector text
+  (Lane Fit), the redteam seat card's mark-grading clause and the
   seat template's pre-pass passage (`skills/redteaming/seat-prompt.md`,
   E7's owner check), and the implementer card's wave-4–5 rules. The
   implementer card keeps its fresh fix-only form for the no-resume
@@ -336,7 +351,8 @@ the brainstorm decision record.
 - **A1. No retired mechanism stated.** One-time check: a
   case-insensitive fixed-string search of `skills/`, `agents/`,
   `tests/` (the scanner's corpus excluded), `docs/decisions/`,
-  `docs/backlog/`, `docs/authoring.md`, `README.md` and `AGENTS.md`,
+  `docs/backlog/`, `docs/authoring.md`, `docs/upstream.md`, `README.md`
+  and `AGENTS.md`,
   for at least `pre-flight`,
   `cannot-verify`, `revert-and-replan`, `replanned`, `replanning`,
   `attempt <X>`, `breaker`, `wave-4`, `waves 4`, `<W>/5`,
@@ -405,7 +421,8 @@ and its template and card; `crucible:writing-plans`;
 `references/folded-lane.md`, `references/flip-paths.md`,
 `references/formats.md` and the seat card; `crucible:brainstorming` and
 `references/folded-lane-document.md` and `references/umbrellas.md`;
-`crucible:finishing-a-development-branch`; `README.md`'s line on
+`crucible:finishing-a-development-branch`; `docs/upstream.md`'s row on
+the upstream references; `README.md`'s line on
 adjudication; and every decision record that
 states them, by search — at least the task loop, adjudication, the
 branch review, plans, routes, the shared tree, model roles and effort,
