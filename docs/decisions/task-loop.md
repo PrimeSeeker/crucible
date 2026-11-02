@@ -111,25 +111,30 @@ the fix loop whatever the finding's severity label; quality findings enter
 by severity, BLOCKER and MAJOR in, MINOR to the ledger's deferred minors
 for the branch review.
 
-**Fix waves and the breaker.** A fix wave is one fix dispatch and its
-scoped re-review; a task gets five. Waves 1–3 resume the recorded
-implementer; waves 4–5 go to a fresh one, a tier bump where one exists
-and at the default role fresh eyes at the same tier
-(`docs/decisions/model-roles-and-effort.md`). Each finding is answered
-fixed, with its covering run and sibling instances, or NOT CONFIRMED with
-evidence for the adjudicator (`docs/decisions/adjudication.md`). When
-wave 5 leaves findings open, the controller parks a real finding nothing
-downstream builds on, with a ruling, and stops BLOCKED on a load-bearing
-one, with a decision ask. A BLOCKED reasoning problem gets a tier bump
-where one exists, and at the default role goes to the operator. No
-trigger escalates a stuck seat further.
+**Fix waves.** A fix wave is one fix dispatch and its scoped re-review;
+a task gets three, each resuming the recorded implementer, or, where the
+host exposes no resume operation, a fresh one given the open findings
+and the task's report file. Each finding is answered fixed, with its
+covering run and sibling instances, or NOT CONFIRMED with evidence for
+the adjudicator (`docs/decisions/adjudication.md`). Findings still open
+after the third wave stop the task: the controller puts them to the
+operator as a decision ask with a recommendation, park a finding with
+its reason, block the work, or another approach (a plan change or a
+revert), and records the ask and the answer under the ledger's
+`## Adjudication rulings`; further waves are not an answer. A BLOCKED
+reasoning problem gets a tier bump where one exists, and at the default
+role goes to the operator. No trigger escalates a stuck seat further.
 
-**Revert-and-replan.** Drift found after the fact, undisclosed and from
-binding content or with cross-task blast radius, is reverted to the last
-good commit and the task replanned, with an audit of the tasks that
-depend on it. Undisclosed advisory choices and disclosed but unjustified
-entries go to the fix loop instead
-(`crucible:subagent-driven-development § Rules every route shares`).
+**Drift found after the fact.** Drift found after the fact, undisclosed
+and from binding content or with cross-task blast radius, is a decision
+ask to the operator with the controller's recommendation: revert the
+task, with the later tasks the ask names as building on it, and run them
+again, or repair it, in its own fix loop while the task is open and
+otherwise in a branch-review fix wave counted against that loop's cap.
+A revert's `Task <N>: reverted — <the ruling>` line reopens the task,
+which runs again under `-x<X>` report names. Undisclosed advisory
+choices and disclosed but unjustified entries go to the fix loop instead
+(`crucible:subagent-driven-development § Drift found after the fact`).
 
 **Snapshot blessing.** Where a task claims behaviour is preserved, a
 changed snapshot or golden output is never blessed autonomously: a fresh
@@ -303,36 +308,52 @@ rather than a wave. The wiring dates from crucible's first design
 
 ### Fix waves and escalation
 
-Waves 4–5 go to a fresh implementer for upstream's reason: a loop that
-survives three resumes usually means the implementer cannot see its own
-problem. Upstream also moves those waves, and a BLOCKED reasoning
-problem, to a more capable model
-(`superpowers/skills/subagent-driven-development/SKILL.md`); crucible's
-escalation stops at the default role, since no escalation reaches the
-alternate role, and a reasoning problem there goes to the operator, who
-may name it (2026-10-13). On a stuck trigger the maintainer said: "Late
-waves are generally not stuck, just slowly mining the residual issues.
-We'll probably introduce a stuck trigger later." That also questions the
-reason for fresh eyes at waves 4–5
+Until 2026-11-02 a task got five waves. Waves 4–5 went to a fresh
+implementer, a tier up where one existed, for upstream's reason: a loop
+that survives three resumes usually means the implementer cannot see its
+own problem (`superpowers/skills/subagent-driven-development/SKILL.md`).
+At the cap a breaker had the controller park a real finding nothing
+downstream built on and stop BLOCKED on a load-bearing one. The audit
+behind the skill-text-rewrite umbrella (2026-11-01) found the breaker
+never ran in the runs it read, and the maintainer had said of late
+waves: "Late waves are generally not stuck, just slowly mining the
+residual issues. We'll probably introduce a stuck trigger later." Under
+the umbrella's rule that a guard which never ran keeps only its trigger,
+as a stop-and-ask line or a short cap with an operator ask, the fresh
+implementer, its tier step and the breaker went: three resumed waves,
+then the operator chooses what happens to the findings left open. The
+cap and that answer are the loop's termination guarantee. (Basis:
+external, for upstream's reason; measured, for the audit's count, a
+lower bound; judgment, accepted by the maintainer, for the umbrella's
+retirement and, at the execution-retirements brainstorm, for the cap of
+three and the ask's options.)
+
+Upstream also moves a BLOCKED reasoning problem to a more capable model;
+crucible's escalation stops at the default role, since no escalation
+reaches the alternate role, and a reasoning problem there goes to the
+operator, who may name it (2026-10-13). A stuck trigger stays out
 (`docs/backlog/escalation-and-effort.md`). (Basis: external; the
 maintainer's preference, for no stuck trigger; judgment, accepted by the
 maintainer, for the routing.)
 
-The cap, with the breaker, is the loop's termination guarantee. Upstream's
-breaker let the controller park a finding it judged wrong; crucible sends
-that finding to the adjudicator (`docs/decisions/adjudication.md`).
-(Basis: judgment, accepted by the maintainer.)
-
-### Revert-and-replan
+### Drift found after the fact
 
 Patching forward builds on work nobody reviewed against the plan, so
-drift from binding content found after the fact goes back to the last good
-commit (2026-08-05). The materiality bound came with the first design
-(2026-08-06): implementers do not log every micro-choice, and a disclosed
-entry is already visible to review. Whether impact evidence should choose
-between revert and repair is open
-(`docs/backlog/implementer-dispute-channel.md`). (Basis: judgment,
-accepted by the maintainer.)
+from 2026-08-05 drift from binding content found after the fact went
+back to the last good commit and the task was replanned, an attempt
+number in its `reverted` line. The materiality bound came with the first
+design (2026-08-06): implementers do not log every micro-choice, and a
+disclosed entry is already visible to review. The umbrella's audit found
+revert-and-replan never ran, and whether impact evidence should choose
+between revert and repair had been left open; on 2026-11-02 drift became
+a decision ask, the operator choosing revert or repair on the
+controller's recommendation. A revert's line reopens the task with no
+attempt number, since the resume rule reads a task's latest line; a
+DRIFT pass at the branch review no longer spends a wave, since a revert
+is the operator's answer each time and adds no cycle the operator did
+not choose (`docs/decisions/branch-review.md`). (Basis: judgment,
+accepted by the maintainer, for the first design and, at the
+execution-retirements brainstorm, for the operator ask.)
 
 ### Snapshot blessing
 
@@ -397,7 +418,10 @@ judgment, accepted by the maintainer, for the test.)
 
 - **A stuck trigger** escalating a seat past the default role, for now
   (§ Why).
-- **Patching undisclosed drift forward** (§ Why).
+- **Repairing or reverting undisclosed binding drift without the
+  operator's answer** (§ Why).
+- **Five fix waves, a fresh implementer at waves 4–5 and the breaker**,
+  retired 2026-11-02 (§ Why).
 - **Severity labels gating a failed intent, scope or deviation-audit
   verdict** (§ Why).
 - **Execution with no subagents**, upstream's executing-plans fallback
@@ -409,6 +433,16 @@ judgment, accepted by the maintainer, for the test.)
 
 ## Changes
 
+- 2026-11-02: the fix loop: three resumed waves, the `<W>/5` fix-wave
+  line now `<W>/3`, then an operator ask with park, block or another
+  approach, recorded under `## Adjudication rulings`; the fresh
+  implementer at waves 4–5, its tier escalation, the breaker and its
+  sense of "load-bearing" retired. Drift found after the fact an
+  operator ask, revert or repair; the revert-and-replan section, the
+  `reverted` line's attempt number (`replanned as attempt <X>`) and the
+  rule that a DRIFT pass spends a wave retired. After the
+  skill-text-rewrite umbrella's audit found the breaker and
+  revert-and-replan never ran.
 - 2026-10-30: the very-small lane implements inline only where the
   inline test holds, the change overdetermined and fitting the
   controller's context, reversing the 2026-10-29 lane dispatch by

@@ -50,7 +50,7 @@ and quality, checks each decision-record position's basis against the
 brainstorm decision record, judges the task's routed items in its
 deviation audit rather than in the sweep, and rules on its leads. The
 first full-scope pass after each such completion, the review's first
-pass or the pass resuming it after a revert-and-replan, writes one line
+pass or the pass resuming it after a revert, writes one line
 per task naming the judgments and what they raised; a pass missing a
 line it owes is refused as a review missing a verdict is, and SDD's
 Finish reads that line in place of the task's review file. A failed
@@ -99,8 +99,10 @@ or MAJOR: a pass that leaves only premise findings open ends the review,
 and one left open holds no merge gate by itself. The re-reviewer rules
 on each concern a fix report raises, and a re-review missing a ruling
 is missing a verdict. Off the
-very-small lane, a DRIFT finding hands its task to revert-and-replan and
-spends a wave; on the lane, drift from the note is a wave finding. A red
+very-small lane, a DRIFT finding is a decision ask to the operator,
+revert or repair: a repair rides a fix wave counted against the cap, and
+after a revert's re-run tasks complete the review resumes with a
+full-scope pass; on the lane, drift from the note is a wave finding. A red
 suite at SDD's Finish is a BLOCKER that opens a wave. Fixes are never the
 controller's, the very-small lane excepted
 (`crucible:requesting-code-review § The branch-review loop`).
@@ -193,13 +195,17 @@ problems and drift, and stopped it by severity rather than by banning
 iteration: the maintainer's intuition was that such a loop "shifts to
 lesser and lesser issues". Only a full-scope read clears the branch;
 scoped re-reviews verify waves. The cap of three waves is the loop's
-only termination guarantee, and a DRIFT pass
-spends a wave so that revert-and-replan cycles cannot bypass it. One fixer
+only termination guarantee. Until 2026-11-02 a DRIFT pass spent a wave
+so that revert-and-replan cycles could not bypass it; since a revert
+became the operator's answer each time, drift adds no cycle the operator
+did not choose, and the pass spends none
+(`docs/decisions/task-loop.md`). One fixer
 with the whole list is upstream's rule: per-finding fixers each rebuild
 context and re-run suites, and in a session upstream reports, a final
 review's fix wave cost more than all its tasks combined. (Basis:
-external; judgment, accepted by the maintainer, for the floor and the
-cap, the intuition quoted being the maintainer's.)
+external; judgment, accepted by the maintainer, for the floor, the
+cap and drift's operator ask, the intuition quoted being the
+maintainer's.)
 
 Minors stopped opening waves on 2026-10-07, after a prose branch's review
 ran two waves of line-wrap fixes, each seeding the next
@@ -377,6 +383,11 @@ accepted by the maintainer.)
 
 ## Changes
 
+- 2026-11-02: a DRIFT finding is an operator ask, revert or repair, a
+  repair riding a fix wave against the cap; the rule that a DRIFT pass
+  spends a wave (its `Branch wave` line with `commits none`) and the
+  hand-off to revert-and-replan retired, after the skill-text-rewrite
+  umbrella's audit found revert-and-replan never ran.
 - 2026-11-02: the handoff and the triage take the spec and plan
   reviews' `deferred-minor` entries, ledger lines with source `Spec` or
   `Plan`, each judged for its effect on the code alone; because fix

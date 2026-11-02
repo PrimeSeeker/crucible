@@ -44,10 +44,10 @@ default role, at an implementer, reviewer or redteam seat, never the
 blind verifier; and the operator's request, at any seat. A host map
 naming no alternate skips all three.
 
-**Escalation is the tier bump alone.** SDD's fix waves 4–5 go to a fresh
-implementer a tier up where one exists, and at the default role to fresh
-eyes at the same tier; a BLOCKED reasoning problem at the default role
-goes to the operator, who may name the alternate role. Where a host gives
+**Escalation is the tier bump alone.** A BLOCKED reasoning problem goes
+to an implementer a tier up where one exists, and at the default role to
+the operator, who may name the alternate role; SDD's fix waves escalate
+nothing, the operator deciding after the third. Where a host gives
 the bounded role the default role's model, escalation from it has no tier
 to bump to.
 
@@ -167,8 +167,9 @@ operator's authorization alone, with that history shown to the
 maintainer. Nothing escalates a stuck seat to it. The maintainer: "Late
 waves are generally not stuck, just slowly mining the residual issues.
 We'll probably introduce a stuck trigger later." The question is open in
-`docs/backlog/escalation-and-effort.md`, with whether SDD's fresh
-implementer at waves 4–5 keeps its reason. (Basis: the maintainer's
+`docs/backlog/escalation-and-effort.md`. SDD's fresh implementer a tier
+up at fix waves 4–5 went on 2026-11-02 with the five-wave loop
+(`docs/decisions/task-loop.md`). (Basis: the maintainer's
 preference; judgment, accepted by the maintainer, for the return.)
 
 ### Effort
@@ -232,6 +233,9 @@ operator's config key.
 
 ## Changes
 
+- 2026-11-02: SDD's escalation row for fix waves 4–5 and its fresh
+  implementer a tier up retired with the five-wave loop; the tier bump
+  stays for a BLOCKED reasoning problem (`docs/decisions/task-loop.md`).
 - 2026-11-02: round 1's swap is named at the campaign gate, the digest
   gate's new name, the design digest being retired
   (`docs/decisions/operator-steering.md`).

@@ -10,8 +10,8 @@ disputes raised together, to one fresh adjudicator seat, at any wave, on
 the standard route, the folded lane and the very-small lane, in the task
 loop and the branch review. The seat builds the diff of each finding's
 review range itself and rules each finding UPHELD or DISMISSED with a
-ruling. An upheld finding re-enters the loop and cannot be disputed again;
-one upheld at the task-loop cap goes to the breaker. A dismissed finding
+ruling. An upheld finding re-enters the loop, or after a task's third wave
+the operator ask, and cannot be disputed again. A dismissed finding
 is closed by its ruling. Every outcome is written under the ledger's
 `## Adjudication rulings`. A ruling the adjudicator marks as touching
 binding content, what binds in the spec or its umbrellas
@@ -27,9 +27,8 @@ adjudicator runs on the default role
 (`docs/decisions/model-roles-and-effort.md`;
 `crucible:subagent-driven-development § Rules every route shares`).
 
-**What the controller rules on.** Two kinds only: a plan-conflict finding
-on a diff it did not write (is the plan or the work wrong?), and the
-breaker's consequence rulings at the task-loop cap. A reviewer's finding
+**What the controller rules on.** One kind only: a plan-conflict finding
+on a diff it did not write (is the plan or the work wrong?). A reviewer's finding
 that a binding item's literal reading reaches a case its author did not
 consider is such a plan conflict. A plan conflict that is a design judgment
 goes to the operator as a decision ask instead, and a ruling of the
@@ -40,13 +39,14 @@ one it does not find contained going to the operator as a decision ask
 The contained amendments the controller confirms, the plan phase's
 included, are among its rulings in the ledger and the close readout. Everything else contested goes to the
 adjudicator: an implementer's NOT CONFIRMED, a finding the controller
-judges wrong, at the cap included, and any plan-conflict finding or park
-ruling on a diff the controller wrote (inline mode, the very-small lane).
+judges wrong, at the cap included, and any plan-conflict finding on a
+diff the controller wrote (inline mode, the very-small lane).
 A finding that both fails a verdict and conflicts with plan text is ruled
 first as a plan conflict; if the plan stands, the verdict failure enters
 the loop. The pre-flight scan before Task 1, which has no diff yet, is
-ruled on by the controller as plan conflicts. In the branch review the
-controller never parks a BLOCKER or MAJOR on its own ruling.
+ruled on by the controller as plan conflicts. The controller never parks
+a BLOCKER or MAJOR on its own ruling: in the task loop a finding is
+parked on the operator's answer after the third wave.
 
 **Outside the loops.** The standalone branch review is not an SDD route:
 the invoking agent handles its findings, and a disagreement that survives
@@ -78,8 +78,8 @@ had sent a contested finding to a fresh adjudicator at any wave since
 2026-09-27. On 2026-10-07 that became the rule on every route, replacing
 inline mode's guard and the lane's own rule, and the maintainer asked for
 it to be part of that feature. An upheld finding cannot come back as a
-dispute, and adjudication adds no wave, so the caps of five waves per task
-and three per branch still terminate the loops. (Basis: judgment, accepted
+dispute, and adjudication adds no wave, so the caps on a task's waves and
+a branch's still terminate the loops. (Basis: judgment, accepted
 by the maintainer.)
 
 ### Who rules
@@ -127,6 +127,11 @@ branch review's proposal accepted by the maintainer, for testing the ruling.)
 
 ## Changes
 
+- 2026-11-02: the breaker retired: the controller no longer rules on
+  consequences at the task-loop cap or parks a finding there, and a
+  finding upheld after a task's third wave joins the operator ask that
+  stops the task; after the skill-text-rewrite umbrella's audit found the
+  breaker never ran (`docs/decisions/task-loop.md`).
 - 2026-11-02: the containment rule's present-tense wording drops the
   words naming a mark beside binding content, since marks no longer exist and binding content is all
   it names. (Basis: judgment, accepted by the maintainer, in retiring

@@ -47,7 +47,7 @@ Your dispatch's context gives what the requirements cannot know: where
 the work fits, neighboring tasks' interfaces and decisions, any parked
 ledger entry nearby. Its plan reminder restates the binding acceptance
 criteria and the Decision Log obligation. A fix-only dispatch — a
-task's fresh implementer for fix waves 4–5, or a branch-review fix
+fresh implementer for a task's fix wave, or a branch-review fix
 wave — names the findings in its context: read the requirements, then
 work from After Review Findings.
 
@@ -121,9 +121,9 @@ Work from the worktree path your dispatch names (absolute). Binding:
   there, and your first reviewer may be the branch reviewer.
 
 An unlogged deviation is indistinguishable from drift, and drift from
-binding content is reverted, not patched forward. When in doubt, treat
-it as binding and escalate. Ambiguity is never license; a recorded
-deferral is an assignment.
+binding content goes to the operator, who may have it reverted. When in
+doubt, treat it as binding and escalate. Ambiguity is never license; a
+recorded deferral is an assignment.
 
 A premise finding (the shared reference's § Premise findings) goes in
 your report under its own heading, with status DONE_WITH_CONCERNS where
