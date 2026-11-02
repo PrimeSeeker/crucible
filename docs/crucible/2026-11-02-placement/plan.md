@@ -74,7 +74,7 @@ Overlaps are all ordered by the dependency order above; no two tasks run at once
 
 ## Acceptance mapping
 
-- **A1 (removal lists)** — one-time, every task: its report lists each passage removed or moved beside the owner site that states its rule, and, for T2, each rule a rendered template gained, which must be a correction.
+- **A1 (removal lists)** — one-time, every task: its report lists each passage removed or moved beside the owner site that states its rule, and, for every task that changes `seat-rules.md` or a template source (T2, and T5, T6 or T8 where they edit a paired section), each rule a rendered template gained, which must be a correction.
 - **A2 (the splice)** — standing tests: rendered templates and agents match their sources, every named section exists, the budget counts by D16 (T1); every citation of a shared section in a rendered template names a section that template takes (T2).
 - **A3 (the corrections)** — one-time: each correction's owning task (the task whose Contract names it) quotes the command and output showing its own sites say it; T8 then runs the tree-wide check that no copy anywhere says otherwise, for every item, and the paired texts' agreement.
 - **A4 (the suite)** — standing: every task ends on a full green suite (`python -m pytest tests/`), quoted from the run.
