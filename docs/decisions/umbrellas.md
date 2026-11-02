@@ -238,11 +238,21 @@ As the spec campaign first wrote that rule, it joined the binding
 clause at each of the clause's sites. The plan phase counted thirteen
 skill sites, several in no task's file list, and its controller
 confirmed a contained amendment giving the rule one home, in the shared
-reference beside the premise line, which § Children points to; the
-restated clause itself is the skill-text rewrite's to collapse
-(`docs/backlog/skill-text-rewrite.md`). (Basis: judgment, an agent's
-call the maintainer has not ruled on: a contained amendment the agent
-confirmed.)
+reference beside the premise line, which § Children points to. (Basis:
+judgment, an agent's call the maintainer has not ruled on: a contained
+amendment the agent confirmed.)
+
+The restated clause itself was collapsed on 2026-11-02: what a child's
+seat flags under its umbrella is the whole set § Edits names a binding
+change, a change to another started child's entry included, stated for
+controllers in § Children and § Edits and for seats once in the shared
+seat reference's two statements of what binds, which each template
+takes by splice; the controller-side statement of what binds in a spec
+is the opening of `skills/redteaming/references/flip-paths.md`, and
+other skill sites point to these. The copies had drifted: § Children
+had left out another child's entry. (Basis: for the full set, the
+controller's proposal, accepted by the maintainer; for the owners, the
+controller's design, accepted by the maintainer.)
 
 ### Binding changes off the child's branch
 
@@ -356,6 +366,12 @@ agent's call the maintainer has not ruled on: a fix in the spec
 campaign's round 0, named in that round's readout and departing from a
 detail of the form the maintainer accepted.)
 
+The seats' report names open with a fixed `closing-`, so no lens the
+controller names can make a basename a host's report-name rules refuse
+(`docs/decisions/instruments.md`;
+`skills/using-crucible/references/<runtime>-dispatch.md`). (Basis:
+judgment, an agent's call the maintainer has not ruled on.)
+
 ## Rejected
 
 - **A frozen parent amended from its children**, and **a frozen parent
@@ -376,6 +392,12 @@ detail of the form the maintainer accepted.)
 
 ## Changes
 
+- 2026-11-02: the clause binding a child through its umbrella line is
+  stated once per reader (the umbrellas reference's Children and Edits,
+  flip-paths' opening, the shared seat reference), and § Children's
+  finding rule names the whole binding-change set, another started
+  child's entry included, where its copy had drifted; the closing
+  review's report-name prefix keeps its reason here.
 - 2026-11-02: the shared seat reference's citations follow its rename
   to `seat-rules.md`.
 - 2026-11-02: a decision ask other than a premise ask still open at an
