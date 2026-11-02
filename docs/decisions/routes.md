@@ -331,9 +331,11 @@ small preset or the waiver for its work.
 
 ## Changes
 
-- 2026-11-02: the branch reviewer's Lane Fit section and its shape
-  verdict (EXCEEDS SHAPE, WITHIN SHAPE) go, its goal half being the
-  branch review's goal check, run on the lane with the note's Intent;
+- 2026-11-02: the branch reviewer's Lane Fit section, its shape
+  verdict (EXCEEDS SHAPE, WITHIN SHAPE) and its goal verdict (GOAL
+  MATCHES, GOAL DIFFERS) go, its goal half being the branch review's
+  goal check, run on the lane with the note's Intent, and the
+  branch-reviewer card's `lane` selector no longer names Lane Fit;
   the upgrade hatch becomes one stop-and-ask line, the operator's answer
   its route entry, its `Hatch:` ledger line and the rest of its
   procedure going; on a move the lane's `sdd/` is moved aside as

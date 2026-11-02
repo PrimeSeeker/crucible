@@ -444,7 +444,8 @@ records that cite "the audit" draw on these figures. (Basis: measured.)
 
 - 2026-11-02: on the very-small lane the goal check is the branch
   reviewer's own, run with the note's Intent, no longer part of Lane
-  Fit, which is retired (`docs/decisions/routes.md`).
+  Fit, which is retired with its GOAL MATCHES and GOAL DIFFERS verdict
+  (`docs/decisions/routes.md`).
 - 2026-11-02: a labelled change has nothing to dispute, worded without
   the adjudicator, since a dispute no longer always reaches one
   (`docs/decisions/adjudication.md`).
