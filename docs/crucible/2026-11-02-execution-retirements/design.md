@@ -260,8 +260,11 @@ the brainstorm decision record.
   completed task is recorded under `## Adjudication rulings`, where the
   done rule does not read, and rides the branch review's next fix wave
   as a ruling change (`crucible:requesting-code-review` § The
-  branch-review loop, changes that ride a wave), opening that wave where
-  none is open, so its fix base and report names are that wave's.
+  branch-review loop, changes that ride a wave), so its fix base and
+  report names are that wave's. One ruled before the branch review
+  begins waits for it and rides its first fix wave, opening one after
+  its first full-scope pass where that pass opens none; one ruled once
+  the review has begun opens the next wave where none is open.
   After a `3/3` fix-wave line, a resumed controller goes to the
   operator ask (E1), recorded open under `## Adjudication rulings`, not
   to a fourth wave. The ledger's deferred list, the ambiguous-liveness
@@ -290,7 +293,10 @@ the brainstorm decision record.
   linking `sdd-lane/ledger.md`, and seeds each finding the lane's last
   branch-review pass left open and each lead the lane ledger holds
   unruled as a `Lane: lead (concern):` line under `## Deferred minors`,
-  which the standard route's branch reviewer rules on. Brainstorming
+  which the standard route's branch reviewer rules on. A carried
+  finding's line keeps its staked severity: one the reviewer confirms
+  counts at that severity, and a carried BLOCKER or MAJOR it dismisses
+  reaches the close readout with its ruling. Brainstorming
   takes that pass with the note and the diff.
   Brainstorming takes the operator's answer as its route entry and
   proposes no preset. The spec is written into the existing feature
