@@ -55,9 +55,12 @@ to install it: `README.md`; the layout: `docs/dual-runtime.md`.
   by `tests/test_claudeism_scanner.py`) checks shipped text for
   host-specific terms, Claude and Codex model names included; its
   allowlist is `tests/claudeism-allowlist.txt`.
-- **`agents/` is generated.** Never edit it by hand: edit the dispatch
-  template under `skills/`, then run `python tools/instrument_agents.py
-  write`. The suite runs its `check` mode.
+- **The seven dispatch templates and `agents/` are generated.** Never edit
+  either by hand: edit the template's source beside it (`seat-prompt.md`'s
+  is `seat-prompt.source.md`) or the shared seat reference
+  (`skills/subagent-driven-development/references/seat-rules.md`), then
+  run `python tools/instrument_agents.py write`. The suite runs its `check`
+  mode.
 - **Interpreters.** A hook's script is bash: a hook runs with no agent
   around it to recover from a missing interpreter. A script a workflow step
   runs may be stdlib Python, since the agent running it sees a failure and
@@ -74,7 +77,8 @@ to install it: `README.md`; the layout: `docs/dual-runtime.md`.
   produces; rules every seat follows go in one shared reference the
   templates point to, once one exists.
 - **The prose budget.** `tests/prose-budget.txt` holds each skill
-  directory's word count, and the suite fails when a count rises above it
+  directory's word count of hand-edited text (a rendered template is not
+  counted; its source is), and the suite fails when a count rises above it
   or falls more than 50 words below it. A commit that grows a skill raises
   its number, and its body says what the words buy or what went in
   exchange; one that shrinks a skill lowers it.

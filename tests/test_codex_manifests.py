@@ -303,7 +303,8 @@ def test_marketplace_sources_point_at_this_repository() -> None:
 
 def test_codex_manifest_paths_point_at_the_canonical_tree() -> None:
     """No copied or generated skill tree: the Codex package points at the
-    one canonical ``skills/`` directory."""
+    one canonical ``skills/`` directory, the rendered templates inside it at
+    the paths both hosts read."""
     data = _load(CODEX_MANIFEST)
     assert data["skills"] == "./skills/"
     assert (REPO_ROOT / "skills").is_dir()

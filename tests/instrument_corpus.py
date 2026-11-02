@@ -7,9 +7,11 @@ each carrying a copy. Every grammar below is structure -- a card's ``##``
 sections and ``- <slot>: <rule>`` lines, a template's ``[[when ...]]`` /
 ``[[end]]`` passages -- never a sentence of the shipped prose.
 
-The instrument list and each family's runtime slot are imported from
-``tools/instrument_agents.py``, the generator that reads the templates;
-nothing here restates them.
+The instrument list, each family's runtime slot, a template's source path
+and the shared seat reference's path are imported from
+``tools/instrument_agents.py``, the generator that renders the templates
+from their sources; nothing here restates them. The grammars read the
+rendered templates, the text an instrument receives.
 """
 
 from __future__ import annotations
@@ -70,6 +72,17 @@ def raw(relpath: str, root: Path = REPO_ROOT) -> str:
 def instruments() -> dict[str, str]:
     """Instrument name -> template path, from the generator."""
     return dict(load_generator().INSTRUMENTS)
+
+
+def source_path(template: str) -> str:
+    """The hand-edited source *template* is rendered from, by the
+    generator's naming."""
+    return load_generator().source_path(template)
+
+
+def shared_reference() -> str:
+    """The shared seat reference whose sections a source may take."""
+    return load_generator().SHARED_REFERENCE
 
 
 def family(template: str) -> str:

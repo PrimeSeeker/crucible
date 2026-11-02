@@ -5,22 +5,27 @@
 **Seven instruments, generated as agents.** Seven templated seats are
 instruments: the redteam seat, the blind verifier, the terminal pass, the
 implementer, the task reviewer, the re-reviewer and the branch reviewer
-(`INSTRUMENTS` in `tools/instrument_agents.py`). Each has a template, the
-one hand-edited home of its fixed text, and a sibling slot card
-(`<template>.slots.md`) holding every dispatch-time slot with its fill
-rule, its selectors and its dispatch parameters. A passage the card does
-not select is inert: neither performed, attested nor mentioned. For
-Claude Code the generator renders each template into `agents/<name>.md`,
-filling only the runtime name; the agents are committed, never edited by
-hand, and the suite runs the generator's check mode. Their frontmatter
-carries a name, a description and a default model alias, and no tool
-restriction. On Claude Code a dispatch names `crucible:<name>` and its
+(`INSTRUMENTS` in `tools/instrument_agents.py`). Each has a template and
+a sibling slot card (`<template>.slots.md`) holding every dispatch-time
+slot with its fill rule, its selectors and its dispatch parameters. A
+passage the card does not select is inert: neither performed, attested
+nor mentioned. The template is rendered from a hand-edited source beside
+it (`seat-prompt.source.md` for `seat-prompt.md`), the one home of the
+seat's own text: the generator splices in each section of the shared
+seat reference
+(`skills/subagent-driven-development/references/seat-rules.md`) the
+source names by its heading, and writes the template at the path every
+host reads. For Claude Code it renders each template into
+`agents/<name>.md`, filling only the runtime name. Templates and agents
+are committed and never edited by hand, and the suite runs the
+generator's check mode; the splice's rules are in the generator's
+docstring. An agent's frontmatter carries a name, a description and a
+default model alias, and no tool restriction. On Claude Code a dispatch names `crucible:<name>` and its
 model and sends the filled card as the whole prompt; on Codex, and on
 Claude Code where the agent is not offered, the controller fills the card
 and the template and dispatches both
 (`skills/using-crucible/references/claude-code-dispatch.md`,
-`skills/using-crucible/references/codex-dispatch.md`). The three campaign
-templates keep their shared preamble as three copies.
+`skills/using-crucible/references/codex-dispatch.md`).
 
 **One dispatch composition.** Every fresh seat, whether an instrument, a
 template-path dispatch or a controller-composed dispatch no template
@@ -102,8 +107,8 @@ to about 1,113 tokens (`claude plugin details`, Claude Code 2.1.285), and
 one live dispatch passed all four of its smoke criteria. (Basis:
 measured; judgment, accepted by the maintainer, for the design.)
 
-The agents are generated so that the template stays the text's one home;
-the check mode catches a stale agent at build time. They carry no adapter
+The agents are generated so that a seat's text keeps one home; the check
+mode catches a stale agent at build time. They carry no adapter
 text since 2026-10-07: the generator had spliced the whole Claude Code
 adapter into all seven, 27.9% to 46.0% of each file, while a seat's work
 is fixed by its template and the host already tells a seat its tools. The
@@ -121,10 +126,38 @@ any of three forms. Installing crucible's roles into the user's Codex
 configuration waits on a cost audit of Codex controllers
 (`docs/backlog/codex-agent-role-install.md`). (Basis: measured.)
 
-The shared preamble of the three campaign templates stays as three
-copies (2026-10-13): on Codex the controller fills a
-template itself, and an include would add a resolution step there.
-(Basis: judgment, accepted by the maintainer.)
+From 2026-10-13 the shared preamble of the three campaign templates
+stayed as three copies: on Codex the controller fills a template itself,
+and an include would have added a resolution step there. (Basis:
+judgment, accepted by the maintainer.) The splice removes that objection
+(§ The splice).
+
+### The splice
+
+On 2026-11-02 the seat templates gained hand-edited sources and a
+build-time splice. The clauses every seat, or every review seat,
+follows were copied into the seven templates, and the copies drifted; a
+shared reference each seat reads at startup gives them one home, but a
+seat that skipped the read would lose the rules it carries, and nothing
+measures how often that happens. Spliced at build time, the shared text
+reaches each seat inside its own text, and each seat gets only the
+sections its source names. The rendered template sits at the path every
+host's dispatch already reads, so Codex resolves nothing and the
+template-path dispatch is unchanged. The cost: where a controller fills
+a template itself (Codex, and Claude Code's fallback path), each dispatch
+carries the spliced sections in full. The idea of generating the text
+rather than having seats read it was the maintainer's; the mechanism an
+agent's design, which the maintainer accepted. (Basis: the maintainer's
+preference, for generating the text; judgment, accepted by the
+maintainer, for the mechanism.)
+
+The generator stays standard-library Python: it fills one slot and
+splices named sections. A template engine (Jinja2) is to be adopted once
+it needs conditionals or loops, or card filling moves into a script;
+dev-time dependencies are acceptable to the maintainer, so a dependency
+is no bar then. An agent's proposal, which the maintainer accepted, and
+reconfirmed after saying such dependencies were acceptable. (Basis:
+judgment, accepted by the maintainer.)
 
 Instrument agents carry no `tools` or `disallowedTools`: a reviewer needs
 to write, and correct, its own report file, so read-only stays a conduct
@@ -263,8 +296,8 @@ judgment, accepted by the maintainer.)
   session start and its card at each dispatch, so a plugin change
   mid-session can skew them, as it can any session-start text; a new
   session clears it (declined 2026-09-30).
-- **A generator include for the campaign templates' shared preamble**: it
-  would add a resolution step on Codex (§ Why).
+- **A template engine for the generator**, until it needs conditionals
+  or loops, or card filling moves into a script (§ The splice).
 - **A fixed header for a controller-saved report**: its one reader is
   gone; a first-line mark does the remaining job (§ Why).
 - **Seat-facing wording against skipped report writes**: a control
@@ -273,6 +306,12 @@ judgment, accepted by the maintainer.)
 
 ## Changes
 
+- 2026-11-02: each template is rendered from a hand-edited source beside
+  it, the generator splicing in the shared seat reference's sections the
+  source names and writing the template at its path, checked by the
+  generator's check mode; the rejected generator include is dropped, its
+  objection gone; no template engine until the generator needs one; so
+  that the clauses the seat templates share have one hand-edited home.
 - 2026-11-02: the shared reference renamed `seat-rules.md`, as it becomes
   the home of the clauses the seat templates share.
 - 2026-11-02: the redteam seat's card gains the `goal-check` selector

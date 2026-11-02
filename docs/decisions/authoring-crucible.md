@@ -32,7 +32,9 @@ together with the references its stubs name, so a test follows text that
 moved.
 
 **The prose budget.** `tests/prose-budget.txt` holds each skill
-directory's word count, and `tests/test_prose_budget.py` fails when a
+directory's word count of hand-edited text: every `*.md` in it but the
+templates `tools/instrument_agents.py` renders from their sources, which
+the sources already count. `tests/test_prose_budget.py` fails when a
 count is above its number or more than 50 words below it. A commit that
 grows a skill raises the number and says in its body what the words buy
 or what went in exchange; one that shrinks a skill lowers it. Restored
@@ -149,6 +151,19 @@ directory makes the total visible in every commit. The maintainer, on
 a series of raises)". (Basis: measured; judgment, accepted by the
 maintainer.)
 
+Until 2026-11-02 every `*.md` under a skill directory was hand-edited,
+so counting them all counted what an author maintains. From then the
+seat templates are rendered from sources beside them with shared
+sections spliced in, and counting a rendered template beside its source
+would count its text twice, spliced sections once per template that
+takes them, and say nothing about what an author maintains. The count
+takes each hand-edited file and no rendered template; what a seat
+carries at dispatch, the rendered size, is a different measure, reported
+beside it where a feature measures it. An agent's proposal, which the
+maintainer accepted on a decision ask, reading the skill text rewrite's
+"no rule changes, but one" as not covering this authoring check.
+(Basis: judgment, accepted by the maintainer.)
+
 ### Build history
 
 On 2026-08-29 the maintainer directed that code comments carry no
@@ -261,6 +276,9 @@ the build-history rule included (`skills/using-crucible/SKILL.md`).
 
 ## Changes
 
+- 2026-11-02: the prose budget counts hand-edited text, every `*.md` of
+  a skill but the templates the generator renders, since a rendered
+  template beside its source would count its text twice.
 - 2026-10-20: records cite skill headings as
   `crucible:<skill> § <heading>`, a bare `README.md` citation as the
   root README, and upstream paths with the `superpowers/` prefix; the

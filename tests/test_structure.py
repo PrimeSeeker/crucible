@@ -25,8 +25,9 @@ Skill directories, router index and citations:
   non-SKILL ``.md`` file under ``skills/`` must be cited -- its basename
   must appear in at least one OTHER ``.md`` file under ``skills/`` or
   ``hooks/``. SKILL.md files and hooks/README.md are roots and need no
-  citation; non-md siblings (scripts, examples with other extensions)
-  are outside the orphan rule.
+  citation; a template source the generator renders
+  (``tools/instrument_agents.py``) counts as cited by it; non-md siblings
+  (scripts, examples with other extensions) are outside the orphan rule.
 """
 
 import json
@@ -34,6 +35,8 @@ import re
 from pathlib import Path
 
 import pytest
+
+from instrument_corpus import load_generator, source_path
 
 REPO_ROOT = Path(__file__).resolve().parent.parent
 MANIFEST = REPO_ROOT / ".claude-plugin" / "plugin.json"
@@ -274,22 +277,55 @@ def test_skill_md_cited_sibling_files_exist() -> None:
 # --- orphan rule --------------------------------------------------------
 
 
-def test_no_orphan_md_files_in_skill_dirs() -> None:
-    all_md = sorted(SKILLS_DIR.rglob("*.md"))
-    hooks_md = sorted((REPO_ROOT / "hooks").rglob("*.md"))
+def _generated_sources() -> set[str]:
+    """The template sources the generator renders: read by
+    ``tools/instrument_agents.py``, which names each, so no prose cites
+    them."""
+    return {source_path(t) for t in load_generator().INSTRUMENTS.values()}
+
+
+def orphan_md_files(root: Path) -> list[str]:
+    """Non-SKILL ``.md`` files under *root*'s ``skills/`` that no other
+    ``.md`` under ``skills/`` or ``hooks/`` cites by basename, and that are
+    not a source the generator renders."""
+    all_md = sorted((root / "skills").rglob("*.md"))
+    hooks_md = sorted((root / "hooks").rglob("*.md"))
     corpus = {
         p: p.read_text(encoding="utf-8") for p in all_md + hooks_md
     }
+    sources = _generated_sources()
     problems: list[str] = []
     for p in all_md:
         if p.name == "SKILL.md":
             continue  # roots: loaded via the skill mechanism itself
+        rel = p.relative_to(root).as_posix()
+        if rel in sources:
+            continue  # cited by the generator
         cited = any(
             p.name in text for other, text in corpus.items() if other != p
         )
         if not cited:
             problems.append(
-                f"{p.relative_to(REPO_ROOT).as_posix()}: orphan -- no "
-                f"other .md under skills/ or hooks/ cites it"
+                f"{rel}: orphan -- no other .md under skills/ or hooks/ "
+                f"cites it, and the generator renders no template from it"
             )
+    return problems
+
+
+def test_no_orphan_md_files_in_skill_dirs() -> None:
+    problems = orphan_md_files(REPO_ROOT)
     assert not problems, "\n".join(problems)
+
+
+def test_orphan_check_reaches_template_sources(tmp_path: Path) -> None:
+    """Break: a source the generator renders reported as an orphan, or a
+    stray source no template is rendered from passing as cited."""
+    template = sorted(load_generator().INSTRUMENTS.values())[0]
+    skill_dir = tmp_path / Path(template).parent
+    skill_dir.mkdir(parents=True)
+    (tmp_path / "hooks").mkdir()
+    (skill_dir / "SKILL.md").write_bytes(b"No citations here.\n")
+    (tmp_path / source_path(template)).write_bytes(b"A source.\n")
+    (skill_dir / "stray.source.md").write_bytes(b"Left behind.\n")
+    stray = (skill_dir / "stray.source.md").relative_to(tmp_path).as_posix()
+    assert [p.split(":")[0] for p in orphan_md_files(tmp_path)] == [stray]

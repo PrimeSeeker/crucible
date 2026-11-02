@@ -2,7 +2,8 @@
 
 The seven instrument templates (``tools/instrument_agents.py``'s
 ``INSTRUMENTS``) are prose an agent reads, and this module pins none of
-their wording. What it checks is where a template's text meets a reader
+their wording. It reads the rendered templates, shared sections spliced
+in, as the instruments receive them, not their sources. What it checks is where a template's text meets a reader
 that is not a model:
 
 - **the selectors** -- each selector-keyed passage of a template reaches

@@ -1,12 +1,16 @@
-"""The generated instrument agents, their generator, and the grammar both
-read.
+"""The generated templates and instrument agents, their generator, and the
+grammar both read.
 
-The ``agents/<name>.md`` files are generated from the templates by
-``tools/instrument_agents.py`` and committed; its check mode is what makes
-drift a failing test. This module covers:
+The seven templates are rendered from their sources and the shared seat
+reference, and the ``agents/<name>.md`` files from the templates, by
+``tools/instrument_agents.py``; both are committed, and its check mode is
+what makes drift a failing test. This module covers:
 
 - the check and write modes, driven through the real script: clean on the
-  tree, failing on a seeded template edit;
+  tree, failing on a seeded source edit or a hand edit to a generated file;
+- the splice, on a fixture reference: each include replaced by its
+  section, an unresolvable include refused, an include inside a selector
+  passage read only under its value;
 - the render itself, re-derived here: each agent is its template's body
   with the runtime slot filled, nothing left unfilled and nothing added;
 - the frontmatter, parsed the strict way the host's loader needs it;
@@ -42,18 +46,28 @@ from instrument_corpus import (
     family,
     instruments,
     load_generator,
+    passages,
+    resolve,
     runtime_slots,
     selector_values,
+    shared_reference,
+    source_path,
 )
 
 GENERATOR = REPO_ROOT / "tools" / "instrument_agents.py"
 INSTRUMENTS = instruments()
 TEMPLATES = sorted(INSTRUMENTS.values())
 SEAT = INSTRUMENTS["redteam-seat"]
+SHARED = shared_reference()
 
 
 def agent_file(name: str) -> str:
     return load_generator().agent_path(name)
+
+
+def stale_paths(stdout: str) -> set[str]:
+    """The paths a check run names as stale, one ``stale: <path>`` line each."""
+    return set(re.findall(r"^stale: (\S+)", stdout, re.M))
 
 
 def run_generator(*args: str) -> subprocess.CompletedProcess[str]:
@@ -71,9 +85,11 @@ def run_generator(*args: str) -> subprocess.CompletedProcess[str]:
 
 def copy_generator_inputs(dest: Path) -> None:
     """The files the generator reads and writes, copied under *dest* at
-    their repo-relative paths: the templates and the agents, nothing else --
-    so a clean check on the copy shows the generator reads no other file."""
-    for rel in [*TEMPLATES, *map(agent_file, INSTRUMENTS)]:
+    their repo-relative paths: the template sources, the shared seat
+    reference, the rendered templates and the agents, nothing else -- so a
+    clean check on the copy shows the generator reads no other file."""
+    sources = [source_path(t) for t in TEMPLATES]
+    for rel in [*sources, SHARED, *TEMPLATES, *map(agent_file, INSTRUMENTS)]:
         target = dest / rel
         target.parent.mkdir(parents=True, exist_ok=True)
         shutil.copyfile(REPO_ROOT / rel, target)
@@ -99,17 +115,27 @@ def test_instrument_agent_check_is_clean_on_the_tree() -> None:
 @pytest.mark.parametrize(
     "edited, stale",
     [
-        # One template edited, in each family: exactly its agent goes stale.
-        (INSTRUMENTS["blind-verifier"], {"blind-verifier"}),
-        (INSTRUMENTS["branch-reviewer"], {"branch-reviewer"}),
+        # A source edited, in each family: its template and agent go stale.
+        (
+            source_path(INSTRUMENTS["blind-verifier"]),
+            {INSTRUMENTS["blind-verifier"], agent_file("blind-verifier")},
+        ),
+        (
+            source_path(INSTRUMENTS["branch-reviewer"]),
+            {INSTRUMENTS["branch-reviewer"], agent_file("branch-reviewer")},
+        ),
+        # A hand edit to a generated file: exactly that file goes stale.
+        (INSTRUMENTS["task-reviewer"], {INSTRUMENTS["task-reviewer"]}),
+        (agent_file("terminal-pass"), {agent_file("terminal-pass")}),
     ],
-    ids=["redteaming-template", "sdd-template"],
+    ids=["redteaming-source", "sdd-source", "template-hand-edit", "agent-hand-edit"],
 )
 def test_instrument_agent_seeded_edit_fails_the_check(
     tmp_path: Path, edited: str, stale: set[str]
 ) -> None:
-    """Break: a template edit that the check does not see, or a check that
-    fails without naming what is stale."""
+    """Break: a source edit that the check does not see, a hand edit to a
+    rendered template or an agent passing it, or a check that fails without
+    naming exactly what is stale."""
     copy_generator_inputs(tmp_path)
     assert run_generator("check", "--root", str(tmp_path)).returncode == 0
 
@@ -118,40 +144,193 @@ def test_instrument_agent_seeded_edit_fails_the_check(
     result = run_generator("check", "--root", str(tmp_path))
 
     assert result.returncode == 1
-    named = set(re.findall(r"agents/[a-z-]+\.md", result.stdout))
-    assert named == {agent_file(name) for name in stale}
+    assert stale_paths(result.stdout) == stale
 
 
 def test_instrument_agent_seeded_missing_agent_fails_the_check(
     tmp_path: Path,
 ) -> None:
-    """Break: a deleted agent passing the check (nothing to compare against)."""
+    """Break: a deleted agent or rendered template passing the check
+    (nothing to compare against)."""
     copy_generator_inputs(tmp_path)
     (tmp_path / agent_file("re-reviewer")).unlink()
+    (tmp_path / INSTRUMENTS["implementer"]).unlink()
     result = run_generator("check", "--root", str(tmp_path))
     assert result.returncode == 1
-    assert set(re.findall(r"agents/[a-z-]+\.md", result.stdout)) == {
-        agent_file("re-reviewer")
+    assert stale_paths(result.stdout) == {
+        agent_file("re-reviewer"),
+        INSTRUMENTS["implementer"],
     }
 
 
 def test_instrument_agent_write_mode_regenerates_to_a_clean_check(
     tmp_path: Path,
 ) -> None:
-    """Break: write mode leaving a stale, missing or CRLF agent behind --
-    the author's one step after a template edit."""
+    """Break: write mode leaving a stale, missing or CRLF template or agent
+    behind -- the author's one step after a source edit -- or a second
+    write changing anything."""
     copy_generator_inputs(tmp_path)
     shutil.rmtree(tmp_path / "agents")
-    seat = tmp_path / SEAT
+    for template in TEMPLATES:
+        (tmp_path / template).unlink()
+    seat = tmp_path / source_path(SEAT)
     seat.write_bytes(seat.read_bytes() + b"\nOne more line.\n")
 
     assert run_generator("write", "--root", str(tmp_path)).returncode == 0
     assert run_generator("check", "--root", str(tmp_path)).returncode == 0
-    for name in INSTRUMENTS:
-        assert b"\r" not in (tmp_path / agent_file(name)).read_bytes(), name
-    assert "One more line." in (tmp_path / agent_file("redteam-seat")).read_text(
-        "utf-8"
+    generated = [*TEMPLATES, *map(agent_file, INSTRUMENTS)]
+    for rel in generated:
+        assert b"\r" not in (tmp_path / rel).read_bytes(), rel
+    for rel in (SEAT, agent_file("redteam-seat")):
+        assert "One more line." in (tmp_path / rel).read_text("utf-8"), rel
+
+    before = {rel: (tmp_path / rel).read_bytes() for rel in generated}
+    again = run_generator("write", "--root", str(tmp_path))
+    assert (again.returncode, again.stdout) == (0, "")
+    assert {rel: (tmp_path / rel).read_bytes() for rel in generated} == before
+
+
+# --- the splice ------------------------------------------------------------
+
+#: A shared seat reference written for these tests, so each expected
+#: rendering is a literal rather than a read of the shipped reference.
+_FIXTURE_REFERENCE = (
+    "# Fixture reference\n"
+    "\n"
+    "Intro text no source can take.\n"
+    "\n"
+    "## Alpha rules\n"
+    "\n"
+    "Alpha line one.\n"
+    "\n"
+    "```\n"
+    "## Inside a fence, not a heading\n"
+    "```\n"
+    "\n"
+    "### Alpha detail\n"
+    "\n"
+    "Alpha detail line.\n"
+    "\n"
+    "\n"
+    "## Beta rules\n"
+    "\n"
+    "Beta line.\n"
+)
+_ALPHA = (
+    "## Alpha rules\n"
+    "\n"
+    "Alpha line one.\n"
+    "\n"
+    "```\n"
+    "## Inside a fence, not a heading\n"
+    "```\n"
+    "\n"
+    "### Alpha detail\n"
+    "\n"
+    "Alpha detail line."
+)
+_BETA = "## Beta rules\n\nBeta line."
+
+
+def _seed_splice_tree(tmp_path: Path, reference: str = _FIXTURE_REFERENCE) -> None:
+    copy_generator_inputs(tmp_path)
+    (tmp_path / SHARED).write_bytes(reference.encode("utf-8"))
+
+
+def _insert_after(rel: str, root: Path, anchor_line: str, new: str) -> str:
+    """Insert *new* after the first line equal to *anchor_line* in *rel*
+    under *root*; return the source text before the edit."""
+    path = root / rel
+    text = path.read_bytes().decode("utf-8")
+    lines = text.split("\n")
+    at = lines.index(anchor_line) + 1
+    path.write_bytes("\n".join([*lines[:at], new, *lines[at:]]).encode("utf-8"))
+    return text
+
+
+def test_splice_replaces_each_include_with_its_section(tmp_path: Path) -> None:
+    """Break: an include left as a marker, a section cut short at its
+    ``###`` subsection or at a ``##`` line inside a code fence, or run on
+    into the next ``##`` section, its heading
+    dropped, or the agent rendered from anything but the spliced template."""
+    _seed_splice_tree(tmp_path)
+    source = source_path(SEAT)
+    title = _raw(source).split("\n", 1)[0]
+    original = _insert_after(
+        source, tmp_path, title, "\n[[include Alpha rules]]\n\n[[include Beta rules]]"
     )
+
+    assert run_generator("write", "--root", str(tmp_path)).returncode == 0
+    rendered = (tmp_path / SEAT).read_text("utf-8")
+    lines = original.split("\n")
+    expected = "\n".join([lines[0], "", _ALPHA, "", _BETA, *lines[1:]])
+    assert rendered == expected
+    assert _BETA in (tmp_path / agent_file("redteam-seat")).read_text("utf-8")
+    assert run_generator("check", "--root", str(tmp_path)).returncode == 0
+
+
+@pytest.mark.parametrize(
+    "include, reference, named",
+    [
+        ("[[include Gamma rules]]", _FIXTURE_REFERENCE, "Gamma rules"),
+        ("[[include Alpha detail]]", _FIXTURE_REFERENCE, "Alpha detail"),
+        ("[[include]]", _FIXTURE_REFERENCE, "[[include]]"),
+        ("[[include: Alpha rules]]", _FIXTURE_REFERENCE, "[[include: Alpha rules]]"),
+        (
+            "[[include Beta rules]]",
+            _FIXTURE_REFERENCE + "\n## Beta rules\n\nA second Beta.\n",
+            "Beta rules",
+        ),
+        (
+            "[[include Beta rules]]",
+            _FIXTURE_REFERENCE + "[[when lane = very-small]]\n",
+            "Beta rules",
+        ),
+    ],
+    ids=["missing-heading", "subsection-heading", "no-heading", "malformed",
+         "duplicate-heading", "marker-in-section"],
+)
+def test_splice_refuses_an_include_it_cannot_resolve(
+    tmp_path: Path, include: str, reference: str, named: str
+) -> None:
+    """Break: a source naming a heading the shared reference lacks (or a
+    ``###`` one, or one it holds twice), a malformed include, or a section
+    holding a marker line rendering anyway -- or a failed render writing a
+    partial tree. Both modes stop with exit 2 and name the include."""
+    _seed_splice_tree(tmp_path, reference)
+    source = source_path(INSTRUMENTS["implementer"])
+    _insert_after(source, tmp_path, _raw(source).split("\n", 1)[0], include)
+    before = (tmp_path / INSTRUMENTS["implementer"]).read_bytes()
+
+    for mode in ("check", "write"):
+        result = run_generator(mode, "--root", str(tmp_path))
+        assert result.returncode == 2, (mode, result.stdout, result.stderr)
+        assert named in result.stderr and source in result.stderr, result.stderr
+    assert (tmp_path / INSTRUMENTS["implementer"]).read_bytes() == before
+
+
+def test_splice_inside_a_selector_passage_follows_the_selector(
+    tmp_path: Path,
+) -> None:
+    """Break: a section included inside a selector-keyed passage reaching
+    the instrument under another value, or breaking the passage grammar the
+    selector tests read."""
+    from test_dispatch_contracts_templates import selection_leaks
+
+    template = next(t for t in TEMPLATES if passages(_raw(t)))
+    card = _raw(card_path(template))
+    selector, value, _ = passages(_raw(template))[0]
+    marker = f"[[when {selector} = {value}]]"
+    _seed_splice_tree(tmp_path)
+    _insert_after(source_path(template), tmp_path, marker, "[[include Beta rules]]")
+
+    assert run_generator("write", "--root", str(tmp_path)).returncode == 0
+    rendered = (tmp_path / template).read_text("utf-8")
+    assert structure_violations(rendered, card, family(template)) == []
+    assert selection_leaks(rendered, card) == []
+    for candidate in selector_values(card)[selector]:
+        shown = _BETA in resolve(rendered, {selector: candidate})
+        assert shown == (candidate == value), candidate
 
 
 # --- the render, re-derived ------------------------------------------------

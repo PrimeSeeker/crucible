@@ -3,8 +3,9 @@
 ## Decision
 
 **One skill tree, an adapter pair per host.** One canonical skill tree
-serves Claude Code and Codex; no host gets a copied or forked workflow,
-and the one generated artifact is Claude Code's instrument agents
+serves Claude Code and Codex; no host gets a copied or forked workflow.
+What is generated is the seven dispatch templates, rendered in place from
+their sources for both hosts, and Claude Code's instrument agents
 (`docs/decisions/instruments.md`). Each host's mechanics live in its
 adapter, a pair of files under `skills/using-crucible/references/`:
 
@@ -191,6 +192,10 @@ preference.)
 
 ## Changes
 
+- 2026-11-02: the dispatch templates join the agents as generated
+  artifacts, rendered in place from their sources for both hosts, since
+  the seat templates take their shared clauses by a build-time splice
+  (`docs/decisions/instruments.md`).
 - 2026-10-27: the Codex dispatch reference's no-tier-bump sentence is
   gone, since the bounded role there no longer uses the default role's
   model.
