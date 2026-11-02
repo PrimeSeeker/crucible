@@ -41,7 +41,7 @@
 
 Bring the largest skills under the per-skill budget, moving
 route-conditional text, and where the rule is widened always-run sections,
-into references read at their step (`skill-text-rewrite.md`). Measure the
+into references read at their step. Measure the
 token counts with a tokenizer first, and check the budget against the
 current Claude Code documentation. Once the skills fit, a structural test
 holds each `SKILL.md` under the line, as upstream's does; the host's

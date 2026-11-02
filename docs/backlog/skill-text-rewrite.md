@@ -1,47 +1,7 @@
-# Skill text rewrite: placement, then mechanisms
+# Skill text rewrite: what stays open
 
 ## Observation
 
-- **The rule to apply.** writing-skills' Size and placement bullet: one
-  owner text per rule, where its reader acts; the action, its observable
-  signal and at most one clause of why, with how the rule was learned
-  going to decision records; siblings at one grain. `AGENTS.md`'s Where
-  text goes rule names their homes in crucible. Existing text has not been
-  brought into line.
-- **Size as of `dd6897d`.** The twelve skills hold 62,069 words
-  (`tests/prose-budget.txt`): subagent-driven-development 18,724,
-  redteaming 17,871, brainstorming 5,994, requesting-code-review 5,581,
-  the other eight 13,899 together.
-- **Growth since `dd6897d`.** At `a709dbc` they hold 65,636 words,
-  +3,567: redteaming +1,324, subagent-driven-development +761,
-  brainstorming +672, requesting-code-review +573,
-  finishing-a-development-branch +206, writing-plans +31, the other six
-  unchanged. All of it is the audit-corrections feature's, whose spec
-  estimated about +1,500 and set no target.
-- **Placement is worth about 11%.** A detail-level audit of all shipped
-  skill prose (three readers, read-only), when it came to 48,700 words,
-  judged about 5,500 of them wrong-level or restated: redteaming ~12%,
-  SDD ~12%, the other skills ~10%. Restatement is the largest category, mostly seat templates
-  copying shared rules (the deleted-test list, build history, the comment
-  rule, diff-as-files, read scoping, the workspace and scratch rules); the
-  copies have started to drift.
-- **Where it is uneven.** Upstream-derived supporting files are written at
-  a finer grain than crucible's own: systematic-debugging's supporting
-  files and dispatching-parallel-agents tell one incident or example two
-  or three times; using-git-worktrees explains its safety check down to
-  git internals and restates its rules three or four times. The host
-  adapters restate host-neutral process rules (the never-predict rule,
-  fan-out independence, effort-on-request). Redteaming's lens
-  roster gives right-sizing its trigger mechanics and the other lenses a
-  line each. SDD specifies the adjudicator inline to git flags.
-  Templates explain their own design to maintainers, and
-  the terminal-pass template carries the controller's escalation routing.
-- **Size follows mechanisms.** The three execution and review skills
-  (redteaming, SDD, requesting-code-review) grew from 16.3k words to 41.2k
-  over two months (42.2k as of `dd6897d`): records and evidence
-  machinery about 12k, two-host dispatch about 4.8k, cost-diet and cost-levers about 4.7k, review fix
-  waves about 2.5k net. Later rewrites cut 9.8k, mostly by deleting
-  mechanisms, not by rewording. Placement alone will not halve the text.
 - **Resident cost.** A measurement on one project's very large features
   put skill prose resident in controllers at about 5% of their spend
   (subagents 0.2%), and a full rewrite of the controller skills was
@@ -51,76 +11,16 @@
   project a redteam controller loaded the redteaming skill plus
   `formats.md`, about 27K tokens, before any work, so the trigger likely
   trips there. Cost was measured in tokens, not duties or adherence.
-- **Umbrellas added about 4,200 words** across six skills
-  (brainstorming +53%, most of it in a reference loaded on demand). The
-  largest single part is the clause on what binds, stated in full at
-  thirteen statements in eleven files, about 90 to 110 words each, as
-  the umbrella spec required; a one-line clause with the finding rule
-  stated once would save roughly 600 to 700 words.
-- **Design-level findings of the umbrella audit.** An audit of the
-  hypothesis-specs umbrella's three features (2026-10-29), by five
-  readers blind to the review records and two tracing each finding back
-  through them, found design-level problems that the effort's reviews had
-  mostly seen and deferred to this item, which no commit of the effort
-  updated. Its correctness findings went to a feature of their own
-  (audit-corrections, 2026-10-30); these were left here:
-  - growth (the size figures above);
-  - separability of review before code and plan form: the route presets
-    treat them as separate choices, while a feature's spec is always
-    campaigned and a note never is;
-  - signal and vocabulary sprawl: the labels, statuses and marks a
-    reader must know, among them the severities and the `premise`,
-    `literal-reading` and `CONCLUSION-CHANGING` labels, the merged
-    list's dispositions (`deferred-minor` included), the decision
-    statuses (`open`, `accepted`, `firm`), the terminal-pass records'
-    states, the umbrella entry marks (`landed`, `umbrella`, `dropped`)
-    and the `Review: branch only` mark;
-  - the check on a check: each seat forecasts the overturn answer, the
-    round readout answers the forecasts, and the terminal pass checks
-    the stop against both;
-  - the binding clause restated at many sites (the umbrellas bullet
-    above).
-- **A minor defect the placement audit found, unfixed:** the re-review
-  template's comment rule is a fragment of the implementer's and task reviewer's.
-  Copying the whole rule in would add one more restatement; the shared
-  seat reference is its fix.
-- **Two numbering and naming slips:**
-  - two "Step 6"s that mean different steps, both reached at one Finish:
-    `crucible:finishing-a-development-branch` § Step 6: Cleanup
-    Workspace removes the worktree, and step 6 of
-    `crucible:subagent-driven-development` § Finish deletes the feature
-    workspace, `.crucible/<feature-slug>/`;
-  - `skills/redteaming/references/formats.md`'s paragraph on later
-    operator rulings in the decision record enters an answer that
-    leaves the call to the controller "with the delegated status that
-    section defines", which reads as a fourth status; the section it
-    points to, `crucible:brainstorming` § Workspace provisioning
-    (brainstorm exit), defines no status but a form of `accepted`,
-    `accepted — delegated to the controller`, written in the proposer's
-    place.
-- **Brainstorming's open-items reader points nowhere.** Its context
-  gathering reads "open items in the home the project's instructions
-  name for them" (`skills/brainstorming/SKILL.md` § Context gathering)
-  without pointing to `skills/redteaming/references/formats.md`
-  § Open items, which counts a user-level file's line naming the project
-  as such a home; a strict reader may skip a home kept only there.
-- **Left open by `review-retirements`** (2026-11-02):
-  - `skills/subagent-driven-development/references/seat-rules.md`
-    § Premise findings points into § The goal check for what the request
-    file is, so a seat whose goal check is off may follow it into the
-    procedure;
-  - a plan-phase second read is a resume of the terminal pass, so it
-    keeps its first dispatch's "re-read the entire artifact" wording
-    beside the second-read passage's narrower scope; the narrower one
-    governs, at the cost of extra reading;
-  - whether a clause-sized binding change to an umbrella entry needs a
-    landing of its own on the base branch first: the feature needed two
-    such landings for one-clause edits.
-- **Left open by `execution-retirements`** (2026-11-02):
-  - `skills/redteaming/references/flip-paths.md` step 3 still calls a
-    plan or spec change on a task completed branch review only a "scope
-    finding"; the branch reviewer now stakes a severity like any
-    finding, so the term can open a wave on a MINOR;
+- **Separability of review before code and plan form.** An audit of the
+  hypothesis-specs umbrella's three features (2026-10-29) found that the
+  route presets treat review before code and the plan's form as separate
+  choices, while a feature's spec is always campaigned and a note never
+  is.
+- **How a tension gets closed.** A tension a review finds is closed
+  today by adding a distinction. For a fix-list clause asking whether a
+  removing or merging resolution exists, the maintainer agreed it looked
+  weak and deferred the restructuring ("probably later").
+- **Two rule gaps:**
   - when the operator answers the after-three-waves ask with another
     approach by a plan change rather than a revert, nothing says what
     happens to the task's open findings: its latest line stays
@@ -129,38 +29,25 @@
   - the plan phase's close after an upgrade hatch seeds every unruled
     lane lead as `Lane: lead (concern):`, whatever its kind, so the
     branch reviewer cannot rule a carried question or proposal
-    RECOMMENDED;
-  - restatements for `placement`: "no mark is added once the plan's
-    review has closed" stands in four places (writing-plans, the plan
-    phase, the folded lane, SDD's step 2); writing-plans states the
-    spec-marker naming rule twice; redteaming's shared-tree paragraph
-    restates the shared-tree rules beside its pointer; the lane
-    reference holds the hatch's route entry, which belongs with
-    brainstorming's route entry once that file has room.
+    RECOMMENDED.
+- **Umbrella landings.** Whether a clause-sized binding change to an
+  umbrella entry needs a landing of its own on the base branch first:
+  one feature needed two such landings for one-clause edits.
+- **A review missing a verdict.** `crucible:subagent-driven-development`
+  § The Task Loop says never to accept a review report missing any
+  verdict, and `crucible:requesting-code-review` sends its two cases (a
+  pass leaving a lead it was handed unruled, a re-review leaving a
+  fix-report concern unruled) there for the action; neither says what
+  the controller then does: resume the seat for the verdict, dispatch a
+  fresh one, or rule itself.
 
 ## Follow-up
 
-- Re-audit at the current tree, then bring the skills into line with the
-  placement rule: one owner text per rule; a shared seat reference the
-  templates point to, which released seats can read, as they read
-  `seat-rules.md` through `[PLUGIN_ROOT]`; history and long
-  rationale to the decision
-  records; host-neutral rules out of the adapters.
-- For each mechanism, weigh what it costs in always-loaded text against
-  what it has caught (one data point: in one subagent-driven run, the
-  tree checks around eight review seats changed nothing); retiring the ones that don't pay is the larger
-  lever, and each retirement is the operator's ruling. Part of it: restate
-  the resident-cost re-open trigger above as resident tokens per route, or
-  retire it.
-- Take the umbrella audit's design-level findings above as design
-  targets of the rewrite.
-- Consider moving the right-sizing lens, with its over-subtraction guard
-  and re-seat trigger, from the spec campaign to the branch review.
-- Restructure how a tension a review finds gets closed, today by adding
-  a distinction. For a fix-list clause asking whether a removing or
-  merging resolution exists, the maintainer agreed it looked weak and
-  deferred the restructuring ("probably later").
-- Fix the minor defect and the two slips above on the way.
-- `placement`: the two wording conflicts above, and the items
-  `execution-retirements` left open. The umbrella-landing question: weigh it when the
-  umbrella procedure is next edited.
+- `compaction-fit`: restate the resident-cost re-open trigger as
+  resident tokens per route, or retire it.
+- Weigh the separability point and the tension-closing restructuring as
+  design targets of a later rewrite.
+- Fill the two rule gaps and state the action on a review missing a
+  verdict, each in the skill that owns the step.
+- The umbrella-landing question: weigh it when the umbrella procedure is
+  next edited.

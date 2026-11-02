@@ -71,8 +71,10 @@ rejected, parked or partly-applied BLOCKER or MAJOR with its ruling, in
 words; the controller checks that coverage against the merged list
 before recording the readout, and nothing checks it afterwards. The
 delivered readout carries no merged-list, seat-finding or question id.
-Those go in the record-only trace after it: each decision ask's
-merged-list ids, which the terminal pass reads. A readout delivered again after compaction
+Those go in the record-only trace after it: in a numbered round record
+and the plan record, each decision ask's merged-list ids, which the
+terminal pass reads (`skills/redteaming/references/formats.md` § Round
+record format, field 8). A readout delivered again after compaction
 leaves its trace out (`crucible:redteaming § Round readout`).
 
 ## Why
@@ -234,6 +236,8 @@ controller's judgment (`docs/decisions/spec-campaign.md`).
 
 ## Changes
 
+- 2026-11-03: the trace's decision-ask ids scoped as `formats.md`
+  scopes them, to the numbered round records and the plan record.
 - 2026-11-02: the readout's trace loses its line for the wave's line
   counts, and the delivered readout its rule against carrying them,
   the right-sizing re-seat they served having become the controller's

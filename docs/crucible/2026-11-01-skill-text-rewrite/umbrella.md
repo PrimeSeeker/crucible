@@ -237,7 +237,7 @@ All lightly held.
 - **The retirement children provide** the mechanism set the later
   children work on; `placement` starts from the text they leave.
 - **`placement` provides** the shared seat reference the templates
-  point to, which `compaction-fit` may move text into or out of.
+  take by splice, which `compaction-fit` may move text into or out of.
 - **Shared files.** All four children edit the same skills; they run in
   order, each from a base that holds its predecessors (D8). Tests and
   generated agents that read a retired mechanism's text are inside the

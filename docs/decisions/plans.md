@@ -24,9 +24,11 @@ ownership closure, that every marker has an owning task, and on the
 folded lane round 0's pre-pass and the controller's re-run after each
 wave do. A deferral is misplaced where a task names it whose scope it
 does not touch, or where it sits in a task other than one whose scope
-it falls in. The call is the owning implementer's, logged in its
-Decision Log where it departs from advisory content
-(`crucible:writing-plans § Deferring detail`).
+it falls in (`crucible:writing-plans § Deferring detail`). The call is
+the owning implementer's, logged in its Decision Log where it departs
+from advisory content
+(`skills/subagent-driven-development/implementer-prompt.md` § Binding
+vs Advisory: the Deviation License).
 
 **Four task fields.** Why, Files, Contract and Acceptance, all required,
 and no per-task constraints field. Files enumerates, by search, the
@@ -297,6 +299,8 @@ directory, and `plan` is a value of their `phase` selector.
 
 ## Changes
 
+- 2026-11-03: the deferral call cites the implementer template, which
+  states it, writing-plans no longer doing so.
 - 2026-11-02: the shared seat reference's citations follow its rename
   to `seat-rules.md`.
 - 2026-11-02: the `Review: branch only` mark is one field and its

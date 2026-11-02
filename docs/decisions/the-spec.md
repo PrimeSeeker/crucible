@@ -12,7 +12,9 @@ operator, and binding text is read for its intent: a case its literal
 reading reaches that its author plainly did not consider is raised for a
 ruling, never applied literally. Everything else is lightly held,
 whoever proposed it, and downstream work may flip it with a logged
-rationale (`crucible:brainstorming § Spec contract`).
+rationale (the opening of `skills/redteaming/references/flip-paths.md`
+§ Flip paths — scoped amendment and supersede;
+`crucible:brainstorming § Spec contract`).
 
 **The request.** No spec, folded document, lane note or umbrella quotes
 a message from the operator: the Intent states the goal in its own
@@ -305,7 +307,8 @@ In a 2026-08-27 classification of about 1,620 findings from 24 campaign
 records, fix waves that failed to land were dominated by a correct fix
 applied at one site while sibling statements of the same content stood
 unedited; an unenumerated consumer is one of the two largest finding
-classes `crucible:brainstorming § Spec self-review` names. Treating every
+classes it measured (`docs/decisions/evidence-and-findings.md`, Evidence
+on the author's side). Treating every
 restating site as a consumer puts those siblings in the sweep. (Basis:
 measured.)
 
@@ -336,6 +339,9 @@ measured.)
 
 ## Changes
 
+- 2026-11-03: citations follow the rules to their owners: what binds to
+  flip-paths' opening, the measured finding classes to the evidence
+  record, where brainstorming no longer states them.
 - 2026-11-02: approval strength is recorded in the brainstorm decision
   record alone, the design digest being retired
   (`docs/decisions/operator-steering.md`).

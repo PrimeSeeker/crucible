@@ -11,13 +11,31 @@ supporting file or a tool's `--help`. `AGENTS.md` ("Where text goes")
 names crucible's homes: how a rule was learned (incidents, measurements,
 accepted trade-offs) in the decision records, `docs/decisions/`; host
 mechanics in the adapter pair; text about crucible's own text in `docs/`;
-what a seat does and produces in its template, and rules every seat
-follows in one shared reference, once one exists.
+what a seat does and produces in its template, and the rules seats share
+in the shared seat reference,
+`skills/subagent-driven-development/references/seat-rules.md`, each
+template taking by splice the sections its seat follows
+(`docs/decisions/instruments.md`).
 `skills/redteaming/references/formats.md` holds the shapes of what
 controllers and seats write and points at the skills for process rules;
 `docs/authoring.md` holds the rules for crucible's authors (anchor
-stability, the reference convention). Bringing the existing skills into
-line is `docs/backlog/skill-text-rewrite.md`.
+stability, the reference convention, the paired texts).
+
+**Where each shared rule lives.** A controller skill keeps the steps its
+controller takes and the inputs it fills; a seat's rubric and verdicts
+live in its template and a card's inputs on its card. The rules every
+dispatching controller shares (reading the card rather than the
+template, confirming the report file, the shared-tree rules, effort only
+on request) live in
+`skills/subagent-driven-development/references/dispatch-composition.md`,
+and each skill that dispatches carries one line sending its controller
+there and to its host's dispatch reference when the skill starts and
+after compaction. Rules every session needs, ad hoc dispatches included
+(never predicting an agent's result, naming the model, the form of a
+decision ask), live in the router. A rule stated more than once has one
+owner text and pointers; three rules are stated on purpose for both
+controllers and seats, and `docs/authoring.md` § Paired texts lists
+them. Skills stay hand-written: only the seat templates are rendered.
 
 **Route-conditional procedures live in references.** A procedure that
 applies only on some routes sits in a reference read on demand:
@@ -84,7 +102,8 @@ instructs agents; the skill's evaluations stay the controller's.
 **How records cite.** Records and `docs/upstream.md` cite crucible's
 files by plugin-root path and each other by `docs/decisions/<slug>.md`.
 They cite a skill heading as `crucible:<skill> § <heading>`, any heading,
-whether or not `docs/authoring.md` lists it as frozen. In them a bare
+as the skills do; `docs/authoring.md` § Anchor stability lists no skill
+heading, and the reference scanner is the guard. In them a bare
 `README.md § <heading>` means the root `README.md`; in `skills/` and
 `hooks/` it means `hooks/README.md`. An upstream path carries the prefix
 `superpowers/` (`superpowers/skills/executing-plans/`), and the upstream
@@ -113,6 +132,36 @@ copies of the flip-path procedure had. (Basis: measured.) The placement
 rules and their homes in crucible were an agent's proposal the
 maintainer agreed to on 2026-10-16. (Basis: judgment, accepted by the
 maintainer.)
+
+A read-only placement audit of the tree on 2026-11-02, by four
+default-role readers, estimated about 8,000 of the skills' 63,732 words
+removable by placement and found about 25 rules whose copies differed
+in substance, the statement of what binds the largest restatement,
+copied into six seat templates and about eight other sites. (Basis:
+measured.) The placement that followed gave each such rule one owner
+text: the seat-side clauses one shared reference spliced into the
+templates (`docs/decisions/instruments.md` § The splice); the rules every
+dispatching controller shares `dispatch-composition.md`, since the
+redteaming and execution controllers both act on them and neither reads
+the other's skill; the host-neutral dispatch rules and the decision
+ask's form the router, which every session loads
+(`docs/decisions/runtime-adapters.md`). Where copies disagreed, the text
+took the evidently intended version; for the four whose intended
+version was not evident, an agent proposed one and the maintainer
+accepted it. A reference read on demand is not re-attached after
+compaction, so only the skill's own line sends a controller back to it.
+The three paired
+texts stay paired because controllers and seats act on them at
+different sites, and a seat reads no controller's file. An agent's
+design, which the maintainer accepted. (Basis: judgment, accepted by the
+maintainer.)
+
+Skills are not generated as the templates are. A controller loads
+several skills into one context and can follow a pointer; splicing a
+shared rule into each skill would put it before the controller once per
+skill and grow the `SKILL.md` files that have to fit the compaction
+line. An agent's recommendation on the maintainer's question, which the
+maintainer accepted. (Basis: judgment, accepted by the maintainer.)
 
 `formats.md` was split by reader on 2026-10-09: a controller acts on the
 shapes, a script's rules are read when it refuses, and author rules only
@@ -231,7 +280,15 @@ the implementer's template. (Basis: judgment, accepted by the maintainer.)
 A record cites by path and heading so that the scanner can fail a
 dangling citation. Records point at skill sections more than the skills
 point at each other, and a record is edited with the change it records,
-so any heading may be cited and the scanner checks it exists. Writing
+so any heading may be cited and the scanner checks it exists. The skills
+had the same freedom only for headings `docs/authoring.md` listed as
+frozen, one in all, while they cited 42 others (counted by 2026-10-27,
+when the gap was filed as a backlog item); since the
+scanner fails a citation whose heading is gone whether listed or not,
+and placement moved enough text that a hand-kept list would lag, the
+restriction was retired on 2026-11-02. An agent's proposal, which the
+maintainer accepted with the placement design. (Basis: measured, for
+the count; judgment, accepted by the maintainer.) Writing
 upstream paths with a prefix lets the scanner tell them from crucible's
 own paths while it still fails a dangling crucible reference. (Basis:
 judgment, accepted by the maintainer, 2026-10-20.)
@@ -263,6 +320,9 @@ maintainer.)
 - **A test pinning description wording**: it would pin prose
   (`docs/decisions/crucible-suite.md`).
 - **Removing writing-skills, or rewriting it whole** (§ Why).
+- **Generating skill text** as the seat templates are generated: a
+  shared rule spliced into each skill would reach a controller once per
+  skill it loads (§ Why).
 - **Evaluation that tells the agent anything false**, and with it
   upstream's pressure fixtures; also **announcing every evaluation run**,
   the wider option the maintainer did not take.
@@ -276,6 +336,12 @@ the build-history rule included (`skills/using-crucible/SKILL.md`).
 
 ## Changes
 
+- 2026-11-03: placement of shared rules: seat rules in the shared seat
+  reference, spliced into the templates; controller-shared dispatch
+  rules in `dispatch-composition.md`; host-neutral dispatch rules and
+  the decision ask in the router; the paired texts listed in
+  `docs/authoring.md`; skill text not generated; any skill heading
+  citable from a skill, the frozen list having lagged the citations.
 - 2026-11-02: the prose budget counts hand-edited text, every `*.md` of
   a skill but the templates the generator renders, since a rendered
   template beside its source would count its text twice.

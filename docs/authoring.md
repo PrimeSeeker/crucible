@@ -13,6 +13,20 @@ renaming one is an interface change, not an edit:
 - `Hook registration per runtime` in `hooks/README.md`;
 - the `##` headings of this file, which `hooks/README.md` cites.
 
+## Paired texts
+
+Three rules are stated twice on purpose: once for the controllers and
+authors who act on them, and once in the shared seat reference,
+`skills/subagent-driven-development/references/seat-rules.md`, for the
+seats, which take it by splice. The controller side is the primary. A
+change to one side changes the other in the same commit.
+
+| Rule | Controller side | Seat side |
+|---|---|---|
+| What binds; the spec is a hypothesis, its binding text read for intent | the opening of `skills/redteaming/references/flip-paths.md` § Flip paths — scoped amendment and supersede | `seat-rules.md` § What binds in a document and § What binds in a range |
+| What a reviewer flags under an umbrella | `skills/brainstorming/references/umbrellas.md` § Children and § Edits | `seat-rules.md` § What binds in a document and § What binds in a range |
+| The list of non-local mechanism, never deferrable | `crucible:writing-plans § Deferring detail` | `seat-rules.md` § Finding scope |
+
 ## Reference convention
 
 The positive format every crucible author follows. Its classes are what
