@@ -173,7 +173,14 @@ def render_template(template: str, root: Path) -> str:
         if not m:
             raise TemplateError(f"{source}: malformed include line {line!r}")
         if found is None:
-            found = sections(_lf((root / SHARED_REFERENCE).read_bytes()))
+            try:
+                shared = (root / SHARED_REFERENCE).read_bytes()
+            except OSError as exc:
+                raise TemplateError(
+                    f"{source}: {line!r}: cannot read {SHARED_REFERENCE}: "
+                    f"{exc.strerror or exc}"
+                ) from exc
+            found = sections(_lf(shared))
         held = [lines for heading, lines in found if heading == m.group(1)]
         if len(held) != 1:
             why = "no such '## ' heading" if not held else "a heading held twice"

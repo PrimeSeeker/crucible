@@ -105,9 +105,10 @@ def _raw(rel: str) -> str:
 
 
 def test_instrument_agent_check_is_clean_on_the_tree() -> None:
-    """Break: a committed agent that differs from what the generator
-    writes -- hand-edited, or left stale by a template edit -- or an
-    agents directory holding other than the generated set."""
+    """Break: a committed rendered template or agent that differs from
+    what the generator writes -- hand-edited, or left stale by an edit to a
+    source or the shared seat reference -- or an agents directory holding
+    other than the generated set."""
     result = run_generator("check")
     assert (result.returncode, result.stdout, result.stderr) == (0, "", "")
     present = {p.name for p in (REPO_ROOT / "agents").iterdir()}
@@ -324,6 +325,23 @@ def test_splice_refuses_an_include_it_cannot_resolve(
         assert result.returncode == 2, (mode, result.stdout, result.stderr)
         assert named in result.stderr and source in result.stderr, result.stderr
     assert (tmp_path / INSTRUMENTS["implementer"]).read_bytes() == before
+
+
+def test_splice_refuses_a_missing_shared_reference(tmp_path: Path) -> None:
+    """Break: a source taking a section while the shared seat reference is
+    missing ending in a traceback, or in check mode's exit 1, which means
+    "stale" -- or a failed render writing a partial tree. Both modes stop
+    with exit 2 and name the reference."""
+    copy_generator_inputs(tmp_path)
+    (tmp_path / SHARED).unlink()
+    outputs = [*TEMPLATES, *map(agent_file, INSTRUMENTS)]
+    before = {rel: (tmp_path / rel).read_bytes() for rel in outputs}
+
+    for mode in ("check", "write"):
+        result = run_generator(mode, "--root", str(tmp_path))
+        assert result.returncode == 2, (mode, result.stdout, result.stderr)
+        assert SHARED in result.stderr, result.stderr
+    assert {rel: (tmp_path / rel).read_bytes() for rel in outputs} == before
 
 
 def test_splice_inside_a_selector_passage_follows_the_selector(
