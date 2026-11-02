@@ -19,7 +19,7 @@ Each file has one owning task (first column); a file another task also edits is 
 | `tools/instrument_agents.py` | T1 | — |
 | the seven template sources (new; naming deferred, T1) and the seven rendered templates (`skills/redteaming/seat-prompt.md`, `verifier-prompt.md`, `terminal-pass-prompt.md`; `skills/requesting-code-review/code-reviewer.md`; `skills/subagent-driven-development/implementer-prompt.md`, `task-reviewer-prompt.md`, `re-review-prompt.md`) | T1 (created, rendering today's text) | T2 (content) |
 | `agents/*.md` (seven, generated) | T1 | T2 (regenerated) |
-| `skills/subagent-driven-development/references/premise-and-questions.md` → `seat-rules.md` (rename) | T1 | T2 (content) |
+| `skills/subagent-driven-development/references/premise-and-questions.md` → `seat-rules.md` (rename) | T1 | T2 (content); T5, T6 (a paired section only, kept in step with their side) |
 | `tests/test_prose_budget.py`, `tests/prose-budget.txt` | T1 | every later task lowers its skills' lines in `prose-budget.txt` |
 | `tests/test_instrument_agents.py`, `tests/instrument_corpus.py`, `tests/test_dispatch_contracts_templates.py`, `tests/test_structure.py`, `tests/test_codex_manifests.py` (docstring), and any other test the splice reaches | T1 | T2 (the citation-resolution test) |
 | `AGENTS.md` | T1 (agents bullet; The prose budget) | T2 (Where text goes) |
@@ -49,10 +49,10 @@ Each file has one owning task (first column); a file another task also edits is 
 | `skills/writing-plans/SKILL.md` | T6 | T1 (rename) |
 | `docs/decisions/umbrellas.md` | T1 (rename citation) | T6 (the clause the backlog was to collapse) |
 | `skills/using-git-worktrees/SKILL.md`, `skills/systematic-debugging/` (its `.md` files), `skills/writing-skills/SKILL.md`, `docs/decisions/worktrees.md` | T7 | — |
-| `docs/authoring.md` | T8 | any task moving text about crucible's own text into it (D13), in that task's order |
+| `docs/authoring.md` | T8 (the paired-texts list) | T3 (D14, before its own `crucible:using-crucible § Decision asks` citations); any task moving text about crucible's own text into it (D13), in that task's order |
 | `docs/backlog/skill-text-rewrite.md` | T8 | T1 (rename), T3 (shared-tree citation) |
 | `docs/backlog/cross-skill-anchor-citations.md` (deleted) | T8 | — |
-| `docs/crucible/2026-11-01-skill-text-rewrite/umbrella.md` | T8 (Interfaces line) | the entry's mark at Finish (SDD § Finish, not a task) |
+| `docs/crucible/2026-11-01-skill-text-rewrite/umbrella.md` | T8 (Interfaces line) | T3 (its D4's citation of SDD § Shared-tree rules); the entry's mark at Finish (SDD § Finish, not a task) |
 | `docs/upstream.md`; `docs/decisions/plans.md`, `routes.md`, `spec-campaign.md` | T1 (rename citations) | — |
 | any decision record receiving moved text (D13) not named above | the task that moves it | — |
 | the files holding a paired text (`seat-rules.md`, `flip-paths.md`, `umbrellas.md`, `writing-plans/SKILL.md`) | as above | T8, only to reconcile a pair its check finds disagreeing |
@@ -67,7 +67,7 @@ Overlaps are all ordered by the dependency order above; no two tasks run at once
 - **The moved shared-tree rules** (T3 → T4, T5): `dispatch-composition.md` gains `## Shared-tree rules` (the heading text unchanged from SDD's) holding the no-commit rule, the status check and the replacement line; SDD loses its section, and every citation of `crucible:subagent-driven-development § Shared-tree rules` becomes `` `skills/subagent-driven-development/references/dispatch-composition.md` § Shared-tree rules ``. T3 also adds `## Filling a card` there for the card rules.
 - **The read line** (T3 → T4, T5): each of SDD, redteaming and requesting-code-review carries one line telling its controller to read `dispatch-composition.md` and its dispatch reference when the skill starts and after compaction (D7); T4 and T5 keep it as T3 leaves it.
 - **The decision ask's form** (T3 → T4, T5, T6): the router gains a `## Decision asks` heading holding R1's definition in one sentence; other sites cite `crucible:using-crucible § Decision asks`.
-- **Paired texts** (T2, T5, T6 → T8): the seat side in `seat-rules.md` (T2); the controller side in flip-paths' opening (T5), `umbrellas.md` § Edits (T6) and writing-plans § Deferring detail (T6). Each task that edits one side checks the other side still agrees; T8 lists the pairs in `docs/authoring.md`, runs the agreement check and reconciles a pair that disagrees.
+- **Paired texts** (T2, T5, T6 → T8): the seat side in `seat-rules.md` (T2); the controller side in flip-paths' opening (T5), `umbrellas.md` § Edits (T6) and writing-plans § Deferring detail (T6). A task that edits one side edits the other in the same commit where they would otherwise disagree (T5 and T6 may edit `seat-rules.md`'s paired sections for this, and only these); T8 lists the pairs in `docs/authoring.md` and runs the agreement check, reconciling a pair only where an earlier task left one disagreeing.
 - **The non-local-mechanism list** (T6, both sides): T6 writes the fuller list into writing-plans § Deferring detail and, in the same task, replaces redteaming's copy with a pointer to it; T5 leaves redteaming's list as it stands.
 - **The route entry** (T6 ← T4): T6 moves the upgrade hatch's route-entry text from `very-small-lane.md` into brainstorming § Proposing the arrangement (step 4) and leaves a pointer in `very-small-lane.md`; T4 does not touch that line.
 - **Citation checks** (all): the reference scanner reads the skills, hooks, decision records and `docs/upstream.md`, and not bare `§ Step N` forms, the backlog, `AGENTS.md` or `docs/`'s other files; a task that renames or moves a heading or file also runs a `git grep` over the whole tree for the old form, its output quoted, and fixes what it finds in its own files or hands it to the task owning that file by the census.
@@ -118,9 +118,9 @@ Overlaps are all ordered by the dependency order above; no two tasks run at once
 
 **Why.** D7, D8 and D9: rules every dispatching controller shares go to `dispatch-composition.md`, which each dispatching skill reads at start and after compaction through one kept line; host-neutral rules leave the adapters; the decision ask gets one owner in the router.
 
-**Files.** `dispatch-composition.md` (`## Shared-tree rules` moved in from SDD; `## Filling a card`; effort only on request; item 4's umbrella sentence out); the read line in SDD, redteaming and requesting-code-review, replacing their three paragraphs; SDD's § Shared-tree rules removed and every citer updated (found by `git grep "Shared-tree rules"`: SDD's own two, redteaming, `formats.md`, requesting-code-review, `very-small-lane.md`, `docs/decisions/shared-tree.md`, `docs/decisions/rejected-machinery.md`, `docs/backlog/skill-size-after-compaction.md`, `docs/backlog/skill-text-rewrite.md`); the router (never predict, name the model, `## Decision asks`); the four adapter files; dispatching-parallel-agents step 3; the cards' Operation, Model and Effort lines; `docs/decisions/runtime-adapters.md` (the adapters' content); any decision record or `docs/authoring.md` receiving moved text (D13); `tests/prose-budget.txt`. Input: `.crucible/placement/brainstorm-decisions.md`.
+**Files.** `dispatch-composition.md` (`## Shared-tree rules` moved in from SDD; `## Filling a card`; effort only on request; item 4's umbrella sentence out); the read line in SDD, redteaming and requesting-code-review, replacing their three paragraphs; SDD's § Shared-tree rules removed and every citer updated (found by `git grep "Shared-tree rules"`: SDD's own two, redteaming, `formats.md`, requesting-code-review, `very-small-lane.md`, `docs/decisions/shared-tree.md`, `docs/decisions/rejected-machinery.md`, `docs/backlog/skill-size-after-compaction.md`, `docs/backlog/skill-text-rewrite.md`); the router (never predict, name the model, `## Decision asks`); the four adapter files; dispatching-parallel-agents step 3; the cards' Operation, Model and Effort lines; `docs/decisions/runtime-adapters.md` (the adapters' content); `docs/authoring.md` (D14: the class-3 restriction retired before this task's own cross-skill citation); the umbrella's own citation of SDD § Shared-tree rules in its D4 (`docs/crucible/2026-11-01-skill-text-rewrite/umbrella.md`, a lightly held edit); any decision record or `docs/authoring.md` receiving moved text (D13); `tests/prose-budget.txt`. Input: `.crucible/placement/brainstorm-decisions.md`.
 
-**Contract.** Enacts D7, D8, D9, R1's owner and P3 for dispatching-parallel-agents; the corrections: fan-out independence, requesting-code-review's controller reading `dispatch-composition.md`, the report-file check's scope; `ultra` to the Codex dispatch reference. Produces the shared-tree, read-line and decision-ask contracts. Keeps every C3 guard it moves (the status check, the replacement line) stated in full at its new home.
+**Contract.** Enacts D7, D8, D9, D14, R1's owner and P3 for dispatching-parallel-agents; the corrections: fan-out independence, requesting-code-review's controller reading `dispatch-composition.md`, the report-file check's scope; `ultra` to the Codex dispatch reference. Produces the shared-tree, read-line and decision-ask contracts. Keeps every C3 guard it moves (the status check, the replacement line) stated in full at its new home.
 
 **Acceptance.**
 - Happy: each moved rule is stated once at its owner; each dispatching skill's read line names both files.
@@ -192,12 +192,12 @@ Review: branch only — it builds no mechanism and nothing later builds on it: i
 
 **Why.** A3's tree-wide part and the paired texts, A5, A6's remainder, A7 and A8's Interfaces line, and D14.
 
-**Files.** `docs/authoring.md` (D14; the paired-texts list); `docs/decisions/authoring-crucible.md` (placement of seat rules); `docs/backlog/skill-text-rewrite.md` (A7); `docs/backlog/cross-skill-anchor-citations.md` (deleted); `docs/crucible/2026-11-01-skill-text-rewrite/umbrella.md` (the Interfaces line on what `placement` provides); the paired-text files, only to reconcile a pair that disagrees; `tests/prose-budget.txt` (final counts). Input: `.crucible/placement/brainstorm-decisions.md`.
+**Files.** `docs/authoring.md` (the paired-texts list); `docs/decisions/authoring-crucible.md` (placement of seat rules); `docs/backlog/skill-text-rewrite.md` (A7); `docs/backlog/cross-skill-anchor-citations.md` (deleted); `docs/crucible/2026-11-01-skill-text-rewrite/umbrella.md` (the Interfaces line on what `placement` provides); the paired-text files, only to reconcile a pair that disagrees; `tests/prose-budget.txt` (final counts). Input: `.crucible/placement/brainstorm-decisions.md`.
 
-**Contract.** Enacts D14, A3's tree-wide check, A5, A7 and A8's Interfaces line; consumes the paired-texts contract.
+**Contract.** Enacts A3's tree-wide check, A5, A7 and A8's Interfaces line; consumes the paired-texts contract and checks D14 as T3 left it.
 
 **Acceptance.**
-- Happy: A5's figures reported against `8332a00`; `docs/authoring.md` states D14 and lists the pairs; each pair agrees, quoted; for every correction, a whole-tree search shows no copy saying otherwise, quoted.
+- Happy: A5's figures reported against `8332a00`; `docs/authoring.md` lists the pairs; each pair agrees, quoted; for every correction, a whole-tree search shows no copy saying otherwise, quoted.
 - Edge: the backlog item keeps exactly A7's list, the action on a review missing a verdict added.
 - Error: no file links the deleted backlog item (by `git grep`).
 - Integration: the suite is green.
