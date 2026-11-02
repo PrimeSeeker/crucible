@@ -101,9 +101,9 @@ external, for upstream's list; judgment, accepted by the maintainer,
 Until 2026-10-28 every ruling that touched a [LOAD-BEARING] mark went
 to the operator. With the spec read as a hypothesis
 (`docs/decisions/the-spec.md`), a ruling that touches any binding
-content, not only a mark, passes the containment test instead, so the
-adjudicator marks what touches binding content and the controller
-confirms what is contained. A reviewer's finding that a binding item's
+content passes the containment test instead, so the adjudicator marks
+what touches binding content and the controller confirms what is
+contained. A reviewer's finding that a binding item's
 literal reading reaches a case its author did not consider is ruled on
 as the plan conflict it is, whether the binding text or the work is
 wrong, and not sent to the adjudicator as an ordinary dispute; on a
@@ -127,6 +127,10 @@ branch review's proposal accepted by the maintainer, for testing the ruling.)
 
 ## Changes
 
+- 2026-11-02: the containment rule's present-tense wording drops the
+  words naming a mark beside binding content, since marks no longer exist and binding content is all
+  it names. (Basis: judgment, accepted by the maintainer, in retiring
+  marks.)
 - 2026-10-28: testing a literal-reading ruling, accepted by the
   maintainer at the landing.
 - 2026-10-28: a ruling on a literal-reading finding, the controller's or
