@@ -27,10 +27,13 @@ the re-attached copies of SDD and redteaming (0.13.0) were both cut at
 exactly 19,902 characters of header and body, before the truncation
 notice: the header line (`Base directory for this skill: <path>`), then
 the body without its frontmatter. By the real tokenizer those cuts hold
-6,775 and 6,620 tokens. The host's 5,000 tokens are therefore an
-estimate at four characters a token, and the line is about 20,000
-characters, counted as the host counts them, not 5,000 tokenizer
-tokens. Token counts of every `SKILL.md` at `d78398c` (the
+6,775 and 6,620 tokens. Upstream's issue #2481 (obra/superpowers)
+records the same cut publicly: each re-attached copy "cut to exactly
+20,000 characters", ending in the truncation notice, whose 98
+characters bring 19,902 to 20,000. The host's 5,000 tokens are
+therefore an estimate at four characters a token, and the line is
+about 20,000 characters, counted as the host counts them, not 5,000
+tokenizer tokens. Token counts of every `SKILL.md` at `d78398c` (the
 token-counting endpoint, Opus and Sonnet identical): SDD 12,898,
 redteaming 11,003, brainstorming 6,955, requesting-code-review 4,806,
 the other eight between 1,001 and 3,951; 2.66 to 3.18 bytes a token.
@@ -68,8 +71,9 @@ the other eight between 1,001 and 3,951; 2.66 to 3.18 bytes a token.
   frontmatter excluded, at or under **18,000 characters**; the margin
   covers long install paths, which the header carries, and small edits.
   The decision record keeps both the documentation's wording and the
-  measured cut, with their dates. Basis: measured; the controller's
-  proposal, accepted by the maintainer.
+  measured cut, with their dates, citing upstream #2481 as the public
+  record of the cut. Basis: measured; the controller's proposal,
+  accepted by the maintainer.
 - **D2. Step references, no split.** An oversized `SKILL.md` keeps its
   spine (D3) and moves long step bodies into references beside it, as
   route-conditional procedures moved before. No step becomes a skill:
@@ -91,7 +95,13 @@ the other eight between 1,001 and 3,951; 2.66 to 3.18 bytes a token.
   hard gate and campaign gate, the close readout's answer); the
   rationalization and red-flag tables. A rule that applies only within
   one step moves with that step, a stop-and-ask line that fires on a
-  condition met inside the step included. Basis:
+  condition met inside the step included (the seat-replacement line
+  moves with § Panels; `dispatch-composition.md` § Shared-tree rules
+  stays its owner). A moved step's trigger, its cap with what follows
+  the cap (SDD's ask after the third fix wave) and its operator gate
+  (brainstorming's step-4 confirmation of the preset, the close
+  readout's answer) stay as sentences of its stub's one paragraph, and
+  the reference does not restate them. Basis:
   the controller's proposal, accepted by the maintainer; caps stay in
   the spine because upstream's incident was a lost cap.
 - **D4. The read convention is unchanged.** A moved step keeps its
@@ -103,17 +113,18 @@ the other eight between 1,001 and 3,951; 2.66 to 3.18 bytes a token.
   loop: it stays in context until compaction, and the stub sends the
   controller back after. Basis: the controller's proposal, accepted by
   the maintainer.
-- **D5. The authoring rule widens.** `docs/decisions/authoring-crucible.md`
-  § Route-conditional procedures live in references becomes the rule
-  for both: a `SKILL.md` stays under the line; route-conditional
+- **D5. The authoring rule widens.** The paragraph "Route-conditional
+  procedures live in references" in `docs/decisions/authoring-crucible.md`
+  § Decision becomes the rule for both: a `SKILL.md` stays under the line; route-conditional
   procedures live in references, and so do long step bodies where the
   line needs it, the spine (D3) staying. writing-skills' Size and
   placement bullet states the general rule for any skill a host cuts
   after compaction, and `AGENTS.md` states the line beside the
   always-loaded budget. Basis: the umbrella entry leaves the widening
   to this child; the controller's proposal, accepted by the maintainer.
-- **D6. The prose budget's offset.** The stubs add words, about 40
-  each. Umbrella C1 forbids net growth: the offset comes from wording
+- **D6. The prose budget's offset.** The stubs add words, about 50 to
+  80 each (the existing stubs run 29 to 72 words, more where a trigger
+  or cap sits in the stub). Umbrella C1 forbids net growth: the offset comes from wording
   the move makes redundant (a pointer between sections that end up in
   one file, a restated context the reference no longer needs), never
   from weakening a rule. Where it cannot be met that way, the shortfall
@@ -127,12 +138,18 @@ the other eight between 1,001 and 3,951; 2.66 to 3.18 bytes a token.
   `a3db87f` (the effort's baseline), `d78398c` (this child's base) and
   this child's head, with the token-counting endpoint, and the figures
   go into the decision record and the close readout. A file renamed
-  between those points is counted under its role. Basis: umbrella D1;
+  between those points is counted under its role. The manifests are
+  Claude Code's: the tokenizer is Anthropic's, and the host files
+  counted are this host's; the skill text is shared, so Codex's figures
+  would differ only by its host map and dispatch reference. Basis: umbrella D1;
   the controller's proposal, accepted by the maintainer.
 - **D8. The resident-cost re-open trigger is retired.** It said when a
   full rewrite of the controller skills would be worth reopening; that
   rewrite is this umbrella. Growth is now held word by word by the prose
-  budget and per skill by the line's test; D7's figures go into the
+  budget, per skill by the line's test, and in the router and host maps
+  by the session-start budget (`tests/test_session_start.py`, 10,000
+  characters), which covers the trigger's second clause, a rule change
+  with no headroom left there; D7's figures go into the
   decision record as the baseline a later measurement compares with.
   Basis: the umbrella entry leaves restating or retiring to this child;
   the controller's proposal, accepted by the maintainer.
@@ -144,7 +161,9 @@ the other eight between 1,001 and 3,951; 2.66 to 3.18 bytes a token.
   fires where "a reviewer's finding or question" shows a major mechanism
   of the change is expected to be overturned. The template takes the
   section only where its `lane` selector is `very-small`, with one line
-  saying what it is for. Basis: `placement`'s open item, left to this
+  saying what it is for; `docs/decisions/instruments.md` records the
+  conditional splice beside the redteam seat's goal-check precedent, and
+  the reviewer card's `lane` description names the section. Basis: `placement`'s open item, left to this
   child; the controller's proposal, accepted by the maintainer.
 - **D10. Backlog dispositions.** `docs/backlog/skill-size-after-compaction.md`
   is resolved but for one point, which it keeps: a session spanning a
@@ -153,14 +172,15 @@ the other eight between 1,001 and 3,951; 2.66 to 3.18 bytes a token.
   copies from 0.13.0 and 0.12.0 re-attached under 0.14.0).
   `docs/backlog/skill-text-rewrite.md` loses its resident-cost
   observation with the trigger (D8) and `placement`'s arrangement item
-  (D9), and keeps the rest. Basis: the controller's proposal, accepted
+  (D9), each with its matching Follow-up line, and keeps the rest. Basis: the controller's proposal, accepted
   by the maintainer.
 - **D11. The router's re-invoke line stays.** `skills/using-crucible/SKILL.md`
   keeps "a skill whose text came back cut short … is invoked again": a
   skill that grows past the line between test runs, or a host whose cut
-  moves, is still caught by it. Codex is unaffected either way: the
-  spine and its stubs read the same on both hosts. Basis: the
-  controller's call.
+  moves, is still caught by it; the host's documentation also says
+  invoking a skill again restores its full content. Basis: the
+  controller's proposal, accepted by the maintainer at the campaign
+  gate.
 
 ## Constraints & invariants
 
@@ -184,9 +204,13 @@ the other eight between 1,001 and 3,951; 2.66 to 3.18 bytes a token.
 
 - **The stub.** A stub's sentence keeps the form
   ``read `skills/<skill>/references/<file>.md` in full`` that
-  `tests/skill_corpus.py` (`STUB_RE`) matches, and its reference opens
-  with the stub's heading, which `tests/test_skill_references.py`
-  checks; that test's fixed stub set (`EXPECTED`) gains each new pair.
+  `tests/skill_corpus.py` (`STUB_RE`) matches. `tests/test_skill_references.py`
+  holds a stub to one paragraph under its heading, each reference to one
+  stub (a shared reference aside) and each reference to opening with its
+  stub's heading; so each moved heading gets a reference of its own, and
+  the spine sentences D3 keeps for a moved step sit in that one
+  paragraph. No rule of that test changes; its fixed stub set
+  (`EXPECTED`) gains each new pair.
 - **The structural test** reads every `skills/*/SKILL.md`; its reader is
   the host's re-attachment after compaction, named in a comment beside
   the assertion (`AGENTS.md`, Tests assert text only where code or the
@@ -199,19 +223,30 @@ the other eight between 1,001 and 3,951; 2.66 to 3.18 bytes a token.
   describe moved sections as route-conditional. With D8, the record's
   Rejected entry on a full rewrite of the controller skills, which
   points at the trigger, says the rewrite ran as this umbrella and the
-  trigger is retired.
+  trigger is retired. The record's Rejected entry "A byte or word
+  target" is narrowed to a total or reduction target, still declined,
+  distinguished from the host-imposed per-skill ceiling D1 sets.
+  `docs/upstream.md`'s row for upstream's size test maps it to this
+  child's structural test and the decision record, stating the
+  difference in line (characters at 18,000 against bytes at 20,000).
 - **Readers that reach a moved step through a citation.** Other skills
   and references cite moved sections by heading (the very-small lane's
   reference cites SDD's § Finish; `requesting-code-review` cites SDD's
   § Disputes and adjudication; the plan phase's and folded lane's
   references cite redteaming's sections). The heading stays as the
   stub, so each reader lands on the stub and reads the reference from
-  there; no citing text changes for the move.
+  there; citing text outside the moved passages does not change, except
+  a citation of a moved subheading, re-cited at its reference. Inside a
+  moved passage, a bare `§ <heading>` citation of its own skill becomes
+  `crucible:<skill> § <heading>`, since it now sits in another file;
+  under A4 that is a needed pointer.
 - **The branch reviewer's template** changes in its source,
   `skills/requesting-code-review/code-reviewer.source.md`; the rendered
   template and agent are regenerated (`python tools/instrument_agents.py
   write`), whose include inside a selector passage the generator
-  supports.
+  supports. D9's other sites: the reviewer card's `lane` description
+  (`code-reviewer.slots.md`) and `docs/decisions/instruments.md` (the
+  splice paragraph and a `## Changes` line).
 - **Shared with the umbrella.** This child's landing completes the
   umbrella; its close readout names the umbrella's closing review as the
   next step (`skills/brainstorming/references/umbrellas.md` § Closing
@@ -238,47 +273,64 @@ the other eight between 1,001 and 3,951; 2.66 to 3.18 bytes a token.
   `d78398c`, the net change and what offset the stubs stated in the
   close readout (standing: `tests/test_prose_budget.py`; the sum, a
   one-time check).
-- **A7.** The rule sites of D5 state the widened rule, the decision
-  record carrying its `## Changes` line. Why not a test: prose, judged
+- **A7.** The rule sites of D5 and D8 state the widened rule and the
+  retired trigger, the decision record carrying its `## Changes` line. Why not a test: prose, judged
   in review.
 - **A8.** The branch reviewer's rendered template carries § The
   arrangement questions only under `lane = very-small`, with its
   purpose line; the generator's check passes (standing: the suite's
   `check` of generated files).
 - **A9.** Resident tokens per route at `a3db87f`, `d78398c` and the
-  head, per D7, in the decision record and the close readout. One-time
-  check: the counting run's output quoted in its task report.
+  head, per D7, the manifests and figures committed, in the decision
+  record and the close readout. One-time check: the counting run's
+  output quoted in its task report.
 - **A10.** The backlog matches D10: `skill-size-after-compaction.md`
   holds only the stale-copy point; `skill-text-rewrite.md` holds neither
-  the resident-cost observation nor the arrangement item. One-time
-  check: the files read in review.
+  the resident-cost observation nor the arrangement item, nor their
+  Follow-up lines. One-time check: the files read in review.
 - **A11.** The full suite passes on the head.
 
 ## Mechanism sketches
 
 Advisory; implementers may replace them.
 
-- **Indicative allocation** (characters of body at `d78398c`):
-  - SDD (37,483; shed at least 19,500 plus stubs): Setup without its
-    resume rule and ledger shape (5,658), the fix loop (3,220) with
-    § Disputes and adjudication (4,119) and § Drift found after the fact
-    (1,463), and § Finish (6,642), its order rule and the operator's
-    answer staying as spine where D3 needs them.
-  - Redteaming (33,183; at least 15,200): § Merge and finding hygiene
-    with its operating stance (6,565), § Fix application and blind
-    verification (4,563), and § Stop rule and terminal pass (4,033)
-    with the round cap and the stop trigger kept in the spine; § Panels
-    (5,215) where more is needed.
-  - Brainstorming (20,959; at least 3,000): § Spec contract (3,711) or
-    § Proposing the arrangement (step 4) (5,132), whichever leaves the
-    cleaner spine.
+- **Indicative allocation** (characters of body at `d78398c`; the
+  figures moved are net of the spine sentences D3 keeps, and each stub's
+  own pointer text is taken at about 400 characters, the existing stubs
+  running 210 to 506):
+  - SDD (37,483; shed at least 19,483): Setup less its ledger identity,
+    sections, resume rule, predecessor links and after-compaction line
+    (about 3,900 of 5,658 move); step 2 Handle the report (2,791); step
+    3 Review the task (1,176); step 4 Verification gates (946); step 5
+    the fix loop, its trigger, cap and after-the-third-wave ask staying
+    in the stub (about 1,700 of 3,220); § Disputes and adjudication
+    (4,119); § What a report voices (1,347); § Drift found after the
+    fact (1,463); § Inline mode (1,077); § Finish, its order rule and
+    the answer staying in the stub (about 5,450 of 6,642). Net shed
+    about 20,000, leaving a body near 17,500. Further candidates:
+    § Instruments and report files (991), § Models (751).
+  - Redteaming (33,183; shed at least 15,183): § Panels (5,215),
+    § Merge and finding hygiene (5,815; its § Operating stance — baseline
+    error rate staying in the spine as its own section, so its two
+    citations stand), § Fix application and blind verification (4,563)
+    and § Round readout (2,974); § Stop rule and terminal pass stays,
+    being mostly spine (trigger, terminal pass, cap). Net shed about
+    17,000, leaving a body near 16,200. Further candidate: § Inputs and
+    state (2,185), less its rehydration rule.
+  - Brainstorming (20,959; shed at least 2,959): § Proposing the
+    arrangement (step 4) (5,132), the operator's confirmation of the
+    preset staying in its stub. Net shed about 4,300, leaving a body
+    near 16,650.
 
-  Deferred to implementation: the exact sections moved, their reference
-  file names, and how a step's references are grouped, within D3 and
-  the 18,000-character line.
+  Deferred to implementation: the exact sections moved and their
+  reference file names, within D3, the stub rules (Interfaces & boundaries)
+  and the 18,000-character line.
 - **Counting.** Characters of the body as Python counts `str`, after the
   closing frontmatter fence; the header and notice the host adds are
   outside the file, hence the margin.
+  Deferred to implementation: the exact body boundary (whether the
+  closing fence's newline counts), one definition used by the test and
+  by the reported figures alike.
 - **Resident tokens.** Each manifest file's text sent alone to the
   token-counting endpoint, a one-word message's count subtracted;
   per-route totals summed by phase. Deferred to implementation: where
