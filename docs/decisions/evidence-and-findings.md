@@ -13,7 +13,7 @@ stands: the controller verifies or discards it
 finding hygiene`). Every finding carries its evidence and a location:
 file:line, or, for a premise finding, the passage of the spec, plan or
 request it contradicts
-(`skills/subagent-driven-development/references/premise-and-questions.md`
+(`skills/subagent-driven-development/references/seat-rules.md`
 § Location). The task reviewer and the branch reviewer treat a BLOCKER
 without evidence as a question; the re-reviewer cites file:line for its
 verdicts and any new breakage; none of the three uses the `UNVERIFIED`
@@ -44,7 +44,7 @@ wrong, such as a Constraint, keeps its own route, and a
 `literal-reading` finding keeps its own label, since it questions an
 application, not the premise. No rule routes on who proposed a
 decision. A task reviewer raises none: its doubt about a premise is a question
-(`skills/subagent-driven-development/references/premise-and-questions.md`
+(`skills/subagent-driven-development/references/seat-rules.md`
 § Premise findings). The controller corrects a label in either
 direction, its reason recorded with it. Every premise finding goes to
 the operator as a decision ask with a recommendation. It is an open
@@ -70,7 +70,7 @@ premise finding. With no request file, the seat restates
 the goal from the Intent and says the request was unavailable.
 On the very-small lane the branch reviewer runs it with the note's
 Intent (`docs/decisions/routes.md`;
-`skills/subagent-driven-development/references/premise-and-questions.md`
+`skills/subagent-driven-development/references/seat-rules.md`
 § The goal check).
 
 **Questions.** Redteam seats, the task reviewer, the branch reviewer and
@@ -79,7 +79,7 @@ they could not stake as a finding: a question, a doubt, a misgiving with
 nothing specific to point to, or a suggested improvement. It holds a few
 items at most, none being the normal case for doubts and misgivings, and
 an item carries no severity
-(`skills/subagent-driven-development/references/premise-and-questions.md`
+(`skills/subagent-driven-development/references/seat-rules.md`
 § Questions). Nothing in it is dropped unrecorded: a redteam seat's item
 gets a disposition in the round record, answered, carried to the
 readout, rejected with a ruling or adopted; a task reviewer's or an
@@ -159,7 +159,7 @@ reviewer report a consequential choice the artifact takes for granted
 with no decision recording it, for the branch reviewer one the code
 makes, and a binding item that is itself wrong; both clauses have one
 home, the shared reference's § Binding items and unrecorded choices
-(`skills/subagent-driven-development/references/premise-and-questions.md`),
+(`skills/subagent-driven-development/references/seat-rules.md`),
 which the task reviewer and the implementer do not read. The
 implementer's test evidence
 names every failing test, whether its change caused it or not
@@ -442,6 +442,8 @@ records that cite "the audit" draw on these figures. (Basis: measured.)
 
 ## Changes
 
+- 2026-11-02: the shared seat reference's citations follow its rename
+  to `seat-rules.md`.
 - 2026-11-02: on the very-small lane the goal check is the branch
   reviewer's own, run with the note's Intent, no longer part of Lane
   Fit, which is retired with its GOAL MATCHES and GOAL DIFFERS verdict

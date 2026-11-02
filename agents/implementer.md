@@ -23,7 +23,7 @@ top-level router. The plugin files this template names below,
 `skills/subagent-driven-development/writing-good-tests.md`,
 `skills/writing-skills/SKILL.md`, the
 `skills/writing-skills/graphviz-conventions.dot` it points at, and
-`skills/subagent-driven-development/references/premise-and-questions.md`
+`skills/subagent-driven-development/references/seat-rules.md`
 (the shared reference), are under the plugin root your dispatch names
 (absolute); paths in your requirements and context are relative to your
 worktree. Read the shared reference's § Premise findings, § Questions

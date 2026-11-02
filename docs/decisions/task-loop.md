@@ -140,7 +140,7 @@ decision ask saying what changed and why it matters, never a raw diff.
 
 **Inline mode.** The controller may implement a task itself only where
 the task is overdetermined, in the sense
-`skills/subagent-driven-development/references/premise-and-questions.md`
+`skills/subagent-driven-development/references/seat-rules.md`
 § The arrangement questions defines, and fits its remaining context
 without pushing out the coordination state it needs through the branch
 review; otherwise it dispatches, the default. On the very-small lane
@@ -452,6 +452,8 @@ judgment, accepted by the maintainer, for the test.)
 
 ## Changes
 
+- 2026-11-02: the shared seat reference's citations follow its rename
+  to `seat-rules.md`.
 - 2026-11-02: a task marked `Review: branch only` completes branch review
   only where its report is DONE, raises no concern and passes the
   gates; any concern sends it to its task review, no longer only one

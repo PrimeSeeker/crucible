@@ -35,7 +35,7 @@ overturning a major mechanism after code is reasonably expected, and
 none where it is not and one implementer can carry it; the question,
 and the two usual cases in which it answers no before any review, are
 defined in
-`skills/subagent-driven-development/references/premise-and-questions.md`
+`skills/subagent-driven-development/references/seat-rules.md`
 § The arrangement questions, and a no for any other reason states that
 reason. Between the campaign presets, folded fits
 a plan of one or two tasks with no seam worth its own review, standard
@@ -331,6 +331,8 @@ small preset or the waiver for its work.
 
 ## Changes
 
+- 2026-11-02: the shared seat reference's citations follow its rename
+  to `seat-rules.md`.
 - 2026-11-02: the branch reviewer's Lane Fit section, its shape
   verdict (EXCEEDS SHAPE, WITHIN SHAPE) and its goal verdict (GOAL
   MATCHES, GOAL DIFFERS) go, its goal half being the branch review's

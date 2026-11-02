@@ -60,7 +60,7 @@ the card from. Through it the implementer reads systematic-debugging,
 `writing-good-tests.md` and writing-skills, and the reviewers read
 `writing-good-tests.md`, in any repository. Through it seats read the
 shared reference
-`skills/subagent-driven-development/references/premise-and-questions.md`,
+`skills/subagent-driven-development/references/seat-rules.md`,
 which states once what a seat may raise beyond a defect in the work
 (`docs/decisions/evidence-and-findings.md`) and the arrangement
 questions (`docs/decisions/routes.md`); each template names the
@@ -217,7 +217,10 @@ The reference's first name matched Claude Code's subagent write filter,
 which would have refused every later seat's write to that shipped file,
 so it was renamed in the task that wrote it. (Basis: a single
 incident, 2026-10-29; judgment, accepted by the maintainer, for the
-rename.)
+rename.) On 2026-11-02 it was renamed `seat-rules.md`, a name clear of
+that filter, as it became the home of the clauses the seat templates
+share. An agent's proposal, which the maintainer accepted. (Basis:
+judgment, accepted by the maintainer.)
 
 The arrangement questions, the overturn question, "overdetermined" and
 the mark's criterion, went into the same reference on 2026-10-29: seats
@@ -270,6 +273,8 @@ judgment, accepted by the maintainer.)
 
 ## Changes
 
+- 2026-11-02: the shared reference renamed `seat-rules.md`, as it becomes
+  the home of the clauses the seat templates share.
 - 2026-11-02: the redteam seat's card gains the `goal-check` selector
   (`on`, `off`), on for each seat of a spec campaign's round 1, keying
   the goal check and its `## Goal check` report item; the seat keeps the
@@ -290,7 +295,7 @@ judgment, accepted by the maintainer.)
   basis judgment, accepted by the maintainer: the maintainer accepted it.
 - 2026-10-29: the redteam seat's card gains the plugin-root slot, and
   four seats read the shared reference
-  `skills/subagent-driven-development/references/premise-and-questions.md`
+  `skills/subagent-driven-development/references/seat-rules.md`
   through it, so the rules for premise findings, the goal check and
   questions are stated once.
 - 2026-10-17: report files: every instrument writes its own, its template

@@ -19,7 +19,7 @@ You are running on [RUNTIME]. Use this host's own tools for editing
 files, running commands and loading a skill; do not re-run the
 top-level router. The plugin files this template names below,
 `skills/subagent-driven-development/writing-good-tests.md` and
-`skills/subagent-driven-development/references/premise-and-questions.md`
+`skills/subagent-driven-development/references/seat-rules.md`
 (the shared reference), are under the plugin root your dispatch names
 (absolute); read the shared reference's § Premise findings, § Binding
 items and unrecorded choices, § The goal check, § Questions, § Location

@@ -105,7 +105,7 @@
   § Open items, which counts a user-level file's line naming the project
   as such a home; a strict reader may skip a home kept only there.
 - **Left open by `review-retirements`** (2026-11-02):
-  - `skills/subagent-driven-development/references/premise-and-questions.md`
+  - `skills/subagent-driven-development/references/seat-rules.md`
     § Premise findings points into § The goal check for what the request
     file is, so a seat whose goal check is off may follow it into the
     procedure;
@@ -143,7 +143,7 @@
 - Re-audit at the current tree, then bring the skills into line with the
   placement rule: one owner text per rule; a shared seat reference the
   templates point to, which released seats can read, as they read
-  `premise-and-questions.md` through `[PLUGIN_ROOT]`; history and long
+  `seat-rules.md` through `[PLUGIN_ROOT]`; history and long
   rationale to the decision
   records; host-neutral rules out of the adapters.
 - For each mechanism, weigh what it costs in always-loaded text against

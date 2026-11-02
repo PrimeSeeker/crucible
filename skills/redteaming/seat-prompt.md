@@ -14,7 +14,7 @@ it.
 **Runtime:** you are running on {runtime}. Use this host's own tools for
 editing files, running commands and loading a skill; do not re-run the
 top-level router. The plugin file this template names below,
-`skills/subagent-driven-development/references/premise-and-questions.md`
+`skills/subagent-driven-development/references/seat-rules.md`
 (the shared reference), is under the plugin root your dispatch names
 (absolute); read its § Premise findings, § Binding items and unrecorded
 choices, § Questions, § The arrangement questions and § Location.

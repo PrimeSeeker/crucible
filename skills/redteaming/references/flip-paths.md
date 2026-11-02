@@ -30,7 +30,7 @@ A contained change to the spec is a scoped amendment you confirm with no decisio
 
 ### Premise findings
 
-What a premise finding is, and its label `premise`, is in `skills/subagent-driven-development/references/premise-and-questions.md` § Premise findings. Your side, at any phase, the spec campaign included:
+What a premise finding is, and its label `premise`, is in `skills/subagent-driven-development/references/seat-rules.md` § Premise findings. Your side, at any phase, the spec campaign included:
 
 **A mislabel.** You correct a finding's label by the reference above, in either direction, your reason recorded with it: a finding labelled `premise` that the reference classes as ordinary — against a lightly held decision, say — is merged or routed as an ordinary finding, and an unlabelled finding against the request, what the Intent asks for or a firm decision takes the label and this section's route.
 

@@ -41,7 +41,7 @@ acceptance criterion maps to a kind of check or says why neither applies
 inputs the spec implies but never names.
 
 **The review mark.** A task that meets the mark's criterion, defined in
-`skills/subagent-driven-development/references/premise-and-questions.md`
+`skills/subagent-driven-development/references/seat-rules.md`
 § The arrangement questions, may carry the line `Review: branch only —
 <reason>`, the reason saying how it meets it; a task with no mark is
 reviewed. Dispatched, a marked task takes the branch review as its first
@@ -297,6 +297,8 @@ directory, and `plan` is a value of their `phase` selector.
 
 ## Changes
 
+- 2026-11-02: the shared seat reference's citations follow its rename
+  to `seat-rules.md`.
 - 2026-11-02: the `Review: branch only` mark is one field and its
   reason, written with the plan: the seats reviewing the plan no longer
   grade marks, the rule on which waves may add one is retired, and no

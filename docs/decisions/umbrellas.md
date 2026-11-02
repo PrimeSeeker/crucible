@@ -38,7 +38,7 @@ statements: the Intent is protected as the child's own is, a seat
 raising a premise finding against what it asks, and a change on a
 child's branch to what it asks is a finding; both are stated once, in
 the shared reference beside the premise line, which § Children points
-to (`skills/subagent-driven-development/references/premise-and-questions.md`
+to (`skills/subagent-driven-development/references/seat-rules.md`
 § Premise findings).
 
 **Edited by weight until it closes.** Lightly held edits travel on a
@@ -191,7 +191,7 @@ is reasonably expected, and an umbrella has no code of its own, so its
 review stays chosen by its content. Once an umbrella's campaign runs,
 the question stops it as any campaign's, read against its children's
 code
-(`skills/subagent-driven-development/references/premise-and-questions.md`
+(`skills/subagent-driven-development/references/seat-rules.md`
 § The arrangement questions). (Basis: judgment, accepted by the
 maintainer, 2026-10-29.)
 
@@ -376,6 +376,8 @@ detail of the form the maintainer accepted.)
 
 ## Changes
 
+- 2026-11-02: the shared seat reference's citations follow its rename
+  to `seat-rules.md`.
 - 2026-11-02: a decision ask other than a premise ask still open at an
   umbrella's landing goes to the operator with the landing ask and,
   unruled, with the work left open to the open-items home, a ruled one
