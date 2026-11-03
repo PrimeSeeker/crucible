@@ -61,7 +61,10 @@ default; before its first dispatch in a session the controller reads that
 config in the Codex home holding the plugin and, if it cannot read it or
 the key is absent, tells the operator which and recommends `high`
 (`skills/using-crucible/references/codex-dispatch.md`; `docs/codex.md`
-§ Install). There are no per-role levels. What a Claude Code seat runs at
+§ Install). A seat started from Claude Code through `codex exec` takes
+`model_reasoning_effort` from that config instead
+(`skills/using-crucible/references/claude-code-dispatch.md`). There are
+no per-role levels. What a Claude Code seat runs at
 with effort unset is unmeasured (`docs/backlog/escalation-and-effort.md`).
 
 A change to the roles, the seats' assignments or the alternate role's
@@ -235,6 +238,7 @@ operator's config key.
 
 ## Changes
 
+- 2026-11-04: a seat started through `codex exec` names no effort either, and takes the key that run reads from the operator's Codex config.
 - 2026-11-03: the default role is stated once, in the dispatch composition's § Models and effort; the slot cards' Model lines keep only a seat's departure from it, SDD's Models section drops the implementer's, task reviewer's and re-reviewer's rows, and redteaming drops its sentence on the verifier's role; because each restated what every dispatch already shares.
 - 2026-11-02: SDD's escalation row for fix waves 4–5 and its fresh
   implementer a tier up retired with the five-wave loop; the tier bump

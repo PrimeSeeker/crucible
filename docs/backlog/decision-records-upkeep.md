@@ -44,8 +44,6 @@
     recorded in a user-level file counts as the project's only in its
     Changes line; its Decision ("Work left open") and "What a project
     may change" leave it out.
-- `docs/backlog/second-runtime-seat.md` says no skill text mentions
-  cross-runtime seats; `skills/redteaming/SKILL.md` § Panels does.
 
 ## Follow-up
 

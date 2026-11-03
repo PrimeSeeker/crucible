@@ -87,8 +87,8 @@ either host.
   one the host marks unattended, whose note gives its path
   (`hooks/README.md` § SessionStart injection), and a Codex session reads
   it from its path, as the router directs.
-- **The dispatch reference** — dispatch an instrument, resume an agent,
-  select effort; on Claude Code also the report-name filter and compaction
+- **The dispatch reference** — dispatch an instrument, a seat on another
+  host, resume an agent, select effort; on Claude Code also the report-name filter and compaction
   (Codex has no compaction entry). It is what a skill that dispatches seats
   needs: SDD, redteaming and requesting-code-review each say near their
   start to read it, and to
@@ -107,6 +107,7 @@ Selected divergences worth knowing before reading either runtime's files:
 | track a checklist | the host's todo tool | `update_plan`, one step per item, at most one `in_progress`; on codex-cli 0.162.1 only with `[tools.update_plan] enabled = true` in the Codex config |
 | dispatch a fresh agent | the host's task-dispatch tool; a dispatch carries none of the session's history | `spawn_agent` with `fork_turns: "none"` — the fresh-context guarantee is **never** left to a host default, since an omitted `fork_turns` forks the full history |
 | dispatch an instrument (dispatch reference) | the plugin's instrument agent `crucible:<name>`, with an explicit model and the slot card's filled Slots and Selectors as the whole prompt; where that agent is not offered, the template path | the template path: the card's filled Slots and Selectors under one line naming the template's absolute path, for the seat to read in full first, and the runtime, through `spawn_agent` with `fork_turns: "none"` — a plugin cannot ship Codex agent roles |
+| seat on another host (dispatch reference) | a seat on Codex through `codex exec`, read-only, its final message saved as the report | unmeasured: none on record |
 | resume an agent (dispatch reference) | follow up to the recorded agent identity where the harness exposes one | `followup_task` (new task, triggers a turn) or `send_message` (message only), addressed by the canonical task name recorded at spawn |
 | wait | the dispatch returns the final report | `wait_agent` returns the final status; the answer also arrives as a notification |
 | edit | the host's edit/write tools | `apply_patch` |

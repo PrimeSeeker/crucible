@@ -42,6 +42,13 @@ with two or more seats on this host, the one the controller judges most
 architecture-heavy runs on the alternate role
 (`docs/decisions/model-roles-and-effort.md`).
 
+**A seat on another host.** It runs only where the operator's
+instructions or request ask for one, never on crucible's proposal: an
+extra seat beside the round's seats on this host, read-only, whose loss
+costs the round nothing and whose findings are each checked against the
+files before they merge (`skills/redteaming/references/panels.md`;
+`skills/redteaming/references/merge-and-finding-hygiene.md`).
+
 **The general lens.** Every multi-seat round has at least one general
 seat, with no box, and a one-seat round is general by default; a
 one-seat round 1 carries outside-the-frame beside general.
@@ -204,7 +211,8 @@ in round 1 alone. (Basis: measured, for where catches come from;
 judgment, an agent's proposal accepted by the maintainer, for the lens
 and its seat.)
 
-Every panel runs on one host's model family. A model judging outputs
+Unless the operator asks otherwise, every panel runs on one host's
+model family. A model judging outputs
 can favour its own: "Self-Preference Bias in LLM-as-a-Judge" found a
 significant degree of it in GPT-4 (https://arxiv.org/abs/2410.21819).
 In "Replacing Judges with Juries", a panel of smaller judges from
@@ -212,11 +220,26 @@ disjoint model families outperformed a single large judge, with less
 intra-model bias, at over seven times lower cost
 (https://arxiv.org/abs/2404.18796). That self-preference risk was
 accepted on 2026-08-07, to be revisited once a second runtime worked.
-The trigger is met on the mechanism side only: Codex is a supported
-host, the skill states how a seat on another host would count in round
-1's swap, and no workflow composes one; the opt-in seat is
-`docs/backlog/second-runtime-seat.md`. (Basis: external; judgment,
-accepted by the maintainer, for accepting the risk.)
+(Basis: external; judgment, accepted by the maintainer, for accepting
+the risk.)
+
+The revisit came on 2026-11-04: a seat on another host runs only where
+the operator asks, and the risk stays accepted for a panel with none.
+The recorded yield is thin and nobody has counted it: one BLOCKER, a
+race in the option Claude had picked; one MAJOR another seat also
+raised, backed by an executed probe; one clean return after a short
+read; one audit with nothing the others missed and about half its
+claims holding only partly, mostly on attribution; and one large review
+with nothing beyond the losses already accepted. That does not justify
+proposing the seat to everyone, and the audit is why each finding is
+checked before it merges. It is an extra seat so that a usage limit, an
+expected trade-off on the other host, costs the round nothing. Its
+sandbox enforces read-only where a prompt cannot, at the price of
+probes that write files. The README's recommendation is the
+maintainer's own and is labelled anecdotal. (Basis: measured, on thin
+data, for the yield; judgment, an agent's proposal accepted by the
+maintainer, for the form; the maintainer's preference, for the
+recommendation.)
 
 ### Right-sizing
 
@@ -383,6 +406,8 @@ trim.)
 
 ## Rejected
 
+- **Offering a seat on another host at the campaign gate**: it adds
+  detection, and a question for people who never asked (§ Why).
 - **Finding counts as a stop signal**: they stay flat deep into long
   campaigns (§ Why).
 - **Severity and the structural judgment as the stop trigger**, alone
@@ -402,6 +427,7 @@ trim.)
 
 ## Changes
 
+- 2026-11-04: a seat on another host, opt-in and written down, settling the single-family revisit: the maintainer's ruling on a thin recorded yield, and the risk stays accepted for a panel with none.
 - 2026-11-03: the operating stance is recorded as the one sentence the compaction made it, its disclosure paragraph now a clause.
 - 2026-11-03: the over-subtraction guard reaches the right-sizing seat as lens text from `skills/redteaming/references/panels.md`, and the seat card's `right-sizing` selector goes; because every redteam seat's agent carried the guard for the one seat that takes it (`docs/decisions/instruments.md`).
 - 2026-11-03: the premise-finding route is cited at `skills/redteaming/references/premise-asks.md`, where flip-paths' § Premise findings moved, so a controller handling a premise finding no longer loads the flip paths (`docs/decisions/authoring-crucible.md`).

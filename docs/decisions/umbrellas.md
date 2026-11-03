@@ -361,14 +361,13 @@ judgment, accepted by the maintainer, for the step; the final choice a
 call the maintainer left to the agent.)
 
 The form the maintainer accepted at the brainstorm had one seat on the
-other host. The spec campaign's round 0 found that no skill composes
+other host. The spec campaign's round 0 found that no skill composed
 such a seat, and its fix dropped the seat from the shipped default,
 naming the drop in that round's readout: a seat on the other host is
-the operator's own instruction where it applies, and the skills compose
-none (`docs/backlog/second-runtime-seat.md`). (Basis: judgment, an
-agent's call the maintainer has not ruled on: a fix in the spec
-campaign's round 0, named in that round's readout and departing from a
-detail of the form the maintainer accepted.)
+the operator's own instruction where it applies, and this review
+composes none. (Basis: judgment, an agent's fix in the spec campaign's
+round 0, departing from a detail of the form the maintainer accepted,
+and accepted by the maintainer on 2026-11-04.)
 
 The seats' report names open with a fixed `closing-`, so no lens the
 controller names can make a basename a host's report-name rules refuse
@@ -396,6 +395,7 @@ judgment, an agent's call the maintainer has not ruled on.)
 
 ## Changes
 
+- 2026-11-04: the closing review's dropped seat on the other host is ruled on: the maintainer kept it dropped, leaving it to the operator's own instruction.
 - 2026-11-03: the premise-finding route is cited at `skills/redteaming/references/premise-asks.md`, where flip-paths' § Premise findings moved, so a controller handling a premise finding no longer loads the flip paths (`docs/decisions/authoring-crucible.md`).
 - 2026-11-03: a feature with no umbrella line keeps at its finish only a trigger, the `git grep` for its slug, and the check that it was in flight when the umbrella was written moves to `skills/brainstorming/references/umbrella-children.md` § Marks; because every route's finish read a procedure that only a child already in flight when its umbrella was written uses.
 - 2026-11-03: the umbrellas reference splits by reader: `skills/brainstorming/references/umbrella-children.md` holds § Children, § Edits, § Marks and § Resuming, with flip-paths' § Under an umbrella (raising a late split or a binding change, and taking one in at each boundary), and `skills/brainstorming/references/umbrellas.md` keeps the shape, review, landing, closing and closing review; because a child's controller loaded the whole reference, and flip-paths for one section, to act on the children's side alone (`docs/decisions/authoring-crucible.md`).

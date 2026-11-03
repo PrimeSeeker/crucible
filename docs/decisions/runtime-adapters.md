@@ -18,8 +18,9 @@ adapter, a pair of files under `skills/using-crucible/references/`:
   prompt names (`docs/decisions/session-start-hook.md`); a Codex session
   reads it from its path.
 - the **dispatch reference** (`claude-code-dispatch.md`,
-  `codex-dispatch.md`): dispatch an instrument, resume an agent and select
-  effort, and on Claude Code the report-name filter and compaction. SDD,
+  `codex-dispatch.md`): dispatch an instrument, a seat on another host,
+  resume an agent and select effort, and on Claude Code the report-name
+  filter and compaction. SDD,
   redteaming and requesting-code-review read it when they start and again
   after compaction.
 
@@ -205,6 +206,7 @@ preference.)
 
 ## Changes
 
+- 2026-11-04: the dispatch reference gains a seat on another host (`docs/decisions/spec-campaign.md`): the command on Claude Code, and on Codex that none is on record.
 - 2026-11-04: on Claude Code a session the host marks unattended gets the host map's path in a note instead of the host map inlined, since it gets no router either (`docs/decisions/session-start-hook.md`).
 - 2026-11-03: the escalation rule's one owner is the dispatch composition's § Models and effort, SDD's Models section having dropped the rows that restated it (`docs/decisions/model-roles-and-effort.md`).
 - 2026-11-03: on the template path the seat reads its template by the path its dispatch names, and installing crucible's roles into the user's Codex configuration is rejected outright, no longer waiting on a cost audit of Codex controllers, since the read by path takes the saving it was for (`docs/decisions/instruments.md`).

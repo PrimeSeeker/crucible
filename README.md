@@ -230,6 +230,18 @@ another folder for feature folders, name a home for the work a
 feature leaves open, say to work in place rather than in
 worktrees, name a worktree directory, or change a review's size.
 
+**A reviewer from the other model family.** Crucible's review panels run
+on one model family, which can share blind spots. If you use both hosts,
+the maintainer recommends adding one reviewer from the other family to a
+redteam's first round: a line in your instruction file asks for it (say,
+"add a seat on Codex to each redteam's first round"), and crucible never
+starts one unasked. The evidence is anecdotal: on record it once caught a
+blocking flaw the other reviewers had missed, and elsewhere it added
+little or nothing; in one audit about half its claims held only partly,
+so crucible checks each of its findings against the files. It spends the
+other host's usage. Only Codex started from Claude Code has been
+measured, not the reverse.
+
 ## Cost, models and permissions
 
 **Tokens.** Crucible spends tokens to save your attention: by the
