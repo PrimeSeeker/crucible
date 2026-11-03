@@ -1,14 +1,21 @@
 ## Round readout
 
-Record it in the round record's `## Round readout` at every round close and deliver it to the operator as recorded, less its trace (producer: you; consumers: the operator's decisions, the terminal pass):
+At every round close the readout carries these items and nothing else:
 
-- key findings declared — every rejected, parked or partly-applied BLOCKER/MAJOR among them named in words the operator can act on, with its ruling;
-- **technical calls made autonomously**; **design judgments as decision asks**;
-- the round's **`deferred-to-implementation` count**;
-- **the questions carried to readout** (`crucible:redteaming` § Merge and finding hygiene), each quoted verbatim — omitted where none is;
-- in every numbered spec-campaign round, the folded lane's and an umbrella's included, **whether overturning a major mechanism after code is still reasonably expected, and why** (`crucible:redteaming` § Stop rule and terminal pass), answering each seat forecast that it is reasonably expected by the mechanism it names — omitted elsewhere: round 0, the terminal-pass record and the plan record are never the stop round;
-- at the close of the plan phase (the plan record) and of a folded campaign (its terminal-pass record), **the tasks the plan marks `Review: branch only`**, each with its reason (`crucible:writing-plans` § Per-task structure), listed for the operator as information, not an ask — omitted elsewhere, and where no task carries the mark.
+- key findings, naming every rejected, parked or partly-applied BLOCKER/MAJOR in words the operator can act on, with its ruling;
+- technical calls made autonomously;
+- the round's `deferred-to-implementation` count;
+- the questions carried to readout, each quoted as written, ids included — omitted where none is;
+- in every numbered spec-campaign round, whether overturning a major mechanism after code is still reasonably expected, and why, answering each seat forecast of an expected overturn by the mechanism it names — omitted elsewhere;
+- in the plan record and a folded campaign's terminal-pass record, the tasks the plan marks `Review: branch only`, each with its reason, as information, not an ask — omitted elsewhere and where no task carries the mark;
+- design judgments, as decision asks — omitted where none is.
 
-That is the whole mandate — the items above, each omitted where its line says; omitted means dropped, not narrated as absent. **Decision asks stand apart:** the readout delivers its asks last, in a block of their own after the other items, each with its options and recommendation; every other readout that puts decision asks to the operator and points here does the same. The delivered readout's own words carry no internal id — merged-list, seat-finding or question id; a carried question is quoted as written, ids included. What other readers need from them goes in the readout's **trace**, the record-only part after it, holding what `round-record.md` § Round record format, field 8, lists.
+An item is omitted only where its line says; an omitted item is dropped, not narrated as absent.
 
-**Readout coverage is yours:** beyond the terminal pass's check of carried questions, nothing checks it after you, so before recording the readout, check against the merged list that it covers every rejected, parked or partly-applied BLOCKER or MAJOR with its ruling, and against `## Question dispositions` that it quotes every question carried to readout. Then close the round: record the readout and its trace, write `state: readout`, and deliver the readout as recorded; the round is closed once it is delivered. An operator ruling or a record correction that arrives after a round closed is written, dated, into that round's `## Rulings and corrections`; an operator ruling also enters `brainstorm-decisions.md`.
+**Decision asks stand apart**, here and in any other readout pointing here: delivered last, in a block of their own, each with its options and recommendation.
+
+Beyond the quoted questions, the delivered readout carries no internal id (merged-list, seat-finding or question); what other readers need from the ids goes in its **trace**, the record-only part after it (`round-record.md` § Round record format, field 8).
+
+Readout coverage is yours: beyond the terminal pass's check of carried questions, nothing checks it after you. Before recording, check the readout against the merged list and `## Question dispositions`. Then record the readout and its trace in the round record's `## Round readout`, write `state: readout`, and deliver the readout to the operator as recorded, less its trace; delivery closes the round.
+
+Write an operator ruling or record correction that arrives after a round closed, dated, into that round's `## Rulings and corrections`; a ruling also enters `brainstorm-decisions.md` (status: `crucible:brainstorming` § Workspace provisioning).

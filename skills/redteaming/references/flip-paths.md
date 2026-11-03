@@ -1,33 +1,33 @@
 ## Flip paths — scoped amendment and supersede
 
-You own both paths, in whichever skill context you are operating.
+You own both paths, in any skill context.
 
 What binds, and how binding text is read: `skills/subagent-driven-development/references/review-terms.md` § What binds in a spec.
 
-These paths govern that content and binding-by-construction contract content, `skills/brainstorming/references/umbrella-children.md` § Under an umbrella a change the umbrella content itself needs, and `skills/redteaming/references/premise-asks.md` § Premise findings a premise finding at any phase, the spec campaign included. The bar on flipping binding content by a fix wave holds from the spec campaign's close onward: during a spec's own campaign the spec is the artifact under review, and its fix waves correct binding content like any other text, with the terminal pass as the check. From that close on, binding content that a finding shows wrong cannot be flipped by a fix wave; it forces one of these paths, and so does defective or superseded plan text found mid-execution. The supersede path applies wherever a supersede is called for, inside a campaign included — the cap ask's supersede option, an unfold. **Both start as a decision ask to the operator**, except a change § The containment test finds contained, which you confirm; choose by blast radius, your judgment, logged. An operator's ruling on any ask here also enters `brainstorm-decisions.md`.
+These paths govern that content and binding-by-construction contract content; a change the umbrella content itself needs goes by `skills/brainstorming/references/umbrella-children.md` § Under an umbrella. Until the spec campaign closes, its fix waves correct binding content like any other text, the terminal pass as the check; a premise finding, at any phase, goes by `skills/redteaming/references/premise-asks.md` § Premise findings. From the spec campaign's close on, every change to binding content, whatever raised it, and defective or superseded plan text found mid-execution take one of these paths, never a fix wave, each a decision ask except a change § The containment test finds contained, which you confirm. Choose the path by blast radius, your judgment, logged. The supersede path, always a decision ask, applies to any supersede, inside a campaign too. An operator's ruling on any ask here also enters `brainstorm-decisions.md` (status: `crucible:brainstorming` § Workspace provisioning).
 
-**Scoped amendment** (the default, for a correction inside a mechanism that stands), confirmed by you where the change is contained (§ The containment test), otherwise by the operator:
+**Scoped amendment** (the default, for a correction inside a mechanism that stands):
 
-1. amend the spec **in place with an amendment marker** at the changed content;
-2. patch the plan to match — where spec and plan are separate documents, the same patch re-stamps the plan header's spec pointer to the amended revision; a folded document keeps its `Spec: this document` header;
-3. **point in-flight seats at the patch** — seats read the plan live, so later dispatches read it; an implementer resumed in an open task's fix wave is told to re-read its task section; and **each amendment commit is named** in the dispatch of every task-loop review, re-review and adjudication whose range holds it, and, for a task completed branch review only, to the branch reviewer beside that task's range (`crucible:requesting-code-review`): any other change to the plan, a folded document or the spec in that range is a finding;
-4. continue — **no new spec campaign or plan phase**.
+1. amend the spec in place, with an amendment marker at the changed content;
+2. patch the plan to match, the same patch re-pinning the plan header's spec pointer to the amended revision (a folded document keeps `Spec: this document`);
+3. point in-flight seats at the patch: tell an implementer resumed in an open task's fix wave to re-read its task section; name each amendment commit in the dispatch of every task-loop review, re-review and adjudication whose range holds it, and to the branch reviewer beside the range of a task completed branch review only; any other change in that range to the plan, a folded document or the spec is a finding;
+4. continue: no new spec campaign or plan phase.
 
-A ruling that patches the plan mid-execution, an adjudicator's or yours, passes § The containment test like any change to binding content: a contained one is handled by steps 3 and 4, its commit named as an amendment commit is; any other goes to the operator as a decision ask.
+A ruling that patches the plan mid-execution, an adjudicator's or yours, passes § The containment test: a contained one takes steps 3 and 4, its commit named as an amendment commit is; any other is a decision ask.
 
-**Supersede** (structural blast radius): draft a successor spec and header-mark the old one superseded. Predecessors stay in place as the forensic record; successors go into the feature's existing feature folder, which its resolve step finds, under the successor names it gives, an unfold's included — both in the Feature folder section of `skills/redteaming/references/formats.md`. Where the predecessor's preamble carries an umbrella line, the successor spec's preamble carries the same line. If execution is in flight, halt it and derive a successor plan. The successor ledger takes the identity and predecessor-link lines of the Setup section of `skills/subagent-driven-development/SKILL.md`, which also says how a resume follows that link and recovers when the predecessor records are gone; the successor plan's header records which completed tasks carry over and which are invalidated. A successor spec gets its own spec campaign and a successor plan its own plan phase; **the round counter does not carry over**.
+**Supersede** (structural blast radius): draft a successor spec and header-mark the old one superseded; predecessors stay in place as the forensic record. Successors, an unfold's included, go into the existing feature folder, found and named as `skills/redteaming/references/formats.md` § Feature folder states; a successor spec's preamble repeats any umbrella line its predecessor's carries. If execution is in flight, halt it and derive a successor plan whose header records which completed tasks carry over or are invalidated; the successor ledger takes the identity and predecessor-link lines of `crucible:subagent-driven-development` § Setup. A successor spec gets its own spec campaign and a successor plan its own plan phase; the round counter does not carry over.
 
 ### The containment test
 
-From the spec campaign's close, every change to binding content, a ruling that patches the plan included, is either contained, and yours to confirm, or put to the operator as a decision ask, whatever finding, report or ruling raised it. A change is **contained** when everything that builds on or consumes the changed item lies inside this feature, as you judge it, and it is none of these:
+A change is **contained** when everything that builds on or consumes the changed item lies inside this feature, by your judgment, and the change does none of these:
 
-- a change to umbrella content, this feature's own entry included;
-- a change to a decision the spec or an umbrella records as the operator's firm preference;
-- a change after which the same work, unchanged, passes a verification gate or an acceptance check it failed;
-- a structural change, one that redefines a mechanism rather than correcting content inside one that stands: it takes a supersede.
+- alter umbrella content, this feature's own entry included;
+- alter a decision the spec or an umbrella records as the operator's firm preference;
+- let the same work, unchanged, pass a verification gate or an acceptance check it failed;
+- redefine a mechanism rather than correct content inside one that stands: a structural change takes a supersede.
 
-Any other change keeps the operator's decision ask, as does a plan conflict that is a design judgment.
+Any other change, and any plan conflict that is a design judgment, stays a decision ask.
 
-A ruling on a case a binding item's literal reading reaches, or on a BLOCKED report about a binding item, passes this test whichever way it goes. One that leaves the text standing goes to the operator as a decision ask where applying it as written changes behaviour something outside this feature builds on or consumes, and is otherwise recorded as your ruling.
+A ruling on a case a binding item's literal reading reaches, or on a BLOCKED report about one, passes this test whichever way it goes. One leaving the text standing is a decision ask where applying it as written changes behaviour something outside this feature builds on or consumes; otherwise record it as your ruling.
 
-A contained change to the spec is a scoped amendment you confirm with no decision ask, and one in every other respect — marker, plan patch, re-pin, named commit — so every rule naming a scoped amendment covers it. Record each contained change as one of your rulings under the ledger's `## Adjudication rulings` — the item, what changed and why, why it is contained, the commit — so the branch review receives it and the close readout lists it; in the plan phase it lands as `skills/redteaming/references/plan-phase.md` states. It reaches the operator through readouts. Reversing one is a scoped amendment the operator confirms, made before the branch lands.
+A contained change to the spec is a scoped amendment you confirm without a decision ask, the same in every other respect (marker, plan patch, re-pin, named commit). Record each contained change as your ruling under the ledger's `## Adjudication rulings` (the item, what changed and why, why it is contained, the commit); in the plan phase it lands as `skills/redteaming/references/plan-phase.md` states. Reversing one is a scoped amendment the operator confirms, made before the branch lands.

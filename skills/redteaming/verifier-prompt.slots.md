@@ -2,14 +2,14 @@
 
 ## Slots
 
-- {worktree-path}: the absolute worktree path the verifier works from.
+- {worktree-path}: the verifier's absolute worktree path.
 - {artifact-path}: the artifact the fix wave was applied to.
 - {pre-fix-revision}: its revision before the wave.
 - {post-fix-revision}: its revision after the wave.
 - {report-path}: `{workspace-path}/campaigns/{phase}/round-{NN}/verifier.md`.
-- {scratch-dir}: the seat's scratch directory, absolute.
-- {fix-list}: evidence input — the round record's fix list, verbatim: enumerated items, each naming the finding or question id(s) it resolves.
-- {diff}: evidence input — the diff of the artifact across the wave; in the plan phase the plan's diff alone, never a contained amendment's spec commit.
+- {scratch-dir}: the seat's absolute scratch directory.
+- {fix-list}: the round record's fix list, verbatim.
+- {diff}: the artifact's diff across the wave; in the plan phase the plan's alone, never a contained amendment's spec commit.
 
 ## Selectors
 
@@ -17,5 +17,5 @@ none
 
 ## Dispatch
 
-- Blind by design: add no input beyond these slots — never the rationale, the seat reports or the round readout. The fix list and the diff are its whole evidence, with the tracked files a delta claim names as that claim's; the other slots only locate.
-- Model: the bounded role, never lower: the one redteaming dispatch below the default role.
+- Blind by design: add no input beyond these slots — never the rationale, the seat reports or the round readout. The fix list and the diff are its whole evidence, with the tracked files a delta claim names as that claim's.
+- Model: the bounded role, never lower.
