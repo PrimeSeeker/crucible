@@ -20,7 +20,7 @@ reference
 are committed and never edited by hand, and the suite runs the
 generator's check mode; the splice's rules are in the generator's
 docstring. An agent's frontmatter carries a name, a description and a
-default model alias, and no tool restriction. On Claude Code a dispatch names `crucible:<name>` and its model and sends the card's filled `## Slots` and `## Selectors` as the whole prompt; on Codex, and on Claude Code where the agent is not offered, the controller fills the card and the template and dispatches the template with those two sections. The card's title and `## Dispatch` stay with the controller
+default model alias, and no tool restriction. On Claude Code a dispatch names `crucible:<name>` and its model and sends the card's filled `## Slots` and `## Selectors` as the whole prompt; on Codex, and on Claude Code where the agent is not offered, the controller sends those two sections under one opening line naming the template's absolute path under the plugin root, which the seat reads in full before anything else, and the runtime the template's runtime slot stands for; the controller neither reads nor fills the template. The card's title and `## Dispatch` stay with the controller
 (`skills/subagent-driven-development/references/dispatch-composition.md` § Filling a card;
 `skills/using-crucible/references/claude-code-dispatch.md`,
 `skills/using-crucible/references/codex-dispatch.md`).
@@ -115,12 +115,12 @@ accepted by the maintainer.)
 Codex keeps the template path because a plugin cannot ship Codex agent
 roles: a probe on codex-cli 0.157.1 (2026-09-28) loaded roles from the
 Codex home, a trusted project and the config, and never from a plugin, in
-any of three forms. Installing crucible's roles into the user's Codex
-configuration waits on a cost audit of Codex controllers
-(`docs/backlog/codex-agent-role-install.md`). (Basis: measured.)
+any of three forms (a manifest `agents` key, a bare `agents/` directory, a manifest `subagents` key). (Basis: measured.)
+
+On 2026-11-03 the seat on the template path came to read its template itself: the controller sends the card's filled Slots and Selectors under one opening line naming the template's absolute path under the plugin root, to be read in full before anything else, and the runtime the template's runtime slot stands for. Until then the controller read and filled each template and sent it whole, so a Codex controller held every template it dispatched, about 800 to 3,750 rendered words each, across some 30 dispatches in a standard run, by an agent's count. Two probes the same day, each a fresh `codex exec` session handed a filled card whose first line named the template's path, one a redteam seat on a lane note and one a task reviewer on a real commit range with a reconstructed implementer report, both read the template and wrote its report shape exactly: the seat its verdict and overturn line, index, findings and questions; the task reviewer its four verdicts, questions and assessment. That is one probe per family; the branch reviewer's family was not probed, and `codex exec` is not `spawn_agent` under a Codex controller. A seat that skipped the read would run without its instructions, and its report would lack the template's sections; neither has been observed. The change also retires installing crucible's roles into the user's Codex configuration, which had waited on a cost audit of Codex controllers: the saving it was for is taken without writing into the user's configuration. (Basis: measured, for the probes; judgment, an agent's call under the maintainer's authorization for the compaction.)
 
 From 2026-10-13 the shared preamble of the three campaign templates
-stayed as three copies: on Codex the controller fills a template itself,
+stayed as three copies: on Codex the controller filled a template itself,
 and an include would have added a resolution step there. (Basis:
 judgment, accepted by the maintainer.) The splice removes that objection
 (§ The splice).
@@ -138,9 +138,7 @@ measures how often that happens. Spliced at build time, the shared text
 reaches each seat inside its own text, and each seat gets only the
 sections its source names. The rendered template sits at the path every
 host's dispatch already reads, so Codex resolves nothing and the
-template-path dispatch is unchanged. The cost: where a controller fills
-a template itself (Codex, and Claude Code's fallback path), each dispatch
-carries the spliced sections in full. The idea of generating the text
+template-path dispatch is unchanged. The cost: while a controller filled a template itself (Codex, and Claude Code's fallback path), each dispatch carried the spliced sections in full; since 2026-11-03 the seat reads them from the template (§ Instrument agents). The idea of generating the text
 rather than having seats read it was the maintainer's; the mechanism an
 agent's design, which the maintainer accepted. (Basis: the maintainer's
 preference, for generating the text; judgment, accepted by the
@@ -330,6 +328,7 @@ judgment, accepted by the maintainer.)
 
 ## Changes
 
+- 2026-11-03: on Codex, and on Claude Code where the instrument agent is not offered, the seat reads its template by path: the controller sends the card's filled Slots and Selectors under one opening line naming the template's absolute path under the plugin root and the runtime, and neither reads nor fills the template; installing crucible's roles into the user's Codex configuration is retired with its backlog item; because a Codex controller held every template it dispatched, and two Codex probes, a redteam seat and a task reviewer, read the template and wrote its report shape.
 - 2026-11-03: the branch reviewer's very-small-lane passage becomes a one-line pointer to `skills/requesting-code-review/very-small-lane-review.md`, the lane text moved there, and to `skills/subagent-driven-development/references/review-terms.md` § The arrangement questions, which the template no longer splices; the seat reads both through its plugin root, the one templated seat reading a shared reference; because every branch-review pass's agent carried the 363-word passage that only a lane pass selects.
 - 2026-11-03: the redteam seat's over-subtraction guard and its pre-pass's ownership closure, set census and worksheet move from the template to lens text in `skills/redteaming/references/panels.md`, which the controller fills into those seats' lens slot, and the card's `right-sizing` and `worksheet` selectors go; because every redteam seat's agent carried both passages though one seat in several takes them (`docs/decisions/spec-campaign.md`; `docs/decisions/plans.md`).
 - 2026-11-03: the cards drop what the dispatch composition states for every card: the Operation line, since § Filling a card says a card is dispatched as a fresh seat of the instrument its title names; the umbrella slot's rule, which defers to the composition's item 2; the default role in the Model line, which § Models and effort holds; and the report slots' `-r<R>` and `-x<X>` variants, stated in § Shared-tree rules and `skills/subagent-driven-development/references/drift.md`; a card's `## Dispatch` holds only its own departures, or `none`; because seven cards each restated the same lines (`docs/decisions/model-roles-and-effort.md`; `docs/decisions/shared-tree.md`).

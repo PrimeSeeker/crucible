@@ -11,12 +11,7 @@ same seven items:
    that receives binding content also gets the umbrellas' paths up the
    chain: the one that line names, then the one each umbrella's own line
    names; on an instrument, in its card's umbrella slot;
-3. the **runtime identity** — the name of the host the seat runs on. The
-   instrument agent carries it; on the template path you fill it into the
-   template's runtime slot; a controller-composed dispatch names it and tells
-   the seat to use that host's own tools. No adapter text goes with it: a
-   dispatched seat is not a router session and never re-runs the top-level
-   router;
+3. the **runtime identity** — the name of the host the seat runs on. The instrument agent carries it; on the template path, where the seat reads its template from the plugin root, the line your adapter opens the dispatch with names it; a controller-composed dispatch names it and tells the seat to use that host's own tools. No adapter text goes with it: a dispatched seat is not a router session and never re-runs the top-level router;
 4. the **pointer to the binding content** and a **one-line mandate reminder** — the path of the artifact that carries what binds, at its pinned revision, with one line naming what the pin makes binding as `skills/subagent-driven-development/references/review-terms.md` § What binds in a spec states it, which an instrument's template carries; and one line naming the seat's binding output, which a card's mandate slot holds; a controller-composed dispatch carries both lines in its prompt. A pointer, never a copied block: a copy drifts against the artifact it copies. The seat's requirements input carries the pin — the spec pointer in a plan's header, which the dispatch points at without restating the revision; for a seat given no plan, the artifact's own path at its pinned revision. A change to binding content that a report leads to passes `skills/redteaming/references/flip-paths.md` § The containment test;
 5. the **report path and the return contract** — what goes in the file, what
    comes back in the final message. When a seat that owes a report file
@@ -38,7 +33,7 @@ dispatches it says so beside the dispatch.
 
 ## Filling a card
 
-An instrument is dispatched from its slot card, the `.slots.md` file beside its template: read the card, not the template. Replace each slot's rule with its value, and set each selector to one value, cutting its line to that value and dropping its sub-bullets: a passage left unselected, `off` or a value you did not pick, is dropped, not narrated. Dispatch a fresh seat of the instrument the card's title names through your adapter's instrument-dispatch operation, sending it only the filled `## Slots` and `## Selectors`: the card's title and `## Dispatch` are yours. `## Dispatch` holds what the dispatch takes beyond this file — a description, a model other than the default role (§ Models and effort), a rule of the card's own — or `none`.
+An instrument is dispatched from its slot card, the `.slots.md` file beside its template: read the card, not the template. Replace each slot's rule with its value, and set each selector to one value, cutting its line to that value and dropping its sub-bullets: a passage left unselected, `off` or a value you did not pick, is dropped, not narrated. Dispatch a fresh seat of the instrument the card's title names through your adapter's instrument-dispatch operation, sending it only the filled `## Slots` and `## Selectors`, on the template path under the opening line item 3 names: the card's title and `## Dispatch` are yours. `## Dispatch` holds what the dispatch takes beyond this file — a description, a model other than the default role (§ Models and effort), a rule of the card's own — or `none`.
 
 A read-only seat's scratch directory, its card's scratch slot, is its report's path within the feature workspace less `.md`, in the workspace's `scratch/` directory; in a standalone branch review, which has no workspace, `review-<base7>..<head7>/` in the host's temporary directory.
 

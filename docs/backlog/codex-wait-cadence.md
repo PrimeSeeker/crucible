@@ -13,9 +13,6 @@
   source and a corpus in which 60 to 78% of `wait_agent` calls timed out
   (superpowers' Codex efficiency spec, 2026-07-30). Neither is measured
   on crucible's controllers or on codex-cli 0.164.0.
-- Codex controller cost is open elsewhere: the agent-role decision waits
-  on a cost audit of Codex controllers (`docs/decisions/runtime-adapters.md`
-  § Rejected).
 
 ## Follow-up
 

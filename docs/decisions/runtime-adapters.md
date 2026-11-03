@@ -50,8 +50,7 @@ tested nor maintained, and are assumed similar enough for the skills
   `"hooks": {}`, exactly, and a session reaches crucible through skill
   discovery and the router's instruction to read the host map from its
   path;
-- instruments go by the template path, since a plugin cannot ship Codex
-  agent roles;
+- instruments go by the template path, the seat reading its template by the path its dispatch names, since a plugin cannot ship Codex agent roles;
 - the checklist tool, `update_plan`, exists on codex-cli 0.162.1 only
   where the config turns it on; the host map gives a fallback;
 - the adapter has no operation for closing an agent;
@@ -134,7 +133,7 @@ CLI. (Basis: the maintainer's preference.)
 
 The template path follows from a probe on codex-cli 0.157.1 (2026-09-28):
 roles loaded from the Codex home, a trusted project and the config, never
-from a plugin (`docs/backlog/codex-agent-role-install.md`). `update_plan`
+from a plugin (`docs/decisions/instruments.md` § Instrument agents). `update_plan`
 was off by default on 0.162.1; with `[tools.update_plan]` `enabled = true`
 a two-item call was accepted, and whether it tracked the items was not
 observed. As far as a session's own listing of its tools showed on
@@ -196,9 +195,7 @@ preference.)
   has neither failure.
 - **A SessionStart hook on Codex**: it never ran, routing works without
   it, and upstream dropped its own; reopened only by a need.
-- **Installing crucible's instrument roles into the user's Codex
-  configuration**: a new kind of side effect for an unmeasured saving,
-  waiting on a cost audit of Codex controllers (backlog).
+- **Installing crucible's instrument roles into the user's Codex configuration**: a new kind of side effect, for a saving the seat's read of its template by path already takes (`docs/decisions/instruments.md` § Instrument agents).
 - **Maintaining the desktop app and the IDE extension**: untested and
   unused by the maintainer.
 - **A cutover runbook** with a flip record, obligations and a capability
@@ -206,6 +203,7 @@ preference.)
 
 ## Changes
 
+- 2026-11-03: on the template path the seat reads its template by the path its dispatch names, and installing crucible's roles into the user's Codex configuration is rejected outright, no longer waiting on a cost audit of Codex controllers, since the read by path takes the saving it was for (`docs/decisions/instruments.md`).
 - 2026-11-02: the adapters keep only host mechanics: never predicting an
   agent's result and naming the model go to the router, fan-out
   independence to dispatching-parallel-agents' step 3, effort only on
