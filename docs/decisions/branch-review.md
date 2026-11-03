@@ -69,7 +69,7 @@ ledger's `## Questions` with
 the controller's disposition; the close readout lists them, and the
 branch reviewer's read scoping excludes that section, so a pass's
 questions never become the next pass's input
-(`crucible:subagent-driven-development § Setup`;
+(`skills/subagent-driven-development/references/setup.md`;
 `skills/requesting-code-review/code-reviewer.md` § Execution Trail).
 
 **The loop.** A fix wave opens on a BLOCKER or MAJOR or a lead
@@ -383,6 +383,7 @@ accepted by the maintainer.)
 
 ## Changes
 
+- 2026-11-03: the `## Questions` line forms are cited at `skills/subagent-driven-development/references/setup.md`, where they moved from SDD's § Setup, so the citation names the file that holds them.
 - 2026-11-03: the premise-finding route is cited at `skills/redteaming/references/premise-asks.md`, where flip-paths' § Premise findings moved, so a controller handling a premise finding no longer loads the flip paths (`docs/decisions/authoring-crucible.md`).
 - 2026-11-03: a lead no longer carries a kind (`question`, `proposal`, `concern`), and the rule that a concern is CONFIRMED or LEFT goes, so the reviewer may rule any lead RECOMMENDED; because the kind's one consumer was that rule, and a concern ruled RECOMMENDED is harmless.
 - 2026-11-03: the findings a very-small lane's last pass left open no longer reach the standard route's branch reviewer as `Lane:` leads at their staked severity after the lane's upgrade hatch, nor a BLOCKER or MAJOR one it leaves the close readout; the brainstorm the hatch invokes takes them in its incoming document instead, because the carry-over sat in text every standard run reads to serve a rare move (`docs/decisions/routes.md`).

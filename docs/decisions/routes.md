@@ -103,7 +103,7 @@ plan and the
 task loop have. (Basis: judgment, accepted by the maintainer,
 2026-10-29.)
 
-Since 2026-11-03 where each choice is made and the unsupported list are stated here rather than in brainstorming's reference for step 4, which keeps the presets, the selector and the proposal: a controller proposing a preset needs neither, and offers only the three presets. The ready reason for refusing an off-preset combination at step 4 goes with them, a minor loss. An agent's proposal, on which the maintainer left the call to the agent. (Basis: judgment, accepted by the maintainer.)
+Since 2026-11-03, where each choice is made and the unsupported list are stated here rather than in brainstorming's reference for step 4, which keeps the presets, the selector and the proposal: a controller proposing a preset needs neither, and offers only the three presets. The ready reason for refusing an off-preset combination at step 4 goes with them, a minor loss. An agent's proposal, on which the maintainer left the call to the agent. (Basis: judgment, accepted by the maintainer.)
 
 The folded preset was kept rather than retired: about nineteen features
 used it, on crucible before its move to this repository and on one other

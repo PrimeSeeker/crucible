@@ -139,7 +139,7 @@ ambiguous. On 2026-10-19 the result became a ledger line, since "unless
 that skill already ran them" left a resumed controller unable to tell.
 (Basis: judgment, accepted by the maintainer.)
 
-On 2026-11-03 the two steps were copied into SDD's setup reference, and the git fallback moved out of the skill into a reference, to cut what agents read: the worktree skill loads at brainstorming on every route, where only Steps 0–1 run, and the fallback runs only where no native tool serves, a feature starts inside another's worktree, or the instructions declare a directory. An agent's reading of session transcripts also found SDD Setup rarely reloading the skill, leaving the two steps to recall. The copy, about 120 words, is an accepted duplicate: the skill keeps its own for standalone use. An agent's proposal, on which the maintainer left the call to the agent. (Basis: judgment, accepted by the maintainer.)
+On 2026-11-03 the two steps were copied into SDD's setup reference, and the git fallback moved out of the skill into a reference, to cut what agents read: the worktree skill loads at brainstorming on every route, where only Steps 0–1 run, and the fallback runs only where no native tool serves, a feature starts inside another's worktree, or the instructions declare a directory. An agent's count of session transcripts also found no reload of the skill within one context in 52 loads, leaving SDD Setup's two steps to recall. The copy, about 120 words, is an accepted duplicate: the skill keeps its own for standalone use. An agent's proposal, on which the maintainer left the call to the agent. (Basis: measured, for the reload count; judgment, accepted by the maintainer.)
 
 ## Rejected
 

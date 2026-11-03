@@ -7,4 +7,4 @@ Any implementer's report, a fix report included, may carry beside its work:
 - **`Questions` items:** each a lead; a branch-review fix report's go under `## Questions` instead (`crucible:requesting-code-review`).
 - **A fix proposed outside its task**, never made: route it to its owning task, in that task's dispatch context where it has yet to run; to the branch review as a lead; or, where it touches binding content, by `skills/redteaming/references/flip-paths.md`.
 
-A task reviewer's `Questions` items are leads too. Write each lead in `crucible:subagent-driven-development § Setup`'s form; none opens a fix wave by itself or consumes a cap: what the branch reviewer's ruling on a lead opens is `crucible:requesting-code-review` § The branch-review loop's to say.
+A task reviewer's `Questions` items are leads too. Write each lead in `skills/subagent-driven-development/references/setup.md`'s form; none opens a fix wave by itself or consumes a cap: what the branch reviewer's ruling on a lead opens is `crucible:requesting-code-review` § The branch-review loop's to say.

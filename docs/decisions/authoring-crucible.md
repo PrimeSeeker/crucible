@@ -281,6 +281,8 @@ maintainer.)
 
 The convention's own text said nothing of a recurring step until 2026-11-03, so a stub whose trigger recurs, such as merging each round's seat reports, read literally sent a controller back to its reference every round; it now says a reference read since the last compaction is not read again. An agent's proposal, on which the maintainer left the call to the agent. (Basis: judgment, accepted by the maintainer.)
 
+On 2026-11-03 SDD's ledger line forms for leads and `## Questions` moved from its § Setup into `skills/subagent-driven-development/references/setup.md`, read at Setup, though leads and questions are written past that step, at every task and branch-review pass: the texts where they are written restate their forms or lead to that file by citation, so a controller after compaction still finds a form, and the forms no longer ride every re-attach. An agent's proposal, on which the maintainer left the call to the agent. (Basis: judgment, accepted by the maintainer.)
+
 ### Resident tokens per route
 
 Resident tokens were counted on 2026-11-03 at `a3db87f`, before the
@@ -478,6 +480,7 @@ the build-history rule included (`skills/using-crucible/SKILL.md`).
 
 ## Changes
 
+- 2026-11-03: SDD's ledger line forms for leads and `## Questions` sit in its setup reference, an exception to the spine's rules that bind beyond their step; because the texts where leads and questions are written restate the forms or cite that file, and the forms no longer ride every re-attach.
 - 2026-11-03: the flip-paths stubs in redteaming and SDD send a feature's controller to `skills/brainstorming/references/umbrella-children.md` § Under an umbrella before it raises a late split or a binding change and before its first boundary check for a landed one, and back after compaction; because the umbrella split left that section cited there without the read and re-read that flip-paths' stub had given it. The umbrella split's word count for `umbrella-children.md` also states its size since § Marks took in the no-line procedure, a record stating the current position.
 - 2026-11-03: the premise-finding route has a reference of its own, `skills/redteaming/references/premise-asks.md`, with a redteaming stub that keeps the re-read line the flip-paths stub gave it; because a controller handling a premise finding loaded all of flip-paths for one section.
 - 2026-11-03: brainstorming has two umbrella stubs, `skills/brainstorming/references/umbrellas.md` for the umbrella's own controller and `skills/brainstorming/references/umbrella-children.md` for a child's, which also holds flip-paths' raising and receiving steps; because a child loaded the whole umbrellas reference, and flip-paths for one section, to act on the children's side alone.
