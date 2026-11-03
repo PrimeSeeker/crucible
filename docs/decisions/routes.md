@@ -2,20 +2,11 @@
 
 ## Decision
 
-**Four choices, three presets.** A feature's arrangement is four
-choices: review before code, the plan's form, per-task review, and
-inline or subagent execution. The branch review is no choice: every
-arrangement runs it, at full scope. The routes are presets over the
-choices, standard the usual one, folded and very small the others, and
-the other combinations are unsupported, each for the reason the list
-gives it; the presets and the unsupported list are stated once, in
-`skills/brainstorming/SKILL.md`
-§ Proposing the arrangement (step 4). Each choice is made where its
-information exists: the preset at brainstorming's present-the-design
-step, per-task review in the plan (`docs/decisions/plans.md`), execution
-per task (`docs/decisions/task-loop.md`). A campaign's width stays where
-it was chosen, at the campaign gate and by the stop rule
-(`docs/decisions/spec-campaign.md`).
+**Four choices, three presets.** A feature's arrangement is four choices: review before code, the plan's form, per-task review, and inline or subagent execution. The branch review is no choice: every arrangement runs it, at full scope. The routes are presets over the choices, standard the usual one, folded and very small the others, stated in `skills/brainstorming/SKILL.md` § Proposing the arrangement (step 4); the other combinations are unsupported, each for the reason the list below gives it.
+
+Each choice is made where its information exists: the preset at brainstorming's present-the-design step; per-task review in the plan, where a task may carry `Review: branch only` (`crucible:writing-plans` § Per-task structure; `docs/decisions/plans.md`); execution per task (`crucible:subagent-driven-development` § Inline mode, and on the very-small lane its reference; `docs/decisions/task-loop.md`). A campaign's width, its seats and rounds, is set at the campaign gate and by the stop rule (`crucible:redteaming` § Stop rule and terminal pass; `docs/decisions/spec-campaign.md`).
+
+**Unsupported**, each for its reason: per-task review with no plan (there are no tasks); a plan phase without a separate plan (the spec campaign reviews a folded one); a campaign on a lane note, or a spec with no campaign (a feature's spec is always campaigned, a note never is; an umbrella approved without a campaign is a spec of its own kind); a lane note with a plan, or a spec with no plan (work that needs a plan takes a campaign preset, and a campaigned spec is planned).
 
 **The preset is the operator's.** The controller proposes a preset as it
 closes the design presentation, naming it, the overturn answer with its
@@ -111,6 +102,8 @@ needs the tasks and execution needs the task in hand, which only the
 plan and the
 task loop have. (Basis: judgment, accepted by the maintainer,
 2026-10-29.)
+
+Since 2026-11-03 where each choice is made and the unsupported list are stated here rather than in brainstorming's reference for step 4, which keeps the presets, the selector and the proposal: a controller proposing a preset needs neither, and offers only the three presets. The ready reason for refusing an off-preset combination at step 4 goes with them, a minor loss. An agent's proposal, on which the maintainer left the call to the agent. (Basis: judgment, accepted by the maintainer.)
 
 The folded preset was kept rather than retired: about nineteen features
 used it, on crucible before its move to this repository and on one other
@@ -329,6 +322,7 @@ small preset or the waiver for its work.
 
 ## Changes
 
+- 2026-11-03: where each choice is made and the unsupported combinations, each with its reason, are stated in this record, moved from `skills/brainstorming/references/proposing-the-arrangement.md`, which keeps the presets, the overturn question and the proposal; because a controller proposing a preset at step 4 needs neither, and the ready reason for refusing an off-preset combination, which goes, is a minor loss.
 - 2026-11-03: on the upgrade hatch's move the lane's `sdd/` still moves aside as `sdd-lane/`, but the standard route's ledger no longer links it as a predecessor and the plan phase's close no longer carries the lane's open findings and unruled leads to the branch reviewer; the brainstorm the hatch invokes takes them, and the lane's departures, in its incoming document; because the carry-over sat in text every standard run reads to serve a rare move, and the loss, the lane's rulings missing from the final close readout, is minor.
 - 2026-11-03: the arrangement questions' citation follows their move from the shared seat reference to `skills/subagent-driven-development/references/review-terms.md`, a reference of their own, so a controller that applies them no longer loads the seat rules.
 - 2026-11-02: the shared seat reference's citations follow its rename
