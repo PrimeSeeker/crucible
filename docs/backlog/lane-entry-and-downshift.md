@@ -7,7 +7,7 @@
     campaign has stopped. Left out when the arrangement choices became
     separable (2026-10-29).
   - **A lane note with a plan.** A settled change that needs several
-    coordinated tasks takes the standard preset, whose campaign is
+    tasks takes a campaign preset, folded or standard, whose campaign is
     expected to stop after its first round, because only the campaign
     presets carry a plan.
 

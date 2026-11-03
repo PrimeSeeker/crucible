@@ -136,8 +136,8 @@ mechanisms; size alone does not decide:
 
 - **Standard:** spec, spec campaign, plan, a single verification round of
   the plan, execution; the usual choice.
-- **Folded:** for a design that needs review but whose plan is short
-  and needs no review of its own: one document holding both spec and
+- **Folded:** for a design whose plan needs no review of its own, its
+  tasks disjoint and briefly stated: one document holding both spec and
   plan, the same spec campaign, no separate plan step.
 - **Very small:** for a change whose design is settled and that one
   implementer can carry: a short lane note, implemented directly, then

@@ -10,7 +10,8 @@ Each choice is made where its information exists: the preset at brainstorming's 
 
 **The preset is the operator's.** The controller proposes a preset as it
 closes the design presentation, naming it, the overturn answer with its
-reason and, for folded, the reason the fold fits; the operator confirms or
+reason and, for a campaign preset, the reason the fold fits or does
+not; the operator confirms or
 vetoes it there, and the answer is the route entry in the brainstorm
 decision record, written for every preset. The operator confirms the
 preset only: a departure expected later, such as tasks the plan may
@@ -28,15 +29,15 @@ and the two usual cases in which it answers no before any review, are
 defined in
 `skills/subagent-driven-development/references/review-terms.md`
 § The arrangement questions, and a no for any other reason states that
-reason. Between the campaign presets, folded fits
-a plan whose tasks are disjoint enough that no seam between them is
-worth its own review, and whose entries are short enough for every
-seat to read them all, standard the rest. Width is no test of risk, since the branch review reads the
+reason. Width is no test of risk, since the branch review reads the
 whole diff whatever its width, but it shapes the arrangement where work
 needs coordinating: a settled change one implementer can carry takes
-the very-small preset; a settled change that needs several coordinated
-tasks takes standard, whose campaign can be expected to stop after its
-first round. File, line and task counts are not the test.
+the very-small preset; a settled change that needs several tasks takes
+a campaign preset, whose campaign can be expected to stop after its
+first round. Between the campaign presets, an overturn expected or not,
+folded fits a plan whose tasks are disjoint enough that no seam between
+them is worth its own review, and whose entries are short enough for
+every seat to read them all, standard the rest. File, line and task counts are not the test.
 
 - **Folded:** spec and plan in one document, `folded.md`, no plan phase,
   and every review instrument unchanged
@@ -142,9 +143,23 @@ seams: every implementer and reviewer in a folded plan's task loop reads
 the whole document, where on standard each reads the plan's header and
 its own task, and the plan half is written before a campaign chosen
 because an overturn is expected. Neither cost has been measured against
-a plan phase's. (Basis: the maintainer's preference, for judging by the
-decomposition; judgment, accepted by the maintainer, for keeping a
-length condition and for the wording.)
+a plan phase's. (Basis: measured, for the history, by reading the
+2026-08-21 lane's spec in the repository crucible was developed in
+before its move here, the arrangements design's D2 and
+`docs/decisions/operator-steering.md`; the maintainer's preference, for
+judging by the decomposition; judgment, accepted by the maintainer, for
+keeping a length condition and for the wording.)
+
+The branch review found the test's reach left open: a settled change
+needing several tasks took standard because only the campaign presets
+carry a plan, which stopped ruling folded out once the count went. Such
+a change takes either campaign preset by the same test: the
+decomposition argument holds unchanged, and with no overturn expected
+the plan half written before the campaign is at less risk still. A
+proposal of either campaign preset gives the reason the fold fits or
+does not, since the reason the maintainer found off was a standard
+one's. (Basis: judgment, accepted by the maintainer, who left both calls
+to the agent.)
 
 ### The overturn question as the selector
 
@@ -346,6 +361,7 @@ small preset or the waiver for its work.
 
 ## Changes
 
+- 2026-11-03: a settled change needing several tasks takes folded or standard by the folded test, no longer standard alone, and a proposal of either campaign preset gives the reason the fold fits or does not; because "only the campaign presets carry a plan" stopped ruling folded out once the task count went, and the reason the maintainer had found off was a standard proposal's.
 - 2026-11-03: the folded preset fits a plan whose tasks are disjoint enough that no seam between them is worth its own review and whose entries are short enough for every seat to read them all, in place of a plan of one or two tasks, and task counts join file and line counts as no test; because the maintainer found a controller justifying standard by a task count, which measures neither what the plan phase reviews nor what the fold costs.
 - 2026-11-03: the citation of brainstorming's arrangement section uses its shortened heading.
 - 2026-11-03: where each choice is made and the unsupported combinations, each with its reason, are stated in this record, moved from `skills/brainstorming/references/proposing-the-arrangement.md`, which keeps the presets, the overturn question and the proposal; because a controller proposing a preset at step 4 needs neither, and the ready reason for refusing an off-preset combination, which goes, is a minor loss.

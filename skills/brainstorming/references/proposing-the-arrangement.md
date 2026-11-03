@@ -10,14 +10,15 @@ A feature's arrangement is four choices: review before code (spec campaign or no
 
 Choose the preset by the overturn question (`skills/subagent-driven-development/references/review-terms.md` § The arrangement questions):
 
-- Overturn expected → spec campaign: folded where the plan's tasks are disjoint enough that no seam between them is worth its own review, and their entries short enough for every seat to read them all, as folded seats do; standard for the rest.
+- Overturn expected → spec campaign.
 - Not expected, for one of that section's two usual cases or another stated reason, and one implementer can carry it → very-small.
-- Not expected, but needing several coordinated tasks → standard, as only the campaign presets carry a plan; its campaign can be expected to stop after round 1, still the stop rule's call.
+- Not expected, but needing several tasks → spec campaign too, as only the campaign presets carry a plan; it can be expected to stop after round 1, still the stop rule's call.
+- Between the campaign presets: folded where the plan's tasks are disjoint enough that no seam between them is worth its own review, and their entries short enough for every seat to read them all, as folded seats do; standard for the rest.
 - Width is no test of risk, since the branch review reads the whole diff, but it shapes the arrangement where work needs coordinating.
 - Never use or offer file, line or task counts as the test.
 - An umbrella's review goes by its content (`crucible:brainstorming` § Umbrellas): it has no code of its own to review after.
 
-As you close the design presentation, recommend one preset by name, with the overturn answer and its reason and, for folded, the reason the fold fits. The operator rules; present a close call as one. A departure you expect only later ("most tasks will likely be branch review only") is a heads-up, not something to confirm: per-task review is the plan's call, reported at the close of the phase that reviews the plan, and execution is chosen per task.
+As you close the design presentation, recommend one preset by name, with the overturn answer and its reason and, for a campaign preset, the reason the fold fits or does not. The operator rules; present a close call as one. A departure you expect only later ("most tasks will likely be branch review only") is a heads-up, not something to confirm: per-task review is the plan's call, reported at the close of the phase that reviews the plan, and execution is chosen per task.
 
 Route-specific:
 
