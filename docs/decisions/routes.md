@@ -10,7 +10,7 @@ Each choice is made where its information exists: the preset at brainstorming's 
 
 **The preset is the operator's.** The controller proposes a preset as it
 closes the design presentation, naming it, the overturn answer with its
-reason and, for folded, the plan-size reason; the operator confirms or
+reason and, for folded, the reason the fold fits; the operator confirms or
 vetoes it there, and the answer is the route entry in the brainstorm
 decision record, written for every preset. The operator confirms the
 preset only: a departure expected later, such as tasks the plan may
@@ -29,13 +29,14 @@ defined in
 `skills/subagent-driven-development/references/review-terms.md`
 § The arrangement questions, and a no for any other reason states that
 reason. Between the campaign presets, folded fits
-a plan of one or two tasks with no seam worth its own review, standard
-the rest. Width is no test of risk, since the branch review reads the
+a plan whose tasks are disjoint enough that no seam between them is
+worth its own review, and whose entries are short enough for every
+seat to read them all, standard the rest. Width is no test of risk, since the branch review reads the
 whole diff whatever its width, but it shapes the arrangement where work
 needs coordinating: a settled change one implementer can carry takes
 the very-small preset; a settled change that needs several coordinated
 tasks takes standard, whose campaign can be expected to stop after its
-first round. File and line counts are not the test.
+first round. File, line and task counts are not the test.
 
 - **Folded:** spec and plan in one document, `folded.md`, no plan phase,
   and every review instrument unchanged
@@ -122,6 +123,28 @@ for its stated reason, that work needing a plan takes a campaign preset
 (corrected 2026-10-30, after the audit,
 `docs/decisions/evidence-and-findings.md`). (Basis: judgment, accepted
 by the maintainer, 2026-10-29.)
+
+### What the fold fits
+
+The fold entered on 2026-08-21 for a small change, judged by its shape
+with thresholds rejected, and relied on that size to keep the
+whole-document read cheap. The 2026-10-29 rewrite worded it as a plan of
+one or two tasks with no seam worth its own review, a folded design
+being minor enough to steer at the gate with no digest, a reason that
+lapsed with the digest (2026-11-02). On 2026-11-03 the maintainer noticed
+a controller justifying standard by "more than 1-2 tasks" and placed the
+boundary at the difficulty of decomposition, a plan of many mostly
+disjoint tasks qualifying: the plan phase reviews the decomposition
+(ownership, order, seams, acceptance mapping), and a disjoint plan
+leaves it little to find. A count measures neither that nor the fold's
+own cost, which grows with the task entries' length whatever their
+seams: every implementer and reviewer in a folded plan's task loop reads
+the whole document, where on standard each reads the plan's header and
+its own task, and the plan half is written before a campaign chosen
+because an overturn is expected. Neither cost has been measured against
+a plan phase's. (Basis: the maintainer's preference, for judging by the
+decomposition; judgment, accepted by the maintainer, for keeping a
+length condition and for the wording.)
 
 ### The overturn question as the selector
 
@@ -302,8 +325,9 @@ gate.)
   document, not the review, was the disproportionate part, and a change
   with nothing left to decide before code is best reviewed as its diff
   (§ Why).
-- **Choosing a preset by file or line counts**: the risk is an
-  unsettled mechanism, which a count does not measure.
+- **Choosing a preset by file, line or task counts**: a count measures
+  neither the risk, an unsettled mechanism, nor the fold's limits, the
+  plan's seams and length (§ Why).
 - **The shape test**, and the split of the small routes by whether a
   decision deserved review before code: both measured size, not risk;
   and the overturn question beside a blast-radius limit or beside the
@@ -322,6 +346,7 @@ small preset or the waiver for its work.
 
 ## Changes
 
+- 2026-11-03: the folded preset fits a plan whose tasks are disjoint enough that no seam between them is worth its own review and whose entries are short enough for every seat to read them all, in place of a plan of one or two tasks, and task counts join file and line counts as no test; because the maintainer found a controller justifying standard by a task count, which measures neither what the plan phase reviews nor what the fold costs.
 - 2026-11-03: the citation of brainstorming's arrangement section uses its shortened heading.
 - 2026-11-03: where each choice is made and the unsupported combinations, each with its reason, are stated in this record, moved from `skills/brainstorming/references/proposing-the-arrangement.md`, which keeps the presets, the overturn question and the proposal; because a controller proposing a preset at step 4 needs neither, and the ready reason for refusing an off-preset combination, which goes, is a minor loss.
 - 2026-11-03: on the upgrade hatch's move the lane's `sdd/` still moves aside as `sdd-lane/`, but the standard route's ledger no longer links it as a predecessor and the plan phase's close no longer carries the lane's open findings and unruled leads to the branch reviewer; the brainstorm the hatch invokes takes them, and the lane's departures, in its incoming document; because the carry-over sat in text every standard run reads to serve a rare move, and the loss, the lane's rulings missing from the final close readout, is minor.
