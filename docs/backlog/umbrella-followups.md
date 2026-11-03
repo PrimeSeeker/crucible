@@ -6,15 +6,14 @@ The branch that added umbrellas (`skills/brainstorming/references/umbrellas.md`,
 `docs/decisions/umbrellas.md`) closed its review with these left open,
 none blocking:
 
-- **A mark can conflict with an appended child.** § Shape says the blank
-  line between entries keeps siblings' marks from conflicting in git.
+- **A mark can conflict with an appended child.** § Shape puts a blank
+  line between entries, which keeps siblings' marks from conflicting in git.
   Where the Children list ends the file, one branch marking the last
   entry and another appending a child conflict; a line after the list
   avoids it (reproduced in throwaway repositories).
 - **No text says how a seat finds the feature's own entry** (by its
   slug).
-- **Brainstorming's Flow step 4 does not point to the umbrella stub**,
-  and the stub's heading lacks the step tag its sibling sections carry.
+- **Brainstorming's Flow step 4 does not point to the umbrella stub.**
   Self-review check 3's umbrella sentence also reads oddly against an
   umbrella's own draft.
 - **FIX_BASE after a red suite.** SDD § Finish gives a red-suite wave's
@@ -26,7 +25,6 @@ none blocking:
 - **An approval-only umbrella still gets a workspace and a decision
   record**, which its landing deletes: ceremony for a document no
   campaign reviews.
-- **The implementer slot card is at 2,966 of its 3,000 characters.**
 - **A pending open-items ask at an umbrella has no carrier.** With no
   home for open items configured, an umbrella's landing and its closing
   review ask the operator where they go and keep the workspace until the

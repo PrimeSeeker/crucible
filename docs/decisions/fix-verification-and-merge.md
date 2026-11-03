@@ -13,9 +13,7 @@ ids it absorbs in an `origins:` element, which the terminal pass reads
 to find the findings behind each decision ask
 (`skills/redteaming/references/round-record.md` § Round record format).
 Every seat question takes a disposition. Nothing mechanical checks the
-merge. Seat ids are never reused within a feature, the plan phase's
-pre-pass id `p0` excepted, so the stop check traces each seat's forecast
-across rounds by its id (`crucible:redteaming § Panels`).
+merge.
 
 **Dispositions and rulings.** Each merged entry takes one disposition:
 applied, partly-applied, parked, rejected, deferred-to-implementation or
@@ -124,6 +122,8 @@ keeps its `origins:` elements and question dispositions, and seat ids
 stay unique because the stop check reads each seat's forecast lines by
 id across rounds. (Basis: measured, for the catches; judgment, an
 agent's proposal accepted by the maintainer, for the retirement.)
+
+On 2026-11-03 that uniqueness went too: the stop check answers each forecast by the mechanism it names, never by seat id, and a replacement seat takes a fresh id (`crucible:redteaming § Panels`); an id may now recur across rounds, a minor loss under the maintainer's compaction mandate. An agent's proposal, on which the maintainer left the call to the agent. (Basis: judgment, an agent's call the maintainer has not ruled on.)
 
 ### Dispositions and the sub-point check
 
@@ -236,6 +236,7 @@ controller's judgment (`docs/decisions/spec-campaign.md`).
 
 ## Changes
 
+- 2026-11-03: seat ids are no longer unique within a feature, a replacement taking a fresh id, since the stop check matches forecasts by the mechanism they name: a minor loss under the maintainer's compaction mandate.
 - 2026-11-03: a `deferred-minor` entry is seeded into the ledger by SDD's Setup, the ledger's only seeding writer, not by the close of the plan phase or the folded campaign (`docs/decisions/records-and-workspace.md`).
 - 2026-11-03: the round record's citations point at `skills/redteaming/references/round-record.md`, where § Round record format moved from `formats.md` so that a step reading `formats.md` for the workspace or the feature folder stops loading the round record (`docs/decisions/authoring-crucible.md`).
 - 2026-11-03: the trace's decision-ask ids scoped as `formats.md`

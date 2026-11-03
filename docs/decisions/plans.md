@@ -21,8 +21,7 @@ in the task that owns it; a spec marker is named, by its site, in the
 Contract of each task that owns it, each owner making the call for its
 own sites. The plan phase's mechanical pre-pass checks, as part of its
 ownership closure, that every marker has an owning task, and on the
-folded lane round 0's pre-pass and the controller's re-run after each
-wave do. A deferral is misplaced where a task names it whose scope it
+folded lane round 0's pre-pass does. A deferral is misplaced where a task names it whose scope it
 does not touch, or where it sits in a task other than one whose scope
 it falls in (`crucible:writing-plans § Deferring detail`). The call is
 the owning implementer's, logged in its Decision Log where it departs
@@ -36,8 +35,8 @@ consumers of everything the task changes; Contract gives signatures, not
 bodies, and names the spec decisions the task enacts by id. A plan never
 contains function bodies, test code, shell sequences, TDD step scripts,
 commit messages, per-step checkboxes or copies of spec content
-(`crucible:writing-plans § Per-task structure — four fields, all
-required`; `crucible:writing-plans § What a plan never contains`). Each
+(`crucible:writing-plans § Per-task structure`;
+`crucible:writing-plans § What a plan never contains`). Each
 acceptance criterion maps to a kind of check or says why neither applies
 (`docs/decisions/test-rules.md`). Its edge and error scenarios name the
 inputs the spec implies but never names.
@@ -52,8 +51,7 @@ and no seat grades marks as such; the close readout of the phase that
 reviews the plan, the plan phase or, on the folded preset, the spec
 campaign, lists the marked tasks for the operator as information. Once
 that review has closed, no mark is added: the task keeps its review
-(`crucible:writing-plans § Per-task structure — four fields, all
-required`).
+(`crucible:writing-plans § Per-task structure`).
 
 **Task sizing.** A task is the smallest unit with its own test cycle and
 its own review verdict, a fresh task reviewer's gate or, for a marked
@@ -77,8 +75,7 @@ verifier and the plan phase's terminal pass
 census: for each set the plan adds a member to, every place in the
 repository's tracked text that enumerates the set, and that place's
 consumers, that text joining its supporting inputs; round 0's pre-pass
-on the folded lane takes it for the plan half, and the controller's
-post-wave re-run of the arithmetic leaves it out
+on the folded lane takes it for the plan half
 (`skills/redteaming/references/plan-phase.md`;
 `skills/redteaming/references/folded-lane.md`). The plan phase's pre-pass gets its ownership closure, set census and worksheet as lens text the controller fills into its lens slot (`skills/redteaming/references/panels.md`). The phase's fix wave
 and its repair take what any fix list takes
@@ -250,8 +247,7 @@ set leaves stale each other place spelling the set out unless someone
 lists those places. The plan stage is
 where the set census meets that, before any code, the branch review
 already reading the whole branch; a census needs the repository's text,
-so the pre-pass's inputs widened to it, and the controller's post-wave
-re-run, a check of arithmetic, does not repeat it. It adds one table to
+so the pre-pass's inputs widened to it. It adds one table to
 every feature's plan phase, which word counts do not show. An agent's
 proposal, which the maintainer accepted. (Basis: measured, for the
 clusters; judgment, accepted by the maintainer, for the census.)
@@ -298,6 +294,7 @@ directory, and `plan` is a value of their `phase` selector.
 
 ## Changes
 
+- 2026-11-03: the controller no longer re-runs the pre-pass's liveness, ownership and overlap arithmetic after a wave or a repair, in the plan phase or on the folded lane, so a wave that breaks it surfaces only in later review: a minor loss under the maintainer's compaction mandate. Citations of writing-plans' shortened heading read `§ Per-task structure`.
 - 2026-11-03: the plan phase's pre-pass gets its ownership closure, set census and worksheet as lens text from `skills/redteaming/references/panels.md`, the seat card's `worksheet` selector going, and the plan phase and the folded lane cite that text for the census; because every redteam seat's agent carried the passage for the one seat that takes it (`docs/decisions/instruments.md`).
 - 2026-11-03: the plan phase's close no longer seeds SDD's ledger; SDD's Setup, already its backstop, seeds the contained amendments, open premise asks, what earlier phases left open and the `deferred-minor` entries alone (`docs/decisions/records-and-workspace.md`); because the same seeding was written twice with no incident behind the second writer.
 - 2026-11-03: the mark's criterion is cited at its own section, split from § The arrangement questions so the seats that do not grade marks stop receiving it.

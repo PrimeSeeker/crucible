@@ -52,8 +52,9 @@ sits in a reference read on demand: redteaming's `plan-phase.md` and
 share. So does a long step body where the line needs it, as in SDD,
 redteaming and brainstorming. The skill keeps its spine: the overview
 and the steps in order, each with its trigger; the resume and
-rehydration rules; the loop bounds; the flow gates; the rationalization
-and red-flag tables; and every rule that binds beyond the step whose
+rehydration rules; the loop bounds; the flow gates; its rationalization
+and red-flag tables, where it has them, without rows that only restate
+its body (§ Why); and every rule that binds beyond the step whose
 section holds it, at every dispatch, resume or fix application. A moved
 section keeps its heading with a stub, one paragraph naming the
 reference and when to read it in full, so citations of the heading
@@ -133,6 +134,8 @@ prefixed upstream paths and URLs are skipped.
 **Line endings.** Every text file is LF: `.gitattributes` sets
 `* text=auto eol=lf` and keeps its explicit pins for `*.sh` and
 `hooks/session-start`.
+
+**One line per paragraph.** Text under `skills/`, which agents read, holds each paragraph and list item on one line, never hard-wrapped; the rendered templates and agents follow their sources.
 
 ## Why
 
@@ -262,6 +265,8 @@ spine keeps was reworked during the spec's review, on the agent's
 calls. (Basis: judgment, accepted by the maintainer, for the move and
 the spine; judgment, an agent's call the maintainer has not ruled on,
 for the rework of the spine's list.)
+
+The placement of 2026-11-02 kept the rationalization tables whole, as a form writing-skills endorses, cutting only exact duplicates. On 2026-11-03, under the maintainer's mandate to cut prose as far as reasonably achievable, 18 of the 31 rows in finishing, using-git-worktrees, SDD and requesting-code-review went, each restating a rule its skill's body states, with no recorded catch; destructive-action guards and rows resting on recorded evidence stayed (`docs/decisions/worktrees.md`), and the router's Red Flags stayed whole (`docs/decisions/session-start-hook.md`). The loss is minor: a second phrasing of rules the body keeps, none recorded as changing behaviour. An agent's proposal, on which the maintainer left the call to the agent. (Basis: judgment, an agent's call the maintainer has not ruled on.)
 
 Stating once per skill what a stub means keeps each stub to its
 reference and trigger; the route stubs had restated it, at 29 to 72
@@ -445,6 +450,10 @@ no recorded reason. Setting LF for every text file on 2026-10-17 changed
 one committed file, in bytes only. (Basis: judgment, accepted by the
 maintainer.)
 
+### One line per paragraph
+
+Counted with Anthropic's token-counting endpoint on 2026-11-03, joining the hard wraps of three files cut their tokens by 4 to 5% as raw text (`seat-rules.md` 4,725 to 4,533, `formats.md` 7,684 to 7,316, the implementer agent 6,172 to 5,901) and by 12 to 13% as Claude Code's file reader returns them, each line numbered (5,737 to 5,020, 8,995 to 7,943, 7,361 to 6,406). Every agent read pays it, and a wrap carries nothing a reader needs. An agent's proposal, on which the maintainer left the call to the agent. (Basis: measured; judgment, an agent's call the maintainer has not ruled on.)
+
 ## Rejected
 
 - **A full rewrite of the controller skills** (2026-10-01): about three
@@ -480,6 +489,8 @@ the build-history rule included (`skills/using-crucible/SKILL.md`).
 
 ## Changes
 
+- 2026-11-03: text under `skills/` holds each paragraph and list item on one line, because a hard wrap cost 4 to 5% of a file's tokens raw and 12 to 13% with the line numbers a file reader adds.
+- 2026-11-03: a skill's rationalization table drops rows that only restate its body, the router's Red Flags kept whole, revisiting the placement's whole-table keep: a minor loss under the maintainer's compaction mandate, each row cut having restated a body rule with no recorded catch.
 - 2026-11-03: SDD's ledger line forms for leads and `## Questions` sit in its setup reference, an exception to the spine's rules that bind beyond their step; because the texts where leads and questions are written restate the forms or cite that file, and the forms no longer ride every re-attach.
 - 2026-11-03: the flip-paths stubs in redteaming and SDD send a feature's controller to `skills/brainstorming/references/umbrella-children.md` § Under an umbrella before it raises a late split or a binding change and before its first boundary check for a landed one, and back after compaction; because the umbrella split left that section cited there without the read and re-read that flip-paths' stub had given it. The umbrella split's word count for `umbrella-children.md` also states its size since § Marks took in the no-line procedure, a record stating the current position.
 - 2026-11-03: the premise-finding route has a reference of its own, `skills/redteaming/references/premise-asks.md`, with a redteaming stub that keeps the re-read line the flip-paths stub gave it; because a controller handling a premise finding loaded all of flip-paths for one section.

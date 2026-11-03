@@ -96,10 +96,10 @@ judgment, accepted by the maintainer.) That edit left upstream's "MUST
 have before fixing" in the same list, contradicting the condition, and
 on 2026-11-02 it went as a defect. (Basis: judgment, accepted by the
 maintainer, who left the call to the agent: "Your call, I think".) The
-rationalization row "Test first proves it" and the red flag "Skip the
-test" stay: each answers a test that could be written, so neither
-contradicts the condition. (Basis: judgment, an agent's call the
-maintainer has not ruled on.)
+red flag "Skip the test" stays, the compaction having merged the
+rationalization row "Test first proves it" into it: it answers a test
+that could be written, so it does not contradict the condition. (Basis:
+judgment, an agent's call the maintainer has not ruled on.)
 
 The example's `env | grep IDENTITY` printed the variable's value, and so
 did `${IDENTITY:+SET}${IDENTITY:-UNSET}`, whose second expansion yields
@@ -181,6 +181,7 @@ accepted by the maintainer.)
 
 ## Changes
 
+- 2026-11-03: the rationalization row "Test first proves it" is recorded as merged into the red flag "Skip the test", where the compaction put it.
 - 2026-11-03: systematic-debugging and dispatching-parallel-agents keep upstream's procedure, compacted: one statement of each rule, no session examples, impact figures, quick-reference tables, repeated lists or partner signals; closeness to upstream's wording no longer keeps duplicates.
 - 2026-11-03: redteaming's panels no longer leave fan-out mechanics to dispatching-parallel-agents, and the router's index scopes the skill to fan-outs outside crucible's own seat dispatches: a panel needs only the rule it states itself, and loading the skill for it cost the skill's whole text.
 - 2026-11-03: systematic-debugging's departures are counted as five

@@ -2,12 +2,13 @@
 
 ## Decision
 
-**Single invocations.** `crucible:using-git-worktrees` and
-`crucible:finishing-a-development-branch` run every command as a single
-invocation: no shell program, no command substitution, no captured
-variable, and in the worktree skill, where every command is a Git one, no
-pipe. The agent keeps each output itself, compares the absolute paths
-`git rev-parse` prints, and substitutes values into the next command;
+**Single invocations.** `crucible:finishing-a-development-branch`, and
+`crucible:using-git-worktrees` in Steps 0–1 and its git fallback, run
+every command as a single invocation: no shell program, no command
+substitution, no captured variable, and in those worktree steps, whose
+every command is a Git one, no pipe. The agent keeps each output itself,
+compares the absolute paths `git rev-parse` prints, and substitutes
+values into the next command;
 finishing finds the main checkout from `git worktree list --porcelain`.
 
 **Seats' git conduct.** An implementer stages changed paths by name,
@@ -100,6 +101,7 @@ release lands on it, is tagged and then promoted to `stable`
 
 ## Changes
 
+- 2026-11-03: the worktree skill's single-invocation rule covers Steps 0–1 and its git fallback, no longer its setup and baseline steps, which run the project's own commands: a minor loss under the maintainer's compaction mandate.
 - 2026-11-02: finishing's Step 6 is named Remove the Worktree, so it is
   told apart from the step of SDD's Finish that deletes the feature
   workspace, both reached at one Finish; the force-push rule, which only

@@ -9,7 +9,7 @@
   claim reported not checked itself and records the outcome in the round
   record's verifier block (`skills/redteaming/SKILL.md` § Fix application
   and blind verification).
-- Neither the skill nor `skills/redteaming/references/formats.md` says
+- Neither the skill nor `skills/redteaming/references/round-record.md` says
   what happens next to an item the verifier found not landed, or to a
   delta claim found FALSE, in the spec campaign. The plan phase has a
   sanctioned path for a not-landed item only: one scoped repair edit and

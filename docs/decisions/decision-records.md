@@ -34,8 +34,8 @@ that writes or edits a record names the feature's brainstorm decision
 record among its inputs, and each position's basis is attributed from
 its entry's proposer and status, the maintainer's preference where the
 operator proposed it and judgment, accepted by the maintainer, where the
-controller did (`crucible:writing-plans § Per-task structure — four
-fields, all required`). An entry recorded `accepted — delegated to the
+controller did (`crucible:writing-plans § Per-task structure`). An
+entry recorded `accepted — delegated to the
 controller` is judgment, accepted by the maintainer, its text saying
 that the maintainer left the call to the agent, never stating it as the
 maintainer's ruling or choice.
@@ -147,6 +147,7 @@ judgment, accepted by the maintainer, 2026-10-29.)
 
 ## Changes
 
+- 2026-11-03: the citation of writing-plans' per-task structure uses its shortened heading.
 - 2026-10-30: an entry recorded `accepted — delegated to the
   controller` is attributed as judgment, accepted by the maintainer,
   saying the maintainer left the call to the agent, since the

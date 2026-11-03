@@ -36,8 +36,8 @@ fresh report path, and the first seat's file stays as the record. In
 execution and the branch review the fresh path is the first's with `-r<R>` before `.md`, stated once for every seat there, the slot cards naming only the common path
 (`skills/subagent-driven-development/references/dispatch-composition.md` § Shared-tree rules); the same
 gate tops up a campaign round that lost a seat, where the replacement
-takes a seat id no earlier seat of the feature used and writes that
-seat's `seat-<id>.md` (`crucible:redteaming § Panels`;
+takes a fresh seat id and writes its own `seat-<id>.md`
+(`crucible:redteaming § Panels`;
 `docs/decisions/spec-campaign.md`).
 
 ## Why
@@ -139,6 +139,7 @@ delegated by the maintainer.)
 
 ## Changes
 
+- 2026-11-03: a campaign's replacement seat takes a fresh id, no longer one no earlier seat of the feature used, since the stop check matches forecasts by mechanism, not by seat id: a minor loss under the maintainer's compaction mandate (`docs/decisions/fix-verification-and-merge.md`).
 - 2026-11-03: the replacement's `-r<R>` path in execution and the branch review is stated in the dispatch composition's § Shared-tree rules, and the slot cards, SDD's shared-tree paragraph and the adjudicator's report paths no longer restate it; because four cards and two SDD sites each carried a copy.
 - 2026-11-02: the no-commit rule, the status check and the replacement
   line are stated once, in the dispatch composition's § Shared-tree

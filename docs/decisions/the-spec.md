@@ -22,7 +22,7 @@ words. The message that asked for the work and each later message that
 changed what was asked, verbatim, a message the controller is unsure
 about included, go to the feature workspace's `request.md`, written at
 brainstorm exit, appended to while the workspace lives and deleted with
-it (`crucible:brainstorming § Workspace provisioning (brainstorm exit)`;
+it (`crucible:brainstorming § Workspace provisioning`;
 `skills/redteaming/references/formats.md` § Feature workspace root and
 layout). It is evidence of what was asked, not the standard, and a seat
 may find the request itself wrong. An umbrella's request lives in the
@@ -52,7 +52,7 @@ there as the operator's firm preference and binds. A
 route entry confirms its route only when `accepted` or `firm`. Every
 operator ruling on a decision ask after the brainstorm enters the
 brainstorm decision record too (`crucible:brainstorming § Workspace
-provisioning (brainstorm exit)`;
+provisioning`;
 `skills/redteaming/references/formats.md` § Feature workspace root and
 layout).
 
@@ -339,6 +339,7 @@ measured.)
 
 ## Changes
 
+- 2026-11-03: the citations of brainstorming's workspace provisioning use its shortened heading.
 - 2026-11-03: the premise-finding route is cited at `skills/redteaming/references/premise-asks.md`, where flip-paths' § Premise findings moved, so a controller handling a premise finding no longer loads the flip paths (`docs/decisions/authoring-crucible.md`).
 - 2026-11-03: what binds is cited at its one controller statement, `skills/subagent-driven-development/references/review-terms.md` § What binds in a spec, moved there from flip-paths' opening so every route's controller reads it from brainstorm on (`docs/decisions/instruments.md`).
 - 2026-11-03: citations follow the rules to their owners: what binds to

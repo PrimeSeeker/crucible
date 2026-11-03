@@ -86,7 +86,7 @@ Codex reference dropped a paragraph restating crucible's interpreter
 policy; on 2026-10-20 the Claude Code dispatch reference dropped its
 restatement of the escalation rule, which
 `skills/subagent-driven-development/references/dispatch-composition.md`
-§ Models and effort and SDD's Models section own. Codex's matching
+§ Models and effort owns. Codex's matching
 sentence stayed while it stated a host fact, that the bounded role used
 the default role's model there, and went on 2026-10-27, when the bounded
 role moved to a model of its own (`docs/decisions/model-roles-and-effort.md`).
@@ -203,6 +203,7 @@ preference.)
 
 ## Changes
 
+- 2026-11-03: the escalation rule's one owner is the dispatch composition's § Models and effort, SDD's Models section having dropped the rows that restated it (`docs/decisions/model-roles-and-effort.md`).
 - 2026-11-03: on the template path the seat reads its template by the path its dispatch names, and installing crucible's roles into the user's Codex configuration is rejected outright, no longer waiting on a cost audit of Codex controllers, since the read by path takes the saving it was for (`docs/decisions/instruments.md`).
 - 2026-11-02: the adapters keep only host mechanics: never predicting an
   agent's result and naming the model go to the router, fan-out

@@ -2,8 +2,7 @@
 
 ## Observation
 
-- Two arrangements are unsupported
-  (`skills/brainstorming/SKILL.md` § Proposing the arrangement (step 4)):
+- Two arrangements are unsupported (`docs/decisions/routes.md`):
   - **A campaigned spec implemented with no plan**, lane-style, once its
     campaign has stopped. Left out when the arrangement choices became
     separable (2026-10-29).

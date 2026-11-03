@@ -18,11 +18,10 @@
 - In a later run of five tasks, two of the five task reviewers wrote
   no file on their first return: one said its tools could not write the
   folder, the other skipped the write and wrote it when resumed.
-- Since then the re-review and verifier templates say the report file is
-  required even where the host advises returning text, and every review
-  and seat template gives the scratch path from the checkout's root
-  (`.crucible/<feature-slug>/scratch/…`).
-- On the two runs after that change, the misses persisted in the blind
+- The re-review and verifier templates say the report file is required
+  even where the host advises returning text, and every read-only seat's
+  slot card carries its scratch directory as an absolute path.
+- On the two runs after the report-file change, the misses persisted in the blind
   verifier and the scoped re-reviewer, and in no other seat:
   - In the first, read from its session transcripts, both blind
     verifiers wrote no file on their first return and wrote it when
@@ -60,5 +59,5 @@
   verifier dispatched under that wording wrote on its first return;
   count report-file misses, and scratch files written outside the
   workspace, again on the runs after.
-- If the misses persist, carry the scratch directory, and with it the
-  report path, as an absolute path in the slot cards.
+- If the misses persist, carry the report path too as an absolute path
+  in the slot cards, as the scratch directory now is.

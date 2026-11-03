@@ -115,11 +115,10 @@ the full suite (`skills/subagent-driven-development/implementer-prompt.md`
 controller-authored text and budgets blind verification and the
 terminal pass for it; errors, the
 controller's own included, are reported in the flat register of any
-other finding. Its paragraph on disclosure makes shading a record, not
-erring in it, the only reportable failure of the reporting duty, and
-forbids citing the stance to skip, soften or summarize any other
-obligation (`crucible:redteaming § Operating stance — baseline error
-rate`).
+other finding. It makes shading a record, not erring in it, the only
+reportable failure of the reporting duty, and forbids citing the stance
+to skip, soften or summarize any reporting duty
+(`crucible:redteaming § Operating stance`).
 
 ## Why
 
@@ -368,7 +367,7 @@ In one session's retrospective (2026-08-16), the controller's readouts
 prosecuted its own error rate while its subagents' reports did not, and
 the errors it disclosed leaned in the flattering direction, which shame
 rewards. The stance makes a caught error the loop working, so disclosure
-stays cheap; the paragraph on disclosure keeps it from being read as a
+stays cheap; the clause on disclosure keeps it from being read as a
 licence to soften records, and the terminal pass's bias line is the
 instrument that detects shading (`docs/decisions/terminal-pass.md`).
 On 2026-10-13 the block lost four
@@ -377,7 +376,8 @@ that paragraph unchanged; on 2026-10-28 the paragraph lost its
 [LOAD-BEARING] mark, its wording kept, when marks became a spec
 convention (`docs/decisions/the-spec.md`); on 2026-11-02 the block lost
 its sentence pointing to the directional-bias statement, which folded
-into the bias line. (Basis: a single incident, for
+into the bias line; on 2026-11-03 it became one sentence, the disclosure
+paragraph a clause of it. (Basis: a single incident, for
 the motive; judgment, accepted by the maintainer, for the stance and the
 trim.)
 
@@ -402,6 +402,7 @@ trim.)
 
 ## Changes
 
+- 2026-11-03: the operating stance is recorded as the one sentence the compaction made it, its disclosure paragraph now a clause.
 - 2026-11-03: the over-subtraction guard reaches the right-sizing seat as lens text from `skills/redteaming/references/panels.md`, and the seat card's `right-sizing` selector goes; because every redteam seat's agent carried the guard for the one seat that takes it (`docs/decisions/instruments.md`).
 - 2026-11-03: the premise-finding route is cited at `skills/redteaming/references/premise-asks.md`, where flip-paths' § Premise findings moved, so a controller handling a premise finding no longer loads the flip paths (`docs/decisions/authoring-crucible.md`).
 - 2026-11-03: a premise ask open at the campaign's close is seeded into the ledger at SDD's Setup, the ledger's only seeding writer, not at the plan phase's or the folded campaign's close (`docs/decisions/records-and-workspace.md`).

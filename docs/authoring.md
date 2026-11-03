@@ -4,6 +4,8 @@ Rules for writing crucible's own files: the skills, their references and
 templates, the hooks and these docs. A controller or seat running a skill
 never needs them.
 
+Write each paragraph and list item of agent-read text on one line: hard wraps cost tokens on every read (`docs/decisions/authoring-crucible.md` § One line per paragraph).
+
 ## Anchor stability
 
 These headings are cited by other skills and docs as interfaces, so

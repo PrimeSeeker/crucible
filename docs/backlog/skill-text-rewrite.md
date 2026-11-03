@@ -11,16 +11,11 @@
   today by adding a distinction. For a fix-list clause asking whether a
   removing or merging resolution exists, the maintainer agreed it looked
   weak and deferred the restructuring ("probably later").
-- **Two rule gaps:**
-  - when the operator answers the after-three-waves ask with another
-    approach by a plan change rather than a revert, nothing says what
-    happens to the task's open findings: its latest line stays
-    `fix wave 3/3`, and the resume rule sends it to an ask already
-    answered;
-  - the plan phase's close after an upgrade hatch seeds every unruled
-    lane lead as `Lane: lead (concern):`, whatever its kind, so the
-    branch reviewer cannot rule a carried question or proposal
-    RECOMMENDED.
+- **A rule gap:** when the operator answers the after-three-waves ask
+  with another approach by a plan change rather than a revert, nothing
+  says what happens to the task's open findings: its latest line stays
+  `fix wave 3/3`, and the resume rule sends it to an ask already
+  answered.
 - **Umbrella landings.** Whether a clause-sized binding change to an
   umbrella entry needs a landing of its own on the base branch first:
   one feature needed two such landings for one-clause edits.
@@ -35,8 +30,8 @@
   - an umbrella's closing-review seats are composed with no template,
     yet the shared sections copied into their prompts
     (`skills/subagent-driven-development/references/seat-rules.md`
-    § Premise findings, § Questions) tell them to use "this template's
-    report format", and `skills/brainstorming/references/umbrellas.md`
+    § Premise findings, § Questions) send them to "your report format",
+    and `skills/brainstorming/references/umbrellas.md`
     § Closing review gives them no report form;
   - `seat-rules.md` § Seat conduct bans every seat from reading another
     checkout; the plugin files are reached only through each template's
@@ -55,11 +50,6 @@
     the prose budget"; a commit that grows a skill raises its number,
     rendered seat templates are no longer counted, and the umbrella's
     own Problem shows about 3,900 words of growth under that budget;
-  - every route's controller loads the whole
-    `skills/subagent-driven-development/references/seat-rules.md` at
-    brainstorm for one section, § The arrangement questions; by the
-    resident-token manifest the file grew from 1,938 to 4,716 tokens
-    over the effort, a cost no decision weighs;
   - the goal check, the outside-the-frame lens and the alternate-role
     swap are tied to round 1 by its number, so a round 1 recorded
     degraded instead of topped up drops all three for that campaign;
@@ -71,9 +61,6 @@
     lane's implementer reports NEEDS_CONTEXT, or BLOCKED for context or
     reasoning: that handling lives in `references/task-loop.md`, which
     the lane neither applies nor loads;
-  - Finish's record check (`references/finish.md`, step 1) names only
-    `sdd/` paths; after the upgrade hatch the lane's records sit in
-    `sdd-lane/`, so the check reports false gaps or skips them;
   - an umbrella's closing-review seats are dispatched with no named
     status-check window, so the tree-check guard does not cover them;
   - three wording points: "decision asks stand apart" reaches the
@@ -87,7 +74,7 @@
 
 - Weigh the separability point and the tension-closing restructuring as
   design targets of a later rewrite.
-- Fill the two rule gaps and state the action on a review missing a
+- Fill the rule gap and state the action on a review missing a
   verdict, each in the skill that owns the step.
 - The umbrella-landing question: weigh it when the umbrella procedure is
   next edited.
@@ -98,6 +85,5 @@
   claim it checks cites, or say what it does with a claim it cannot
   check within its inputs.
 - The closing review's items: correct the trigger's stated ground or
-  restate the trigger; weigh moving § The arrangement questions where a
-  controller reads it alone; fill the five rule gaps, each in the skill
-  that owns the step; settle the three wording points.
+  restate the trigger; fill the four rule gaps, each in the skill that
+  owns the step; settle the three wording points.
