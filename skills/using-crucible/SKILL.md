@@ -3,33 +3,31 @@ name: using-crucible
 description: Use when starting any conversation.
 ---
 
-<SUBAGENT-STOP>
-If you were dispatched as a subagent to execute a specific task, ignore this skill.
-</SUBAGENT-STOP>
+<SUBAGENT-STOP>Dispatched as a subagent for a specific task? Ignore this skill.</SUBAGENT-STOP>
 
 ## The Rule
 
-Before acting on a request — clarifying questions and exploration included — check the Skill Index below and invoke every skill whose trigger matches, and any the operator names. The skills carry the process; work started without them usually has to be redone. One exception: for a change you judge trivial, offer the waiver below first. A loaded skill whose trigger turns out not to match is set aside, saying so; one that applies is skipped only on the operator's explicit word.
+Before acting on a request, clarifying questions and exploration included, check the Skill Index and invoke every skill whose trigger matches, and any the operator names. One exception: for a trivial change, offer the waiver first. A loaded skill whose trigger turns out not to match is set aside, saying so; one that applies is skipped only on the operator's explicit word.
 
-Then announce "Using [skill] to [purpose]" and follow the skill exactly. If it has a checklist, track a todo per item.
+Then announce "Using [skill] to [purpose]", follow the skill exactly, and track a todo per checklist item.
 
 The operator is the human you work with, whom inherited skill text calls "your human partner".
 
-Your instruction files — user-level, project and any other the host loads (your runtime reference names them) — and the operator's direct requests take precedence over skills, which override default behavior; this is how a preference a skill states is overridden.
+Your instruction files (user-level, project and any other the host loads) and the operator's direct requests outrank skills, which outrank default behavior.
 
-**Trivial-edit waiver.** For a change you judge trivial — a typo, a comment, wording the operator dictated — you may offer in one line to make it without crucible's process. The operator's yes, a direct request, covers that edit as offered; if the work turns out larger — another file, a behavior change, a second fix — stop and return to the operator. The project's own rules (worktrees, tests) still apply.
+**Trivial-edit waiver.** For a change you judge trivial (a typo, a comment, wording the operator dictated), you may offer in one line to make it without crucible's process. The operator's yes, a direct request, covers that edit as offered; if the work grows (another file, a behavior change, a second fix), stop and return to the operator. The project's own rules (worktrees, tests) still apply.
 
-**Brainstorm before planning:** before entering the host's planning mode (your runtime reference names it), invoke the brainstorming skill if you haven't already.
+Before entering the host's planning mode, invoke brainstorming if you haven't.
 
-**Evidence before claims:** before saying work is complete, fixed or passing, run the check that shows it and report what its output said.
+Before claiming work is complete, fixed or passing, run the check that shows it and report what its output said.
 
-**Dispatching an agent:** name its model on every dispatch, since an omitted model silently inherits the session's; never predict or paraphrase the result of an agent that has not returned.
+Dispatching any agent: name its model (an omitted model silently inherits the session's), and never predict or paraphrase its result before it returns.
 
-**After compaction:** a skill whose text came back cut short — it ends in a truncation notice — is invoked again before you act on it.
+After compaction, re-invoke any skill whose text came back cut short (ending in a truncation notice) before acting on it.
 
 ## Decision asks
 
-A decision ask puts a choice to the operator in analyst language with your recommendation: it never requires reading the spec, plan, code or a diff, may quote the few lines it turns on, lists every option the findings behind it propose, and states what its change withdraws from an earlier operator approval.
+A decision ask puts a choice to the operator in analyst language with your recommendation: it never requires reading the spec, plan, code or a diff, may quote the few lines it turns on, lists every option its findings propose, and states what its change withdraws from an earlier operator approval.
 
 ## Skill Priority
 
@@ -37,7 +35,7 @@ When several skills apply, process skills come first: brainstorming before build
 
 ## Red Flags
 
-These thoughts usually precede a skipped skill check; make the check instead:
+These thoughts usually precede a skipped check; check instead:
 
 | Thought | Check |
 |---|---|
@@ -56,7 +54,7 @@ These thoughts usually precede a skipped skill check; make the check instead:
 
 ## Runtime reference
 
-Host mechanics are adapter-mediated, never assumed. Your runtime adapter is a pair of files under `skills/using-crucible/references/` from the plugin root. The **host map** (`claude-code.md`, `codex.md`) carries what every session needs and is your runtime reference: your host's is appended below at session start, else read it from there before dispatching or planning. The **dispatch reference** beside it (`claude-code-dispatch.md`, `codex-dispatch.md`) carries what a skill that dispatches seats needs; those skills say when to read it. Where a rule here and a mechanic there seem to conflict, the rule governs.
+Host mechanics come from your runtime adapter, a pair of files under `skills/using-crucible/references/` from the plugin root; never assume them. The **host map** (`claude-code.md`, `codex.md`), your runtime reference, carries what every session needs: your host's is appended below at session start, else read it there before dispatching or planning. The **dispatch reference** (`claude-code-dispatch.md`, `codex-dispatch.md`) carries what seat-dispatching skills need; they say when to read it. Where a rule here and a mechanic there seem to conflict, the rule governs.
 
 ## Skill Index
 

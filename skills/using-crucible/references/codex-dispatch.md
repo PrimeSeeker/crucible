@@ -1,23 +1,5 @@
 # Dispatch reference — Codex
 
-Dispatch mechanics for a skill that starts seats on this runtime; the host
-map beside this file, `codex.md`, carries the rest.
-
-- **Dispatch an instrument** — the template path, since a plugin cannot ship Codex agent roles: through the host map's **Dispatch a fresh agent** — `spawn_agent` with `fork_turns: "none"` — send the card's filled Slots and Selectors alone, opening with one line that names the template the card sits beside by its absolute path under the plugin root, tells the seat to read it in full before anything else, and says the seat runs on Codex, the runtime the template's runtime slot stands for.
-- **Resume an agent** — `followup_task` gives an agent you spawned a new
-  task and triggers a turn; `send_message` passes a message without one.
-  Address it by the canonical task name recorded at spawn.
-- **Select effort** — `reasoning_effort` on the dispatch. `ultra` is one
-  of its levels, not a model, and carries automatic task delegation,
-  which breaks a seat's no-delegation instruction. With
-  `reasoning_effort` omitted and the model named, a seat runs at
-  `default_subagent_reasoning_effort` from the `[agents]` table of the
-  operator's Codex config, else at its model's default (`low` for the
-  default role's model), never at your own effort. Before your first
-  dispatch in a session, read `config.toml` once in the Codex home that holds this
-  plugin: the directory above `plugins/cache/` in the plugin root's
-  path, not `~` or `CODEX_HOME`, which a Windows sandbox maps to its own
-  account. If you cannot read it, or the key is absent, tell the
-  operator which, that their seats run at the model's default unless the
-  key is set, and recommend `high`. An unsupported effort is
-  rejected, naming the levels that model supports.
+- **Dispatch an instrument** — by its template path, since a plugin cannot ship Codex agent roles: through `spawn_agent` with `fork_turns: "none"`, send the card's filled Slots and Selectors alone under one opening line that names the template beside the card by its absolute path under the plugin root, tells the seat to read it in full first, and says the seat runs on Codex, the runtime the template's runtime slot stands for.
+- **Resume an agent** — `followup_task` gives an agent you spawned a new task and triggers a turn; `send_message` passes a message without one. Address it by the canonical task name recorded at spawn.
+- **Select effort** — `reasoning_effort` on the dispatch; an unsupported level is rejected, naming the levels that model supports. `ultra` is a level, not a model, and its automatic task delegation breaks a seat's no-delegation instruction. With effort omitted and the model named, a seat runs at `default_subagent_reasoning_effort` from the `[agents]` table of the operator's Codex config, else at its model's default (`low` for the default role's model), never at your own effort. Before a session's first dispatch, read `config.toml` in the Codex home holding this plugin: the directory above `plugins/cache/` in the plugin root's path, not `~` or `CODEX_HOME`, which a Windows sandbox maps to its own account. If you cannot read it, or the key is absent, tell the operator which, that their seats run at the model's default unless the key is set, and recommend `high`.
