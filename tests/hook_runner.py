@@ -154,6 +154,20 @@ def no_bash_reason() -> str:
     return _found()[1]
 
 
+# The hook picks its output by this variable (hooks/README.md § SessionStart
+# injection), and a session running the suite passes its own value down.
+ATTENDED_VARIABLE = "CLAUDE_CODE_SESSION_ATTENDED"
+
+
+def hook_env(extra: dict[str, str] | None = None) -> dict[str, str]:
+    """The environment every hook these tests start runs in: this process's
+    without ``ATTENDED_VARIABLE``, so the result does not depend on the
+    session running the suite, plus ``extra``."""
+    env = {k: v for k, v in os.environ.items() if k != ATTENDED_VARIABLE}
+    env.update(extra or {})
+    return env
+
+
 def run_hook(
     script: Path = HOOK_SCRIPT,
     *args: str,
@@ -161,14 +175,13 @@ def run_hook(
     env: dict[str, str] | None = None,
 ) -> subprocess.CompletedProcess[str]:
     """Run ``script`` under the found bash with ``args``, as the host does:
-    stdout and stderr captured, decoded as UTF-8. ``env`` adds variables to
-    the inherited environment."""
+    stdout and stderr captured, decoded as UTF-8, in ``hook_env(env)``."""
     bash = find_bash()
     assert bash is not None, no_bash_reason()
     return subprocess.run(
         [bash, script.as_posix(), *args],
         input=stdin,
-        env={**os.environ, **env} if env else None,
+        env=hook_env(env),
         capture_output=True,
         text=True,
         encoding="utf-8",

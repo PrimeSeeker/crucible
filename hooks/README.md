@@ -89,8 +89,10 @@ and reads or writes no session state.
 **An unattended session gets a note instead.** Where the hook's
 environment has `CLAUDE_CODE_SESSION_ATTENDED=0`, the document's context
 is a short note in place of the router and host map: crucible is
-installed, routes nothing where nobody can answer its questions, and still
-runs a skill the prompt names. Any other value, or none, gets the router.
+installed, but where nobody can answer its questions the session loads no
+crucible skill the prompt does not name, and one the prompt names first
+reads the host map at the path the note gives. Any other value, or none,
+gets the router.
 The host set the variable to 0 in a `claude -p` session's hook, whose
 input carried no field marking the session headless, and to 1 in an
 interactive session's tool commands; an interactive session's hook was

@@ -13,7 +13,9 @@ adapter, a pair of files under `skills/using-crucible/references/`:
   the host reads, its planning mode, the operations (load a skill, track
   a checklist, dispatch a fresh agent, wait, parallel fan-out, select
   model, edit, shell, worktree) and the Model roles. Every session reads
-  it: on Claude Code the SessionStart hook inlines it, and a Codex session
+  it: on Claude Code the SessionStart hook inlines it, except in a session
+  the host marks unattended, whose note gives its path for a skill the
+  prompt names (`docs/decisions/session-start-hook.md`); a Codex session
   reads it from its path.
 - the **dispatch reference** (`claude-code-dispatch.md`,
   `codex-dispatch.md`): dispatch an instrument, resume an agent and select
@@ -203,6 +205,7 @@ preference.)
 
 ## Changes
 
+- 2026-11-04: on Claude Code a session the host marks unattended gets the host map's path in a note instead of the host map inlined, since it gets no router either (`docs/decisions/session-start-hook.md`).
 - 2026-11-03: the escalation rule's one owner is the dispatch composition's § Models and effort, SDD's Models section having dropped the rows that restated it (`docs/decisions/model-roles-and-effort.md`).
 - 2026-11-03: on the template path the seat reads its template by the path its dispatch names, and installing crucible's roles into the user's Codex configuration is rejected outright, no longer waiting on a cost audit of Codex controllers, since the read by path takes the saving it was for (`docs/decisions/instruments.md`).
 - 2026-11-02: the adapters keep only host mechanics: never predicting an

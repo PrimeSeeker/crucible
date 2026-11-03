@@ -140,6 +140,10 @@ def test_unattended_session_gets_a_note_in_place_of_the_router() -> None:
     router = (REPO_ROOT / ROUTER_REL).read_text(encoding="utf-8")
     host_map = (REPO_ROOT / HOST_MAP_REL).read_text(encoding="utf-8")
     assert context.startswith("You have crucible")
+    # Consumer: a session running a skill its prompt names reads the host
+    # map at the path the note gives, so the path must name the shipped file.
+    assert HOST_MAP_REL.as_posix() in context
+    assert (REPO_ROOT / HOST_MAP_REL).is_file()
     for text in (router, host_map):
         for line in text.splitlines():
             if len(line) > 40:
@@ -280,6 +284,7 @@ def test_empty_path_runs_no_command_from_the_working_directory(tmp_path: Path) -
     proc = subprocess.run(
         [bash, "-c", 'PATH= "$BASH" "$0" claude-code', SCRIPT.as_posix()],
         cwd=tmp_path,
+        env=hr.hook_env(),
         stdin=subprocess.DEVNULL,
         capture_output=True,
         text=True,
@@ -298,6 +303,7 @@ def test_failure_closed_stdout() -> None:
     assert bash is not None
     proc = subprocess.run(
         [bash, "-c", '"$BASH" "$0" claude-code >&-', SCRIPT.as_posix()],
+        env=hr.hook_env(),
         stdin=subprocess.DEVNULL,  # the inherited stdin can be an invalid handle
         capture_output=True,
         text=True,
@@ -320,7 +326,7 @@ def test_registered_command_emits_the_envelope() -> None:
     path = f"{Path(bash).parent}{os.pathsep}{os.environ.get('PATH', '')}"
     proc = subprocess.run(
         [bash, "-c", command],
-        env={**os.environ, "PATH": path},
+        env=hr.hook_env({"PATH": path}),
         input="not json {{{",
         capture_output=True,
         text=True,

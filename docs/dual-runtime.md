@@ -84,9 +84,9 @@ either host.
   checklist, dispatch a fresh agent, wait, parallel fan-out, select model,
   edit, shell, worktree — then Model roles. It is what every session needs:
   on Claude Code the SessionStart hook inlines it into the session, except
-  one the host marks unattended (`hooks/README.md` § SessionStart
-  injection), and a Codex session reads it from its path, as the router
-  directs.
+  one the host marks unattended, whose note gives its path
+  (`hooks/README.md` § SessionStart injection), and a Codex session reads
+  it from its path, as the router directs.
 - **The dispatch reference** — dispatch an instrument, resume an agent,
   select effort; on Claude Code also the report-name filter and compaction
   (Codex has no compaction entry). It is what a skill that dispatches seats

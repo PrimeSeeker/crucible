@@ -15,7 +15,7 @@ against the prose budget like any other
 user turns the other one off is that user's migration (`README.md`
 § Coming from superpowers). A session another process router also
 reached at its start stops before acting and asks the operator to turn
-one off (`skills/using-crucible/SKILL.md`).
+one off and start a new session (`skills/using-crucible/SKILL.md`).
 
 **The upstream map.** `docs/upstream.md` holds the fork base and the last
 fully reviewed upstream version, the later upstream pieces taken without

@@ -14,9 +14,9 @@ environment; `claude-code` is its one arm. It prints one
 a separator and the Claude Code host map, with each CRLF and lone CR
 turned into LF. A session the host marks unattended, its hook's
 environment holding `CLAUDE_CODE_SESSION_ATTENDED=0`, gets a short note
-in that context's place: crucible routes nothing where nobody can answer,
-and still runs a skill the prompt names; any other value, or none, gets
-the router. It runs no external command, so the `PATH` it starts
+in that context's place: it loads no crucible skill the prompt does not
+name, and one the prompt names first reads the host map at the path the
+note gives; any other value, or none, gets the router. It runs no external command, so the `PATH` it starts
 with cannot break it or make it run a file from the working directory;
 the registration's own `bash` is still found on `PATH`
 (`hooks/README.md` § Hook registration per runtime). Every failure prints one `crucible: router not loaded:
@@ -121,9 +121,9 @@ run. (Basis: measured; external.)
 ### Unattended sessions
 
 A headless session gets the router's workflows with nobody to answer
-them: by the router's rules, a `claude -p` run asked for feature work
-would enter brainstorming and end on its first question (inferred, not
-run). On 2026-11-04
+them: on 2026-11-04 a `claude -p` run on crucible 0.19.0, asked to add a
+feature, loaded brainstorming "as your setup requires for feature work"
+and ended on a question to the user. On 2026-11-04
 (Claude Code 2.1.317, Windows 11) a probe hook in a `claude -p` session
 saw `CLAUDE_CODE_SESSION_ATTENDED=0` and `CLAUDE_CODE_ENTRYPOINT=sdk-cli`
 in its environment, against 1 and `cli` in an interactive session's tool
@@ -131,8 +131,12 @@ commands, while its input (session, transcript path, working directory,
 event and source) marked nothing. The host's environment-variable page,
 read that day, lists neither variable, so the hook keys on the value 0
 alone: a host that drops or renames the variable gets the router back,
-today's behavior. The maintainer had expected headless sessions to be
-beyond reach; the probe moved the ruling to the hook. (Basis: measured;
+today's behavior. With the note in place, the same request loaded no
+crucible skill and went to the task (one run, the same day). The note
+names the host map's path because a skill the prompt names, run without
+the router, would otherwise find no host mechanics. The maintainer had
+expected headless sessions to be beyond reach; the probe moved the
+ruling to the hook. (Basis: measured;
 judgment, an agent's proposal accepted by the maintainer.)
 
 ### No guards

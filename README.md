@@ -91,10 +91,10 @@ files can override them (§ Configuration).
 
    A headless run that Claude Code marks unattended (`claude -p`, for
    one) gets a short note instead of the router: nobody is there to
-   answer crucible's questions, so it routes nothing, and runs a skill
-   only when the prompt names one. Codex marks no run that way for
-   crucible, so turn crucible off for `codex exec` runs, with the plugin
-   switch in `docs/codex.md` § Turning another router off.
+   answer crucible's questions, so it loads no crucible skill unless the
+   prompt names one. Codex marks no run that way for crucible: turn
+   crucible off before a `codex exec` run and back on after it, with the
+   plugin switch in `docs/codex.md` § Turning another router off.
 4. **Say what you want to build**, for example "I'd like to add CSV export
    to the reports page". Crucible asks questions one at a time, proposes
    approaches with a recommendation, presents the design in sections for
@@ -109,7 +109,7 @@ decides which workflow a session follows, and two routers in one session
 fight over that. Never start a session with two routers on, or with any
 other skill or plugin that does the router's job. If one starts with
 another router anyway, crucible's router has it stop and ask you to turn
-one off.
+one off and start a new session.
 
 Before installing crucible, turn superpowers off. On Claude Code,
 `claude plugin list` shows its exact name; then

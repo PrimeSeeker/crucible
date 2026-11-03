@@ -77,12 +77,12 @@ json_string() {
 
 case "${1-}" in
     claude-code)
-        # A session the host marks unattended (a print-mode or SDK run) has
-        # nobody to answer the questions the router's workflows ask, so it
-        # gets a note in place of the router. Only the value 0 does; any
+        # A session the host marks unattended (a `claude -p` run, for one)
+        # has nobody to answer the questions the router's workflows ask, so
+        # it gets a note in place of the router. Only the value 0 does; any
         # other, or none, loads the router.
         if [[ ${CLAUDE_CODE_SESSION_ATTENDED-} == 0 ]]; then
-            json_string context "You have crucible, but this session is unattended: nobody is here to answer its questions, so its router is not loaded and crucible routes nothing. A crucible skill still runs when the prompt names one."
+            json_string context "You have crucible, but this session is unattended: nobody is here to answer its questions, so its router is not loaded. Load no crucible skill, using-crucible included, unless the prompt names it; before running one it names, read this host's reference, skills/using-crucible/references/claude-code.md in the plugin."
         else
             read_text router skills/using-crucible/SKILL.md
             read_text host_map skills/using-crucible/references/claude-code.md
