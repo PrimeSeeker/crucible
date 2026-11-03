@@ -9,7 +9,9 @@ Covers:
   ``.gitattributes`` keeps it so on any checkout;
 - the document: the ``claude-code`` arm prints one SessionStart document
   whose ``additionalContext`` is the lead line, the router, ``---`` and
-  the host map, assembled here from the tree's files; on a relocated tree,
+  the host map, assembled here from the tree's files, unless
+  ``CLAUDE_CODE_SESSION_ATTENDED`` is ``0``: then a short note carrying
+  none of either file's text; on a relocated tree,
   router text carrying every character the escaping handles comes back
   exactly, with each CRLF and lone CR turned into LF;
 - failure: a missing or unreadable router file, a missing host map, an
@@ -46,6 +48,7 @@ SCRIPT = REPO_ROOT / "hooks" / "session-start"
 ROUTER_REL = Path("skills") / "using-crucible" / "SKILL.md"
 HOST_MAP_REL = Path("skills") / "using-crucible" / "references" / "claude-code.md"
 PLACEHOLDER = "${CLAUDE_PLUGIN_ROOT}"
+ATTENDED = "CLAUDE_CODE_SESSION_ATTENDED"
 
 LEAD = (
     "You have crucible. Below: the using-crucible skill, then this host's "
@@ -113,6 +116,34 @@ def test_envelope_is_the_lead_line_router_and_host_map() -> None:
     host_map = (REPO_ROOT / HOST_MAP_REL).read_text(encoding="utf-8")
     want = f"{LEAD}\n\n{router}\n---\n\n{host_map}"
     assert hr.additional_context(hr.run_hook(SCRIPT, "claude-code")) == want
+
+
+@needs_bash
+@pytest.mark.parametrize("value", ["1", None], ids=["attended", "unset"])
+def test_attended_or_unmarked_session_gets_the_router(value: str | None) -> None:
+    """Only the value 0 changes the output: 1, or no variable at all, is
+    the lead line, router and host map."""
+    # Consumer: the host injects the hook's additionalContext into the session.
+    env = {ATTENDED: value} if value is not None else None
+    proc = hr.run_hook(SCRIPT, "claude-code", env=env)
+    assert hr.additional_context(proc) == hr.envelope()
+
+
+@needs_bash
+def test_unattended_session_gets_a_note_in_place_of_the_router() -> None:
+    """A session the host marks unattended gets a short note, carrying none
+    of the router's or the host map's text: nobody is there to answer the
+    questions the router's workflows ask."""
+    # Consumer: the host injects the hook's additionalContext into the session.
+    proc = hr.run_hook(SCRIPT, "claude-code", env={ATTENDED: "0"})
+    context = hr.additional_context(proc)
+    router = (REPO_ROOT / ROUTER_REL).read_text(encoding="utf-8")
+    host_map = (REPO_ROOT / HOST_MAP_REL).read_text(encoding="utf-8")
+    assert context.startswith("You have crucible")
+    for text in (router, host_map):
+        for line in text.splitlines():
+            if len(line) > 40:
+                assert line not in context, f"router or host-map text in the note: {line!r}"
 
 
 @needs_bash

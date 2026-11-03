@@ -86,6 +86,18 @@ text is then escaped for backslash, double quote, newline, carriage return
 and tab, and non-ASCII passes through as UTF-8. The script reads no stdin
 and reads or writes no session state.
 
+**An unattended session gets a note instead.** Where the hook's
+environment has `CLAUDE_CODE_SESSION_ATTENDED=0`, the document's context
+is a short note in place of the router and host map: crucible is
+installed, routes nothing where nobody can answer its questions, and still
+runs a skill the prompt names. Any other value, or none, gets the router.
+The host set the variable to 0 in a `claude -p` session's hook, whose
+input carried no field marking the session headless, and to 1 in an
+interactive session's tool commands; an interactive session's hook was
+not measured (Claude Code 2.1.317, Windows 11). The host's
+documentation does not list the variable; should the host drop it,
+sessions get the router again.
+
 **A failure is visible and never breaks the session.** Any problem — a
 missing or unreadable router or host-map file, a missing or unknown host
 argument, a write that fails — means one `crucible: router not loaded:

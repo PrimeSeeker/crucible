@@ -15,6 +15,8 @@ The operator is the human you work with, whom inherited skill text calls "your h
 
 Your instruction files (user-level, project and any other the host loads) and the operator's direct requests outrank skills, which outrank default behavior.
 
+If another process router (a skill that, like this one, decides which workflow a session follows) also reached this session at its start, stop before acting and ask the operator to turn one off: two routers fight over the session.
+
 **Trivial-edit waiver.** For a change you judge trivial (a typo, a comment, wording the operator dictated), you may offer in one line to make it without crucible's process. The operator's yes, a direct request, covers that edit as offered; if the work grows (another file, a behavior change, a second fix), stop and return to the operator. The project's own rules (worktrees, tests) still apply.
 
 Before entering the host's planning mode, invoke brainstorming if you haven't.

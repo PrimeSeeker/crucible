@@ -13,7 +13,9 @@ against the prose budget like any other
 
 **One router.** No session runs crucible's router beside another; how a
 user turns the other one off is that user's migration (`README.md`
-§ Coming from superpowers).
+§ Coming from superpowers). A session another process router also
+reached at its start stops before acting and asks the operator to turn
+one off (`skills/using-crucible/SKILL.md`).
 
 **The upstream map.** `docs/upstream.md` holds the fork base and the last
 fully reviewed upstream version, the later upstream pieces taken without
@@ -59,6 +61,16 @@ process bleedthrough), only for not running two routers at once".
 (Basis: the maintainer's preference, quoted.) The Codex steps are in
 `docs/codex.md` § One router at a time.
 
+Crucible cannot turn another plugin off, but its router can notice one,
+and the likeliest adopter is an upstream user, for whom the README's
+warning is read once if at all; so since 2026-11-04 the router stops a
+session that started with two. The line describes the other router
+rather than naming upstream's, since the router carries no upstream
+name (`tests/test_router.py`). Whether a session obeys it beside
+upstream's router is untested: upstream is not installed where crucible
+is developed. (Basis: judgment, an agent's proposal accepted by the
+maintainer.)
+
 ### The license
 
 `LICENSE` lines 1 to 3 and 5 to 22 are upstream's `LICENSE` at v6.2.0
@@ -99,9 +111,14 @@ row. The first such review, to v7.0.1, ran on 2026-10-27
   two routers fight over a session, and there is nothing to merge
   (§ Why).
 - **Prescribing disable versus uninstall**: not a decision (§ Why).
+- **The README's warning alone, against a second router**, or the hook
+  reading the host's plugin settings to find one: the README is read
+  once, and a bash hook has no JSON parser.
 
 ## Changes
 
+- 2026-11-04: one router: the router stops a session another router also
+  reached at its start, since crucible cannot turn the other one off.
 - 2026-10-27: the upstream map reviewed to v7.0.1; the record points at
   that review's dispositions in place of the backlog item it closed.
 - 2026-10-20: the upstream map, maintained, in place of a frozen

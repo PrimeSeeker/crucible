@@ -8,11 +8,15 @@ router injection on Claude Code, registered in `hooks/hooks.json` for
 `bash "${CLAUDE_PLUGIN_ROOT}/hooks/session-start" claude-code`. The
 script is bash, extensionless and pinned to LF (`.gitattributes`),
 written for bash 3.2 and newer. It resolves the plugin root from its own
-location and picks its output by the host argument alone, never from the
+location and picks its host by the argument alone, never from the
 environment; `claude-code` is its one arm. It prints one
 `hookSpecificOutput` document whose context is a lead line, the router,
 a separator and the Claude Code host map, with each CRLF and lone CR
-turned into LF. It runs no external command, so the `PATH` it starts
+turned into LF. A session the host marks unattended, its hook's
+environment holding `CLAUDE_CODE_SESSION_ATTENDED=0`, gets a short note
+in that context's place: crucible routes nothing where nobody can answer,
+and still runs a skill the prompt names; any other value, or none, gets
+the router. It runs no external command, so the `PATH` it starts
 with cannot break it or make it run a file from the working directory;
 the registration's own `bash` is still found on `PATH`
 (`hooks/README.md` § Hook registration per runtime). Every failure prints one `crucible: router not loaded:
@@ -41,8 +45,10 @@ human partner". The precedence line ranks the instruction files,
 user-level, project and any other the host loads, and the operator's
 direct requests above the skills (`docs/decisions/operator-steering.md`).
 The router also carries the trivial-edit waiver
-(`docs/decisions/routes.md`) and the evidence-before-claims line
-(`docs/decisions/evidence-and-findings.md`), names the runtime adapter by
+(`docs/decisions/routes.md`), the evidence-before-claims line
+(`docs/decisions/evidence-and-findings.md`) and the line stopping a
+session another router also reached (`docs/decisions/fork-and-own.md`),
+names the runtime adapter by
 its path from the plugin root, and tells a dispatched seat to ignore it.
 The rendered envelope, router plus host map, stays under 10,000
 characters, which `tests/test_session_start.py` asserts; an overrun is
@@ -111,6 +117,23 @@ bash 3.2.57 (Debian 13.5, WSL 2) and Git Bash 5.3, the new script's
 output is byte-identical across the three, and with `PATH` empty and a
 planted `cat` the envelope is complete and the planted file does not
 run. (Basis: measured; external.)
+
+### Unattended sessions
+
+A headless session gets the router's workflows with nobody to answer
+them: by the router's rules, a `claude -p` run asked for feature work
+would enter brainstorming and end on its first question (inferred, not
+run). On 2026-11-04
+(Claude Code 2.1.317, Windows 11) a probe hook in a `claude -p` session
+saw `CLAUDE_CODE_SESSION_ATTENDED=0` and `CLAUDE_CODE_ENTRYPOINT=sdk-cli`
+in its environment, against 1 and `cli` in an interactive session's tool
+commands, while its input (session, transcript path, working directory,
+event and source) marked nothing. The host's environment-variable page,
+read that day, lists neither variable, so the hook keys on the value 0
+alone: a host that drops or renames the variable gets the router back,
+today's behavior. The maintainer had expected headless sessions to be
+beyond reach; the probe moved the ruling to the hook. (Basis: measured;
+judgment, an agent's proposal accepted by the maintainer.)
 
 ### No guards
 
@@ -190,6 +213,8 @@ reasons and the triggers that would reopen it, is in the backlog item.
 - **A Python hook behind a probing launcher**: an interpreter dependency
   where no agent can recover.
 - **A hook that fails open**, exiting 0: it hides every failure.
+- **Only a README line for headless runs**, telling users to turn
+  crucible off: the host already marks the sessions the hook can serve.
 - **Upstream's all-caps block and wrapper**: they contradicted the
   router's permission to set a non-matching skill aside.
 - **An 8,750-character envelope budget**: no measured basis; 10,000 is the
@@ -199,6 +224,9 @@ reasons and the triggers that would reopen it, is in the backlog item.
 
 ## Changes
 
+- 2026-11-04: a session the host marks unattended gets a note in place
+  of the router, since nobody there can answer the router's workflows;
+  the router stops a session another router also reached.
 - 2026-11-02: interpreters: no workflow step runs Python, `conserve.py`
   and the Python 3.8 floor for users retired with merge conservation,
   which the skill text rewrite retired.

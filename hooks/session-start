@@ -1,6 +1,7 @@
 #!/usr/bin/env bash
 # SessionStart hook: print crucible's router as the session's additional
-# context, in the output document of the host named by the first argument.
+# context, in the output document of the host named by the first argument;
+# a session the host marks unattended gets a short note instead.
 #
 # hooks/hooks.json registers it with the host's name as that argument. The
 # host is never inferred from the environment: one host may set another's
@@ -74,12 +75,19 @@ json_string() {
     printf -v "$1" '%s' "$s"
 }
 
-read_text router skills/using-crucible/SKILL.md
-
 case "${1-}" in
     claude-code)
-        read_text host_map skills/using-crucible/references/claude-code.md
-        json_string context "You have crucible. Below: the using-crucible skill, then this host's runtime reference. Read both before acting."$'\n\n'"$router"$'\n'"---"$'\n\n'"$host_map"
+        # A session the host marks unattended (a print-mode or SDK run) has
+        # nobody to answer the questions the router's workflows ask, so it
+        # gets a note in place of the router. Only the value 0 does; any
+        # other, or none, loads the router.
+        if [[ ${CLAUDE_CODE_SESSION_ATTENDED-} == 0 ]]; then
+            json_string context "You have crucible, but this session is unattended: nobody is here to answer its questions, so its router is not loaded and crucible routes nothing. A crucible skill still runs when the prompt names one."
+        else
+            read_text router skills/using-crucible/SKILL.md
+            read_text host_map skills/using-crucible/references/claude-code.md
+            json_string context "You have crucible. Below: the using-crucible skill, then this host's runtime reference. Read both before acting."$'\n\n'"$router"$'\n'"---"$'\n\n'"$host_map"
+        fi
         document='{"hookSpecificOutput": {"hookEventName": "SessionStart", "additionalContext": "'"$context"'"}}'
         ;;
     '')

@@ -158,14 +158,17 @@ def run_hook(
     script: Path = HOOK_SCRIPT,
     *args: str,
     stdin: str = "",
+    env: dict[str, str] | None = None,
 ) -> subprocess.CompletedProcess[str]:
     """Run ``script`` under the found bash with ``args``, as the host does:
-    stdout and stderr captured, decoded as UTF-8."""
+    stdout and stderr captured, decoded as UTF-8. ``env`` adds variables to
+    the inherited environment."""
     bash = find_bash()
     assert bash is not None, no_bash_reason()
     return subprocess.run(
         [bash, script.as_posix(), *args],
         input=stdin,
+        env={**os.environ, **env} if env else None,
         capture_output=True,
         text=True,
         encoding="utf-8",
