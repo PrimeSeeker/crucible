@@ -25,9 +25,11 @@ or a round readout naming the change and what it withdraws records its
 change, an approval withdrawn with no such record being flagged
 `CONCLUSION-CHANGING`. The record reaches it through its card's
 `{decision-record-path}` slot, the spec phase's brainstorm decision
-record and `none` in the plan phase. Its template takes, spliced from
-the shared seat reference, the overturn question, § Premise findings,
-§ Binding items and unrecorded choices and § Location, so its findings
+record and `none` in the plan phase. Its template takes by splice the
+overturn question, from
+`skills/subagent-driven-development/references/review-terms.md`, and
+§ Premise findings, § Binding items and unrecorded choices and
+§ Location, from the shared seat reference, so its findings
 carry a location as every finding does
 (`docs/decisions/instruments.md`;
 `docs/decisions/evidence-and-findings.md`). It reports counted record corrections,
@@ -191,6 +193,7 @@ by the maintainer, for the record-only run.)
 
 ## Changes
 
+- 2026-11-03: the pass takes the overturn question from `skills/subagent-driven-development/references/review-terms.md`, where the arrangement questions moved from the shared seat reference so a controller that applies them no longer loads the seat rules; its template's text is unchanged.
 - 2026-11-02: the pass's shared sections arrive spliced into its
   template, its card losing the plugin root, and it takes § Location;
   because no seat reads the shared reference at startup any more, and

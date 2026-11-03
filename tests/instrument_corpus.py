@@ -8,7 +8,7 @@ sections and ``- <slot>: <rule>`` lines, a template's ``[[when ...]]`` /
 ``[[end]]`` passages -- never a sentence of the shipped prose.
 
 The instrument list, each family's runtime slot, a template's source path
-and the shared seat reference's path are imported from
+and the shared references' paths are imported from
 ``tools/instrument_agents.py``, the generator that renders the templates
 from their sources; nothing here restates them. The grammars read the
 rendered templates, the text an instrument receives.
@@ -80,9 +80,9 @@ def source_path(template: str) -> str:
     return load_generator().source_path(template)
 
 
-def shared_reference() -> str:
-    """The shared seat reference whose sections a source may take."""
-    return load_generator().SHARED_REFERENCE
+def shared_references() -> tuple[str, ...]:
+    """The shared references whose sections a source may take."""
+    return tuple(load_generator().SHARED_REFERENCES)
 
 
 def family(template: str) -> str:

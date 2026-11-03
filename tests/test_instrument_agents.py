@@ -1,15 +1,16 @@
 """The generated templates and instrument agents, their generator, and the
 grammar both read.
 
-The seven templates are rendered from their sources and the shared seat
-reference, and the ``agents/<name>.md`` files from the templates, by
+The seven templates are rendered from their sources and the shared
+references, and the ``agents/<name>.md`` files from the templates, by
 ``tools/instrument_agents.py``; both are committed, and its check mode is
 what makes drift a failing test. This module covers:
 
 - the check and write modes, driven through the real script: clean on the
   tree, failing on a seeded source edit or a hand edit to a generated file;
-- the splice, on a fixture reference: each include replaced by its
-  section, an unresolvable include refused, an include inside a selector
+- the splice, on fixture references: each include replaced by its
+  section, from either shared reference, an unresolvable include refused
+  (a heading held in both among them), an include inside a selector
   passage read only under its value;
 - citations of shared sections: a rendered template cites, with a bare
   ``§``, only shared sections its source takes;
@@ -30,6 +31,7 @@ import re
 import shutil
 import subprocess
 import sys
+from collections import Counter
 from pathlib import Path
 
 import pytest
@@ -52,7 +54,7 @@ from instrument_corpus import (
     resolve,
     runtime_slots,
     selector_values,
-    shared_reference,
+    shared_references,
     source_path,
 )
 
@@ -60,7 +62,7 @@ GENERATOR = REPO_ROOT / "tools" / "instrument_agents.py"
 INSTRUMENTS = instruments()
 TEMPLATES = sorted(INSTRUMENTS.values())
 SEAT = INSTRUMENTS["redteam-seat"]
-SHARED = shared_reference()
+SHARED = shared_references()
 
 
 def agent_file(name: str) -> str:
@@ -87,11 +89,11 @@ def run_generator(*args: str) -> subprocess.CompletedProcess[str]:
 
 def copy_generator_inputs(dest: Path) -> None:
     """The files the generator reads and writes, copied under *dest* at
-    their repo-relative paths: the template sources, the shared seat
-    reference, the rendered templates and the agents, nothing else -- so a
+    their repo-relative paths: the template sources, the shared
+    references, the rendered templates and the agents, nothing else -- so a
     clean check on the copy shows the generator reads no other file."""
     sources = [source_path(t) for t in TEMPLATES]
-    for rel in [*sources, SHARED, *TEMPLATES, *map(agent_file, INSTRUMENTS)]:
+    for rel in [*sources, *SHARED, *TEMPLATES, *map(agent_file, INSTRUMENTS)]:
         target = dest / rel
         target.parent.mkdir(parents=True, exist_ok=True)
         shutil.copyfile(REPO_ROOT / rel, target)
@@ -107,7 +109,7 @@ def _raw(rel: str) -> str:
 def test_instrument_agent_check_is_clean_on_the_tree() -> None:
     """Break: a committed rendered template or agent that differs from
     what the generator writes -- hand-edited, or left stale by an edit to a
-    source or the shared seat reference -- or an agents directory holding
+    source or a shared reference -- or an agents directory holding
     other than the generated set."""
     result = run_generator("check")
     assert (result.returncode, result.stdout, result.stderr) == (0, "", "")
@@ -195,10 +197,11 @@ def test_instrument_agent_write_mode_regenerates_to_a_clean_check(
 
 # --- the splice ------------------------------------------------------------
 
-#: Sections appended to a copy of the shipped shared seat reference, under
+#: Sections appended to copies of the shipped shared references, under
 #: headings no real section uses, so each expected rendering is a literal
-#: and the real sources' own includes keep resolving beside them. The H1
-#: between them checks that a ``#`` heading ends a section.
+#: and the real sources' own includes keep resolving beside them. Alpha and
+#: beta go to the first reference, delta to the second. The H1 between
+#: alpha and beta checks that a ``#`` heading ends a section.
 _FIXTURE_SECTIONS = (
     "\n"
     "## Splice fixture alpha\n"
@@ -236,18 +239,25 @@ _ALPHA = (
     "Alpha detail line."
 )
 _BETA = "## Splice fixture beta\n\nBeta line."
+_SECOND_FIXTURE_SECTIONS = "\n## Splice fixture delta\n\nDelta line.\n"
+_DELTA = "## Splice fixture delta\n\nDelta line."
 
 
-def _seed_splice_tree(tmp_path: Path, extra: str = "") -> None:
-    """The generator inputs under *tmp_path*, the shared seat reference
-    keeping every real section and gaining the fixture sections, then
-    *extra*."""
+def _seed_splice_tree(tmp_path: Path, extra: str = "", second: str = "") -> None:
+    """The generator inputs under *tmp_path*, each shared reference keeping
+    every real section: the first gains the alpha and beta fixtures, then
+    *extra*; the second gains the delta fixture, then *second*."""
     copy_generator_inputs(tmp_path)
-    reference = tmp_path / SHARED
-    real = reference.read_bytes().decode("utf-8")
-    assert "Splice fixture" not in real, "a real section shadows the fixture"
-    text = real.rstrip("\n") + "\n" + _FIXTURE_SECTIONS + extra
-    reference.write_bytes(text.encode("utf-8"))
+    first_ref, second_ref = SHARED
+    appended = {
+        first_ref: _FIXTURE_SECTIONS + extra,
+        second_ref: _SECOND_FIXTURE_SECTIONS + second,
+    }
+    for rel, fixture in appended.items():
+        reference = tmp_path / rel
+        real = reference.read_bytes().decode("utf-8")
+        assert "Splice fixture" not in real, "a real section shadows the fixture"
+        reference.write_bytes((real.rstrip("\n") + "\n" + fixture).encode("utf-8"))
 
 
 def _insert_after(rel: str, root: Path, anchor_line: str, new: str) -> None:
@@ -262,8 +272,9 @@ def _insert_after(rel: str, root: Path, anchor_line: str, new: str) -> None:
 def test_splice_replaces_each_include_with_its_section(tmp_path: Path) -> None:
     """Break: an include left as a marker, a section cut short at its
     ``###`` subsection or at a ``##`` line inside a code fence, or run on
-    into the next ``#`` or ``##`` heading, its heading dropped, or the
-    agent rendered from anything but the spliced template.
+    into the next ``#`` or ``##`` heading, its heading dropped, a section of
+    the second shared reference not spliced, or the agent rendered from
+    anything but the spliced template.
 
     The expected text is the source's own render, whatever includes it
     already holds, with the fixture sections where the new includes sit."""
@@ -275,46 +286,75 @@ def test_splice_replaces_each_include_with_its_section(tmp_path: Path) -> None:
         source,
         tmp_path,
         _raw(source).split("\n", 1)[0],
-        "\n[[include Splice fixture alpha]]\n\n[[include Splice fixture beta]]",
+        "\n[[include Splice fixture alpha]]\n\n[[include Splice fixture beta]]"
+        "\n\n[[include Splice fixture delta]]",
     )
 
     assert run_generator("write", "--root", str(tmp_path)).returncode == 0
     rendered = (tmp_path / SEAT).read_text("utf-8")
-    expected = "\n".join([baseline[0], "", _ALPHA, "", _BETA, *baseline[1:]])
+    expected = "\n".join(
+        [baseline[0], "", _ALPHA, "", _BETA, "", _DELTA, *baseline[1:]]
+    )
     assert rendered == expected
     assert _BETA in (tmp_path / agent_file("redteam-seat")).read_text("utf-8")
     assert run_generator("check", "--root", str(tmp_path)).returncode == 0
 
 
 @pytest.mark.parametrize(
-    "include, extra, named",
+    "include, extra, second, named",
     [
-        ("[[include Splice fixture gamma]]", "", "Splice fixture gamma"),
-        ("[[include Splice fixture alpha detail]]", "", "Splice fixture alpha detail"),
-        ("[[include]]", "", "[[include]]"),
-        ("[[include: Splice fixture alpha]]", "", "[[include: Splice fixture alpha]]"),
+        ("[[include Splice fixture gamma]]", "", "", "Splice fixture gamma"),
+        (
+            "[[include Splice fixture alpha detail]]",
+            "",
+            "",
+            "Splice fixture alpha detail",
+        ),
+        ("[[include]]", "", "", "[[include]]"),
+        (
+            "[[include: Splice fixture alpha]]",
+            "",
+            "",
+            "[[include: Splice fixture alpha]]",
+        ),
         (
             "[[include Splice fixture beta]]",
             "\n## Splice fixture beta\n\nA second beta.\n",
+            "",
+            "Splice fixture beta",
+        ),
+        (
+            "[[include Splice fixture beta]]",
+            "",
+            "\n## Splice fixture beta\n\nA beta in the second reference.\n",
             "Splice fixture beta",
         ),
         (
             "[[include Splice fixture beta]]",
             "[[when lane = very-small]]\n",
+            "",
             "Splice fixture beta",
+        ),
+        (
+            "[[include Splice fixture delta]]",
+            "",
+            "[[when lane = very-small]]\n",
+            "Splice fixture delta",
         ),
     ],
     ids=["missing-heading", "subsection-heading", "no-heading", "malformed",
-         "duplicate-heading", "marker-in-section"],
+         "duplicate-heading", "heading-in-both-references", "marker-in-section",
+         "marker-in-second-reference"],
 )
 def test_splice_refuses_an_include_it_cannot_resolve(
-    tmp_path: Path, include: str, extra: str, named: str
+    tmp_path: Path, include: str, extra: str, second: str, named: str
 ) -> None:
-    """Break: a source naming a heading the shared reference lacks (or a
-    ``###`` one, or one it holds twice), a malformed include, or a section
-    holding a marker line rendering anyway -- or a failed render writing a
-    partial tree. Both modes stop with exit 2 and name the include."""
-    _seed_splice_tree(tmp_path, extra)
+    """Break: a source naming a heading no shared reference holds (or a
+    ``###`` one, or one held twice, in one reference or across both), a
+    malformed include, or a section holding a marker line rendering anyway
+    -- or a failed render writing a partial tree. Both modes stop with exit
+    2 and name the include."""
+    _seed_splice_tree(tmp_path, extra, second)
     assert run_generator("check", "--root", str(tmp_path)).returncode == 0
     source = source_path(INSTRUMENTS["implementer"])
     _insert_after(source, tmp_path, _raw(source).split("\n", 1)[0], include)
@@ -327,20 +367,23 @@ def test_splice_refuses_an_include_it_cannot_resolve(
     assert (tmp_path / INSTRUMENTS["implementer"]).read_bytes() == before
 
 
-def test_splice_refuses_a_missing_shared_reference(tmp_path: Path) -> None:
-    """Break: a source taking a section while the shared seat reference is
+@pytest.mark.parametrize("reference", SHARED)
+def test_splice_refuses_a_missing_shared_reference(
+    tmp_path: Path, reference: str
+) -> None:
+    """Break: a source taking a section while a shared reference is
     missing ending in a traceback, or in check mode's exit 1, which means
     "stale" -- or a failed render writing a partial tree. Both modes stop
     with exit 2 and name the reference."""
     copy_generator_inputs(tmp_path)
-    (tmp_path / SHARED).unlink()
+    (tmp_path / reference).unlink()
     outputs = [*TEMPLATES, *map(agent_file, INSTRUMENTS)]
     before = {rel: (tmp_path / rel).read_bytes() for rel in outputs}
 
     for mode in ("check", "write"):
         result = run_generator(mode, "--root", str(tmp_path))
         assert result.returncode == 2, (mode, result.stdout, result.stderr)
-        assert SHARED in result.stderr, result.stderr
+        assert reference in result.stderr, result.stderr
     assert {rel: (tmp_path / rel).read_bytes() for rel in outputs} == before
 
 
@@ -379,17 +422,33 @@ def taken_sections(source_text: str) -> set[str]:
     return {m.group(1) for line in source_text.split("\n") if (m := include.match(line))}
 
 
+def shared_headings() -> list[tuple[str, str]]:
+    """``(heading, reference)`` for each ``##`` section of every shared
+    reference, in order."""
+    gen = load_generator()
+    return [(h, ref) for ref in SHARED for h, _ in gen.sections(_raw(ref))]
+
+
+def test_shared_headings_are_unique_across_the_references() -> None:
+    """Break: a ``##`` heading held twice, in one shared reference or
+    across them, so an include of it fails to render and a bare ``§``
+    citation of it names two sections."""
+    # Consumer: the generator, which resolves an include by heading across
+    # every shared reference.
+    held = Counter(h for h, _ in shared_headings())
+    assert [h for h, n in held.items() if n > 1] == []
+
+
 def untaken_shared_citations(template_text: str, source_text: str) -> list[str]:
-    """The shared seat reference's headings that *template_text* (a
-    rendered template) cites with a bare ``§`` and that its source,
-    *source_text*, takes no include of.
+    """The shared references' headings that *template_text* (a rendered
+    template) cites with a bare ``§`` and that its source, *source_text*,
+    takes no include of.
 
     A bare citation names no file: a ``§`` after a ``.md`` path or a
     ``crucible:<skill>`` token cites that file, not a section of this
     template. A cited shared heading is the longest one the citation's
     text starts with, ending at a word boundary."""
-    shared = load_generator().sections(_raw(SHARED))
-    headings = sorted((h for h, _ in shared), key=len, reverse=True)
+    headings = sorted((h for h, _ in shared_headings()), key=len, reverse=True)
     taken = taken_sections(source_text)
     norm = re.sub(r"\s+", " ", template_text)
     out: list[str] = []
@@ -422,16 +481,20 @@ def test_shared_citations_name_sections_the_template_takes(template: str) -> Non
     assert untaken_shared_citations(_raw(template), _raw(source_path(template))) == []
 
 
-def test_shared_citation_check_fires_on_an_untaken_section() -> None:
-    """The check demonstrably fires on a bare citation of a shared section
-    the source does not take, and passes over one that names its file."""
+@pytest.mark.parametrize("reference", SHARED)
+def test_shared_citation_check_fires_on_an_untaken_section(reference: str) -> None:
+    """The check demonstrably fires on a bare citation of a section of
+    each shared reference that the source does not take, and passes over
+    one that names its file."""
     template = INSTRUMENTS["implementer"]
     source = _raw(source_path(template))
     taken = taken_sections(source)
-    untaken = next(h for h, _ in load_generator().sections(_raw(SHARED)) if h not in taken)
+    untaken = next(
+        h for h, ref in shared_headings() if ref == reference and h not in taken
+    )
     text = _raw(template)
     assert untaken_shared_citations(f"{text}\nSee § {untaken}.\n", source) == [untaken]
-    cited_file = f"{text}\nSee `{SHARED}` § {untaken}.\n"
+    cited_file = f"{text}\nSee `{reference}` § {untaken}.\n"
     assert untaken_shared_citations(cited_file, source) == []
 
 

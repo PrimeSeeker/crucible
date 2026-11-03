@@ -191,7 +191,7 @@ is reasonably expected, and an umbrella has no code of its own, so its
 review stays chosen by its content. Once an umbrella's campaign runs,
 the question stops it as any campaign's, read against its children's
 code
-(`skills/subagent-driven-development/references/seat-rules.md`
+(`skills/subagent-driven-development/references/review-terms.md`
 § The arrangement questions). (Basis: judgment, accepted by the
 maintainer, 2026-10-29.)
 
@@ -392,6 +392,7 @@ judgment, an agent's call the maintainer has not ruled on.)
 
 ## Changes
 
+- 2026-11-03: the arrangement questions' citation follows their move from the shared seat reference to `skills/subagent-driven-development/references/review-terms.md`, a reference of their own, so a controller that applies them no longer loads the seat rules.
 - 2026-11-02: the clause binding a child through its umbrella line is
   stated once per reader (the umbrellas reference's Children and Edits,
   flip-paths' opening, the shared seat reference), and § Children's

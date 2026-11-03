@@ -4,26 +4,29 @@ instrument agents from the templates.
 Each templated instrument's fixed text has one hand-edited source,
 ``<template stem>.source.md`` beside the template it renders
 (``implementer-prompt.md`` from ``implementer-prompt.source.md``), and may
-take sections of the shared seat reference,
-``skills/subagent-driven-development/references/seat-rules.md``. This
-script splices the sections each source names into it and writes the
-result as the template, at the path every host's dispatch reads; from each
-template it renders the Claude Code agent, ``agents/<name>.md`` at the
-plugin root. Templates and agents are committed, because the hosts load
-them from the tree, and neither is ever edited by hand: edit the source or
-the shared seat reference, then run write mode. Check mode fails on any
-template or agent that write mode would change.
+take sections of the shared references under
+``skills/subagent-driven-development/references/``: the seat rules,
+``seat-rules.md``, and the review terms controllers also read,
+``review-terms.md``. This script splices the sections each source names
+into it and writes the result as the template, at the path every host's
+dispatch reads; from each template it renders the Claude Code agent,
+``agents/<name>.md`` at the plugin root. Templates and agents are
+committed, because the hosts load them from the tree, and neither is ever
+edited by hand: edit the source or a shared reference, then run write
+mode. Check mode fails on any template or agent that write mode would
+change.
 
 The splice:
 
 - an include is a source line reading exactly ``[[include <heading>]]``,
-  naming a ``##`` heading of the shared seat reference by its exact text;
+  naming a ``##`` heading of a shared reference by its exact text;
 - the line is replaced by that section as it stands: its heading line and
   everything up to the next ``#`` or ``##`` heading outside a code fence
   (``###`` subsections included), trailing blank lines dropped, so the
   section keeps its heading in the template;
-- a heading the reference lacks or holds twice fails rendering, and so
-  does any other source line opening ``[[include``;
+- a heading no shared reference holds, or one held twice, in one
+  reference or across them, fails rendering, and so does any other source
+  line opening ``[[include``;
 - a spliced section is plain text: a line in it opening ``[[`` fails
   rendering, so includes never nest and a section never opens or closes a
   selector passage;
@@ -72,8 +75,13 @@ INSTRUMENTS: dict[str, str] = {
     "branch-reviewer": "skills/requesting-code-review/code-reviewer.md",
 }
 
-#: The shared seat reference, whose ``##`` sections a source may take.
-SHARED_REFERENCE = "skills/subagent-driven-development/references/seat-rules.md"
+#: The shared references, whose ``##`` sections a source may take: the
+#: seat rules, and the review terms controllers also read. A heading names
+#: one section across them.
+SHARED_REFERENCES: tuple[str, ...] = (
+    "skills/subagent-driven-development/references/seat-rules.md",
+    "skills/subagent-driven-development/references/review-terms.md",
+)
 
 #: A template's source is its path with this suffix for ``.md``.
 SOURCE_SUFFIX = ".source.md"
@@ -156,6 +164,24 @@ def sections(reference: str) -> list[tuple[str, list[str]]]:
     return found
 
 
+def shared_sections(
+    root: Path, needed_by: str
+) -> list[tuple[str, list[str], str]]:
+    """``(heading, lines, reference)`` for each ``##`` section of every
+    shared reference under *root*, in order. *needed_by* names the include
+    that asked, for the error when a reference cannot be read."""
+    found: list[tuple[str, list[str], str]] = []
+    for reference in SHARED_REFERENCES:
+        try:
+            shared = (root / reference).read_bytes()
+        except OSError as exc:
+            raise TemplateError(
+                f"{needed_by}: cannot read {reference}: {exc.strerror or exc}"
+            ) from exc
+        found.extend((h, lines, reference) for h, lines in sections(_lf(shared)))
+    return found
+
+
 def render_template(template: str, root: Path) -> str:
     """The full text of *template* for the tree at *root*: its source with
     every include replaced by the section it names."""
@@ -163,7 +189,7 @@ def render_template(template: str, root: Path) -> str:
     path = root / source
     if not path.is_file():
         raise TemplateError(f"{template}: no source {source}")
-    found: list[tuple[str, list[str]]] | None = None
+    found: list[tuple[str, list[str], str]] | None = None
     out: list[str] = []
     for line in _lf(path.read_bytes()).split("\n"):
         if not line.startswith("[[include"):
@@ -173,25 +199,24 @@ def render_template(template: str, root: Path) -> str:
         if not m:
             raise TemplateError(f"{source}: malformed include line {line!r}")
         if found is None:
-            try:
-                shared = (root / SHARED_REFERENCE).read_bytes()
-            except OSError as exc:
-                raise TemplateError(
-                    f"{source}: {line!r}: cannot read {SHARED_REFERENCE}: "
-                    f"{exc.strerror or exc}"
-                ) from exc
-            found = sections(_lf(shared))
-        held = [lines for heading, lines in found if heading == m.group(1)]
-        if len(held) != 1:
-            why = "no such '## ' heading" if not held else "a heading held twice"
-            raise TemplateError(f"{source}: {line!r}: {why} in {SHARED_REFERENCE}")
-        for spliced in held[0]:
+            found = shared_sections(root, f"{source}: {line!r}")
+        held = [(lines, ref) for heading, lines, ref in found if heading == m.group(1)]
+        if not held:
+            raise TemplateError(
+                f"{source}: {line!r}: no such '## ' heading in "
+                + " or ".join(SHARED_REFERENCES)
+            )
+        if len(held) > 1:
+            where = " and ".join(dict.fromkeys(ref for _, ref in held))
+            raise TemplateError(f"{source}: {line!r}: a heading held twice in {where}")
+        lines, reference = held[0]
+        for spliced in lines:
             if spliced.startswith("[["):
                 raise TemplateError(
                     f"{source}: {line!r}: the section holds a marker line "
-                    f"{spliced!r} in {SHARED_REFERENCE}"
+                    f"{spliced!r} in {reference}"
                 )
-        out.extend(held[0])
+        out.extend(lines)
     return "\n".join(out)
 
 

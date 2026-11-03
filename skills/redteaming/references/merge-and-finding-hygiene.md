@@ -14,4 +14,4 @@ When all seats return (state `returned`), merge into the round record's `## Merg
 
 **Finding hygiene** binds every seat through its template, and you enforce it at merge: a staked severity on each finding, a BLOCKER without evidence a question, and a run transcript or `UNVERIFIED` on each code-shaped claim. **`UNVERIFIED` findings never enter a fix list as-is** — verify or discard them, the outcome on an indented continuation line of the entry.
 
-**Finding scope** (`skills/subagent-driven-development/references/seat-rules.md` § Finding scope) binds every seat through its template, and you enforce it at merge: a finding raised outside it is still merged and accounted for, and dispositioned `rejected` with that ruling.
+**Finding scope** (`skills/subagent-driven-development/references/review-terms.md` § Finding scope) binds every seat through its template, and you enforce it at merge: a finding raised outside it is still merged and accounted for, and dispositioned `rejected` with that ruling.

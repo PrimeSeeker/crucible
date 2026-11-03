@@ -66,7 +66,7 @@ infrastructure escalation (`crucible:redteaming § Panels`).
 panel round once overturning a major mechanism after code is no longer
 reasonably expected: the overturn question, defined with its reading
 for an umbrella's campaign in
-`skills/subagent-driven-development/references/seat-rules.md`
+`skills/subagent-driven-development/references/review-terms.md`
 § The arrangement questions. The call is the controller's judgment, not
 put to the operator to confirm, over the round's records, the seats'
 forecasts included, never conversation memory; finding counts and
@@ -403,6 +403,7 @@ trim.)
 
 ## Changes
 
+- 2026-11-03: the arrangement questions' citation follows their move from the shared seat reference to `skills/subagent-driven-development/references/review-terms.md`, a reference of their own, so a controller that applies them no longer loads the seat rules.
 - 2026-11-02: the shared seat reference's citations follow its rename
   to `seat-rules.md`.
 - 2026-11-02: the top-up gate is the one-line replacement rule: the

@@ -43,7 +43,7 @@ acceptance criterion maps to a kind of check or says why neither applies
 inputs the spec implies but never names.
 
 **The review mark.** A task that meets the mark's criterion, defined in
-`skills/subagent-driven-development/references/seat-rules.md`
+`skills/subagent-driven-development/references/review-terms.md`
 § The arrangement questions, may carry the line `Review: branch only —
 <reason>`, the reason saying how it meets it; a task with no mark is
 reviewed. Dispatched, a marked task takes the branch review as its first
@@ -299,6 +299,7 @@ directory, and `plan` is a value of their `phase` selector.
 
 ## Changes
 
+- 2026-11-03: the arrangement questions' citation follows their move from the shared seat reference to `skills/subagent-driven-development/references/review-terms.md`, a reference of their own, so a controller that applies them no longer loads the seat rules.
 - 2026-11-03: the deferral call cites the implementer template, which
   states it, writing-plans no longer doing so.
 - 2026-11-02: the shared seat reference's citations follow its rename

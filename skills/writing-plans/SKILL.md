@@ -39,7 +39,7 @@ Four fields, all required:
 - **Contract** — interfaces consumed and produced: signatures, not bodies; plus the spec decisions this task enacts, named by their ids, and the spec's deferral markers it owns (§ Deferring detail).
 - **Acceptance** — observable behaviors, plus test scenarios by category — happy / edge / error / integration — as scenario descriptions, not test code. The edge and error scenarios name the inputs the spec implies but never names (an empty file, a missing directory, a second run).
 
-**The review mark** is optional and not a field. A task that meets the mark's criterion (`skills/subagent-driven-development/references/seat-rules.md` § The arrangement questions) may carry, on its own line below the task's heading, `Review: branch only — <reason>`, the reason saying how the task meets it; SDD's task loop says how it is reviewed (`crucible:subagent-driven-development` § The Task Loop). A task with no mark is reviewed. A mark is added only before the plan's review closes; after that, the task keeps its review.
+**The review mark** is optional and not a field. A task that meets the mark's criterion (`skills/subagent-driven-development/references/review-terms.md` § The arrangement questions) may carry, on its own line below the task's heading, `Review: branch only — <reason>`, the reason saying how the task meets it; SDD's task loop says how it is reviewed (`crucible:subagent-driven-development` § The Task Loop). A task with no mark is reviewed. A mark is added only before the plan's review closes; after that, the task keeps its review.
 
 ## What a plan never contains
 

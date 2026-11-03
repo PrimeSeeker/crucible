@@ -12,10 +12,10 @@ passage the card does not select is inert: neither performed, attested
 nor mentioned. The template is rendered from a hand-edited source beside
 it (`seat-prompt.source.md` for `seat-prompt.md`), the one home of the
 seat's own text: the generator splices in each section of the shared
-seat reference
-(`skills/subagent-driven-development/references/seat-rules.md`) the
-source names by its heading, and writes the template at the path every
-host reads. For Claude Code it renders each template into
+references the source names by its heading, and writes the template at
+the path every host reads. The shared references are the shared seat
+reference
+(`skills/subagent-driven-development/references/seat-rules.md`) and the review terms (`skills/subagent-driven-development/references/review-terms.md`), which hold § The arrangement questions, § Finding scope and § Suite bound, the sections controllers also read; a heading names one section across the two. For Claude Code it renders each template into
 `agents/<name>.md`, filling only the runtime name. Templates and agents
 are committed and never edited by hand, and the suite runs the
 generator's check mode; the splice's rules are in the generator's
@@ -63,8 +63,9 @@ and branch reviewer's cards carry `[PLUGIN_ROOT]`, filled with the
 plugin root the controller read the card from. Through it the
 implementer reads systematic-debugging, `writing-good-tests.md` and
 writing-skills, and the reviewers read `writing-good-tests.md`, in any
-repository. No templated seat reads the shared seat reference
-`skills/subagent-driven-development/references/seat-rules.md`, so the
+repository. No templated seat reads a shared reference,
+`skills/subagent-driven-development/references/seat-rules.md` or
+`skills/subagent-driven-development/references/review-terms.md`, so the
 redteam seat's and the terminal pass's cards carry no plugin root: each
 template takes by splice the sections its seat follows, as its source
 names them, among them what a seat may raise beyond a defect in the work
@@ -270,6 +271,8 @@ major mechanism of the change is reasonably expected now that it is
 coded. An agent's proposal, which the maintainer accepted. (Basis:
 judgment, accepted by the maintainer.)
 
+On 2026-11-03 the arrangement questions moved, with § Finding scope and § Suite bound, out of the shared seat reference into a reference of their own, `skills/subagent-driven-development/references/review-terms.md`, from which the generator splices as it does from the first. Since the splice no seat reads the shared seat reference, so the ground that every reader already reaches it had gone, while every route's controller loaded the whole file at brainstorm for the arrangement questions: 4,716 tokens by the resident-token count at `4026f6b` (`docs/decisions/authoring-crucible.md` § Resident tokens per route). The three sections are the ones a controller applies or copies itself, at the arrangement, the stop, a plan's marks, inline work, the upgrade hatch, merge and round 0's pre-pass; a controller now reads them alone, and the seats' rendered text is unchanged. Where a controller once followed a pointer into § Premise findings to class a finding, `skills/redteaming/references/flip-paths.md` states the definition in one clause, which costs fewer tokens than moving the section too. An agent's proposal, on which the maintainer left the call to the agent. (Basis: measured, for the file's tokens; judgment, accepted by the maintainer.)
+
 On 2026-10-30 the two clauses that a binding item may itself be wrong
 and that a consequential choice taken for granted is a finding moved
 from the redteam seat's template into a section of the shared
@@ -318,6 +321,7 @@ judgment, accepted by the maintainer.)
 
 ## Changes
 
+- 2026-11-03: § The arrangement questions, § Finding scope and § Suite bound move from the shared seat reference into `skills/subagent-driven-development/references/review-terms.md`, and the generator splices from both files, a heading naming one section across them; flip-paths states what a premise finding is in one clause instead of pointing into the shared seat reference; because no seat reads the shared seat reference since the splice, and every route's controller loaded all of it for the sections it applies.
 - 2026-11-03: the branch reviewer takes § The arrangement questions
   only where its card's `lane` selector is `very-small`, with a line
   saying it serves the lane's upgrade hatch, and the card's `lane`

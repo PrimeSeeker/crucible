@@ -34,9 +34,9 @@ A contained change to the spec is a scoped amendment you confirm with no decisio
 
 ### Premise findings
 
-What a premise finding is, and its label `premise`, is in `skills/subagent-driven-development/references/seat-rules.md` § Premise findings. Your side, at any phase, the spec campaign included:
+A premise finding claims that the request, what the Intent asks for, or a firm decision is wrong, and carries the label `premise`. Your side, at any phase, the spec campaign included:
 
-**A mislabel.** You correct a finding's label by the reference above, in either direction, your reason recorded with it: a finding labelled `premise` that the reference classes as ordinary — against a lightly held decision, say — is merged or routed as an ordinary finding, and an unlabelled finding against the request, what the Intent asks for or a firm decision takes the label and this section's route.
+**A mislabel.** You correct a finding's label by the definition above, in either direction, your reason recorded with it: a finding labelled `premise` that the definition classes as ordinary — against a lightly held decision, say — is merged or routed as an ordinary finding, and an unlabelled finding against the request, what the Intent asks for or a firm decision takes the label and this section's route.
 
 **The ask.** Every premise finding goes to the operator as a decision ask, carrying the severity its seat staked for the operator's weighing — never a change you confirm, whatever § The containment test would find. It is an open decision ask, not an open BLOCKER or MAJOR: by itself it holds open no gate keyed on one — the cap escalation, the branch review's end condition, task completion — opens no fix wave and consumes no wave cap. The readouts carry it until it is ruled, and while it is open, work goes on.
 
