@@ -25,7 +25,7 @@ Advisory.
 ## Acceptance
 
 1. `python -m pytest tests/` passes.
-2. `grep -nE "two tasks|plan-size" skills/brainstorming/references/proposing-the-arrangement.md docs/decisions/routes.md README.md` prints nothing.
+2. `grep -nE "two tasks|plan-size" skills/brainstorming/references/proposing-the-arrangement.md README.md` prints nothing, and neither does `sed -n '/^## Decision/,/^## Why/p' docs/decisions/routes.md | grep -nE "two tasks|plan-size"`: the record's Why and Changes keep naming the old count as history.
 3. `grep -nE "^- 2026-11-03: .*folded" docs/decisions/routes.md` prints the new Changes line.
 
 ## Out of scope
