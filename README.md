@@ -117,6 +117,10 @@ Before installing crucible, turn superpowers off. On Claude Code,
 as well; either way, what counts is that no session starts with both. On
 Codex, `docs/codex.md` § Turning another router off gives the config.
 
+Crucible has no visual companion, superpowers' browser page for showing
+mockups during brainstorming. It was left out on purpose, and a lighter
+form is postponed indefinitely (`docs/backlog/visual-companion.md`).
+
 ## How it works
 
 **The flow.** You describe what you want. Brainstorming turns it into a
