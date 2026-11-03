@@ -2,9 +2,9 @@
 
 Any implementer's report, a fix report included, may carry beside its work:
 
-- **Concerns** about that work: the review of it rules on each — the task review, the re-review of a fix report, the branch reviewer through leads on the very-small lane (`skills/subagent-driven-development/references/very-small-lane.md`) — and you handle none before it. A fix report no re-review reads, from a wave that only disputes, has its concerns written as leads.
-- **A premise finding**: written under `## Adjudication rulings` as open, it goes where `skills/redteaming/references/premise-asks.md` § Premise findings sends it; no review rules on it as a concern.
+- **Concerns** about that work: its review rules on each (the task review; a fix report's re-review; on the very-small lane, the branch reviewer through leads), and you handle none before it. Those of a fix report no re-review reads, from a wave that only disputes, become leads.
+- **A premise finding**: write it under `## Adjudication rulings` as open and route it by `skills/redteaming/references/premise-asks.md` § Premise findings; no review rules on it as a concern.
 - **`Questions` items:** each a lead; a branch-review fix report's go under `## Questions` instead (`crucible:requesting-code-review`).
-- **A fix proposed outside its task**, never made: route it to its owning task, in that task's dispatch context where it has yet to run; to the branch review as a lead; or, where it touches binding content, by `skills/redteaming/references/flip-paths.md`.
+- **A fix proposed outside its task**, never made: route it to its owning task (in that task's dispatch context if not yet run), to the branch review as a lead, or, where it touches binding content, by `skills/redteaming/references/flip-paths.md`.
 
-A task reviewer's `Questions` items are leads too. Write each lead in `skills/subagent-driven-development/references/setup.md`'s form; none opens a fix wave by itself or consumes a cap: what the branch reviewer's ruling on a lead opens is `crucible:requesting-code-review` § The branch-review loop's to say.
+A task reviewer's `Questions` items are leads too. Write each lead in `skills/subagent-driven-development/references/setup.md`'s form; none opens a fix wave by itself or consumes a cap; what the branch reviewer's ruling on one opens is `crucible:requesting-code-review` § The branch-review loop's to say.

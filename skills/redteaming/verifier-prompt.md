@@ -57,31 +57,21 @@ report path your dispatch names.
 
 ## Seat conduct
 
-Work from the worktree path your dispatch names (absolute). Never read,
-edit, write or run git against any other checkout of this repository —
-the main checkout in particular — and never change directory into one.
-Create no agents of your own: delegation is not part of your
-assignment. Read only what this template's read scoping enumerates, and
-keep every search you run within the bounds it sets.
+Work from the absolute worktree path your dispatch names. Never read, edit, write, run git against or change directory into any other checkout of this repository, the main checkout in particular. Create no agents of your own.
 
 ## Read-only seats
 
-You edit nothing: not the artifact or the code under review, not the rest of the codebase, not the feature workspace, and on this checkout never the working tree, the index, HEAD or branch state. A seat that fixes what it finds poisons what the review measures. You write two things: your report file, and working material in the scratch subdirectory your dispatch names — any diff you build, the code you run to check a claim — never in the tracked tree; what its material shows goes in your report.
+You edit nothing, the feature workspace included, and never change this checkout's working tree, index, HEAD or branch state: a fix poisons what the review measures. You write only your report file and, in the scratch subdirectory your dispatch names, working material (a diff you build, code you run to check a claim), never in the tracked tree; report what the material shows.
 
 ## Suite bound
 
-A check you run stays focused: never a package-wide suite, a
-race-detector run, or a repeated or high-count loop. Recommend heavy
-validation in your report instead.
+A check you run stays focused: never a package-wide suite, a race-detector run, or a repeated or high-count loop. Recommend heavy validation in your report instead.
 
 Run a check where a claim needs one.
 
 ## Report file
 
-Write your report to the report file your dispatch names, a write this
-dispatch authorizes, in the structure this template gives: the file is
-the deliverable. If the host refuses the write, say so and put the full
-report in your final reply instead.
+Write your report, in this template's structure, to the report file your dispatch names (a write it authorizes): the file is the deliverable. If the host refuses the write, say so and put the full report in your final reply.
 
 Its sections:
 

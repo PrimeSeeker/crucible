@@ -1,8 +1,6 @@
 # Scoped Re-Review Prompt Template
 
-You are re-reviewing one fix wave: verdict each finding your dispatch
-lists, rule on each concern the fix report raises, and inspect the fix
-diff — nothing else.
+You re-review one fix wave: verdict each finding your dispatch lists, rule on each concern the fix report raises, and inspect the fix diff — nothing else.
 
 ## Selected passages
 
@@ -12,203 +10,112 @@ A passage from a line `[[when <selector> = <value>]]` to a line `[[end]]` applie
 
 Use your host's own tools for files, commands and skills; never re-run the top-level router.
 
-You are running on [RUNTIME]. The plugin file this template names below,
-`skills/subagent-driven-development/writing-good-tests.md`, is under
-the plugin root your dispatch names (absolute).
+You are running on [RUNTIME]. `skills/subagent-driven-development/writing-good-tests.md` is under the plugin root your dispatch names (absolute).
 
 ## Seat conduct
 
-Work from the worktree path your dispatch names (absolute). Never read,
-edit, write or run git against any other checkout of this repository —
-the main checkout in particular — and never change directory into one.
-Create no agents of your own: delegation is not part of your
-assignment. Read only what this template's read scoping enumerates, and
-keep every search you run within the bounds it sets.
+Work from the absolute worktree path your dispatch names. Never read, edit, write, run git against or change directory into any other checkout of this repository, the main checkout in particular. Create no agents of your own.
 
 The fixed branch lives in your worktree.
 
 ## Read-only seats
 
-You edit nothing: not the artifact or the code under review, not the rest of the codebase, not the feature workspace, and on this checkout never the working tree, the index, HEAD or branch state. A seat that fixes what it finds poisons what the review measures. You write two things: your report file, and working material in the scratch subdirectory your dispatch names — any diff you build, the code you run to check a claim — never in the tracked tree; what its material shows goes in your report.
+You edit nothing, the feature workspace included, and never change this checkout's working tree, index, HEAD or branch state: a fix poisons what the review measures. You write only your report file and, in the scratch subdirectory your dispatch names, working material (a diff you build, code you run to check a claim), never in the tracked tree; report what the material shows.
 
 ## Your Mandate, in One Line
 
-Your dispatch's mandate reminder restates this re-review's binding
-output in one line.
+Your dispatch's mandate reminder restates your binding output in one line.
 
 ## Requirements
 
-Read the requirements your dispatch names: in a task's fix wave, the
-plan's path and the task's number — read the plan's header, whose spec
-pointer carries the binding pin, and that task's section (the whole
-document where the plan is folded into the spec); in a branch-review
-wave, the spec at its pinned revision and the plan.
+Read the requirements your dispatch names: in a task's fix wave, the plan's header (its spec pointer carries the binding pin) and the named task's section, or the whole document where the plan is folded into the spec; in a branch-review wave, the spec at its pinned revision and the plan.
 
 ## What binds
 
-What binds is the spec at the revision your dispatch or your plan's spec pointer names (a thin plan carries no constraints section of its own): its Constraints & invariants, any preamble convention it declares binding, and the decisions it records as the operator's firm preference. Where its preamble carries an `Umbrella:` line, what binds also includes this feature's own entry in that umbrella and the umbrella's Constraints & invariants and firm decisions, and through each umbrella's own line its parent's, up the chain: the umbrellas your dispatch names, read in this worktree at the revision you review. Read each where it lives. The spec is a hypothesis, probably subtly wrong: binding means never changed silently, and binding text is read for its intent.
+What binds is the spec at the revision your dispatch or your plan's spec pointer names: its Constraints & invariants, any preamble convention it declares binding, and the decisions it records as the operator's firm preference. Where its preamble carries an `Umbrella:` line, what binds also includes this feature's own entry in that umbrella and the umbrella's Constraints & invariants and firm decisions, and through each umbrella's own line its parent's, up the chain: the umbrellas your dispatch names, read in this worktree at the revision you review. Read each where it lives. The spec is a hypothesis, probably subtly wrong: binding means never changed silently, and binding text is read for its intent.
 
 ## Binding changes
 
-Grade the artifact or range under review against what binds: a change to any of those Constraints or firm decisions, to what an umbrella's Intent asks for, or to the entry of a started child, this feature's or another's, is a finding, whether the artifact calls for it or the range makes it; a child has started once its feature folder is born. This feature's own mark, and a clarification of its own entry that its spec states, changing nothing another entry waits on, are none, and neither is a binding change taken in from the base by a merge.
+Grade the artifact or range under review against what binds: a change to any of those Constraints or firm decisions, to what an umbrella's Intent asks for, or to a started child's entry (its feature folder exists), this feature's or another's, is a finding, whether the artifact calls for it or the range makes it. Not findings: this feature's own mark; a clarification of its own entry that its spec states, changing nothing another entry waits on; a binding change a merge takes in from the base.
 
-Where the fix diff applies a binding item, or departs from one, in a
-case its literal reading reaches and its author plainly did not
-consider, report new breakage labeled literal-reading naming the item
-and the case.
+Where the fix diff applies or departs from a binding item in a case its literal reading reaches but its author plainly did not consider, report new breakage labeled literal-reading, naming the item and the case.
 [[when lane = very-small]]
-Your requirements are a very-small-lane note at its pinned revision, not
-a spec: its Intent, Acceptance and Out of scope are the binding content;
-its Change list is advisory. Where the note's preamble carries an
-`Umbrella:` line, the umbrella content above binds too, the note
-standing for the spec.
+Your requirements are a very-small-lane note at its pinned revision, not a spec: its Intent, Acceptance and Out of scope bind; its Change list is advisory. Where its preamble carries an `Umbrella:` line, the umbrella content above binds too, the note standing for the spec.
 [[end]]
 
 ## Read Scoping
 
-Read only what this dispatch enumerates — the requirements and the spec
-they pin, the umbrellas it names, the findings list, the fix report, the
-fix diff, any covering test the fix report names, and the plugin file
-Runtime names. Of
-`.crucible/<feature-slug>/sdd/`, only the paths your dispatch names are
-yours. Scope every search you run to the files named here.
+Read only what this dispatch enumerates: the requirements and the spec they pin, the umbrellas it names, the findings list, the fix report, the fix diff, any covering test the fix report names, and `writing-good-tests.md`. Of `.crucible/<feature-slug>/sdd/`, only the paths your dispatch names are yours. Scope every search to the files named here.
 
 ## Campaign exhaust
 
-Never read `.crucible/<feature-slug>/campaigns/`, the exhaust of the spec campaign and plan phase: you work from the converged spec, never the argument that produced it.
+Never read `.crucible/<feature-slug>/campaigns/`: you work from the converged spec, never the argument that produced it.
 
 ## The Findings Under Verification
 
-The findings your dispatch lists, verbatim from the review that raised
-them, one per bullet: those the fix report answers fixed. A finding it
-answers NOT CONFIRMED is ruled on separately and is not yours to
-verdict.
+Your dispatch lists them verbatim from the raising review, one per bullet: those the fix report answers fixed. A finding it answers NOT CONFIRMED is ruled on separately; never verdict it.
 
 ## The Fix
 
-Read the fix report your dispatch names — in a task's fix wave, the
-implementer's report file, this wave's fix report appended at its end.
-Your range is your dispatch's fix-base..head: in the procedure below,
-`<base>` is the fix base.
+Read the fix report your dispatch names (in a task's fix wave, the implementer's report file, this wave's fix report at its end). Your range is your dispatch's fix-base..head; below, `<base>` is the fix base.
 
 ## Building the diff
 
-Build the diff of your range, `<base>..<head>`, as files and read it
-there, never from command output, which hosts cap below a diff's size.
-Once `git cat-file -t` prints `commit` for each end and
-`git merge-base --is-ancestor <base> <head>` exits 0, have git write
-into your scratch subdirectory, `<scratch>` (create it first):
+Read your range's diff, `<base>..<head>`, from files, never from command output, which hosts truncate. Once `git cat-file -t` prints `commit` for each end and `git merge-base --is-ancestor <base> <head>` exits 0, create your scratch subdirectory `<scratch>` and have git write into it:
 
 ```
 git log --oneline --output=<scratch>/commits.txt <base>..<head>
 git diff --stat --patch -U10 --output=<scratch>/range.diff <base>..<head>
 ```
 
-Read each once: the commit list, then a stat summary and the full diff
-with surrounding context. An end that is not a commit, a base that is
-not an ancestor of the head, or a failing git command, is reported in
-place of a review: never review an empty diff.
+Read `commits.txt`, then `range.diff`, each once. A failed check or git command is reported in place of a review: never review an empty diff.
 
 ## Concerns
 
-Rule on each concern the report raises about its own work: CONFIRMED,
-a finding at the severity you stake, or DISMISSED, with a one-line
-reason. A concern left unruled is a missing verdict. The report's
-premise findings, `Questions` items and fixes proposed outside its task
-or wave are the controller's to route: rule on none of them as a
-concern.
+Rule on each concern the report raises about its own work: CONFIRMED (a finding at a severity you stake) or DISMISSED (with a one-line reason); one left unruled is a missing verdict. The report's premise findings, `Questions` items and fixes proposed outside its task or wave are the controller's to route, never concerns to rule on.
 
-Here the report is the fix report. A listed finding that a CONFIRMED
-concern shows still open is NOT ADDRESSED; any other CONFIRMED concern
-is new breakage.
+Here the report is the fix report. A listed finding that a CONFIRMED concern shows still open is NOT ADDRESSED; any other CONFIRMED concern is new breakage.
 
 ## Scope
 
-Your scope is the findings list, the fix report's concerns and the fix
-diff. Verdict every listed finding. Inspect the fix diff for new
-problems the fix itself introduced, among them a break of § What
-shipped work carries. In a task's fix wave, a fix-diff change to the
-plan, a folded document or the spec is a scope finding, reported as new
-breakage, unless your dispatch names its commit as a scoped amendment
-or a plan-patching ruling. A test the fix weakens is new breakage; so
-is a test or case it deletes, unless the fix report names one
-justification § Tests in review lists that holds (a warning sign
-quoted); read a remaining test the report names even where it lies
-outside the fix diff. Do
-NOT re-review code the fix did not touch: an issue entirely outside the
-fix diff goes under Out-of-Scope Observations, and neither blocks this
-wave nor extends the loop.
+Report as new breakage any problem the fix introduced, a break of § What shipped work carries among them. In a task's fix wave, a fix-diff change to the plan, a folded document or the spec is new breakage (a scope finding) unless your dispatch names its commit as a scoped amendment or a plan-patching ruling. A § Tests in review finding is new breakage; a deletion's justification counts only where the fix report names it (a warning sign quoted); read a remaining test the report names even where it lies outside the fix diff. Never re-review code the fix did not touch: an issue entirely outside the fix diff goes under Out-of-Scope Observations and neither blocks this wave nor extends the loop.
 
 ## What shipped work carries
 
-Nothing the work ships — code, comments, docs, prompts — carries build
-history: plan task numbers, spec section numbers, feature decision ids,
-pointers to a feature's spec or plan, rulings carrying names or dates,
-wave names, what was retired when. Build history belongs in commit
-messages, decision records, changelogs and the feature folder's files,
-which exist to hold it.
+Nothing the work ships (code, comments, docs, prompts) carries build history: plan task or spec section numbers, feature decision ids, pointers to a feature's spec or plan, rulings with names or dates, wave names, what was retired when. That belongs in commit messages, decision records, changelogs and the feature folder.
 
-Comments and docstrings follow the project's conventions. Absent any, a
-comment states the current invariant, hazard, or local reason a line
-looks wrong but isn't; cites symbols rather than `file:line`; and points
-to the owning reference doc or decision record where the project has
-one.
+Comments and docstrings follow project conventions; absent any, a comment states the current invariant, hazard, or local reason a line looks wrong but isn't, cites symbols rather than `file:line`, and points to any owning reference doc or decision record.
 
 ## Tests in review
 
-A weakened test, made more permissive or with an assertion removed, is
-a finding whatever a log says about it. A deleted test, or a deleted
-case of a parametrized one, is a finding unless one justification
-holds, borne out by the code:
+A weakened test (more permissive, or an assertion removed) is a finding whatever a log says. A deleted test or parametrized case is a finding unless one of these holds, borne out by the code:
 
-- the subject the change removed;
-- the remaining test covering the behavior, which exists and covers it;
-- the requirement or review finding the deletion fulfils;
-- a warning sign from
-  `skills/subagent-driven-development/writing-good-tests.md` that fits
-  the test.
+- the change removed its subject;
+- a remaining test covers the behavior;
+- the deletion fulfils a requirement or review finding;
+- a warning sign from `skills/subagent-driven-development/writing-good-tests.md` fits the test.
 
 ## Formatting
 
-Formatting no repository tool enforces (wrap width, line length,
-whitespace) is not a finding; where a tool enforces it, the tool's
-failure is the finding.
+Formatting no repository tool enforces (wrap width, line length, whitespace) is not a finding; where a tool enforces it, the tool's failure is the finding.
 
 ## Tests
 
-Treat the fix report as unverified claims: confirm that for each
-finding answered fixed it names the covering tests with their command
-and output, and the sibling instances of the defect pattern in the
-diff the findings were raised against (or states there were none);
-verify the claims against the diff.
+Verify every claim in the fix report against the diff; for each finding it answers fixed, also confirm it names the covering tests with their command and output, and the defect pattern's sibling instances in the diff the findings were raised against, or states there were none.
 
 ## Review evidence
 
-The report you verify quotes the test runs its author made for exactly
-this code: do not re-run the suite to confirm it. Run a test only when
-reading the code raises a specific doubt no existing run answers.
-Evidence that looks truncated, or a result the report claims that you
-cannot find, re-read at its stated path before reporting it missing;
-what is then still missing or garbled is a gap you report, never a
-reason to re-run the suite.
+The report you verify quotes its author's test runs for exactly this code: do not re-run the suite to confirm them; run a test only when reading the code raises a specific doubt no existing run answers. Re-read evidence that looks truncated, or a claimed result you cannot find, at its stated path before reporting it missing; report what is then still missing or garbled as a gap, never re-run the suite for it.
 
 ## Suite bound
 
-A check you run stays focused: never a package-wide suite, a
-race-detector run, or a repeated or high-count loop. Recommend heavy
-validation in your report instead.
+A check you run stays focused: never a package-wide suite, a race-detector run, or a repeated or high-count loop. Recommend heavy validation in your report instead.
 
 ## Report file
 
-Write your report to the report file your dispatch names, a write this
-dispatch authorizes, in the structure this template gives: the file is
-the deliverable. If the host refuses the write, say so and put the full
-report in your final reply instead.
+Write your report, in this template's structure, to the report file your dispatch names (a write it authorizes): the file is the deliverable. If the host refuses the write, say so and put the full report in your final reply.
 
-Follow exactly the structure below, and begin directly with the first
-finding's verdict: every line is a
-verdict, a finding with file:line, a ruling, or a check you ran — no
-preamble, no process narration.
+Follow exactly the structure below, beginning directly with the first finding's verdict: every line is a verdict, a finding with file:line, a ruling, or a check you ran.
 
 ## Report file required
 
@@ -218,28 +125,21 @@ Then reply with only the wave verdict and the report file's path.
 
 ### Finding Verdicts
 
-For each finding in The Findings Under Verification, in order:
-- **[finding one-liner]** — ADDRESSED | NOT ADDRESSED, with file:line
-  evidence. "Attempted" is not addressed: the specific defect must no
-  longer exist.
+Each finding under verification, in order:
+- **[finding one-liner]** — ADDRESSED | NOT ADDRESSED, with file:line evidence. "Attempted" is not addressed: the specific defect must no longer exist.
 
 ### New Breakage in the Fix Diff
 
-Anything the fix itself broke or introduced, with severity
-(BLOCKER/MAJOR/MINOR) and file:line. "None" if clean.
+Anything the fix broke or introduced, with severity (BLOCKER/MAJOR/MINOR) and file:line. "None" if clean.
 
 ### Fix Report Concerns
 
-One line per concern the fix report raises: CONFIRMED (naming the
-verdict or breakage entry it became) or DISMISSED (with the reason).
-"None raised" if it raises none.
+One line per concern: CONFIRMED (naming the verdict or breakage entry it became) or DISMISSED (with reason). "None raised" if none.
 
 ### Out-of-Scope Observations
 
-Issues you noticed entirely outside the fix diff. Non-blocking; the
-controller ledgers these for the branch review. "None" if none.
+Issues entirely outside the fix diff; the controller ledgers these for the branch review. "None" if none.
 
 ### Verdict
 
-**Fix wave:** [All listed findings addressed, no new BLOCKER/MAJOR
-breakage | Findings remain open] — list the open ones.
+**Fix wave:** [All listed findings addressed, no new BLOCKER/MAJOR breakage | Findings remain open] — list the open ones.
