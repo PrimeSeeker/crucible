@@ -174,7 +174,8 @@ the other eight between 1,001 and 3,951; 2.66 to 3.18 bytes a token.
   rule's only statement, each removal naming the passage that still
   states it. A shortfall is a binding change to umbrella C1: it goes to
   the operator before landing, by `skills/redteaming/references/flip-paths.md`
-  § Under an umbrella, never as an edit on this branch. Basis:
+  § Under an umbrella: binding changes and late splits, never as an edit
+  on this branch. Basis:
   the controller's proposal, accepted by the maintainer; the forecast
   from the existing stubs' measured sizes.
 - **D7. Resident tokens per route.** For each route (standard, folded,
