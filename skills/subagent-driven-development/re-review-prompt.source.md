@@ -117,13 +117,14 @@ verify the claims against the diff.
 
 [[include Report file]]
 
-[[include Report file required]]
-
 Follow exactly the structure below, and begin directly with the first
 finding's verdict: every line is a
 verdict, a finding with file:line, a ruling, or a check you ran — no
-preamble, no process narration. Then reply with only the wave
-verdict and the report file's path.
+preamble, no process narration.
+
+[[include Report file required]]
+
+Then reply with only the wave verdict and the report file's path.
 
 ### Finding Verdicts
 

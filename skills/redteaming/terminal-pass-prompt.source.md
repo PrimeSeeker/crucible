@@ -20,6 +20,8 @@ you.
 
 You are running on {runtime}.
 
+## Inputs and mandate
+
 **Inputs:** the artifact; this phase's round records and the readouts
 recorded in them (`round-*/record.md` in the phase directory your
 dispatch names); and, for each decision ask in those readouts, the seat

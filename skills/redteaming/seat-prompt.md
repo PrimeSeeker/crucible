@@ -15,6 +15,8 @@ Use your host's own tools for files, commands and skills; never re-run the top-l
 
 You are running on {runtime}.
 
+## Inputs and mandate
+
 **Artifact:** the artifact your dispatch names, at its revision. This is the
 entire review object. The review scope is this artifact — not the
 surrounding project; do not go issue-mining outside it (supporting sources
@@ -96,7 +98,7 @@ Run a check where a claim needs one.
 
 ## What binds
 
-What binds is the spec at its pinned revision, as your dispatch or your plan's spec pointer names it (a thin plan carries no constraints section of its own): its Constraints & invariants, any preamble convention it declares binding, and the decisions it records as the operator's firm preference. Where its preamble carries an `Umbrella:` line, what binds also includes this feature's own entry in that umbrella and the umbrella's Constraints & invariants and firm decisions, and through each umbrella's own line its parent's, up the chain: the umbrellas your dispatch names, read in this worktree at the revision you review. Read each where it lives. The spec is a hypothesis, probably subtly wrong: binding means never changed silently, and binding text is read for its intent.
+What binds is the spec at the revision your dispatch or your plan's spec pointer names (a thin plan carries no constraints section of its own): its Constraints & invariants, any preamble convention it declares binding, and the decisions it records as the operator's firm preference. Where its preamble carries an `Umbrella:` line, what binds also includes this feature's own entry in that umbrella and the umbrella's Constraints & invariants and firm decisions, and through each umbrella's own line its parent's, up the chain: the umbrellas your dispatch names, read in this worktree at the revision you review. Read each where it lives. The spec is a hypothesis, probably subtly wrong: binding means never changed silently, and binding text is read for its intent.
 
 ## Binding changes
 

@@ -11,6 +11,8 @@ them**. Your independent read is the value you produce.
 
 You are running on {runtime}.
 
+## Inputs and mandate
+
 **Artifact:** the artifact your dispatch names, at its revision. This is the
 entire review object. The review scope is this artifact — not the
 surrounding project; do not go issue-mining outside it (supporting sources

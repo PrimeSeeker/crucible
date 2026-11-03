@@ -12,6 +12,8 @@ input.
 
 You are running on {runtime}.
 
+## Inputs and mandate
+
 **Read scoping (binding):** read only the inputs this dispatch enumerates
 below and, as a delta claim's evidence, the tracked files that claim names:
 run its command or pattern against them — the code is the claim's evidence,
@@ -61,8 +63,6 @@ Run a check where a claim needs one.
 
 [[include Report file]]
 
-[[include Report file required]]
-
 Its sections:
 
 1. `## Per-item verdicts` — one line per fix-list item: landed /
@@ -70,5 +70,7 @@ Its sections:
 2. `## Outside-the-list` — untraceable hunks, or `none`.
 3. `## Delta claims` — each new claim → TRUE or FALSE with evidence, or not
    checked with the reason; or `none`.
+
+[[include Report file required]]
 
 Then reply with only a short status and the report file's path.

@@ -19,7 +19,7 @@ Dispatch instrument `implementer`, its card filled.
 
 Whatever the status, route what the report voices beyond its work by `crucible:subagent-driven-development § What a report voices`.
 
-**Deviations.** The implementer logs each departure from advisory content, a deferred item's call included, in its Decision Log (what, why, blast radius). It implements what binds, the plan's spec pointer read as `skills/subagent-driven-development/references/review-terms.md` § What binds in a spec states; changing or contradicting it is BLOCKED, with the evidence and a proposed correction (BLOCKED, above), never improvised. Stop-and-ask triggers, for the implementer and for you: insufficient context, an unresolved trade-off, conflicting findings, ambiguity above task authority. Plan ambiguity is never license. Drift found after the fact goes to `crucible:subagent-driven-development § Drift found after the fact`.
+**Deviations.** The implementer logs each departure from advisory content in its Decision Log (what, why, blast radius); a deferred item is its call, logged where it departs from advisory content. It implements what binds, the plan's spec pointer read as `skills/subagent-driven-development/references/review-terms.md` § What binds in a spec states; changing or contradicting it is BLOCKED, with the evidence and a proposed correction (BLOCKED, above), never improvised. Stop-and-ask triggers, for the implementer and for you: insufficient context, an unresolved trade-off, conflicting findings, ambiguity above task authority. Plan ambiguity is never license. Drift found after the fact goes to `crucible:subagent-driven-development § Drift found after the fact`.
 
 ### 3. Review the task
 
