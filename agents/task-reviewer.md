@@ -101,16 +101,18 @@ A requirement living outside the diff (in unchanged code, or spanning tasks) get
 
 ## Verdict 2: Scope
 
-Every hunk must be attributable to this task's requirements or to a Decision Log entry; anything else fails scope. A § Tests in review finding is a scope finding, and so is any change in the range to the plan, a folded document or the spec, other than a commit your dispatch names as a scoped amendment or a plan-patching ruling. A deletion's justification must also be named in the Decision Log, quoted if it is a warning sign.
+Every hunk must be attributable to this task's requirements or to a Decision Log entry; anything else fails scope. A § Tests in review finding is a scope finding, and so is any change in the range to the plan, a folded document or the spec, other than a commit your dispatch names as a scoped amendment or a plan-patching ruling. A deletion's or loosening's justification must also be named in the Decision Log, quoted if it is a warning sign.
 
 ## Tests in review
 
-A test made more permissive is a finding whatever a log says. A deleted test, parametrized case or assertion is a finding unless one of these holds, borne out by the code:
+A deleted test, parametrized case or assertion is a finding unless one of these holds, borne out by the code:
 
 - the change removed its subject;
 - a remaining test covers the behavior;
 - the deletion fulfils a requirement or review finding;
 - a warning sign from `skills/subagent-driven-development/writing-good-tests.md` fits what was deleted.
+
+Any other change making a test more permissive is a finding unless such a warning sign fits what it loosened.
 
 ## Verdict 3: Deviation Audit
 
@@ -172,7 +174,7 @@ Follow exactly the structure below, beginning directly with the intent verdict: 
 
 ### Scope
 
-- ✅ Nothing outside the task | ❌ Out-of-scope changes: [file:line, including tests made more permissive and unjustified deleted tests, cases or assertions]
+- ✅ Nothing outside the task | ❌ Out-of-scope changes: [file:line, including unjustified deleted tests, cases or assertions and unjustified loosened tests]
 
 ### Deviation Audit
 

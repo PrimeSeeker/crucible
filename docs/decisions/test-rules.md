@@ -28,14 +28,15 @@ Test-First, Evidence Before Done; `skills/subagent-driven-development/references
 writes the failing test before the fix and says why where no test or
 script can reproduce the bug.
 
-**Weakened and deleted tests.** A test made more permissive is always a
-finding, at the task review, the re-review and the branch review. A
-deleted test, a deleted case of a parametrized one, or a removed
-assertion is a finding unless one justification holds: the subject the
-change removed; a remaining test covering the behavior; the requirement
-or review finding the deletion fulfils; or a warning sign from
-`skills/subagent-driven-development/writing-good-tests.md` that what was
-deleted shows. The task reviewer checks the Decision Log's justification against
+**Weakened and deleted tests.** A deleted test, a deleted case of a
+parametrized one, or a removed assertion is a finding, at the task
+review, the re-review and the branch review, unless one justification
+holds: the subject the change removed; a remaining test covering the
+behavior; the requirement or review finding the deletion fulfils; or a
+warning sign from `skills/subagent-driven-development/writing-good-tests.md`
+that what was deleted shows. Any other change making a test more
+permissive is a finding unless such a warning sign fits what it
+loosened. The task reviewer checks the Decision Log's justification against
 the code, the re-reviewer the fix report's, and the branch reviewer judges
 from the code and the requirements, and checks the Decision Log's
 justification itself for a task completed branch review only
@@ -121,9 +122,20 @@ justifications, which opens no route that deleting the whole test did
 not already offer, and also covers an assertion on a subject the change
 removed. Allowing the warning-sign justification alone would leave that
 second case a finding, and changing the guide's remedy to deleting the
-test would make it recommend losing good assertions. A test made more
-permissive stays a finding whatever its log says. (Basis: judgment,
+test would make it recommend losing good assertions. (Basis: judgment,
 accepted by the maintainer.)
+
+The same change left a test made more permissive a finding whatever its
+log said, and the branch review found the larger-deletion incentive
+again one level down: an over-specific assertion, such as one on exact
+message wording that fails on every intentional change, passed review
+deleted with that warning sign quoted, yet failed it loosened to the
+part that matters. Loosening now passes where a warning sign fits what
+it loosened, which opens no route that deleting the assertion under the
+same sign did not already offer. The other three justifications do not
+fit a loosened check: a remaining test covering the behavior, for one,
+argues for deleting it, not loosening it. (Basis: judgment, accepted by
+the maintainer.)
 
 ### Adequacy and the mutation gate
 
@@ -156,6 +168,8 @@ preference.)
 - **An absence test as a removal's failing step** (§ Why).
 - **Every deleted test a finding**, whatever its justification (§ Why).
 - **Every removed assertion a finding**, whatever its justification (§ Why).
+- **Every loosened test a finding**, or one loosened under any of the
+  four deletion justifications (§ Why).
 
 ## What a project may change
 
@@ -165,6 +179,7 @@ testing, or other test gates, states them there.
 
 ## Changes
 
+- 2026-11-04: any other change making a test more permissive passes review where a warning sign fits what it loosened; because deleting an over-specific assertion passed with the sign quoted while loosening it failed.
 - 2026-11-04: a removed assertion takes the deleted test's justifications instead of counting as a weakened test, which now means a test made more permissive; because the test guide's own remedy for an assertion on a mock failed review while deleting the whole test passed.
 - 2026-11-02: the deleted-test justification list and the test-first
   exceptions have one home, the shared seat reference, each seat

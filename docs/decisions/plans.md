@@ -294,7 +294,7 @@ directory, and `plan` is a value of their `phase` selector.
 
 ## Changes
 
-- 2026-11-04: the plan phase's scoped repair also takes a delta claim found FALSE, and is stated once for both redteam phases (`docs/decisions/fix-verification-and-merge.md`).
+- 2026-11-04: the plan phase's scoped repair also takes a delta claim found FALSE, and is stated once for both redteam phases, since the spec campaign had no step for a failing verdict and neither phase one for a FALSE claim (`docs/decisions/fix-verification-and-merge.md`).
 - 2026-11-03: the controller no longer re-runs the pre-pass's liveness, ownership and overlap arithmetic after a wave or a repair, in the plan phase or on the folded lane, so a wave that breaks it surfaces only in later review: a minor loss under the maintainer's compaction mandate. Citations of writing-plans' shortened heading read `§ Per-task structure`.
 - 2026-11-03: the plan phase's pre-pass gets its ownership closure, set census and worksheet as lens text from `skills/redteaming/references/panels.md`, the seat card's `worksheet` selector going, and the plan phase and the folded lane cite that text for the census; because every redteam seat's agent carried the passage for the one seat that takes it (`docs/decisions/instruments.md`).
 - 2026-11-03: the plan phase's close no longer seeds SDD's ledger; SDD's Setup, already its backstop, seeds the contained amendments, open premise asks, what earlier phases left open and the `deferred-minor` entries alone (`docs/decisions/records-and-workspace.md`); because the same seeding was written twice with no incident behind the second writer.

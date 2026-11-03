@@ -68,7 +68,7 @@ A requirement living outside the diff (in unchanged code, or spanning tasks) get
 
 ## Verdict 2: Scope
 
-Every hunk must be attributable to this task's requirements or to a Decision Log entry; anything else fails scope. A § Tests in review finding is a scope finding, and so is any change in the range to the plan, a folded document or the spec, other than a commit your dispatch names as a scoped amendment or a plan-patching ruling. A deletion's justification must also be named in the Decision Log, quoted if it is a warning sign.
+Every hunk must be attributable to this task's requirements or to a Decision Log entry; anything else fails scope. A § Tests in review finding is a scope finding, and so is any change in the range to the plan, a folded document or the spec, other than a commit your dispatch names as a scoped amendment or a plan-patching ruling. A deletion's or loosening's justification must also be named in the Decision Log, quoted if it is a warning sign.
 
 [[include Tests in review]]
 
@@ -116,7 +116,7 @@ Follow exactly the structure below, beginning directly with the intent verdict: 
 
 ### Scope
 
-- ✅ Nothing outside the task | ❌ Out-of-scope changes: [file:line, including tests made more permissive and unjustified deleted tests, cases or assertions]
+- ✅ Nothing outside the task | ❌ Out-of-scope changes: [file:line, including unjustified deleted tests, cases or assertions and unjustified loosened tests]
 
 ### Deviation Audit
 

@@ -78,7 +78,7 @@ Here the report is the fix report. A listed finding that a CONFIRMED concern sho
 
 ## Scope
 
-Report as new breakage any problem the fix introduced, a break of § What shipped work carries among them. In a task's fix wave, a fix-diff change to the plan, a folded document or the spec is new breakage (a scope finding) unless your dispatch names its commit as a scoped amendment or a plan-patching ruling. A § Tests in review finding is new breakage; a deletion's justification counts only where the fix report names it (a warning sign quoted); read a remaining test the report names even where it lies outside the fix diff. Never re-review code the fix did not touch: an issue entirely outside the fix diff goes under Out-of-Scope Observations and neither blocks this wave nor extends the loop.
+Report as new breakage any problem the fix introduced, a break of § What shipped work carries among them. In a task's fix wave, a fix-diff change to the plan, a folded document or the spec is new breakage (a scope finding) unless your dispatch names its commit as a scoped amendment or a plan-patching ruling. A § Tests in review finding is new breakage; a deletion's or loosening's justification counts only where the fix report names it (a warning sign quoted); read a remaining test the report names even where it lies outside the fix diff. Never re-review code the fix did not touch: an issue entirely outside the fix diff goes under Out-of-Scope Observations and neither blocks this wave nor extends the loop.
 
 ## What shipped work carries
 
@@ -88,12 +88,14 @@ Comments and docstrings follow project conventions; absent any, a comment states
 
 ## Tests in review
 
-A test made more permissive is a finding whatever a log says. A deleted test, parametrized case or assertion is a finding unless one of these holds, borne out by the code:
+A deleted test, parametrized case or assertion is a finding unless one of these holds, borne out by the code:
 
 - the change removed its subject;
 - a remaining test covers the behavior;
 - the deletion fulfils a requirement or review finding;
 - a warning sign from `skills/subagent-driven-development/writing-good-tests.md` fits what was deleted.
+
+Any other change making a test more permissive is a finding unless such a warning sign fits what it loosened.
 
 ## Formatting
 

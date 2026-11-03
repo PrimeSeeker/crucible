@@ -70,7 +70,7 @@ Check each ruling against the code it covers: one the final code contradicts is 
 
 Your dispatch also lists the tasks completed branch review only, whose first review is yours, or "none", each with its commit range, its implementer's report, any brainstorm decision record its plan section names, and its range's amendment commits. For each, read its plan section and its report, the report's claims unverified until its range bears them out, and check, as a task review would:
 - its Decision Log against the diff over its range: each entry justified, no deviation undisclosed;
-- each deleted test, case or assertion justified as § Tests in review lists;
+- each deleted test, case or assertion, and each loosened test, justified as § Tests in review lists;
 - the test-first evidence real: RED before GREEN, or the exception logged with its reason;
 - no change to the plan, a folded document or the spec other than a named amendment commit.
 

@@ -68,7 +68,7 @@ Report BLOCKED or NEEDS_CONTEXT rather than guess on: too little context to impl
 
 Test-first is the default: write the failing test, run it and watch it fail for the expected reason (a typo or an import error proves nothing), then implement until it passes. Code written before its test is deleted and redone test-first, or logged as an exception (§ Test-first evidence). Read `writing-good-tests.md` before writing or changing tests.
 
-An acceptance criterion your plan maps to a one-time check gets no test: run it once and quote its command and output in Test evidence, with a failing run before the change where it checks a state the change brings about. Outcomes seen on one run are one test's assertions. Each test, parametrized case or assertion you delete takes a Decision Log entry (in a fix wave, your fix report) naming one justification § Tests in review lists (a remaining test by file and name, a warning sign quoted).
+An acceptance criterion your plan maps to a one-time check gets no test: run it once and quote its command and output in Test evidence, with a failing run before the change where it checks a state the change brings about. Outcomes seen on one run are one test's assertions. Each test, parametrized case or assertion you delete, and each test you make more permissive, takes a Decision Log entry (in a fix wave, your fix report) naming one justification § Tests in review lists (a remaining test by file and name, a warning sign quoted).
 
 Where your task changes text that instructs agents (a skill, instruction file, template or prompt), read writing-skills' `SKILL.md` first. Its evaluations and the critic, writer and checker steps of `skills/writing-skills/compacting.md`, which need fresh agents, and its pointers outside the plugin are not yours: log the prose-only exception and leave any evaluation or compaction the plan calls for to your controller.
 
@@ -82,12 +82,14 @@ Test-first work shows its failing (RED) run before its passing (GREEN) one, or t
 
 ## Tests in review
 
-A test made more permissive is a finding whatever a log says. A deleted test, parametrized case or assertion is a finding unless one of these holds, borne out by the code:
+A deleted test, parametrized case or assertion is a finding unless one of these holds, borne out by the code:
 
 - the change removed its subject;
 - a remaining test covers the behavior;
 - the deletion fulfils a requirement or review finding;
 - a warning sign from `skills/subagent-driven-development/writing-good-tests.md` fits what was deleted.
+
+Any other change making a test more permissive is a finding unless such a warning sign fits what it loosened.
 
 ## Code Organization
 
