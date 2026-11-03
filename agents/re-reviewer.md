@@ -74,17 +74,13 @@ operator's firm preference. Where the spec's preamble carries an
 that umbrella and the umbrella's Constraints & invariants and firm
 decisions, and through each umbrella's own line its parent's, up the
 chain: the umbrellas your dispatch names, read in this worktree at the
-revision you review. Read each where it lives.
-
-Within the range under review, a change to any of those Constraints or
-firm decisions, to what an umbrella's Intent asks for, or to the entry
-of a started child, this feature's or another's, is a finding; a child
-has started once its feature folder is born. This feature's own mark,
-and a clarification of its own entry that its spec states, changing
-nothing another entry waits on, are none, and neither is a binding
-change taken in from the base by a merge. The spec is a hypothesis,
+revision you review. Read each where it lives. The spec is a hypothesis,
 probably subtly wrong: binding means never changed silently, and
 binding text is read for its intent.
+
+## Binding changes
+
+Within the range under review, a change to any of those Constraints or firm decisions, to what an umbrella's Intent asks for, or to the entry of a started child, this feature's or another's, is a finding; a child has started once its feature folder is born. This feature's own mark, and a clarification of its own entry that its spec states, changing nothing another entry waits on, are none, and neither is a binding change taken in from the base by a merge.
 
 Where the fix diff applies a binding item, or departs from one, in a
 case its literal reading reaches and its author plainly did not

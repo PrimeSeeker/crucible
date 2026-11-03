@@ -88,17 +88,13 @@ operator's firm preference. Where the spec's preamble carries an
 that umbrella and the umbrella's Constraints & invariants and firm
 decisions, and through each umbrella's own line its parent's, up the
 chain: the umbrellas your dispatch names, read in this worktree at the
-revision you review. Read each where it lives.
-
-Within the range under review, a change to any of those Constraints or
-firm decisions, to what an umbrella's Intent asks for, or to the entry
-of a started child, this feature's or another's, is a finding; a child
-has started once its feature folder is born. This feature's own mark,
-and a clarification of its own entry that its spec states, changing
-nothing another entry waits on, are none, and neither is a binding
-change taken in from the base by a merge. The spec is a hypothesis,
+revision you review. Read each where it lives. The spec is a hypothesis,
 probably subtly wrong: binding means never changed silently, and
 binding text is read for its intent.
+
+## Binding changes
+
+Within the range under review, a change to any of those Constraints or firm decisions, to what an umbrella's Intent asks for, or to the entry of a started child, this feature's or another's, is a finding; a child has started once its feature folder is born. This feature's own mark, and a clarification of its own entry that its spec states, changing nothing another entry waits on, are none, and neither is a binding change taken in from the base by a merge.
 
 Where a binding item's literal reading reaches a case its author
 plainly did not consider, whether the branch applies it there or
@@ -140,54 +136,19 @@ Before any review, the answer is no in either of two usual cases:
 
 A no for any other reason states that reason.
 
-For an umbrella's campaign, the code is its children's: the question
-asks whether, once the children are implemented, overturning a major
-mechanism the umbrella fixes is reasonably expected, such as its split
-into children, an interface between them or a constraint they share.
-
 **Overdetermined.** Work, a whole design or a single task, is
 overdetermined when every decision in it is forced by what is already
 fixed (the codebase, binding items, decisions taken earlier) so firmly
 that no alternative survives them: a careful independent reader would
 make the same choices, so neither review before code nor a fresh
 reader's pass has one left to change.
-
-**The mark's criterion.** A plan task may take the branch review as its
-first review, with no task review of its own, where it is low in
-mechanism and nothing outside it depends on its details: it builds no
-major mechanism and leaves little of how it works for its implementer
-to decide, and later tasks, contracts and readers build on what it
-delivers, never on how it does it. The branch review runs only after
-every later task, too late for a detail something else builds on.
 [[end]]
 
 ## Premise findings
 
-A premise finding claims, with evidence, that one of three things is
-wrong: the request, what the Intent asks for, or a firm decision. The
-request is the request file your dispatch names, if any; the Intent is
-a section of the document, and a firm decision says so in its
-rationale. On the very-small lane the lane note's Intent stands for the
-spec's. For a child of an umbrella, the umbrella's Intent is protected
-as the child's own is. Mark a premise finding with the label `premise`
-after the finding's severity, in the place this template's report
-format gives it, and stake that severity as for any finding: it is for
-the operator's weighing.
+A premise finding claims, with evidence, that one of three things is wrong: the request, what the Intent asks for, or a firm decision. The request is the request file your dispatch names, if any; the Intent is a section of the document, and a firm decision says so in its rationale. For a child of an umbrella, the umbrella's Intent is protected as the child's own is. Mark a premise finding with the label `premise` after the finding's severity, in the place this template's report format gives it, and stake that severity as for any finding: it is for the operator's weighing.
 
-Every other decision, whoever proposed it, is lightly held: a finding
-against it is an ordinary one, structural or not, and so is a correction
-of an Intent's wording or facts, the umbrella's included, that leaves
-what it asks for unchanged. A change on a child's branch to what its
-umbrella's Intent asks, in the spec, the plan or the code, is a finding.
-Any other binding item shown wrong, such as a Constraint, is no premise
-finding: it keeps the route this template gives it. In the task
-reviewer's, the re-reviewer's and the branch reviewer's reports a
-`literal-reading` finding keeps its own label: it questions how a
-binding item applies to a case, not the premise behind it.
-
-Redteam seats, the terminal pass, the branch reviewer, an umbrella's
-closing-review seats and implementers raise premise findings; a task
-reviewer raises none.
+Every other decision, whoever proposed it, is lightly held: a finding against it is an ordinary one, structural or not, and so is a correction of an Intent's wording or facts, the umbrella's included, that leaves what it asks for unchanged. Any other binding item shown wrong, such as a Constraint, is no premise finding: it keeps the route this template gives it.
 
 ## Binding items and unrecorded choices
 

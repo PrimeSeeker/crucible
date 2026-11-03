@@ -79,6 +79,8 @@ finding, naming the item and the case.
 
 [[include The arrangement questions]]
 
+[[include An umbrella's overturn question]]
+
 ## The mandates
 
 [[when fix-wave = yes]]

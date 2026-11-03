@@ -22,11 +22,6 @@ Before any review, the answer is no in either of two usual cases:
 
 A no for any other reason states that reason.
 
-For an umbrella's campaign, the code is its children's: the question
-asks whether, once the children are implemented, overturning a major
-mechanism the umbrella fixes is reasonably expected, such as its split
-into children, an interface between them or a constraint they share.
-
 **Overdetermined.** Work, a whole design or a single task, is
 overdetermined when every decision in it is forced by what is already
 fixed (the codebase, binding items, decisions taken earlier) so firmly
@@ -34,13 +29,16 @@ that no alternative survives them: a careful independent reader would
 make the same choices, so neither review before code nor a fresh
 reader's pass has one left to change.
 
-**The mark's criterion.** A plan task may take the branch review as its
-first review, with no task review of its own, where it is low in
-mechanism and nothing outside it depends on its details: it builds no
-major mechanism and leaves little of how it works for its implementer
-to decide, and later tasks, contracts and readers build on what it
-delivers, never on how it does it. The branch review runs only after
-every later task, too late for a detail something else builds on.
+## An umbrella's overturn question
+
+For an umbrella's campaign, the code is its children's: the question
+asks whether, once the children are implemented, overturning a major
+mechanism the umbrella fixes is reasonably expected, such as its split
+into children, an interface between them or a constraint they share.
+
+## The mark's criterion
+
+A plan task may take the branch review as its first review, with no task review of its own, where it is low in mechanism and nothing outside it depends on its details: it builds no major mechanism and leaves little of how it works for its implementer to decide, and later tasks, contracts and readers build on what it delivers, never on how it does it. The branch review runs only after every later task, too late for a detail something else builds on.
 
 ## Finding scope
 

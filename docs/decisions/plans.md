@@ -44,7 +44,7 @@ inputs the spec implies but never names.
 
 **The review mark.** A task that meets the mark's criterion, defined in
 `skills/subagent-driven-development/references/review-terms.md`
-§ The arrangement questions, may carry the line `Review: branch only —
+§ The mark's criterion, may carry the line `Review: branch only —
 <reason>`, the reason saying how it meets it; a task with no mark is
 reviewed. Dispatched, a marked task takes the branch review as its first
 review (`docs/decisions/task-loop.md`). A mark is written with the plan,
@@ -299,6 +299,7 @@ directory, and `plan` is a value of their `phase` selector.
 
 ## Changes
 
+- 2026-11-03: the mark's criterion is cited at its own section, split from § The arrangement questions so the seats that do not grade marks stop receiving it.
 - 2026-11-03: the arrangement questions' citation follows their move from the shared seat reference to `skills/subagent-driven-development/references/review-terms.md`, a reference of their own, so a controller that applies them no longer loads the seat rules.
 - 2026-11-03: the deferral call cites the implementer template, which
   states it, writing-plans no longer doing so.

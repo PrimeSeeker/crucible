@@ -44,8 +44,8 @@ reviewer's `literal-reading` finding keeps its own label, since it
 questions an application, not the premise; a redteam seat raises such a
 case as a finding naming the item and the case. No rule routes on who proposed a
 decision. A task reviewer raises none: its doubt about a premise is a question
-(`skills/subagent-driven-development/references/seat-rules.md`
-§ Premise findings). The controller corrects a label in either
+(`skills/subagent-driven-development/references/seat-rules.md`, its
+preamble and § Premise findings; `skills/subagent-driven-development/task-reviewer-prompt.md`). The controller corrects a label in either
 direction, its reason recorded with it. Every premise finding goes to
 the operator as a decision ask with a recommendation. It is an open
 decision ask, not an open BLOCKER or MAJOR: it holds open no gate keyed
@@ -441,6 +441,7 @@ records that cite "the audit" draw on these figures. (Basis: measured.)
 
 ## Changes
 
+- 2026-11-03: who raises premise findings is stated in the shared seat reference's preamble and the task reviewer's own template, since the task reviewer no longer takes § Premise findings (`docs/decisions/instruments.md`).
 - 2026-11-02: the `literal-reading` label is the execution reviewers',
   a redteam seat raising such a case as a finding naming the item and
   the case; finding hygiene, formatting and truncated evidence cited at

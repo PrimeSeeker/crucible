@@ -114,6 +114,10 @@ from reading alone.
 
 [[include The arrangement questions]]
 
+[[include An umbrella's overturn question]]
+
+[[include The mark's criterion]]
+
 [[include Report file]]
 
 Your report path is a `seat-<id>.md` file, `<id>` being your seat id.

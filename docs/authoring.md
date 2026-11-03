@@ -24,8 +24,8 @@ in the same commit.
 
 | Rule | Controller side | Seat side |
 |---|---|---|
-| What binds; the spec is a hypothesis, its binding text read for intent | the opening of `skills/redteaming/references/flip-paths.md` § Flip paths — scoped amendment and supersede | `seat-rules.md` § What binds in a document and § What binds in a range |
-| What a reviewer flags under an umbrella | `skills/brainstorming/references/umbrellas.md` § Children and § Edits | `seat-rules.md` § What binds in a document and § What binds in a range |
+| What binds; the spec is a hypothesis, its binding text read for intent | the opening of `skills/redteaming/references/flip-paths.md` § Flip paths — scoped amendment and supersede | `seat-rules.md` § What binds in a document, § What binds in a range and § Binding changes |
+| What a reviewer flags under an umbrella | `skills/brainstorming/references/umbrellas.md` § Children and § Edits | `seat-rules.md` § What binds in a document, § What binds in a range and § Binding changes |
 | The list of non-local mechanism, never deferrable | `crucible:writing-plans § Deferring detail` | `review-terms.md` § Finding scope |
 
 ## Reference convention

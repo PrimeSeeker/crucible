@@ -35,11 +35,11 @@ names the umbrella; that clause is the one rule of the umbrella that
 crucible's text states at each of its sites rather than once. The rule
 for the umbrella's Intent is the exception that joins none of those
 statements: the Intent is protected as the child's own is, a seat
-raising a premise finding against what it asks, and a change on a
-child's branch to what it asks is a finding; both are stated once, in
-the shared reference beside the premise line, which § Children points
-to (`skills/subagent-driven-development/references/seat-rules.md`
-§ Premise findings).
+raising a premise finding against what it asks, stated once beside the
+premise line, and a change on a child's branch to what it asks is a
+finding, stated with the other binding changes; § Children points to
+both (`skills/subagent-driven-development/references/seat-rules.md`
+§ Premise findings, § Binding changes).
 
 **Edited by weight until it closes.** Lightly held edits travel on a
 child's branch, a correction to the umbrella's Intent among them only
@@ -192,7 +192,7 @@ review stays chosen by its content. Once an umbrella's campaign runs,
 the question stops it as any campaign's, read against its children's
 code
 (`skills/subagent-driven-development/references/review-terms.md`
-§ The arrangement questions). (Basis: judgment, accepted by the
+§ An umbrella's overturn question). (Basis: judgment, accepted by the
 maintainer, 2026-10-29.)
 
 ### The line, and what binds
@@ -392,6 +392,7 @@ judgment, an agent's call the maintainer has not ruled on.)
 
 ## Changes
 
+- 2026-11-03: a change on a child's branch to what the umbrella's Intent asks is stated for seats in the shared seat reference's § Binding changes, no longer also beside the premise line, and the reading of the overturn question for an umbrella's campaign is cited at its own section; because both sections narrowed to the seats that apply them (`docs/decisions/instruments.md`).
 - 2026-11-03: the arrangement questions' citation follows their move from the shared seat reference to `skills/subagent-driven-development/references/review-terms.md`, a reference of their own, so a controller that applies them no longer loads the seat rules.
 - 2026-11-02: the clause binding a child through its umbrella line is
   stated once per reader (the umbrellas reference's Children and Edits,

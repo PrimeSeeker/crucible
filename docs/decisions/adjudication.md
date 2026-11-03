@@ -39,9 +39,9 @@ records, or Finish's open items, and any very-small-lane diff.
 Its disputes go in batches, one wave's or those the controller raises
 together; the seat builds the diff of each finding's review range
 itself. The controller copies into its prompt the shared seat
-reference's statements of what binds in a range and of building the
+reference's statements of what binds in a range, of binding changes and of building the
 diff (`skills/subagent-driven-development/references/seat-rules.md`
-§ What binds in a range, § Building the diff), so the seat depends on
+§ What binds in a range, § Binding changes, § Building the diff), so the seat depends on
 no read at startup and the controller's skill restates neither. A plan conflict that is a design
 judgment goes to the operator as a decision ask. The contained
 amendments the controller confirms, the plan phase's included, are
@@ -176,6 +176,7 @@ umbrella's D4 and this change's spec.)
 
 ## Changes
 
+- 2026-11-03: the adjudicator's prompt also carries § Binding changes, where the shared seat reference's grading of a range moved out of § What binds in a range.
 - 2026-11-02: the adjudicator's prompt carries the shared seat
   reference's sections on what binds in a range and on building the
   diff, copied by the controller, in place of a pointer to SDD's

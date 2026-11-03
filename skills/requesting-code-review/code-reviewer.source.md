@@ -57,6 +57,8 @@ branch has no spec.
 
 [[include What binds in a range]]
 
+[[include Binding changes]]
+
 Where a binding item's literal reading reaches a case its author
 plainly did not consider, whether the branch applies it there or
 departs from it, report a finding labeled literal-reading naming the

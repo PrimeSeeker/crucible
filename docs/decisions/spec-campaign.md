@@ -64,10 +64,10 @@ infrastructure escalation (`crucible:redteaming § Panels`).
 
 **Stop rule and cap.** The campaign stops after the first numbered
 panel round once overturning a major mechanism after code is no longer
-reasonably expected: the overturn question, defined with its reading
-for an umbrella's campaign in
+reasonably expected: the overturn question, defined in
 `skills/subagent-driven-development/references/review-terms.md`
-§ The arrangement questions. The call is the controller's judgment, not
+§ The arrangement questions, its reading for an umbrella's campaign in
+§ An umbrella's overturn question. The call is the controller's judgment, not
 put to the operator to confirm, over the round's records, the seats'
 forecasts included, never conversation memory; finding counts and
 finding provenance are not signals, and severity is not the trigger: a
@@ -403,6 +403,7 @@ trim.)
 
 ## Changes
 
+- 2026-11-03: the overturn question's reading for an umbrella's campaign is cited at its own section, split from § The arrangement questions so the seats that never review an umbrella's campaign stop receiving it.
 - 2026-11-03: the arrangement questions' citation follows their move from the shared seat reference to `skills/subagent-driven-development/references/review-terms.md`, a reference of their own, so a controller that applies them no longer loads the seat rules.
 - 2026-11-02: the shared seat reference's citations follow its rename
   to `seat-rules.md`.

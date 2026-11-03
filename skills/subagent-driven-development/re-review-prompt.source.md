@@ -43,6 +43,8 @@ wave, the spec at its pinned revision and the plan.
 
 [[include What binds in a range]]
 
+[[include Binding changes]]
+
 Where the fix diff applies a binding item, or departs from one, in a
 case its literal reading reaches and its author plainly did not
 consider, report new breakage labeled literal-reading naming the item
