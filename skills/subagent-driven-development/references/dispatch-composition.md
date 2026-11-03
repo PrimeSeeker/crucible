@@ -26,10 +26,7 @@ same seven items:
 7. the **no-delegation instruction** — a seat you start does not start seats
    of its own unless delegation is explicitly part of its assignment.
 
-Each instrument's slot card and template carry all seven together, item 4
-through the plan where the seat has one. Fill every slot; never trim one to
-shorten a dispatch. Where a seat departs from this list, the skill that
-dispatches it says so beside the dispatch.
+Each instrument's slot card and template carry all seven together, item 3 on the template path with the adapter's opening line, item 4 through the plan where the seat has one. Fill every slot; never trim one to shorten a dispatch. Where a seat departs from this list, the skill that dispatches it says so beside the dispatch.
 
 ## Filling a card
 
