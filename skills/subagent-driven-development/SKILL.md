@@ -91,7 +91,7 @@ The third route, alongside the standard and folded presets: the very-small prese
 
 ## Finish
 
-When the branch review ends, read `skills/subagent-driven-development/references/finish.md` in full. The order is binding. After any loop activity, restart at step 1, so new records — rulings included — are checked and reach the close readout. **Step 3, the answer:** wait for it; integration stays the operator's decision. An answer that asks for more work, or a ruling that opens a wave, reopens the loop (`crucible:requesting-code-review` § The branch-review loop) before any later step, and Finish restarts at step 1. Where loop activity follows an answer, a red suite's included, the next readout reports what changed, and the earlier answer stands only where nothing new was left open; otherwise you ask again. An answer choosing an integration option runs steps 4–7 in order. Where step 2 asked where open items go, steps 4–7 wait until the answer says, or drops them; ask again, and leave the workspace in place, until it does. An answer that discards the work skips steps 4 and 5, and takes finishing's typed `discard` confirmation before step 6, deleting the feature workspace; one left unconfirmed counts as an answer that chose no option. An answer that leaves the work in place but chooses no option runs them too, and at step 7 finishing presents its options with your recommendation.
+When the branch review ends, read `skills/subagent-driven-development/references/finish.md` in full. The order is binding. After any loop activity, restart at step 1, so new records — rulings included — are checked and reach the close readout.
 
 ## Common Rationalizations
 
