@@ -42,6 +42,16 @@
     still missed, and "Use your Write tool to write…" from the plan
     phase, under which none did; that is one dispatch under the second
     wording, so it shows no effect yet.
+  - In a third run (2026-11-03, six tasks with a spec campaign of two
+    rounds and two terminal passes), four reports came back as text: the
+    blind verifiers of the second spec round and of the plan phase, which
+    said no write tool was available to them, and both branch-review
+    re-reviewers, one citing no write tool and one its instructions
+    barring report files. Each was saved by the controller under its
+    mark; dispatches telling the seat to write with its Write tool "if
+    you have it" did not change the outcome. Panel seats, pre-passes,
+    terminal passes, implementers, task reviewers, a task re-reviewer and
+    the branch-review passes wrote theirs.
 
 ## Follow-up
 

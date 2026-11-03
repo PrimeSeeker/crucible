@@ -40,3 +40,8 @@ With it:
   baseline in the decision record;
 - in the new runs' transcripts, look for controllers re-reading a moved
   step's reference after compaction before acting on that step.
+
+`resident_tokens.py` names the model whose tokenizer it counts with;
+where that model has been retired by then, re-count all three revisions
+with its successor, not the head alone, so the comparison stays on one
+tokenizer.

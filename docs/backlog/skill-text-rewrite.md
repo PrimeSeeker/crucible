@@ -42,6 +42,12 @@
     checkout; the plugin files are reached only through each template's
     read list, which could conflict where the plugin root is itself a
     checkout of the repository under review (a development install).
+- **Left open by `compaction-fit`** (2026-11-03): both of its spec
+  campaign's terminal passes read files outside their enumerated inputs
+  to run the checks the template asks for, since checking a spec's
+  factual claims needs the cited files; the terminal-pass template's
+  read scoping conflicts with its instruction to run a check where a
+  claim needs one.
 
 ## Follow-up
 
@@ -54,3 +60,6 @@
 - `placement`'s open items: give composed seats their report form;
   state the plugin-root exception in § Seat conduct if a development
   install needs it.
+- `compaction-fit`'s open item: let the terminal pass read the files a
+  claim it checks cites, or say what it does with a claim it cannot
+  check within its inputs.

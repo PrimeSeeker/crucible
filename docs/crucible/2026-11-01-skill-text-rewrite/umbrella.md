@@ -329,7 +329,7 @@ The Children list, in order:
   (D1), and the resident-cost re-open trigger of
   `docs/backlog/skill-text-rewrite.md` restated in those terms or
   retired. Takes up `docs/backlog/skill-size-after-compaction.md`.
-  Waits on `placement`
+  Waits on `placement` — landed
 
 Each child's own Acceptance carries the checks. A child taking up a
 backlog item resolves it or trims it to what stays open, and says
