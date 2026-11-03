@@ -75,6 +75,10 @@ EXPECTED = {
     ),
     ("skills/redteaming/SKILL.md", "skills/redteaming/references/fix-application.md"),
     ("skills/redteaming/SKILL.md", "skills/redteaming/references/round-readout.md"),
+    (
+        "skills/brainstorming/SKILL.md",
+        "skills/brainstorming/references/proposing-the-arrangement.md",
+    ),
 }
 
 #: References more than one skill's stub names; each of their stubs is a
