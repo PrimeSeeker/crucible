@@ -218,7 +218,10 @@ All lightly held.
 
 - **C1. No child grows the skills.** Each child's landing leaves the
   sum of `tests/prose-budget.txt` at or below its value before the
-  child, and states its net change and what it removed.
+  child, and states its net change and what it removed. `compaction-fit`
+  may leave it up to 250 words above, for the pointers its references
+  need once the text stated twice is spent (the maintainer's ruling,
+  2026-11-03).
 - **C2. No `SKILL.md` over the compaction line grows**, in any child.
   Until `compaction-fit` settles the line, it is 20,000 bytes, and each
   child's landing states the sizes of the `SKILL.md` files over it. At
