@@ -90,7 +90,8 @@ the other eight between 1,001 and 3,951; 2.66 to 3.18 bytes a token.
   The decision record keeps the documentation's wording, the measured
   cut and this reasoning, with their dates, citing upstream #2481 as
   the public record of the cut. Basis: measured; the controller's
-  proposal, accepted by the maintainer.
+  proposal, accepted by the maintainer; the unit's reasoning added in
+  the spec campaign on the controller's call.
 - **D2. Step references, no split.** An oversized `SKILL.md` keeps its
   spine (D3) and moves long step bodies into references beside it, as
   route-conditional procedures moved before. No step becomes a skill:
@@ -134,7 +135,8 @@ the other eight between 1,001 and 3,951; 2.66 to 3.18 bytes a token.
   sentences in its stub's one paragraph or, where long (SDD's ledger
   rules), in a kept section of their own beside the stub; the reference
   does not restate them. Basis: the controller's proposal, accepted by
-  the maintainer; caps stay because upstream's incident was a lost cap,
+  the maintainer, and reworked in the spec campaign on the controller's
+  calls into this list and its floor; caps stay because upstream's incident was a lost cap,
   gates and tables because a controller acts on them before it knows
   which reference applies.
 - **D4. The read convention, stated once.** A moved step keeps its
@@ -146,9 +148,11 @@ the other eight between 1,001 and 3,951; 2.66 to 3.18 bytes a token.
   progress is re-read before the controller acts, and each other
   reference when its step next comes, rather than all at once. The
   existing route stubs keep their triggers and drop the wording that
-  statement now carries; the flip-paths stubs keep their line sending a
-  controller back after compaction, since a flip in flight belongs to no
-  step. A reference is read when its step first comes,
+  statement now carries; the flip-paths stubs and brainstorming's
+  umbrella stub keep their line sending a controller back after
+  compaction, since a flip in flight belongs to no step and an
+  umbrella's rules span a child's whole brainstorm, which has no
+  rehydration rule. A reference is read when its step first comes,
   not before every round as upstream reads its fix loop: it stays in
   context until compaction. Basis: the controller's change during the
   spec campaign, from a seat's question, replacing the unchanged
@@ -176,8 +180,9 @@ the other eight between 1,001 and 3,951; 2.66 to 3.18 bytes a token.
   the operator before landing, by `skills/redteaming/references/flip-paths.md`
   § Under an umbrella: binding changes and late splits, never as an edit
   on this branch. Basis:
-  the controller's proposal, accepted by the maintainer; the forecast
-  from the existing stubs' measured sizes.
+  the controller's proposal, accepted by the maintainer; its means and
+  forecast set in the spec campaign, where the maintainer chose to hold
+  C1 at zero; the forecast from the existing stubs' measured sizes.
 - **D7. Resident tokens per route.** For each route (standard, folded,
   very-small, an umbrella's own campaign), a manifest lists the files a
   controller loads, by phase: the session-start text (router and host
@@ -196,7 +201,9 @@ the other eight between 1,001 and 3,951; 2.66 to 3.18 bytes a token.
   controller loads on the route counted, the instruments' slot cards
   included.
   Basis: umbrella D1;
-  the controller's proposal, accepted by the maintainer.
+  the controller's proposal, accepted by the maintainer; the counting
+  convention and the Codex scope added in the spec campaign on the
+  controller's calls.
 - **D8. The resident-cost re-open trigger is retired.** It said when a
   full rewrite of the controller skills would be worth reopening; that
   rewrite is this umbrella. Growth is now held word by word by the prose
@@ -210,7 +217,9 @@ the other eight between 1,001 and 3,951; 2.66 to 3.18 bytes a token.
   and looks for controllers re-reading a moved step's reference after
   compaction, the behaviour G1's trade rests on.
   Basis: the umbrella entry leaves restating or retiring to this child;
-  the controller's proposal, accepted by the maintainer.
+  the controller's proposal, accepted by the maintainer; the re-audit as
+  the baseline's reader added in the spec campaign on the controller's
+  call.
 - **D9. The branch reviewer's arrangement section, on the lane only.**
   Off the very-small lane the branch reviewer has no use for § The
   arrangement questions: since `execution-retirements` it grades no
@@ -236,7 +245,9 @@ the other eight between 1,001 and 3,951; 2.66 to 3.18 bytes a token.
   observation with the trigger (D8) and `placement`'s arrangement item
   (D9), each with its matching Follow-up line, and keeps the rest.
   `docs/backlog/skill-rewrite-reaudit.md` gains D8's two tasks. Basis:
-  the controller's proposal, accepted by the maintainer.
+  the controller's proposal, accepted by the maintainer; the
+  dropped-skill point kept, and the re-audit's tasks added, in the spec
+  campaign on the controller's calls.
 - **D11. The router's re-invoke line stays.** `skills/using-crucible/SKILL.md`
   keeps "a skill whose text came back cut short … is invoked again": a
   skill that grows past the line between test runs, or a host whose cut
@@ -283,8 +294,10 @@ the other eight between 1,001 and 3,951; 2.66 to 3.18 bytes a token.
   the host's re-attachment after compaction, named in a comment beside
   the assertion (`AGENTS.md`, Tests assert text only where code or the
   host reads it).
-- **Rule sites swept with D5**: `docs/decisions/authoring-crucible.md`
-  (the rule, the measurement, its `## Changes` line),
+- **Rule sites swept with D5 and D4**: `docs/decisions/authoring-crucible.md`
+  (the rule, D4's read convention in place of the per-stub "re-read
+  after compaction" its stub paragraph states today, the measurement,
+  its `## Changes` line),
   `skills/writing-skills/SKILL.md` (Size and placement), `AGENTS.md`
   (the line beside the always-loaded budget), and the docstrings of
   `tests/skill_corpus.py` and `tests/test_skill_references.py`, which
@@ -343,8 +356,8 @@ the other eight between 1,001 and 3,951; 2.66 to 3.18 bytes a token.
   binding-change route allows the difference (D6); the net
   change and what offset the stubs stated in the close readout (standing: `tests/test_prose_budget.py`; the sum, a
   one-time check).
-- **A7.** The rule sites of D5 and D8 state the widened rule and the
-  retired trigger, the decision record carrying its `## Changes` line. Why not a test: prose, judged
+- **A7.** The rule sites of D4, D5 and D8 state the read convention,
+  the widened rule and the retired trigger, the decision record carrying its `## Changes` line. Why not a test: prose, judged
   in review.
 - **A8.** The branch reviewer's rendered template carries § The
   arrangement questions only under `lane = very-small`, with its
