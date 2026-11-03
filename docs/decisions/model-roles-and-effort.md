@@ -31,7 +31,7 @@ better. The adjudicator, the
 redteam panel seats and passes, and the branch reviewer run on the
 default role, never lowered to save cost; the blind verifier runs on the
 bounded role, never lower; the snapshot-blessing agent runs on the
-bounded role or better (`crucible:subagent-driven-development
+bounded role or better. The default role is stated once, in the dispatch composition's § Models and effort; an instrument's slot card names only its seat's departure from it in its Model line, and SDD's Models section the seats SDD composes (`skills/subagent-driven-development/references/dispatch-composition.md` § Models and effort; the seven `*.slots.md` cards; `crucible:subagent-driven-development
 § Models`; `crucible:redteaming § Panels`;
 `crucible:requesting-code-review § Dispatch the branch reviewer`).
 
@@ -150,6 +150,8 @@ first place. The re-reviewer keeps its row, which the probe did not
 look at: an agent's proposal, which the maintainer agreed to. (Basis:
 measured, on 10 samples; judgment, accepted by the maintainer.)
 
+On 2026-11-03 the seats' rows stopped repeating the default. Every card's Model line, SDD's rows for its three instruments and redteaming's sentence on the verifier restated the default role and the alternate role's triggers, which § Models and effort already holds for every dispatch; the default is now stated there once, each card keeps only its seat's departure (the verifier's bounded role, the re-reviewer's bounded role or better, the implementer's drop for a bounded task, the branch reviewer's floor), and SDD keeps the rows of the seats it composes, which have no card. An agent's proposal, on which the maintainer left the call to the agent. (Basis: judgment, accepted by the maintainer.)
+
 ### The alternate role
 
 Round 1's swap is the maintainer's: "probably we need an R1 replacement
@@ -233,6 +235,7 @@ operator's config key.
 
 ## Changes
 
+- 2026-11-03: the default role is stated once, in the dispatch composition's § Models and effort; the slot cards' Model lines keep only a seat's departure from it, SDD's Models section drops the implementer's, task reviewer's and re-reviewer's rows, and redteaming drops its sentence on the verifier's role; because each restated what every dispatch already shares.
 - 2026-11-02: SDD's escalation row for fix waves 4–5 and its fresh
   implementer a tier up retired with the five-wave loop; the tier bump
   stays for a BLOCKED reasoning problem (`docs/decisions/task-loop.md`).

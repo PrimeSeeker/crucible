@@ -136,9 +136,7 @@ none of it.
   § Models and effort: the three roles (default, bounded, alternate), the
   alternate's triggers and effort as the operator's. Naming the model on
   every dispatch is the router's (`skills/using-crucible/SKILL.md`),
-  which every session loads, ad hoc dispatches included. Each skill's seat
-  rows and each slot card name a role; the dispatch composition's
-  § Filling a card sends a card's reader to the rules.
+  which every session loads, ad hoc dispatches included. A slot card's Model line, or a skill's row for a seat with no card, names a seat's role where it departs from the default; the dispatch composition's § Filling a card sends a card's reader to the rules.
 - **The models** — each host map's **Model roles** entry
   (`skills/using-crucible/references/claude-code.md`,
   `skills/using-crucible/references/codex.md`): this host's model for each

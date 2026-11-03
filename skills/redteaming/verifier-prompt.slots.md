@@ -17,6 +17,5 @@ none
 
 ## Dispatch
 
-- Operation: a fresh-seat dispatch of instrument `blind-verifier`, this card filled (`skills/subagent-driven-development/references/dispatch-composition.md` § Filling a card).
 - Blind by design: add no input beyond these slots — never the rationale, the seat reports or the round readout. The fix list and the diff are its whole evidence, with the tracked files a delta claim names as that claim's; the other slots only locate.
 - Model: the bounded role, never lower: the one redteaming dispatch below the default role.

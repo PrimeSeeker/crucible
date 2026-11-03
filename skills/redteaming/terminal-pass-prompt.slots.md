@@ -9,7 +9,7 @@
 - {binding-artifact-path}: `spec` phase, the spec itself; `plan` phase, the spec the plan's header names; never `none`.
 - {binding-revision}: that artifact's revision.
 - {decision-record-path}: `spec` phase, `{workspace-path}/brainstorm-decisions.md`; `plan` phase, `none`.
-- {umbrella-paths}: where the binding artifact's preamble carries an `Umbrella:` line, the umbrella it names and each one up the chain, by path; else `none`.
+- {umbrella-paths}: per the dispatch composition's item 2; else `none`.
 - {re-read}: `due` where the pass's further wave or repair landed after its first report, else `not due`; a first dispatch, `none`.
 - {report-path}: `spec` phase, `{workspace-path}/campaigns/spec/terminal-pass/pass.md`; `plan` phase, `{workspace-path}/campaigns/plan/round-01/terminal-pass.md`; a second read, `second-read.md` beside the first report, which it never overwrites.
 - {scratch-dir}: the seat's scratch directory, absolute.
@@ -28,5 +28,4 @@
 
 ## Dispatch
 
-- Operation: a fresh-seat dispatch of instrument `terminal-pass`, this card filled (`skills/subagent-driven-development/references/dispatch-composition.md` § Filling a card).
-- Model: the default role, or the alternate role where one of its triggers selects this seat.
+none

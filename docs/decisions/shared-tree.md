@@ -33,8 +33,8 @@ until the host confirms the first has stopped; silence or a timeout is no
 confirmation, and a seat whose state the host cannot confirm is a
 stop-and-ask, as any unresolvable state is. The replacement writes to a
 fresh report path, and the first seat's file stays as the record. In
-execution the fresh path is the card's path with `-r<R>` before `.md`
-(`crucible:subagent-driven-development § Rules every route shares`); the same
+execution and the branch review the fresh path is the first's with `-r<R>` before `.md`, stated once for every seat there, the slot cards naming only the common path
+(`skills/subagent-driven-development/references/dispatch-composition.md` § Shared-tree rules); the same
 gate tops up a campaign round that lost a seat, where the replacement
 takes a seat id no earlier seat of the feature used and writes that
 seat's `seat-<id>.md` (`crucible:redteaming § Panels`;
@@ -139,6 +139,7 @@ delegated by the maintainer.)
 
 ## Changes
 
+- 2026-11-03: the replacement's `-r<R>` path in execution and the branch review is stated in the dispatch composition's § Shared-tree rules, and the slot cards, SDD's shared-tree paragraph and the adjudicator's report paths no longer restate it; because four cards and two SDD sites each carried a copy.
 - 2026-11-02: the no-commit rule, the status check and the replacement
   line are stated once, in the dispatch composition's § Shared-tree
   rules, read by every dispatching controller; subagent-driven-development

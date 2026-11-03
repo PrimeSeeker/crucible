@@ -7,7 +7,7 @@ instruments: the redteam seat, the blind verifier, the terminal pass, the
 implementer, the task reviewer, the re-reviewer and the branch reviewer
 (`INSTRUMENTS` in `tools/instrument_agents.py`). Each has a template and
 a sibling slot card (`<template>.slots.md`) holding every dispatch-time
-slot with its fill rule, its selectors and its dispatch parameters. A
+slot with its fill rule, its selectors and what its dispatch takes beyond the dispatch composition, or `none`; a card is dispatched as a fresh seat of the instrument its title names. A
 passage the card does not select is inert: neither performed, attested
 nor mentioned. The template is rendered from a hand-edited source beside
 it (`seat-prompt.source.md` for `seat-prompt.md`), the one home of the
@@ -329,6 +329,7 @@ judgment, accepted by the maintainer.)
 
 ## Changes
 
+- 2026-11-03: the cards drop what the dispatch composition states for every card: the Operation line, since § Filling a card says a card is dispatched as a fresh seat of the instrument its title names; the umbrella slot's rule, which defers to the composition's item 2; the default role in the Model line, which § Models and effort holds; and the report slots' `-r<R>` and `-x<X>` variants, stated in § Shared-tree rules and `skills/subagent-driven-development/references/drift.md`; a card's `## Dispatch` holds only its own departures, or `none`; because seven cards each restated the same lines (`docs/decisions/model-roles-and-effort.md`; `docs/decisions/shared-tree.md`).
 - 2026-11-03: a seat receives only its card's filled Slots and Selectors, the title and the Dispatch section staying with the controller; because those are the controller's dispatch parameters, which every dispatch sent to a seat that never reads them.
 - 2026-11-03: the one-clause definition of a premise finding is cited at `skills/redteaming/references/premise-asks.md`, where it moved with flip-paths' § Premise findings (`docs/decisions/authoring-crucible.md`).
 - 2026-11-03: the record names every section the review terms hold, § What binds in a spec and the three arrangement-question sections included, and names the implementer beside the closing-review seats as no longer carrying the sentence on a change to the umbrella's Intent, which § Binding changes now states; because a review found both statements out of date after the sections moved.

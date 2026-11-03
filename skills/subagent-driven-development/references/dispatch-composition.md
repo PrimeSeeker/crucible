@@ -38,21 +38,20 @@ dispatches it says so beside the dispatch.
 
 ## Filling a card
 
-An instrument is dispatched from its slot card, the `.slots.md` file beside its template: read the card, not the template. Replace each slot's rule with its value, and set each selector to one value, cutting its line to that value and dropping its sub-bullets: a passage left unselected, `off` or a value you did not pick, is dropped, not narrated. Dispatch the instrument through your adapter's instrument-dispatch operation, sending the seat only the filled `## Slots` and `## Selectors`: the card's title and `## Dispatch` are yours. The card's Model line names the role its seat runs on; § Models and effort holds what every dispatch shares, effort included.
+An instrument is dispatched from its slot card, the `.slots.md` file beside its template: read the card, not the template. Replace each slot's rule with its value, and set each selector to one value, cutting its line to that value and dropping its sub-bullets: a passage left unselected, `off` or a value you did not pick, is dropped, not narrated. Dispatch a fresh seat of the instrument the card's title names through your adapter's instrument-dispatch operation, sending it only the filled `## Slots` and `## Selectors`: the card's title and `## Dispatch` are yours. `## Dispatch` holds what the dispatch takes beyond this file — a description, a model other than the default role (§ Models and effort), a rule of the card's own — or `none`.
 
 A read-only seat's scratch directory, its card's scratch slot, is its report's path within the feature workspace less `.md`, in the workspace's `scratch/` directory; in a standalone branch review, which has no workspace, `review-<base7>..<head7>/` in the host's temporary directory.
 
 ## Models and effort
 
-These rules bind every dispatch; each skill names its own seats' rows.
+These rules bind every dispatch; a slot card's Model line, or a skill's row for a seat with no card, names a seat's own role.
 
 - **Name the model** on every dispatch (`crucible:using-crucible`
   § The Rule, Dispatching an agent).
 - **Roles, not rosters.** A row names one of three roles, always with the
   word "role". Your host map's **Model roles** entry names this host's
   model for each, and the floor no dispatch goes below.
-  - **The default role** — the strong model almost every seat runs on, and
-    the ceiling of the automatic escalation.
+  - **The default role** — the strong model every seat runs on where its card or row names no other, and the ceiling of the automatic escalation.
   - **The bounded role** — for a clearly bounded task: one step below the
     default role, or the default role's model itself where the host has no
     qualifying tier between. Never dispatch below it.
@@ -88,8 +87,4 @@ dispatching skill names its windows.
   such as an implementer's test leftovers, are tolerated. A controller
   resumed after a compaction reads the dispatch-time state in the file.
   Seats' `scratch/` lives in the gitignored workspace and never shows.
-- **Replacing a seat.** Never start a replacement until the host confirms
-  the first seat has stopped: one started early puts two writers on one
-  tree. It writes to a fresh report path, as its skill names it; the
-  first's file stays as the record. A seat whose state the host cannot
-  confirm is a stop-and-ask.
+- **Replacing a seat.** Never start a replacement until the host confirms the first seat has stopped: one started early puts two writers on one tree. It writes to a fresh report path: in execution and the branch review, the first's with `-r<R>` before `.md`; elsewhere, as its skill names it. The first's file stays as the record. A seat whose state the host cannot confirm is a stop-and-ask.

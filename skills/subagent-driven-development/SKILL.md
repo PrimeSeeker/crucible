@@ -40,17 +40,14 @@ The workspace's `sdd/` subtree holds this plan's execution state: `ledger.md`, `
 
 ## Instruments and report files
 
-**Instruments.** Three seats are instruments, each with a slot card beside its template: instrument `implementer` ([implementer-prompt.slots.md](implementer-prompt.slots.md)) for every implementer seat, a fresh fix-wave one included; instrument `task-reviewer` ([task-reviewer-prompt.slots.md](task-reviewer-prompt.slots.md)); instrument `re-reviewer` ([re-review-prompt.slots.md](re-review-prompt.slots.md)). Fill the card, not the template ([implementer-prompt.md](implementer-prompt.md), [task-reviewer-prompt.md](task-reviewer-prompt.md), [re-review-prompt.md](re-review-prompt.md)), as `skills/subagent-driven-development/references/dispatch-composition.md` § Filling a card states.
+**Instruments.** Three seats are instruments, each with a slot card beside its template: instrument `implementer` ([implementer-prompt.slots.md](implementer-prompt.slots.md)) for every implementer seat, a fresh fix-wave one included; instrument `task-reviewer` ([task-reviewer-prompt.slots.md](task-reviewer-prompt.slots.md)); instrument `re-reviewer` ([re-review-prompt.slots.md](re-review-prompt.slots.md)). Fill the card, not the template ([implementer-prompt.md](implementer-prompt.md), [task-reviewer-prompt.md](task-reviewer-prompt.md), [re-review-prompt.md](re-review-prompt.md)).
 
 **Report files.** Each review seat and the adjudicator writes its report file at a path no earlier dispatch used, and replies with a short verdict and that path. Confirm every seat's report file, an implementer's included, as the dispatch composition's item 5 states.
 
 ## Models
 
-The rules every dispatch shares — name the model, the three roles and the floor, effort — are in `skills/subagent-driven-development/references/dispatch-composition.md` § Models and effort. This skill's seats:
+The rules every dispatch shares — name the model, the three roles and the floor, effort — are in `skills/subagent-driven-development/references/dispatch-composition.md` § Models and effort; the instruments' cards name their own. The seats you compose:
 
-- **Implementer:** the default role, or the alternate role where one of its triggers selects this seat; a clearly bounded task may drop to the bounded role.
-- **Task reviewer:** the default role, every task it reviews, or the alternate role where one of its triggers selects this seat.
-- **Re-reviewer:** the bounded role or better, always.
 - **Adjudicator:** the default role — its dismissals close findings without further review.
 - **Snapshot-blessing agent:** the bounded role or better — a blind check of one stated claim.
 
@@ -62,7 +59,7 @@ Run each task through this loop, in plan order: when Setup is done, read `skills
 
 These hold in the task loop, in the branch review `crucible:requesting-code-review` runs, and on the very-small lane.
 
-**The shared tree.** `skills/subagent-driven-development/references/dispatch-composition.md` § Shared-tree rules bind every seat you start. The status check's windows are the review seats — task reviewer, re-reviewer, adjudicator, snapshot-blessing agent, branch reviewer — and a replacement seat writes to its card's path with `-r<R>` before `.md` and reads the first seat's file.
+**The shared tree.** `skills/subagent-driven-development/references/dispatch-composition.md` § Shared-tree rules bind every seat you start. The status check's windows are the review seats — task reviewer, re-reviewer, adjudicator, snapshot-blessing agent, branch reviewer — and a replacement seat reads the first seat's file.
 
 ### Disputes and adjudication
 
