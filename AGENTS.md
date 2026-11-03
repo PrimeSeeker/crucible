@@ -81,7 +81,7 @@ to install it: `README.md`; the layout: `docs/dual-runtime.md`.
   about crucible's own text (where a rule lives, why a template omits
   something) in `docs/`. A seat template holds what its seat does and
   produces; rules seats share go in a shared reference (`seat-rules.md`, or `review-terms.md` for those controllers also read), each
-  template taking by splice the sections its seat follows.
+  template taking by splice the sections its seat follows. Two exceptions, each a passage only some seats of an instrument take: the redteam seat's right-sizing and pre-pass duties are lens text in `skills/redteaming/references/panels.md`, which the controller fills into those seats' lens slot, and the branch reviewer's very-small-lane text is `skills/requesting-code-review/very-small-lane-review.md`, which its template points to under the plugin root, with `review-terms.md` § The arrangement questions (`docs/decisions/instruments.md`).
 - **The prose budget.** `tests/prose-budget.txt` holds each skill
   directory's word count of hand-edited text (a rendered template is not
   counted; its source is), and the suite fails when a count rises above it

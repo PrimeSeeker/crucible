@@ -51,10 +51,8 @@ its report to a file and replies with a short status. A task that changes
 text instructing agents sends it to `skills/writing-skills/SKILL.md`. It
 commits with the identity git already has, sets none, and reports BLOCKED
 when none is configured. Every implementer seat, fix waves' included, is
-dispatched as instrument `implementer`, on the role SDD's Models section
-names for it: the default role, the alternate role where one of its
-triggers selects the seat, the bounded role for a clearly bounded task
-(`docs/decisions/model-roles-and-effort.md`).
+dispatched as instrument `implementer`, on the role the dispatch composition's § Models and effort gives every seat: the default role, the alternate role where one of its triggers selects the seat; its slot card's Model line allows the bounded role for a clearly bounded task
+(`skills/subagent-driven-development/references/dispatch-composition.md` § Models and effort; `docs/decisions/model-roles-and-effort.md`).
 
 **Task review.** One fresh reviewer per task, never skipped, a task
 completed branch review only aside (below). Its stance
@@ -452,6 +450,7 @@ judgment, accepted by the maintainer, for the test.)
 
 ## Changes
 
+- 2026-11-03: the implementer's role is cited at the dispatch composition's § Models and effort and its slot card's Model line, no longer at SDD's Models section; because SDD dropped the implementer's row when the default role came to be stated once for every seat (`docs/decisions/model-roles-and-effort.md`).
 - 2026-11-03: the arrangement questions' citation follows their move from the shared seat reference to `skills/subagent-driven-development/references/review-terms.md`, a reference of their own, so a controller that applies them no longer loads the seat rules.
 - 2026-11-02: the shared seat reference's citations follow its rename
   to `seat-rules.md`.

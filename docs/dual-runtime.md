@@ -188,8 +188,8 @@ read from the installed plugin already do.
 The runtime name is item 3 of the seven-item dispatch composition every fresh
 seat gets, defined once in
 `skills/subagent-driven-development/references/dispatch-composition.md`. On
-the instrument-agent path the agent and the filled slot card carry the seven
-together; on the template path the filled card and template do. A seat given
+the instrument-agent path the agent and the card's filled Slots and Selectors carry the seven
+together; on the template path the filled template with them does. A seat given
 a plan takes item 4's pin from the spec pointer in the plan's header, which
 the card points at; any other seat, from the card's own pinned path.
 

@@ -3,9 +3,9 @@
 ## Observation
 
 On Claude Code a templated dispatch names an instrument agent (generated
-under `agents/`) and sends only its filled slot card. Codex keeps the
+under `agents/`) and sends only its card's filled Slots and Selectors. Codex keeps the
 template path: the controller fills the card and the template, the
-runtime name in its runtime slot, and dispatches the whole, because a
+runtime name in its runtime slot, and dispatches the template with the card's filled Slots and Selectors, because a
 plugin cannot ship Codex agent roles. A probe on codex-cli 0.157.1 found:
 
 - named roles load from `CODEX_HOME/agents/`, from a trusted project's
@@ -28,7 +28,7 @@ Then write crucible's seven roles into a location Codex loads (the
 user's `CODEX_HOME/agents/` or config, or a project's `.codex/agents/`)
 and change the **Dispatch an instrument** line in
 `skills/using-crucible/references/codex-dispatch.md` to spawn the role
-with its filled slot card. The skills do not change: host mechanics live
+with its card's filled Slots and Selectors. The skills do not change: host mechanics live
 in the adapter pair, so this is one adapter line.
 
 Open questions:
