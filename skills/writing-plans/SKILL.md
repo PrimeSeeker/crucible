@@ -65,7 +65,7 @@ An absence or removal criterion ("X is gone") is a one-time check unless the pla
 
 ## Task sizing
 
-A task is the smallest unit with its own test cycle and review verdict (a fresh task reviewer's gate; for a marked task, the branch reviewer's read of its range). Split where a reviewer could reject one task and approve its neighbor; fold setup, configuration and scaffolding into the task whose deliverable needs them. Calibration, advisory: Why+Contract+Acceptance around a page; plans in the low teens of tasks.
+A task is the smallest unit with its own test cycle and review verdict (a fresh task reviewer's gate; for a marked task, the branch reviewer's read of its range). Split where a reviewer could reject one task and approve its neighbor; fold setup, configuration and scaffolding into the task whose deliverable needs them. Calibration, advisory: split a task whose census row is far above its neighbors' in the number and size of the files it edits, or say why not in its Why; plans in the low teens of tasks.
 
 ## Self-review
 

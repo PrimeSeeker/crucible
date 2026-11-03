@@ -57,9 +57,11 @@ that review has closed, no mark is added: the task keeps its review
 its own review verdict, a fresh task reviewer's gate or, for a marked
 task, the branch reviewer's read of its range: split where a
 reviewer could reject one task while approving its neighbour, and fold
-setup into the task that needs it. The calibration, about a page per
-task and plans in the low
-teens of tasks, is advisory (`crucible:writing-plans § Task sizing`).
+setup into the task that needs it. The calibration is advisory
+(`crucible:writing-plans § Task sizing`): a task's load, the number and
+size of the files it edits, stays near its neighbours', a task far above
+them split or its Why saying why not; plans run in the low teens of
+tasks.
 
 **Self-review.** The author re-reads the plan once before the plan phase:
 a placeholder scan, the header's arithmetic, name consistency, and
@@ -174,8 +176,25 @@ judgment, accepted by the maintainer, 2026-10-27.)
 The sizing rule is upstream's (`superpowers/skills/writing-plans/SKILL.md`,
 its Task Right-Sizing section). Crucible's first design (2026-08-06) added
 the calibration, advisory like that design's other numeric calibrations;
-no measurement stands behind the numbers. (Basis: external, for the rule;
-judgment, accepted by the maintainer, for the calibration.)
+no measurement stands behind the count of tasks. (Basis: external, for the
+rule; judgment, accepted by the maintainer, for the calibration.)
+
+The calibration measured a task by its page until 2026-11-04. Session
+transcripts of five consecutive features on one Python project, each run
+through a campaign, a plan and subagent-driven development on an
+Opus-class default role (measured 2026-10-26), showed page length not
+predicting a task's cost. Implementers took 53–57% of four features'
+cost; cache reads were 69–79% of each feature's, so a session costs
+roughly its turns times its context, close to the square of its length.
+Two tasks took 15% and 17% of their features' cost (269 and 458 turns,
+average contexts 635k and 495k tokens) while most others took 2–9%. The
+first had 663 words of plan text, inside the page, and edits in about 40
+files against 9–28 for its neighbours; file reads were most of its
+context (1.18M of 1.6M characters of tool output). Splitting such a task
+should save, since cost grows faster than length, but the saving is
+unmeasured: cost per changed line was flat across three features, so the
+features were not inefficient overall. (Basis: measured; judgment, an
+agent's proposal accepted by the maintainer, for the calibration.)
 
 ### The review mark
 
@@ -291,9 +310,12 @@ directory, and `plan` is a value of their `phase` selector.
 - **A multi-round plan campaign** (§ Why).
 - **An approval gate before the plan phase** (§ Why).
 - **Parallelizable tiers and test-namespace allocation** (§ Why).
+- **A plan-phase check of each task's load**: a seat duty for a saving
+  nobody has measured (§ Why, Task sizing).
 
 ## Changes
 
+- 2026-11-04: the sizing calibration measures a task by the number and size of the files it edits, beside its neighbours', in place of its page, since page length did not predict the load in measured runs; the saving is unmeasured.
 - 2026-11-04: the plan phase's scoped repair also takes a delta claim found FALSE, and is stated once for both redteam phases, since the spec campaign had no step for a failing verdict and neither phase one for a FALSE claim (`docs/decisions/fix-verification-and-merge.md`).
 - 2026-11-03: the controller no longer re-runs the pre-pass's liveness, ownership and overlap arithmetic after a wave or a repair, in the plan phase or on the folded lane, so a wave that breaks it surfaces only in later review: a minor loss under the maintainer's compaction mandate. Citations of writing-plans' shortened heading read `§ Per-task structure`.
 - 2026-11-03: the plan phase's pre-pass gets its ownership closure, set census and worksheet as lens text from `skills/redteaming/references/panels.md`, the seat card's `worksheet` selector going, and the plan phase and the folded lane cite that text for the census; because every redteam seat's agent carried the passage for the one seat that takes it (`docs/decisions/instruments.md`).
