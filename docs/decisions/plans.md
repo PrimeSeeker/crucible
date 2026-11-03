@@ -80,7 +80,7 @@ consumers, that text joining its supporting inputs; round 0's pre-pass
 on the folded lane takes it for the plan half, and the controller's
 post-wave re-run of the arithmetic leaves it out
 (`skills/redteaming/references/plan-phase.md`;
-`skills/redteaming/references/folded-lane.md`). The phase's fix wave
+`skills/redteaming/references/folded-lane.md`). The plan phase's pre-pass gets its ownership closure, set census and worksheet as lens text the controller fills into its lens slot (`skills/redteaming/references/panels.md`). The phase's fix wave
 and its repair take what any fix list takes
 (`docs/decisions/fix-verification-and-merge.md`). After a not-landed
 verdict or a terminal-pass finding a fix list would take, one scoped
@@ -298,6 +298,7 @@ directory, and `plan` is a value of their `phase` selector.
 
 ## Changes
 
+- 2026-11-03: the plan phase's pre-pass gets its ownership closure, set census and worksheet as lens text from `skills/redteaming/references/panels.md`, the seat card's `worksheet` selector going, and the plan phase and the folded lane cite that text for the census; because every redteam seat's agent carried the passage for the one seat that takes it (`docs/decisions/instruments.md`).
 - 2026-11-03: the plan phase's close no longer seeds SDD's ledger; SDD's Setup, already its backstop, seeds the contained amendments, open premise asks, what earlier phases left open and the `deferred-minor` entries alone (`docs/decisions/records-and-workspace.md`); because the same seeding was written twice with no incident behind the second writer.
 - 2026-11-03: the mark's criterion is cited at its own section, split from § The arrangement questions so the seats that do not grade marks stop receiving it.
 - 2026-11-03: the arrangement questions' citation follows their move from the shared seat reference to `skills/subagent-driven-development/references/review-terms.md`, a reference of their own, so a controller that applies them no longer loads the seat rules.

@@ -8,11 +8,25 @@
 - **evidence-and-inference** (are its claims verified and its measurements valid, and do its conclusions follow from them)
 - **general** (unscoped) — at least one seat with no box on **every multi-seat round**.
 - **contract-fidelity** (does each interface match what its producers and consumers do) — when interface density warrants.
-- **right-sizing** (cost-benefit scope-cutting) — seated in round 1 and periodically after, not every round: re-seated mid-campaign, or when you judge the artifact has grown far enough to need it; judged by the scope-cut decisions it produces. Its seat carries the **over-subtraction guard**, attesting the areas it examined and judged right-sized (`skills/redteaming/seat-prompt.md`).
+- **right-sizing** (cost-benefit scope-cutting) — seated in round 1 and periodically after, not every round: re-seated mid-campaign, or when you judge the artifact has grown far enough to need it; judged by the scope-cut decisions it produces. Its seat carries the **over-subtraction guard**, attesting the areas it examined and judged right-sized (its lens text, below).
 - **abstraction-level** — for specs (mechanism detail creeping into binding sections is a finding).
 - **outside-the-frame** (does the design solve the request's problem, for a child with its umbrella's Intent and entry, or would another framing, or no change, serve better) — one seat of every spec campaign's round 1 only, beside general in a one-seat round 1.
 
 Rotate lenses across rounds and mix them per artifact; add a lens for whatever this artifact makes load-bearing, its one-line description in the seat's lens slot as for a roster lens.
+
+**Lens text.** Two seats' lens slots carry, after the lens and its description, a text of duties, verbatim: the right-sizing seat's is the over-subtraction guard, and the plan phase's mechanical pre-pass's holds its ownership closure, set census and worksheet.
+
+The right-sizing seat's:
+
+> **Over-subtraction guard (your attestation obligation):** for each area of the artifact you examine, your report must distinguish **"examined and judged right-sized — do not cut"** from areas you did not examine. Record the attestations, per area examined, in a dedicated `## Right-sized — do not cut` section, last in your report. Fix waves consult that section before cutting; an area you judged sound but did not attest there is unprotected, and silence is never read as an attestation.
+
+The mechanical pre-pass's:
+
+> **Ownership closure:** every file in the plan's census has exactly one owning task, and every `Deferred to implementation:` marker, the spec's and the plan's, at least one: a plan marker sits in its owning task, and a spec marker is named, by its site, in the Contract of each task that owns it. A marker no task owns is a finding.
+>
+> **Set census (beside your arithmetic):** for each set the plan adds a member to — a value of an enumeration, a case a dispatch or a table handles, an item of a list several places spell out — list every place in the repository's tracked text that enumerates that set, and that place's consumers. Search tracked files only (`git grep`), never the feature workspace. A place where the new member belongs that the plan's file census leaves out is a finding.
+>
+> **`## Worksheet`**, in your report between `## Index` and `## Findings`: the worked content your mandate asks for — the pre-pass's liveness, ownership-closure and overlap arithmetic, and its set census. Tables, lists and sub-headings are fine here; a finding the work turns up is written as an entry under `## Findings`, not left here.
 
 **Full-scope mandate always**: every seat reads the whole artifact every round; the lens only orders the search. **Agents never see each other's reports.**
 

@@ -9,7 +9,7 @@ implementer, the task reviewer, the re-reviewer and the branch reviewer
 a sibling slot card (`<template>.slots.md`) holding every dispatch-time
 slot with its fill rule, its selectors and what its dispatch takes beyond the dispatch composition, or `none`; a card is dispatched as a fresh seat of the instrument its title names. A
 passage the card does not select is inert: neither performed, attested
-nor mentioned. The template is rendered from a hand-edited source beside
+nor mentioned. The redteam seat's over-subtraction guard and its pre-pass duties are not in its template: the controller fills them into that seat's lens slot from `skills/redteaming/references/panels.md`. The template is rendered from a hand-edited source beside
 it (`seat-prompt.source.md` for `seat-prompt.md`), the one home of the
 seat's own text: the generator splices in each section of the shared
 references the source names by its heading, and writes the template at
@@ -161,6 +161,8 @@ Instrument agents carry no `tools` or `disallowedTools`: a reviewer needs
 to write, and correct, its own report file, so read-only stays a conduct
 rule in the template (2026-09-28). (Basis: judgment, accepted by the
 maintainer.)
+
+On 2026-11-03 two of the redteam seat's passages left its template. An agent carries every selector-keyed passage, selected or not, so the over-subtraction guard with its report item, which only a right-sizing seat takes, and the ownership closure, set census and worksheet, which only the plan phase's pre-pass takes, reached every redteam seat: 276 words, by an agent's count, about 1,650 a mid-size run. They became lens text the controller fills into those two seats' lens slot from the panels reference, and the card's `right-sizing` and `worksheet` selectors went; the plan phase and the folded lane, which sent controllers into the seat's template for the pre-pass's definitions, point to the panels reference instead. The goal check stayed a passage: four of a mid-size run's seven redteam seats take it, by the same count. An agent's proposal, on which the maintainer left the call to the agent. (Basis: judgment, accepted by the maintainer.)
 
 ### One composition
 
@@ -329,6 +331,7 @@ judgment, accepted by the maintainer.)
 
 ## Changes
 
+- 2026-11-03: the redteam seat's over-subtraction guard and its pre-pass's ownership closure, set census and worksheet move from the template to lens text in `skills/redteaming/references/panels.md`, which the controller fills into those seats' lens slot, and the card's `right-sizing` and `worksheet` selectors go; because every redteam seat's agent carried both passages though one seat in several takes them (`docs/decisions/spec-campaign.md`; `docs/decisions/plans.md`).
 - 2026-11-03: the cards drop what the dispatch composition states for every card: the Operation line, since § Filling a card says a card is dispatched as a fresh seat of the instrument its title names; the umbrella slot's rule, which defers to the composition's item 2; the default role in the Model line, which § Models and effort holds; and the report slots' `-r<R>` and `-x<X>` variants, stated in § Shared-tree rules and `skills/subagent-driven-development/references/drift.md`; a card's `## Dispatch` holds only its own departures, or `none`; because seven cards each restated the same lines (`docs/decisions/model-roles-and-effort.md`; `docs/decisions/shared-tree.md`).
 - 2026-11-03: a seat receives only its card's filled Slots and Selectors, the title and the Dispatch section staying with the controller; because those are the controller's dispatch parameters, which every dispatch sent to a seat that never reads them.
 - 2026-11-03: the one-clause definition of a premise finding is cited at `skills/redteaming/references/premise-asks.md`, where it moved with flip-paths' § Premise findings (`docs/decisions/authoring-crucible.md`).

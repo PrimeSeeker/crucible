@@ -49,7 +49,7 @@ one-seat round 1 carries outside-the-frame beside general.
 **Right-sizing.** The right-sizing seat's product is scope-cut
 decisions, and it is judged by them. It sits in round 1 and is
 re-seated mid-campaign or when the controller judges the artifact has
-grown far enough to need it. It carries the over-subtraction guard: what it
+grown far enough to need it. It carries the over-subtraction guard, as lens text the controller fills into its lens slot (`skills/redteaming/references/panels.md`): what it
 attests as right-sized is cut only by a logged ruling. A fix that
 removes machinery outranks one that adds it, all else equal.
 
@@ -402,6 +402,7 @@ trim.)
 
 ## Changes
 
+- 2026-11-03: the over-subtraction guard reaches the right-sizing seat as lens text from `skills/redteaming/references/panels.md`, and the seat card's `right-sizing` selector goes; because every redteam seat's agent carried the guard for the one seat that takes it (`docs/decisions/instruments.md`).
 - 2026-11-03: the premise-finding route is cited at `skills/redteaming/references/premise-asks.md`, where flip-paths' § Premise findings moved, so a controller handling a premise finding no longer loads the flip paths (`docs/decisions/authoring-crucible.md`).
 - 2026-11-03: a premise ask open at the campaign's close is seeded into the ledger at SDD's Setup, the ledger's only seeding writer, not at the plan phase's or the folded campaign's close (`docs/decisions/records-and-workspace.md`).
 - 2026-11-03: the overturn question's reading for an umbrella's campaign is cited at its own section, split from § The arrangement questions so the seats that never review an umbrella's campaign stop receiving it.

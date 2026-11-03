@@ -6,7 +6,7 @@ The folded preset **folds the plan into the spec**: one combined spec+plan docum
 
 **The round loop** gains two lines:
 
-- **Round 0's pre-pass also covers the plan half**: ownership closure and the overlap arithmetic over the task list, and the set census of the plan phase's pre-pass (`skills/redteaming/seat-prompt.md`, its pre-pass passage), its inputs widened to the repository's tracked text for it.
+- **Round 0's pre-pass also covers the plan half**: ownership closure and the overlap arithmetic over the task list, and the set census of the plan phase's pre-pass (its lens text in `skills/redteaming/references/panels.md`), its inputs widened to the repository's tracked text for it.
 - **After every fix wave**, the terminal pass's included, you re-run the liveness, ownership and overlap arithmetic yourself, booking no dispatch, and record it where `round-record.md` § Round record format puts a pre-pass re-run.
 
 **Deferral owners.** A fix item that lands a `Deferred to implementation:` marker — round 0's and the terminal pass's wave included — places it in its owning task or, in the spec half, names it in the Contract of each owning task, in the same item; the ownership closure, at round 0's pre-pass and your re-run after every wave, checks that each marker has an owner.

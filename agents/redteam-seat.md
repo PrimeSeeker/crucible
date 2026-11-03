@@ -43,42 +43,16 @@ enumerated inputs.
 **Your mandate, in one line:** the mandate reminder your dispatch gives —
 the binding output of this seat.
 
-**Your lens:** the lens your dispatch names, with its one-line description.
+**Your lens:** the lens your dispatch names, with its description.
 The lens is a **search-ordering hint — not a scope limit**. Your mandate is
 **full-scope**: read the whole artifact, and report any finding you hit
 regardless of whether it matches your lens. Order your hunt by the lens;
-bound nothing by it.
+bound nothing by it. A duty or report section your lens's text adds is part of your mandate.
 
 [[when goal-check = on]]
 **The goal check:** before you read the Intent, run § The goal check;
 its sentence and what the comparison found go in your report's
 `## Goal check`.
-[[end]]
-
-[[when right-sizing = on]]
-**Over-subtraction guard (your attestation obligation):** for each area of
-the artifact you examine, your report must distinguish **"examined and
-judged right-sized — do not cut"** from areas you did not examine. Record
-the attestations in a dedicated `## Right-sized — do not cut` section of
-your report. Fix waves consult that section before cutting; an area you
-judged sound but did not attest there is unprotected, and silence is never
-read as an attestation.
-[[end]]
-
-[[when worksheet = pre-pass]]
-**Ownership closure:** every file in the plan's census has exactly one
-owning task, and every `Deferred to implementation:` marker, the spec's
-and the plan's, at least one: a plan marker sits in its owning task,
-and a spec marker is named, by its site, in the Contract of each task
-that owns it. A marker no task owns is a finding.
-
-**Set census (beside your arithmetic):** for each set the plan adds a
-member to — a value of an enumeration, a case a dispatch or a table
-handles, an item of a list several places spell out — list every place
-in the repository's tracked text that enumerates that set, and that
-place's consumers. Search tracked files only (`git grep`), never the feature
-workspace. A place where the new member belongs that the plan's file
-census leaves out is a finding.
 [[end]]
 
 ## Seat conduct
@@ -267,13 +241,7 @@ Its sections, in this order:
    opens a finding's body only where the merge needs it, so the line must
    let a reader rule on the finding without it. With no findings, write
    only `none` here.
-[[when worksheet = pre-pass]]
-4. `## Worksheet` — the worked content your mandate asks for: the
-   pre-pass's liveness, ownership-closure and overlap arithmetic, and
-   its set census. Tables, lists and sub-headings are fine here; a finding the work
-   turns up is written as an entry under `## Findings`, not left here.
-[[end]]
-5. `## Findings` — one entry per finding, opened by the header line
+4. `## Findings` — one entry per finding, opened by the header line
    `FINDING <seat-id>-<n> [BLOCKER|MAJOR|MINOR]` on its own line, a
    premise finding's carrying its label after the severity,
    `FINDING <seat-id>-<n> [BLOCKER|MAJOR|MINOR] premise`; then the
@@ -282,13 +250,9 @@ Its sections, in this order:
    `<seat-id>` is the `<id>` of your report path above; `<n>` numbers your
    findings from 1; the controller accounts for each finding by that id.
    With no findings, write only `none` here.
-6. `## Questions` — the items § Questions describes, each opened by the
+5. `## Questions` — the items § Questions describes, each opened by the
    header line `QUESTION <seat-id>-q<n>` on its own line, then the item.
    `<n>` numbers your questions from 1. With no questions, write only
    `none` here.
-[[when right-sizing = on]]
-7. `## Right-sized — do not cut` — your over-subtraction attestations, per
-   area examined.
-[[end]]
 
 Return a short status message.
