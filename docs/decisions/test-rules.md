@@ -183,7 +183,7 @@ testing, or other test gates, states them there.
 
 ## Changes
 
-- 2026-11-04: the third justification reads "the deletion or loosening fulfils", since "the change fulfils" also read as the whole work fulfilling a requirement, which any task's does; the very-small lane's inline fix reports name each deletion's or loosening's justification, since the re-reviewer counts one only where the fix report names it.
+- 2026-11-04: the third justification reads "the deletion or loosening fulfils", since the earlier wording, naming the change, also read as the whole work fulfilling a requirement, which any task's does; the very-small lane's inline fix reports name each deletion's or loosening's justification, since the re-reviewer counts one only where the fix report names it.
 - 2026-11-04: any other change making a test more permissive takes the deleted test's justifications, for what it loosened; because deleting an over-specific assertion, or one whose requirement was relaxed, passed while loosening it failed.
 - 2026-11-04: a removed assertion takes the deleted test's justifications instead of counting as a weakened test, which now means a test made more permissive; because the test guide's own remedy for an assertion on a mock failed review while deleting the whole test passed.
 - 2026-11-02: the deleted-test justification list and the test-first
