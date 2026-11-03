@@ -18,8 +18,8 @@ in the shared seat reference,
 `skills/subagent-driven-development/references/seat-rules.md`, or, for the sections controllers also read, in `skills/subagent-driven-development/references/review-terms.md`, each
 template taking by splice the sections its seat follows
 (`docs/decisions/instruments.md`).
-`skills/redteaming/references/formats.md` holds the shapes of what
-controllers and seats write and points at the skills for process rules;
+`skills/redteaming/references/formats.md` and, for the round directories and the round record, `skills/redteaming/references/round-record.md` hold the shapes of what
+controllers and seats write and point at the skills for process rules;
 `docs/authoring.md` holds the rules for crucible's authors (anchor
 stability, the reference convention, the paired texts).
 
@@ -183,6 +183,8 @@ shapes, a script's rules are read when it refuses, and author rules only
 by crucible's authors. On 2026-10-13 eight passages in it that restated a
 redteaming rule became pointers, each rule still stated in the skill.
 (Basis: judgment, accepted by the maintainer.)
+
+On 2026-11-03 its § Round record format and the per-round directory listing moved into `skills/redteaming/references/round-record.md`, which the redteaming controller reads when its skill starts. Brainstorm read the whole of `formats.md` on every route for the workspace and the feature folder, and about half of its 3,124 words were the round record, which only the spec campaign and the plan phase write: the very-small lane and an approval-only umbrella loaded it for nothing, and every later read of `formats.md` (SDD Setup's provisioning, Finish's open items, a plan's folder resolve) carried it. On a route that runs a spec campaign, the load only moves from brainstorm to the campaign's start. The new file's `##` headings are frozen interfaces like those of `formats.md` (`docs/authoring.md` § Anchor stability). An agent's proposal, on which the maintainer left the call to the agent. (Basis: measured, for the words; judgment, accepted by the maintainer.)
 
 ### References read on demand
 
@@ -470,6 +472,7 @@ the build-history rule included (`skills/using-crucible/SKILL.md`).
 
 ## Changes
 
+- 2026-11-03: the round record's shapes have a home of their own, `skills/redteaming/references/round-record.md`, its `##` headings frozen as `formats.md`'s are; because every route loaded all of `formats.md` at brainstorm for the workspace and the feature folder, about half of it a round record only the spec campaign and the plan phase write.
 - 2026-11-03: the rules seats share have a second home, `skills/subagent-driven-development/references/review-terms.md`, for the sections controllers also read; because § The arrangement questions, § Finding scope and § Suite bound moved there from the shared seat reference (`docs/decisions/instruments.md`).
 - 2026-11-03: the stub convention's statement shortened, and it says a reference read since the last compaction is not read again when its step recurs: what this record's reasoning already held, now in the text a controller reads.
 - 2026-11-03: resident tokens re-counted after the compaction fit's

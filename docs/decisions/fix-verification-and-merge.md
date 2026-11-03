@@ -11,7 +11,7 @@ read in full. Every raw seat finding is merged into an entry or closed
 as a duplicate of one, and each merged entry names the per-seat finding
 ids it absorbs in an `origins:` element, which the terminal pass reads
 to find the findings behind each decision ask
-(`skills/redteaming/references/formats.md` § Round record format).
+(`skills/redteaming/references/round-record.md` § Round record format).
 Every seat question takes a disposition. Nothing mechanical checks the
 merge. Seat ids are never reused within a feature, the plan phase's
 pre-pass id `p0` excepted, so the stop check traces each seat's forecast
@@ -73,7 +73,7 @@ before recording the readout, and nothing checks it afterwards. The
 delivered readout carries no merged-list, seat-finding or question id.
 Those go in the record-only trace after it: in a numbered round record
 and the plan record, each decision ask's merged-list ids, which the
-terminal pass reads (`skills/redteaming/references/formats.md` § Round
+terminal pass reads (`skills/redteaming/references/round-record.md` § Round
 record format, field 8). A readout delivered again after compaction
 leaves its trace out (`crucible:redteaming § Round readout`).
 
@@ -236,6 +236,7 @@ controller's judgment (`docs/decisions/spec-campaign.md`).
 
 ## Changes
 
+- 2026-11-03: the round record's citations point at `skills/redteaming/references/round-record.md`, where § Round record format moved from `formats.md` so that a step reading `formats.md` for the workspace or the feature folder stops loading the round record (`docs/decisions/authoring-crucible.md`).
 - 2026-11-03: the trace's decision-ask ids scoped as `formats.md`
   scopes them, to the numbered round records and the plan record.
 - 2026-11-02: the readout's trace loses its line for the wave's line

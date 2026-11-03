@@ -16,7 +16,7 @@ from pathlib import Path
 
 REPO = Path(__file__).resolve().parent.parent
 SKILLS = REPO / "skills"
-FORMATS = SKILLS / "redteaming" / "references" / "formats.md"
+ROUND_RECORD = SKILLS / "redteaming" / "references" / "round-record.md"
 
 #: The host's pattern, as measured in Claude Code 2.1.289's Write tool.
 HOST_FILTER = re.compile(r"^(REPORT|SUMMARY|FINDINGS|ANALYSIS).*\.md$", re.I)
@@ -36,16 +36,16 @@ def _slot_card_report_names() -> list[tuple[str, str]]:
     return names
 
 
-def _formats_round_layout_names() -> list[tuple[str, str]]:
-    """(basename, source) for the files formats.md's per-round layout lists."""
-    text = FORMATS.read_text(encoding="utf-8")
+def _round_layout_names() -> list[tuple[str, str]]:
+    """(basename, source) for the files round-record.md's per-round layout lists."""
+    text = ROUND_RECORD.read_text(encoding="utf-8")
     block = text.split("Per-round directory contents:", 1)[1]
     block = block.split("```", 2)[1]
     names: list[tuple[str, str]] = []
     for line in block.splitlines():
         match = re.match(r"^\s*(\S+\.md)\s", line + " ")
         if match:
-            names.append((match.group(1), "formats.md per-round layout"))
+            names.append((match.group(1), "round-record.md per-round layout"))
     return names
 
 
@@ -61,12 +61,12 @@ def _blocked(pairs: list[tuple[str, str]]) -> list[str]:
 def test_collectors_see_the_known_report_names():
     """The collectors are not vacuous: they find report names on both
     surfaces. (``Per-round directory contents:`` is this module's anchor
-    into formats.md, not a pinned sentence; reworded, the collector fails
+    into round-record.md, not a pinned sentence; reworded, the collector fails
     loudly here.)"""
     # Consumer: Claude Code's Write tool, which admits or refuses each of
     # these instruments' write targets by name (the filter below).
     slot_names = {name for name, _ in _slot_card_report_names()}
-    layout_names = {name for name, _ in _formats_round_layout_names()}
+    layout_names = {name for name, _ in _round_layout_names()}
     assert {"verifier.md", "terminal-pass.md", "second-read.md"} <= slot_names
     assert {"seat-<id>.md", "verifier.md", "terminal-pass.md", "second-read.md"} <= layout_names
 
@@ -86,5 +86,5 @@ def test_every_report_slot_names_a_path_the_collector_sees():
 def test_no_instrument_report_name_matches_the_host_filter():
     # Consumer: Claude Code's Write tool, which refuses a subagent's write
     # to a basename HOST_FILTER matches.
-    blocked = _blocked(_formats_round_layout_names() + _slot_card_report_names())
+    blocked = _blocked(_round_layout_names() + _slot_card_report_names())
     assert blocked == [], f"report filenames Claude Code refuses to subagents: {blocked}"

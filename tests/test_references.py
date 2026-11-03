@@ -318,6 +318,7 @@ _CITE_RE = re.compile(
 #: interfaces on ``docs/authoring.md``'s anchor-stability list).
 _FROZEN_BASENAMES = {
     "formats.md": "skills/redteaming/references/formats.md",
+    "round-record.md": "skills/redteaming/references/round-record.md",
     "README.md": "hooks/README.md",
 }
 

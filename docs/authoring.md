@@ -10,6 +10,7 @@ These headings are cited by other skills and docs as interfaces, so
 renaming one is an interface change, not an edit:
 
 - the `##` headings of `skills/redteaming/references/formats.md`;
+- the `##` headings of `skills/redteaming/references/round-record.md`;
 - `Hook registration per runtime` in `hooks/README.md`;
 - the `##` headings of this file, which `hooks/README.md` cites.
 
@@ -75,7 +76,7 @@ dirname-relative path.
 
 ### 3. Anchor citations
 
-Citations into `skills/redteaming/references/formats.md`, `hooks/README.md`
+Citations into `skills/redteaming/references/formats.md`, `skills/redteaming/references/round-record.md`, `hooks/README.md`
 and this file use the exact `##` heading text (e.g.
 "see `formats.md` § Feature folder"). These headings are
 frozen interfaces (§ Anchor stability). Cross-skill anchor citations take
