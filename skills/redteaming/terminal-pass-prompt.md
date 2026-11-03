@@ -33,7 +33,7 @@ You run on {runtime}.
 
 No other seat finding or question is an input, and none feeds the re-read.
 
-**Read scoping (binding):** read only these inputs and the binding content (§ What binds); write only your own report path.
+**Read scoping (binding):** read only these inputs and the binding content (§ What binds), scoping every search you run to them; write only your own report path.
 
 **Your mandate:** both mandates below, delivered in a verbatim-ready report.
 

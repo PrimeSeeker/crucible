@@ -26,7 +26,7 @@ An umbrella is edited in place until it closes (umbrellas.md § Closing): before
 - corrections to the umbrella's Intent that leave what it asks for unchanged, and edits to its non-firm Decisions and its Interfaces & boundaries;
 - the child's own mark.
 
-**A binding change** — to the umbrella's Constraints & invariants or firm decisions, to what its Intent asks for, or any other change to a started child's entry — is never made on a child's branch. It is a decision ask naming every open umbrella and every child in flight beneath it, at every depth. On the ruling it lands at once on its own branch, its diff operator-approved, through `crucible:finishing-a-development-branch`. Each child in flight then takes it in, or the operator rules that child unaffected (§ Under an umbrella). Dropping a child, on the operator's word, lands the same way.
+**A binding change** — to the umbrella's Constraints & invariants or firm decisions, to what its Intent asks for, or any other change to a started child's entry — is never made on a child's branch. It is a decision ask naming every open umbrella and every child in flight beneath it, at every depth. The ruling also says whether it takes a campaign (`skills/brainstorming/references/umbrellas.md` § Review); it then lands at once on its own branch, its diff operator-approved, through `crucible:finishing-a-development-branch`. Each child in flight then takes it in, or the operator rules that child unaffected (§ Under an umbrella). Dropping a child, on the operator's word, lands the same way.
 
 #### Marks
 

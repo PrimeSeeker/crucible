@@ -20,7 +20,7 @@ Read the plan once, its spec pointer included (the header line naming the pinned
 Then, before any task, seed the ledger from the records of the phases that ran: the plan record (`campaigns/plan/round-01/record.md`), the spec campaign's records and the brainstorm decision record. Seed each item once; on resume, only what the ledger lacks.
 
 - Each `Contained amendment:` item of the plan record's `## Fix list`: under `## Adjudication rulings`, as one of your rulings in the item's form, with the reason and why it is contained, from its merged entry's ruling, beside it.
-- Each premise ask open in the plan record or carried by the spec campaign's close (`skills/redteaming/references/premise-asks.md`): there too, as open.
+- Each premise ask open in the plan record or the brainstorm decision record, or carried by the spec campaign's close (`skills/redteaming/references/premise-asks.md`): there too, as open.
 - Each `deferred-minor` entry of the spec campaign's records and the plan record: under `## Deferred minors`, as `<source>: minor (deferred): <one-liner>`, `<source>` being `Spec` or `Plan`.
 - **What earlier phases left open**: under `## Questions`, one line each, as `<phase>: <item> — carried`, `<phase>` being `brainstorm`, `spec` or `plan`. It covers dispositions sending work to a follow-up outside the feature, parked entries the operator has not ruled on, the unaddressed part of a partly applied entry, and carried questions the operator left unanswered; not `deferred-to-implementation` (the plan's tasks own it) nor `deferred-minor` (above).
 

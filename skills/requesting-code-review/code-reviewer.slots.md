@@ -12,7 +12,7 @@
 - [REQUIREMENTS]: what it should do: the plan's path, task text or requirements; on the very-small lane, the lane note at its pinned revision.
 - [LEDGER_MINORS]: the ledger's `## Deferred minors` verbatim, its leads included, never its `## Questions`; "none" in standalone mode.
 - [RULINGS]: execution's adjudication rulings and the branch review's own so far, then, on the very-small lane, the ledger's `Departure:` lines, all verbatim; "none" in standalone mode.
-- [FIRST_REVIEW_TASKS]: each task whose latest `Task <N>` line under `## Progress` is `Task <N>: complete (commits <base7>..<head7>, branch review only)`, with that range; its latest report, `sdd/reports/task-<N>-report.md`; the brainstorm decision record its plan section names, if any; and its range's amendment commits (`skills/redteaming/references/flip-paths.md`, step 3) or "no amendment commits". No such task: "none".
+- [FIRST_REVIEW_TASKS]: each task whose latest `Task <N>` line under `## Progress` is `Task <N>: complete (commits <base7>..<head7>, branch review only)`, with that range; its latest report, `sdd/reports/task-<N>-report.md` or its `-x<X>` form; the brainstorm decision record its plan section names, if any; and its range's amendment commits (`skills/redteaming/references/flip-paths.md`, step 3) or "no amendment commits". No such task: "none".
 - [REPORT_FILE]: in the feature workspace, `sdd/branch-review/pass-<k>.md` for full-scope pass <k>; "none" in standalone mode.
 - [SCRATCH_DIR]: the seat's scratch directory, absolute.
 - [BASE_SHA]: the merge base, never `HEAD~1`.

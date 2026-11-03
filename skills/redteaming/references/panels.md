@@ -14,7 +14,7 @@ Panel size tracks both artifact maturity and artifact size, never a fixed number
 
 Rotate lenses across rounds and mix them per artifact; add a lens for whatever this artifact makes load-bearing, its one-line description in the lens slot as for a roster lens.
 
-**Round 1's swap:** in a spec campaign's round 1 with two or more seats, the seat you judge most architecture-heavy runs on the alternate role instead of the default; name it in the campaign shape you propose at brainstorming's campaign gate. A replacement for a lost swapped seat keeps the alternate role. No swap in a one-seat round 1 or the plan phase.
+**Round 1's swap:** in a spec campaign's round 1 with two or more seats on this host, the seat you judge most architecture-heavy runs on the alternate role instead of the default; a seat on another host never counts toward those two and is never the swapped one, so a default-role seat always sits beside the swap; name it in the campaign shape you propose at brainstorming's campaign gate. A replacement for a lost swapped seat keeps the alternate role. No swap in a one-seat round 1 or the plan phase.
 
 **Launch:** read the operator-approved campaign shape from the campaign-gate entry in the workspace's `brainstorm-decisions.md`, announce it in the campaign-start readout, naming any departure from that entry, and proceed without waiting for approval.
 

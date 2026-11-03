@@ -21,7 +21,7 @@ Your dispatch gives two inputs:
 - The fix list, verbatim from the round record: enumerated items, each naming the finding or question id(s) it resolves. It is your whole normative input.
 - The diff of the artifact across the wave.
 
-Read scoping: read only these and, as evidence for a delta claim (a new "the code does X" claim this wave introduced), the tracked files that claim names. Whatever that allows, never read the fix rationale, the seat reports, the round records or readout, the artifact's text outside the diff, its binding content wherever it sits (for a plan, the spec), or the rest of the feature workspace, your scratch subdirectory aside. Each would hand you the review's reasoning, which your verdict must be independent of.
+Read scoping: read only these and, as evidence for a delta claim (a new "the code does X" claim this wave introduced), the tracked files that claim names; scope every search you run to the fix list, the diff and those files. Whatever that allows, never read the fix rationale, the seat reports, the round records or readout, the artifact's text outside the diff, its binding content wherever it sits (for a plan, the spec), or the rest of the feature workspace, your scratch subdirectory aside. Each would hand you the review's reasoning, which your verdict must be independent of.
 
 Three checks, all required:
 

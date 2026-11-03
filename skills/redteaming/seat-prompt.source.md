@@ -60,7 +60,7 @@ A code-shaped claim (a regex, a CLI invocation, "the code does X") carries a run
 
 Your report path is a `seat-<id>.md` file, `<id>` being your seat id, the `<seat-id>` below. Its sections, in this order:
 
-1. `## Verdict`: one line, your overall read of the artifact's fitness. Where your artifact kind is `spec`, a second line answers the overturn question (§ The arrangement questions) as your forecast, exactly one of `Overturn after code: reasonably expected — <which mechanism, why>` or `Overturn after code: not reasonably expected`; a no resting on neither of that section's two usual cases gives its reason on the next line.
+1. `## Verdict`: one line, your overall read of the artifact's fitness. Where your artifact kind is `spec`, a second line answers the overturn question (§ The arrangement questions; for an umbrella's campaign, § An umbrella's overturn question) as your forecast, exactly one of `Overturn after code: reasonably expected — <which mechanism, why>` or `Overturn after code: not reasonably expected`; a no resting on neither of that section's two usual cases gives its reason on the next line.
 [[when goal-check = on]]
 2. `## Goal check`: your goal sentence, then what comparing it with the Intent found, in a line or two.
 [[end]]
