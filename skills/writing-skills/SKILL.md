@@ -100,7 +100,7 @@ Frontmatter needs `name` and `description`. The name, at most 64 characters of l
 ## Structure
 
 - **Files.** `SKILL.md` alone, unless a long passage serves only one step or one reader, or there is heavy reference material or a reusable tool; principles and short code stay inline. Cite every supporting file from `SKILL.md`, saying when to read it.
-- **Compaction cut.** Where a host re-attaches skills cut at a fixed size after compaction, `SKILL.md` stays under the cut: long step bodies go to files read at their step; it keeps the steps with their triggers, resume rules, loop bounds, gates, rationalization tables, red-flags lists and rules binding beyond one step.
+- **Compaction cut.** Where a host re-attaches skills cut at a fixed size after compaction, `SKILL.md` stays under the cut, keeping the steps with their triggers, resume rules, loop bounds, gates, rationalization tables, red-flags lists and rules binding beyond one step.
 - **Cross-references** name the skill (`crucible:systematic-debugging`) or the file's path and say whether it is required; never force-load one, as an `@path` import does.
 - **Flowcharts** only for a non-obvious decision, a loop an agent might leave too early, or an A-versus-B choice; reference material takes a table, code a code block, linear steps a numbered list. Style: `skills/writing-skills/graphviz-conventions.dot`.
 - **Examples.** One excellent example, not many mediocre ones: complete, from a real case, commented with why; not five languages, not a fill-in-the-blank template.

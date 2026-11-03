@@ -2,9 +2,9 @@
 
 Arms: control (writing-skills SKILL.md at the pre-change commit), recipe and recipe2 (control plus one
 sentence each), rewrite (SKILL.md at the commit --rewrite-at names; the arm is left out without it). Each prompt asks a fresh agent to
-apply the finding to the file as it stood before the fix, writing its edits as JSON to out/.
+apply the finding to the file as it stood before the fix, writing its edits as JSON to the --out directory.
 
-    python gen.py [--repo <repository root>] [--prompts <dir>] [--rewrite-at <commit>]
+    python gen.py [--repo <repository root>] [--prompts <dir>] [--out <dir>] [--rewrite-at <commit>]
 
 Runs write their JSON where --out names (a new temporary directory by default; the committed runs are in out/, beside this file), and the prompts go where --prompts names (likewise temporary by default).
 """
@@ -18,10 +18,10 @@ ap.add_argument("--out", default=None, help="where runs write their JSON; a new 
 ap.add_argument("--rewrite-at", default=None, help="the commit whose skills/writing-skills/SKILL.md the rewrite arm uses")
 args = ap.parse_args()
 REPO = pathlib.Path(args.repo)
-OUT = pathlib.Path(args.out or tempfile.mkdtemp(prefix="microtest-out-"))
+OUT = pathlib.Path(args.out or tempfile.mkdtemp(prefix="microtest-out-")).resolve()
 PROMPTS = pathlib.Path(args.prompts or tempfile.mkdtemp(prefix="microtest-"))
 PROMPTS.mkdir(parents=True, exist_ok=True)
-OUT.mkdir(exist_ok=True)
+OUT.mkdir(parents=True, exist_ok=True)
 
 PRE_CHANGE = "a3eb3ca"  # writing-skills as it stood before this lane
 CASES_AT = "56e8475^"  # the files as they stood before the prose-compaction review fixes
