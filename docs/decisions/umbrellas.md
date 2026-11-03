@@ -30,14 +30,16 @@ binding content, its Constraints & invariants and the decisions it
 records as the operator's firm preference, bind it, up the chain of
 umbrellas, each read where it lives
 (`skills/brainstorming/references/umbrellas.md` § Children).
-Every statement of what binds, in the skills and the seat templates,
-names the umbrella; that clause is the one rule of the umbrella that
-crucible's text states at each of its sites rather than once. The rule
-for the umbrella's Intent is the exception that joins none of those
-statements: the Intent is protected as the child's own is, a seat
-raising a premise finding against what it asks, stated once beside the
-premise line, and a change on a child's branch to what it asks is a
-finding, stated with the other binding changes; § Children points to
+What binds, the umbrella included, is stated once for controllers
+(`skills/subagent-driven-development/references/review-terms.md`
+§ What binds in a spec) and once for seats, in the shared seat
+reference's § What binds, which every seat reading binding content
+takes by splice; other
+sites point to them. The umbrella's Intent is protected as the child's
+own is: a seat raises a premise finding against what it asks, stated
+once beside the premise line, and a change on a child's branch to what
+it asks is a finding, stated with the other binding changes; § Children
+points to
 both (`skills/subagent-driven-development/references/seat-rules.md`
 § Premise findings, § Binding changes).
 
@@ -254,6 +256,8 @@ had left out another child's entry. (Basis: for the full set, the
 controller's proposal, accepted by the maintainer; for the owners, the
 controller's design, accepted by the maintainer.)
 
+On 2026-11-03 the controller-side statement moved to `skills/subagent-driven-development/references/review-terms.md` § What binds in a spec, which every route's controller reads from brainstorm on, and the sites that restated what binds, § Children among them, became pointers to it. The seat side became one core, the shared seat reference's § What binds, taken by every seat that reads binding content, beside § Binding changes, which holds what a review seat flags and which the implementer does not take. An agent's proposal, on which the maintainer left the call to the agent. (Basis: judgment, accepted by the maintainer.)
+
 ### Binding changes off the child's branch
 
 A binding change made on one child's branch would reach the base, and
@@ -392,6 +396,7 @@ judgment, an agent's call the maintainer has not ruled on.)
 
 ## Changes
 
+- 2026-11-03: what binds is stated once for controllers, in `skills/subagent-driven-development/references/review-terms.md` § What binds in a spec, and once for seats, in the shared seat reference's § What binds, with § Binding changes for what a review seat flags; § Children points to the controller statement; so that the sites restating it share one statement every controller already reads.
 - 2026-11-03: a change on a child's branch to what the umbrella's Intent asks is stated for seats in the shared seat reference's § Binding changes, no longer also beside the premise line, and the reading of the overturn question for an umbrella's campaign is cited at its own section; because both sections narrowed to the seats that apply them (`docs/decisions/instruments.md`).
 - 2026-11-03: the arrangement questions' citation follows their move from the shared seat reference to `skills/subagent-driven-development/references/review-terms.md`, a reference of their own, so a controller that applies them no longer loads the seat rules.
 - 2026-11-02: the clause binding a child through its umbrella line is

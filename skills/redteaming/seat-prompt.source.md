@@ -25,8 +25,7 @@ reviewed themselves).
 any.
 
 **Read scoping (binding):** read only the inputs this dispatch
-enumerates — the artifact, the binding content (§ What binds in a
-document), the request file your dispatch names and the binding
+enumerates — the artifact, the binding content (§ What binds), the request file your dispatch names and the binding
 artifact's Intent, the umbrellas your dispatch names, the supporting
 inputs above — and write only your own report path. Everything else in
 the workspace and the repository is out of scope: other seats' reports,
@@ -86,7 +85,9 @@ subdirectory for `campaigns/spec/round-02/seat-s1.md` is
 
 Run a check where a claim needs one.
 
-[[include What binds in a document]]
+[[include What binds]]
+
+[[include Binding changes]]
 
 An artifact applying a binding item literally to a case its author
 plainly did not consider is a finding, naming the item and the case.

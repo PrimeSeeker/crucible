@@ -44,7 +44,7 @@ reports — the `seat-<id>.md` files of `round-01` onward — their
 Nothing else is an input.
 
 **Read scoping (binding):** read only the inputs enumerated above and the
-binding content (§ What binds in a document), the umbrellas your
+binding content (§ What binds), the umbrellas your
 dispatch names included, and write only your own report path. Scope
 every search you run to them.
 
@@ -63,9 +63,11 @@ subdirectory for `campaigns/spec/terminal-pass/pass.md` is
 
 Run a check where a claim needs one.
 
-[[include What binds in a document]]
+[[include What binds]]
 
-Both mandates are graded against it. An artifact applying a binding
+[[include Binding changes]]
+
+Both mandates are graded against what binds. An artifact applying a binding
 item literally to a case its author plainly did not consider is a
 finding, naming the item and the case.
 

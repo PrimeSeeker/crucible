@@ -43,7 +43,7 @@ document. A task writing a decision record names the brainstorm
 decision record among its inputs: check each position's stated basis
 against its entry's proposer and status.
 
-[[include What binds in a range]]
+[[include What binds]]
 
 [[include Binding changes]]
 

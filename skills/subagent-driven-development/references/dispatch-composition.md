@@ -17,24 +17,7 @@ same seven items:
    the seat to use that host's own tools. No adapter text goes with it: a
    dispatched seat is not a router session and never re-runs the top-level
    router;
-4. the **pointer to the binding content** and a **one-line mandate
-   reminder** — the path of the artifact that carries what binds, at its
-   pinned revision, plus one line naming what the pin makes binding: its
-   Constraints & invariants, any preamble convention it declares binding
-   and the decisions it records as the operator's firm preference; and,
-   where its preamble carries an `Umbrella:` line, the feature's own
-   entry in that umbrella and the umbrella's Constraints & invariants and
-   firm decisions, and through each umbrella's own line its parent's, up
-   the chain, each read in the seat's worktree at the revision its review
-   reads. A pointer, never a copied block: a copy drifts against the
-   artifact it copies. The seat's requirements input carries the pin —
-   the spec pointer in a plan's header, which the dispatch points at
-   without restating the revision; for a seat given no plan, the
-   artifact's own path at its pinned revision. The seat's template
-   states how it reads what binds and the
-   report it raises against it; a change to binding content that a
-   report leads to passes `skills/redteaming/references/flip-paths.md`
-   § The containment test;
+4. the **pointer to the binding content** and a **one-line mandate reminder** — the path of the artifact that carries what binds, at its pinned revision, with one line naming what the pin makes binding as `skills/subagent-driven-development/references/review-terms.md` § What binds in a spec states it, which an instrument's template carries; and one line naming the seat's binding output, which a card's mandate slot holds. A pointer, never a copied block: a copy drifts against the artifact it copies. The seat's requirements input carries the pin — the spec pointer in a plan's header, which the dispatch points at without restating the revision; for a seat given no plan, the artifact's own path at its pinned revision. A change to binding content that a report leads to passes `skills/redteaming/references/flip-paths.md` § The containment test;
 5. the **report path and the return contract** — what goes in the file, what
    comes back in the final message. When a seat that owes a report file
    returns, confirm the file is on disk before taking the returned text as

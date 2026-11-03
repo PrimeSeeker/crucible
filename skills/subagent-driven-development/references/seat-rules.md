@@ -46,47 +46,13 @@ dispatch authorizes, in the structure this template gives: the file is
 the deliverable. If the host refuses the write, say so and put the full
 report in your final reply instead.
 
-## What binds in a document
+## What binds
 
-What binds is the binding artifact your dispatch names, at its
-revision: its Constraints & invariants, any preamble convention it
-declares binding, and the decisions it records as the operator's firm
-preference. Where the artifact under review is a plan, that is the spec
-the plan's header names; a thin plan carries no constraints section of
-its own. Where the binding artifact's preamble carries an `Umbrella:`
-line, what binds also includes this feature's own entry in that
-umbrella and the umbrella's Constraints & invariants and firm
-decisions, and through each umbrella's own line its parent's, up the
-chain: the umbrellas your dispatch names, read in this worktree at the
-artifact's revision. Read binding content where it lives, and grade the
-artifact against it.
-
-An artifact calling for a change to any of those Constraints or firm
-decisions, to what an umbrella's Intent asks for, or to the entry of a
-started child, this feature's or another's, is a finding; a child has
-started once its feature folder is born. A clarification of this
-feature's own entry that the spec states, changing nothing another
-entry waits on, is none. The spec is a hypothesis, probably subtly
-wrong: binding means never changed silently, and binding text is read
-for its intent.
-
-## What binds in a range
-
-What binds is what the spec pointer names: the spec at its pinned
-revision, specifically its Constraints & invariants, any preamble
-convention it declares binding, and the decisions it records as the
-operator's firm preference. Where the spec's preamble carries an
-`Umbrella:` line, what binds also includes this feature's own entry in
-that umbrella and the umbrella's Constraints & invariants and firm
-decisions, and through each umbrella's own line its parent's, up the
-chain: the umbrellas your dispatch names, read in this worktree at the
-revision you review. Read each where it lives. The spec is a hypothesis,
-probably subtly wrong: binding means never changed silently, and
-binding text is read for its intent.
+What binds is the spec at its pinned revision, as your dispatch or your plan's spec pointer names it (a thin plan carries no constraints section of its own): its Constraints & invariants, any preamble convention it declares binding, and the decisions it records as the operator's firm preference. Where its preamble carries an `Umbrella:` line, what binds also includes this feature's own entry in that umbrella and the umbrella's Constraints & invariants and firm decisions, and through each umbrella's own line its parent's, up the chain: the umbrellas your dispatch names, read in this worktree at the revision you review. Read each where it lives. The spec is a hypothesis, probably subtly wrong: binding means never changed silently, and binding text is read for its intent.
 
 ## Binding changes
 
-Within the range under review, a change to any of those Constraints or firm decisions, to what an umbrella's Intent asks for, or to the entry of a started child, this feature's or another's, is a finding; a child has started once its feature folder is born. This feature's own mark, and a clarification of its own entry that its spec states, changing nothing another entry waits on, are none, and neither is a binding change taken in from the base by a merge.
+Grade the artifact or range under review against what binds: a change to any of those Constraints or firm decisions, to what an umbrella's Intent asks for, or to the entry of a started child, this feature's or another's, is a finding, whether the artifact calls for it or the range makes it; a child has started once its feature folder is born. This feature's own mark, and a clarification of its own entry that its spec states, changing nothing another entry waits on, are none, and neither is a binding change taken in from the base by a merge.
 
 ## Premise findings
 

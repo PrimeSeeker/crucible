@@ -41,7 +41,7 @@ pointer carries the binding pin, and that task's section (the whole
 document where the plan is folded into the spec); in a branch-review
 wave, the spec at its pinned revision and the plan.
 
-[[include What binds in a range]]
+[[include What binds]]
 
 [[include Binding changes]]
 

@@ -94,23 +94,13 @@ Binding:
 - Stage changed paths by name — never `git add -A` or `git add .` —
   and never run a bare `git stash`: the index is shared.
 
-## What binds in a range
+## What binds
 
-What binds is what the spec pointer names: the spec at its pinned
-revision, specifically its Constraints & invariants, any preamble
-convention it declares binding, and the decisions it records as the
-operator's firm preference. Where the spec's preamble carries an
-`Umbrella:` line, what binds also includes this feature's own entry in
-that umbrella and the umbrella's Constraints & invariants and firm
-decisions, and through each umbrella's own line its parent's, up the
-chain: the umbrellas your dispatch names, read in this worktree at the
-revision you review. Read each where it lives. The spec is a hypothesis,
-probably subtly wrong: binding means never changed silently, and
-binding text is read for its intent.
+What binds is the spec at its pinned revision, as your dispatch or your plan's spec pointer names it (a thin plan carries no constraints section of its own): its Constraints & invariants, any preamble convention it declares binding, and the decisions it records as the operator's firm preference. Where its preamble carries an `Umbrella:` line, what binds also includes this feature's own entry in that umbrella and the umbrella's Constraints & invariants and firm decisions, and through each umbrella's own line its parent's, up the chain: the umbrellas your dispatch names, read in this worktree at the revision you review. Read each where it lives. The spec is a hypothesis, probably subtly wrong: binding means never changed silently, and binding text is read for its intent.
 
 ## Binding vs Advisory: the Deviation License
 
-- **Binding** — what § What binds in a range names, plus values marked
+- **Binding** — what § What binds names, plus values marked
   verbatim. If the codebase makes a binding item wrong or
   unimplementable, or its literal reading reaches a case its author
   plainly did not consider, **changing or contradicting it is not

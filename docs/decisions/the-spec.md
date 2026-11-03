@@ -12,8 +12,8 @@ operator, and binding text is read for its intent: a case its literal
 reading reaches that its author plainly did not consider is raised for a
 ruling, never applied literally. Everything else is lightly held,
 whoever proposed it, and downstream work may flip it with a logged
-rationale (the opening of `skills/redteaming/references/flip-paths.md`
-§ Flip paths — scoped amendment and supersede;
+rationale (`skills/subagent-driven-development/references/review-terms.md`
+§ What binds in a spec;
 `crucible:brainstorming § Spec contract`).
 
 **The request.** No spec, folded document, lane note or umbrella quotes
@@ -339,6 +339,7 @@ measured.)
 
 ## Changes
 
+- 2026-11-03: what binds is cited at its one controller statement, `skills/subagent-driven-development/references/review-terms.md` § What binds in a spec, moved there from flip-paths' opening so every route's controller reads it from brainstorm on (`docs/decisions/instruments.md`).
 - 2026-11-03: citations follow the rules to their owners: what binds to
   flip-paths' opening, the measured finding classes to the evidence
   record, where brainstorming no longer states them.

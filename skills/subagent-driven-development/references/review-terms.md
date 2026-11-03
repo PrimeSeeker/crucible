@@ -1,6 +1,10 @@
 # Review terms
 
-The review terms controllers read and seat templates take by splice, each template the sections its seat follows. A section cited here and not held here is in `skills/subagent-driven-development/references/seat-rules.md`.
+The review terms controllers read; seat templates take by splice the sections their seats follow. A section cited here and not held here is in `skills/subagent-driven-development/references/seat-rules.md`.
+
+## What binds in a spec
+
+What binds in a spec is its Constraints & invariants, the preamble conventions it declares binding and the decisions it records as the operator's firm preference; where its preamble carries an `Umbrella:` line, also the feature's own entry in that umbrella and the umbrella's Constraints & invariants and firm decisions, up the chain (`skills/brainstorming/references/umbrellas.md` § Children). The spec is a hypothesis, probably subtly wrong and certainly locally imperfect: binding means never changed silently, not never changed without the operator. Binding text is read for its intent: a case its literal reading reaches that its author plainly did not consider is raised for a ruling, never applied literally.
 
 ## The arrangement questions
 

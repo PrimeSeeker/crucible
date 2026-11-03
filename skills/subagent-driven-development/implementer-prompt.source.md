@@ -81,11 +81,11 @@ Binding:
 - Stage changed paths by name — never `git add -A` or `git add .` —
   and never run a bare `git stash`: the index is shared.
 
-[[include What binds in a range]]
+[[include What binds]]
 
 ## Binding vs Advisory: the Deviation License
 
-- **Binding** — what § What binds in a range names, plus values marked
+- **Binding** — what § What binds names, plus values marked
   verbatim. If the codebase makes a binding item wrong or
   unimplementable, or its literal reading reaches a case its author
   plainly did not consider, **changing or contradicting it is not

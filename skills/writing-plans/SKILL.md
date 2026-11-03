@@ -15,7 +15,7 @@ A plan is an agent coordination artifact. Its readers are strong fresh-context i
 
 Every plan opens with these sections, each required:
 
-- **Spec pointer** — one line naming the spec path at its pinned revision, and what the pin makes binding, as the opening of `skills/redteaming/references/flip-paths.md` § Flip paths — scoped amendment and supersede states, the umbrella content `skills/brainstorming/references/umbrellas.md` § Children names included. A task calling for a change to the spec's binding content, or for a binding change to an umbrella in the chain (`skills/brainstorming/references/umbrellas.md` § Edits), is a plan defect. Write it as a header line opening with `Spec`, carrying the pin in the backticked form `` `<path>` @ `<rev>` `` (e.g. ``Spec: `docs/crucible/<YYYY-MM-DD>-<feature-slug>/design.md` @ `<rev>` ``). This is the header's only pin, and every seat reads it from here. **Folded form:** in a combined spec+plan document (`crucible:redteaming § The folded lane`), which cannot carry its own revision, the header line reads `Spec: this document`, and seats read the whole document.
+- **Spec pointer** — one line naming the spec path at its pinned revision, and what the pin makes binding, as `skills/subagent-driven-development/references/review-terms.md` § What binds in a spec states. A task calling for a change to the spec's binding content, or for a binding change to an umbrella in the chain (`skills/brainstorming/references/umbrellas.md` § Edits), is a plan defect. Write it as a header line opening with `Spec`, carrying the pin in the backticked form `` `<path>` @ `<rev>` `` (e.g. ``Spec: `docs/crucible/<YYYY-MM-DD>-<feature-slug>/design.md` @ `<rev>` ``). This is the header's only pin, and every seat reads it from here. **Folded form:** in a combined spec+plan document (`crucible:redteaming § The folded lane`), which cannot carry its own revision, the header line reads `Spec: this document`, and seats read the whole document.
 - **Goal** — what exists when the plan completes.
 - **Task dependency order** — which tasks block which, as the order SDD runs them in.
 - **File ownership + overlap census** — every file the plan touches, against exactly one owning task. State the overlaps and how they are ordered, or state that there are none. This section is arithmetic, and the plan phase runs it rather than reading it.
@@ -47,7 +47,7 @@ Explicitly excluded: function bodies, test code, shell sequences, TDD step scrip
 
 ## Binding vs advisory
 
-**Binding:** requirements, interfaces, non-goals, acceptance, and everything the header's spec pointer names as binding in the spec; how binding text is read and changed is `skills/redteaming/references/flip-paths.md`, from its opening.
+**Binding:** requirements, interfaces, non-goals, acceptance, and everything the header's spec pointer names as binding in the spec, read as `skills/subagent-driven-development/references/review-terms.md` § What binds in a spec states; how binding text changes is `skills/redteaming/references/flip-paths.md`.
 
 **Advisory:** everything about *how*, and every item marked `Deferred to implementation:`. An implementer may depart from it where the codebase contradicts its assumptions, logging each departure.
 

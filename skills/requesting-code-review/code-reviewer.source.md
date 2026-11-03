@@ -55,7 +55,7 @@ The spec pointer your dispatch names — the spec path at its pinned
 revision, the pointer the plan's header carries, or "none" where the
 branch has no spec.
 
-[[include What binds in a range]]
+[[include What binds]]
 
 [[include Binding changes]]
 
