@@ -61,7 +61,7 @@ Because the rate is expected and non-punitive, disclosure against interest stays
 
 ## Fix application and blind verification
 
-**Whenever you judge which findings a fix list takes, or write, apply or verify a fix list or a repair edit, read `skills/redteaming/references/fix-application.md` in full.** You and fix waves consult the right-sizing seats' over-subtraction attestations before applying any cut — cutting attested content requires a logged ruling in the round record.
+**Whenever you judge which findings a fix list takes, or write, apply or verify a fix list or a repair edit, read `skills/redteaming/references/fix-application.md` in full.** You and fix waves consult the right-sizing seats' over-subtraction attestations before applying any cut — cutting attested content requires a logged ruling in the round record. A proposed cut that would remove binding content, or a declared mechanism's only producer or consumer, is a finding against the cut, not a cut.
 
 ## Round readout
 

@@ -8,7 +8,7 @@
 - **evidence-and-inference** (are its claims verified and its measurements valid, and do its conclusions follow from them)
 - **general** (unscoped) — at least one seat with no box on **every multi-seat round**.
 - **contract-fidelity** (does each interface match what its producers and consumers do) — when interface density warrants.
-- **right-sizing** (cost-benefit scope-cutting) — seated in round 1 and periodically after, not every round: re-seated mid-campaign, or when you judge the artifact has grown far enough to need it; judged by the scope-cut decisions it produces. Its seat carries the **over-subtraction guard**, attesting the areas it examined and judged right-sized (`skills/redteaming/seat-prompt.md`). A proposed cut that would remove binding content, or a declared mechanism's only producer or consumer, is a finding against the cut, not a cut.
+- **right-sizing** (cost-benefit scope-cutting) — seated in round 1 and periodically after, not every round: re-seated mid-campaign, or when you judge the artifact has grown far enough to need it; judged by the scope-cut decisions it produces. Its seat carries the **over-subtraction guard**, attesting the areas it examined and judged right-sized (`skills/redteaming/seat-prompt.md`).
 - **abstraction-level** — for specs (mechanism detail creeping into binding sections is a finding).
 - **outside-the-frame** (does the design solve the request's problem, for a child with its umbrella's Intent and entry, or would another framing, or no change, serve better) — one seat of every spec campaign's round 1 only, beside general in a one-seat round 1.
 
