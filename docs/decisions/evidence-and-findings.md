@@ -126,8 +126,7 @@ rule, a seat's suggested wording included, also names each site that
 brainstorming's consumer sweep and trace find for it: who produces the
 rule's input, who reads its output, and which routes and phases reach
 it. Every spec-campaign and plan-phase fix list takes the trace, round
-0's, a terminal pass's follow-up wave's and a plan-phase repair's
-included; execution's waves do not. A fix landing at fewer sites than
+0's, a terminal pass's follow-up wave's and a repair's included; execution's waves do not. A fix landing at fewer sites than
 its item names has not landed (`crucible:redteaming § Fix application
 and blind verification`). `UNVERIFIED` is the one marker; it tags a
 claim and never admits a finding to a fix list.
@@ -440,6 +439,7 @@ records that cite "the audit" draw on these figures. (Basis: measured.)
 
 ## Changes
 
+- 2026-11-04: the trace reaches every repair, not only the plan phase's, since the verifier's repair now runs in the spec campaign too (`docs/decisions/fix-verification-and-merge.md`).
 - 2026-11-03: the premise paragraph cites where its sentences live after the compaction: seat-rules' § Premise findings and § Binding changes, `premise-asks.md` and the reviewer templates.
 - 2026-11-03: the premise-finding route is cited at `skills/redteaming/references/premise-asks.md`, where flip-paths' § Premise findings moved, so a controller handling a premise finding no longer loads the flip paths (`docs/decisions/authoring-crucible.md`).
 - 2026-11-03: who raises premise findings is stated in the shared seat reference's preamble and the task reviewer's own template, since the task reviewer no longer takes § Premise findings (`docs/decisions/instruments.md`).

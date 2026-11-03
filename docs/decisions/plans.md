@@ -79,10 +79,10 @@ on the folded lane takes it for the plan half
 (`skills/redteaming/references/plan-phase.md`;
 `skills/redteaming/references/folded-lane.md`). The plan phase's pre-pass gets its ownership closure, set census and worksheet as lens text the controller fills into its lens slot (`skills/redteaming/references/panels.md`). The phase's fix wave
 and its repair take what any fix list takes
-(`docs/decisions/fix-verification-and-merge.md`). After a failing
-verifier verdict, as in the spec campaign, or a terminal-pass finding a
-fix list would take, one scoped repair; anything still open goes to the operator as a decision ask,
-and a finding that shows the spec wrong takes the flip path against the
+(`docs/decisions/fix-verification-and-merge.md`). A failing verifier
+verdict, as in the spec campaign, and a terminal-pass finding a fix list
+would take, get the repair that record states; anything still open goes
+to the operator as a decision ask, and a finding that shows the spec wrong takes the flip path against the
 spec. A correction to the spec that the
 containment test finds contained lands in the phase's own fix wave, as a
 `Contained amendment:` item of its fix list naming the binding item and
@@ -294,7 +294,7 @@ directory, and `plan` is a value of their `phase` selector.
 
 ## Changes
 
-- 2026-11-04: the plan phase's scoped repair also takes a delta claim the verifier finds FALSE, and is stated once for both redteam phases (`docs/decisions/fix-verification-and-merge.md`).
+- 2026-11-04: the plan phase's scoped repair also takes a delta claim found FALSE, and is stated once for both redteam phases (`docs/decisions/fix-verification-and-merge.md`).
 - 2026-11-03: the controller no longer re-runs the pre-pass's liveness, ownership and overlap arithmetic after a wave or a repair, in the plan phase or on the folded lane, so a wave that breaks it surfaces only in later review: a minor loss under the maintainer's compaction mandate. Citations of writing-plans' shortened heading read `§ Per-task structure`.
 - 2026-11-03: the plan phase's pre-pass gets its ownership closure, set census and worksheet as lens text from `skills/redteaming/references/panels.md`, the seat card's `worksheet` selector going, and the plan phase and the folded lane cite that text for the census; because every redteam seat's agent carried the passage for the one seat that takes it (`docs/decisions/instruments.md`).
 - 2026-11-03: the plan phase's close no longer seeds SDD's ledger; SDD's Setup, already its backstop, seeds the contained amendments, open premise asks, what earlier phases left open and the `deferred-minor` entries alone (`docs/decisions/records-and-workspace.md`); because the same seeding was written twice with no incident behind the second writer.

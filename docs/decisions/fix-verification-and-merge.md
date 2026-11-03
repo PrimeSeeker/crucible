@@ -62,8 +62,9 @@ records the outcome. The verifier runs on the bounded role
 (`skills/redteaming/verifier-prompt.md`;
 `docs/decisions/model-roles-and-effort.md`). In both phases an item not
 landed or partly landed, and a delta claim found FALSE, takes one scoped
-repair edit and a re-check of it alone by the wave's verifier; one still
-failing is a decision ask, and so, without a repair, is a FALSE claim a
+repair edit and a re-check of it alone by whoever gave the failing
+verdict, the verifier or the controller; one still failing is a decision
+ask, and so, without a repair, is a FALSE claim a
 decision rests on. The round record's verifier block records each
 repair (`skills/redteaming/references/fix-application.md`).
 
@@ -214,8 +215,8 @@ fix had not landed, and neither phase what follows a FALSE delta claim,
 while a spec-campaign round could not reach `verified` with an item not
 landed. A route for FALSE claims, drafted in one campaign, was removed
 in its third round because it named a spec-campaign repair path that
-did not exist, and a recount of past campaign records found 29 defects
-the verifier flagged and the wave left in place, at least 7 of them
+did not exist, and a recount of past campaign records found 29 units
+with a defect the verifier flagged and the wave left in place, at least 7 of them
 handed to the terminal pass on purpose. The plan phase's scoped repair
 now serves both phases and FALSE claims too: it fixes a known defect
 before the next panel reads the artifact and opens no wave. Carrying
@@ -259,7 +260,7 @@ controller's judgment (`docs/decisions/spec-campaign.md`).
 
 ## Changes
 
-- 2026-11-04: an item the verifier finds not landed or partly landed, and a delta claim it finds FALSE, take the plan phase's scoped repair in both phases, a FALSE claim a decision rests on going to the operator, since the spec campaign had no sanctioned step for either and neither phase one for a FALSE claim.
+- 2026-11-04: an item the verifier finds not landed or partly landed, and a delta claim the verifier or the controller finds FALSE, take the plan phase's scoped repair in both phases, re-checked by whoever gave the failing verdict, a FALSE claim a decision rests on going to the operator, since the spec campaign had no sanctioned step for either and neither phase one for a FALSE claim.
 - 2026-11-03: what binds in a spec is cited at `skills/subagent-driven-development/references/review-terms.md`, the controller's statement of it, since flip-paths keeps only a pointer.
 - 2026-11-03: seat ids are no longer unique within a feature, a replacement taking a fresh id, since the stop check matches forecasts by the mechanism they name: a minor loss under the maintainer's compaction mandate.
 - 2026-11-03: a `deferred-minor` entry is seeded into the ledger by SDD's Setup, the ledger's only seeding writer, not by the close of the plan phase or the folded campaign (`docs/decisions/records-and-workspace.md`).
