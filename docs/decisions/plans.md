@@ -97,16 +97,15 @@ from its plan-side hunks, the re-pin and any plan patch, and the
 controller confirms that the amendment commit landed. The shape is
 announced and the phase proceeds, with no approval gate. It is called the
 plan phase, never a campaign; its directory `campaigns/plan/` and
-selector value `plan` keep their names. At close the controller seeds
-SDD's ledger with each contained amendment as one of its own rulings,
-the item and its reason together, which SDD's setup copies there if the
-ledger lacks it, with each premise finding
-still open as open (`docs/decisions/evidence-and-findings.md`), with
-what the brainstorm and the review phases left open under the ledger's
-`## Questions`, and with each `deferred-minor` entry of the spec
-campaign and the plan phase under `## Deferred minors`, its source
-`Spec` or `Plan`; then it hands off to execution
-(`skills/redteaming/references/plan-phase.md`).
+selector value `plan` keep their names. At close it hands off to
+execution, whose Setup seeds SDD's ledger from the phase's record and
+the earlier ones: each contained amendment as one of the controller's
+own rulings, the item and its reason together, each premise finding
+still open as open (`docs/decisions/evidence-and-findings.md`), what
+the brainstorm and the review phases left open under the ledger's
+`## Questions`, and each `deferred-minor` entry of the spec campaign
+and the plan phase under `## Deferred minors`, its source `Spec` or
+`Plan` (`skills/subagent-driven-development/references/setup.md`).
 
 ## Why
 
@@ -299,6 +298,7 @@ directory, and `plan` is a value of their `phase` selector.
 
 ## Changes
 
+- 2026-11-03: the plan phase's close no longer seeds SDD's ledger; SDD's Setup, already its backstop, seeds the contained amendments, open premise asks, what earlier phases left open and the `deferred-minor` entries alone (`docs/decisions/records-and-workspace.md`); because the same seeding was written twice with no incident behind the second writer.
 - 2026-11-03: the mark's criterion is cited at its own section, split from § The arrangement questions so the seats that do not grade marks stop receiving it.
 - 2026-11-03: the arrangement questions' citation follows their move from the shared seat reference to `skills/subagent-driven-development/references/review-terms.md`, a reference of their own, so a controller that applies them no longer loads the seat rules.
 - 2026-11-03: the deferral call cites the implementer template, which

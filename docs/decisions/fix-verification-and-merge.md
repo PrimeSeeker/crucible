@@ -44,8 +44,8 @@ as before. Any other MINOR the controller accepts lands in Interfaces &
 boundaries where it names missing non-local mechanism, else takes
 deferred-to-implementation where its resolution needs local mechanism,
 else parked where it is a design judgment for the operator, else
-deferred-minor: it is not fixed in the artifact, and the close that
-seeds the SDD ledger seeds it under `## Deferred minors` with source
+deferred-minor: it is not fixed in the artifact, and SDD's Setup
+seeds it into the ledger under `## Deferred minors` with source
 `Spec` or `Plan`, for the branch reviewer's triage against the code
 (`docs/decisions/branch-review.md`); an umbrella's campaign sends it to
 its landing's open-items step. A repeat of one closes as its duplicate.
@@ -236,6 +236,7 @@ controller's judgment (`docs/decisions/spec-campaign.md`).
 
 ## Changes
 
+- 2026-11-03: a `deferred-minor` entry is seeded into the ledger by SDD's Setup, the ledger's only seeding writer, not by the close of the plan phase or the folded campaign (`docs/decisions/records-and-workspace.md`).
 - 2026-11-03: the round record's citations point at `skills/redteaming/references/round-record.md`, where § Round record format moved from `formats.md` so that a step reading `formats.md` for the workspace or the feature folder stops loading the round record (`docs/decisions/authoring-crucible.md`).
 - 2026-11-03: the trace's decision-ask ids scoped as `formats.md`
   scopes them, to the numbered round records and the plan record.

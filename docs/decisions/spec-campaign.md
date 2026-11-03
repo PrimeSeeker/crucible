@@ -99,8 +99,7 @@ opens no fix wave, holds no cap and joins neither cap ask, and at the
 cap it is put to the operator alone. A pending one holds no stop; a
 ruling that upholds it after the stop takes the flip paths. One still
 open at the campaign's close is carried in its close readout, and
-seeded into the ledger as open at the plan phase's close, or at the
-campaign's own close on the folded lane; an umbrella's goes to the
+seeded into the ledger as open at SDD's Setup; an umbrella's goes to the
 operator with the landing ask (`docs/decisions/umbrellas.md`;
 `skills/redteaming/references/flip-paths.md` § Premise findings).
 
@@ -403,6 +402,7 @@ trim.)
 
 ## Changes
 
+- 2026-11-03: a premise ask open at the campaign's close is seeded into the ledger at SDD's Setup, the ledger's only seeding writer, not at the plan phase's or the folded campaign's close (`docs/decisions/records-and-workspace.md`).
 - 2026-11-03: the overturn question's reading for an umbrella's campaign is cited at its own section, split from § The arrangement questions so the seats that never review an umbrella's campaign stop receiving it.
 - 2026-11-03: the arrangement questions' citation follows their move from the shared seat reference to `skills/subagent-driven-development/references/review-terms.md`, a reference of their own, so a controller that applies them no longer loads the seat rules.
 - 2026-11-02: the shared seat reference's citations follow its rename

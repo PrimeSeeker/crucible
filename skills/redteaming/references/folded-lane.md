@@ -15,4 +15,4 @@ The folded preset **folds the plan into the spec**: one combined spec+plan docum
 
 **Unfolding.** Where the campaign or execution shows the work needs a separate plan — your judgment — undo the fold as an **operator decision ask on the supersede path** (`crucible:redteaming` § Flip paths): a spec-only successor and a separate plan, each with its standard phase, the ledger carrying the predecessor link. Both go into the existing feature folder as `design.md` and `plan.md`, beside `folded.md`, which stays as the forensic record (`formats.md` § Feature folder). There is no dedicated ejection protocol.
 
-**Exit and execution.** The close hands off **directly to SDD** and seeds the ledger (`crucible:redteaming` § Exit). SDD and the branch review run with standard caps and inputs; the plan pointer names the combined document, so seats read the whole of it, as designed.
+**Exit and execution.** The close hands off **directly to SDD** (`crucible:redteaming` § Exit). SDD and the branch review run with standard caps and inputs; the plan pointer names the combined document, so seats read the whole of it, as designed.

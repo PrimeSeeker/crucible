@@ -90,9 +90,9 @@ A campaign never converges on unreviewed edits: the **terminal pass (1 seat) alw
 On convergence, the handoff is your **explicit move, stated in the close readout**. An open premise ask passes on at each close as `skills/redteaming/references/flip-paths.md` § Premise findings states, each bullet naming this close's step:
 
 - a **spec campaign** hands off to `crucible:writing-plans`, an open premise ask carried in this close readout;
-- **a spec campaign whose artifact is a combined spec+plan document names `crucible:subagent-driven-development` in its close readout, not the plan skill** — the combined document already is the plan (§ The folded lane). **That close also owns the ledger seeding** — open premise asks, `deferred-minor` entries and what earlier phases left open — in the forms `skills/redteaming/references/plan-phase.md` gives the plan phase's close;
+- **a spec campaign whose artifact is a combined spec+plan document names `crucible:subagent-driven-development` in its close readout, not the plan skill** — the combined document already is the plan (§ The folded lane), an open premise ask carried in this close readout;
 - **a spec campaign whose artifact is an umbrella** (`<feature-folder>/umbrella.md`) **names the umbrella's landing in its close readout, not the plan skill**, and the umbrella lands by `skills/brainstorming/references/umbrellas.md` § Landing, open asks included;
-- the **plan phase** hands off to `crucible:subagent-driven-development`, its close (ledger seeding, open premise asks and what earlier phases left open included) as written in § The plan phase.
+- the **plan phase** hands off to `crucible:subagent-driven-development`, an open premise ask carried in the plan record.
 
 ## Flip paths
 

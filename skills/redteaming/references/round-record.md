@@ -104,7 +104,7 @@ Fields, in order:
    — plus the ruling a partly-applied, parked or rejected entry owes and
    an `UNVERIFIED` entry's verification outcome (`crucible:redteaming` § Merge and finding hygiene).
    An entry closing a repeat of an earlier round's `deferred-minor` takes
-   `deferred-minor` too and names that round and entry; the close seeds
+   `deferred-minor` too and names that round and entry; SDD's Setup seeds
    the two once.
    An entry merged from a premise finding carries the label `premise`
    after its severity, `- F4 MAJOR premise`; its route is

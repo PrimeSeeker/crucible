@@ -44,14 +44,7 @@ A premise finding claims that the request, what the Intent asks for (for a child
 
 **Precedence.** A finding that is both a premise finding and a binding item found wrong — a firm decision, a lane note's Intent — takes this section's route. Any other binding item found wrong keeps its own: in its spec's own campaign the fix list, from that campaign's close § The containment test, and from an implementer a BLOCKED report with a proposed correction.
 
-**Carrying an open ask.** Until it is ruled, an open premise ask is kept with the records of the phase it is open in, and passes on at each close:
-
-- raised by a plan-phase seat: in the plan record, until the plan phase's close seeds it into the ledger's `## Adjudication rulings` as open;
-- open when a spec campaign closes: in its close readout; the plan phase's close seeds it into the ledger as open, or on the folded lane the campaign's close;
-- raised once the ledger exists: written under its `## Adjudication rulings` directly, from where SDD's close readout carries it; you also tell the operator of it in a one-line message when it is raised, not waiting for that readout;
-- still open when an umbrella lands, with no ledger to hold it: as `skills/brainstorming/references/umbrellas.md` § Landing and § Children state.
-
-SDD's Setup seeds any carried ask the ledger lacks (`crucible:subagent-driven-development` § Setup).
+**Carrying an open ask.** Until the ledger exists, an open premise ask stays in the records and close readouts of the phase it is open in, and SDD's Setup seeds it into the ledger as open (`skills/subagent-driven-development/references/setup.md`); once the ledger exists, write it under its `## Adjudication rulings` directly and tell the operator of it in a one-line message, not waiting for the close readout; one still open when an umbrella lands goes as `skills/brainstorming/references/umbrellas.md` § Landing and § Children state.
 
 ### Under an umbrella
 

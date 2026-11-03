@@ -53,14 +53,12 @@ the raw records for as long as the host keeps them (`README.md` § What
 it writes into your repository).
 
 **Work left open.** What a phase leaves open travels to Finish in the
-ledger: at the close that seeds it (the plan phase's, the folded
-campaign's, or SDD Setup on the very-small lane), the controller also
+ledger: SDD's Setup, the ledger's only seeding writer on every route,
 seeds under `## Questions` what the brainstorm, the spec campaign and
 the plan phase left open, each as `<phase>: <item> — carried`, apart
 from `deferred-minor` entries, which go under `## Deferred minors` for
 the branch review's triage (`docs/decisions/branch-review.md`;
-`skills/redteaming/references/plan-phase.md`); SDD's Setup seeds any
-such item, entry or open premise ask that the ledger lacks. Crucible
+`skills/subagent-driven-development/references/setup.md`). Crucible
 keeps no store of its own for open items. At Finish, after the operator's answer
 to the close readout, the work left open (minors, leads, questions,
 declined improvements, unruled asks, parked BLOCKER or MAJOR findings
@@ -311,6 +309,8 @@ adds a little work to every feature, which word counts do not show.
 the order and the commit before the suite, a call the maintainer left
 to the agent.)
 
+Until 2026-11-03 the close that seeded the ledger, the plan phase's or the folded campaign's, wrote these items, contained amendments and open premise asks into SDD's ledger, and SDD's Setup seeded again whatever the ledger lacked: the same seeding written twice, with no incident behind the second writer. Setup, which creates the ledger and already seeded the very-small lane's carried lines, became the only writer, so the plan phase no longer writes into SDD's workspace and every route seeds the same way. An agent's proposal, on which the maintainer left the call to the agent. (Basis: judgment, accepted by the maintainer.)
+
 ### Finish
 
 The suite runs before the workspace is deleted, because a failure found
@@ -407,6 +407,7 @@ worktree. (Basis: judgment, accepted by the maintainer.)
 
 ## Changes
 
+- 2026-11-03: SDD's Setup is the only writer that seeds the ledger with what earlier phases left open, contained amendments, open premise asks and `deferred-minor` entries, its forms moved into `skills/subagent-driven-development/references/setup.md`; the plan phase's and the folded campaign's closes no longer seed it; because the same seeding was written twice with no incident behind the second writer.
 - 2026-11-02: a red suite at Finish may be ruled not the branch's by
   the controller as well as by the adjudicator; either way it goes to
   the operator with its ruling, and only the operator's acceptance lets
