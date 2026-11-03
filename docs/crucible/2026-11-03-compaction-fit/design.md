@@ -57,8 +57,9 @@ the other eight between 1,001 and 3,951; 2.66 to 3.18 bytes a token.
 
 **Non-goals.**
 
-- Changing any rule, D9's narrowing of what an off-lane branch reviewer
-  reads aside. Text moves; what it requires stays (umbrella C3).
+- Changing what moved text requires. Text moves; what it requires stays
+  (umbrella C3); the rules this child does change are listed in
+  Constraints & invariants.
 - New skills. No step becomes a skill of its own (D2).
 - The other open items in `docs/backlog/skill-text-rewrite.md`: the two
   rule gaps, the action on a review missing a verdict, the closing-review
@@ -134,14 +135,17 @@ the other eight between 1,001 and 3,951; 2.66 to 3.18 bytes a token.
   heading in the `SKILL.md` with a stub: one sentence naming its
   reference, in the form `tests/skill_corpus.py` follows, and when to
   read it. What every stub means is stated once per skill, near its top:
-  a stubbed reference is read in full when its step comes, binds as if
-  written there, and is re-read when its step next comes after a
-  compaction, one reference at a time rather than all at once. The
+  a stubbed reference is read in full when its step comes and binds as
+  if written there; after a compaction, the reference of the step in
+  progress is re-read before the controller acts, and each other
+  reference when its step next comes, rather than all at once. The
   existing route stubs keep their triggers and drop the wording that
   statement now carries. A reference is read when its step first comes,
   not before every round as upstream reads its fix loop: it stays in
-  context until compaction. Basis: the controller's proposal, accepted
-  by the maintainer.
+  context until compaction. Basis: the controller's change during the
+  spec campaign, from a seat's question, replacing the unchanged
+  convention the maintainer accepted at design; put to the maintainer
+  after the terminal pass, who left the call to the controller.
 - **D5. The authoring rule widens.** The paragraph "Route-conditional
   procedures live in references" in `docs/decisions/authoring-crucible.md`
   § Decision becomes the rule for both: a `SKILL.md` stays under the line; route-conditional
@@ -228,12 +232,15 @@ the other eight between 1,001 and 3,951; 2.66 to 3.18 bytes a token.
 
 ## Constraints & invariants
 
-- **No rule changes.** Moved text keeps every rule it states; a moved
-  passage differs from what left the `SKILL.md` only by wording the move
-  makes redundant or a pointer the move needs. Text removed to offset
-  the prose budget (D6) is only text another passage of the same skill
-  still states. The one change of substance is D9's, which narrows what
-  an off-lane branch reviewer reads, not what any seat does.
+- **Moved text keeps what it requires.** Moved text keeps every rule it
+  states; a moved passage differs from what left the `SKILL.md` only by
+  wording the move makes redundant or a pointer the move needs. Text
+  removed to offset the prose budget (D6) is only text another passage
+  of the same skill still states. The rules this child changes are
+  these, and no others: the line and its test (D1), the read convention
+  (D4), the authoring rule (D5), the retired trigger (D8), and the
+  branch reviewer's arrangement section (D9), which narrows what an
+  off-lane reviewer reads, not what any seat does.
 - **The spine (D3) stays in each `SKILL.md`**: no item of D3's list sits
   only in a reference.
 - **Every `SKILL.md` body is at or under 18,000 characters** at this
@@ -308,7 +315,7 @@ the other eight between 1,001 and 3,951; 2.66 to 3.18 bytes a token.
 - **A3.** The spine: each moved step's stub carries its trigger; no item
   of D3's list sits only in a reference. Why not a test: prose fidelity, judged by task review and
   the branch review.
-- **A4.** No rule changes: a one-time check compares, word by word, each
+- **A4.** Moved text keeps what it requires: a one-time check compares, word by word, each
   passage that left a `SKILL.md` with the reference text it went to,
   and lists every difference, and lists each passage removed to offset
   the prose budget with the passage of the same skill that still states
