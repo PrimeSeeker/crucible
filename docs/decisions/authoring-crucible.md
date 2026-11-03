@@ -269,6 +269,53 @@ maintainer had accepted, and put it to the maintainer, who left the call
 to the agent ("Your call"). (Basis: judgment, accepted by the
 maintainer.)
 
+### Resident tokens per route
+
+Resident tokens were counted on 2026-11-03 at `a3db87f`, before the
+skill text rewrite, at `d78398c`, before the compaction fit, and at
+`68e8229`, after it. For each route a manifest lists every file a Claude
+Code controller loads, by phase, each once, and each file's text went
+alone to Anthropic's token-counting endpoint
+(`docs/crucible/2026-11-03-compaction-fit/resident-tokens.md`, with the
+manifests and the script beside it). Totals, every run, and in brackets
+with the files loaded only on an event added (a dispute, drift, inline
+work, a flip path, a child of an umbrella):
+
+| Route | `a3db87f` | `d78398c` | `68e8229` |
+|---|---|---|---|
+| standard | 79,145 (87,453) | 72,172 (80,383) | 70,765 (81,162) |
+| folded | 81,079 (89,387) | 73,542 (81,753) | 72,135 (82,532) |
+| very-small | 59,043 (68,511) | 54,708 (63,986) | 50,299 (61,412) |
+| umbrella campaign | 53,425 (57,211) | 51,916 (55,521) | 52,168 (55,773) |
+
+Across the rewrite the every-run load fell by 11% on the standard and
+folded routes, 15% on the very-small lane and 2% on an umbrella's own
+campaign. The compaction fit lowered it by 1,407 tokens on the standard
+and folded routes and by 4,409 on the very-small lane, disputes, drift
+and inline mode now loading only when they occur; it raised an umbrella
+campaign's by 252, and the load with every event's file by about 780 on
+the standard and folded routes, through the stubs and the headings the
+references repeat. The manifests are Claude Code's and say nothing about
+Codex, whose host files and tokenizer differ. These figures are the
+baseline a later measurement compares with: the skill text rewrite's
+re-audit (`docs/backlog/skill-rewrite-reaudit.md`) re-counts the
+manifests. The
+measurement was an agent's proposal, which the maintainer accepted.
+(Basis: measured; judgment, accepted by the maintainer.)
+
+When a full rewrite of the controller skills was declined on
+2026-10-01, a re-open trigger was set: skill prose above about 10% of
+controller spend in a later measurement, or a rule change that had to
+land in a trimmed router or adapter with no headroom left. The rewrite
+it would have reopened ran as the skill text rewrite
+(`docs/crucible/2026-11-01-skill-text-rewrite/umbrella.md`), and the
+trigger was retired on 2026-11-03: growth is held word by word by the
+prose budget, per skill by `tests/test_skill_size.py`, and in the router
+and host maps by the session-start budget (`tests/test_session_start.py`,
+10,000 characters), which covers the trigger's second clause. An agent's
+proposal, which the maintainer accepted. (Basis: judgment, accepted by
+the maintainer.)
+
 ### The prose budget
 
 From 2026-10-07 a rewrite was to be net-negative in shipped skill prose,
@@ -387,8 +434,9 @@ maintainer.)
 
 - **A full rewrite of the controller skills** (2026-10-01): about three
   times the saving of the references at several times the cost, and it
-  would reword rules that each came from an incident. Its re-open
-  trigger is in `docs/backlog/skill-text-rewrite.md`.
+  would reword rules that each came from an incident. The rewrite later
+  ran as the skill text rewrite, and its re-open trigger is retired
+  (§ Why).
 - **Folding the route references back in**: they pay whenever a route
   does not run (§ Why).
 - **A total or reduction target** for skills or a rewrite, in bytes or
@@ -417,6 +465,11 @@ the build-history rule included (`skills/using-crucible/SKILL.md`).
 
 ## Changes
 
+- 2026-11-03: resident tokens per route counted before the skill text
+  rewrite, before the compaction fit and after it, as the baseline a
+  later measurement compares with; the full-rewrite re-open trigger
+  retired, since the rewrite ran as the skill text rewrite and growth is
+  held by the prose budget, the size test and the session-start budget.
 - 2026-11-03: every `SKILL.md` body at or under 18,000 characters, held
   by a test, since the host re-attaches a skill cut at about 20,000
   characters after compaction; long step bodies move into references as

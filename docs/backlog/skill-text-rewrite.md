@@ -2,15 +2,6 @@
 
 ## Observation
 
-- **Resident cost.** A measurement on one project's very large features
-  put skill prose resident in controllers at about 5% of their spend
-  (subagents 0.2%), and a full rewrite of the controller skills was
-  declined then, with a re-open trigger: skill prose above about 10% of
-  controller spend in a later measurement, or a rule change that has to
-  land in a trimmed router or adapter with no headroom left. On a small
-  project a redteam controller loaded the redteaming skill plus
-  `formats.md`, about 27K tokens, before any work, so the trigger likely
-  trips there. Cost was measured in tokens, not duties or adherence.
 - **Separability of review before code and plan form.** An audit of the
   hypothesis-specs umbrella's three features (2026-10-29) found that the
   route presets treat review before code and the plan's form as separate
@@ -47,10 +38,6 @@
     § Premise findings, § Questions) tell them to use "this template's
     report format", and `skills/brainstorming/references/umbrellas.md`
     § Closing review gives them no report form;
-  - the branch reviewer's template takes § The arrangement questions
-    (about 330 words) by splice, kept from its earlier read list, but
-    never says what it uses the section for: say so, or drop it, a
-    resident-size question for `compaction-fit`;
   - `seat-rules.md` § Seat conduct bans every seat from reading another
     checkout; the plugin files are reached only through each template's
     read list, which could conflict where the plugin root is itself a
@@ -58,8 +45,6 @@
 
 ## Follow-up
 
-- `compaction-fit`: restate the resident-cost re-open trigger as
-  resident tokens per route, or retire it.
 - Weigh the separability point and the tension-closing restructuring as
   design targets of a later rewrite.
 - Fill the two rule gaps and state the action on a review missing a
@@ -67,6 +52,5 @@
 - The umbrella-landing question: weigh it when the umbrella procedure is
   next edited.
 - `placement`'s open items: give composed seats their report form;
-  settle the branch reviewer's arrangement-questions section with
-  `compaction-fit`; state the plugin-root exception in § Seat conduct if
-  a development install needs it.
+  state the plugin-root exception in § Seat conduct if a development
+  install needs it.
