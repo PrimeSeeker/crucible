@@ -48,6 +48,40 @@
   factual claims needs the cited files; the terminal-pass template's
   read scoping conflicts with its instruction to run a check where a
   claim needs one.
+- **Left by the umbrella's closing review** (2026-11-03, range
+  `8c14505..902bded`):
+  - `docs/decisions/authoring-crucible.md` retires the resident-cost
+    re-open trigger on the ground that growth is "held word by word by
+    the prose budget"; a commit that grows a skill raises its number,
+    rendered seat templates are no longer counted, and the umbrella's
+    own Problem shows about 3,900 words of growth under that budget;
+  - every route's controller loads the whole
+    `skills/subagent-driven-development/references/seat-rules.md` at
+    brainstorm for one section, § The arrangement questions; by the
+    resident-token manifest the file grew from 1,938 to 4,716 tokens
+    over the effort, a cost no decision weighs;
+  - the goal check, the outside-the-frame lens and the alternate-role
+    swap are tied to round 1 by its number, so a round 1 recorded
+    degraded instead of topped up drops all three for that campaign;
+  - a task waiting on an operator ask after an implementer's BLOCKED
+    report gets no ledger line, so after compaction the resume rule
+    reads it as not done and resumable; the `Task <N>: BLOCKED` wait
+    covers only the answer after the third fix wave;
+  - on the very-small lane nothing reachable says what to do when the
+    lane's implementer reports NEEDS_CONTEXT, or BLOCKED for context or
+    reasoning: that handling lives in `references/task-loop.md`, which
+    the lane neither applies nor loads;
+  - Finish's record check (`references/finish.md`, step 1) names only
+    `sdd/` paths; after the upgrade hatch the lane's records sit in
+    `sdd-lane/`, so the check reports false gaps or skips them;
+  - an umbrella's closing-review seats are dispatched with no named
+    status-check window, so the tree-check guard does not cover them;
+  - three wording points: "decision asks stand apart" reaches the
+    campaign gate, the umbrella landing and the closing review only
+    through a redteaming reference, and could join the router's
+    § Decision asks; `references/finish.md` asks both for the decision
+    asks in a final block and to end with the recommendation; "proposing
+    no preset" after a hatch is stated only in the lane reference.
 
 ## Follow-up
 
@@ -63,3 +97,7 @@
 - `compaction-fit`'s open item: let the terminal pass read the files a
   claim it checks cites, or say what it does with a claim it cannot
   check within its inputs.
+- The closing review's items: correct the trigger's stated ground or
+  restate the trigger; weigh moving § The arrangement questions where a
+  controller reads it alone; fill the five rule gaps, each in the skill
+  that owns the step; settle the three wording points.

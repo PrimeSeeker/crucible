@@ -41,6 +41,18 @@ With it:
 - in the new runs' transcripts, look for controllers re-reading a moved
   step's reference after compaction before acting on that step.
 
+The umbrella's closing review (2026-11-03) found the outcome figures
+narrower than they read: counted as the umbrella's Problem counted,
+with rendered seat templates included, shipped skill text fell only
+about 1.2% (the prose budget stopped counting rendered templates
+mid-effort), while what seats read fell from about 19,600 to 17,800
+words, which nothing records; and the manifests count controller files
+only, and omit `skills/dispatching-parallel-agents/SKILL.md` on
+parallel campaigns and the implementer template on the very-small
+lane's inline path. With the re-audit: add those reads under their
+conditions and re-count all three revisions; count what seats read
+alongside what controllers load.
+
 `resident_tokens.py` names the model whose tokenizer it counts with;
 where that model has been retired by then, re-count all three revisions
 with its successor, not the head alone, so the comparison stays on one
