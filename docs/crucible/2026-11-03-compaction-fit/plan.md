@@ -33,14 +33,14 @@ Each file has one owning task (first column); a file another task also edits is 
 | `skills/requesting-code-review/code-reviewer.source.md`, `code-reviewer.slots.md`; rendered `code-reviewer.md`; `agents/branch-reviewer.md` | T5 | — |
 | `docs/decisions/instruments.md` | T5 | — |
 | `docs/backlog/skill-size-after-compaction.md`, `docs/backlog/skill-text-rewrite.md`, `docs/backlog/skill-rewrite-reaudit.md` | T6 | — |
-| the resident-token manifests and figures (new, committed; location deferred, T6) | T6 | — |
+| the resident-token manifests, figures and, if committed, the counting script (new; location deferred, T6) | T6 | — |
 
 Overlaps are ordered by the dependency order: `tests/test_skill_references.py` T1 → T2 → T3 → T4; `tests/prose-budget.txt` T1 → T2 → T3 → T4 → T5, each task its own line; `docs/decisions/authoring-crucible.md` T4 → T6. The existing route references (`very-small-lane.md`, `plan-phase.md`, `folded-lane.md`, `flip-paths.md`, `folded-lane-document.md`, `lane-note.md`, `umbrellas.md`) are not edited: only their stubs in the owning `SKILL.md` change. Citations elsewhere of a moved section's heading resolve through the stub and change nowhere (spec, Interfaces & boundaries).
 
 ## Inter-task contracts
 
 - **D4's statement.** T1 writes it near the top of the SDD `SKILL.md`; T2 and T3 write the same statement in theirs, changed only where a skill's own noun differs; T4 records the convention, quoting no wording that diverges from T1's. Its content is D4's; its wording is T1's.
-- **The stub.** Every new stub is one paragraph under the moved heading, carrying a sentence `tests/skill_corpus.py`'s `STUB_RE` matches (``read `skills/<skill>/references/<file>.md` in full``), its trigger and any spine item of D3 its step keeps; its reference opens with the stub's heading and has no other stub. Each task adds its pairs to `EXPECTED` in `tests/test_skill_references.py`.
+- **The stub.** Every new stub is one paragraph under the moved heading, carrying a sentence `tests/skill_corpus.py`'s `STUB_RE` matches (``read `skills/<skill>/references/<file>.md` in full``), its trigger and any spine item of D3 its step keeps; its reference opens with the stub's heading and has no other stub, and its basename does not open with REPORT, SUMMARY, FINDINGS or ANALYSIS, case-blind (the host refuses a subagent's write to such a file: `skills/using-crucible/references/claude-code-dispatch.md`, Report-name filter). Each task adds its pairs to `EXPECTED` in `tests/test_skill_references.py`.
 - **The body measure.** T1–T3 measure a body as the characters after the frontmatter's closing fence and hold it at or under 17,999, so it passes whichever boundary T4 fixes; T4's test fixes the boundary (its marker) and reads every `skills/*/SKILL.md`.
 - **The prose budget.** Each of T1–T5 offsets its own additions within its skill directory by D6's rule and lowers or raises its own line to the new count, stating its net in its report; T6 checks the sum against `d78398c`'s (56,979). A task that cannot offset within its skill reports the shortfall; the shortfall goes to the operator as D6 states, never as an edit to the umbrella on this branch.
 - **The counted head.** T6 counts the HEAD at its start, which carries T1–T5.
@@ -68,9 +68,9 @@ Overlaps are ordered by the dependency order: `tests/test_skill_references.py` T
 
 **Why.** SDD is the largest skill (37,483 characters of body) and the one whose cut has lost its cap upstream. It moves § The Task Loop (as one reference), Setup's step-local text, § Disputes and adjudication, § What a report voices, § Drift found after the fact, § Inline mode and § Finish into references, keeping its spine (D3): the ledger rules and the rules binding every dispatch or resume as a kept section, the cap of three fix waves and its ask and the close readout's answer in their stubs, the main/master consent, the dispatch-references line, the rationalization table. It writes D4's statement, which the other skills copy.
 
-**Files.** `skills/subagent-driven-development/SKILL.md`; its new references; `tests/test_skill_references.py` (`EXPECTED`); `tests/prose-budget.txt` (SDD line). Consumers checked, none edited: `skills/subagent-driven-development/references/very-small-lane.md` and `skills/requesting-code-review/SKILL.md` (they cite § Finish, § Disputes and adjudication and § The Task Loop, step N, which resolve through the kept headings); `tests/test_instrument_dispatch_skills.py` (reads the skill through its stub corpus).
+**Files.** `skills/subagent-driven-development/SKILL.md`; its new references; `tests/test_skill_references.py` (`EXPECTED`); `tests/prose-budget.txt` (SDD line). Consumers checked, none edited: `skills/subagent-driven-development/references/very-small-lane.md` and `skills/requesting-code-review/SKILL.md` (they cite § Finish, § Disputes and adjudication and § The Task Loop, step N, which resolve through the kept headings); `skills/redteaming/references/flip-paths.md` (line 54) and `very-small-lane.md` (line 11), which cite § Setup for the ledger rules and are reached because those rules stay under § Setup (Contract); `tests/test_instrument_dispatch_skills.py` (reads the skill through its stub corpus).
 
-**Contract.** Enacts D3, D4 (writes the statement; the very-small-lane stub drops what it carries; the flip-paths stub keeps its after-compaction line), D6 (SDD's offsets). Produces the statement (Inter-task contracts) and SDD's `EXPECTED` pairs. Owns the spec's marker at Mechanism sketches § Indicative allocation, for SDD's sites.
+**Contract.** Enacts D3, D4 (writes the statement; the very-small-lane stub drops what it carries; the flip-paths stub keeps its after-compaction line), D6 (SDD's offsets). Produces the statement (Inter-task contracts) and SDD's `EXPECTED` pairs. The ledger rules and the rules binding every dispatch or resume stay within § Setup, in its section beside the stub or under a subheading directly below it, so citations of `crucible:subagent-driven-development` § Setup reach them. Owns the spec's marker at Mechanism sketches § Indicative allocation, for SDD's sites.
 
 Deferred to implementation: the reference file names and the exact text boundaries, within D3 and the stub contract.
 
@@ -104,7 +104,7 @@ Deferred to implementation: the reference file names and the exact text boundari
 
 **Contract.** Enacts D3, D4 (consumes T1's statement; the folded-lane-document and lane-note stubs drop what it carries; the umbrellas stub keeps its line), D6. Owns the allocation marker for brainstorming's site.
 
-Deferred to implementation: the reference file name and the exact text boundary.
+Deferred to implementation: the reference file name and the exact text boundary, within D3 and the stub contract.
 
 **Acceptance.**
 - Happy: the body at or under 17,999 characters (one-time measurement); the suite passes.
@@ -140,20 +140,21 @@ Review: branch only — one splice moved inside an existing selector passage, it
 **Acceptance.**
 - Happy: the rendered template carries the section only inside the `lane = very-small` passage, with its line of purpose; `python tools/instrument_agents.py check` passes.
 - Edge: the rendering with `lane` set `off` holds no part of the section.
+- Error: the source edited but the rendered template or agent not regenerated fails `python tools/instrument_agents.py check`.
 - Integration: the suite passes.
 
 ### T6 — Resident tokens, the retired trigger and the backlog
 
 **Why.** The umbrella's outcome figure (D1 of the umbrella; spec D7), the trigger's retirement (D8) and the backlog's dispositions (D10) close the child; the prose-budget sum closes C1.
 
-**Files.** The resident-token manifests and figures (new, committed); `docs/decisions/authoring-crucible.md` (the figures as the baseline; the Rejected full-rewrite entry and the trigger; its `## Changes` line); `docs/backlog/skill-size-after-compaction.md`, `docs/backlog/skill-text-rewrite.md`, `docs/backlog/skill-rewrite-reaudit.md`. Input: `.crucible/compaction-fit/brainstorm-decisions.md` (entries 10, 11, 13).
+**Files.** The resident-token manifests and figures (new, committed) and, if committed, the counting script; `docs/decisions/authoring-crucible.md` (the figures as the baseline; the Rejected full-rewrite entry and the trigger; its `## Changes` line); `docs/backlog/skill-size-after-compaction.md`, `docs/backlog/skill-text-rewrite.md`, `docs/backlog/skill-rewrite-reaudit.md`. Input: `.crucible/compaction-fit/brainstorm-decisions.md` (entries 10, 11, 13).
 
-**Contract.** Enacts D7, D8, D10. Consumes the head T1–T5 leave. Owns the spec's marker in D7 (the manifests' file lists) and the resident-token sketch's marker (where the counting script lives). The token-counting endpoint is reached with an Anthropic API key the controller provides at dispatch; the endpoint is the only API call made.
+**Contract.** Enacts D7, D8, D10. Consumes the head T1–T5 leave. Owns the spec's marker in D7 (the manifests' file lists) and the resident-token sketch's marker (where the counting script lives). The token-counting endpoint is reached with an Anthropic API key held in an environment variable the controller names at dispatch; the endpoint is the only API call made. The figures name the revision they count.
 
 Deferred to implementation: the manifests' location in the feature folder and their format.
 
 **Acceptance.**
-- Happy: per-route, per-phase totals at `a3db87f`, `d78398c` and the head, the counting run's output quoted in the report (A9); the backlog files read as D10 states (A10); the prose-budget sum at or below 56,979 (A6, one-time).
+- Happy: per-route, per-phase totals at `a3db87f`, `d78398c` and the head, the head named by its revision, the counting run's output quoted in the report (A9); the backlog files read as D10 states (A10); the prose-budget sum at or below 56,979 (A6, one-time).
 - Edge: a file renamed between the counted points counted under its role; a route reference that does not exist at `a3db87f` counted as absent.
 - Error: a sum above 56,979 is reported as the shortfall D6 routes to the operator, not committed around.
 - Integration: the full suite passes on the head.
