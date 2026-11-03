@@ -2,14 +2,15 @@
 
 ## Decision
 
-**Where text goes.** writing-skills' Size and placement bullet holds the
+**Where text goes.** `crucible:writing-skills § Reader cost` holds the
 general rules: state each rule once, where its reader acts on it, and
-point to it from elsewhere; give the action, its observable signal and at
-most one clause of why, how the rule was learned going to the project's
-decision records; write siblings at one grain, detail moving to a
-supporting file or a tool's `--help`; keep a `SKILL.md` that a host cuts
-after compaction under the cut, long step bodies going to supporting
-files. `AGENTS.md` ("Where text goes")
+point to it from elsewhere, stating one sentence itself where its reader
+would not otherwise load the target; give the action, its observable
+signal and at most one clause of why, how the rule was learned going to
+the project's decision records; write siblings at one grain, detail
+moving to a supporting file or a tool's `--help`. Its § Structure keeps
+a `SKILL.md` that a host cuts after compaction under the cut, long step
+bodies going to supporting files. `AGENTS.md` ("Where text goes")
 names crucible's homes: how a rule was learned (incidents, measurements,
 accepted trade-offs) in the decision records, `docs/decisions/`; host
 mechanics in the adapter pair; text about crucible's own text in `docs/`;
@@ -103,13 +104,14 @@ Skill Index lines follow it. Codex's `agents/openai.yaml` short
 descriptions are presentation, outside the rule.
 
 **writing-skills.** `skills/writing-skills/` holds `SKILL.md`,
-`graphviz-conventions.dot` and `agents/openai.yaml`. It sends an author to
+`compacting.md`, `graphviz-conventions.dot` and `agents/openai.yaml`. It covers text agents act on (skills, instruction files, rules, prompts and templates, hook-injected text), organized around reader cost: a text's tokens times its reads, for each reader, measured on the written text. A fix revises the sentence that owns the case and keeps the finding's reasons, its failure scenario and what a pointer defines out of the text; a review counts excess as a finding. `compacting.md`, read only when compacting, holds the inventory, one-writer and blind-check procedure and the cut patterns. It sends an author to
 each host's own skill creator for scaffolding and evaluations, says where
 each host keeps personal skills and which instruction file it reads, and
 links each vendor's authoring guidance rather than copying it. It keeps
 upstream's "Match the form to the failure", its micro-test method and its
 question for an agent that went another way, their measurements
-attributed to upstream's wording tests. Its evaluation tells the
+attributed to upstream's wording tests, named in the skill as
+superpowers'. Its evaluation tells the
 evaluated agent nothing false; a dilemma scenario is disclosed as an
 evaluation; asking, escalating or arguing the skill is wrong are outcomes
 to examine, never failures by definition. It sets no word targets. The
@@ -422,6 +424,12 @@ guess 1"). In SDD's task loop implementer seats write the skill text,
 and before 2026-10-14 no template named the skill, so the pointer is in
 the implementer's template. (Basis: judgment, accepted by the maintainer.)
 
+On 2026-11-03 the skill was rewritten around reader cost. The prose compaction (`docs/crucible/2026-11-03-prose-compaction/effort.md`) had found crucible's skill text regrown within weeks of each rewrite, with 67 raises and 27 lowers of the prose budget since 0.2.0 and none refused, and ranked new mechanisms, review that counts omissions but never excess, and restatement as its main causes. The maintainer asked whether a light version of that effort's per-file pipeline should become the default, and for the skill to cover all reused prompt-class text. An agent argued against running it on every edit: it works on phrasing, not on the mechanisms behind most growth; it would cost a share of the effort's spend, about 850k tokens a file, mostly cached reads, on every edit; and per-file passes miss rules two files each drop on the strength of the other. It proposed the general rules for writing-skills and left the project-side controls, a measured trigger among them, to `docs/backlog/prose-creep-containment.md`. The maintainer accepted, adding that token costs are reliably underestimated before implementation, so a control measures the written text. (Basis: measured, for the budget history; the maintainer's preference, for the estimate; judgment, accepted by the maintainer.)
+
+A micro-test chose the fix rule (`docs/crucible/2026-11-03-writing-skills-reader-cost/microtest/`): fresh agents applied two of the prose compaction's own review findings to the files as they stood before the fix, five runs per arm. Under the skill as it then stood, every run revised the sentence that owned the case, so "replace before adding" had nothing to fix and was not written; the added words were the finding's reasons and a term its pointer already defined, copied into the rule. The recipe that keeps those out took the `setup.md` case from a median of 11 added words (5 to 14) to 5 in all five runs, and the `umbrella-children.md` case from 33 (26 to 36) to 22 (14 to 22); the fixes on record had added 7 and 10. With the rewritten skill as the guidance, the `umbrella-children.md` case came to a median of 21 (12 to 22), no run restating the defined term. Two cases, one model, five runs per arm. (Basis: measured.)
+
+The rewrite re-derived `SKILL.md` from a rule inventory of the 1,576-word file, 150 items after a completeness critic's additions: a writer that never read the original worked from the inventory and a brief of the new rules, a blind check against the inventory led to one repair, a second blind check to a few wording fixes. Support items went where the text works without them; three items were retired by ruling: crucible's own skills directory, which every user paid for, the opening's three kinds of skill, which the four evaluated kinds replace, and the toolkit's claim that prohibitions backfire on a missing element, which the form table contradicted. `SKILL.md` was capped at its pre-change 3,366 tokens (Anthropic's token count) and came to 3,223; the cap bound this rewrite only. The rewrite reverses the 2026-10-14 rejection of a whole rewrite, whose reason, a 14,971-word skill that was mostly upstream's, no longer held at 1,576 words of crucible's own. An agent's proposals, which the maintainer accepted. (Basis: measured, for the sizes; judgment, accepted by the maintainer.)
+
 ### How records cite
 
 A record cites by path and heading so that the scanner can fail a
@@ -467,12 +475,14 @@ Counted with Anthropic's token-counting endpoint on 2026-11-03, joining the hard
   words: declined on 2026-10-07; the budget is a ratchet, not a target,
   and writing-skills sets none. The 18,000-character line is no such
   target: it is a per-skill ceiling the host's cut imposes (§ Decision).
+  The cap on writing-skills' `SKILL.md` at its 2026-11-03 token count
+  bound that one rewrite (§ Why).
 - **A per-feature prose diffstat**: replaced by the budget file's diff.
 - **A standing ban test, or a contributor rules file, for build
   history** (§ Why).
 - **A test pinning description wording**: it would pin prose
   (`docs/decisions/crucible-suite.md`).
-- **Removing writing-skills, or rewriting it whole** (§ Why).
+- **Removing writing-skills** (§ Why).
 - **Generating skill text** as the seat templates are generated: a
   shared rule spliced into each skill would reach a controller once per
   skill it loads (§ Why).
@@ -489,6 +499,7 @@ the build-history rule included (`skills/using-crucible/SKILL.md`).
 
 ## Changes
 
+- 2026-11-03: writing-skills covers text agents act on and is organized around reader cost, with a micro-tested fix rule, excess as a review finding and `compacting.md` for compaction; it was rewritten whole from a rule inventory, reversing the 2026-10-14 rejection of a whole rewrite, its `SKILL.md` capped at its prior token count for that rewrite only; because the maintainer asked it to carry what the prose compaction learned about creep and to cover all reused prompt-class text.
 - 2026-11-03: the split files' word counts are dated to the moves, since the per-file compaction cut those files further.
 - 2026-11-03: text under `skills/` holds each paragraph and list item on one line, because a hard wrap cost 4 to 5% of a file's tokens raw and 12 to 13% with the line numbers a file reader adds.
 - 2026-11-03: a skill's rationalization table drops rows that only restate its body, the router's Red Flags kept whole, revisiting the placement's whole-table keep: a minor loss under the maintainer's compaction mandate, each row cut having restated a body rule with no recorded catch.

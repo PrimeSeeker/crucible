@@ -167,8 +167,8 @@ arrangement (step 4)).
 - `using-git-worktrees` — sets up an isolated working copy for a feature.
 - `finishing-a-development-branch` — merges, opens a pull request or keeps
   the branch, as you choose.
-- `writing-skills` — writes and checks text that instructs agents,
-  crucible's own included.
+- `writing-skills` — writes, checks and compacts text that instructs
+  agents, crucible's own included.
 
 The repository's layout and the line between shared skills and per-host
 adapters are in `docs/dual-runtime.md`.

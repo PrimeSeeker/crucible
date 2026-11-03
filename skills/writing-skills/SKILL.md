@@ -1,98 +1,107 @@
 ---
 name: writing-skills
-description: Use when creating or editing a skill or other text that instructs agents, such as a prompt or a dispatch template, or when checking whether such text works.
+description: Use when creating, editing or compacting text that instructs agents (a skill, an instruction file, rules, a prompt or dispatch template, hook-injected text), or checking whether it works.
 ---
 
 # Writing Skills
 
-A skill is guidance an agent loads when its description matches the situation: a technique, a pattern of thought, or reference material. It is not the story of how one problem was solved once. Prompts and templates are the same kind of text: another agent acts on them. Project conventions go in the instruction file the host reads at session start (`CLAUDE.md` on Claude Code, `AGENTS.md` on Codex), and a constraint a check can enforce goes in the check.
+This skill covers text agents act on: skills, instruction files, rules, prompts and templates, hook-injected text. All of it applies to a one-off prompt but compaction, which pays only with reuse. A skill is guidance an agent loads when its description matches the situation, not the story of one problem solved once. Project conventions go in the host's session-start instruction file (`CLAUDE.md` on Claude Code, `AGENTS.md` on Codex), not a skill; a constraint a check can enforce goes in the check.
 
-## Start with the host's own tooling
+## Reader cost
 
-Each host has a skill creator that scaffolds a skill and runs evaluations of it; use it for both. This skill covers what those leave out.
+A text costs its tokens times its reads, for each reader: an orchestrating agent every run, each dispatched agent every dispatch, each session at start. Each text is as short as its job allows.
 
-- **Codex:** `skill-creator` is built in, under `~/.codex/skills/.system/`. Personal skills go in `$HOME/.agents/skills`. Guidance:
-  <https://learn.chatgpt.com/docs/build-skills>
-- **Claude Code:** the official plugin marketplace's `skill-creator` plugin. Personal skills go in `~/.claude/skills/<skill-name>/SKILL.md`. Guidance: <https://platform.claude.com/docs/en/agents-and-tools/agent-skills/best-practices> and <https://code.claude.com/docs/en/skills>
-
-Crucible's own skills live in this plugin's `skills/` directory, one tree for both hosts.
-
-## Descriptions and names
-
-The host matches the description against the task to decide whether to load the skill. Give concrete, discriminating triggers that cover the situations where it applies: symptoms, contexts, the words a user or agent would use. It may say what the skill is for. It never lists the procedure's steps: an agent may follow that summary in place of the body. Too narrow a description under-triggers (Anthropic's guidance); a catchall over-triggers (Codex's). Write it in the third person.
-
-Frontmatter needs `name` and `description`. The name is at most 64 characters of lowercase letters, numbers and hyphens, matches the skill's directory, and says what you do (`condition-based-waiting`, not `async-test-helpers`). The description is at most 1,024 characters.
+- Measure what each reader loads and how often, in tokens, not words; a character-based estimate is close enough to compare two versions.
+- Count the written text before and after an edit, never a design-time estimate: those run low.
+- Always-loaded text (descriptions, session-start injections) is budgeted by its host.
+- Load each rule where its reader acts on it: text every session or dispatch loads holds only what each reader needs; a long step body goes in a file read at that step.
+- State each rule once and point to it from elsewhere. For one sentence in a file its reader would not otherwise load, state the sentence: a pointer pays only where its reader already loads the target. Never a pointer longer than its rule.
+- Split by reader a file one of its readers mostly skips.
+- Retire a rule whose reason has lapsed (its incident fixed elsewhere, its mechanism removed): every load pays for it until it goes.
+- A rule gives the action, its observable signal and at most one clause of why.
+- How a rule was learned goes in the project's decision records, or its docs where it keeps none.
+- Write siblings in one list or section at the same grain; detail that breaks the grain goes to a supporting file or a tool's `--help`.
+- A fix revises the sentence that owns the case; its added words are the rule's new condition or action, stated as the sentence states its others, while the finding's reasons, its failure scenario and what a pointer already defines stay out of the text.
+- A review counts excess as a finding, as it counts an omission: text no reader acts on, a restatement of what its reader already loads, a pointer longer than its rule, a second clause of why.
+- Before compacting, or when a text's measured load has grown, **read `skills/writing-skills/compacting.md` in full**.
 
 ## Match the form to the failure
 
-Before writing guidance, classify the failure it is for. The form that fixes one failure type measurably backfires on another.
+Before writing guidance, classify its failure:
 
-| Failure | Right form | Wrong form |
+| The agent | Use | Not |
 |---|---|---|
-| Skips or breaks a rule it knows (knows better, does it anyway) | Prohibition, rationalization table and red flags (The discipline toolkit, below) | Soft guidance ("prefer...", "consider...") |
-| Complies, but the output has the wrong shape (bloated prompt, buried verdict, restated spec) | Positive recipe or contract: state what the output IS, its parts, in order | Prohibition list ("don't restate", "never narrate") |
-| Omits a required element from something it already produces | Structural: a REQUIRED field or slot in the template it fills in | Prose reminders near the template |
-| Behavior should depend on a condition | Conditional keyed to an observable predicate ("if the brief exists, reference it") | Unconditional rule plus exemption clauses |
+| Knows a rule and breaks it | Prohibition, rationalization table, red flags (§ The discipline toolkit) | Soft guidance ("prefer...") |
+| Complies, with wrong-shaped output | A positive recipe or contract: what the output IS, its parts, in order | A prohibition list ("don't restate") |
+| Omits a required element of its output | A REQUIRED field or slot in the template it fills in | Prose reminders near the template |
+| Should act on a condition | A conditional keyed to an observable predicate | An unconditional rule plus exemption clauses |
 
-**Why prohibitions backfire on shaping problems:** under a competing incentive ("make the prompt self-contained"), agents negotiate with "don't X". In upstream's head-to-head wording tests on dispatch-prompt guidance, the prohibition arm produced clearly more of the unwanted content than the recipe arm (fully separated distributions), and trended worse than even the no-guidance control. Micro-test your own case rather than assuming, but never reach for the prohibition by default. A recipe leaves nothing to negotiate: the output matches the stated shape or it doesn't.
+For wrong-shaped output, never reach for a prohibition by default: under a competing incentive agents negotiate with "don't X", and in the wording tests that superpowers, the project crucible derives from, ran on dispatch-prompt guidance, a prohibition produced more of the unwanted content than a recipe and trended worse even than no guidance. Whatever the form:
 
-**Rules for whichever form you pick:**
-- **No nuance clauses.** "Don't X unless it matters" reopens the negotiation: in the same upstream tests, appending a single nuance clause to a winning recipe degraded it from consistent to noisy. Express a real exception as its own conditional on an observable predicate.
-- **Exemption clauses don't scope.** "This limit doesn't apply to code blocks" still suppresses code blocks. If part of the output must be exempt, restructure so the rule can't reach it.
+- No nuance clauses ("Don't X unless it matters"): in those tests one turned a winning recipe noisy. Express a real exception as its own conditional on an observable predicate.
+- Exemption clauses don't scope ("This limit doesn't apply to code blocks" still suppresses them): restructure so the rule can't reach what must be exempt.
 
-## Evaluating a skill
+## Evaluating agent-read text
 
-Tell the evaluated agent nothing false: no claim that the run is real work, no invented stakes or pressure. A dilemma scenario, one built to set the guidance against something else, is disclosed as an evaluation. A realistic task, run the way the hosts' skill creators run it (Claude Code's with and without the skill, Codex's with it), needs no announcement. An agent that asks or escalates, or argues the skill is wrong, has produced an outcome to examine, never a failure by definition: it may have made the right call, or found a defect in the skill.
+Tell the evaluated agent nothing false: no claim the run is real work, no invented stakes or pressure. A dilemma scenario, built to set the guidance against something else, is disclosed as an evaluation; a realistic task run as the hosts' skill creators run it (Claude Code's with and without the skill, Codex's with it) needs no announcement. Asking, escalating or arguing the guidance is wrong is an outcome to examine, never a failure by definition.
 
-**Baseline.** Know the failure before writing for it: a recorded incident, or a run without the guidance. A skipped baseline is recorded with its reason.
+**Baseline.** Know the failure before writing for it: a recorded incident or a run without the guidance; record a skipped baseline with its reason.
 
-**By skill type:**
-- **Discipline** (a rule the agent knows and might skip): a realistic task where skipping is tempting, or a disclosed dilemma. Record what it did and the reasons it gave.
-- **Technique:** apply it to a new case and to variations; look for gaps in the instructions.
-- **Pattern:** does it recognize when the pattern applies, and when not?
-- **Reference:** does it find the right information and use it correctly; are the common cases covered?
+By skill type:
+
+- Discipline: a realistic task where skipping is tempting, or a dilemma; record what the agent did and its reasons.
+- Technique: a new case and variations; look for gaps in the instructions.
+- Pattern: does it recognize when the pattern applies and when not?
+- Reference: does it find the right information and use it correctly; are the common cases covered?
 
 ### Micro-test wording first
 
-Full scenario runs are slow and costly per iteration. Check the wording itself first:
+Micro-test the wording before full scenario runs:
 
-1. **One fresh agent per sample:** a raw API call, or a single-shot subagent. Its context is the realistic context the guidance will live in (the whole skill or template, not the guidance alone); its task is one that invites the failure.
-2. **Always include a no-guidance control.** If the control doesn't show the failure, there is nothing to fix: stop, don't write the guidance.
-3. **Five or more repetitions per variant.** Single samples lie.
-4. **Read every flagged match by hand.** Score programmatically if you like, but template echoes and quoted counter-examples pass for hits; automated counts alone overstate both failure and success.
-5. **Variance is a signal.** When guidance lands, repetitions converge on one shape. Five interpretations in five runs means the wording isn't binding: tighten the form before adding words.
+1. One fresh agent per sample (a raw API call or a single-shot subagent), given the whole skill or template the guidance will live in and a task that invites the failure.
+2. Always include a no-guidance control; if it doesn't show the failure, don't write the guidance.
+3. Five or more repetitions per variant.
+4. Read every flagged match by hand, since template echoes and quoted counter-examples pass for hits; score programmatically if you like.
+5. Variance is a signal: guidance that lands makes repetitions converge on one shape. If they diverge, the wording doesn't bind; tighten the form before adding words.
 
-Micro-tests check wording; a discipline skill still needs its scenario evaluation.
+Micro-tests check wording only; a discipline skill still needs a scenario evaluation.
 
 ### When the guidance isn't working
 
-When an agent read the skill and went another way, ask it, as the evaluator: how could the skill have been written to make the expected choice clear? The answers sort three ways:
+If an agent read the guidance and went another way, ask it how the guidance could have made the expected choice clear:
 
-1. **"It was clear; I chose otherwise."** Not a wording problem. Weigh its reasons: the rule may be wrong, or it may need its reason stated, or a rationalization-table row.
-2. **"It should have said X."** A wording problem. Try its wording, and micro-test it.
-3. **"I didn't see section Y."** An organization problem. Move it earlier or make it more prominent.
+- "It was clear; I chose otherwise": not a wording problem. Weigh its reasons; the rule may be wrong, or need its reason stated or a rationalization-table row.
+- "It should have said X": micro-test that wording.
+- "I didn't see section Y": put the section where the agent is when it acts, or make it more prominent.
 
 ## The discipline toolkit
 
-For an agent that knows a rule and breaks it. For wrong-shaped output or a missing element, prohibitions backfire: use the forms above.
+For an agent that knows a rule and breaks it; other failures take the table's forms.
 
-- **State the reason.** An agent that knows why a rule exists can apply it to a case no list anticipates.
-- **Close the loopholes you saw.** Name the specific workarounds the baseline produced, not just the rule.
-- **Rationalization table.** Every excuse from the baseline, verbatim, beside why it doesn't hold:
+- **State the reason**, in one clause.
+- **Close the loopholes you saw:** name the workarounds the baseline produced, not just the rule.
+- **Rationalization table:** each excuse from the baseline, verbatim, beside why it doesn't hold, in one clause.
+- **Red flags:** the thoughts just before the violation, so the agent can catch itself.
+- **Trigger on the moment before:** the description can name where the violation happens ("before writing implementation code").
 
-  | Excuse | Reality |
-  |---|---|
-  | "Too simple to test" | Simple code breaks. The test takes thirty seconds. |
-  | "I'll test after" | A test that passes at once proves nothing. |
+## Start with the host's own tooling
 
-- **Red-flags list.** The thoughts that come just before the violation ("this case is different because..."), so the agent can catch itself.
-- **Trigger on the moment before.** The description can name the point where the violation happens ("before writing implementation code").
+Scaffold and evaluate with each host's skill creator; this skill covers what those leave out.
+
+- **Codex:** `skill-creator` is built in, under `~/.codex/skills/.system/`. Personal skills go in `$HOME/.agents/skills`. Guidance: <https://learn.chatgpt.com/docs/build-skills>.
+- **Claude Code:** the official plugin marketplace's `skill-creator` plugin. Personal skills go in `~/.claude/skills/<skill-name>/SKILL.md`. Guidance: <https://platform.claude.com/docs/en/agents-and-tools/agent-skills/best-practices>, <https://code.claude.com/docs/en/skills>.
+
+## Descriptions and names
+
+Give concrete, discriminating triggers (symptoms, contexts, the words a user or agent would use) covering every situation the skill serves: too narrow a description under-triggers (Anthropic's guidance), a catch-all over-triggers (Codex's). The description may say what the skill is for, never the procedure's steps, which an agent may follow in place of the body; third person, at most 1,024 characters.
+
+Frontmatter needs `name` and `description`. The name, at most 64 characters of lowercase letters, numbers and hyphens, matches the skill's directory and says what you do (`condition-based-waiting`, not `async-test-helpers`).
 
 ## Structure
 
-- **Files.** `SKILL.md` alone, unless there is heavy reference material (a hundred lines or more) or a reusable tool; principles and short code stay inline. Cite every supporting file from `SKILL.md` and say when to read it.
-- **Cross-references.** Name the skill (`crucible:systematic-debugging`) or the file's path, and say whether it is required. Never force-load one: an `@path` import loads the file at once, before it is needed.
-- **Flowcharts** only for a non-obvious decision, a loop an agent might leave too early, or an A-versus-B choice; never for reference material (use a table), code (use a code block) or linear steps (use a numbered list). Style: `skills/writing-skills/graphviz-conventions.dot`.
-- **Examples.** One excellent example beats many mediocre ones: complete, from a real case, commented with why. Not five languages, not a fill-in-the-blank template.
-- **Portability.** Write forward slashes in paths, examples included, and run scripts only with an interpreter your users' hosts have, naming it in the invocation (`bash <script>`, `python <script>`), never a bare path: packagers can strip executable bits.
-- **Size and placement.** Always-loaded text (descriptions, anything a host injects at session start) is budgeted by its host. Where a host re-attaches skills cut at a fixed size after compaction, `SKILL.md` stays under the cut: long step bodies go to supporting files read at their step, and `SKILL.md` keeps the steps with their triggers, resume rules, loop bounds, gates, rationalization tables, red-flags lists and rules binding beyond one step. Everything else is as short as its job allows. State each rule once, where its reader acts on it, and point to it from elsewhere. Give the action, its observable signal and at most one clause of why: how the rule was learned belongs in the project's decision records. Write siblings in one list or section at the same grain, and move detail to a supporting file or a tool's `--help`.
+- **Files.** `SKILL.md` alone, unless there is heavy reference material (100 lines or more) or a reusable tool; principles and short code stay inline. Cite every supporting file from `SKILL.md`, saying when to read it.
+- **Compaction cut.** Where a host re-attaches skills cut at a fixed size after compaction, `SKILL.md` stays under the cut: long step bodies go to files read at their step; it keeps the steps with their triggers, resume rules, loop bounds, gates, rationalization tables, red-flags lists and rules binding beyond one step.
+- **Cross-references** name the skill (`crucible:systematic-debugging`) or the file's path and say whether it is required; never force-load one, as an `@path` import does.
+- **Flowcharts** only for a non-obvious decision, a loop an agent might leave too early, or an A-versus-B choice; reference material takes a table, code a code block, linear steps a numbered list. Style: `skills/writing-skills/graphviz-conventions.dot`.
+- **Examples.** One excellent example, not many mediocre ones: complete, from a real case, commented with why; not five languages, not a fill-in-the-blank template.
+- **Portability.** Forward slashes in paths, examples included. Run scripts only with an interpreter your users' hosts have, named in the invocation (`bash <script>`, `python <script>`), never a bare path.

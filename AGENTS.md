@@ -74,7 +74,7 @@ to install it: `README.md`; the layout: `docs/dual-runtime.md`.
   (`tests/test_skill_size.py`): long step bodies move into references
   read at their step, the spine staying in `SKILL.md`
   (`docs/decisions/authoring-crucible.md`).
-- **Where text goes.** writing-skills' Size and placement bullet states
+- **Where text goes.** `crucible:writing-skills § Reader cost` states
   the general rules. Their homes here: how a rule was learned (incidents,
   measurements, accepted trade-offs) goes in the decision records
   (`docs/decisions/`); host mechanics in the adapter pair (above); text

@@ -69,4 +69,4 @@ Host mechanics come from your runtime adapter, a pair of files under `skills/usi
 - `crucible:systematic-debugging` — on any bug, test failure or unexpected behavior, before proposing fixes.
 - `crucible:using-git-worktrees` — before feature work or plan execution that needs isolation.
 - `crucible:finishing-a-development-branch` — when tested work needs integration.
-- `crucible:writing-skills` — when creating, editing or verifying skills or other text that instructs agents.
+- `crucible:writing-skills` — when creating, editing, checking or compacting skills or other text that instructs agents.
