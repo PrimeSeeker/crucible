@@ -156,11 +156,25 @@ whole slug: a `*-<slug>` pattern would also match
 one's folder. (Basis: judgment, accepted by the maintainer, 2026-10-11.)
 
 The pull-request ask came on 2026-10-08. A branch's commits carry its
-spec and plan, so removing them before a push keeps them out of the
-merged tree only; the maintainer judged the real fix to lie at the start
-of the work, since the plan's pins need commits, and a mode in which they
-are never committed is `docs/backlog/records-retention-config.md`.
+spec and plan, so a final commit removing them keeps them out of the
+merged tree only. The maintainer then asked for a mode that never commits
+them, judging the real fix to lie at the start of the work, and on
+2026-11-04 closed that request, no project needing it being known.
 (Basis: the maintainer's preference.)
+
+A project that does need it should first try rewriting a copy of the
+branch at push time, which needs no replacement for the pins the mode
+would have to replace across about 16 skill files. One run on a tiny
+repository, with `git filter-branch` (which git's own documentation warns
+against), left no commit on the copy touching the folder, and the feature
+branch and its revisions intact; merges from the base and a real worktree
+are untried. It has limits. References into the folder dangle, as they do
+after the removal commit: about a tenth of one project's tracked files
+cite a feature folder. Commit messages citing a hash go stale, which only
+a rewrite adds: at most 23 of 381 recent messages here and 3 of 400 in
+that project. Fixes after a pull-request review land on the copy.
+(Basis: measured, on thin data; judgment, an agent's proposal accepted by
+the maintainer.)
 
 An umbrella is the exception to that ask, since its children read it,
 their marks included, on the base they branch from and land on: removed
@@ -369,6 +383,8 @@ worktree. (Basis: judgment, accepted by the maintainer.)
 
 ## Rejected
 
+- **A mode that never commits the spec and plan**: no project is known to
+  need it, and it would have to replace the pins (§ Why).
 - **A committed feature or campaign summary**, per-round summary
   commits, and the parser, index and record checks that served them:
   rarely read, and costly to keep parsing open input (§ Why). Open items
@@ -407,6 +423,7 @@ worktree. (Basis: judgment, accepted by the maintainer.)
 
 ## Changes
 
+- 2026-11-04: the never-commit mode is closed, no project needing it being known; the record keeps rewriting a copy of the branch at push time as the route to try first, with its measured limits.
 - 2026-11-03: SDD's Setup is the only writer that seeds the ledger with what earlier phases left open, contained amendments, open premise asks and `deferred-minor` entries, its forms moved into `skills/subagent-driven-development/references/setup.md`; the plan phase's and the folded campaign's closes no longer seed it; because the same seeding was written twice with no incident behind the second writer.
 - 2026-11-02: a red suite at Finish may be ruled not the branch's by
   the controller as well as by the adjudicator; either way it goes to
