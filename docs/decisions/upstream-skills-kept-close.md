@@ -7,11 +7,11 @@ where it names one host's mechanics or crucible's own machinery, points
 at an upstream skill crucible folded, or prints a secret, where a
 shipped script or example needs its platform limit stated, where
 upstream's text is defective, and where it takes in a check from an
-upstream skill crucible folded that nothing else covers there. A third,
+upstream skill crucible folded that nothing else covers there. Since 2026-11-03 both carry it compacted: one statement of each step, gate and rule, without upstream's session examples, impact figures, quick-reference tables, repeated lists or partner signals. A third,
 receiving-review, rewrites upstream's skill for feedback from outside
 crucible's loops, keeping its core.
 
-**dispatching-parallel-agents** is upstream's text except step 3: start
+**dispatching-parallel-agents** is upstream's procedure except step 3: start
 every independent agent before waiting for any of them, through the
 host's parallel fan-out operation, starting the rest as capacity frees;
 tasks are independent only where they share no state, need no ordering
@@ -20,17 +20,15 @@ independent run one at a time, whatever the host permits; and its
 review steps, where each agent's diff is checked, not only its summary, a check from upstream's verification-before-completion.
 It carries none of crucible's seat machinery, and crucible's own seat dispatches do not use it: the router's Skill Index scopes it to fan-outs outside them, and redteaming's panels state the one rule they need, every seat the host admits started before waiting for any (`crucible:redteaming § Panels`).
 
-**systematic-debugging** is upstream's text except five lines of its
+**systematic-debugging** is upstream's procedure except two lines of its
 `SKILL.md`, a note in each of two references, and root-cause-tracing's
 script invocation and dead-end edges. Test-first reads "Write
 the failing test before the fix; where no test or script can reproduce
 the bug, say why", with a pointer to
 `skills/subagent-driven-development/writing-good-tests.md`, and
 upstream's unconditional "MUST have before fixing" beside it is gone;
-the verify
-step asks for evidence before done without naming an upstream skill; and
-the example's two lines that printed a secret's value test only for its
-presence. `skills/systematic-debugging/root-cause-tracing.md` says
+and the verify
+step asks for evidence before done without naming an upstream skill. `skills/systematic-debugging/root-cause-tracing.md` says
 `find-polluter.sh` is POSIX/Bash-only and what to do on Windows instead,
 runs it through `bash` by its path from the plugin root (upstream's `./`
 form resolved against the user's project), and sends a trace that
@@ -38,8 +36,7 @@ dead-ends to instrumentation and then to `SKILL.md`'s "No Root Cause"
 section, where upstream's two diagrams disagree (one fixes at the symptom
 point, the other forbids it);
 `skills/systematic-debugging/condition-based-waiting.md` says its example
-is a pattern to copy, not a runnable script. The framing and the "your
-human partner" sections stay.
+is a pattern to copy, not a runnable script.
 
 **receiving-review** takes the place of upstream's receiving-code-review,
 for review feedback from outside crucible's own loops: the operator, a
@@ -116,7 +113,7 @@ platform limit is stated where it is invoked, and the TypeScript file is
 an example to copy, not a script to run. (Basis: judgment, accepted by
 the maintainer.)
 
-The "your human partner" sections stay: a session's human partner is the
+The "your human partner" wording stays: a session's human partner is the
 operator (`skills/using-crucible/SKILL.md`), and the implementer, which
 has none, reports BLOCKED wherever the skill sends it to one
 (`skills/subagent-driven-development/implementer-prompt.md`). (Basis:
@@ -135,6 +132,10 @@ nobody checks. (Basis: external, for upstream's check; judgment,
 accepted by the maintainer.)
 
 Until 2026-11-03 redteaming's panels left the rest of the fan-out mechanics to dispatching-parallel-agents, and the router's index line matched any two independent tasks, so a controller starting a panel or a closing review's seats could load the skill's 938 words, whose examples fix failing tests, for the one rule the panels already state. An agent's proposal, on which the maintainer left the call to the agent. (Basis: measured, for the word count; judgment, accepted by the maintainer.)
+
+### Compacted, 2026-11-03
+
+Closeness to upstream's wording had kept duplicates and anecdotes that every load pays for: systematic-debugging stated its rules up to three times (body, red flags, rationalizations, quick reference), and both skills retold sessions with their statistics. The 2026-11-03 compaction kept each rule once and cut the rest: systematic-debugging's four files from 3,417 to 1,898 words, dispatching-parallel-agents from 938 to 409. The cost is a larger difference from upstream's text, so a later upstream release is compared by rule, not by line. Step 4's example, whose secret-printing lines had been fixed, went with the other examples. (Basis: measured, for the counts; judgment, an agent's call under the operator's standing authorization for the compaction, revertible as its own commit.)
 
 ### Receiving review
 
@@ -180,6 +181,7 @@ accepted by the maintainer.)
 
 ## Changes
 
+- 2026-11-03: systematic-debugging and dispatching-parallel-agents keep upstream's procedure, compacted: one statement of each rule, no session examples, impact figures, quick-reference tables, repeated lists or partner signals; closeness to upstream's wording no longer keeps duplicates.
 - 2026-11-03: redteaming's panels no longer leave fan-out mechanics to dispatching-parallel-agents, and the router's index scopes the skill to fan-outs outside crucible's own seat dispatches: a panel needs only the rule it states itself, and loading the skill for it cost the skill's whole text.
 - 2026-11-03: systematic-debugging's departures are counted as five
   lines, the count having missed the 2026-11-02 removal, and step 3's

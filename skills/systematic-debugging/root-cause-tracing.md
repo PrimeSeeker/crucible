@@ -2,188 +2,30 @@
 
 ## Overview
 
-Bugs often manifest deep in the call stack (git init in wrong directory, file created in wrong location, database opened with wrong path). Your instinct is to fix where the error appears, but that's treating a symptom.
+Never fix only where the error appears, which treats a symptom: trace backward through the call chain to the original trigger and fix there.
 
-**Core principle:** Trace backward through the call chain until you find the original trigger, then fix at the source.
-
-## When to Use
-
-```dot
-digraph when_to_use {
-    "Bug appears deep in stack?" [shape=diamond];
-    "Can trace backwards?" [shape=diamond];
-    "Add instrumentation, trace again" [shape=box];
-    "No Root Cause (SKILL.md)" [shape=box];
-    "Trace to original trigger" [shape=box];
-    "BETTER: Also add defense-in-depth" [shape=box];
-
-    "Bug appears deep in stack?" -> "Can trace backwards?" [label="yes"];
-    "Can trace backwards?" -> "Trace to original trigger" [label="yes"];
-    "Can trace backwards?" -> "Add instrumentation, trace again" [label="no - dead end"];
-    "Add instrumentation, trace again" -> "Can trace backwards?";
-    "Add instrumentation, trace again" -> "No Root Cause (SKILL.md)" [label="finds nothing earlier"];
-    "Trace to original trigger" -> "BETTER: Also add defense-in-depth";
-}
-```
-
-A dead end calls for instrumentation (§ Adding Stack Traces), not a fix
-where the error appears. Where instrumentation finds no earlier cause either,
-follow `SKILL.md` § When Process Reveals "No Root Cause".
-
-**Use when:**
-- Error happens deep in execution (not at entry point)
-- Stack trace shows long call chain
-- Unclear where invalid data originated
-- Need to find which test/code triggers the problem
+Use this when the error happens deep in execution rather than at the entry point, the stack trace shows a long call chain, it is unclear where invalid data came from, or you need to find which test or code triggers the problem.
 
 ## The Tracing Process
 
-### 1. Observe the Symptom
-```
-Error: git init failed in ~/project/packages/core
-```
+1. Observe the symptom, the error as reported: `git init` failed in `~/project/packages/core`.
+2. Find the immediate cause, the code that directly produces it: `execFileAsync('git', ['init'], { cwd: projectDir })`.
+3. Ask what called it, and build the caller chain: `WorktreeManager.createSessionWorktree` ← `Session.initializeWorkspace` ← `Session.create` ← the test at `Project.create`.
+4. Keep tracing up, checking the value passed at each level: `projectDir` is `''`, and an empty `cwd` resolves to `process.cwd()`, the source directory.
+5. Find the original trigger, where the bad value came from: `setupCoreTest()` returns `tempDir: ''`, read at top level before `beforeEach` sets it.
 
-### 2. Find Immediate Cause
-**What code directly causes this?**
-```typescript
-await execFileAsync('git', ['init'], { cwd: projectDir });
-```
+A dead end, where you cannot trace further back, calls for instrumentation (§ Adding Stack Traces) and another trace, never a fix where the error appears. If instrumentation finds no earlier cause either, follow `SKILL.md` § When Process Reveals "No Root Cause".
 
-### 3. Ask: What Called This?
-```typescript
-WorktreeManager.createSessionWorktree(projectDir, sessionId)
-  → called by Session.initializeWorkspace()
-  → called by Session.create()
-  → called by test at Project.create()
-```
-
-### 4. Keep Tracing Up
-**What value was passed?**
-- `projectDir = ''` (empty string!)
-- Empty string as `cwd` resolves to `process.cwd()`
-- That's the source code directory!
-
-### 5. Find Original Trigger
-**Where did empty string come from?**
-```typescript
-const context = setupCoreTest(); // Returns { tempDir: '' }
-Project.create('name', context.tempDir); // Accessed before beforeEach!
-```
+After fixing at the source (here, `tempDir` became a getter that throws if read before `beforeEach`), add validation at each layer the bad value passed through, so the bug becomes impossible. The example's layers: `Project.create()` validates the directory, `WorkspaceManager` rejects an empty one, a `NODE_ENV` guard refuses `git init` outside tmpdir, and a stack trace is logged before `git init`.
 
 ## Adding Stack Traces
 
-When you can't trace manually, add instrumentation:
+When you cannot trace by hand, instrument the function that performs the problematic operation: just before the operation, not after it fails, log `new Error().stack` under a tag such as `'DEBUG git init:'`, with context: directory, cwd, environment variables, timestamps. In tests log with `console.error()`, not the project logger, whose output may not show.
 
-```typescript
-// Before the problematic operation
-async function gitInit(directory: string) {
-  const stack = new Error().stack;
-  console.error('DEBUG git init:', {
-    directory,
-    cwd: process.cwd(),
-    nodeEnv: process.env.NODE_ENV,
-    stack,
-  });
-
-  await execFileAsync('git', ['init'], { cwd: directory });
-}
-```
-
-**Critical:** Use `console.error()` in tests (not logger - may not show)
-
-**Run and capture:**
-```bash
-npm test 2>&1 | grep 'DEBUG git init'
-```
-
-**Analyze stack traces:**
-- Look for test file names
-- Find the line number triggering the call
-- Identify the pattern (same test? same parameter?)
+Run the tests with stderr merged and filter for the tag: `npm test 2>&1 | grep 'DEBUG git init'`. In the captured traces, look for test file names, find the line number that triggers the call, and identify the pattern: same test? same parameter?
 
 ## Finding Which Test Causes Pollution
 
-If something appears during tests but you don't know which test:
+When something appears during tests and you don't know which test creates it, run the bisection script from the project being debugged as `bash <script> '.git' 'src/**/*.test.ts'`, where `<script>` is `<plugin-root>/skills/systematic-debugging/find-polluter.sh`; its usage lines show the arguments. It runs the tests one by one and stops at the first polluter.
 
-Use the bisection script beside this file, run from the project being
-debugged, where `<script>` is `skills/systematic-debugging/find-polluter.sh`
-under the installed plugin root:
-
-```bash
-bash <script> '.git' 'src/**/*.test.ts'
-```
-
-Runs tests one-by-one, stops at first polluter. The script's usage lines
-show its arguments.
-
-`find-polluter.sh` is POSIX/Bash-only. **Consequence on Windows:** the
-script is a Bash program built on `find`, `sort` and `wc`, so it does not run
-natively there. Run it from a POSIX environment — WSL or Git Bash — or bisect by hand:
-run the candidate test files one at a time and check after each whether the
-polluting file or directory appeared. The script only automates that loop;
-nothing in this workflow waits on it.
-
-## Real Example: Empty projectDir
-
-**Symptom:** `.git` created in `packages/core/` (source code)
-
-**Trace chain:**
-1. `git init` runs in `process.cwd()` ← empty cwd parameter
-2. WorktreeManager called with empty projectDir
-3. Session.create() passed empty string
-4. Test accessed `context.tempDir` before beforeEach
-5. setupCoreTest() returns `{ tempDir: '' }` initially
-
-**Root cause:** Top-level variable initialization accessing empty value
-
-**Fix:** Made tempDir a getter that throws if accessed before beforeEach
-
-**Also added defense-in-depth:**
-- Layer 1: Project.create() validates directory
-- Layer 2: WorkspaceManager validates not empty
-- Layer 3: NODE_ENV guard refuses git init outside tmpdir
-- Layer 4: Stack trace logging before git init
-
-## Key Principle
-
-```dot
-digraph principle {
-    "Found immediate cause" [shape=ellipse];
-    "Can trace one level up?" [shape=diamond];
-    "Trace backwards" [shape=box];
-    "Is this the source?" [shape=diamond];
-    "Fix at source" [shape=box];
-    "Add validation at each layer" [shape=box];
-    "Bug impossible" [shape=doublecircle];
-    "Add instrumentation, trace again" [shape=box];
-    "No Root Cause (SKILL.md)" [shape=box];
-
-    "Found immediate cause" -> "Can trace one level up?";
-    "Can trace one level up?" -> "Trace backwards" [label="yes"];
-    "Can trace one level up?" -> "Add instrumentation, trace again" [label="no"];
-    "Add instrumentation, trace again" -> "Can trace one level up?";
-    "Add instrumentation, trace again" -> "No Root Cause (SKILL.md)" [label="finds nothing earlier"];
-    "Trace backwards" -> "Is this the source?";
-    "Is this the source?" -> "Trace backwards" [label="no - keeps going"];
-    "Is this the source?" -> "Fix at source" [label="yes"];
-    "Fix at source" -> "Add validation at each layer";
-    "Add validation at each layer" -> "Bug impossible";
-}
-```
-
-**NEVER fix just where the error appears.** Trace back to find the original trigger.
-
-## Stack Trace Tips
-
-**In tests:** Use `console.error()` not logger - logger may be suppressed
-**Before operation:** Log before the dangerous operation, not after it fails
-**Include context:** Directory, cwd, environment variables, timestamps
-**Capture stack:** `new Error().stack` shows complete call chain
-
-## Real-World Impact
-
-From debugging session (2025-10-03):
-- Found root cause through 5-level trace
-- Fixed at source (getter validation)
-- Added 4 layers of defense
-- 1847 tests passed, zero pollution
+The script is POSIX/Bash-only (it uses find, sort and wc). On Windows, run it from WSL or Git Bash, or bisect by hand: run the candidate test files one at a time and check after each whether the polluting file or directory appeared. The script only automates that loop.
