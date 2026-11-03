@@ -11,8 +11,6 @@ Ensure work happens in an isolated workspace.
 
 **Core principle:** Detect existing isolation first. Then use native tools. Then fall back to git. Never fight the harness.
 
-**Announce at start:** "I'm using the using-git-worktrees skill to set up an isolated workspace."
-
 **Every command below is a single Git invocation** — no shell program, no
 command substitution, no pipes. Run each one, read its output or exit
 code, and do the comparing and branching yourself. That keeps this flow

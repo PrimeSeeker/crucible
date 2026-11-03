@@ -9,8 +9,6 @@ description: Use when a spec has closed its redteam campaign and needs an implem
 
 A plan is an agent coordination artifact. Its readers are strong fresh-context implementers and reviewers who each see one task — and each of them also reads the spec, which is a shared input, not something the plan re-tells. So the plan carries only what the spec does not: ownership, dependency order, seams, and where each acceptance criterion lands. Leave implementation to the implementer and defer detail to them by default. Re-read cost is a design constraint — detail migrates from *how* to *check*.
 
-**Announce at start:** "I'm using the crucible:writing-plans skill to create the implementation plan."
-
 **Input:** a spec that has closed its own redteam campaign, and any foreign plan brainstorming kept in the feature folder, read beside it for tasks to reuse. Given anything else — a requirements document, an issue — start at `crucible:brainstorming` with it as the input. **Save to** `<feature-folder>/plan.md`, beside the spec, in the folder the resolve step of `skills/redteaming/references/formats.md` § Feature folder finds; that section also names a supersede's successor plan. Commit it where every consuming agent can reach it — parallel worktree agents cannot read gitignored files.
 
 ## Plan header

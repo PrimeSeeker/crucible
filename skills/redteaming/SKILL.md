@@ -15,11 +15,9 @@ You are the review **controller**. A **spec campaign** is an iterated loop: disp
 
 **Scope:** the panel apparatus exists for specs and plans, nothing else. Open-ended project-wide issue-mining is out of scope and gets its own framing. Whole-branch review of implemented code is not a campaign either; it is `crucible:requesting-code-review`'s.
 
-**Announce at start:** "I'm using the crucible:redteaming skill to run the spec campaign." — or "… to run the plan phase."
+**Dispatch references:** when this skill starts and after compaction, read `skills/subagent-driven-development/references/dispatch-composition.md` and your adapter's `skills/using-crucible/references/<runtime>-dispatch.md`; both bind as if written here.
 
-**Dispatch references:** when this skill starts, and again after compaction, read from the plugin root `skills/subagent-driven-development/references/dispatch-composition.md`, the rules every dispatch shares, and your adapter's `skills/using-crucible/references/<runtime>-dispatch.md`; both bind as if written here.
-
-**Stubs.** Where a section names a reference to read in full, read it when the section's step comes; it binds as if written here. After compaction, re-read the reference of the step in progress before you act, and each other one only when its step next comes.
+**Stubs.** A reference a section names to read in full binds as if written here. Read it when its step comes, unless read since your last compaction; after compaction, re-read the step in progress's first.
 
 ## Inputs and state
 

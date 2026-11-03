@@ -13,7 +13,7 @@ Do NOT invoke any implementation skill, write any code (a context-gathering prob
 
 **"Too simple to need a design" is the anti-pattern.** Simple features are where unexamined assumptions waste the most work. The design can be a few sentences — but it goes through this process.
 
-**Stubs.** Where a section names a reference to read in full, read it when the section's step comes; it binds as if written here. After compaction, re-read the reference of the step in progress before you act, and each other one only when its step next comes.
+**Stubs.** A reference a section names to read in full binds as if written here. Read it when its step comes, unless read since your last compaction; after compaction, re-read the step in progress's first.
 
 ## Flow
 

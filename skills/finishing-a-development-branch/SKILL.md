@@ -9,8 +9,6 @@ description: Use when implementation is complete, all tests pass, and you need t
 
 **Core principle:** Verify tests → Detect environment → Take the operator's choice → Execute it → Clean up.
 
-**Announce at start:** "I'm using the finishing-a-development-branch skill to complete this work."
-
 **After a close readout** (`crucible:subagent-driven-development` § Finish), the operator has already chosen: carry out the option their answer chose without presenting the menu again, and ask only what the answer left open — the base branch where it is unconfirmed (Step 3), the records question where the readout did not ask it (Option 2). Where no close readout precedes this skill, as at an umbrella's landing or after a standalone review, or the answer chose no option, Step 4 presents the options. A discard answer, confirmed before `crucible:subagent-driven-development` § Finish deleted the feature workspace, runs Step 2 and then "If your human partner asks to discard the work" past its confirmation; Steps 1, 3 and 4 do not run.
 
 **Every command below is a single invocation** — no shell program, no

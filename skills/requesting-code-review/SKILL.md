@@ -7,7 +7,7 @@ description: Use when a branch's tasks are complete or before merging.
 
 Dispatch the whole-branch reviewer: a fresh seat handed precisely crafted context, never your session's history. It applies the review principles — evidence grounding, staked severity, full-scope reads, blind fix verification — without the panel apparatus. After an SDD run this skill runs § The branch-review loop, the one statement of that loop; on a branch with no SDD run, § Standalone mode.
 
-**Dispatch references:** when this skill starts, and again after compaction, read from the plugin root `skills/subagent-driven-development/references/dispatch-composition.md`, the rules every dispatch shares, and your adapter's `skills/using-crucible/references/<runtime>-dispatch.md`; both bind as if written here.
+**Dispatch references:** when this skill starts and after compaction, read `skills/subagent-driven-development/references/dispatch-composition.md` and your adapter's `skills/using-crucible/references/<runtime>-dispatch.md`; both bind as if written here.
 
 ## When to Request Review
 

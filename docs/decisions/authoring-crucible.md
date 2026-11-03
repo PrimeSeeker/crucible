@@ -59,10 +59,7 @@ section keeps its heading with a stub, one paragraph naming the
 reference and when to read it in full, so citations of the heading
 resolve unchanged and every trigger stays in the re-attached text. What
 a stub means is stated once near the top of each skill that has stubs:
-"Where a section names a reference to read in full, read it when the
-section's step comes; it binds as if written here. After compaction,
-re-read the reference of the step in progress before you act, and each
-other one only when its step next comes." The flip-paths stubs and
+"A reference a section names to read in full binds as if written here. Read it when its step comes, unless read since your last compaction; after compaction, re-read the step in progress's first." The flip-paths stubs and
 brainstorming's umbrella stub keep their own line sending a controller
 back after compaction. `tests/skill_corpus.py` reads a skill together
 with the references its stubs name, so a test follows text that moved.
@@ -274,6 +271,8 @@ maintainer had accepted, and put it to the maintainer, who left the call
 to the agent ("Your call"). (Basis: judgment, accepted by the
 maintainer.)
 
+The convention's own text said nothing of a recurring step until 2026-11-03, so a stub whose trigger recurs, such as merging each round's seat reports, read literally sent a controller back to its reference every round; it now says a reference read since the last compaction is not read again. An agent's proposal, on which the maintainer left the call to the agent. (Basis: judgment, accepted by the maintainer.)
+
 ### Resident tokens per route
 
 Resident tokens were counted on 2026-11-03 at `a3db87f`, before the
@@ -471,6 +470,7 @@ the build-history rule included (`skills/using-crucible/SKILL.md`).
 
 ## Changes
 
+- 2026-11-03: the stub convention's statement shortened, and it says a reference read since the last compaction is not read again when its step recurs: what this record's reasoning already held, now in the text a controller reads.
 - 2026-11-03: resident tokens re-counted after the compaction fit's
   branch-review fixes, which lowered SDD's every-run load by 4 tokens.
 - 2026-11-03: the compaction fit's basis tags name the agent's calls the
