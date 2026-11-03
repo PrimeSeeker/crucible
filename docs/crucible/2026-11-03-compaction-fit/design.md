@@ -102,7 +102,7 @@ the other eight between 1,001 and 3,951; 2.66 to 3.18 bytes a token.
   landing, a standalone branch) have no ledger or workspace to check.
   Basis: the controller's proposal, accepted by the maintainer, who
   asked for split-off candidates; the controller's weighing of them.
-- **D3. What the spine keeps.** A `SKILL.md` keeps exactly these:
+- **D3. What the spine keeps.** A `SKILL.md` keeps at least these:
   - the overview, and the steps in order, each with its trigger and, for
     a moved step, its stub;
   - the resume and rehydration rules (SDD's ledger rules, redteaming's
@@ -116,7 +116,13 @@ the other eight between 1,001 and 3,951; 2.66 to 3.18 bytes a token.
     consent before implementing on a main or master checkout, and the
     close readout's answer;
   - the rationalization and red-flag tables, which answer a skip-thought
-    at any step.
+    at any step;
+  - any rule that binds beyond the step whose section holds it, at every
+    dispatch, every resume or every fix application: SDD's
+    dispatch-references line and Setup's rules on seeding the ledger
+    before dispatching, on another feature's workspace, on a foreign
+    ledger and on never copying the spec into a dispatch; redteaming's
+    artifact freeze and shared-tree rules.
 
   Everything else moves with the step it belongs to where the line
   needs it, a decision ask or stop-and-ask line raised by a condition
@@ -140,7 +146,9 @@ the other eight between 1,001 and 3,951; 2.66 to 3.18 bytes a token.
   progress is re-read before the controller acts, and each other
   reference when its step next comes, rather than all at once. The
   existing route stubs keep their triggers and drop the wording that
-  statement now carries. A reference is read when its step first comes,
+  statement now carries; the flip-paths stubs keep their line sending a
+  controller back after compaction, since a flip in flight belongs to no
+  step. A reference is read when its step first comes,
   not before every round as upstream reads its fix loop: it stays in
   context until compaction. Basis: the controller's change during the
   spec campaign, from a seat's question, replacing the unchanged
@@ -164,7 +172,9 @@ the other eight between 1,001 and 3,951; 2.66 to 3.18 bytes a token.
   is about 250 to 450 words of growth. The rest is offset by removing
   text that another passage of the same skill already states, never a
   rule's only statement, each removal naming the passage that still
-  states it; a shortfall goes to the operator before landing. Basis:
+  states it. A shortfall is a binding change to umbrella C1: it goes to
+  the operator before landing, by `skills/redteaming/references/flip-paths.md`
+  § Under an umbrella, never as an edit on this branch. Basis:
   the controller's proposal, accepted by the maintainer; the forecast
   from the existing stubs' measured sizes.
 - **D7. Resident tokens per route.** For each route (standard, folded,
@@ -180,7 +190,11 @@ the other eight between 1,001 and 3,951; 2.66 to 3.18 bytes a token.
   once, under the phase that first loads it; compaction and re-reads are
   not modelled. The manifests are Claude Code's, counted with
   Anthropic's tokenizer; they say nothing about Codex, whose host files
-  and tokenizer differ. Basis: umbrella D1;
+  and tokenizer differ.
+  Deferred to implementation: the manifests' file lists, every file a
+  controller loads on the route counted, the instruments' slot cards
+  included.
+  Basis: umbrella D1;
   the controller's proposal, accepted by the maintainer.
 - **D8. The resident-cost re-open trigger is retired.** It said when a
   full rewrite of the controller skills would be worth reopening; that
@@ -324,7 +338,8 @@ the other eight between 1,001 and 3,951; 2.66 to 3.18 bytes a token.
 - **A5.** The stub set test passes with the new pairs (standing:
   `tests/test_skill_references.py`).
 - **A6.** The prose budget sum at the head is at or below its value at
-  `d78398c`, or the operator has ruled on the shortfall (D6); the net
+  `d78398c`, or a change to umbrella C1 taken in by the umbrella's
+  binding-change route allows the difference (D6); the net
   change and what offset the stubs stated in the close readout (standing: `tests/test_prose_budget.py`; the sum, a
   one-time check).
 - **A7.** The rule sites of D5 and D8 state the widened rule and the
@@ -354,16 +369,16 @@ Advisory; implementers may replace them.
   figures moved are net of the spine sentences D3 keeps, and each stub's
   own pointer text is taken at about 400 characters, the existing stubs
   running 210 to 506):
-  - SDD (37,483; shed at least 19,483): Setup less its ledger rules
-    (identity, sections, resume rule, predecessor links,
-    after-compaction line: a kept section of their own) and its
-    main/master consent (about 3,800 of 5,658 move); § The Task Loop
+  - SDD (37,483; shed at least 19,483): Setup less its ledger rules,
+    its rules binding every dispatch or resume (D3) and its main/master
+    consent, about 3,500 kept as a section of their own (about 2,150 of
+    5,658 move); § The Task Loop
     whole, one reference, the cap of three fix waves and the ask after
     the third staying in its stub (about 8,600 of 9,825); § Disputes and
     adjudication (4,119); § What a report voices (1,347); § Drift found
     after the fact (1,463); § Inline mode (1,077); § Finish, its order
     rule and the answer staying in the stub (about 5,450 of 6,642). Net
-    shed about 23,000, leaving a body near 14,500 before D4's statement.
+    shed about 21,400, leaving a body near 16,100 before D4's statement.
   - Redteaming (33,183; shed at least 15,183): § Panels (5,215; the
     escalation after two degraded rounds staying in its stub),
     § Merge and finding hygiene (5,815; its § Operating stance — baseline
@@ -372,7 +387,8 @@ Advisory; implementers may replace them.
     and § Round readout (2,974); § Stop rule and terminal pass stays,
     being mostly spine (trigger, terminal pass, cap). Net shed about
     16,800, leaving a body near 16,400 before D4's statement. Further
-    candidate: § Inputs and state (2,185), less its rehydration rule.
+    candidate: § Inputs and state (2,185), less its rehydration rule,
+    artifact freeze and shared-tree rules.
   - Brainstorming (20,959; shed at least 2,959): § Proposing the
     arrangement (step 4) (5,132), the operator's confirmation of the
     preset staying in its stub. Net shed about 4,300, leaving a body
