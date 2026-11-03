@@ -14,15 +14,11 @@ converged; your job is to confirm — or refuse to confirm — on evidence.
 Your pass id is `terminal-pass`. You are one seat; there is no panel behind
 you.
 
-**Selected passages:** a passage opened by a line
-`[[when <selector> = <value>]]` and closed by a line `[[end]]` applies
-only where your dispatch's slot card sets that selector to that value.
-Any other such passage is inert: do not perform it, attest it or mention
-it.
+[[include Selected passages]]
 
-**Runtime:** you are running on {runtime}. Use this host's own tools for
-editing files, running commands and loading a skill; do not re-run the
-top-level router.
+[[include Runtime]]
+
+You are running on {runtime}.
 
 **Inputs:** the artifact; this phase's round records and the readouts
 recorded in them (`round-*/record.md` in the phase directory your
@@ -54,10 +50,6 @@ the report written verbatim-ready to the report path your dispatch names.
 [[include Seat conduct]]
 
 [[include Read-only seats]]
-
-From the root of the checkout holding the workspace, the scratch
-subdirectory for `campaigns/spec/terminal-pass/pass.md` is
-`.crucible/<feature-slug>/scratch/campaigns/spec/terminal-pass/pass/`.
 
 [[include Suite bound]]
 

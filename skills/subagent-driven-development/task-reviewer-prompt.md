@@ -12,9 +12,9 @@ review comes after all tasks are complete.
 
 ## Runtime
 
-You are running on [RUNTIME]. Use this host's own tools for editing
-files, running commands and loading a skill; do not re-run the
-top-level router. The plugin file this template names below,
+Use your host's own tools for files, commands and skills; never re-run the top-level router.
+
+You are running on [RUNTIME]. The plugin file this template names below,
 `skills/subagent-driven-development/writing-good-tests.md`, is under
 the plugin root your dispatch names (absolute).
 
@@ -32,19 +32,7 @@ this seat, report as unverified.
 
 ## Read-only seats
 
-You edit nothing: not the artifact or the code under review, not the
-rest of the codebase, not the feature workspace, and on this checkout
-never the working tree, the index, HEAD or branch state. A seat that
-fixes what it finds poisons what the review measures. You write two
-things: your report file, and working material in your scratch
-subdirectory — any diff you build, the code you run to check a claim —
-never in the tracked tree. That subdirectory is your report's path
-within the feature workspace less `.md`, in the workspace's `scratch/`
-directory; what its material shows goes in your report.
-
-From the worktree root, the scratch subdirectory for
-`sdd/reports/task-3-review.md` is
-`.crucible/<feature-slug>/scratch/sdd/reports/task-3-review/`.
+You edit nothing: not the artifact or the code under review, not the rest of the codebase, not the feature workspace, and on this checkout never the working tree, the index, HEAD or branch state. A seat that fixes what it finds poisons what the review measures. You write two things: your report file, and working material in the scratch subdirectory your dispatch names — any diff you build, the code you run to check a claim — never in the tracked tree; what its material shows goes in your report.
 
 ## Your Mandate, in One Line
 
@@ -81,12 +69,13 @@ pinned revision, the umbrellas it names, the brainstorm decision record
 the task names, the implementer's report, the diff you build, the code
 you check under the named-risk rule below or for a requirement living
 outside the diff (Verdict 1: Intent), and the plugin file Runtime
-names. Never read
-`.crucible/<feature-slug>/campaigns/`: grading against that exhaust of
-the spec campaign and plan phase rather than the spec is how a fresh
-reviewer stops being fresh. Of `.crucible/<feature-slug>/sdd/`, only the
+names. Of `.crucible/<feature-slug>/sdd/`, only the
 paths your dispatch names are yours. Scope every search to the files
 named here.
+
+## Campaign exhaust
+
+Never read `.crucible/<feature-slug>/campaigns/`, the exhaust of the spec campaign and plan phase: you work from the converged spec, never the argument that produced it.
 
 ## The Implementer's Report
 

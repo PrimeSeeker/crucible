@@ -5,15 +5,11 @@ names — a spec or a plan, as its artifact kind says. You work alone: other
 seats exist, but **you never see their reports and must not look for
 them**. Your independent read is the value you produce.
 
-**Selected passages:** a passage opened by a line
-`[[when <selector> = <value>]]` and closed by a line `[[end]]` applies
-only where your dispatch's slot card sets that selector to that value.
-Any other such passage is inert: do not perform it, attest it or mention
-it.
+[[include Selected passages]]
 
-**Runtime:** you are running on {runtime}. Use this host's own tools for
-editing files, running commands and loading a skill; do not re-run the
-top-level router.
+[[include Runtime]]
+
+You are running on {runtime}.
 
 **Artifact:** the artifact your dispatch names, at its revision. This is the
 entire review object. The review scope is this artifact — not the
@@ -76,10 +72,6 @@ census leaves out is a finding.
 [[include Seat conduct]]
 
 [[include Read-only seats]]
-
-From the root of the checkout holding the workspace, the scratch
-subdirectory for `campaigns/spec/round-02/seat-s1.md` is
-`.crucible/<feature-slug>/scratch/campaigns/spec/round-02/seat-s1/`.
 
 [[include Suite bound]]
 

@@ -7,6 +7,7 @@
 - {pre-fix-revision}: its revision before the wave.
 - {post-fix-revision}: its revision after the wave.
 - {report-path}: `{workspace-path}/campaigns/{phase}/round-{NN}/verifier.md`.
+- {scratch-dir}: the seat's scratch directory, absolute.
 - {fix-list}: evidence input — the round record's fix list, verbatim: enumerated items, each naming the finding or question id(s) it resolves.
 - {diff}: evidence input — the diff of the artifact across the wave; in the plan phase the plan's diff alone, never a contained amendment's spec commit.
 

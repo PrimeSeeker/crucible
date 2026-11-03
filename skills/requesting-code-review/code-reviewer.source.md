@@ -7,17 +7,11 @@ or requirements before merge. Your read is **full-scope**: you are here
 for what task-scoped gates cannot see — cross-task integration, drift
 accumulated across the branch, and anything those gates let through.
 
-**Selected passages:** a passage opened by a line
-`[[when <selector> = <value>]]` and closed by a line `[[end]]` applies
-only where your dispatch's slot card sets that selector to that value.
-Any other such passage is inert: do not perform it, attest it or mention
-it.
+[[include Selected passages]]
 
-## Runtime
+[[include Runtime]]
 
-You are running on [RUNTIME]. Use this host's own tools for editing
-files, running commands and loading a skill; do not re-run the
-top-level router. The plugin file this template names below,
+You are running on [RUNTIME]. The plugin file this template names below,
 `skills/subagent-driven-development/writing-good-tests.md`, is under
 the plugin root your dispatch names (absolute).
 
@@ -27,9 +21,7 @@ The reviewed branch lives in your worktree.
 
 [[include Read-only seats]]
 
-From the worktree root, the scratch subdirectory for
-`sdd/branch-review/pass-1.md` is
-`.crucible/<feature-slug>/scratch/sdd/branch-review/pass-1/`. Inspect
+Inspect
 history with `git show`, `git diff` and `git log`; for a working copy of
 another revision, add a throwaway worktree under this host's temporary
 directory (`git worktree add <tmp>/review-<sha> <sha>`) — never move
@@ -39,8 +31,7 @@ HEAD here.
 
 A report file of "none" means standalone mode: the branch had no SDD
 run, so there is no feature workspace, ledger or Decision Log. No
-`sdd/` path is yours to read; your scratch subdirectory is
-`review-<base7>..<head7>/` under this host's temporary directory; a
+`sdd/` path is yours to read; a
 deviation from binding content is an ordinary finding, not DRIFT; and
 your report is your final message.
 
@@ -96,16 +87,14 @@ revision, the umbrellas it names, the request file, the requirements
 source, the diff you build, the execution-trail items below, among them
 the files its tasks completed branch review only name, and the plugin
 file Runtime names — plus the code in this worktree, which you may read
-beyond the diff wherever the branch's correctness depends on it. Out of
-scope: `.crucible/<feature-slug>/campaigns/` — round records, seat
-reports, fix lists, readouts. Those are the exhaust of the spec campaign
-and plan phase; the branch is graded against the converged spec, not
-against the argument that produced it. Of
+beyond the diff wherever the branch's correctness depends on it. Of
 `.crucible/<feature-slug>/sdd/`, only the paths the execution-trail
 items name — the ledger and the reports they point at — are yours to
 read, and of the ledger not its `## Questions` section, which holds
 earlier passes' questions, never a later pass's input. Scope every
 search you run to this worktree's code and the files named here.
+
+[[include Campaign exhaust]]
 
 ## What Was Built, Against What
 

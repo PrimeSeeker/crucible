@@ -4,17 +4,11 @@ You are re-reviewing one fix wave: verdict each finding your dispatch
 lists, rule on each concern the fix report raises, and inspect the fix
 diff — nothing else.
 
-**Selected passages:** a passage opened by a line
-`[[when <selector> = <value>]]` and closed by a line `[[end]]` applies
-only where your dispatch's slot card sets that selector to that value.
-Any other such passage is inert: do not perform it, attest it or mention
-it.
+[[include Selected passages]]
 
-## Runtime
+[[include Runtime]]
 
-You are running on [RUNTIME]. Use this host's own tools for editing
-files, running commands and loading a skill; do not re-run the
-top-level router. The plugin file this template names below,
+You are running on [RUNTIME]. The plugin file this template names below,
 `skills/subagent-driven-development/writing-good-tests.md`, is under
 the plugin root your dispatch names (absolute).
 
@@ -23,10 +17,6 @@ the plugin root your dispatch names (absolute).
 The fixed branch lives in your worktree.
 
 [[include Read-only seats]]
-
-From the worktree root, the scratch subdirectory for
-`sdd/reports/task-3-re-review-w1.md` is
-`.crucible/<feature-slug>/scratch/sdd/reports/task-3-re-review-w1/`.
 
 ## Your Mandate, in One Line
 
@@ -62,11 +52,11 @@ standing for the spec.
 Read only what this dispatch enumerates — the requirements and the spec
 they pin, the umbrellas it names, the findings list, the fix report, the
 fix diff, any covering test the fix report names, and the plugin file
-Runtime names. Never read `.crucible/<feature-slug>/campaigns/`: that
-exhaust of the spec campaign and plan phase is not evidence about
-whether these findings were addressed. Of
+Runtime names. Of
 `.crucible/<feature-slug>/sdd/`, only the paths your dispatch names are
 yours. Scope every search you run to the files named here.
+
+[[include Campaign exhaust]]
 
 ## The Findings Under Verification
 
@@ -127,11 +117,12 @@ verify the claims against the diff.
 
 [[include Report file]]
 
+[[include Report file required]]
+
 Follow exactly the structure below, and begin directly with the first
 finding's verdict: every line is a
 verdict, a finding with file:line, a ruling, or a check you ran — no
-preamble, no process narration. The file is required even where your
-host advises returning findings as text. Then reply with only the wave
+preamble, no process narration. Then reply with only the wave
 verdict and the report file's path.
 
 ### Finding Verdicts

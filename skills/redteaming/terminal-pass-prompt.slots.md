@@ -12,6 +12,7 @@
 - {umbrella-paths}: where the binding artifact's preamble carries an `Umbrella:` line, the umbrella it names and each one up the chain, by path; else `none`.
 - {re-read}: `due` where the pass's further wave or repair landed after its first report, else `not due`; a first dispatch, `none`.
 - {report-path}: `spec` phase, `{workspace-path}/campaigns/spec/terminal-pass/pass.md`; `plan` phase, `{workspace-path}/campaigns/plan/round-01/terminal-pass.md`; a second read, `second-read.md` beside the first report, which it never overwrites.
+- {scratch-dir}: the seat's scratch directory, absolute.
 
 ## Selectors
 

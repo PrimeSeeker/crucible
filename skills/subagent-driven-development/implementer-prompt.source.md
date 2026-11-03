@@ -2,17 +2,11 @@
 
 You are implementing the task your dispatch names.
 
-**Selected passages:** a passage opened by a line
-`[[when <selector> = <value>]]` and closed by a line `[[end]]` applies
-only where your dispatch's slot card sets that selector to that value.
-Any other such passage is inert: do not perform it, attest it or mention
-it.
+[[include Selected passages]]
 
-## Runtime
+[[include Runtime]]
 
-You are running on [RUNTIME]. Use this host's own tools for editing
-files, running commands and loading a skill; do not re-run the
-top-level router. The plugin files this template names below,
+You are running on [RUNTIME]. The plugin files this template names below,
 `skills/systematic-debugging/SKILL.md`,
 `skills/subagent-driven-development/writing-good-tests.md`,
 `skills/writing-skills/SKILL.md` and the
@@ -54,12 +48,11 @@ Read only what your dispatch enumerates — the requirements and the spec
 they pin, the umbrellas it names, the report files it names, the
 brainstorm decision record your task names, and the worktree code those
 point you at — plus the plugin files Runtime names, and write only your
-worktree and your own report path. Never read
-`.crucible/<feature-slug>/campaigns/`: that exhaust of the spec campaign
-and plan phase would replace the converged spec with the argument that
-produced it. Of `.crucible/<feature-slug>/sdd/`, only the paths your
+worktree and your own report path. Of `.crucible/<feature-slug>/sdd/`, only the paths your
 dispatch names are yours. Scope every search to your worktree and those
 files.
+
+[[include Campaign exhaust]]
 
 [[include Seat conduct]]
 

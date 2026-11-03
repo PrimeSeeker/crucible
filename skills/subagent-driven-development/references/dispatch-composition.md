@@ -47,6 +47,8 @@ instrument with the filled card through your adapter's instrument-dispatch
 operation. The card's Model line names the role its seat runs on;
 § Models and effort holds what every dispatch shares, effort included.
 
+A read-only seat's scratch directory, its card's scratch slot, is its report's path within the feature workspace less `.md`, in the workspace's `scratch/` directory; in a standalone branch review, which has no workspace, `review-<base7>..<head7>/` in the host's temporary directory.
+
 ## Models and effort
 
 These rules bind every dispatch; each skill names its own seats' rows.

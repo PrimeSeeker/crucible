@@ -36,8 +36,8 @@ The splice:
   afterwards, in the agent only, and dispatch-time slots live on the card,
   so a section carries no slot token (the structure tests fail a template
   or agent holding one out of place). A value that differs by seat, such
-  as a scratch path, stays in the template's own text beside the include,
-  or the section splits.
+  as a plugin-file list, stays in the template's own text beside the
+  include, or the section splits.
 
 Rendering an agent:
 

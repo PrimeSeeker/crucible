@@ -8,6 +8,14 @@ the sections the skill composing it names.
 
 Redteam seats, the terminal pass, the branch reviewer, an umbrella's closing-review seats and implementers raise premise findings; a task reviewer raises none.
 
+## Selected passages
+
+A passage from a line `[[when <selector> = <value>]]` to a line `[[end]]` applies only where your dispatch sets that selector to that value; any other is inert: never perform, attest or mention it.
+
+## Runtime
+
+Use your host's own tools for files, commands and skills; never re-run the top-level router.
+
 ## Seat conduct
 
 Work from the worktree path your dispatch names (absolute). Never read,
@@ -19,15 +27,11 @@ keep every search you run within the bounds it sets.
 
 ## Read-only seats
 
-You edit nothing: not the artifact or the code under review, not the
-rest of the codebase, not the feature workspace, and on this checkout
-never the working tree, the index, HEAD or branch state. A seat that
-fixes what it finds poisons what the review measures. You write two
-things: your report file, and working material in your scratch
-subdirectory — any diff you build, the code you run to check a claim —
-never in the tracked tree. That subdirectory is your report's path
-within the feature workspace less `.md`, in the workspace's `scratch/`
-directory; what its material shows goes in your report.
+You edit nothing: not the artifact or the code under review, not the rest of the codebase, not the feature workspace, and on this checkout never the working tree, the index, HEAD or branch state. A seat that fixes what it finds poisons what the review measures. You write two things: your report file, and working material in the scratch subdirectory your dispatch names — any diff you build, the code you run to check a claim — never in the tracked tree; what its material shows goes in your report.
+
+## Campaign exhaust
+
+Never read `.crucible/<feature-slug>/campaigns/`, the exhaust of the spec campaign and plan phase: you work from the converged spec, never the argument that produced it.
 
 ## Review evidence
 
@@ -45,6 +49,10 @@ Write your report to the report file your dispatch names, a write this
 dispatch authorizes, in the structure this template gives: the file is
 the deliverable. If the host refuses the write, say so and put the full
 report in your final reply instead.
+
+## Report file required
+
+Write the report file even where your host advises returning findings as text.
 
 ## What binds
 

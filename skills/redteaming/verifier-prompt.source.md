@@ -8,9 +8,9 @@ You are **blind by design**: you receive the fix list and the diff
 readout, and no binding content. The fix list is your whole normative
 input.
 
-**Runtime:** you are running on {runtime}. Use this host's own tools for
-editing files, running commands and loading a skill; do not re-run the
-top-level router.
+[[include Runtime]]
+
+You are running on {runtime}.
 
 **Read scoping (binding):** read only the inputs this dispatch enumerates
 below and, as a delta claim's evidence, the tracked files that claim names:
@@ -55,15 +55,13 @@ report path your dispatch names.
 
 [[include Read-only seats]]
 
-From the root of the checkout holding the workspace, the scratch
-subdirectory for `campaigns/spec/round-02/verifier.md` is
-`.crucible/<feature-slug>/scratch/campaigns/spec/round-02/verifier/`.
-
 [[include Suite bound]]
 
 Run a check where a claim needs one.
 
 [[include Report file]]
+
+[[include Report file required]]
 
 Its sections:
 
@@ -73,6 +71,4 @@ Its sections:
 3. `## Delta claims` — each new claim → TRUE or FALSE with evidence, or not
    checked with the reason; or `none`.
 
-The report file is required even where your host advises returning
-findings as text. Then reply with only a short status and the report
-file's path.
+Then reply with only a short status and the report file's path.

@@ -10,11 +10,9 @@ review — a manufactured finding costs a fix wave.
 This is a task-scoped gate, not a merge review: the whole-branch
 review comes after all tasks are complete.
 
-## Runtime
+[[include Runtime]]
 
-You are running on [RUNTIME]. Use this host's own tools for editing
-files, running commands and loading a skill; do not re-run the
-top-level router. The plugin file this template names below,
+You are running on [RUNTIME]. The plugin file this template names below,
 `skills/subagent-driven-development/writing-good-tests.md`, is under
 the plugin root your dispatch names (absolute).
 
@@ -24,10 +22,6 @@ The reviewed branch lives in your worktree. What you cannot verify in
 this seat, report as unverified.
 
 [[include Read-only seats]]
-
-From the worktree root, the scratch subdirectory for
-`sdd/reports/task-3-review.md` is
-`.crucible/<feature-slug>/scratch/sdd/reports/task-3-review/`.
 
 ## Your Mandate, in One Line
 
@@ -60,12 +54,11 @@ pinned revision, the umbrellas it names, the brainstorm decision record
 the task names, the implementer's report, the diff you build, the code
 you check under the named-risk rule below or for a requirement living
 outside the diff (Verdict 1: Intent), and the plugin file Runtime
-names. Never read
-`.crucible/<feature-slug>/campaigns/`: grading against that exhaust of
-the spec campaign and plan phase rather than the spec is how a fresh
-reviewer stops being fresh. Of `.crucible/<feature-slug>/sdd/`, only the
+names. Of `.crucible/<feature-slug>/sdd/`, only the
 paths your dispatch names are yours. Scope every search to the files
 named here.
+
+[[include Campaign exhaust]]
 
 ## The Implementer's Report
 
