@@ -1,18 +1,25 @@
 ### Proposing the arrangement
 
-A feature's arrangement is four choices: review before code (a spec campaign, or none), the plan's form (separate with its plan phase, folded into the spec, or none), per-task review (every task, or the branch review alone), and execution (inline or subagent). The branch review is no choice: every arrangement runs it, at full scope. Three presets combine the choices, standard the usual one:
+A feature's arrangement is four choices: review before code (spec campaign or none), the plan's form (separate with its plan phase, folded into the spec, or none), per-task review (every task, or the branch review alone) and execution (inline or subagent). The branch review is no choice: every arrangement runs it, at full scope. Three presets combine the choices, standard the usual one:
 
 | Preset | Review before code | Plan | Per-task review | Execution |
 |---|---|---|---|---|
-| standard | spec campaign | separate, with its plan phase | per task, the plan's call | per task |
-| folded | spec campaign | folded into the spec, no plan phase | per task, the plan's call | per task |
-| very-small | none: a lane note | none: the note's change list | none | inline where overdetermined |
+| standard | spec campaign | separate | per task, the plan's call | per task |
+| folded | spec campaign | folded into the spec | per task, the plan's call | per task |
+| very-small | none: a lane note | none: the note's change list | none | inline only where `crucible:subagent-driven-development` § Inline mode's test holds |
 
-**Choose the preset by the overturn question** (`skills/subagent-driven-development/references/review-terms.md` § The arrangement questions): where overturning a major mechanism after code is reasonably expected, the feature takes a spec campaign; where it is not, for one of that section's two usual cases or another stated reason, it takes none where one implementer can carry it. Between the campaign presets, folded fits a plan of one or two tasks with no seam worth its own review, and standard fits the rest. Width is no test of risk, since the branch review reads the whole diff whatever its width, but it shapes the arrangement where work needs coordinating: a settled change one implementer can carry takes the very-small preset, implemented inline only where `crucible:subagent-driven-development` § Inline mode's test holds, its implementer dispatched otherwise; a settled change that needs several coordinated tasks needs a plan, which only the campaign presets carry, so it takes standard, whose campaign can be expected to stop after its first round, the stop still the stop rule's call. File and line counts are not the test and are not offered as one. An umbrella's review is chosen by its content instead (`crucible:brainstorming` § Umbrellas): it has no code of its own to review after.
+Choose the preset by the overturn question (`skills/subagent-driven-development/references/review-terms.md` § The arrangement questions):
 
-**The proposal.** As you close the design presentation, propose a preset: name it, give the overturn answer with its reason and, for folded, the plan-size reason; recommend one and let the operator rule, presenting a close call as one. Per-task review is the plan's, reported at the close of the phase that reviews the plan, and execution is chosen per task, so a departure you expect only later ("most tasks will likely be branch review only") is a heads-up, not something to confirm.
+- Overturn expected → spec campaign: folded for a plan of one or two tasks with no seam worth its own review, standard for the rest.
+- Not expected, for one of that section's two usual cases or another stated reason, and one implementer can carry it → very-small.
+- Not expected, but needing several coordinated tasks → standard, as only the campaign presets carry a plan; its campaign can be expected to stop after round 1, still the stop rule's call.
+- Width is no test of risk, since the branch review reads the whole diff, but it shapes the arrangement where work needs coordinating.
+- Never use or offer file and line counts as the test.
+- An umbrella's review goes by its content (`crucible:brainstorming` § Umbrellas): it has no code of its own to review after.
 
-What stays route-specific:
+As you close the design presentation, recommend one preset by name, with the overturn answer and its reason and, for folded, the plan-size reason. The operator rules; present a close call as one. A departure you expect only later ("most tasks will likely be branch review only") is a heads-up, not something to confirm: per-task review is the plan's call, reported at the close of the phase that reviews the plan, and execution is chosen per task.
 
-- **Folded.** `crucible:redteaming` § The folded lane carries the campaign, deferral, exit and unfolding rules.
-- **Very-small.** Draft the lane note (`crucible:brainstorming` § The very-small lane) and run the self-review on the draft before proposing, and show it with the proposal: the operator's one answer confirms or vetoes the preset and approves or amends the note, and the file is written only after it; a veto discards the draft.
+Route-specific:
+
+- Folded: `crucible:redteaming` § The folded lane carries the campaign, deferral, exit and unfolding rules.
+- Very-small: draft the lane note (`crucible:brainstorming` § The very-small lane), run the self-review on the draft before proposing, and show it with the proposal: the operator's one answer confirms or vetoes the preset and approves or amends the note. Write the file only after that answer; a veto discards the draft.

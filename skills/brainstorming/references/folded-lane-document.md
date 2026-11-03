@@ -1,11 +1,11 @@
 ### The folded lane — the combined spec+plan document (step 5)
 
-Where the operator confirmed the fold at step 4, this step writes **one combined spec+plan document** in place of a spec, under this fork of the spec contract in `crucible:brainstorming`. Everything the contract already says still holds. The **full six-section shape stays**, in order and in full — Intent, Decisions, Constraints & invariants, Interfaces & boundaries, Acceptance, Mechanism sketches. None of them folds away, and **Constraints & invariants** least of all: every seat's statement of what binds names that section.
+The combined document replaces the spec, under a fork of `crucible:brainstorming` § Spec contract; all the contract says still holds. All six spec sections stay, in order and in full; none folds away, Constraints & invariants least of all: every seat's statement of what binds names it.
 
-On top of that shape, the document carries the plan half **in the formats `crucible:writing-plans` owns**. Read that skill for the shapes and follow them exactly, inventing no lane variants of them (and don't invoke it: this skill's terminal state is unchanged).
+It adds the plan half in the formats `crucible:writing-plans` owns. Read that skill and follow its formats exactly, inventing no lane variants, but don't invoke it: the rest of this skill's flow, terminal state included, is unchanged.
 
-- **Task entries** in its per-task format.
-- **Every plan-header section, at lane scale.** **Goal** folds into Intent and is not repeated, and the **Spec pointer** takes the folded form, `Spec: this document`, under that skill's rules for it. Every other section is present, a one-liner where trivially satisfied; the ownership census is the round-0 pre-pass's arithmetic input and is never omitted.
-- **Deferral owners** as that skill's § Deferring detail places them.
+- Task entries in that skill's per-task format.
+- Every plan-header section, at lane scale. Goal folds into Intent; the Spec pointer takes its folded form, `Spec: this document`. Every other section is present, a one-liner where trivially satisfied; never omit the ownership census, the round-0 pre-pass's input.
+- Deferral owners as `crucible:writing-plans` § Deferring detail places them.
 
-Persistence: `folded.md` in the feature folder, born and committed as a spec is (`crucible:brainstorming` § Spec contract). The rest of the flow is unchanged.
+Persistence: `folded.md` in the feature folder, born and committed as a spec is.
