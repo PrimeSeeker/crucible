@@ -15,7 +15,7 @@ Execute a plan by dispatching a fresh implementer subagent per task and a single
 
 **Dispatch references:** when this skill starts and after compaction, read `skills/subagent-driven-development/references/dispatch-composition.md` and your adapter's `skills/using-crucible/references/<runtime>-dispatch.md`; both bind as if written here.
 
-**Stubs.** A reference a section names to read in full binds as if written here. Read it when its step comes, unless read since your last compaction; after compaction, re-read the step in progress's first.
+**Stubs.** A reference a section names to read in full binds as if written here. Read it when its step comes, unless read since your last compaction; after compaction, re-read the step in progress's reference first.
 
 ## Setup
 

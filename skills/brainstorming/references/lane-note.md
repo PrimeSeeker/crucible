@@ -1,6 +1,6 @@
 ### The very-small lane
 
-On the very-small lane a **lane note** takes the spec's place — drafted and shown with the lane proposal at step 4, written at this step as the operator approved it — the lane's only artifact, about a page, in four parts:
+On the very-small lane a **lane note** takes the spec's place — drafted and shown with the lane proposal at step 4, written at step 5 as the operator approved it — the lane's only artifact, about a page, in four parts:
 
 - **Intent** — what the change is for.
 - **Change list** — what changes, at file or behavior level.

@@ -59,7 +59,7 @@ section keeps its heading with a stub, one paragraph naming the
 reference and when to read it in full, so citations of the heading
 resolve unchanged and every trigger stays in the re-attached text. What
 a stub means is stated once near the top of each skill that has stubs:
-"A reference a section names to read in full binds as if written here. Read it when its step comes, unless read since your last compaction; after compaction, re-read the step in progress's first." The flip-paths stubs and
+"A reference a section names to read in full binds as if written here. Read it when its step comes, unless read since your last compaction; after compaction, re-read the step in progress's reference first." The flip-paths stubs and
 brainstorming's umbrella stub keep their own line sending a controller
 back after compaction. `tests/skill_corpus.py` reads a skill together
 with the references its stubs name, so a test follows text that moved.
