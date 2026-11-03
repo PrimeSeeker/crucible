@@ -114,6 +114,51 @@ rulings record where the work left it. No per-task review ran: yours is
 the first review of this diff. Drift from the note's binding parts is an
 ordinary finding at its staked severity, not DRIFT — on this lane the
 fix wave handles it.
+
+§ The arrangement questions, below, serves this lane's upgrade hatch:
+where a finding or question of yours shows that overturning a major
+mechanism of the change is reasonably expected now that it is coded,
+say so in it, for the operator may then move the change off the lane.
+
+## The arrangement questions
+
+Each site that applies one of these says what its answer decides there.
+
+**The overturn question.** Is overturning a major mechanism after code
+reasonably expected? A major mechanism is a part of the design other
+parts build on: a component, a rule others key on, a file role, a data
+flow, an interface between parts. Overturning one replaces, removes or
+re-shapes it; an addition, or a correction that leaves its shape
+standing, does not count. Before code the answer is a forecast from the
+design and its records; after code it is read from the code as well.
+
+Before any review, the answer is no in either of two usual cases:
+
+- the work has no major mechanism: it adds to, corrects or removes
+  within mechanisms that stay as they are;
+- its decisions are overdetermined.
+
+A no for any other reason states that reason.
+
+For an umbrella's campaign, the code is its children's: the question
+asks whether, once the children are implemented, overturning a major
+mechanism the umbrella fixes is reasonably expected, such as its split
+into children, an interface between them or a constraint they share.
+
+**Overdetermined.** Work, a whole design or a single task, is
+overdetermined when every decision in it is forced by what is already
+fixed (the codebase, binding items, decisions taken earlier) so firmly
+that no alternative survives them: a careful independent reader would
+make the same choices, so neither review before code nor a fresh
+reader's pass has one left to change.
+
+**The mark's criterion.** A plan task may take the branch review as its
+first review, with no task review of its own, where it is low in
+mechanism and nothing outside it depends on its details: it builds no
+major mechanism and leaves little of how it works for its implementer
+to decide, and later tasks, contracts and readers build on what it
+delivers, never on how it does it. The branch review runs only after
+every later task, too late for a detail something else builds on.
 [[end]]
 
 ## Premise findings
@@ -406,46 +451,6 @@ goes here. Keep to a few items at most; for doubts and misgivings, none
 is the normal case. An item carries no severity. Write each in the form
 this template gives.
 
-## The arrangement questions
-
-Each site that applies one of these says what its answer decides there.
-
-**The overturn question.** Is overturning a major mechanism after code
-reasonably expected? A major mechanism is a part of the design other
-parts build on: a component, a rule others key on, a file role, a data
-flow, an interface between parts. Overturning one replaces, removes or
-re-shapes it; an addition, or a correction that leaves its shape
-standing, does not count. Before code the answer is a forecast from the
-design and its records; after code it is read from the code as well.
-
-Before any review, the answer is no in either of two usual cases:
-
-- the work has no major mechanism: it adds to, corrects or removes
-  within mechanisms that stay as they are;
-- its decisions are overdetermined.
-
-A no for any other reason states that reason.
-
-For an umbrella's campaign, the code is its children's: the question
-asks whether, once the children are implemented, overturning a major
-mechanism the umbrella fixes is reasonably expected, such as its split
-into children, an interface between them or a constraint they share.
-
-**Overdetermined.** Work, a whole design or a single task, is
-overdetermined when every decision in it is forced by what is already
-fixed (the codebase, binding items, decisions taken earlier) so firmly
-that no alternative survives them: a careful independent reader would
-make the same choices, so neither review before code nor a fresh
-reader's pass has one left to change.
-
-**The mark's criterion.** A plan task may take the branch review as its
-first review, with no task review of its own, where it is low in
-mechanism and nothing outside it depends on its details: it builds no
-major mechanism and leaves little of how it works for its implementer
-to decide, and later tasks, contracts and readers build on what it
-delivers, never on how it does it. The branch review runs only after
-every later task, too late for a detail something else builds on.
-
 ## Report file
 
 Write your report to the report file your dispatch names, a write this
@@ -517,7 +522,4 @@ premise findings, which are the operator's to rule on.
 
 **DON'T:**
 - Say "looks good" without checking
-- Mark nitpicks as BLOCKER
 - Give feedback on code you didn't actually read
-- Be vague ("improve error handling")
-- Avoid giving a clear verdict

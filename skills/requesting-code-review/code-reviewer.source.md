@@ -71,6 +71,13 @@ rulings record where the work left it. No per-task review ran: yours is
 the first review of this diff. Drift from the note's binding parts is an
 ordinary finding at its staked severity, not DRIFT — on this lane the
 fix wave handles it.
+
+§ The arrangement questions, below, serves this lane's upgrade hatch:
+where a finding or question of yours shows that overturning a major
+mechanism of the change is reasonably expected now that it is coded,
+say so in it, for the operator may then move the change off the lane.
+
+[[include The arrangement questions]]
 [[end]]
 
 [[include Premise findings]]
@@ -241,8 +248,6 @@ rather than the implementation, say so.
 
 [[include Questions]]
 
-[[include The arrangement questions]]
-
 [[include Report file]]
 
 Follow exactly the structure below, and begin directly with the Goal
@@ -309,7 +314,4 @@ premise findings, which are the operator's to rule on.
 
 **DON'T:**
 - Say "looks good" without checking
-- Mark nitpicks as BLOCKER
 - Give feedback on code you didn't actually read
-- Be vague ("improve error handling")
-- Avoid giving a clear verdict

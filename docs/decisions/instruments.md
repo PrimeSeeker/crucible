@@ -75,7 +75,10 @@ the templates that carry it or takes a section of its own, so sharing
 adds no rule to a seat. The redteam seat takes § The goal check only
 where its card's `goal-check` selector is on, set for each seat of a
 spec campaign's round 1 (`docs/decisions/evidence-and-findings.md`).
-An umbrella's closing-review seats, composed by the controller, take
+The branch reviewer takes § The arrangement questions only where its
+card's `lane` selector is `very-small`, beside a line saying what the
+section serves there: the lane's upgrade hatch, which keys on a
+reviewer's finding or question. An umbrella's closing-review seats, composed by the controller, take
 § Premise findings, § Binding items and unrecorded choices, § Questions
 and § Location (`skills/brainstorming/references/umbrellas.md`).
 
@@ -257,7 +260,15 @@ apply them, so do the controllers that propose an arrangement, stop a
 campaign, mark a plan's tasks or work a task inline, and one home every
 reader already reaches keeps them stated once. The terminal pass, which
 checks the stop against them, gained the plugin-root slot to reach it.
-(Basis: judgment, accepted by the maintainer.)
+(Basis: judgment, accepted by the maintainer.) On 2026-11-03 the branch
+reviewer's template came to take them only on the very-small lane. Off
+it the reviewer grades no `Review: branch only` mark and has no use for
+them; on it the upgrade hatch
+(`skills/subagent-driven-development/references/very-small-lane.md`)
+fires where a reviewer's finding or question shows that overturning a
+major mechanism of the change is reasonably expected now that it is
+coded. An agent's proposal, which the maintainer accepted. (Basis:
+judgment, accepted by the maintainer.)
 
 On 2026-10-30 the two clauses that a binding item may itself be wrong
 and that a consequential choice taken for granted is a finding moved
@@ -307,6 +318,11 @@ judgment, accepted by the maintainer.)
 
 ## Changes
 
+- 2026-11-03: the branch reviewer takes § The arrangement questions
+  only where its card's `lane` selector is `very-small`, with a line
+  saying it serves the lane's upgrade hatch, and the card's `lane`
+  description names it; because off the lane the reviewer has no use
+  for the section.
 - 2026-11-02: the clauses the seven templates copied move into the
   shared seat reference, each template taking by splice the sections its
   seat follows; the redteam seat's and the terminal pass's cards lose the
