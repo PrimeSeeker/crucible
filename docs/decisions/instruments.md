@@ -20,11 +20,9 @@ reference
 are committed and never edited by hand, and the suite runs the
 generator's check mode; the splice's rules are in the generator's
 docstring. An agent's frontmatter carries a name, a description and a
-default model alias, and no tool restriction. On Claude Code a dispatch names `crucible:<name>` and its
-model and sends the filled card as the whole prompt; on Codex, and on
-Claude Code where the agent is not offered, the controller fills the card
-and the template and dispatches both
-(`skills/using-crucible/references/claude-code-dispatch.md`,
+default model alias, and no tool restriction. On Claude Code a dispatch names `crucible:<name>` and its model and sends the card's filled `## Slots` and `## Selectors` as the whole prompt; on Codex, and on Claude Code where the agent is not offered, the controller fills the card and the template and dispatches the template with those two sections. The card's title and `## Dispatch` stay with the controller
+(`skills/subagent-driven-development/references/dispatch-composition.md` § Filling a card;
+`skills/using-crucible/references/claude-code-dispatch.md`,
 `skills/using-crucible/references/codex-dispatch.md`).
 
 **One dispatch composition.** Every fresh seat, whether an instrument, a
@@ -129,6 +127,8 @@ stayed as three copies: on Codex the controller fills a template itself,
 and an include would have added a resolution step there. (Basis:
 judgment, accepted by the maintainer.) The splice removes that objection
 (§ The splice).
+
+On 2026-11-03 a seat's share of its card narrowed to the filled Slots and Selectors. The title and the Dispatch section (the operation, the model, the host's description and the blind verifier's blind-by-design rule) are the controller's parameters, which no template or shared section reads, yet every dispatch sent them to the seat: 35 to 80 words a card, by an agent's count. An agent's proposal, on which the maintainer left the call to the agent. (Basis: judgment, accepted by the maintainer.)
 
 ### The splice
 
@@ -329,6 +329,7 @@ judgment, accepted by the maintainer.)
 
 ## Changes
 
+- 2026-11-03: a seat receives only its card's filled Slots and Selectors, the title and the Dispatch section staying with the controller; because those are the controller's dispatch parameters, which every dispatch sent to a seat that never reads them.
 - 2026-11-03: the one-clause definition of a premise finding is cited at `skills/redteaming/references/premise-asks.md`, where it moved with flip-paths' § Premise findings (`docs/decisions/authoring-crucible.md`).
 - 2026-11-03: the record names every section the review terms hold, § What binds in a spec and the three arrangement-question sections included, and names the implementer beside the closing-review seats as no longer carrying the sentence on a change to the umbrella's Intent, which § Binding changes now states; because a review found both statements out of date after the sections moved.
 - 2026-11-03: the selected-passages rule, the runtime line, the rule against reading the campaign's exhaust and the report-file-required sentence become shared sections; the scratch path becomes a card slot on the six read-only seats' cards, derived once in the dispatch composition's § Filling a card, and the branch reviewer's card drops a restatement of item 4 to fit it; because each template carried its own copy, and each read-only seat derived the path from a worked example.

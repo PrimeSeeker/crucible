@@ -3,12 +3,7 @@
 Dispatch mechanics for a skill that starts seats on this runtime; the host
 map beside this file, `claude-code.md`, carries the rest.
 
-- **Dispatch an instrument** — the Agent tool with `subagent_type`
-  `crucible:<name>` for the instrument the skill names, the model named
-  explicitly, and the filled slot card as the whole prompt; the agent
-  already carries the template's fixed text. If this host does not offer
-  `crucible:<name>`, fill the slot card and the template and dispatch them
-  together through the host map's **Dispatch a fresh agent**.
+- **Dispatch an instrument** — the Agent tool with `subagent_type` `crucible:<name>` for the instrument the skill names, the model named explicitly, and the slot card's filled Slots and Selectors as the whole prompt; the agent already carries the template's fixed text. If this host does not offer `crucible:<name>`, fill the slot card and the template and dispatch the template with the card's filled Slots and Selectors through the host map's **Dispatch a fresh agent**.
 - **Resume an agent** — send a follow-up to the agent identity you recorded
   at dispatch, where the harness exposes one; its context is intact. Where
   it does not, dispatch fresh with the requirements, the report-file path

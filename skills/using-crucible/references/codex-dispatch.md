@@ -3,10 +3,7 @@
 Dispatch mechanics for a skill that starts seats on this runtime; the host
 map beside this file, `codex.md`, carries the rest.
 
-- **Dispatch an instrument** — the template path, since a plugin cannot
-  ship Codex agent roles: fill the slot card and the template and dispatch
-  the whole through the host map's **Dispatch a fresh agent** —
-  `spawn_agent` with `fork_turns: "none"`.
+- **Dispatch an instrument** — the template path, since a plugin cannot ship Codex agent roles: fill the slot card and the template and dispatch the template with the card's filled Slots and Selectors through the host map's **Dispatch a fresh agent** — `spawn_agent` with `fork_turns: "none"`.
 - **Resume an agent** — `followup_task` gives an agent you spawned a new
   task and triggers a turn; `send_message` passes a message without one.
   Address it by the canonical task name recorded at spawn.

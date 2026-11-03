@@ -104,7 +104,7 @@ Selected divergences worth knowing before reading either runtime's files:
 | load a skill | the host's skill-invocation verb, by namespaced name | the session's skill listing; expand the root alias and read that `SKILL.md` in full |
 | track a checklist | the host's todo tool | `update_plan`, one step per item, at most one `in_progress`; on codex-cli 0.162.1 only with `[tools.update_plan] enabled = true` in the Codex config |
 | dispatch a fresh agent | the host's task-dispatch tool; a dispatch carries none of the session's history | `spawn_agent` with `fork_turns: "none"` — the fresh-context guarantee is **never** left to a host default, since an omitted `fork_turns` forks the full history |
-| dispatch an instrument (dispatch reference) | the plugin's instrument agent `crucible:<name>`, with an explicit model and the filled slot card as the whole prompt; where that agent is not offered, the template path | the template path: the filled slot card and template, through `spawn_agent` with `fork_turns: "none"` — a plugin cannot ship Codex agent roles |
+| dispatch an instrument (dispatch reference) | the plugin's instrument agent `crucible:<name>`, with an explicit model and the slot card's filled Slots and Selectors as the whole prompt; where that agent is not offered, the template path | the template path: the template with the card's filled Slots and Selectors, through `spawn_agent` with `fork_turns: "none"` — a plugin cannot ship Codex agent roles |
 | resume an agent (dispatch reference) | follow up to the recorded agent identity where the harness exposes one | `followup_task` (new task, triggers a turn) or `send_message` (message only), addressed by the canonical task name recorded at spawn |
 | wait | the dispatch returns the final report | `wait_agent` returns the final status; the answer also arrives as a notification |
 | edit | the host's edit/write tools | `apply_patch` |
@@ -176,7 +176,7 @@ depends on the dispatch path:
 - **Instrument-agent path** — Claude Code's templated dispatches:
   `tools/instrument_agents.py` fills the template's one runtime slot with
   "Claude Code" when it renders the agent, and the prompt carries only the
-  filled slot card. The generator reads no runtime reference.
+  slot card's filled Slots and Selectors. The generator reads no runtime reference.
 - **Template path** — Codex, and the Claude Code fallback when an instrument
   agent is not offered: the controller fills the runtime name into the
   template's runtime slot at dispatch.

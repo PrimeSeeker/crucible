@@ -38,14 +38,7 @@ dispatches it says so beside the dispatch.
 
 ## Filling a card
 
-An instrument is dispatched from its slot card, the `.slots.md` file beside
-its template: read the card, not the template. Replace each slot's rule
-with its value, and set each selector to one value, cutting its line to
-that value and dropping its sub-bullets: a passage left unselected, `off`
-or a value you did not pick, is dropped, not narrated. Dispatch the
-instrument with the filled card through your adapter's instrument-dispatch
-operation. The card's Model line names the role its seat runs on;
-§ Models and effort holds what every dispatch shares, effort included.
+An instrument is dispatched from its slot card, the `.slots.md` file beside its template: read the card, not the template. Replace each slot's rule with its value, and set each selector to one value, cutting its line to that value and dropping its sub-bullets: a passage left unselected, `off` or a value you did not pick, is dropped, not narrated. Dispatch the instrument through your adapter's instrument-dispatch operation, sending the seat only the filled `## Slots` and `## Selectors`: the card's title and `## Dispatch` are yours. The card's Model line names the role its seat runs on; § Models and effort holds what every dispatch shares, effort included.
 
 A read-only seat's scratch directory, its card's scratch slot, is its report's path within the feature workspace less `.md`, in the workspace's `scratch/` directory; in a standalone branch review, which has no workspace, `review-<base7>..<head7>/` in the host's temporary directory.
 
