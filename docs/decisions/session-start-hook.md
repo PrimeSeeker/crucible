@@ -123,12 +123,13 @@ run. (Basis: measured; external.)
 A headless session gets the router's workflows with nobody to answer
 them: on 2026-11-04 a `claude -p` run on crucible 0.19.0, asked to add a
 feature, loaded brainstorming "as your setup requires for feature work"
-and ended on a question to the user. On 2026-11-04
-(Claude Code 2.1.317, Windows 11) a probe hook in a `claude -p` session
-saw `CLAUDE_CODE_SESSION_ATTENDED=0` and `CLAUDE_CODE_ENTRYPOINT=sdk-cli`
-in its environment, against 1 and `cli` in an interactive session's tool
-commands, while its input (session, transcript path, working directory,
-event and source) marked nothing. The host's environment-variable page,
+and ended on a question to the user. The same day (Claude Code 2.1.317,
+Windows 11) a probe hook in a `claude -p` session saw
+`CLAUDE_CODE_SESSION_ATTENDED=0` and `CLAUDE_CODE_ENTRYPOINT=sdk-cli` in
+its environment, against 1 and `cli` in an interactive CLI session's
+hook, at startup and at compaction, while its input (session, transcript
+path, working directory, event and source) carried no field saying which;
+other front-ends were not measured. The host's environment-variable page,
 read that day, lists neither variable, so the hook keys on the value 0
 alone: a host that drops or renames the variable gets the router back,
 today's behavior. With the note in place, the same request loaded no

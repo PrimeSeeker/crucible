@@ -95,8 +95,8 @@ reads the host map at the path the note gives. Any other value, or none,
 gets the router.
 The host set the variable to 0 in a `claude -p` session's hook, whose
 input carried no field marking the session headless, and to 1 in an
-interactive session's tool commands; an interactive session's hook was
-not measured (Claude Code 2.1.317, Windows 11). The host's
+interactive CLI session's hook, at startup and at compaction (Claude Code
+2.1.317, Windows 11); other front-ends were not measured. The host's
 documentation does not list the variable; should the host drop it,
 sessions get the router again.
 
