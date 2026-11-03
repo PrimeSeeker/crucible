@@ -179,8 +179,11 @@ missing element, prohibitions backfire: use the forms above.
   in the invocation (`bash <script>`, `python <script>`), never a bare
   path: packagers can strip executable bits.
 - **Size and placement.** Always-loaded text (descriptions, anything a
-  host injects at session start) is budgeted by its host. Everything else
-  is as short as its job allows. State each rule once, where its reader
+  host injects at session start) is budgeted by its host. Where a host
+  re-attaches skills cut at a fixed size after compaction, `SKILL.md`
+  stays under the cut: long step bodies go to supporting files read at
+  their step, and `SKILL.md` keeps the steps with their triggers, resume
+  rules, loop bounds, gates and rules binding beyond one step. Everything else is as short as its job allows. State each rule once, where its reader
   acts on it, and point to it from elsewhere. Give the action, its
   observable signal and at most one clause of why: how the rule was
   learned belongs in the project's decision records. Write siblings in one

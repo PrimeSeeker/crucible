@@ -1,7 +1,8 @@
-"""On-demand skill references and their stubs (skill-prose extraction lane).
+"""On-demand skill references and their stubs.
 
-A route-conditional section moved out of a SKILL.md leaves its heading
-behind with a stub naming the reference to read in full. These checks keep
+A section moved out of a SKILL.md, a route-conditional procedure or a long
+step body, leaves its heading behind with a stub naming the reference to
+read in full. These checks keep
 each stub and its reference paired: the reference exists, opens with the
 stub's own heading, and is named by exactly one stub. A shared reference is
 the exception: named by a stub in each skill that shares it, it opens with

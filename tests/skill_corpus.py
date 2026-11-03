@@ -1,9 +1,9 @@
 """A skill's text as a controller reads it: its SKILL.md plus every
 on-demand reference a stub in it sends the controller to read in full.
 
-Route-conditional sections live in `skills/<skill>/references/` and are
-loaded only on their route. A stub keeps
-the section's heading in SKILL.md and names its reference in the form
+A section moved out of SKILL.md, a route-conditional procedure or a long
+step body, lives in `skills/<skill>/references/` and is read when its route
+or step comes. A stub keeps the section's heading in SKILL.md and names its reference in the form
 ``read `skills/<skill>/references/<file>.md` in full``. Tests that read a
 skill's text read this corpus, so a check follows its text into the
 reference instead of passing vacuously once the text has moved.

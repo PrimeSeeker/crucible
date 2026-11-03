@@ -7,7 +7,9 @@ general rules: state each rule once, where its reader acts on it, and
 point to it from elsewhere; give the action, its observable signal and at
 most one clause of why, how the rule was learned going to the project's
 decision records; write siblings at one grain, detail moving to a
-supporting file or a tool's `--help`. `AGENTS.md` ("Where text goes")
+supporting file or a tool's `--help`; keep a `SKILL.md` that a host cuts
+after compaction under the cut, long step bodies going to supporting
+files. `AGENTS.md` ("Where text goes")
 names crucible's homes: how a rule was learned (incidents, measurements,
 accepted trade-offs) in the decision records, `docs/decisions/`; host
 mechanics in the adapter pair; text about crucible's own text in `docs/`;
@@ -37,17 +39,33 @@ owner text and pointers; three rules are stated on purpose for both
 controllers and seats, and `docs/authoring.md` § Paired texts lists
 them. Skills stay hand-written: only the seat templates are rendered.
 
-**Route-conditional procedures live in references.** A procedure that
-applies only on some routes sits in a reference read on demand:
-redteaming's `plan-phase.md` and `folded-lane.md`, SDD's
-`very-small-lane.md`, brainstorming's `folded-lane-document.md` and
-`lane-note.md`, and `skills/redteaming/references/flip-paths.md`, which
-redteaming and SDD share. The skill keeps the section's heading with a
-stub that names the reference and when to read it in full, says it binds
-as if written there and is re-read after compaction; the stubs keep every
-trigger in the always-loaded text. `tests/skill_corpus.py` reads a skill
-together with the references its stubs name, so a test follows text that
-moved.
+**A `SKILL.md` stays under the compaction line; route procedures and
+long step bodies live in references.** Every `SKILL.md` body, the text
+after its frontmatter, stays at or under 18,000 characters, held by
+`tests/test_skill_size.py`: after compaction Claude Code re-attaches an
+invoked skill cut at about 20,000 characters, and a cut copy loses the
+steps past the cut (§ Why). A procedure that applies only on some routes
+sits in a reference read on demand: redteaming's `plan-phase.md` and
+`folded-lane.md`, SDD's `very-small-lane.md`, brainstorming's
+`folded-lane-document.md` and `lane-note.md`, and
+`skills/redteaming/references/flip-paths.md`, which redteaming and SDD
+share. So does a long step body where the line needs it, as in SDD,
+redteaming and brainstorming. The skill keeps its spine: the overview
+and the steps in order, each with its trigger; the resume and
+rehydration rules; the loop bounds; the flow gates; the rationalization
+and red-flag tables; and every rule that binds beyond the step whose
+section holds it, at every dispatch, resume or fix application. A moved
+section keeps its heading with a stub, one paragraph naming the
+reference and when to read it in full, so citations of the heading
+resolve unchanged and every trigger stays in the re-attached text. What
+a stub means is stated once near the top of each skill that has stubs:
+"Where a section names a reference to read in full, read it when the
+section's step comes; it binds as if written here. After compaction,
+re-read the reference of the step in progress before you act, and each
+other one only when its step next comes." The flip-paths stubs and
+brainstorming's umbrella stub keep their own line sending a controller
+back after compaction. `tests/skill_corpus.py` reads a skill together
+with the references its stubs name, so a test follows text that moved.
 
 **The prose budget.** `tests/prose-budget.txt` holds each skill
 directory's word count of hand-edited text: every `*.md` in it but the
@@ -189,6 +207,68 @@ drifted, its triggers stay in both skills' always-loaded stubs, so
 noticing one is unchanged, and the two sections fell from 681 words to
 197. (Basis: judgment, accepted by the maintainer.)
 
+### The compaction line
+
+The host's documentation ("Extend Claude with skills", read 2026-11-03)
+says that after compaction the "first 5,000 tokens" of each invoked
+skill are kept, within a "combined budget of 25,000 tokens" filled from
+the most recently invoked skill. In a maintainer session that day the
+re-attached copies of SDD and redteaming, both at 0.13.0, were cut at
+exactly 19,902 characters of header line
+(`Base directory for this skill: <path>`) and body without frontmatter,
+before a 98-character truncation notice, while their sizes in bytes
+differed (20,046 and 20,040); by the tokenizer the two cuts held 6,775
+and 6,620 tokens. Upstream's issue #2481 (obra/superpowers) records the
+same cut publicly, each copy "cut to exactly 20,000 characters" ending
+in the notice, whose 98 characters bring 19,902 to 20,000. The
+documented 5,000 tokens are therefore an estimate at four characters a
+token, and the cut is about 20,000 characters, counted in characters,
+neither bytes nor tokenizer tokens. Three bodies were over it then, as
+the test counts them: SDD at 37,482 characters, redteaming at 33,182 and
+brainstorming at 20,958. A cut copy of SDD ended inside its disputes
+section, before drift, inline mode and Finish; one of redteaming inside
+its fix application, before its readout, stop rule and exit. Upstream
+met the same failure, a session that lost its fix loop's cap running 18
+rounds, and moved always-run sections into references read at their
+step. (Basis: measured; external, for the documentation and upstream's
+issue.)
+
+The test holds each body at or under 18,000 characters. The margin
+covers the header line, which carries the install path, and small
+edits; the line holds under bytes too, a body's bytes exceeding its
+characters by under 1%. At the measured 2.66 to 3.18 bytes a token the
+documented 5,000 tokens would be about 14,500 characters; the measured
+cut governs, being what the host does, and a host that moved to the
+documented figure would cut copies that the router's line on a skill
+that came back cut short still catches. The line and its test were an
+agent's proposal, which the maintainer accepted; the reasoning on the
+unit was added during the spec's review, on the agent's call. (Basis:
+measured; judgment, accepted by the maintainer.)
+
+Long step bodies move into references, as route procedures did, rather
+than into skills of their own: a new skill adds to the always-loaded
+skill index, spreads the combined re-attach budget over more skills, and
+turns a step into a skill invoked by name mid-flow. The spine stays
+because upstream's incident was a lost cap, and because a controller
+acts on gates and tables before it knows which reference applies. An
+agent's proposal, which the maintainer accepted. (Basis: judgment,
+accepted by the maintainer.)
+
+Stating once per skill what a stub means keeps each stub to its
+reference and trigger; the route stubs had restated it, at 29 to 72
+words each. After compaction only the reference of the step in progress
+is re-read before acting, the others when their step next comes, rather
+than all at once. A reference is read when its step first comes, not
+before every round as upstream reads its fix loop: it stays in context
+until compaction. The flip-paths stubs and brainstorming's umbrella stub
+keep their own line because a flip in flight belongs to no step, and an
+umbrella's rules span a child's whole brainstorm, which has no
+rehydration rule. An agent changed the convention during the spec's
+review, on a reviewer's question, from the per-stub re-read the
+maintainer had accepted, and put it to the maintainer, who left the call
+to the agent ("Your call"). (Basis: judgment, accepted by the
+maintainer.)
+
 ### The prose budget
 
 From 2026-10-07 a rewrite was to be net-negative in shipped skill prose,
@@ -311,9 +391,10 @@ maintainer.)
   trigger is in `docs/backlog/skill-text-rewrite.md`.
 - **Folding the route references back in**: they pay whenever a route
   does not run (§ Why).
-- **A byte or word target** for skills or a rewrite: declined on
-  2026-10-07; the budget is a ratchet, not a target, and writing-skills
-  sets none.
+- **A total or reduction target** for skills or a rewrite, in bytes or
+  words: declined on 2026-10-07; the budget is a ratchet, not a target,
+  and writing-skills sets none. The 18,000-character line is no such
+  target: it is a per-skill ceiling the host's cut imposes (§ Decision).
 - **A per-feature prose diffstat**: replaced by the budget file's diff.
 - **A standing ban test, or a contributor rules file, for build
   history** (§ Why).
@@ -336,6 +417,13 @@ the build-history rule included (`skills/using-crucible/SKILL.md`).
 
 ## Changes
 
+- 2026-11-03: every `SKILL.md` body at or under 18,000 characters, held
+  by a test, since the host re-attaches a skill cut at about 20,000
+  characters after compaction; long step bodies move into references as
+  route procedures do, the spine staying; what a stub means stated once
+  per skill, and after compaction only the reference of the step in
+  progress re-read before acting; the byte-or-word-target rejection
+  narrowed to totals and reductions.
 - 2026-11-03: the cross-skill citation count is dated as counted, not as
   filed: the filing date is not known.
 - 2026-11-03: placement of shared rules, so that each rule has one owner

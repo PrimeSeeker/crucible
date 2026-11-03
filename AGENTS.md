@@ -68,6 +68,12 @@ to install it: `README.md`; the layout: `docs/dual-runtime.md`.
 - **Always-loaded text has a budget.** The SessionStart envelope (router
   plus host map) stays under 10,000 characters, Claude Code's threshold for
   hook output (`hooks/README.md`; `tests/test_session_start.py`).
+- **Every `SKILL.md` fits the compaction cut.** After compaction Claude
+  Code re-attaches each invoked skill cut at about 20,000 characters, so
+  each `SKILL.md` body stays at or under 18,000 characters
+  (`tests/test_skill_size.py`): long step bodies move into references
+  read at their step, the spine staying in `SKILL.md`
+  (`docs/decisions/authoring-crucible.md`).
 - **Where text goes.** writing-skills' Size and placement bullet states
   the general rules. Their homes here: how a rule was learned (incidents,
   measurements, accepted trade-offs) goes in the decision records
