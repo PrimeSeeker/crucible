@@ -2,7 +2,7 @@
 
 ### 1. Dispatch the implementer
 
-Record BASE (`git rev-parse HEAD`) before dispatching — the task's review range starts there. Where the spec's preamble carries an `Umbrella:` line, take the receiving step of `skills/redteaming/references/flip-paths.md` § Under an umbrella: binding changes and late splits first, so a binding change it takes in falls before BASE, outside the task's range.
+Record BASE (`git rev-parse HEAD`) before dispatching — the task's review range starts there. Where the spec's preamble carries an `Umbrella:` line, take the receiving step of `skills/redteaming/references/flip-paths.md` § Under an umbrella first, so a binding change it takes in falls before BASE, outside the task's range.
 
 Dispatch instrument `implementer`, its card filled.
 
@@ -15,7 +15,7 @@ Dispatch instrument `implementer`, its card filled.
 - **NEEDS_CONTEXT:** provide the missing context and re-dispatch.
 - **BLOCKED:** assess — a context problem gets context and a re-dispatch; a reasoning problem a tier bump where one exists (the bounded role → the default role), and at the default role the operator's call, who may name the alternate role; an oversized task a split; a defective plan an escalation (`crucible:subagent-driven-development § Plan changes mid-execution`). On a report that a binding item is wrong, your ruling — the item stands where the evidence does not show it wrong, with your reason; otherwise the correction, proposed or yours — passes `skills/redteaming/references/flip-paths.md` § The containment test: a contained one you confirm and record as that section states, then re-dispatch; any other goes to the operator as a decision ask carrying the proposal. A task blocked on a premise finding waits for the operator's ruling. Never ignore an escalation or make the same model retry without changes.
 
-**A marked task** — dispatched, its plan section carrying `Review: branch only` (`crucible:writing-plans` § Per-task structure — four fields, all required) — gets no task review and no fix loop where its report is DONE, raises no concern and passes the gates of step 4. Append its completion line (step 6): it is then a task completed branch review only, the branch reviewer its first review. A report raising a concern or failing a gate sends the task to step 3, to run the task loop from there.
+**A marked task** — dispatched, its plan section carrying `Review: branch only` (`crucible:writing-plans` § Per-task structure) — gets no task review and no fix loop where its report is DONE, raises no concern and passes the gates of step 4. Append its completion line (step 6): it is then a task completed branch review only, the branch reviewer its first review. A report raising a concern or failing a gate sends the task to step 3, to run the task loop from there.
 
 Whatever the status, route what the report voices beyond its work by `crucible:subagent-driven-development § What a report voices`.
 
@@ -43,9 +43,9 @@ For a marked task they run at step 2 and also confirm what the task review would
 
 **MINOR findings** never enter the loop: they go to the ledger as they arrive (`Task <N>: minor (deferred): <one-liner>`, under `## Deferred minors`), for the branch review to triage. A contested finding goes to `crucible:subagent-driven-development § Disputes and adjudication`.
 
-**Caught errors — your own included — are the loop working, not a verdict on the author:** report them in the same flat register as any finding (`crucible:redteaming § Operating stance — baseline error rate`).
+**Caught errors — your own included — are the loop working, not a verdict on the author:** report them in the same flat register as any finding (`crucible:redteaming § Operating stance`).
 
-**Waves.** A fix wave is one fix dispatch plus its scoped re-review. Its cap and the ask after it: `crucible:subagent-driven-development § The Task Loop`. A wave whose fix dispatch only disputes is still a wave. Each wave **resumes the recorded implementer** with the open findings verbatim: a fix wave never starts a new agent in place of a live one. Where your dispatch reference states this host exposes no resume operation, each wave dispatches a fresh instrument `implementer`, its card filled by its fix-only rules: record that in the ledger.
+**Waves.** A fix wave is one fix dispatch plus its scoped re-review. A wave whose fix dispatch only disputes is still a wave. Each wave **resumes the recorded implementer** with the open findings verbatim: a fix wave never starts a new agent in place of a live one. Where your dispatch reference states this host exposes no resume operation, each wave dispatches a fresh instrument `implementer`, its card filled by its fix-only rules: record that in the ledger.
 
 **Every wave.** The implementer answers each finding **fixed** or **NOT CONFIRMED** in a fix report appended to its report file, as its template states. Before going on, confirm each fixed answer names the covering tests, the command, the output and the sibling instances (or none), and each NOT CONFIRMED its evidence. Then:
 
@@ -58,7 +58,7 @@ Never fix findings yourself in the controller session. Inline mode is the sancti
 
 ### 6. Complete the task
 
-When the review comes back clean — or every open finding is dismissed, or parked on the operator's answer (`crucible:subagent-driven-development § The Task Loop`), or step 2 completes a marked task — append the completion line:
+When the review comes back clean — or every open finding is dismissed, or parked on the operator's answer, or step 2 completes a marked task — append the completion line:
 
 - `Task <N>: complete (commits <base7>..<head7>, review clean)`
 - `Task <N>: complete (commits <base7>..<head7>, <K> parked)` after a park answer

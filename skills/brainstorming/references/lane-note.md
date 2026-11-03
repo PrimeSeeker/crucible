@@ -1,4 +1,4 @@
-### The very-small lane — the lane note (step 5)
+### The very-small lane
 
 On the very-small lane a **lane note** takes the spec's place — drafted and shown with the lane proposal at step 4, written at this step as the operator approved it — the lane's only artifact, about a page, in four parts:
 

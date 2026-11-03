@@ -27,7 +27,7 @@ Review feedback is a claim about the code. Check it before you act on it, whoeve
 
 The same discipline applies to every source, the operator included: the operator's feedback can rest on a wrong premise about the code like anyone's, and your check is where that gets caught.
 
-- **The operator rules.** Put your pushback to them as a decision ask (`crucible:using-crucible` § Decision asks), then do what they decide.
+- **The operator rules.** Put your pushback to them as a decision ask, then do what they decide.
 - **An outside reviewer never rules.** A disagreement that survives your evidence, or an item that conflicts with an earlier operator decision, goes to the operator as a decision ask.
 
 ## Implementing

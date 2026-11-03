@@ -11,7 +11,7 @@ Execute a plan by dispatching a fresh implementer subagent per task and a single
 
 **Narration:** between tool calls, narrate at most one short line — the ledger and the tool results carry the record.
 
-**Continuous execution:** do not pause to check in with the operator between tasks. Stop only for a BLOCKED status you cannot resolve, a stop-and-ask trigger, a decision ask that genuinely needs the operator, or all tasks complete — never a "should I continue?". A decision ask takes the form `crucible:using-crucible` § Decision asks states.
+**Continuous execution:** do not pause to check in with the operator between tasks. Stop only for a BLOCKED status you cannot resolve, a stop-and-ask trigger, a decision ask that genuinely needs the operator, or all tasks complete — never a "should I continue?".
 
 **Dispatch references:** when this skill starts, and again after compaction, read from the plugin root `skills/subagent-driven-development/references/dispatch-composition.md`, the rules every dispatch shares, and your adapter's `skills/using-crucible/references/<runtime>-dispatch.md`; both bind as if written here.
 
@@ -67,7 +67,7 @@ These hold in the task loop, in the branch review `crucible:requesting-code-revi
 
 ### Disputes and adjudication
 
-A finding is fixed or disputed, never dropped: a silent discard is forbidden, and every ruling is a ledger entry. Whenever a finding is disputed, collides with plan text or carries the `literal-reading` label, read `skills/subagent-driven-development/references/disputes-and-adjudication.md` in full before acting on it. Record an operator's answer to any decision ask under `## Adjudication rulings` beside the ruling it settles, and where `skills/redteaming/references/formats.md` § Feature workspace root and layout sends it.
+A finding is fixed or disputed, never dropped: a silent discard is forbidden, and every ruling is a ledger entry. Whenever a finding is disputed, collides with plan text or carries the `literal-reading` label, read `skills/subagent-driven-development/references/disputes-and-adjudication.md` in full before acting on it. Record an operator's answer to any decision ask under `## Adjudication rulings` beside the ruling it settles, and enter it in `brainstorm-decisions.md`.
 
 ### What a report voices
 
@@ -91,7 +91,7 @@ After the last task completes, run `crucible:requesting-code-review`: it owns th
 
 ## The very-small lane
 
-The third route, alongside the standard and folded presets: the very-small preset (`crucible:brainstorming` § Proposing the arrangement (step 4)), executed from a lane note and entered only as its reference states. **On entering the lane, read `skills/subagent-driven-development/references/very-small-lane.md` in full**; where it says so it supersedes this skill's rules for the lane.
+The third route, alongside the standard and folded presets: the very-small preset (`crucible:brainstorming` § Proposing the arrangement), executed from a lane note and entered only as its reference states. **On entering the lane, read `skills/subagent-driven-development/references/very-small-lane.md` in full**; where it says so it supersedes this skill's rules for the lane.
 
 ## Finish
 

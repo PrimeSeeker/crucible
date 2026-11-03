@@ -89,8 +89,8 @@ reports — are fixed in `crucible:subagent-driven-development` § Finish.
 **Later operator rulings enter the decision record (binding).** Every
 operator ruling on a decision ask after the brainstorm — in a campaign, the
 plan phase or execution — is also entered in `brainstorm-decisions.md`, in
-that record's entry form (`crucible:brainstorming` § Workspace provisioning
-(brainstorm exit)) and with its status, beside wherever its own phase
+that record's entry form (`crucible:brainstorming` § Workspace provisioning)
+and with its status, beside wherever its own phase
 records it.
 
 **Later changes to the ask enter `request.md` (binding).** While the

@@ -1,6 +1,6 @@
-## The plan phase — one verification round
+## The plan phase
 
-A plan gets **one verification round**, recorded as the single record `campaigns/plan/round-01` — no plan `round-00`, no plan `terminal-pass/`. The phase **never loops**: one fix wave at most, no round cap, no cap arithmetic. A plan finding that shows the spec wrong takes the flip path against the spec (`crucible:redteaming` § Flip paths — load-bearing content mid-campaign or mid-execution), never another plan round; a contained amendment lands in this phase's wave (below).
+A plan gets **one verification round**, recorded as the single record `campaigns/plan/round-01` — no plan `round-00`, no plan `terminal-pass/`. The phase **never loops**: one fix wave at most, no round cap, no cap arithmetic. A plan finding that shows the spec wrong takes the flip path against the spec (`crucible:redteaming` § Flip paths), never another plan round; a contained amendment lands in this phase's wave (below).
 
 **The seats.** Four dispatches; the pre-pass and the coherence seat(s) run in parallel against one frozen plan revision:
 

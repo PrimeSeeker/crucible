@@ -36,18 +36,18 @@ Explore the project state first: files, docs, recent commits, existing specs and
 ## The dialogue
 
 - **One question per message.** Prefer multiple choice where it fits; open-ended is fine too. If a topic needs more exploration, break it into successive questions.
-- **Scope-decomposition check, early:** if the request spans multiple independent subsystems, flag it before refining details. Help decompose into sub-features — what are the independent pieces, how do they relate, what order — then brainstorm the first one. Each sub-feature gets its own spec → campaign → plan cycle. Where the sub-features share decisions, an order, or both, brainstorm the umbrella that holds them first (§ Umbrellas — an effort that takes several features).
+- **Scope-decomposition check, early:** if the request spans multiple independent subsystems, flag it before refining details. Help decompose into sub-features — what are the independent pieces, how do they relate, what order — then brainstorm the first one. Each sub-feature gets its own spec → campaign → plan cycle. Where the sub-features share decisions, an order, or both, brainstorm the umbrella that holds them first (§ Umbrellas).
 - Focus on understanding: purpose, constraints, success criteria.
 
 **Approaches:** propose 2–3 with trade-offs; lead with your recommendation and why. YAGNI ruthlessly — cut unnecessary features from every approach.
 
 **Presenting the design:** sections scaled to their complexity (a few sentences to a few hundred words); ask after each section whether it looks right. Cover architecture, component boundaries, data flow, error handling, testing. Prefer small units with one clear purpose and well-defined interfaces — if internals can't change without breaking consumers, the boundaries need work. In existing codebases: follow existing patterns; include targeted improvements where existing problems affect the work; no unrelated refactoring. Close the presentation by naming the feature worktree, and its base where the git fallback sets it: the operator's approval of that message is the request `crucible:using-git-worktrees` needs.
 
-### Proposing the arrangement (step 4)
+### Proposing the arrangement
 
-**As the design presentation closes, before choosing the preset to propose, read `skills/brainstorming/references/proposing-the-arrangement.md` in full.** The operator confirms the preset; it is never yours to declare. **Record the operator's answer as the route entry in the brainstorm decision record** (§ Workspace provisioning (brainstorm exit)), whatever the preset. It is how the confirmation reaches the workspace and, from there, the campaign or the lane: a fold or a lane with no entry is one nobody downstream can see, and reads as unconfirmed. A feature past this step keeps its preset, an unfold, a late split (`skills/redteaming/references/flip-paths.md`) and the lane's upgrade hatch (`skills/subagent-driven-development/references/very-small-lane.md`) aside. The hatch is the one route entry mid-flight: its answer to move is recorded in the same record. Folding a design whose spec is written is a supersede.
+**As the design presentation closes, before choosing the preset to propose, read `skills/brainstorming/references/proposing-the-arrangement.md` in full.** The operator confirms the preset; it is never yours to declare. **Record the operator's answer as the route entry in the brainstorm decision record** (§ Workspace provisioning), whatever the preset. It is how the confirmation reaches the workspace and, from there, the campaign or the lane: a fold or a lane with no entry is one nobody downstream can see, and reads as unconfirmed. A feature past this step keeps its preset, an unfold, a late split (`skills/redteaming/references/flip-paths.md`) and the lane's upgrade hatch (`skills/subagent-driven-development/references/very-small-lane.md`) aside. The hatch is the one route entry mid-flight: its answer to move is recorded in the same record. Folding a design whose spec is written is a supersede.
 
-### Umbrellas — an effort that takes several features
+### Umbrellas
 
 Where the sub-features of an effort share decisions, an order, or both, an umbrella (`<feature-folder>/umbrella.md`) holds it, proposed at this step with its review: a spec campaign, or the operator's approval. **Before proposing or writing an umbrella, brainstorming a child of one, or resuming an effort one holds, read `skills/brainstorming/references/umbrellas.md` in full, and re-read it after compaction.**
 
@@ -55,10 +55,10 @@ Where the sub-features of an effort share decisions, an order, or both, an umbre
 
 **Verification happens at the moment of writing.** A sentence claiming something about existing code, files, or tool behavior is checked as it is written — read the file, run the command — never left for a sweep afterwards; what cannot be checked now is written with `UNVERIFIED` on it rather than asserted. Treat every unverified claim in a draft as wrong until checked: a checked sentence beats a fast one.
 
-Audience: the agent fleet. The spec quotes no message from the operator: the Intent states the goal in its own words, and the messages that asked for the work go to the workspace's request file (§ Workspace provisioning (brainstorm exit)). Sections, in order:
+Audience: the agent fleet. The spec quotes no message from the operator: the Intent states the goal in its own words, and the messages that asked for the work go to the workspace's request file (§ Workspace provisioning). Sections, in order:
 
 - **Intent** — problem, goals, non-goals.
-- **Decisions** — each with rationale. A decision is lightly held — downstream may flip it with a logged rationale — unless firm. A firm one, recorded `firm` (§ Workspace provisioning (brainstorm exit)), says in its rationale that it is the operator's firm preference.
+- **Decisions** — each with rationale. A decision is lightly held — downstream may flip it with a logged rationale — unless firm. A firm one, recorded `firm` (§ Workspace provisioning), says in its rationale that it is the operator's firm preference.
 - **Constraints & invariants** — binding by construction: invariants every task must keep, not a requirement one site meets. Every downstream agent reads it here, in the spec at its pinned revision.
 - **Interfaces & boundaries**.
 - **Acceptance** — observable outcomes; each maps to a standing test or a one-time check (`crucible:writing-plans` § Acceptance maps to checks), or states why neither.
@@ -76,7 +76,7 @@ No code beyond illustrative fragments in advisory sections. Mechanism detail cre
 
 Where the operator confirmed the fold at step 4, this step writes one combined spec+plan document in place of a spec. **Before writing it, read `skills/brainstorming/references/folded-lane-document.md` in full.**
 
-### The very-small lane — the lane note (step 5)
+### The very-small lane
 
 On the very-small lane the lane note takes the spec's place. **Before drafting it, read `skills/brainstorming/references/lane-note.md` in full.**
 
@@ -86,15 +86,15 @@ After writing, re-read with fresh eyes:
 
 1. **Placeholder scan:** any "TBD", "TODO", incomplete sections, vague requirements? Fix them. An explicit `Deferred to implementation:` marker is exempt — it is a recorded decision about who decides, not an unfinished sentence.
 2. **Internal consistency:** do sections contradict each other? Does the architecture match the feature descriptions?
-3. **Scope check:** focused enough for a single implementation plan, or does it need decomposition? Parts that share decisions, an order, or both take an umbrella (§ Umbrellas — an effort that takes several features).
+3. **Scope check:** focused enough for a single implementation plan, or does it need decomposition? Parts that share decisions, an order, or both take an umbrella (§ Umbrellas).
 4. **Ambiguity check:** could any requirement be read two ways? Pick one and make it explicit — unless it carries a `Deferred to implementation:` marker, where picking is the implementer's job and the marker is what makes that explicit.
 5. **Evidence check:** every claim the spec makes about existing code, files, or tool behavior was verified when written — you read or ran the thing — or carries `UNVERIFIED`. Resolve the tags now, or leave them standing as declared input for the campaign. Then the **consumer sweep**: for each symbol, file, or interface the design changes, deletes, or constrains, enumerate its existing consumers mechanically — by search, not from memory — and account for each one in the design. A rule stated in more than one place — docs, prompts, templates — is such an interface: its consumers are every site that states it, found by searching its key terms. Then the **trace**: for each rule the design ties to a trigger ("at each X, do Y"), name every route and phase that must reach the rule — the standard route, the folded lane, the very-small lane, an umbrella; brainstorm, spec campaign, plan phase, execution, branch review, finish — and the moment X occurs in each; where X occurs and nothing reaches the rule, the design has a gap.
 
 Fix inline; no re-review loop — fix and move on.
 
-## Workspace provisioning (brainstorm exit)
+## Workspace provisioning
 
-One workspace per feature, provisioned now by the provisioning step of `skills/redteaming/references/formats.md` § Feature workspace root and layout, living until an end its Lifecycle names — campaigns and SDD store their records in its subdirectories, laid out as that file defines. Then write the **brainstorm dialogue's decision record** to `<workspace>/brainstorm-decisions.md` — one entry per decision made in the dialogue: the decision, its rationale, and its status with its proposer, the operator or the controller (`accepted — proposed by the controller`). Statuses: `open`; `accepted`, the default for any approval ("+", "OK" and "your call" included), meaning "this until new evidence arrives"; `firm`, only on the operator's explicit word, never inferred from an approval. An answer that leaves the call to you ("your call") is recorded `accepted — delegated to the controller`, in the proposer's place, never as the operator's ruling or choice. A route entry, written for every preset (§ Proposing the arrangement (step 4)), confirms its preset only when `accepted` or `firm`. Later operator rulings enter this record too (`skills/redteaming/references/formats.md` § Feature workspace root and layout).
+One workspace per feature, provisioned now by the provisioning step of `skills/redteaming/references/formats.md` § Feature workspace root and layout, living until an end its Lifecycle names — campaigns and SDD store their records in its subdirectories, laid out as that file defines. Then write the **brainstorm dialogue's decision record** to `<workspace>/brainstorm-decisions.md` — one entry per decision made in the dialogue: the decision, its rationale, and its status with its proposer, the operator or the controller (`accepted — proposed by the controller`). Statuses: `open`; `accepted`, the default for any approval ("+", "OK" and "your call" included), meaning "this until new evidence arrives"; `firm`, only on the operator's explicit word, never inferred from an approval. An answer that leaves the call to you ("your call") is recorded `accepted — delegated to the controller`, in the proposer's place, never as the operator's ruling or choice. A route entry, written for every preset (§ Proposing the arrangement), confirms its preset only when `accepted` or `firm`. Later operator rulings enter this record too (`skills/redteaming/references/formats.md` § Feature workspace root and layout).
 
 Then write the **request** to `<workspace>/request.md`: the message that asked for the work, and each later message that changed what was asked, quoted verbatim; a message you are unsure changed it is included. A child of an umbrella quotes only the messages of its own brainstorm. It is evidence of what was asked, not the standard, and seats check the Intent against it (`skills/subagent-driven-development/references/seat-rules.md` § The goal check); it lives and is deleted with the workspace, which is never committed, so nothing in it is redacted. Later messages that change what was asked are appended to it (`skills/redteaming/references/formats.md` § Feature workspace root and layout).
 

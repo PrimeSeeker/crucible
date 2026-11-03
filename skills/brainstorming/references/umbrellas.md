@@ -1,4 +1,4 @@
-### Umbrellas — an effort that takes several features
+### Umbrellas
 
 An **umbrella** holds an effort too large for one feature: what its parts share, what each part delivers, in what order, and which parts have landed, readable in its current state from one file. Propose one where the scope-decomposition check, self-review check 3 or the design at step 4 finds sub-features that share decisions, an order, or both; sub-features that share neither are separate features.
 

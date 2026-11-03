@@ -9,7 +9,7 @@ description: Use on a just-written spec or plan, before accepting it.
 
 You are the review **controller**. A **spec campaign** is an iterated loop: dispatch a panel of fresh-context review seats at one artifact, merge their findings, apply fixes, verify them blind, read out to the operator, and repeat until the stop rule says converged — then run the terminal pass and hand off. Every step writes records; every judgment is computed from the records, never from conversation memory.
 
-**A plan is not campaigned**: it gets the **plan phase** (§ The plan phase — one verification round), which reuses the dispatch composition, the merge and finding-hygiene rules, and the readout; everything from § Round 0 to § Stop rule and terminal pass describes the spec campaign except where it says otherwise.
+**A plan is not campaigned**: it gets the **plan phase** (§ The plan phase), which reuses the dispatch composition, the merge and finding-hygiene rules, and the readout; everything from § Round 0 to § Stop rule and terminal pass describes the spec campaign except where it says otherwise.
 
 **The operator steers through decision asks without being required to read the artifact.** That is why the readouts exist and why the terminal pass checks each ask's fidelity to the findings behind it.
 
@@ -27,7 +27,7 @@ You are the review **controller**. A **spec campaign** is an iterated loop: disp
 - **The feature workspace**: `<repo>/.crucible/<feature-slug>/`, provisioned at brainstorm exit (if missing: the provisioning step in `formats.md` § Feature workspace root and layout). Records live under its `campaigns/spec/` or `campaigns/plan/`.
 - **The formats contract**: `skills/redteaming/references/formats.md` defines the workspace layout, the round record, the state vocabulary, the special records and the feature folder; records are composed by plain path-join from the repo root. If this skill and that file conflict, stop and report BLOCKED — never improvise a format.
 
-**Round records and state lines** (producer: you, at each phase boundary; consumers: your rehydration, the stop rule, the blind verifier, the terminal pass): each `round-NN/record.md` carries a `state:` line, each state written only after its phase's outputs are on disk (`formats.md` § Round record format, field 2). **Rehydration:** after compaction, resume from the workspace — the current round is the highest record number, and its state line says where to pick up; a fix list recorded while state is short of `fix-applied` is re-checked item by item against the artifact before any re-apply. A resume at `state: readout` delivers the recorded readout again, without its trace; re-delivering a readout is harmless. In the plan phase or on the folded lane, re-read that route's reference first (§ The plan phase — one verification round, § The folded lane).
+**Round records and state lines** (producer: you, at each phase boundary; consumers: your rehydration, the stop rule, the blind verifier, the terminal pass): each `round-NN/record.md` carries a `state:` line, each state written only after its phase's outputs are on disk (`formats.md` § Round record format, field 2). **Rehydration:** after compaction, resume from the workspace — the current round is the highest record number, and its state line says where to pick up; a fix list recorded while state is short of `fix-applied` is re-checked item by item against the artifact before any re-apply. A resume at `state: readout` delivers the recorded readout again, without its trace; re-delivering a readout is harmless. In the plan phase or on the folded lane, re-read that route's reference first (§ The plan phase, § The folded lane).
 
 **Artifact freeze** (binding): the artifact is never edited while any seat, verifier or pass is reading it — fixes land between dispatches.
 
@@ -53,7 +53,7 @@ On **every** spec campaign, before any panel, dispatch one standalone agent to p
 
 **Whenever you merge seat reports or disposition a finding or question, read `skills/redteaming/references/merge-and-finding-hygiene.md` in full.** **Record hygiene** (the seat rule of finding hygiene, turned on the records and readouts *you* author): a code-shaped claim in a fix list, a merged entry, a ruling, a verification outcome, a readout or a decision ask shows its evidence — what you read or ran — or carries `UNVERIFIED`, and that tag is the whole vocabulary here. It tags a *claim*; it never admits an `UNVERIFIED` *finding* to a fix list. A decision ask resting on an untagged unverified mechanical fact is a defect in the ask.
 
-### Operating stance — baseline error rate
+### Operating stance
 
 A baseline defect rate in controller-authored text is a design assumption of this process; blind verification and the terminal pass are budgeted for it. A caught error is the loop functioning, not a verdict on the author: report errors, your own included, in the flat register of any other finding — the fact, the correction, the consequence — editorializing about no one.
 
@@ -79,13 +79,13 @@ A campaign never converges on unreviewed edits: the **terminal pass (1 seat) alw
 
 **Cap: 4 rounds (degraded rounds excluded, per § Panels), its guarantee that the campaign ends; the cap bounds rounds, not spend. Where overturning a major mechanism after code is still reasonably expected at the cap, or the cap round's own fix wave adds, removes or re-shapes one, that goes to the operator as a decision ask: another round / supersede / accept-with-parked-rulings.** Cap arithmetic is derived from records, never a stored counter: rounds consumed = count of records numbered ≥ 01 with `degraded: no`.
 
-## The plan phase — one verification round
+## The plan phase
 
 **Before the plan phase's first dispatch, read `skills/redteaming/references/plan-phase.md` in full.**
 
 ## The folded lane
 
-**Where the brainstorm decision record carries the operator's confirmation of the folded preset** (`crucible:brainstorming` § Proposing the arrangement (step 4)), **read `skills/redteaming/references/folded-lane.md` in full before the campaign's round 0.**
+**Where the brainstorm decision record carries the operator's confirmation of the folded preset** (`crucible:brainstorming` § Proposing the arrangement), **read `skills/redteaming/references/folded-lane.md` in full before the campaign's round 0.**
 
 ## Exit
 
@@ -94,8 +94,8 @@ On convergence, the handoff is your **explicit move, stated in the close readout
 - a **spec campaign** hands off to `crucible:writing-plans`, an open premise ask carried in this close readout;
 - **a spec campaign whose artifact is a combined spec+plan document names `crucible:subagent-driven-development` in its close readout, not the plan skill** — the combined document already is the plan (§ The folded lane). **That close also owns the ledger seeding** — open premise asks, `deferred-minor` entries and what earlier phases left open — in the forms `skills/redteaming/references/plan-phase.md` gives the plan phase's close;
 - **a spec campaign whose artifact is an umbrella** (`<feature-folder>/umbrella.md`) **names the umbrella's landing in its close readout, not the plan skill**, and the umbrella lands by `skills/brainstorming/references/umbrellas.md` § Landing, open asks included;
-- the **plan phase** hands off to `crucible:subagent-driven-development`, its close (ledger seeding, open premise asks and what earlier phases left open included) as written in § The plan phase — one verification round.
+- the **plan phase** hands off to `crucible:subagent-driven-development`, its close (ledger seeding, open premise asks and what earlier phases left open included) as written in § The plan phase.
 
-## Flip paths — load-bearing content mid-campaign or mid-execution
+## Flip paths
 
 **Before raising a decision ask or taking a path on any of these, read `skills/redteaming/references/flip-paths.md` in full**: binding content a finding shows wrong from the spec campaign's close onward, which no fix wave flips; a supersede called for at any point, the cap ask's supersede option and an unfold included; a premise finding at any phase, the spec campaign included; a feature found to need splitting after its spec campaign closes; and, for a feature whose preamble carries an umbrella line, a binding change its umbrella needs or one landed on the base that the feature has not taken in, checked for at each round boundary. A feature found to need splitting before its spec campaign closes is no supersede: the campaign stops, and the feature goes back to brainstorming as `skills/brainstorming/references/umbrellas.md` § Children states. Re-read the reference after compaction: a flip in flight shows through its decision ask or your ruling, recorded in the round record, the plan record's fix list or the ledger you rehydrate from.

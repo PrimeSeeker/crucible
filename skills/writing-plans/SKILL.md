@@ -32,7 +32,9 @@ Detail is deferred to implementers by default; the plan pins only binding conten
 
 Binding content and non-local mechanism are never deferrable — a deferral covering either is a defect in the plan, and so is a misplaced one: named by a task whose scope it does not touch, or sitting in a task other than one whose scope it falls in. "The detail is missing" is not a defect in a recorded deferral; it is the point of one.
 
-## Per-task structure — four fields, all required
+## Per-task structure
+
+Four fields, all required:
 
 - **Why** — one paragraph: the task's role in the design, and the rationale it inherits.
 - **Files** — touch list, matching this task's row in the ownership census. Every existing consumer of what the task changes or deletes, found as the consumer sweep finds them (`crucible:brainstorming` § Spec self-review), lands in this list or in the census, or the task is not yet scoped. A task that writes or edits a decision record names the brainstorm decision record (`.crucible/<feature-slug>/brainstorm-decisions.md`) among its inputs, so its implementer attributes, and its task reviewer (for a task completed branch review only, the branch reviewer) checks, each position's basis from its entry's proposer and status.
