@@ -43,8 +43,8 @@ is the first review. The controller names each such task in the card's
 decision record where its plan section names it, and the amendment
 commits its range holds. Every full-scope pass reads each such report
 and its Decision Log against the diff over that range, as the task
-review would: each entry justified, nothing undisclosed, a deleted
-test's justification, RED before GREEN or the logged exception, and no
+review would: each entry justified, nothing undisclosed, a deletion's or
+loosening's justification, RED before GREEN or the logged exception, and no
 change to the plan or spec other than a named amendment commit; and it
 checks each decision-record position's basis against the brainstorm
 decision record. What it finds opens waves by its staked severity, and
@@ -383,6 +383,7 @@ accepted by the maintainer.)
 
 ## Changes
 
+- 2026-11-04: the branch reviewer's check of a branch-review-only task's Decision Log covers a loosening's justification beside a deletion's, since a removed assertion and any other loosening now take the deleted test's justifications (`docs/decisions/test-rules.md`).
 - 2026-11-03: the `## Questions` line forms are cited at `skills/requesting-code-review/SKILL.md` § The branch-review loop, which holds them since they left SDD's § Setup.
 - 2026-11-03: the premise-finding route is cited at `skills/redteaming/references/premise-asks.md`, where flip-paths' § Premise findings moved, so a controller handling a premise finding no longer loads the flip paths (`docs/decisions/authoring-crucible.md`).
 - 2026-11-03: a lead no longer carries a kind (`question`, `proposal`, `concern`), and the rule that a concern is CONFIRMED or LEFT goes, so the reviewer may rule any lead RECOMMENDED; because the kind's one consumer was that rule, and a concern ruled RECOMMENDED is harmless.

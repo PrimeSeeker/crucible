@@ -159,14 +159,12 @@ A failure on an input the requirements imply but never name (an empty file, a pa
 
 ## Tests in review
 
-A deleted test, parametrized case or assertion is a finding unless one of these holds, borne out by the code:
+A deleted test, parametrized case or assertion, or any other change making a test more permissive, is a finding unless one of these holds for what was deleted or loosened, borne out by the code:
 
 - the change removed its subject;
 - a remaining test covers the behavior;
-- the deletion fulfils a requirement or review finding;
-- a warning sign from `skills/subagent-driven-development/writing-good-tests.md` fits what was deleted.
-
-Any other change making a test more permissive is a finding unless such a warning sign fits what it loosened.
+- the change fulfils a requirement or review finding;
+- a warning sign from `skills/subagent-driven-development/writing-good-tests.md` fits it.
 
 ## Findings
 
