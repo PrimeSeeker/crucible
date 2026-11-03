@@ -1,0 +1,561 @@
+{
+ "about": [
+  "Resident-token manifests: the files a Claude Code controller loads on each route, by phase.",
+  "Paths are the head's. A path listed under aliases is read at the named revision from its older path (a file renamed between the counted points, counted under its role). A path absent at a revision counts as absent: before compaction-fit the moved step bodies were part of their SKILL.md, and are counted there.",
+  "Each file is listed once per route, under the phase that first loads it; compaction and re-reads are not modelled.",
+  "An entry with 'only' is loaded only when its condition arises; the figures give the every-run total and the total with those entries added.",
+  "Load forms: hooks/session-start stands for the text the SessionStart hook emits (its fixed opening line, the router file whole, a separator, the host map); a SKILL.md is its body after the frontmatter, as the Skill tool loads it, less the header line naming its install path; any other file is its whole text, as a read loads it.",
+  "Not listed: skills off every route's main line (systematic-debugging, receiving-review, dispatching-parallel-agents, writing-skills), seat templates (seats read them, the controller fills the card), and the controller's own records, the spec, the plan and the code.",
+  "Workspace copy for prose-compaction: entries may carry was {rev: path} (the path holding the role at that rev); a path absent at a rev counts as absent. At 0deefcf the moved texts (round-record.md in formats.md, premise-asks.md in flip-paths.md, umbrella-children.md in umbrellas.md, git-fallback.md in using-git-worktrees/SKILL.md) are counted in their old homes."
+ ],
+ "routes": {
+  "standard": [
+   {
+    "phase": "session start",
+    "files": [
+     {
+      "path": "hooks/session-start"
+     }
+    ]
+   },
+   {
+    "phase": "brainstorm",
+    "files": [
+     {
+      "path": "skills/brainstorming/SKILL.md"
+     },
+     {
+      "path": "skills/brainstorming/references/proposing-the-arrangement.md"
+     },
+     {
+      "path": "skills/subagent-driven-development/references/review-terms.md",
+      "was": {
+       "0deefcf": "skills/subagent-driven-development/references/seat-rules.md"
+      },
+      "why": "the arrangement questions, at step 4"
+     },
+     {
+      "path": "skills/redteaming/references/formats.md",
+      "why": "the feature folder and workspace"
+     },
+     {
+      "path": "skills/using-git-worktrees/SKILL.md"
+     },
+     {
+      "path": "skills/using-git-worktrees/references/git-fallback.md",
+      "only": "Step 1b runs (no native worktree tool, or a declared directory)"
+     },
+     {
+      "path": "skills/brainstorming/references/umbrella-children.md",
+      "was": {
+       "0deefcf": "skills/brainstorming/references/umbrellas.md"
+      },
+      "only": "a child of an umbrella"
+     }
+    ]
+   },
+   {
+    "phase": "spec campaign",
+    "files": [
+     {
+      "path": "skills/redteaming/SKILL.md"
+     },
+     {
+      "path": "skills/redteaming/references/round-record.md",
+      "why": "read when redteaming starts"
+     },
+     {
+      "path": "skills/subagent-driven-development/references/dispatch-composition.md"
+     },
+     {
+      "path": "skills/using-crucible/references/claude-code-dispatch.md"
+     },
+     {
+      "path": "skills/redteaming/references/panels.md"
+     },
+     {
+      "path": "skills/redteaming/references/merge-and-finding-hygiene.md"
+     },
+     {
+      "path": "skills/redteaming/references/fix-application.md"
+     },
+     {
+      "path": "skills/redteaming/references/round-readout.md"
+     },
+     {
+      "path": "skills/redteaming/seat-prompt.slots.md"
+     },
+     {
+      "path": "skills/redteaming/verifier-prompt.slots.md"
+     },
+     {
+      "path": "skills/redteaming/terminal-pass-prompt.slots.md"
+     },
+     {
+      "path": "skills/redteaming/references/flip-paths.md",
+      "only": "a flip path"
+     },
+     {
+      "path": "skills/redteaming/references/premise-asks.md",
+      "only": "a premise ask"
+     }
+    ]
+   },
+   {
+    "phase": "plan",
+    "files": [
+     {
+      "path": "skills/writing-plans/SKILL.md"
+     },
+     {
+      "path": "skills/redteaming/references/plan-phase.md"
+     }
+    ]
+   },
+   {
+    "phase": "execution",
+    "files": [
+     {
+      "path": "skills/subagent-driven-development/SKILL.md"
+     },
+     {
+      "path": "skills/subagent-driven-development/references/setup.md"
+     },
+     {
+      "path": "skills/subagent-driven-development/references/task-loop.md"
+     },
+     {
+      "path": "skills/subagent-driven-development/references/what-a-report-voices.md"
+     },
+     {
+      "path": "skills/subagent-driven-development/implementer-prompt.slots.md"
+     },
+     {
+      "path": "skills/subagent-driven-development/task-reviewer-prompt.slots.md"
+     },
+     {
+      "path": "skills/subagent-driven-development/re-review-prompt.slots.md"
+     },
+     {
+      "path": "skills/subagent-driven-development/references/disputes-and-adjudication.md",
+      "only": "a disputed finding"
+     },
+     {
+      "path": "skills/subagent-driven-development/references/drift.md",
+      "only": "drift found after the fact"
+     },
+     {
+      "path": "skills/subagent-driven-development/references/inline-mode.md",
+      "only": "a task implemented inline"
+     }
+    ]
+   },
+   {
+    "phase": "branch review and finish",
+    "files": [
+     {
+      "path": "skills/requesting-code-review/SKILL.md"
+     },
+     {
+      "path": "skills/requesting-code-review/code-reviewer.slots.md"
+     },
+     {
+      "path": "skills/subagent-driven-development/references/finish.md"
+     },
+     {
+      "path": "skills/finishing-a-development-branch/SKILL.md"
+     }
+    ]
+   }
+  ],
+  "folded": [
+   {
+    "phase": "session start",
+    "files": [
+     {
+      "path": "hooks/session-start"
+     }
+    ]
+   },
+   {
+    "phase": "brainstorm",
+    "files": [
+     {
+      "path": "skills/brainstorming/SKILL.md"
+     },
+     {
+      "path": "skills/brainstorming/references/proposing-the-arrangement.md"
+     },
+     {
+      "path": "skills/subagent-driven-development/references/review-terms.md",
+      "was": {
+       "0deefcf": "skills/subagent-driven-development/references/seat-rules.md"
+      },
+      "why": "the arrangement questions, at step 4"
+     },
+     {
+      "path": "skills/redteaming/references/formats.md",
+      "why": "the feature folder and workspace"
+     },
+     {
+      "path": "skills/using-git-worktrees/SKILL.md"
+     },
+     {
+      "path": "skills/using-git-worktrees/references/git-fallback.md",
+      "only": "Step 1b runs (no native worktree tool, or a declared directory)"
+     },
+     {
+      "path": "skills/brainstorming/references/folded-lane-document.md"
+     },
+     {
+      "path": "skills/writing-plans/SKILL.md",
+      "why": "the plan half's formats"
+     },
+     {
+      "path": "skills/brainstorming/references/umbrella-children.md",
+      "was": {
+       "0deefcf": "skills/brainstorming/references/umbrellas.md"
+      },
+      "only": "a child of an umbrella"
+     }
+    ]
+   },
+   {
+    "phase": "spec campaign",
+    "files": [
+     {
+      "path": "skills/redteaming/SKILL.md"
+     },
+     {
+      "path": "skills/redteaming/references/round-record.md",
+      "why": "read when redteaming starts"
+     },
+     {
+      "path": "skills/redteaming/references/folded-lane.md"
+     },
+     {
+      "path": "skills/subagent-driven-development/references/dispatch-composition.md"
+     },
+     {
+      "path": "skills/using-crucible/references/claude-code-dispatch.md"
+     },
+     {
+      "path": "skills/redteaming/references/panels.md"
+     },
+     {
+      "path": "skills/redteaming/references/merge-and-finding-hygiene.md"
+     },
+     {
+      "path": "skills/redteaming/references/fix-application.md"
+     },
+     {
+      "path": "skills/redteaming/references/round-readout.md"
+     },
+     {
+      "path": "skills/redteaming/seat-prompt.slots.md"
+     },
+     {
+      "path": "skills/redteaming/verifier-prompt.slots.md"
+     },
+     {
+      "path": "skills/redteaming/terminal-pass-prompt.slots.md"
+     },
+     {
+      "path": "retired/plan-phase-for-folded-seeding",
+      "was": {
+       "0deefcf": "skills/redteaming/references/plan-phase.md"
+      },
+      "why": "the close's ledger seeding (moved to SDD setup.md)"
+     },
+     {
+      "path": "skills/redteaming/references/flip-paths.md",
+      "only": "a flip path"
+     },
+     {
+      "path": "skills/redteaming/references/premise-asks.md",
+      "only": "a premise ask"
+     }
+    ]
+   },
+   {
+    "phase": "execution",
+    "files": [
+     {
+      "path": "skills/subagent-driven-development/SKILL.md"
+     },
+     {
+      "path": "skills/subagent-driven-development/references/setup.md"
+     },
+     {
+      "path": "skills/subagent-driven-development/references/task-loop.md"
+     },
+     {
+      "path": "skills/subagent-driven-development/references/what-a-report-voices.md"
+     },
+     {
+      "path": "skills/subagent-driven-development/implementer-prompt.slots.md"
+     },
+     {
+      "path": "skills/subagent-driven-development/task-reviewer-prompt.slots.md"
+     },
+     {
+      "path": "skills/subagent-driven-development/re-review-prompt.slots.md"
+     },
+     {
+      "path": "skills/subagent-driven-development/references/disputes-and-adjudication.md",
+      "only": "a disputed finding"
+     },
+     {
+      "path": "skills/subagent-driven-development/references/drift.md",
+      "only": "drift found after the fact"
+     },
+     {
+      "path": "skills/subagent-driven-development/references/inline-mode.md",
+      "only": "a task implemented inline"
+     }
+    ]
+   },
+   {
+    "phase": "branch review and finish",
+    "files": [
+     {
+      "path": "skills/requesting-code-review/SKILL.md"
+     },
+     {
+      "path": "skills/requesting-code-review/code-reviewer.slots.md"
+     },
+     {
+      "path": "skills/subagent-driven-development/references/finish.md"
+     },
+     {
+      "path": "skills/finishing-a-development-branch/SKILL.md"
+     }
+    ]
+   }
+  ],
+  "very-small": [
+   {
+    "phase": "session start",
+    "files": [
+     {
+      "path": "hooks/session-start"
+     }
+    ]
+   },
+   {
+    "phase": "brainstorm",
+    "files": [
+     {
+      "path": "skills/brainstorming/SKILL.md"
+     },
+     {
+      "path": "skills/brainstorming/references/proposing-the-arrangement.md"
+     },
+     {
+      "path": "skills/subagent-driven-development/references/review-terms.md",
+      "was": {
+       "0deefcf": "skills/subagent-driven-development/references/seat-rules.md"
+      },
+      "why": "the arrangement questions, at step 4"
+     },
+     {
+      "path": "skills/redteaming/references/formats.md",
+      "why": "the feature folder and workspace"
+     },
+     {
+      "path": "skills/using-git-worktrees/SKILL.md"
+     },
+     {
+      "path": "skills/using-git-worktrees/references/git-fallback.md",
+      "only": "Step 1b runs (no native worktree tool, or a declared directory)"
+     },
+     {
+      "path": "skills/brainstorming/references/lane-note.md"
+     },
+     {
+      "path": "skills/brainstorming/references/umbrella-children.md",
+      "was": {
+       "0deefcf": "skills/brainstorming/references/umbrellas.md"
+      },
+      "only": "a child of an umbrella"
+     }
+    ]
+   },
+   {
+    "phase": "execution",
+    "files": [
+     {
+      "path": "skills/subagent-driven-development/SKILL.md"
+     },
+     {
+      "path": "skills/subagent-driven-development/references/very-small-lane.md"
+     },
+     {
+      "path": "skills/subagent-driven-development/references/dispatch-composition.md"
+     },
+     {
+      "path": "skills/using-crucible/references/claude-code-dispatch.md"
+     },
+     {
+      "path": "skills/subagent-driven-development/references/setup.md"
+     },
+     {
+      "path": "skills/subagent-driven-development/references/inline-mode.md",
+      "why": "the lane's inline test"
+     },
+     {
+      "path": "skills/subagent-driven-development/references/what-a-report-voices.md"
+     },
+     {
+      "path": "skills/subagent-driven-development/implementer-prompt.slots.md",
+      "only": "the change dispatched rather than implemented inline"
+     },
+     {
+      "path": "skills/subagent-driven-development/references/disputes-and-adjudication.md",
+      "only": "a disputed finding"
+     },
+     {
+      "path": "skills/subagent-driven-development/references/drift.md",
+      "only": "drift found after the fact"
+     },
+     {
+      "path": "skills/redteaming/references/flip-paths.md",
+      "only": "a flip path"
+     },
+     {
+      "path": "skills/redteaming/references/premise-asks.md",
+      "only": "a premise ask"
+     }
+    ]
+   },
+   {
+    "phase": "branch review and finish",
+    "files": [
+     {
+      "path": "skills/requesting-code-review/SKILL.md"
+     },
+     {
+      "path": "skills/requesting-code-review/code-reviewer.slots.md"
+     },
+     {
+      "path": "skills/subagent-driven-development/re-review-prompt.slots.md"
+     },
+     {
+      "path": "skills/subagent-driven-development/references/finish.md"
+     },
+     {
+      "path": "skills/finishing-a-development-branch/SKILL.md"
+     }
+    ]
+   }
+  ],
+  "umbrella campaign": [
+   {
+    "phase": "session start",
+    "files": [
+     {
+      "path": "hooks/session-start"
+     }
+    ]
+   },
+   {
+    "phase": "brainstorm",
+    "files": [
+     {
+      "path": "skills/brainstorming/SKILL.md"
+     },
+     {
+      "path": "skills/brainstorming/references/proposing-the-arrangement.md"
+     },
+     {
+      "path": "skills/subagent-driven-development/references/review-terms.md",
+      "was": {
+       "0deefcf": "skills/subagent-driven-development/references/seat-rules.md"
+      },
+      "why": "the arrangement questions, at step 4"
+     },
+     {
+      "path": "skills/redteaming/references/formats.md",
+      "why": "the feature folder and workspace"
+     },
+     {
+      "path": "skills/using-git-worktrees/SKILL.md"
+     },
+     {
+      "path": "skills/using-git-worktrees/references/git-fallback.md",
+      "only": "Step 1b runs (no native worktree tool, or a declared directory)"
+     },
+     {
+      "path": "skills/brainstorming/references/umbrellas.md"
+     },
+     {
+      "path": "skills/brainstorming/references/umbrella-children.md",
+      "why": "writing the umbrella's entries"
+     }
+    ]
+   },
+   {
+    "phase": "spec campaign",
+    "files": [
+     {
+      "path": "skills/redteaming/SKILL.md"
+     },
+     {
+      "path": "skills/redteaming/references/round-record.md",
+      "why": "read when redteaming starts"
+     },
+     {
+      "path": "skills/subagent-driven-development/references/dispatch-composition.md"
+     },
+     {
+      "path": "skills/using-crucible/references/claude-code-dispatch.md"
+     },
+     {
+      "path": "skills/redteaming/references/panels.md"
+     },
+     {
+      "path": "skills/redteaming/references/merge-and-finding-hygiene.md"
+     },
+     {
+      "path": "skills/redteaming/references/fix-application.md"
+     },
+     {
+      "path": "skills/redteaming/references/round-readout.md"
+     },
+     {
+      "path": "skills/redteaming/seat-prompt.slots.md"
+     },
+     {
+      "path": "skills/redteaming/verifier-prompt.slots.md"
+     },
+     {
+      "path": "skills/redteaming/terminal-pass-prompt.slots.md"
+     },
+     {
+      "path": "skills/redteaming/references/flip-paths.md",
+      "only": "a flip path"
+     },
+     {
+      "path": "skills/redteaming/references/premise-asks.md",
+      "only": "a premise ask"
+     }
+    ]
+   },
+   {
+    "phase": "landing",
+    "files": [
+     {
+      "path": "skills/subagent-driven-development/references/setup.md",
+      "was": {
+       "0deefcf": "skills/redteaming/references/plan-phase.md"
+      },
+      "why": "the kinds of open items the landing sends on"
+     },
+     {
+      "path": "skills/finishing-a-development-branch/SKILL.md"
+     }
+    ]
+   }
+  ]
+ }
+}
