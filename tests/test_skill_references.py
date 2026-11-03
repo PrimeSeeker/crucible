@@ -85,6 +85,10 @@ EXPECTED = {
         "skills/brainstorming/SKILL.md",
         "skills/brainstorming/references/proposing-the-arrangement.md",
     ),
+    (
+        "skills/using-git-worktrees/SKILL.md",
+        "skills/using-git-worktrees/references/git-fallback.md",
+    ),
 }
 
 #: References more than one skill's stub names; each of their stubs is a

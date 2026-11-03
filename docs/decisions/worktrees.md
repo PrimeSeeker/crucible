@@ -43,13 +43,7 @@ exists is the answer: the agent picks a fresh name or checks out the
 existing branch deliberately, never forcing past it
 (`crucible:using-git-worktrees § 1b. Git Worktree Fallback`).
 
-**Setup and baseline at SDD Setup.** Brainstorming runs Steps 0–1 only.
-SDD Setup runs the worktree skill's Steps 2–3, project setup and the
-clean baseline, in the checkout it works from, unless that skill just
-ran them creating the worktree there, and records
-`Baseline: <result> at <sha7>` in the ledger; a resumed controller that
-finds the line skips both (`crucible:subagent-driven-development
-§ Setup`).
+**Setup and baseline at SDD Setup.** Brainstorming runs Steps 0–1 only. SDD Setup runs project setup and the clean baseline from its own copy of the worktree skill's Steps 2–3 (`skills/subagent-driven-development/references/setup.md`), in the checkout it works from, unless that skill just ran them creating the worktree there, and records `Baseline: <result> at <sha7>` in the ledger; a resumed controller that finds the line skips both (`crucible:subagent-driven-development § Setup`). The git fallback is a reference of its own, read only where Step 1b runs (`skills/using-git-worktrees/references/git-fallback.md`).
 
 ## Why
 
@@ -145,6 +139,8 @@ ambiguous. On 2026-10-19 the result became a ledger line, since "unless
 that skill already ran them" left a resumed controller unable to tell.
 (Basis: judgment, accepted by the maintainer.)
 
+On 2026-11-03 the two steps were copied into SDD's setup reference, and the git fallback moved out of the skill into a reference, to cut what agents read: the worktree skill loads at brainstorming on every route, where only Steps 0–1 run, and the fallback runs only where no native tool serves, a feature starts inside another's worktree, or the instructions declare a directory. An agent's reading of session transcripts also found SDD Setup rarely reloading the skill, leaving the two steps to recall. The copy, about 120 words, is an accepted duplicate: the skill keeps its own for standalone use. An agent's proposal, on which the maintainer left the call to the agent. (Basis: judgment, accepted by the maintainer.)
+
 ## Rejected
 
 - **A worktree by default, with no request**: the native tool's own
@@ -170,6 +166,7 @@ that skill already ran them" left a resumed controller unable to tell.
 
 ## Changes
 
+- 2026-11-03: SDD Setup runs project setup and the clean baseline from its own copy of the worktree skill's Steps 2–3, and the git fallback moved into `skills/using-git-worktrees/references/git-fallback.md` behind a stub; because the skill loads on every route where the fallback rarely runs, and SDD Setup rarely reloaded the skill for the two steps.
 - 2026-11-02: why Step 0's comparison holds in a submodule moved here
   from the skill, which keeps only the probe's reading, and was checked
   against git 2.56.0.

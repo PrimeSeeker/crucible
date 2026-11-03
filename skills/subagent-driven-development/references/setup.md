@@ -8,7 +8,21 @@
 - **In another checkout** (`git worktree list`): continue there, working from that checkout's path; create no worktree and provision no empty workspace here. Where your host cannot work from another path, stop and tell the operator where the workspace is.
 - **Nowhere:** create the isolated worktree with `crucible:using-git-worktrees`, and provision the workspace in the checkout that step leaves you in.
 
-In the checkout you work from, run the provisioning step (`skills/redteaming/references/formats.md` § Feature workspace root and layout) — re-running it changes nothing, so run it rather than assume. Then run `crucible:using-git-worktrees` Steps 2–3 there, the project setup and the clean baseline — unless that skill just ran them, creating the worktree above — and record the result in the ledger (`crucible:subagent-driven-development § Setup`) under `## Progress` as `Baseline: <result> at <sha7>`. A ledger that already carries that line means both ran: skip them on resume.
+In the checkout you work from, run the provisioning step (`skills/redteaming/references/formats.md` § Feature workspace root and layout) — re-running it changes nothing, so run it rather than assume. Then run the project setup and the clean baseline there (below) — unless `crucible:using-git-worktrees` just ran them, its Steps 2–3, creating the worktree above — and record the result in the ledger (`crucible:subagent-driven-development § Setup`) under `## Progress` as `Baseline: <result> at <sha7>`. A ledger that already carries that line means both ran: skip them on resume.
+
+**Project setup:** Detect the project type from the files at its root and run the matching setup command:
+
+| Marker file | Setup command |
+|-------------|---------------|
+| package.json | `npm install` |
+| Cargo.toml | `cargo build` |
+| requirements.txt | `pip install -r requirements.txt` |
+| pyproject.toml | `poetry install` |
+| go.mod | `go mod download` |
+
+Several may apply; run each match. None matching means no dependency install is needed.
+
+**Clean baseline:** Run the project's own test command (`npm test`, `cargo test`, `pytest`, `go test ./...`) to ensure the workspace starts clean. **If tests fail:** Report failures, ask whether to proceed or investigate. **If tests pass:** Report ready.
 
 **Read the plan once** — its spec pointer included: the header line naming the spec at its pinned revision and what the pin makes binding — and create a todo per task.
 
