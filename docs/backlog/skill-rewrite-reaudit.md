@@ -53,6 +53,8 @@ lane's inline path. With the re-audit: add those reads under their
 conditions and re-count all three revisions; count what seats read
 alongside what controllers load.
 
+The prose compaction (2026-11-03) re-counted the routes with the new references added to the manifest (`docs/crucible/2026-11-03-prose-compaction/resident-tokens.json` and `.md`); re-count with that manifest too.
+
 `resident_tokens.py` names the model whose tokenizer it counts with;
 where that model has been retired by then, re-count all three revisions
 with its successor, not the head alone, so the comparison stays on one
