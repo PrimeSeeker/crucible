@@ -9,7 +9,7 @@ most of it. Three `SKILL.md` files are over the 20,000-byte line
 upstream uses for a skill that survives compaction whole:
 subagent-driven-development (46,565 bytes), redteaming (40,662) and
 brainstorming (24,257) (sizes by `git cat-file -s` at `a3db87f`; the
-line: `docs/backlog/skill-size-after-compaction.md`).
+line: `docs/decisions/authoring-crucible.md` § The compaction line).
 `docs/backlog/skill-text-rewrite.md` records that size follows
 mechanisms: placement alone, worth about 11% of the text, will not
 halve it, and retiring mechanisms that do not pay is the larger lever.
