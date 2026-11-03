@@ -42,7 +42,7 @@ Overlaps are ordered by the dependency order: `tests/test_skill_references.py` T
 - **D4's statement.** T1 writes it near the top of the SDD `SKILL.md`; T2 and T3 write the same statement in theirs, changed only where a skill's own noun differs; T4 records the convention, quoting no wording that diverges from T1's. Its content is D4's; its wording is T1's.
 - **The stub.** Every new stub is one paragraph under the moved heading, carrying a sentence `tests/skill_corpus.py`'s `STUB_RE` matches (``read `skills/<skill>/references/<file>.md` in full``), its trigger and any spine item of D3 its step keeps; its reference opens with the stub's heading and has no other stub, and its basename does not open with REPORT, SUMMARY, FINDINGS or ANALYSIS, case-blind (the host refuses a subagent's write to such a file: `skills/using-crucible/references/claude-code-dispatch.md`, Report-name filter). Each task adds its pairs to `EXPECTED` in `tests/test_skill_references.py`.
 - **The body measure.** T1–T3 measure a body as the characters after the frontmatter's closing fence and hold it at or under 17,999, so it passes whichever boundary T4 fixes; T4's test fixes the boundary (its marker) and reads every `skills/*/SKILL.md`.
-- **The prose budget.** Each of T1–T5 offsets its own additions within its skill directory by D6's rule and lowers or raises its own line to the new count, stating its net in its report; T6 checks the sum against `d78398c`'s (56,979). A task that cannot offset within its skill reports the shortfall; the shortfall goes to the operator as D6 states, never as an edit to the umbrella on this branch.
+- **The prose budget.** Each of T1–T5 offsets its own additions within its skill directory by D6's rule and lowers or raises its own line to the new count, stating its net in its report; T6 checks the sum against `d78398c`'s (56,979). A task that cannot offset within its skill reports its net, and the sum carries it: only a sum above 56,979 at T6 is a shortfall, which goes to the operator as D6 states, never as an edit to the umbrella on this branch.
 - **The counted head.** T6 counts the HEAD at its start, which carries T1–T5.
 - **The reviewer's selector.** T5 keys the splice on the branch reviewer card's existing `lane` selector, value `very-small`.
 
@@ -70,7 +70,7 @@ Overlaps are ordered by the dependency order: `tests/test_skill_references.py` T
 
 **Files.** `skills/subagent-driven-development/SKILL.md`; its new references; `tests/test_skill_references.py` (`EXPECTED`); `tests/prose-budget.txt` (SDD line). Consumers checked, none edited: `skills/subagent-driven-development/references/very-small-lane.md` and `skills/requesting-code-review/SKILL.md` (they cite § Finish, § Disputes and adjudication and § The Task Loop, step N, which resolve through the kept headings); `skills/redteaming/references/flip-paths.md` (line 54) and `very-small-lane.md` (line 11), which cite § Setup for the ledger rules and are reached because those rules stay under § Setup (Contract); `tests/test_instrument_dispatch_skills.py` (reads the skill through its stub corpus).
 
-**Contract.** Enacts D3, D4 (writes the statement; the very-small-lane stub drops what it carries; the flip-paths stub keeps its after-compaction line), D6 (SDD's offsets). Produces the statement (Inter-task contracts) and SDD's `EXPECTED` pairs. The ledger rules and the rules binding every dispatch or resume stay within § Setup, in its section beside the stub or under a subheading directly below it, so citations of `crucible:subagent-driven-development` § Setup reach them. Owns the spec's marker at Mechanism sketches § Indicative allocation, for SDD's sites.
+**Contract.** Enacts D3, D4 (writes the statement; the very-small-lane stub drops what it carries; the flip-paths stub keeps its after-compaction line), D6 (SDD's offsets). Produces the statement (Inter-task contracts) and SDD's `EXPECTED` pairs. The ledger rules and the rules binding every dispatch or resume stay within § Setup, under a subheading directly below its stub (the stub test allows one paragraph under the stub's heading), so citations of `crucible:subagent-driven-development` § Setup reach them. Owns the spec's marker at Mechanism sketches § Indicative allocation, for SDD's sites.
 
 Deferred to implementation: the reference file names and the exact text boundaries, within D3 and the stub contract.
 
@@ -78,7 +78,7 @@ Deferred to implementation: the reference file names and the exact text boundari
 - Happy: the body measures at or under 17,999 characters (one-time measurement); the suite passes; every moved heading keeps a stub that names its reference and trigger.
 - Edge: a compaction mid-task — the statement sends the controller to the task loop's reference before it acts, and the cap and its ask are in the stub; the very-small lane's citation of § Finish lands on the stub; `§ The Task Loop, step N` citations still resolve.
 - Error: a bare `§` citation inside moved text left unqualified is a finding; a stub of two paragraphs fails `tests/test_skill_references.py`.
-- Integration: the A4 comparison of every passage that left the `SKILL.md` against its reference, each difference listed, and each offset removal listed with the passage that still states it; the SDD prose line at or below 17,337, or the shortfall reported.
+- Integration: the A4 comparison of every passage that left the `SKILL.md` against its reference, each difference listed, and each offset removal listed with the passage that still states it; the SDD prose line and its net reported (Inter-task contracts, The prose budget).
 
 ### T2 — Redteaming under the line
 
@@ -94,7 +94,7 @@ Deferred to implementation: the reference file names and the exact text boundari
 - Happy: the body at or under 17,999 characters (one-time measurement); the suite passes.
 - Edge: a compaction mid-campaign — the rehydration rule and the statement send the controller to the reference of the phase in progress; two consecutive degraded rounds still escalate from the spine.
 - Error: as T1's.
-- Integration: the A4 comparison as in T1; the redteaming prose line at or below 15,797, or the shortfall reported.
+- Integration: the A4 comparison as in T1; the redteaming prose line and its net reported.
 
 ### T3 — Brainstorming under the line
 
@@ -110,7 +110,7 @@ Deferred to implementation: the reference file name and the exact text boundary,
 - Happy: the body at or under 17,999 characters (one-time measurement); the suite passes.
 - Edge: the step-4 stub states that the operator confirms the preset and that the route entry is recorded; the very-small lane's draft-and-show sequence is reached through it.
 - Error: as T1's.
-- Integration: the A4 comparison as in T1; the brainstorming prose line at or below 6,135, or the shortfall reported.
+- Integration: the A4 comparison as in T1; the brainstorming prose line and its net reported.
 
 ### T4 — The line's test and the rule sites
 
