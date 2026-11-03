@@ -36,7 +36,7 @@ With it:
 
 - re-count the resident-token manifests
   (`docs/crucible/2026-11-03-compaction-fit/resident-tokens.json`, with
-  `resident_tokens.py` beside it) at the head of the day, against the
+  `resident_tokens.py` beside it) at the then-current head, against the
   baseline in the decision record;
 - in the new runs' transcripts, look for controllers re-reading a moved
   step's reference after compaction before acting on that step.

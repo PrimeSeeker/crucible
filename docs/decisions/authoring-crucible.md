@@ -243,7 +243,9 @@ documented figure would cut copies that the router's line on a skill
 that came back cut short still catches. The line and its test were an
 agent's proposal, which the maintainer accepted; the reasoning on the
 unit was added during the spec's review, on the agent's call. (Basis:
-measured; judgment, accepted by the maintainer.)
+measured; judgment, accepted by the maintainer, for the line and its
+test; judgment, an agent's call the maintainer has not ruled on, for
+the reasoning on the unit.)
 
 Long step bodies move into references, as route procedures did, rather
 than into skills of their own: a new skill adds to the always-loaded
@@ -251,8 +253,11 @@ skill index, spreads the combined re-attach budget over more skills, and
 turns a step into a skill invoked by name mid-flow. The spine stays
 because upstream's incident was a lost cap, and because a controller
 acts on gates and tables before it knows which reference applies. An
-agent's proposal, which the maintainer accepted. (Basis: judgment,
-accepted by the maintainer.)
+agent's proposal, which the maintainer accepted; the list of what the
+spine keeps was reworked during the spec's review, on the agent's
+calls. (Basis: judgment, accepted by the maintainer, for the move and
+the spine; judgment, an agent's call the maintainer has not ruled on,
+for the rework of the spine's list.)
 
 Stating once per skill what a stub means keeps each stub to its
 reference and trigger; the route stubs had restated it, at 29 to 72
@@ -291,8 +296,9 @@ work, a flip path, a child of an umbrella):
 Across the rewrite the every-run load fell by 11% on the standard and
 folded routes, 15% on the very-small lane and 2% on an umbrella's own
 campaign. The compaction fit lowered it by 1,407 tokens on the standard
-and folded routes and by 4,409 on the very-small lane, disputes, drift
-and inline mode now loading only when they occur; it raised an umbrella
+and folded routes, disputes, drift and inline mode now loading only when
+they occur, and by 4,409 on the very-small lane, which no longer loads
+the task loop and loads disputes and drift only when they occur; it raised an umbrella
 campaign's by 252, and the load with every event's file by about 780 on
 the standard and folded routes, through the stubs and the headings the
 references repeat. The manifests are Claude Code's and say nothing about
@@ -465,6 +471,9 @@ the build-history rule included (`skills/using-crucible/SKILL.md`).
 
 ## Changes
 
+- 2026-11-03: the compaction fit's basis tags name the agent's calls the
+  maintainer has not ruled on, and the very-small lane's token saving is
+  attributed to the files it no longer loads, both misstated when added.
 - 2026-11-03: resident tokens per route counted before the skill text
   rewrite, before the compaction fit and after it, as the baseline a
   later measurement compares with; the full-rewrite re-open trigger
