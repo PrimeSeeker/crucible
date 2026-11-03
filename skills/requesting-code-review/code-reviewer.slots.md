@@ -21,7 +21,7 @@
 ## Selectors
 
 - lane: very-small | off
-  - very-small: the lane text under Binding Content, with § The arrangement questions; set on the very-small lane
+  - very-small: the pointer under Binding Content to the lane text and § The arrangement questions; set on the very-small lane
   - off: none; any other branch, standalone mode included
 
 ## Dispatch

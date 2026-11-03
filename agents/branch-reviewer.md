@@ -78,47 +78,7 @@ plainly did not consider, whether the branch applies it there or
 departs from it, report a finding labeled literal-reading naming the
 item and the case.
 [[when lane = very-small]]
-This branch is on the very-small lane, so the pointer above names its
-lane note, not a spec. What binds is the note's Intent, Acceptance and
-Out of scope, and, where the note's preamble carries an `Umbrella:`
-line, the umbrella content above, the note standing for the spec; its
-Change list is advisory, and the `Departure:` lines delivered with the
-rulings record where the work left it. No per-task review ran: yours is
-the first review of this diff. Drift from the note's binding parts is an
-ordinary finding at its staked severity, not DRIFT — on this lane the
-fix wave handles it.
-
-§ The arrangement questions, below, serves this lane's upgrade hatch:
-where a finding or question of yours shows that overturning a major
-mechanism of the change is reasonably expected now that it is coded,
-say so in it, for the operator may then move the change off the lane.
-
-## The arrangement questions
-
-Each site that applies one of these says what its answer decides there.
-
-**The overturn question.** Is overturning a major mechanism after code
-reasonably expected? A major mechanism is a part of the design other
-parts build on: a component, a rule others key on, a file role, a data
-flow, an interface between parts. Overturning one replaces, removes or
-re-shapes it; an addition, or a correction that leaves its shape
-standing, does not count. Before code the answer is a forecast from the
-design and its records; after code it is read from the code as well.
-
-Before any review, the answer is no in either of two usual cases:
-
-- the work has no major mechanism: it adds to, corrects or removes
-  within mechanisms that stay as they are;
-- its decisions are overdetermined.
-
-A no for any other reason states that reason.
-
-**Overdetermined.** Work, a whole design or a single task, is
-overdetermined when every decision in it is forced by what is already
-fixed (the codebase, binding items, decisions taken earlier) so firmly
-that no alternative survives them: a careful independent reader would
-make the same choices, so neither review before code nor a fresh
-reader's pass has one left to change.
+This branch is on the very-small lane: read `skills/requesting-code-review/very-small-lane-review.md` and `skills/subagent-driven-development/references/review-terms.md` § The arrangement questions, both under the plugin root your dispatch names, and follow them.
 [[end]]
 
 ## Premise findings
@@ -148,7 +108,7 @@ Read only what this dispatch enumerates — the spec at that pinned
 revision, the umbrellas it names, the request file, the requirements
 source, the diff you build, the execution-trail items below, among them
 the files its tasks completed branch review only name, and the plugin
-file Runtime names — plus the code in this worktree, which you may read
+files this template names — plus the code in this worktree, which you may read
 beyond the diff wherever the branch's correctness depends on it. Of
 `.crucible/<feature-slug>/sdd/`, only the paths the execution-trail
 items name — the ledger and the reports they point at — are yours to
