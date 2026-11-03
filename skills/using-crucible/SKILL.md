@@ -67,7 +67,7 @@ Host mechanics are adapter-mediated, never assumed. Your runtime adapter is a pa
 - `crucible:redteaming` — on a just-written spec or plan, before accepting it.
 - `crucible:requesting-code-review` — when a branch's tasks are complete or before merging.
 - `crucible:receiving-review` — when review feedback arrives from outside crucible's review loops, before acting on it.
-- `crucible:dispatching-parallel-agents` — for 2+ independent tasks with no shared state.
+- `crucible:dispatching-parallel-agents` — for 2+ independent tasks with no shared state, outside crucible's own seat dispatches.
 - `crucible:systematic-debugging` — on any bug, test failure or unexpected behavior, before proposing fixes.
 - `crucible:using-git-worktrees` — before feature work or plan execution that needs isolation.
 - `crucible:finishing-a-development-branch` — when tested work needs integration.

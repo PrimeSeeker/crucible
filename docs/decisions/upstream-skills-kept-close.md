@@ -18,9 +18,7 @@ tasks are independent only where they share no state, need no ordering
 and neither reads the other's output, and tasks that are not
 independent run one at a time, whatever the host permits; and its
 review steps, where each agent's diff is checked, not only its summary, a check from upstream's verification-before-completion.
-It carries none of crucible's seat machinery. Redteaming starts
-its seats and leaves the rest of the fan-out mechanics to it
-(`crucible:redteaming § Panels`).
+It carries none of crucible's seat machinery, and crucible's own seat dispatches do not use it: the router's Skill Index scopes it to fan-outs outside them, and redteaming's panels state the one rule they need, every seat the host admits started before waiting for any (`crucible:redteaming § Panels`).
 
 **systematic-debugging** is upstream's text except five lines of its
 `SKILL.md`, a note in each of two references, and root-cause-tracing's
@@ -136,6 +134,8 @@ lines to carry past later upstream releases, against a success report
 nobody checks. (Basis: external, for upstream's check; judgment,
 accepted by the maintainer.)
 
+Until 2026-11-03 redteaming's panels left the rest of the fan-out mechanics to dispatching-parallel-agents, and the router's index line matched any two independent tasks, so a controller starting a panel or a closing review's seats could load the skill's 938 words, whose examples fix failing tests, for the one rule the panels already state. An agent's proposal, on which the maintainer left the call to the agent. (Basis: measured, for the word count; judgment, accepted by the maintainer.)
+
 ### Receiving review
 
 The first design dropped upstream's receiving-code-review: "No human code
@@ -180,6 +180,7 @@ accepted by the maintainer.)
 
 ## Changes
 
+- 2026-11-03: redteaming's panels no longer leave fan-out mechanics to dispatching-parallel-agents, and the router's index scopes the skill to fan-outs outside crucible's own seat dispatches: a panel needs only the rule it states itself, and loading the skill for it cost the skill's whole text.
 - 2026-11-03: systematic-debugging's departures are counted as five
   lines, the count having missed the 2026-11-02 removal, and step 3's
   clause on tasks that are not independent says so again: a wording
