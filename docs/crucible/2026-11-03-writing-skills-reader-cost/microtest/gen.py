@@ -6,7 +6,7 @@ apply the finding to the file as it stood before the fix, writing its edits as J
 
     python gen.py [--repo <repository root>] [--prompts <dir>] [--rewrite-at <commit>]
 
-Runs write their JSON to out/, beside this file; the prompts go to a temporary directory by default.
+Runs write their JSON where --out names (a new temporary directory by default; the committed runs are in out/, beside this file), and the prompts go where --prompts names (likewise temporary by default).
 """
 import argparse, pathlib, subprocess, tempfile
 
@@ -14,9 +14,11 @@ HERE = pathlib.Path(__file__).resolve().parent
 ap = argparse.ArgumentParser()
 ap.add_argument("--repo", default=str(HERE.parents[3]))
 ap.add_argument("--prompts", default=None, help="where prompts go; a new temporary directory by default")
+ap.add_argument("--out", default=None, help="where runs write their JSON; a new temporary directory by default")
 ap.add_argument("--rewrite-at", default=None, help="the commit whose skills/writing-skills/SKILL.md the rewrite arm uses")
 args = ap.parse_args()
-REPO, OUT = pathlib.Path(args.repo), HERE / "out"
+REPO = pathlib.Path(args.repo)
+OUT = pathlib.Path(args.out or tempfile.mkdtemp(prefix="microtest-out-"))
 PROMPTS = pathlib.Path(args.prompts or tempfile.mkdtemp(prefix="microtest-"))
 PROMPTS.mkdir(parents=True, exist_ok=True)
 OUT.mkdir(exist_ok=True)
@@ -99,3 +101,4 @@ for cname, c in cases.items():
         with (PROMPTS / f"prompt-{cname}-{aname}.md").open("w", encoding="utf-8", newline="\n") as f:
             f.write(p)
 print("prompts in", PROMPTS)
+print("runs write to", OUT)

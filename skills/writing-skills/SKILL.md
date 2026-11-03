@@ -5,14 +5,14 @@ description: Use when creating, editing or compacting text that instructs agents
 
 # Writing Skills
 
-This skill covers text agents act on: skills, instruction files, rules, prompts and templates, hook-injected text. Each is as short as its job allows; § Reader cost and compaction pay only with reuse, so a one-off prompt takes the rest. A skill is guidance an agent loads when its description matches the situation, not the story of one problem solved once. Project conventions go in the host's session-start instruction file (`CLAUDE.md` on Claude Code, `AGENTS.md` on Codex), not a skill; a constraint a check can enforce goes in the check.
+This skill covers text agents act on: skills, instruction files, rules, prompts and templates, hook-injected text. Each is as short as its job allows; a one-off prompt takes that and § Match the form to the failure, the rest paying only with reuse. A skill is guidance an agent loads when its description matches the situation, not the story of one problem solved once. Project conventions go in the host's session-start instruction file (`CLAUDE.md` on Claude Code, `AGENTS.md` on Codex), not a skill; a constraint a check can enforce goes in the check.
 
 ## Reader cost
 
 A text costs its tokens times its reads, for each reader: an orchestrating agent every run, each dispatched agent every dispatch, each session at start.
 
 - Measure what each reader loads and how often, in tokens, not words; a character-based estimate is close enough to compare two versions.
-- Count the written text before and after an edit, never a design-time estimate: those run low.
+- Judge cost by counting the written text, never by a design-time estimate: those run low.
 - Always-loaded text (descriptions, session-start injections) is budgeted by its host.
 - Load each rule where its reader acts on it: text every session or dispatch loads holds only what each reader needs; a long step body goes in a file read at that step.
 - State each rule once and point to it from elsewhere. For one sentence in a file its reader would not otherwise load, state the sentence: a pointer pays only where its reader already loads the target. Never a pointer longer than its rule.
@@ -84,7 +84,7 @@ For an agent that knows a rule and breaks it; other failures take the table's fo
 - **Red flags:** the thoughts just before the violation, so the agent can catch itself.
 - **Trigger on the moment before:** the description can name where the violation happens ("before writing implementation code").
 
-## Start with the host's own tooling
+## The host's own tooling
 
 Scaffold and evaluate with each host's skill creator; this skill covers what those leave out.
 
@@ -99,7 +99,7 @@ Frontmatter needs `name` and `description`. The name, at most 64 characters of l
 
 ## Structure
 
-- **Files.** `SKILL.md` alone, unless part of it serves only one step or one reader, or there is heavy reference material or a reusable tool; principles and short code stay inline. Cite every supporting file from `SKILL.md`, saying when to read it.
+- **Files.** `SKILL.md` alone, unless a long passage serves only one step or one reader, or there is heavy reference material or a reusable tool; principles and short code stay inline. Cite every supporting file from `SKILL.md`, saying when to read it.
 - **Compaction cut.** Where a host re-attaches skills cut at a fixed size after compaction, `SKILL.md` stays under the cut: long step bodies go to files read at their step; it keeps the steps with their triggers, resume rules, loop bounds, gates, rationalization tables, red-flags lists and rules binding beyond one step.
 - **Cross-references** name the skill (`crucible:systematic-debugging`) or the file's path and say whether it is required; never force-load one, as an `@path` import does.
 - **Flowcharts** only for a non-obvious decision, a loop an agent might leave too early, or an A-versus-B choice; reference material takes a table, code a code block, linear steps a numbered list. Style: `skills/writing-skills/graphviz-conventions.dot`.

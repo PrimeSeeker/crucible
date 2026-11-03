@@ -2,9 +2,9 @@
 
 ## Procedure
 
-1. Inventory: list the file's rules as atomic items, every obligation, condition, format, ordering, pointer, rationale and example, each rated core, edge or support. For a file over a few hundred words, a completeness critic reads the file against the inventory and adds what it missed.
+1. Inventory: list the file's rules as atomic items, every obligation, condition, format, ordering, pointer, rationale and example, each rated core, edge or support. For a file over a few hundred words, a completeness critic reads the file against the inventory and adds what it missed. Before any writing, the text's owner rules which items retire, and the inventory marks them.
 2. One writer: for accreted text (tutorial passages, anecdotes, layered patches), it re-derives the file from the inventory without reading the original; for dense rule text, it line-edits.
-3. Blind check: a checker who does not open the original reads the rewrite against the inventory, marks each item present, weakened, missing or retired, and lists what the rewrite adds.
+3. Blind check: a checker who does not open the original reads the rewrite against the inventory, marks each item present, weakened or missing, or retired where the inventory marks it so, and lists what the rewrite adds.
 4. Repair and check again until nothing is missing or weakened; the check after the last repair is the one that counts, and its "added" list, never empty, never ends the loop.
 5. Run the project's own checks after every write.
 6. Optionally, scenario questions drawn from the original, answered under the rewrite and graded only on core and edge items; read the partial grades by hand.
@@ -34,6 +34,6 @@ Each tightens wording; none retires a rule.
 ## What not to cut
 
 - Anything code or tests read: frontmatter, cited headings, read triggers, generated-include markers.
-- Rules with recorded evidence.
+- Rules with recorded evidence, and rules the owner recorded as a preference.
 - A reason the rule needs to be read right, in one clause.
 - The spine of a `SKILL.md` that a host re-attaches after compaction: what the compaction cut keeps.
