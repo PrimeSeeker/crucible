@@ -1,19 +1,23 @@
 """Build the fix-recipe micro-test prompts: two real review findings x four guidance arms.
 
 Arms: control (writing-skills SKILL.md at the pre-change commit), recipe and recipe2 (control plus one
-sentence each), rewrite (SKILL.md as it stands in the working tree). Each prompt asks a fresh agent to
+sentence each), rewrite (SKILL.md at the commit --rewrite-at names; the arm is left out without it). Each prompt asks a fresh agent to
 apply the finding to the file as it stood before the fix, writing its edits as JSON to out/.
 
-    python gen.py [--repo <repository root>] [--prompts <dir>]
+    python gen.py [--repo <repository root>] [--prompts <dir>] [--rewrite-at <commit>]
+
+Runs write their JSON to out/, beside this file; the prompts go to a temporary directory by default.
 """
-import argparse, pathlib, subprocess
+import argparse, pathlib, subprocess, tempfile
 
 HERE = pathlib.Path(__file__).resolve().parent
 ap = argparse.ArgumentParser()
 ap.add_argument("--repo", default=str(HERE.parents[3]))
-ap.add_argument("--prompts", default=str(HERE / "prompts"), help="where prompts go (not committed)")
+ap.add_argument("--prompts", default=None, help="where prompts go; a new temporary directory by default")
+ap.add_argument("--rewrite-at", default=None, help="the commit whose skills/writing-skills/SKILL.md the rewrite arm uses")
 args = ap.parse_args()
-REPO, PROMPTS, OUT = pathlib.Path(args.repo), pathlib.Path(args.prompts), HERE / "out"
+REPO, OUT = pathlib.Path(args.repo), HERE / "out"
+PROMPTS = pathlib.Path(args.prompts or tempfile.mkdtemp(prefix="microtest-"))
 PROMPTS.mkdir(parents=True, exist_ok=True)
 OUT.mkdir(exist_ok=True)
 
@@ -34,8 +38,9 @@ arms = {
     "control": ws,
     "recipe": ws.replace(anchor, recipe),
     "recipe2": ws.replace(anchor, recipe2),
-    "rewrite": (REPO / "skills/writing-skills/SKILL.md").read_text(encoding="utf-8"),
 }
+if args.rewrite_at:
+    arms["rewrite"] = git_show(f"{args.rewrite_at}:skills/writing-skills/SKILL.md")
 
 cases = {
     "setup": {

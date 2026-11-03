@@ -5,11 +5,11 @@ description: Use when creating, editing or compacting text that instructs agents
 
 # Writing Skills
 
-This skill covers text agents act on: skills, instruction files, rules, prompts and templates, hook-injected text. All of it applies to a one-off prompt but compaction, which pays only with reuse. A skill is guidance an agent loads when its description matches the situation, not the story of one problem solved once. Project conventions go in the host's session-start instruction file (`CLAUDE.md` on Claude Code, `AGENTS.md` on Codex), not a skill; a constraint a check can enforce goes in the check.
+This skill covers text agents act on: skills, instruction files, rules, prompts and templates, hook-injected text. Each is as short as its job allows; § Reader cost and compaction pay only with reuse, so a one-off prompt takes the rest. A skill is guidance an agent loads when its description matches the situation, not the story of one problem solved once. Project conventions go in the host's session-start instruction file (`CLAUDE.md` on Claude Code, `AGENTS.md` on Codex), not a skill; a constraint a check can enforce goes in the check.
 
 ## Reader cost
 
-A text costs its tokens times its reads, for each reader: an orchestrating agent every run, each dispatched agent every dispatch, each session at start. Each text is as short as its job allows.
+A text costs its tokens times its reads, for each reader: an orchestrating agent every run, each dispatched agent every dispatch, each session at start.
 
 - Measure what each reader loads and how often, in tokens, not words; a character-based estimate is close enough to compare two versions.
 - Count the written text before and after an edit, never a design-time estimate: those run low.
@@ -23,7 +23,7 @@ A text costs its tokens times its reads, for each reader: an orchestrating agent
 - Write siblings in one list or section at the same grain; detail that breaks the grain goes to a supporting file or a tool's `--help`.
 - A fix revises the sentence that owns the case; its added words are the rule's new condition or action, stated as the sentence states its others, while the finding's reasons, its failure scenario and what a pointer already defines stay out of the text.
 - A review counts excess as a finding, as it counts an omission: text no reader acts on, a restatement of what its reader already loads, a pointer longer than its rule, a second clause of why.
-- Before compacting, or when a text's measured load has grown, **read `skills/writing-skills/compacting.md` in full**.
+- Before compacting a text, **read `skills/writing-skills/compacting.md` in full**.
 
 ## Match the form to the failure
 
@@ -99,7 +99,7 @@ Frontmatter needs `name` and `description`. The name, at most 64 characters of l
 
 ## Structure
 
-- **Files.** `SKILL.md` alone, unless there is heavy reference material (100 lines or more) or a reusable tool; principles and short code stay inline. Cite every supporting file from `SKILL.md`, saying when to read it.
+- **Files.** `SKILL.md` alone, unless part of it serves only one step or one reader, or there is heavy reference material or a reusable tool; principles and short code stay inline. Cite every supporting file from `SKILL.md`, saying when to read it.
 - **Compaction cut.** Where a host re-attaches skills cut at a fixed size after compaction, `SKILL.md` stays under the cut: long step bodies go to files read at their step; it keeps the steps with their triggers, resume rules, loop bounds, gates, rationalization tables, red-flags lists and rules binding beyond one step.
 - **Cross-references** name the skill (`crucible:systematic-debugging`) or the file's path and say whether it is required; never force-load one, as an `@path` import does.
 - **Flowcharts** only for a non-obvious decision, a loop an agent might leave too early, or an A-versus-B choice; reference material takes a table, code a code block, linear steps a numbered list. Style: `skills/writing-skills/graphviz-conventions.dot`.

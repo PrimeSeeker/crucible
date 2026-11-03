@@ -5,7 +5,7 @@
 1. Inventory: list the file's rules as atomic items, every obligation, condition, format, ordering, pointer, rationale and example, each rated core, edge or support. For a file over a few hundred words, a completeness critic reads the file against the inventory and adds what it missed.
 2. One writer: for accreted text (tutorial passages, anecdotes, layered patches), it re-derives the file from the inventory without reading the original; for dense rule text, it line-edits.
 3. Blind check: a checker who does not open the original reads the rewrite against the inventory, marks each item present, weakened, missing or retired, and lists what the rewrite adds.
-4. Repair, then check again after the last repair: a checker's "added" list is never empty, so a loop keyed on it always repairs.
+4. Repair and check again until nothing is missing or weakened; the check after the last repair is the one that counts, and its "added" list, never empty, never ends the loop.
 5. Run the project's own checks after every write.
 6. Optionally, scenario questions drawn from the original, answered under the rewrite and graded only on core and edge items; read the partial grades by hand.
 

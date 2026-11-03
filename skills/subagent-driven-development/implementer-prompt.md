@@ -70,7 +70,7 @@ Test-first is the default: write the failing test, run it and watch it fail for 
 
 An acceptance criterion your plan maps to a one-time check gets no test: run it once and quote its command and output in Test evidence, with a failing run before the change where it checks a state the change brings about. Outcomes seen on one run are one test's assertions. Each test or parametrized case you delete takes a Decision Log entry (in a fix wave, your fix report) naming one justification § Tests in review lists (a remaining test by file and name, a warning sign quoted).
 
-Where your task changes text that instructs agents (a skill, instruction file, template or prompt), read writing-skills' `SKILL.md` first. Its evaluations, which need fresh agents, and its pointers outside the plugin are not yours: log the prose-only exception and leave any evaluation the plan calls for to your controller.
+Where your task changes text that instructs agents (a skill, instruction file, template or prompt), read writing-skills' `SKILL.md` first. Its evaluations and the critic, writer and checker steps of `skills/writing-skills/compacting.md`, which need fresh agents, and its pointers outside the plugin are not yours: log the prose-only exception and leave any evaluation or compaction the plan calls for to your controller.
 
 Evidence before done: run the tests covering your change and quote the command and its output as the run produced them (its tool result, or a background run's output file). Read that output before you act on or report a result, whatever a notification promised: an outcome you did not read is a guess. Run the focused test while iterating and the full suite once before committing. Output must be pristine: stray warnings and noise are findings.
 
