@@ -101,7 +101,7 @@ decision record, with the operator's ruling where one has come since or
 else as open for its dialogue, and the child removes the note as a
 clarification its spec states (`skills/brainstorming/references/umbrellas.md`
 § Landing; `skills/brainstorming/references/umbrella-children.md`
-§ Children; `skills/redteaming/references/flip-paths.md`
+§ Children; `skills/redteaming/references/premise-asks.md`
 § Premise findings).
 
 **Work left open at the landing.** An umbrella has no ledger, so what
@@ -396,6 +396,7 @@ judgment, an agent's call the maintainer has not ruled on.)
 
 ## Changes
 
+- 2026-11-03: the premise-finding route is cited at `skills/redteaming/references/premise-asks.md`, where flip-paths' § Premise findings moved, so a controller handling a premise finding no longer loads the flip paths (`docs/decisions/authoring-crucible.md`).
 - 2026-11-03: a feature with no umbrella line keeps at its finish only a trigger, the `git grep` for its slug, and the check that it was in flight when the umbrella was written moves to `skills/brainstorming/references/umbrella-children.md` § Marks; because every route's finish read a procedure that only a child already in flight when its umbrella was written uses.
 - 2026-11-03: the umbrellas reference splits by reader: `skills/brainstorming/references/umbrella-children.md` holds § Children, § Edits, § Marks and § Resuming, with flip-paths' § Under an umbrella (raising a late split or a binding change, and taking one in at each boundary), and `skills/brainstorming/references/umbrellas.md` keeps the shape, review, landing, closing and closing review; because a child's controller loaded the whole reference, and flip-paths for one section, to act on the children's side alone (`docs/decisions/authoring-crucible.md`).
 - 2026-11-03: what binds is stated once for controllers, in `skills/subagent-driven-development/references/review-terms.md` § What binds in a spec, and once for seats, in the shared seat reference's § What binds, with § Binding changes for what a review seat flags; § Children points to the controller statement; so that the sites restating it share one statement every controller already reads.

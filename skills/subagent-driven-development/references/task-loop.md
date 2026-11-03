@@ -64,4 +64,4 @@ When the review comes back clean — or every open finding is dismissed, or park
 - `Task <N>: complete (commits <base7>..<head7>, <K> parked)` after a park answer
 - `Task <N>: complete (commits <base7>..<head7>, branch review only)` for a task completed branch review only, its leads written first
 
-Mark the todo complete and move on. Never move to the next task while an open BLOCKER/MAJOR finding is neither fixed nor dismissed nor parked on the operator's answer. An open premise finding is a decision ask, not an open BLOCKER/MAJOR: it holds no completion by itself (`skills/redteaming/references/flip-paths.md` § Premise findings).
+Mark the todo complete and move on. Never move to the next task while an open BLOCKER/MAJOR finding is neither fixed nor dismissed nor parked on the operator's answer. An open premise finding is a decision ask, not an open BLOCKER/MAJOR: it holds no completion by itself (`skills/redteaming/references/premise-asks.md` § Premise findings).

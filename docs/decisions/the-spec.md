@@ -74,7 +74,7 @@ or a firm decision is wrong, goes to the operator as a decision ask at
 any phase, the spec campaign included, never confirmed as contained;
 where it is also a binding item found wrong, a firm decision or a lane
 note's Intent, its route governs
-(`skills/redteaming/references/flip-paths.md` § Premise findings;
+(`skills/redteaming/references/premise-asks.md` § Premise findings;
 `docs/decisions/evidence-and-findings.md`).
 
 **Requirements by pointer.** The converged spec is a shared input every
@@ -339,6 +339,7 @@ measured.)
 
 ## Changes
 
+- 2026-11-03: the premise-finding route is cited at `skills/redteaming/references/premise-asks.md`, where flip-paths' § Premise findings moved, so a controller handling a premise finding no longer loads the flip paths (`docs/decisions/authoring-crucible.md`).
 - 2026-11-03: what binds is cited at its one controller statement, `skills/subagent-driven-development/references/review-terms.md` § What binds in a spec, moved there from flip-paths' opening so every route's controller reads it from brainstorm on (`docs/decisions/instruments.md`).
 - 2026-11-03: citations follow the rules to their owners: what binds to
   flip-paths' opening, the measured finding classes to the evidence

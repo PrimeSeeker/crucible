@@ -101,7 +101,7 @@ ruling that upholds it after the stop takes the flip paths. One still
 open at the campaign's close is carried in its close readout, and
 seeded into the ledger as open at SDD's Setup; an umbrella's goes to the
 operator with the landing ask (`docs/decisions/umbrellas.md`;
-`skills/redteaming/references/flip-paths.md` § Premise findings).
+`skills/redteaming/references/premise-asks.md` § Premise findings).
 
 **Focused checks.** Panel seats, the round-0 pre-pass, the blind
 verifier and the terminal pass run a focused check where a claim needs
@@ -402,6 +402,7 @@ trim.)
 
 ## Changes
 
+- 2026-11-03: the premise-finding route is cited at `skills/redteaming/references/premise-asks.md`, where flip-paths' § Premise findings moved, so a controller handling a premise finding no longer loads the flip paths (`docs/decisions/authoring-crucible.md`).
 - 2026-11-03: a premise ask open at the campaign's close is seeded into the ledger at SDD's Setup, the ledger's only seeding writer, not at the plan phase's or the folded campaign's close (`docs/decisions/records-and-workspace.md`).
 - 2026-11-03: the overturn question's reading for an umbrella's campaign is cited at its own section, split from § The arrangement questions so the seats that never review an umbrella's campaign stop receiving it.
 - 2026-11-03: the arrangement questions' citation follows their move from the shared seat reference to `skills/subagent-driven-development/references/review-terms.md`, a reference of their own, so a controller that applies them no longer loads the seat rules.

@@ -122,7 +122,7 @@ already require it or the readout listed it as a minor, improvement or
 lead;
 other work is new scope, a feature of its own. Where the cap is spent,
 the operator's answer is the escalation's answer and may open the wave
-(`skills/redteaming/references/flip-paths.md` § Premise findings;
+(`skills/redteaming/references/premise-asks.md` § Premise findings;
 `crucible:subagent-driven-development § Plan changes mid-execution`).
 
 **Minors.** A minor rides a wave something else opened, and never opens
@@ -383,6 +383,7 @@ accepted by the maintainer.)
 
 ## Changes
 
+- 2026-11-03: the premise-finding route is cited at `skills/redteaming/references/premise-asks.md`, where flip-paths' § Premise findings moved, so a controller handling a premise finding no longer loads the flip paths (`docs/decisions/authoring-crucible.md`).
 - 2026-11-03: a lead no longer carries a kind (`question`, `proposal`, `concern`), and the rule that a concern is CONFIRMED or LEFT goes, so the reviewer may rule any lead RECOMMENDED; because the kind's one consumer was that rule, and a concern ruled RECOMMENDED is harmless.
 - 2026-11-03: the findings a very-small lane's last pass left open no longer reach the standard route's branch reviewer as `Lane:` leads at their staked severity after the lane's upgrade hatch, nor a BLOCKER or MAJOR one it leaves the close readout; the brainstorm the hatch invokes takes them in its incoming document instead, because the carry-over sat in text every standard run reads to serve a rare move (`docs/decisions/routes.md`).
 - 2026-11-02: the build-history exemption for the feature folder's

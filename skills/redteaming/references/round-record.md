@@ -108,7 +108,7 @@ Fields, in order:
    the two once.
    An entry merged from a premise finding carries the label `premise`
    after its severity, `- F4 MAJOR premise`; its route is
-   `skills/redteaming/references/flip-paths.md` § Premise findings.
+   `skills/redteaming/references/premise-asks.md` § Premise findings.
 
    **Origins element** (binding): every entry names the per-seat finding
    ids it accounts for —

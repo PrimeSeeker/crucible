@@ -55,7 +55,7 @@ readouts carry it until it is ruled, and work goes on while it is open
 the operator of one in a one-line message when it is raised, not
 waiting for the close readout. An open one is carried across each
 phase's close until ruled
-(`skills/redteaming/references/flip-paths.md` § Premise findings).
+(`skills/redteaming/references/premise-asks.md` § Premise findings).
 
 **The goal check.** Before reading the Intent, each seat of a spec
 campaign's round 1 and the branch reviewer restate in one sentence the
@@ -441,6 +441,7 @@ records that cite "the audit" draw on these figures. (Basis: measured.)
 
 ## Changes
 
+- 2026-11-03: the premise-finding route is cited at `skills/redteaming/references/premise-asks.md`, where flip-paths' § Premise findings moved, so a controller handling a premise finding no longer loads the flip paths (`docs/decisions/authoring-crucible.md`).
 - 2026-11-03: who raises premise findings is stated in the shared seat reference's preamble and the task reviewer's own template, since the task reviewer no longer takes § Premise findings (`docs/decisions/instruments.md`).
 - 2026-11-02: the `literal-reading` label is the execution reviewers',
   a redteam seat raising such a case as a finding naming the item and

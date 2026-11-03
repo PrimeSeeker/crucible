@@ -59,8 +59,8 @@ section keeps its heading with a stub, one paragraph naming the
 reference and when to read it in full, so citations of the heading
 resolve unchanged and every trigger stays in the re-attached text. What
 a stub means is stated once near the top of each skill that has stubs:
-"A reference a section names to read in full binds as if written here. Read it when its step comes, unless read since your last compaction; after compaction, re-read the step in progress's reference first." The flip-paths stubs and
-brainstorming's two umbrella stubs keep their own line sending a controller
+"A reference a section names to read in full binds as if written here. Read it when its step comes, unless read since your last compaction; after compaction, re-read the step in progress's reference first." The flip-paths stubs,
+redteaming's premise-findings stub and brainstorming's two umbrella stubs keep their own line sending a controller
 back after compaction. `tests/skill_corpus.py` reads a skill together
 with the references its stubs name, so a test follows text that moved.
 
@@ -188,6 +188,8 @@ On 2026-11-03 its § Round record format and the per-round directory listing mov
 
 The same day the umbrellas reference split by reader. A child's brainstorm loaded all of it, 2,302 words, though a child acts on its § Children, § Edits, § Marks and § Resuming alone, and a child's execution read `skills/redteaming/references/flip-paths.md` for the step that takes in a binding change at each boundary, a 263-word section. Those four sections and flip-paths' § Under an umbrella moved into `skills/brainstorming/references/umbrella-children.md`, 1,218 words, which a stub of its own sends a child's controller to; `skills/brainstorming/references/umbrellas.md`, 1,381 words, keeps what the umbrella's own controller and the landing that completes it act on. The umbrella's own controller reads both, its load rising by the moved flip-paths section. An agent's proposal, on which the maintainer left the call to the agent. (Basis: measured, for the words; judgment, accepted by the maintainer.)
 
+Then flip-paths' § Premise findings moved into `skills/redteaming/references/premise-asks.md`, 499 words, with a stub of its own in redteaming that takes the premise trigger the flip-paths stub had carried. Seats raise premise findings at every phase, and a controller handling one loaded all of flip-paths, 1,413 words after the umbrella move, for that section; a flip now reads 918. The citers of the section, in the skills and the records, point at the new file. An agent's proposal, on which the maintainer left the call to the agent. (Basis: measured, for the words; judgment, accepted by the maintainer.)
+
 ### References read on demand
 
 Measured on 2026-10-01 over one project's sessions since 2026-08-25, in
@@ -266,8 +268,9 @@ words each. After compaction only the reference of the step in progress
 is re-read before acting, the others when their step next comes, rather
 than all at once. A reference is read when its step first comes, not
 before every round as upstream reads its fix loop: it stays in context
-until compaction. The flip-paths stubs and brainstorming's umbrella stubs
-keep their own line because a flip in flight belongs to no step, and an
+until compaction. The flip-paths stubs, the premise-findings stub, which
+took over their premise trigger, and brainstorming's umbrella stubs
+keep their own line because a flip or a premise ask in flight belongs to no step, and an
 umbrella's rules span a child's whole brainstorm, which has no
 rehydration rule. An agent changed the convention during the spec's
 review, on a reviewer's question, from the per-stub re-read the
@@ -474,6 +477,7 @@ the build-history rule included (`skills/using-crucible/SKILL.md`).
 
 ## Changes
 
+- 2026-11-03: the premise-finding route has a reference of its own, `skills/redteaming/references/premise-asks.md`, with a redteaming stub that keeps the re-read line the flip-paths stub gave it; because a controller handling a premise finding loaded all of flip-paths for one section.
 - 2026-11-03: brainstorming has two umbrella stubs, `skills/brainstorming/references/umbrellas.md` for the umbrella's own controller and `skills/brainstorming/references/umbrella-children.md` for a child's, which also holds flip-paths' raising and receiving steps; because a child loaded the whole umbrellas reference, and flip-paths for one section, to act on the children's side alone.
 - 2026-11-03: the round record's shapes have a home of their own, `skills/redteaming/references/round-record.md`, its `##` headings frozen as `formats.md`'s are; because every route loaded all of `formats.md` at brainstorm for the workspace and the feature folder, about half of it a round record only the spec campaign and the plan phase write.
 - 2026-11-03: the rules seats share have a second home, `skills/subagent-driven-development/references/review-terms.md`, for the sections controllers also read; because § The arrangement questions, § Finding scope and § Suite bound moved there from the shared seat reference (`docs/decisions/instruments.md`).

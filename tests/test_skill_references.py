@@ -41,6 +41,7 @@ EXPECTED = {
         "skills/brainstorming/references/umbrella-children.md",
     ),
     ("skills/redteaming/SKILL.md", "skills/redteaming/references/flip-paths.md"),
+    ("skills/redteaming/SKILL.md", "skills/redteaming/references/premise-asks.md"),
     (
         "skills/subagent-driven-development/SKILL.md",
         "skills/redteaming/references/flip-paths.md",

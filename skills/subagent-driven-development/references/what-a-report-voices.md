@@ -3,7 +3,7 @@
 Any implementer's report, a fix report included, may carry beside its work:
 
 - **Concerns** about that work: the review of it rules on each — the task review, the re-review of a fix report, the branch reviewer through leads on the very-small lane (`skills/subagent-driven-development/references/very-small-lane.md`) — and you handle none before it. A fix report no re-review reads, from a wave that only disputes, has its concerns written as leads.
-- **A premise finding**: written under `## Adjudication rulings` as open, it goes where `skills/redteaming/references/flip-paths.md` § Premise findings sends it; no review rules on it as a concern.
+- **A premise finding**: written under `## Adjudication rulings` as open, it goes where `skills/redteaming/references/premise-asks.md` § Premise findings sends it; no review rules on it as a concern.
 - **`Questions` items:** each a lead; a branch-review fix report's go under `## Questions` instead (`crucible:requesting-code-review`).
 - **A fix proposed outside its task**, never made: route it to its owning task, in that task's dispatch context where it has yet to run; to the branch review as a lead; or, where it touches binding content, by `skills/redteaming/references/flip-paths.md`.
 
