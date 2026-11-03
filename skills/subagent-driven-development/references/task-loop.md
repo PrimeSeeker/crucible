@@ -2,7 +2,7 @@
 
 ### 1. Dispatch the implementer
 
-Record BASE (`git rev-parse HEAD`) before dispatching — the task's review range starts there. Where the spec's preamble carries an `Umbrella:` line, take the receiving step of `skills/redteaming/references/flip-paths.md` § Under an umbrella first, so a binding change it takes in falls before BASE, outside the task's range.
+Record BASE (`git rev-parse HEAD`) before dispatching — the task's review range starts there. Where the spec's preamble carries an `Umbrella:` line, take the receiving step of `skills/brainstorming/references/umbrella-children.md` § Under an umbrella first, so a binding change it takes in falls before BASE, outside the task's range.
 
 Dispatch instrument `implementer`, its card filled.
 

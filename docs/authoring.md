@@ -26,7 +26,7 @@ in the same commit.
 | Rule | Controller side | Seat side |
 |---|---|---|
 | What binds; the spec is a hypothesis, its binding text read for intent | `review-terms.md` § What binds in a spec | `seat-rules.md` § What binds |
-| What a reviewer flags under an umbrella | `skills/brainstorming/references/umbrellas.md` § Children and § Edits | `seat-rules.md` § What binds and § Binding changes |
+| What a reviewer flags under an umbrella | `skills/brainstorming/references/umbrella-children.md` § Children and § Edits | `seat-rules.md` § What binds and § Binding changes |
 | The list of non-local mechanism, never deferrable | `crucible:writing-plans § Deferring detail` | `review-terms.md` § Finding scope |
 
 ## Reference convention

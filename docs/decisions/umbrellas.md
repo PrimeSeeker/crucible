@@ -29,7 +29,7 @@ its preamble, and through that line its own entry and the umbrella's
 binding content, its Constraints & invariants and the decisions it
 records as the operator's firm preference, bind it, up the chain of
 umbrellas, each read where it lives
-(`skills/brainstorming/references/umbrellas.md` § Children).
+(`skills/brainstorming/references/umbrella-children.md` § Children).
 What binds, the umbrella included, is stated once for controllers
 (`skills/subagent-driven-development/references/review-terms.md`
 § What binds in a spec) and once for seats, in the shared seat
@@ -49,15 +49,14 @@ where it leaves what the Intent asks for unchanged. A binding change, a
 change to a firm decision or to what the Intent asks for included,
 never does: it goes to the operator, lands on a branch of its own, and
 each child in flight takes it in from the base
-(`skills/brainstorming/references/umbrellas.md` § Edits;
-`skills/redteaming/references/flip-paths.md` § Under an umbrella:
-binding changes and late splits). A child's controller never confirms a
+(`skills/brainstorming/references/umbrella-children.md` § Edits and
+§ Under an umbrella). A child's controller never confirms a
 change to umbrella content itself, however contained the change looks
 (`skills/redteaming/references/flip-paths.md` § The containment test).
 
 **Marks, not derived state.** Each entry carries its own mark, `landed`,
 `umbrella` or `dropped`, and a child writes its own `landed` in the
-commit that lands it (`skills/brainstorming/references/umbrellas.md`
+commit that lands it (`skills/brainstorming/references/umbrella-children.md`
 § Marks; `crucible:subagent-driven-development § Finish`). An umbrella
 has closed when its marks say so, read down the chain; from then it is
 frozen (`skills/brainstorming/references/umbrellas.md` § Closing).
@@ -101,7 +100,8 @@ in the first entry with no mark in the umbrella's Children list, as
 decision record, with the operator's ruling where one has come since or
 else as open for its dialogue, and the child removes the note as a
 clarification its spec states (`skills/brainstorming/references/umbrellas.md`
-§ Landing, § Children; `skills/redteaming/references/flip-paths.md`
+§ Landing; `skills/brainstorming/references/umbrella-children.md`
+§ Children; `skills/redteaming/references/flip-paths.md`
 § Premise findings).
 
 **Work left open at the landing.** An umbrella has no ledger, so what
@@ -396,6 +396,7 @@ judgment, an agent's call the maintainer has not ruled on.)
 
 ## Changes
 
+- 2026-11-03: the umbrellas reference splits by reader: `skills/brainstorming/references/umbrella-children.md` holds § Children, § Edits, § Marks and § Resuming, with flip-paths' § Under an umbrella (raising a late split or a binding change, and taking one in at each boundary), and `skills/brainstorming/references/umbrellas.md` keeps the shape, review, landing, closing and closing review; because a child's controller loaded the whole reference, and flip-paths for one section, to act on the children's side alone (`docs/decisions/authoring-crucible.md`).
 - 2026-11-03: what binds is stated once for controllers, in `skills/subagent-driven-development/references/review-terms.md` § What binds in a spec, and once for seats, in the shared seat reference's § What binds, with § Binding changes for what a review seat flags; § Children points to the controller statement; so that the sites restating it share one statement every controller already reads.
 - 2026-11-03: a change on a child's branch to what the umbrella's Intent asks is stated for seats in the shared seat reference's § Binding changes, no longer also beside the premise line, and the reading of the overturn question for an umbrella's campaign is cited at its own section; because both sections narrowed to the seats that apply them (`docs/decisions/instruments.md`).
 - 2026-11-03: the arrangement questions' citation follows their move from the shared seat reference to `skills/subagent-driven-development/references/review-terms.md`, a reference of their own, so a controller that applies them no longer loads the seat rules.
