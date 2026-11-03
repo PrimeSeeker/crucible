@@ -56,7 +56,7 @@ no line is owed per task
 `Questions` items, an implementer's fixes proposed outside its task, the
 concerns of a fix report no re-review reads, and on the very-small lane
 a dispatched implementer's concerns, reach the branch reviewer as leads:
-ledger lines under `## Deferred minors` marked `lead (<kind>)`. It rules
+ledger lines under `## Deferred minors` marked `lead:`. It rules
 on each lead instead of triaging it: CONFIRMED, a finding at a staked
 severity, named an intent gap or a scope gap where it is one;
 RECOMMENDED, an improvement it backs, which the controller may adopt to
@@ -320,6 +320,8 @@ none; the spec campaign and the plan phase missed it, and the branch
 review confirmed it as its one MAJOR. (Basis: a single incident;
 judgment, accepted by the maintainer, for the forms.)
 
+Until 2026-11-03 each lead carried a kind, `question`, `proposal` or `concern`, whose one consumer was the rule that a concern is CONFIRMED or LEFT, never RECOMMENDED. Both went: the one-liner still says what the lead is, and a concern ruled RECOMMENDED is harmless, the controller adopting it or not as any improvement. An agent's proposal, on which the maintainer left the call to the agent. (Basis: judgment, accepted by the maintainer.)
+
 ### The first review of a task with none
 
 When a plan may route a task's review to the branch review alone
@@ -381,6 +383,7 @@ accepted by the maintainer.)
 
 ## Changes
 
+- 2026-11-03: a lead no longer carries a kind (`question`, `proposal`, `concern`), and the rule that a concern is CONFIRMED or LEFT goes, so the reviewer may rule any lead RECOMMENDED; because the kind's one consumer was that rule, and a concern ruled RECOMMENDED is harmless.
 - 2026-11-03: the findings a very-small lane's last pass left open no longer reach the standard route's branch reviewer as `Lane:` leads at their staked severity after the lane's upgrade hatch, nor a BLOCKER or MAJOR one it leaves the close readout; the brainstorm the hatch invokes takes them in its incoming document instead, because the carry-over sat in text every standard run reads to serve a rare move (`docs/decisions/routes.md`).
 - 2026-11-02: the build-history exemption for the feature folder's
   files is every execution reviewer's, the one for Finish's open items

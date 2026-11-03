@@ -208,16 +208,14 @@ execution's and this branch review's own. They reached you deliberately: a roll-
 discard.
 
 Among the deferred items are leads, carried to you for a ruling: lines
-marked `lead (<kind>):` after their prefix, as in
-`Task <N>: lead (question):`, `<kind>` being `question`, `proposal` or
-`concern`. Rule on each lead: CONFIRMED — a finding, written under
+marked `lead:` after their prefix, as in `Task <N>: lead:`. Rule on
+each lead: CONFIRMED — a finding, written under
 Issues at the severity you stake, and named an intent gap (a
 requirement of its task missing, extra or misunderstood) or a scope gap
 (a change neither its task nor its Decision Log accounts for) where it
 is one, on which the controller opens a fix wave whatever its severity; RECOMMENDED
 — an improvement you back, which the controller may adopt; or LEFT, with
-one line of reasoning. A concern is CONFIRMED or LEFT. A lead left
-unruled is a missing verdict.
+one line of reasoning. A lead left unruled is a missing verdict.
 
 Triage every other deferred item: PROMOTE (it compounds across tasks or is
 worse than its label — restake the severity), FIX-IN-WAVE (trivial,
