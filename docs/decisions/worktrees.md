@@ -139,7 +139,7 @@ ambiguous. On 2026-10-19 the result became a ledger line, since "unless
 that skill already ran them" left a resumed controller unable to tell.
 (Basis: judgment, accepted by the maintainer.)
 
-On 2026-11-03 the two steps were copied into SDD's setup reference, and the git fallback moved out of the skill into a reference, to cut what agents read: the worktree skill loads at brainstorming on every route, where only Steps 0–1 run, and the fallback runs only where no native tool serves, a feature starts inside another's worktree, or the instructions declare a directory. An agent's count of session transcripts also found no reload of the skill within one context in 52 loads, leaving SDD Setup's two steps to recall. The copy, about 120 words, is an accepted duplicate: the skill keeps its own for standalone use. An agent's proposal, on which the maintainer left the call to the agent. (Basis: measured, for the reload count; judgment, accepted by the maintainer.)
+On 2026-11-03 the two steps were copied into SDD's setup reference, and the git fallback moved out of the skill into a reference, to cut what agents read: the worktree skill loads at brainstorming on every route, where only Steps 0–1 run, and the fallback runs only where no native tool serves, a feature starts inside another's worktree, or the instructions declare a directory. An agent's count of session transcripts also found no reload of the skill within one context in 52 loads, leaving SDD Setup's two steps to recall. The copy, about 120 words when made, is an accepted duplicate: the skill keeps its own for standalone use. An agent's proposal, on which the maintainer left the call to the agent. (Basis: measured, for the reload count; judgment, accepted by the maintainer.)
 
 ## Rejected
 
@@ -166,6 +166,7 @@ On 2026-11-03 the two steps were copied into SDD's setup reference, and the git 
 
 ## Changes
 
+- 2026-11-03: the copy's size is dated to when it was made, since the per-file compaction cut both copies further.
 - 2026-11-03: SDD Setup runs project setup and the clean baseline from its own copy of the worktree skill's Steps 2–3, and the git fallback moved into `skills/using-git-worktrees/references/git-fallback.md` behind a stub; because the skill loads on every route where the fallback rarely runs, and SDD Setup rarely reloaded the skill for the two steps.
 - 2026-11-02: why Step 0's comparison holds in a submodule moved here
   from the skill, which keeps only the probe's reading, and was checked

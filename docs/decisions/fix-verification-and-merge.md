@@ -34,7 +34,7 @@ plan phase's, the spec terminal pass's follow-up wave's) and a
 plan-phase repair take, of the findings, BLOCKER and MAJOR ones and
 MINORs against binding text, those whose fix changes the artifact's own
 binding content (in a spec what
-`skills/redteaming/references/flip-paths.md` states binds, in a plan its
+`skills/subagent-driven-development/references/review-terms.md` § What binds in a spec states binds, in a plan its
 inter-task contracts and a task's required fields and acceptance); a
 child's fix list never changes umbrella content. Deferral markers,
 adopted improvements, operator rulings and contained amendments ride it
@@ -123,7 +123,7 @@ stay unique because the stop check reads each seat's forecast lines by
 id across rounds. (Basis: measured, for the catches; judgment, an
 agent's proposal accepted by the maintainer, for the retirement.)
 
-On 2026-11-03 that uniqueness went too: the stop check answers each forecast by the mechanism it names, never by seat id, and a replacement seat takes a fresh id (`crucible:redteaming § Panels`); an id may now recur across rounds, a minor loss under the maintainer's compaction mandate. An agent's proposal, on which the maintainer left the call to the agent. (Basis: judgment, an agent's call the maintainer has not ruled on.)
+On 2026-11-03 that uniqueness went too: the stop check answers each forecast by the mechanism it names, never by seat id, and a replacement seat takes a fresh id (`crucible:redteaming § Panels`); an id may now recur across rounds, a minor loss under the maintainer's compaction mandate. An agent's proposal, on which the maintainer left the call to the agent. (Basis: judgment, accepted by the maintainer.)
 
 ### Dispositions and the sub-point check
 
@@ -236,6 +236,7 @@ controller's judgment (`docs/decisions/spec-campaign.md`).
 
 ## Changes
 
+- 2026-11-03: what binds in a spec is cited at `skills/subagent-driven-development/references/review-terms.md`, the controller's statement of it, since flip-paths keeps only a pointer.
 - 2026-11-03: seat ids are no longer unique within a feature, a replacement taking a fresh id, since the stop check matches forecasts by the mechanism they name: a minor loss under the maintainer's compaction mandate.
 - 2026-11-03: a `deferred-minor` entry is seeded into the ledger by SDD's Setup, the ledger's only seeding writer, not by the close of the plan phase or the folded campaign (`docs/decisions/records-and-workspace.md`).
 - 2026-11-03: the round record's citations point at `skills/redteaming/references/round-record.md`, where § Round record format moved from `formats.md` so that a step reading `formats.md` for the workspace or the feature folder stops loading the round record (`docs/decisions/authoring-crucible.md`).
