@@ -34,7 +34,7 @@ A contained change to the spec is a scoped amendment you confirm with no decisio
 
 ### Premise findings
 
-A premise finding claims that the request, what the Intent asks for, or a firm decision is wrong, and carries the label `premise`. Your side, at any phase, the spec campaign included:
+A premise finding claims that the request, what the Intent asks for (for a child, its umbrella's too; on the very-small lane, the lane note's), or a firm decision is wrong, and carries the label `premise`. Your side, at any phase, the spec campaign included:
 
 **A mislabel.** You correct a finding's label by the definition above, in either direction, your reason recorded with it: a finding labelled `premise` that the definition classes as ordinary — against a lightly held decision, say — is merged or routed as an ordinary finding, and an unlabelled finding against the request, what the Intent asks for or a firm decision takes the label and this section's route.
 

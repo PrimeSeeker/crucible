@@ -15,7 +15,7 @@ accepted trade-offs) in the decision records, `docs/decisions/`; host
 mechanics in the adapter pair; text about crucible's own text in `docs/`;
 what a seat does and produces in its template, and the rules seats share
 in the shared seat reference,
-`skills/subagent-driven-development/references/seat-rules.md`, each
+`skills/subagent-driven-development/references/seat-rules.md`, or, for the sections controllers also read, in `skills/subagent-driven-development/references/review-terms.md`, each
 template taking by splice the sections its seat follows
 (`docs/decisions/instruments.md`).
 `skills/redteaming/references/formats.md` holds the shapes of what
@@ -470,6 +470,7 @@ the build-history rule included (`skills/using-crucible/SKILL.md`).
 
 ## Changes
 
+- 2026-11-03: the rules seats share have a second home, `skills/subagent-driven-development/references/review-terms.md`, for the sections controllers also read; because § The arrangement questions, § Finding scope and § Suite bound moved there from the shared seat reference (`docs/decisions/instruments.md`).
 - 2026-11-03: the stub convention's statement shortened, and it says a reference read since the last compaction is not read again when its step recurs: what this record's reasoning already held, now in the text a controller reads.
 - 2026-11-03: resident tokens re-counted after the compaction fit's
   branch-review fixes, which lowered SDD's every-run load by 4 tokens.

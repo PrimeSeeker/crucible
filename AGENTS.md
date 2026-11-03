@@ -57,8 +57,8 @@ to install it: `README.md`; the layout: `docs/dual-runtime.md`.
   allowlist is `tests/claudeism-allowlist.txt`.
 - **The seven dispatch templates and `agents/` are generated.** Never edit
   either by hand: edit the template's source beside it (`seat-prompt.md`'s
-  is `seat-prompt.source.md`) or the shared seat reference
-  (`skills/subagent-driven-development/references/seat-rules.md`), then
+  is `seat-prompt.source.md`) or a shared reference
+  (`skills/subagent-driven-development/references/seat-rules.md`, or `review-terms.md` beside it for the sections controllers also read), then
   run `python tools/instrument_agents.py write`. The suite runs its `check`
   mode.
 - **Interpreters.** A hook's script is bash: a hook runs with no agent
@@ -80,7 +80,7 @@ to install it: `README.md`; the layout: `docs/dual-runtime.md`.
   (`docs/decisions/`); host mechanics in the adapter pair (above); text
   about crucible's own text (where a rule lives, why a template omits
   something) in `docs/`. A seat template holds what its seat does and
-  produces; rules seats share go in the shared seat reference, each
+  produces; rules seats share go in a shared reference (`seat-rules.md`, or `review-terms.md` for those controllers also read), each
   template taking by splice the sections its seat follows.
 - **The prose budget.** `tests/prose-budget.txt` holds each skill
   directory's word count of hand-edited text (a rendered template is not
