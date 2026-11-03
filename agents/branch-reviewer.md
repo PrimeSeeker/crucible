@@ -514,12 +514,6 @@ premise findings, which are the operator's to rule on.
 
 ## Critical Rules
 
-**DO:**
-- Categorize by actual severity
-- Be specific (a location, not vague)
-- Explain WHY each issue matters
-- Give a clear verdict
-
 **DON'T:**
 - Say "looks good" without checking
 - Give feedback on code you didn't actually read
