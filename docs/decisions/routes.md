@@ -274,17 +274,15 @@ the rest of its procedure.
 (Basis: the umbrella's D3, the controller's proposals on the audit's
 counts, accepted by the maintainer, 2026-11-01.) What the move keeps
 was found while the spec was written: without the lane's records moved
-aside and linked, the standard route's execution would find a ledger
-naming the note and escalate it as another run's, and the lane's
-rulings, departures and leads would reach no close readout. So the
-lane's whole `sdd/` moves aside as `sdd-lane/`, the standard route's
-ledger links its ledger as a predecessor, and the plan phase's close
-carries the lane's open findings, at their staked severity, and its
-unruled leads to the standard route's branch reviewer
+aside, the standard route's execution would find a ledger naming the
+note and escalate it as another run's. So the lane's whole `sdd/` moves
+aside as `sdd-lane/`
 (`skills/subagent-driven-development/references/very-small-lane.md`).
 (Basis: judgment, accepted by the maintainer: the agent's proposal,
-approved at the campaign gate; for moving the whole `sdd/` and carrying
-the findings, the maintainer left the call to the agent, 2026-11-02.)
+approved at the campaign gate; for moving the whole `sdd/`, the
+maintainer left the call to the agent, 2026-11-02.)
+
+Until 2026-11-03 the move also linked the lane's ledger from the standard route's as a predecessor, and the plan phase's close carried the lane's open findings, at their staked severity, and its unruled leads to the standard route's branch reviewer, so that the lane's rulings, departures and leads reached a close readout. That carry-over sat in text every standard run reads, the plan phase's close, the branch reviewer's template on every pass and Finish, to serve a move whose trigger fired twice in about 42 lane reviews (above), with no completed move in this repository's feature folders. It went: the brainstorm the hatch invokes takes the lane's open findings, unruled leads and departures in its incoming document, beside the note and the diff, and the lane's rulings no longer reach the final close readout, a minor loss. An agent's proposal, on which the maintainer left the call to the agent. (Basis: measured, for the trigger's count; judgment, accepted by the maintainer.)
 
 The note and the lane proposal share one gate (2026-10-07): a separate
 gate re-presented decisions just made and never showed the note whose
@@ -331,6 +329,7 @@ small preset or the waiver for its work.
 
 ## Changes
 
+- 2026-11-03: on the upgrade hatch's move the lane's `sdd/` still moves aside as `sdd-lane/`, but the standard route's ledger no longer links it as a predecessor and the plan phase's close no longer carries the lane's open findings and unruled leads to the branch reviewer; the brainstorm the hatch invokes takes them, and the lane's departures, in its incoming document; because the carry-over sat in text every standard run reads to serve a rare move, and the loss, the lane's rulings missing from the final close readout, is minor.
 - 2026-11-03: the arrangement questions' citation follows their move from the shared seat reference to `skills/subagent-driven-development/references/review-terms.md`, a reference of their own, so a controller that applies them no longer loads the seat rules.
 - 2026-11-02: the shared seat reference's citations follow its rename
   to `seat-rules.md`.

@@ -64,13 +64,7 @@ ride the next fix wave or which reaches the operator in the close
 readout; or LEFT, with one line. A lead it confirms as an intent or
 scope gap opens a wave whatever its staked severity, as a failed
 verdict does in a task review; a pass that leaves a lead unruled is
-missing a verdict. After the very-small lane's upgrade hatch, the
-findings the lane's last pass left open reach the standard route's
-reviewer as `Lane:` leads carrying their staked severity: one it
-confirms stands at that severity, and one at BLOCKER or MAJOR it leaves
-reaches the close readout with its ruling
-(`skills/redteaming/references/plan-phase.md`;
-`docs/decisions/routes.md`). Its own `Questions` items, and a branch-review fix report's, go under the
+missing a verdict. Its own `Questions` items, and a branch-review fix report's, go under the
 ledger's `## Questions` with
 the controller's disposition; the close readout lists them, and the
 branch reviewer's read scoping excludes that section, so a pass's
@@ -387,6 +381,7 @@ accepted by the maintainer.)
 
 ## Changes
 
+- 2026-11-03: the findings a very-small lane's last pass left open no longer reach the standard route's branch reviewer as `Lane:` leads at their staked severity after the lane's upgrade hatch, nor a BLOCKER or MAJOR one it leaves the close readout; the brainstorm the hatch invokes takes them in its incoming document instead, because the carry-over sat in text every standard run reads to serve a rare move (`docs/decisions/routes.md`).
 - 2026-11-02: the build-history exemption for the feature folder's
   files is every execution reviewer's, the one for Finish's open items
   the branch reviewer's alone, the shared rule and the diff procedure

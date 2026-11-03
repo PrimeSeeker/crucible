@@ -210,10 +210,7 @@ requirement of its task missing, extra or misunderstood) or a scope gap
 (a change neither its task nor its Decision Log accounts for) where it
 is one, on which the controller opens a fix wave whatever its severity; RECOMMENDED
 — an improvement you back, which the controller may adopt; or LEFT, with
-one line of reasoning. A concern is CONFIRMED or LEFT. A `Lane:` lead
-carrying a severity, as in `Lane: lead (concern): MAJOR — <one-liner>`,
-is a finding a very-small lane's review left open before the branch
-moved to this route: confirmed, it stands at that severity. A lead left
+one line of reasoning. A concern is CONFIRMED or LEFT. A lead left
 unruled is a missing verdict.
 
 Triage every other deferred item: PROMOTE (it compounds across tasks or is
