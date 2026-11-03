@@ -67,7 +67,7 @@ These hold in the task loop, in the branch review `crucible:requesting-code-revi
 
 ### Disputes and adjudication
 
-A finding is fixed or disputed, never dropped: a silent discard is forbidden, and every ruling is a ledger entry. Whenever a finding is disputed, read `skills/subagent-driven-development/references/disputes-and-adjudication.md` in full. Record an operator's answer to any decision ask under `## Adjudication rulings` beside the ruling it settles, and where `skills/redteaming/references/formats.md` § Feature workspace root and layout sends it.
+A finding is fixed or disputed, never dropped: a silent discard is forbidden, and every ruling is a ledger entry. Whenever a finding is disputed, collides with plan text or carries the `literal-reading` label, read `skills/subagent-driven-development/references/disputes-and-adjudication.md` in full before acting on it. Record an operator's answer to any decision ask under `## Adjudication rulings` beside the ruling it settles, and where `skills/redteaming/references/formats.md` § Feature workspace root and layout sends it.
 
 ### What a report voices
 
@@ -87,7 +87,7 @@ Executing defective or superseded plan text produces reviewable-but-wrong work, 
 
 ## Whole-Branch Review
 
-After the last task completes, run `crucible:requesting-code-review`: it owns the branch-review loop and its inputs, the ledger's deferred minors, leads and adjudication rulings among them. Its disputes follow § Disputes and adjudication, its seats the shared tree (§ Rules every route shares), and drift it finds in a completed task § Drift found after the fact. When it ends, after its cleanup wave where you open one, go to § Finish.
+After the last task completes, run `crucible:requesting-code-review`: it owns the branch-review loop and its inputs, the ledger's deferred minors, leads and adjudication rulings among them. When it ends, after its cleanup wave where you open one, go to § Finish.
 
 ## The very-small lane
 
