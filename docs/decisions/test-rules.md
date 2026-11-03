@@ -33,10 +33,13 @@ parametrized one, a removed assertion, or any other change making a test
 more permissive is a finding, at the task review, the re-review and the
 branch review, unless one justification holds for what was deleted or
 loosened: the subject the change removed; a remaining test covering the
-behavior; the requirement or review finding the change fulfils; or a
-warning sign from `skills/subagent-driven-development/writing-good-tests.md`
-that it shows. The task reviewer checks the Decision Log's justification against
-the code, the re-reviewer the fix report's, and the branch reviewer judges
+behavior; the requirement or review finding the deletion or loosening
+fulfils; or a warning sign from
+`skills/subagent-driven-development/writing-good-tests.md` that it shows.
+The task reviewer checks the Decision Log's justification against the
+code, the re-reviewer the fix report's (on the very-small lane, the
+controller's own fix report names it as an implementer's does), and the
+branch reviewer judges
 from the code and the requirements, and checks the Decision Log's
 justification itself for a task completed branch review only
 (`skills/subagent-driven-development/references/seat-rules.md` § Tests in review, the
@@ -180,6 +183,7 @@ testing, or other test gates, states them there.
 
 ## Changes
 
+- 2026-11-04: the third justification reads "the deletion or loosening fulfils", since "the change fulfils" also read as the whole work fulfilling a requirement, which any task's does; the very-small lane's inline fix reports name each deletion's or loosening's justification, since the re-reviewer counts one only where the fix report names it.
 - 2026-11-04: any other change making a test more permissive takes the deleted test's justifications, for what it loosened; because deleting an over-specific assertion, or one whose requirement was relaxed, passed while loosening it failed.
 - 2026-11-04: a removed assertion takes the deleted test's justifications instead of counting as a weakened test, which now means a test made more permissive; because the test guide's own remedy for an assertion on a mock failed review while deleting the whole test passed.
 - 2026-11-02: the deleted-test justification list and the test-first

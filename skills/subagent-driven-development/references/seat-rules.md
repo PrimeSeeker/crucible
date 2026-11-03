@@ -95,7 +95,7 @@ A deleted test, parametrized case or assertion, or any other change making a tes
 
 - the change removed its subject;
 - a remaining test covers the behavior;
-- the change fulfils a requirement or review finding;
+- the deletion or loosening fulfils a requirement or review finding;
 - a warning sign from `skills/subagent-driven-development/writing-good-tests.md` fits it.
 
 ## Test-first evidence
