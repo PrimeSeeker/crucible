@@ -60,9 +60,12 @@ check against the tracked files it names, or not checked with the
 reason. The controller checks each claim reported not checked and
 records the outcome. The verifier runs on the bounded role
 (`skills/redteaming/verifier-prompt.md`;
-`docs/decisions/model-roles-and-effort.md`). Neither phase states a
-repair path for a delta claim found FALSE, nor the spec campaign one
-for an item not landed (`docs/backlog/verifier-verdict-repair-path.md`).
+`docs/decisions/model-roles-and-effort.md`). In both phases an item not
+landed or partly landed, and a delta claim found FALSE, takes one scoped
+repair edit and a re-check of it alone by the wave's verifier; one still
+failing is a decision ask, and so, without a repair, is a FALSE claim a
+decision rests on. The round record's verifier block records each
+repair (`skills/redteaming/references/fix-application.md`).
 
 **Readout coverage and the trace.** The delivered readout names every
 rejected, parked or partly-applied BLOCKER or MAJOR with its ruling, in
@@ -206,6 +209,24 @@ caused the abstentions is an inference. (Basis: measured; the
 maintainer's preference, for keeping the role; judgment, accepted by the
 maintainer, for the scope.)
 
+Until 2026-11-04 only the plan phase said what follows a verdict that a
+fix had not landed, and neither phase what follows a FALSE delta claim,
+while a spec-campaign round could not reach `verified` with an item not
+landed. A route for FALSE claims, drafted in one campaign, was removed
+in its third round because it named a spec-campaign repair path that
+did not exist, and a recount of past campaign records found 29 defects
+the verifier flagged and the wave left in place, at least 7 of them
+handed to the terminal pass on purpose. The plan phase's scoped repair
+now serves both phases and FALSE claims too: it fixes a known defect
+before the next panel reads the artifact and opens no wave. Carrying
+the defect to the next round's fix list was rejected, since it needs a
+carry-forward mechanism and the stop round has no next round, and so was
+leaving it to the next panel and the terminal pass, which re-find a
+known defect. A FALSE claim a decision rests on goes to the operator
+instead, since correcting the sentence leaves the decision without its
+ground. (Basis: measured, for the recount; judgment, accepted by the
+maintainer, for the path.)
+
 ### Readouts and the trace
 
 The coverage check on readouts used to run in a script: the round checks
@@ -233,9 +254,12 @@ controller's judgment (`docs/decisions/spec-campaign.md`).
   2026-11-02 after about one trivial catch in about 73 runs (§ Why).
 - **Parsing seat reports and records** to refuse shapes, exact headings
   or index mismatches (§ Why).
+- **Carrying a failing verifier verdict to the next round**, on its fix
+  list or to its panel, in place of the scoped repair (§ Why).
 
 ## Changes
 
+- 2026-11-04: an item the verifier finds not landed or partly landed, and a delta claim it finds FALSE, take the plan phase's scoped repair in both phases, a FALSE claim a decision rests on going to the operator, since the spec campaign had no sanctioned step for either and neither phase one for a FALSE claim.
 - 2026-11-03: what binds in a spec is cited at `skills/subagent-driven-development/references/review-terms.md`, the controller's statement of it, since flip-paths keeps only a pointer.
 - 2026-11-03: seat ids are no longer unique within a feature, a replacement taking a fresh id, since the stop check matches forecasts by the mechanism they name: a minor loss under the maintainer's compaction mandate.
 - 2026-11-03: a `deferred-minor` entry is seeded into the ledger by SDD's Setup, the ledger's only seeding writer, not by the close of the plan phase or the folded campaign (`docs/decisions/records-and-workspace.md`).

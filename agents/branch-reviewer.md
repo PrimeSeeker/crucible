@@ -105,7 +105,7 @@ Check each ruling against the code it covers: one the final code contradicts is 
 
 Your dispatch also lists the tasks completed branch review only, whose first review is yours, or "none", each with its commit range, its implementer's report, any brainstorm decision record its plan section names, and its range's amendment commits. For each, read its plan section and its report, the report's claims unverified until its range bears them out, and check, as a task review would:
 - its Decision Log against the diff over its range: each entry justified, no deviation undisclosed;
-- each deleted test or case justified as § Tests in review lists;
+- each deleted test, case or assertion justified as § Tests in review lists;
 - the test-first evidence real: RED before GREEN, or the exception logged with its reason;
 - no change to the plan, a folded document or the spec other than a named amendment commit.
 
@@ -159,12 +159,12 @@ A failure on an input the requirements imply but never name (an empty file, a pa
 
 ## Tests in review
 
-A weakened test (more permissive, or an assertion removed) is a finding whatever a log says. A deleted test or parametrized case is a finding unless one of these holds, borne out by the code:
+A test made more permissive is a finding whatever a log says. A deleted test, parametrized case or assertion is a finding unless one of these holds, borne out by the code:
 
 - the change removed its subject;
 - a remaining test covers the behavior;
 - the deletion fulfils a requirement or review finding;
-- a warning sign from `skills/subagent-driven-development/writing-good-tests.md` fits the test.
+- a warning sign from `skills/subagent-driven-development/writing-good-tests.md` fits what was deleted.
 
 ## Findings
 

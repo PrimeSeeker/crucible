@@ -116,7 +116,7 @@ Follow exactly the structure below, beginning directly with the intent verdict: 
 
 ### Scope
 
-- ✅ Nothing outside the task | ❌ Out-of-scope changes: [file:line, including weakened tests and unjustified deleted tests or cases]
+- ✅ Nothing outside the task | ❌ Out-of-scope changes: [file:line, including tests made more permissive and unjustified deleted tests, cases or assertions]
 
 ### Deviation Audit
 

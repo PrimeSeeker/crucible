@@ -28,14 +28,14 @@ Test-First, Evidence Before Done; `skills/subagent-driven-development/references
 writes the failing test before the fix and says why where no test or
 script can reproduce the bug.
 
-**Weakened and deleted tests.** A weakened test, made more permissive or
-with an assertion removed, is always a finding, at the task review, the
-re-review and the branch review. A deleted test, or a deleted case of a
-parametrized one, is a finding unless one justification holds: the
-subject the change removed; a remaining test covering the behavior; the
-requirement or review finding the deletion fulfils; or a warning sign from
-`skills/subagent-driven-development/writing-good-tests.md` that the test
-shows. The task reviewer checks the Decision Log's justification against
+**Weakened and deleted tests.** A test made more permissive is always a
+finding, at the task review, the re-review and the branch review. A
+deleted test, a deleted case of a parametrized one, or a removed
+assertion is a finding unless one justification holds: the subject the
+change removed; a remaining test covering the behavior; the requirement
+or review finding the deletion fulfils; or a warning sign from
+`skills/subagent-driven-development/writing-good-tests.md` that what was
+deleted shows. The task reviewer checks the Decision Log's justification against
 the code, the re-reviewer the fix report's, and the branch reviewer judges
 from the code and the requirements, and checks the Decision Log's
 justification itself for a task completed branch review only
@@ -109,10 +109,21 @@ first review looked for a weakened or deleted test, and a fix wave can
 weaken a test to pass, while on the very-small lane the branch review is
 the diff's first review. The three reviewers' dispatches carry the plugin
 root, so each can read the test guide in a repository other than
-crucible's. A weakened test stays a finding even where the
-test guide's own remedy, deleting one bad assertion, is the weakening;
-that gap is open (`docs/backlog/weakened-test-justification.md`). (Basis:
-measured, for the census; judgment, accepted by the maintainer.)
+crucible's. (Basis: measured, for the census; judgment, accepted by the
+maintainer.)
+
+A removed assertion counted as a weakened test until 2026-11-04, so the
+test guide's own remedy for an assertion on a mock, deleting that
+assertion, was a finding, while deleting the whole test, good assertions
+included, passed with the warning sign quoted: the rule rewarded the
+larger deletion. A removed assertion now takes the deleted test's
+justifications, which opens no route that deleting the whole test did
+not already offer, and also covers an assertion on a subject the change
+removed. Allowing the warning-sign justification alone would leave that
+second case a finding, and changing the guide's remedy to deleting the
+test would make it recommend losing good assertions. A test made more
+permissive stays a finding whatever its log says. (Basis: judgment,
+accepted by the maintainer.)
 
 ### Adequacy and the mutation gate
 
@@ -144,6 +155,7 @@ preference.)
 - **A mutation gate**, mandatory or declared per repository (§ Why).
 - **An absence test as a removal's failing step** (§ Why).
 - **Every deleted test a finding**, whatever its justification (§ Why).
+- **Every removed assertion a finding**, whatever its justification (§ Why).
 
 ## What a project may change
 
@@ -153,6 +165,7 @@ testing, or other test gates, states them there.
 
 ## Changes
 
+- 2026-11-04: a removed assertion takes the deleted test's justifications instead of counting as a weakened test, which now means a test made more permissive; because the test guide's own remedy for an assertion on a mock failed review while deleting the whole test passed.
 - 2026-11-02: the deleted-test justification list and the test-first
   exceptions have one home, the shared seat reference, each seat
   keeping its own angle in its template; because the copies had

@@ -34,7 +34,7 @@ The plan record alone appends `confirmed`. States advance strictly in order, eac
 - `returned`: every dispatched seat's report on disk, or its loss recorded and resolved (field 3).
 - `merged`: the merged finding list, with dispositions, written.
 - `fix-applied`: the recorded fix list landed in the artifact.
-- `verified`: the blind verifier's report on disk, every item confirmed landed.
+- `verified`: the blind verifier's report on disk, each item or claim it failed repaired or put to the operator as a decision ask.
 - `readout`: the round readout recorded; the round closes once it is delivered.
 - `confirmed`: the terminal pass's report, and any second read, on disk, and the phase's final check done.
 
@@ -50,7 +50,7 @@ The plan record alone appends `confirmed`. States advance strictly in order, eac
 
 **6. `## Fix list`** (what it takes, the propagation sweep and the trace: `crucible:redteaming` § Fix application and blind verification): enumerated items, each naming the finding id(s) it resolves or the question id of the adopted improvement it carries. It is the blind verifier's sole mandate input: fix list + diff, never rationale. **Restating sites** (binding): each item also names every other artifact site its sweep and any trace find.
 
-**7. `## Verifier block`**: a pointer to `verifier.md`; a landed/not-landed verdict per fix item; the nothing-outside-the-list-moved verdict; a verdict per delta claim, TRUE or FALSE with evidence, or not checked with the reason; and, for each claim not checked, your own check and its outcome.
+**7. `## Verifier block`**: a pointer to `verifier.md`; a landed/not-landed verdict per fix item; the nothing-outside-the-list-moved verdict; a verdict per delta claim, TRUE or FALSE with evidence, or not checked with the reason; for each claim not checked, your own check and its outcome; and each repair, with its re-check's verdict or the decision ask it became.
 
 **8. `## Round readout`**: the readout as delivered to the operator, compact, with the items and form of `crucible:redteaming` § Round readout. After it, a line `Trace:` opens the trace, the bookkeeping other readers need, record-only and never delivered:
 - in a numbered round record and the plan record, each decision ask's merged-list ids, the entries it turns on (the terminal pass reads them).
