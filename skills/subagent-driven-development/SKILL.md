@@ -15,17 +15,13 @@ Execute a plan by dispatching a fresh implementer subagent per task and a single
 
 **Dispatch references:** when this skill starts, and again after compaction, read from the plugin root `skills/subagent-driven-development/references/dispatch-composition.md`, the rules every dispatch shares, and your adapter's `skills/using-crucible/references/<runtime>-dispatch.md`; both bind as if written here.
 
+**Stubs.** Where a section names a reference to read in full, read it when the section's step comes; it binds as if written here. After compaction, re-read the reference of the step in progress before you act, and each other one only when its step next comes.
+
 ## Setup
 
-**A plan crucible did not produce** goes to `crucible:brainstorming` as its input before any Setup step creates anything.
+When this skill starts, read `skills/subagent-driven-development/references/setup.md` in full before any task. Implementation on a main/master checkout needs the operator's explicit consent first.
 
-**Find the feature workspace first** — `.crucible/<feature-slug>/`, before the worktree step and before provisioning:
-
-- **In this checkout:** proceed.
-- **In another checkout** (`git worktree list`): continue there, working from that checkout's path; create no worktree and provision no empty workspace here. Where your host cannot work from another path, stop and tell the operator where the workspace is.
-- **Nowhere:** create the isolated worktree with `crucible:using-git-worktrees`, and provision the workspace in the checkout that step leaves you in.
-
-In every case, implementation on a main/master checkout needs the operator's explicit consent first. In the checkout you work from, run the provisioning step (`skills/redteaming/references/formats.md` § Feature workspace root and layout) — re-running it changes nothing, so run it rather than assume. Then run `crucible:using-git-worktrees` Steps 2–3 there, the project setup and the clean baseline — unless that skill just ran them, creating the worktree above — and record the result in the ledger (below) under `## Progress` as `Baseline: <result> at <sha7>`. A ledger that already carries that line means both ran: skip them on resume.
+### Workspace, ledger and dispatch rules
 
 The workspace's `sdd/` subtree holds this plan's execution state: `ledger.md`, `reports/`, `branch-review/`. Another feature's workspace is never yours to read or write, except to follow a declared predecessor link (below).
 
@@ -41,7 +37,7 @@ The workspace's `sdd/` subtree holds this plan's execution state: `ledger.md`, `
 - A ledger whose line 1 names a plan that is neither yours nor a declared predecessor is another run's: leave it in place and escalate, never overwrite it.
 - After compaction, trust the ledger and `git log` over your recollection. A lost workspace — `git clean -fdx` destroys it, since it is gitignored — is recovered as `skills/redteaming/references/formats.md` § Feature workspace root and layout states.
 
-**Read the plan once** — its spec pointer included: the header line naming the spec at its pinned revision and what the pin makes binding — and create a todo per task. The spec is a shared input each seat opens for itself from that pointer; no dispatch copies it.
+**Every dispatch.** The spec is a shared input each seat opens for itself from the plan's spec pointer; no dispatch copies it. Everything you paste into a dispatch prompt — and everything a seat prints back — stays resident in your context for the rest of the session. Hand artifacts over as files. Never run two implementers at once: they share the tree.
 
 ## Instruments and report files
 
@@ -61,75 +57,7 @@ The rules every dispatch shares — name the model, the three roles and the floo
 
 ## The Task Loop
 
-Everything you paste into a dispatch prompt — and everything a seat prints back — stays resident in your context for the rest of the session. Hand artifacts over as files.
-
-### 1. Dispatch the implementer
-
-Record BASE (`git rev-parse HEAD`) before dispatching — the task's review range starts there. Where the spec's preamble carries an `Umbrella:` line, take the receiving step of `skills/redteaming/references/flip-paths.md` § Under an umbrella: binding changes and late splits first, so a binding change it takes in falls before BASE, outside the task's range.
-
-Dispatch instrument `implementer`, its card filled.
-
-**Record the implementer's agent identity in the ledger as soon as the dispatch reports it**, as `Task <N>: implementer <agent id>` — its fix waves resume that identity. Never run two implementers at once: they share the tree.
-
-### 2. Handle the report
-
-- **DONE:** dispatch the reviewer (step 3; a marked task: below).
-- **DONE_WITH_CONCERNS:** dispatch the reviewer (step 3), which rules on every concern the report raises; you handle none before that review.
-- **NEEDS_CONTEXT:** provide the missing context and re-dispatch.
-- **BLOCKED:** assess — a context problem gets context and a re-dispatch; a reasoning problem a tier bump where one exists (the bounded role → the default role), and at the default role the operator's call, who may name the alternate role; an oversized task a split; a defective plan an escalation (§ Plan changes mid-execution). On a report that a binding item is wrong, your ruling — the item stands where the evidence does not show it wrong, with your reason; otherwise the correction, proposed or yours — passes `skills/redteaming/references/flip-paths.md` § The containment test: a contained one you confirm and record as that section states, then re-dispatch; any other goes to the operator as a decision ask carrying the proposal. A task blocked on a premise finding waits for the operator's ruling. Never ignore an escalation or make the same model retry without changes.
-
-**A marked task** — dispatched, its plan section carrying `Review: branch only` (`crucible:writing-plans` § Per-task structure — four fields, all required) — gets no task review and no fix loop where its report is DONE, raises no concern and passes the gates of step 4. Append its completion line (step 6): it is then a task completed branch review only, the branch reviewer its first review. A report raising a concern or failing a gate sends the task to step 3, to run the task loop from there.
-
-Whatever the status, route what the report voices beyond its work by § What a report voices.
-
-**Deviations.** The implementer may depart from advisory content, each departure in its Decision Log (what, why, blast radius); a deferred item is its call, logged where it departs from advisory content. What binds is what the plan's spec pointer names, at the pinned revision, read as the opening of `skills/redteaming/references/flip-paths.md` § Flip paths — scoped amendment and supersede states. Under an umbrella, the umbrella content `skills/brainstorming/references/umbrellas.md` § Children names binds too, and within a reviewed range a binding change to it, as § Edits defines one, is a finding. Implementing what binds is the job; changing or contradicting it is BLOCKED, with the evidence and a proposed correction (BLOCKED, above), never improvised. Stop-and-ask triggers, for the implementer and for you: insufficient context, an unresolved trade-off, conflicting findings, ambiguity above task authority. Plan ambiguity is never license. Drift found after the fact goes to § Drift found after the fact.
-
-### 3. Review the task
-
-One fresh-context reviewer per task, a task completed branch review only aside (step 2). Never skip it, never accept a report missing any verdict — a concern the implementer reported and the review left unruled is a missing verdict; implementer self-review never replaces it.
-
-Dispatch instrument `task-reviewer`, its card filled, its base the BASE you recorded. The status check applies (§ Rules every route shares). Its template ([task-reviewer-prompt.md](task-reviewer-prompt.md)) holds its adversarial mandate and the **four verdicts, all required** — intent, scope, deviation audit, quality — each concern the report raises ruled on in the deviation audit.
-
-**Loop wiring:** severities are **BLOCKER / MAJOR / MINOR**. A failed intent, scope or deviation-audit verdict enters the fix loop **regardless of the finding's severity label**; quality findings enter by severity — BLOCKER/MAJOR in, MINOR to the ledger.
-
-Dispatch hygiene: no open-ended directives ("check all uses") without a concrete task-specific reason; never ask the reviewer to re-run tests the report already evidences; never pre-judge findings ("do not flag…", "at most MINOR").
-
-### 4. Verification gates
-
-Every acceptance criterion in the task maps to a standing test, a one-time check or a stated why-not — confirm the report shows each: a standing test passing in its quoted run; a one-time check's command and quoted output, plus its failing pre-change run where it checks a state the change brings about.
-
-For a marked task they run at step 2 and also confirm what the task review would read in the report: RED output before GREEN, or the exception logged. You check it is there; the branch reviewer judges its substance.
-
-- **Snapshot or golden output** changed under a behavior-preservation claim is blessed only by a fresh blind snapshot-blessing agent, given the old and new output and the claim, nothing else, writing `sdd/reports/task-<N>-snapshot-<k>.md` (`<k>` numbering the task's blessings); a change it finds visible goes to the operator as a decision ask: what changed and why it matters, never a raw diff.
-
-### 5. The fix loop
-
-The loop triggers on a failed intent, scope or deviation-audit verdict, or a BLOCKER or MAJOR quality finding. **MINOR findings** never enter it: they go to the ledger as they arrive (`Task <N>: minor (deferred): <one-liner>`, under `## Deferred minors`), for the branch review to triage. A contested finding goes to § Disputes and adjudication.
-
-**Caught errors — your own included — are the loop working, not a verdict on the author:** report them in the same flat register as any finding (`crucible:redteaming § Operating stance — baseline error rate`).
-
-**Waves.** A fix wave is one fix dispatch plus its scoped re-review. **Three waves at most per task**, then the operator (below). A wave whose fix dispatch only disputes is still a wave. Each wave **resumes the recorded implementer** with the open findings verbatim: a fix wave never starts a new agent in place of a live one. Where your dispatch reference states this host exposes no resume operation, each wave dispatches a fresh instrument `implementer`, its card filled by its fix-only rules: record that in the ledger.
-
-**Every wave.** The implementer answers each finding **fixed** or **NOT CONFIRMED** in a fix report appended to its report file, as its template states. Before going on, confirm each fixed answer names the covering tests, the command, the output and the sibling instances (or none), and each NOT CONFIRMED its evidence. Then:
-
-- **Findings answered fixed** get the scoped re-review: instrument `re-reviewer`, its card filled. It verdicts each finding ADDRESSED or NOT ADDRESSED; new BLOCKER/MAJOR breakage it flags joins the open findings, and its out-of-scope observations go to the ledger as deferred minors. A re-review that leaves a fix-report concern unruled is missing a verdict. A wave that only disputes has nothing to re-review: its fix report's concerns become leads (§ What a report voices).
-- **Findings answered NOT CONFIRMED** are ruled on under § Disputes and adjudication, those for the adjudicator as one batch.
-
-Once the wave's re-review, if any, and the rulings on its disputes are in, append `Task <N>: fix wave <W>/3 (<X> addressed, <Y> open, <Z> disputed — <one-liners>; commits <a7>..<b7>)`, with `commits none` for a wave that only disputes.
-
-Never fix findings yourself in the controller session: your context stays clean for coordination, and controller fixes skip review. Inline mode is the sanctioned path for a task you implement, and the very-small lane's inline fix waves are the one other exception.
-
-**After the third wave.** Findings it leaves open stop the task: put them to the operator as a decision ask — park a finding, with its reason; block the work; or another approach — recorded under `## Adjudication rulings` as open, the answer beside it. Park: a `Task <N>: parked — <finding> — ruling: <the answer>` line per finding, then the completion line with its parked count. Block: `Task <N>: BLOCKED — <the ruling>`, and execution stops at that task until the operator rules again. Another approach: the answer names it — a plan change (§ Plan changes mid-execution) or a revert (§ Drift found after the fact), whose re-run starts at wave 1. Further waves are not an answer.
-
-### 6. Complete the task
-
-When the review comes back clean — or every open finding is dismissed, or parked on the operator's answer (step 5), or step 2 completes a marked task — append the completion line:
-
-- `Task <N>: complete (commits <base7>..<head7>, review clean)`
-- `Task <N>: complete (commits <base7>..<head7>, <K> parked)` after a park answer
-- `Task <N>: complete (commits <base7>..<head7>, branch review only)` for a task completed branch review only, its leads written first
-
-Mark the todo complete and move on. Never move to the next task while an open BLOCKER/MAJOR finding is neither fixed nor dismissed nor parked on the operator's answer. An open premise finding is a decision ask, not an open BLOCKER/MAJOR: it holds no completion by itself (`skills/redteaming/references/flip-paths.md` § Premise findings).
+Run each task through this loop, in plan order: when Setup is done, read `skills/subagent-driven-development/references/task-loop.md` in full. **Three fix waves at most per task.** After the third wave, findings it leaves open stop the task: put them to the operator as a decision ask — park a finding, with its reason; block the work; or another approach — recorded under `## Adjudication rulings` as open, the answer beside it. Park: a `Task <N>: parked — <finding> — ruling: <the answer>` line per finding, then the completion line with its parked count. Block: `Task <N>: BLOCKED — <the ruling>`, and execution stops at that task until the operator rules again. Another approach: the answer names it — a plan change (§ Plan changes mid-execution) or a revert (§ Drift found after the fact), whose re-run starts at wave 1. Further waves are not an answer.
 
 ## Rules every route shares
 
@@ -139,45 +67,23 @@ These hold in the task loop, in the branch review `crucible:requesting-code-revi
 
 ### Disputes and adjudication
 
-A finding is fixed or disputed, never dropped: a silent discard is forbidden, and every ruling is a ledger entry.
-
-**Who rules.** You rule on each disputed finding with your evidence — an implementer's NOT CONFIRMED, a finding you judge wrong, a plan conflict: one that collides with plan text, or a reviewer's finding that a binding item's literal reading reaches a case its author did not consider (is the plan or the work wrong?). A fresh adjudicator seat rules instead on any of these that touches binding content (the Deviations paragraph of § The Task Loop), as a literal-reading finding always does, or the Intent, and on every dispute about a diff you wrote: any commit you made yourself, such as a task whose ledger holds `Task <N>: inline` (§ Inline mode) or Finish's open items, and any lane diff. A plan conflict that is a design judgment goes to the operator as a decision ask. A finding that both fails a verdict and conflicts with plan text is ruled on first as a plan conflict; if the ruling upholds the plan, the verdict failure stands and enters the loop.
-
-**The adjudicator dispatch.** Disputes for it go in batches — one wave's, or those you raise together at any point — each batch to one fresh adjudicator seat, its prompt composed by you. Its inputs: each disputed finding verbatim with its id; the evidence for each (the fix report's, or yours); the requirements inputs the finding was graded against — the plan pointer in the task loop, the spec at its pinned revision and the plan in the branch review, the lane note at its pinned revision on the very-small lane; where the spec's preamble (on the lane, the note's) carries an `Umbrella:` line, the umbrellas up the chain, by path; and per finding, the range of the review that raised it — in the task loop, with the amendment commits inside it (§ Plan changes mid-execution). Copy into its prompt `skills/subagent-driven-development/references/seat-rules.md` § What binds in a range and § Building the diff, the latter applied to each finding's range in turn, each range's files named apart, in its scratch subdirectory: its report's path less `.md`, in the workspace's `scratch/` directory (`.crucible/<feature-slug>/scratch/…` from the worktree root). Its mandate: for each finding, UPHELD or DISMISSED with a ruling, marking any ruling that touches binding content; it reads only in the worktree and writes only its report file and its scratch subdirectory. The status check applies. Its report file:
-
-- task loop: `sdd/reports/task-<N>-adjudication-<b>.md`, where `<b>` numbers the task's dispute batches; `sdd/reports/task-<N>-x<X>-adjudication-<b>.md` in re-run `<X>` after a revert;
-- branch review: `sdd/branch-review/adjudication-<b>.md`, `<b>` numbering the branch review's batches;
-- a replacement seat adds `-r<R>` before `.md`.
-
-**Outcomes.** Write each to `## Adjudication rulings` — the finding, UPHELD or DISMISSED, the ruling and its reason, your evidence or the adjudicator's report path — so a resumed controller rebuilds the open set from the ledger. An upheld finding re-enters the loop, or after the task's third wave the operator ask (§ The Task Loop, step 5), and cannot be disputed again. A dismissed finding is closed by its ruling. A ruling the adjudicator marks as touching binding content, or makes on a literal-reading finding, passes `skills/redteaming/references/flip-paths.md` § The containment test before you act on it — on the very-small lane, one changing the note's binding parts is the operator's, as its reference states: a contained one you record as your ruling, as that section states; any other goes to the operator as a decision ask: record it as `pending operator`, and the finding stays open until the answer. Record an operator's answer to any decision ask in this section beside the ruling it settles, and where `skills/redteaming/references/formats.md` § Feature workspace root and layout sends it. A ruling adds no wave. Every ruling you make, and every dismissed or parked BLOCKER/MAJOR, reaches the operator with its ruling in the close readout (§ Finish).
+A finding is fixed or disputed, never dropped: a silent discard is forbidden, and every ruling is a ledger entry. Whenever a finding is disputed, read `skills/subagent-driven-development/references/disputes-and-adjudication.md` in full. Record an operator's answer to any decision ask under `## Adjudication rulings` beside the ruling it settles, and where `skills/redteaming/references/formats.md` § Feature workspace root and layout sends it.
 
 ### What a report voices
 
-Any implementer's report, a fix report included, may carry beside its work:
-
-- **Concerns** about that work: the review of it rules on each — the task review, the re-review of a fix report, the branch reviewer through leads on the very-small lane (`references/very-small-lane.md`) — and you handle none before it. A fix report no re-review reads, from a wave that only disputes, has its concerns written as leads, `lead (concern)`.
-- **A premise finding**: written under `## Adjudication rulings` as open, it goes where `skills/redteaming/references/flip-paths.md` § Premise findings sends it; no review rules on it as a concern.
-- **`Questions` items:** each a lead, `lead (question)`; a branch-review fix report's go under `## Questions` instead (`crucible:requesting-code-review`).
-- **A fix proposed outside its task**, never made: route it to its owning task, in that task's dispatch context where it has yet to run; to the branch review as a lead, `lead (proposal)`; or, where it touches binding content, by `skills/redteaming/references/flip-paths.md`.
-
-A task reviewer's `Questions` items are leads too. Write each lead in § Setup's form; none opens a fix wave by itself or consumes a cap: what the branch reviewer's ruling on a lead opens is `crucible:requesting-code-review` § The branch-review loop's to say.
+Before routing what a report carries beside its work, read `skills/subagent-driven-development/references/what-a-report-voices.md` in full.
 
 ### Drift found after the fact
 
-Work found off-plan without a logged decision — by the task review's deviation audit, by you, or by a branch-review pass flagging it DRIFT in a completed task — within the **materiality bound**, an undisclosed deviation from *binding* content or one with cross-task blast radius, is a decision ask to the operator:
-
-- **Revert** the task, with the later tasks the ask names as building on it, by `git revert` of each one's range, never a reset, and run them again from step 1 of the task loop. Append `Task <N>: reverted — <the ruling>` for each, which reopens it. A task run again takes `-x<X>` after `task-<N>` in every report path, `<X>` one more than its `reverted` lines, so its reports and wave numbers start fresh. Reverted at the branch review, return the branch to `crucible:requesting-code-review` once the re-run tasks complete; it resumes with a full-scope pass.
-- **Repair** it: in its own fix loop while the task is open; for a completed task, recorded under `## Adjudication rulings`, which the resume rule does not read, and riding a branch-review fix wave as a ruling change counted against its cap, as `crucible:requesting-code-review` § The branch-review loop states.
-
-Below the bound, undisclosed advisory choices (implementers do not log every micro-choice) and *disclosed-but-unjustified* Decision Log entries enter the fix loop. On the very-small lane, drift goes as `references/very-small-lane.md` states.
+When work is found off-plan without a logged decision, read `skills/subagent-driven-development/references/drift.md` in full.
 
 ## Inline mode
 
-You may implement a task directly in the controller session only where it is overdetermined (`skills/subagent-driven-development/references/seat-rules.md` § The arrangement questions) and fits your remaining context without pushing out the coordination state you need through the branch review; otherwise dispatch it, the default. Review applies **unchanged**: write your report at the same `sdd/` path, and dispatch the same reviewer with the same plan pointer, four verdicts and gates. A task the plan marks `Review: branch only` keeps that review when you implement it: the mark applies to a dispatched task. **Any loop-entering finding converts the task to standard dispatch** — at any severity — and a fresh implementer owns the fixes: controller fixes that skip review are the case this rule exists for. Append `Task <N>: inline` where a dispatched task's implementer line goes (§ The Task Loop, step 1): every dispute on the task's diff is the adjudicator's (§ Disputes and adjudication), and after a compaction that line still shows the diff is yours.
+Before implementing a task yourself instead of dispatching it, read `skills/subagent-driven-development/references/inline-mode.md` in full.
 
 ## Plan changes mid-execution
 
-Executing defective or superseded plan text produces reviewable-but-wrong work, so such text found mid-execution — a BLOCKED escalation of a defective plan, an operator's answer that changes plan text, an adjudication or a ruling of yours that patches the plan, an operator's ruling on a premise finding given during the task loop — takes a flip path, as do binding content a finding shows wrong (what the Deviations paragraph of § The Task Loop names, or binding-by-construction contract content) and a supersede called for, an unfold included; a scoped amendment is yours to confirm where § The containment test of the reference named below finds the change contained. The reference named below also governs a feature found to need splitting and, where the spec's preamble carries an `Umbrella:` line, a binding change its umbrella needs or one landed on the base that the feature has not taken in, checked for at each task boundary (§ The Task Loop, step 1) and before each branch-review pass and wave (`crucible:requesting-code-review` § The branch-review loop). **Before acting on any of them, read `skills/redteaming/references/flip-paths.md` in full; it binds as if written here**, and re-read it after compaction: a flip in flight shows in the ledger through its recorded decision ask or ruling.
+Executing defective or superseded plan text produces reviewable-but-wrong work, so such text found mid-execution — a BLOCKED escalation of a defective plan, an operator's answer that changes plan text, an adjudication or a ruling of yours that patches the plan, an operator's ruling on a premise finding given during the task loop — takes a flip path, as do binding content a finding shows wrong (what the Deviations paragraph of § The Task Loop names, or binding-by-construction contract content) and a supersede called for, an unfold included; a scoped amendment is yours to confirm where § The containment test of the reference named below finds the change contained. The reference named below also governs a feature found to need splitting and, where the spec's preamble carries an `Umbrella:` line, a binding change its umbrella needs or one landed on the base that the feature has not taken in, checked for at each task boundary (§ The Task Loop, step 1) and before each branch-review pass and wave (`crucible:requesting-code-review` § The branch-review loop). **Before acting on any of them, read `skills/redteaming/references/flip-paths.md` in full**, and re-read it after compaction: a flip in flight shows in the ledger through its recorded decision ask or ruling.
 
 ## Whole-Branch Review
 
@@ -185,19 +91,11 @@ After the last task completes, run `crucible:requesting-code-review`: it owns th
 
 ## The very-small lane
 
-The third route, alongside the standard and folded presets: the very-small preset (`crucible:brainstorming` § Proposing the arrangement (step 4)), executed from a lane note, with no spec campaign, no plan and no per-task review, entered only as its reference states. **On entering the lane, read `skills/subagent-driven-development/references/very-small-lane.md` in full, and re-read it after compaction; it binds as if written here**, and where it says so it supersedes this skill's rules for the lane.
+The third route, alongside the standard and folded presets: the very-small preset (`crucible:brainstorming` § Proposing the arrangement (step 4)), executed from a lane note and entered only as its reference states. **On entering the lane, read `skills/subagent-driven-development/references/very-small-lane.md` in full**; where it says so it supersedes this skill's rules for the lane.
 
 ## Finish
 
-The order is binding. After any loop activity, restart at step 1, so new records — rulings included — are checked and reach the close readout.
-
-1. **Record checks:** inspect the feature workspace against the ledger — the campaign records where their phases ran (round records, readouts, fix lists); the ledger's sections; under `sdd/reports/`, per task, `task-<N>-report.md`, `task-<N>-review.md` (none where the latest run completed branch review only), each wave's `task-<N>-re-review-w<W>.md`, each dispute batch's `task-<N>-adjudication-<b>.md` and each snapshot blessing's `task-<N>-snapshot-<k>.md` — for a task run again, its latest run's, in their `-x<X>` form — and their `-r<R>` forms, and `sdd/reports/lane-report.md` where the lane dispatched an implementer; under `sdd/branch-review/`, each `pass-<k>.md`, `wave-<n>-fix.md`, `wave-<n>-re-review.md` and `adjudication-<b>.md`. List every gap explicitly; never paper over one.
-2. **Close readout** to the operator — a message, not a file, its decision asks in a final block, each with options and recommendation. It lists dismissed BLOCKER/MAJOR findings with their rulings, a `Lane:` lead carried at BLOCKER or MAJOR that the branch reviewer LEFT among them; every ruling you made yourself, with its reason — disputes and plan conflicts, the plan patches they led to, the contained amendments, the plan phase's included; each ruled premise finding, with its ruling; every improvement you adopted, named as a lightly held change; each ruling or requested change a fixer declined, as an ask; the lane's departures, on the lane or through a hatch's predecessor link, the record-check gaps, and, after loop activity that followed an earlier answer, what changed since. Then **the work left open**, each item with its source and your proposal to keep or drop it, and why: parked BLOCKER/MAJOR findings with their rulings, premise asks still unruled, the deferred minors and leads (a RECOMMENDED lead you did not adopt with its verdict; where a cleanup wave ran, why it left each one), and the `## Questions` items not listed above, with your disposition — declined improvements and what earlier phases carried among them. Where the project's instructions name no home for open items and something is left open, ask where it goes or whether to drop it, with the offer to record the answer (`skills/redteaming/references/formats.md` § Open items). Where this feature's landing could complete its umbrella, say what `skills/brainstorming/references/umbrellas.md` § Closing review has the readout say. End with your recommendation and why: one of the options `crucible:finishing-a-development-branch` § Step 4: Present Options offers on this branch, or more work; recommending a pull request, also ask that skill's question whether the feature folder's files go into it. It assembles from `## Adjudication rulings`, `## Deferred minors`, `## Questions`, the `Task <N>: parked` lines and the lane section, following the ledger's predecessor link where one exists.
-3. **The answer:** wait for it; integration stays the operator's decision. An answer that asks for more work, or a ruling that opens a wave, reopens the loop (`crucible:requesting-code-review` § The branch-review loop) before any step below, and Finish restarts at step 1. Where loop activity follows an answer, a red suite's included, the next readout reports what changed, and the earlier answer stands only where nothing new was left open; otherwise you ask again. An answer choosing an integration option runs steps 4–7 in order. Where step 2 asked where open items go, steps 4–7 wait until the answer says, or drops them; ask again, and leave the workspace in place, until it does. An answer that discards the work skips steps 4 and 5, and takes finishing's typed `discard` confirmation before step 6, deleting the feature workspace; one left unconfirmed counts as an answer that chose no option. An answer that leaves the work in place but chooses no option runs them too, and at step 7 finishing presents its options with your recommendation.
-4. **The open items and the umbrella mark:** send the work left open, as the answer left it, where `skills/redteaming/references/formats.md` § Open items sends it: the home the project's instructions name or the answer named, an in-repository one written on this branch, with any instruction-file line the answer recorded in a committed file; the items the answer dropped go nowhere. No item takes a ruling of its own. Where the spec, folded document or lane note carries an `Umbrella:` line, mark this feature's entry in that umbrella `landed`, in the form `skills/brainstorming/references/umbrellas.md` § Marks states. A feature with no line marks too where an umbrella on the base branch holds an unmarked entry opening with its slug (`git grep -n "<feature-slug>" <base-branch> -- "*/umbrella.md"`) and its feature folder was born on a tree without that umbrella — `git cat-file -e <commit>:<umbrella-path>` fails for its folder's first commit, the last line of `git log --diff-filter=A --format=%h -- <feature-folder>`: it was in flight when that umbrella was written. A feature born on a tree that held the umbrella is not that entry's child. Where its tree lacks that umbrella, it merges the base branch in first, never rebasing. A feature no umbrella names writes no mark; an entry already marked needs nothing. Commit what this step wrote on this branch, so the suite runs on the tree that lands; where the loop reopens, the next answer rewrites the items written here.
-5. **The suite:** run the full suite, or the project's declared merge gate, on HEAD, and show the operator a green run's summary line. Do not classify a red run: it is a BLOCKER finding against the branch, handed to `crucible:requesting-code-review`'s loop and counted against its cap, the wave's fix base being the HEAD the suite ran on. That a failure is not the branch's — it fails on the merge base too, or is environmental — is a dispute like any other (§ Disputes and adjudication), which you may raise before the wave opens. A failure ruled not the branch's, whoever ruled, is recorded with its ruling and not raised again while it fails the same way; show the operator the red run with that ruling: only an answer that accepts it lets finishing proceed past its Step 1.
-6. **Delete the feature workspace:** delete `.crucible/<feature-slug>/` and nothing else, and report to the operator anything you could not delete.
-7. Then use `crucible:finishing-a-development-branch`, which carries out the answer without presenting its menu again and asks only what the answer left open.
+When the branch review ends, read `skills/subagent-driven-development/references/finish.md` in full. The order is binding. After any loop activity, restart at step 1, so new records — rulings included — are checked and reach the close readout. **Step 3, the answer:** wait for it; integration stays the operator's decision. An answer that asks for more work, or a ruling that opens a wave, reopens the loop (`crucible:requesting-code-review` § The branch-review loop) before any later step, and Finish restarts at step 1. Where loop activity follows an answer, a red suite's included, the next readout reports what changed, and the earlier answer stands only where nothing new was left open; otherwise you ask again. An answer choosing an integration option runs steps 4–7 in order. Where step 2 asked where open items go, steps 4–7 wait until the answer says, or drops them; ask again, and leave the workspace in place, until it does. An answer that discards the work skips steps 4 and 5, and takes finishing's typed `discard` confirmation before step 6, deleting the feature workspace; one left unconfirmed counts as an answer that chose no option. An answer that leaves the work in place but chooses no option runs them too, and at step 7 finishing presents its options with your recommendation.
 
 ## Common Rationalizations
 

@@ -40,6 +40,34 @@ EXPECTED = {
         "skills/subagent-driven-development/SKILL.md",
         "skills/redteaming/references/flip-paths.md",
     ),
+    (
+        "skills/subagent-driven-development/SKILL.md",
+        "skills/subagent-driven-development/references/setup.md",
+    ),
+    (
+        "skills/subagent-driven-development/SKILL.md",
+        "skills/subagent-driven-development/references/task-loop.md",
+    ),
+    (
+        "skills/subagent-driven-development/SKILL.md",
+        "skills/subagent-driven-development/references/disputes-and-adjudication.md",
+    ),
+    (
+        "skills/subagent-driven-development/SKILL.md",
+        "skills/subagent-driven-development/references/what-a-report-voices.md",
+    ),
+    (
+        "skills/subagent-driven-development/SKILL.md",
+        "skills/subagent-driven-development/references/drift.md",
+    ),
+    (
+        "skills/subagent-driven-development/SKILL.md",
+        "skills/subagent-driven-development/references/inline-mode.md",
+    ),
+    (
+        "skills/subagent-driven-development/SKILL.md",
+        "skills/subagent-driven-development/references/finish.md",
+    ),
 }
 
 #: References more than one skill's stub names; each of their stubs is a
