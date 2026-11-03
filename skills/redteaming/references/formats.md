@@ -80,6 +80,8 @@ workspace):
                               #   deleted with the workspace
 ```
 
+What a round directory under `campaigns/` holds and its record's shape: `skills/redteaming/references/round-record.md`.
+
 The other report names under `sdd/` — review, re-review, fix and adjudication
 reports — are fixed in `crucible:subagent-driven-development` § Finish.
 
