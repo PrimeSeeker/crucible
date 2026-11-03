@@ -68,6 +68,13 @@ EXPECTED = {
         "skills/subagent-driven-development/SKILL.md",
         "skills/subagent-driven-development/references/finish.md",
     ),
+    ("skills/redteaming/SKILL.md", "skills/redteaming/references/panels.md"),
+    (
+        "skills/redteaming/SKILL.md",
+        "skills/redteaming/references/merge-and-finding-hygiene.md",
+    ),
+    ("skills/redteaming/SKILL.md", "skills/redteaming/references/fix-application.md"),
+    ("skills/redteaming/SKILL.md", "skills/redteaming/references/round-readout.md"),
 }
 
 #: References more than one skill's stub names; each of their stubs is a
