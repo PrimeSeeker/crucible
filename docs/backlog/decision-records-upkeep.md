@@ -30,8 +30,9 @@
   - Decision paragraphs that restate the skill text clause by clause:
     in `umbrellas.md`, "Edited by weight until it closes", "Marks, not
     derived state" and "One closing review, a step and not a gate"
-    (`skills/brainstorming/references/umbrellas.md` § Edits, § Marks,
-    § Closing, § Closing review); in `records-and-workspace.md`, "Work
+    (`skills/brainstorming/references/umbrella-children.md` § Edits,
+    § Marks; `skills/brainstorming/references/umbrellas.md` § Closing,
+    § Closing review); in `records-and-workspace.md`, "Work
     left open" and "Finish" (`crucible:subagent-driven-development`
     § Finish, `crucible:finishing-a-development-branch`).
   - Two bases in `routes.md` (at `a709dbc`, lines 143 and 255) read
