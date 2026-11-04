@@ -126,9 +126,8 @@ delegated by the maintainer.)
 ## Rejected
 
 - **A tree-status attestation in every read-only report**, with a check
-  that it is there: the templates' read-only lines already bind, and
-  the controller's own check costs one command instead of a section in
-  every report (declined on 2026-10-05).
+  that it is there: declined, with its reason, in
+  `docs/decisions/rejected-machinery.md`.
 - **Voiding a window only for untracked paths among the seat's inputs**:
   no void it would spare is on record, and it costs a second rule
   (§ Why).

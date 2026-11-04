@@ -424,8 +424,8 @@ records that cite "the audit" draw on these figures. (Basis: measured.)
 - **A lint for untagged code-shaped claims**, until the prose rules are
   seen eroding (§ Why).
 - **Recording a predicate's result both before and after the change**,
-  with a written argument that it is not vacuous: the rule that it must
-  fail first carries both (2026-10-05).
+  with a written argument that it is not vacuous: declined, with its
+  reason, in `docs/decisions/rejected-machinery.md`.
 - **A premise-finding mandate for task reviewers**: on code the
   differential probe found the task review's rubric hiding nothing, and
   on prose the catches it missed were things the rubric neither asks for

@@ -96,8 +96,8 @@ release lands on it, is tagged and then promoted to `stable`
   run where no POSIX shell exists (§ Why).
 - **Forcing past a Git refusal** (`-D`, `--force`, a force-push) on the
   agent's own initiative: the refusal is protecting work (§ Why).
-- **A staging rule for two sessions sharing one branch**: it came from
-  one accidental split, and was declined on 2026-10-05 with the trim.
+- **A staging rule for two sessions sharing one branch**: declined, with
+  its reason, in `docs/decisions/rejected-machinery.md`.
 
 ## Changes
 

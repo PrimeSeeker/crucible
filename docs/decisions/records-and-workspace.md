@@ -64,7 +64,8 @@ to the close readout, the work left open (minors, leads, questions,
 declined improvements, unruled asks, parked BLOCKER or MAJOR findings
 with their rulings, and what earlier phases carried) goes, each item
 with its source, to the home the project's instructions name for open
-items: an in-repository home written and committed on the branch, or an
+items, a user-level file's line naming the project counting: an
+in-repository home written and committed on the branch, or an
 outside tracker as the instructions say, those being the operator's word
 for it. Where they name none, the close readout asks the operator where
 the items go or whether to drop them, and offers to record the answer
@@ -417,10 +418,10 @@ worktree. (Basis: judgment, accepted by the maintainer.)
   hooks), which override crucible's defaults.
 - Its merge gate, which SDD Finish and finishing run in place of the full
   suite.
-- Where open items go, named in its instruction files: an
-  in-repository home on the branch, or an outside tracker as the
-  instructions say. With none named, the operator is asked each time
-  open items leave a workspace.
+- Where open items go, named in its instruction files, a user-level
+  file's line naming the project counting: an in-repository home on the
+  branch, or an outside tracker as the instructions say. With none named,
+  the operator is asked each time open items leave a workspace.
 
 ## Changes
 

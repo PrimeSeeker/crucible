@@ -93,7 +93,7 @@ pins what binds or crosses tasks and defers local mechanism to the
 implementer at any severity; non-local mechanism, binding and cross-task
 content are never deferred. Fixes land at the altitude of the text around
 them, and the spec states the current design only. Seats grade sketches
-only for contradiction or infeasibility, and raise missing detail only
+only for contradiction with binding content or infeasibility, and raise missing detail only
 when it is non-local (`crucible:redteaming § Merge and finding hygiene`;
 `crucible:redteaming § Fix application and blind verification`).
 

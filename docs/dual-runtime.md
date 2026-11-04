@@ -148,7 +148,8 @@ none of it.
 - **Effort** — each dispatch reference's **Select effort** entry
   (`claude-code-dispatch.md`, `codex-dispatch.md`): this host's effort
   mechanism and any exception this host makes to the escalation rule,
-  which the rules above state.
+  which `skills/subagent-driven-development/references/dispatch-composition.md`
+  § Models and effort states.
 - **The generator** — `MODELS` in `tools/instrument_agents.py` gives each
   Claude Code instrument agent its role's model alias: the one site outside
   the host maps that names models, since it renders host-specific files.

@@ -435,7 +435,9 @@ The rewrite re-derived `SKILL.md` from a rule inventory of the 1,576-word file, 
 A record cites by path and heading so that the scanner can fail a
 dangling citation. Records point at skill sections more than the skills
 point at each other, and a record is edited with the change it records,
-so any heading may be cited and the scanner checks it exists. The skills
+so any heading may be cited and the scanner checks that the cited text
+begins with one, a limit `docs/authoring.md` § Reference convention states
+(words appended to a real heading pass). The skills
 had the same freedom only for headings `docs/authoring.md` listed as
 frozen, one in all, while they cited 42 others (as counted on
 2026-10-27); since the

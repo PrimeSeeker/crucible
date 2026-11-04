@@ -23,7 +23,9 @@ convention" -- the positive format this scanner validates against):
    ``tests/...``, ``docs/...``) that do not resolve on disk.
 5. Relative markdown link targets that do not resolve on disk.
 6. Anchor citations (``<file>.md § Heading`` / ``crucible:<skill> §
-   Heading``) whose heading does not exist in the cited file.
+   Heading``) that match no heading of the cited file. A citation counts
+   as found when its cited text begins with a heading: the form marks no
+   end to the heading, so words appended to a real heading pass.
 
 Scoping decisions:
 
