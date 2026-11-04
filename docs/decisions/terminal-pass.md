@@ -193,7 +193,7 @@ by the maintainer, for the record-only run.)
 
 ## Changes
 
-- 2026-11-05: the pass's read scoping admits the files a claim it checks cites, since its instruction to run a check needs them and two passes had read them anyway.
+- 2026-11-05: the pass's read scoping admits the files a claim in the artifact cites, seat reports staying out, and a claim it cannot check goes under `## Notes`, since its instruction to run a check needs them and two passes had read them anyway.
 - 2026-11-03: the pass takes the overturn question from `skills/subagent-driven-development/references/review-terms.md`, where the arrangement questions moved from the shared seat reference so a controller that applies them no longer loads the seat rules; its template's text is unchanged.
 - 2026-11-02: the pass's shared sections arrive spliced into its
   template, its card losing the plugin root, and it takes § Location;

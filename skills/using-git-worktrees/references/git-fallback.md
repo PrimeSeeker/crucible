@@ -10,7 +10,7 @@ Use the worktree directory your instructions declare, without asking; else an ex
 
 Before creating, run `git -C <project-root> check-ignore -q <worktree-dir>/`. Keep the trailing slash: without it, Git reports an ignored directory that does not exist yet as not ignored.
 
-Exit 0 means ignored: proceed. Exit 1 means not ignored: commit nothing, report the result to the operator and wait, and re-run the check on the same directory once they have settled it.
+Exit 0 means ignored: proceed. Exit 1 means not ignored: commit nothing, put it to the operator as a decision ask, recommending the ignore entry and the branch it goes on, and re-run the check on the same directory once they settle it.
 
 #### Create the Worktree
 

@@ -14,13 +14,9 @@ rule).
 plan, code or a diff, none is withheld, and a decision ask may quote the
 few lines it turns on. The controller makes technical calls itself and
 reports them; design judgments reach the operator as plain-language
-decision asks with a recommendation (`crucible:redteaming § Round
-readout`). Every readout that puts decision asks to the operator puts
-them in a block of their own after its body, each with its options and
-recommendation; the rule is stated once, in that section, and the other
-readouts point to it, but for SDD's close readout, which states it in a
-sentence of its own because the very-small lane's controller never loads
-the redteaming skill. The README states the stance to newcomers (`README.md` § Who
+decision asks with a recommendation, and a message carrying anything
+else puts them last, in a block of their own (`crucible:using-crucible
+§ Decision asks`), which every controller reads. The README states the stance to newcomers (`README.md` § Who
 it is for). There is no profile switch: the router's precedence line is
 the override.
 
@@ -133,7 +129,7 @@ shows them; nothing is ever withheld.
 
 ## Changes
 
-- 2026-11-05: decision asks coming last in a block of their own moved to the router's § Decision asks, since the campaign gate, the umbrella landing and the closing review reached the rule only through a redteaming reference.
+- 2026-11-05: decision asks coming last in a block of their own moved to the router's § Decision asks, reaching any message to the operator, and SDD's close readout no longer states it itself, since the campaign gate, the umbrella landing and the closing review reached the rule only through a redteaming reference.
 - 2026-11-02: the design digest retired, with its `digest.md`, its
   format with its `## Decisions`, `## Positions flipped` and
   `## Open judgments` sections, the round readout's digest-update item

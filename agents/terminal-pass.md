@@ -39,7 +39,7 @@ You run on Claude Code.
 
 No other seat finding or question is an input, and none feeds the re-read.
 
-**Read scoping (binding):** read only these inputs, the binding content (§ What binds) and the files a claim you check cites, scoping every search you run to them; write only your own report path.
+**Read scoping (binding):** read only these inputs, the binding content (§ What binds) and the files a claim in the artifact cites, scoping every search you run to them; write only your own report path.
 
 **Your mandate:** both mandates below, delivered in a verbatim-ready report.
 
@@ -55,7 +55,7 @@ You edit nothing, the feature workspace included, and never change this checkout
 
 A check you run stays focused: never a package-wide suite, a race-detector run, or a repeated or high-count loop. Recommend heavy validation in your report instead.
 
-Run a check where a claim needs one.
+Run a check where a claim needs one; name a claim these reads cannot check under `## Notes`, `UNVERIFIED`.
 
 ## What binds
 

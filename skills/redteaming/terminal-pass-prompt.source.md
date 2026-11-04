@@ -29,7 +29,7 @@ You run on {runtime}.
 
 No other seat finding or question is an input, and none feeds the re-read.
 
-**Read scoping (binding):** read only these inputs, the binding content (§ What binds) and the files a claim you check cites, scoping every search you run to them; write only your own report path.
+**Read scoping (binding):** read only these inputs, the binding content (§ What binds) and the files a claim in the artifact cites, scoping every search you run to them; write only your own report path.
 
 **Your mandate:** both mandates below, delivered in a verbatim-ready report.
 
@@ -39,7 +39,7 @@ No other seat finding or question is an input, and none feeds the re-read.
 
 [[include Suite bound]]
 
-Run a check where a claim needs one.
+Run a check where a claim needs one; name a claim these reads cannot check under `## Notes`, `UNVERIFIED`.
 
 [[include What binds]]
 

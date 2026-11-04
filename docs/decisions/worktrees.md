@@ -24,9 +24,7 @@ starts a feature inside another feature's linked worktree, or where the
 instruction files declare a worktree directory, since the native tools
 the skill knows of take no base or directory. From another feature's
 worktree, the new worktree is cut from the repository's base branch or a
-base the operator names, in the main checkout's worktree directory, and
-a worktree directory found not ignored there is reported to the operator,
-never fixed by a commit.
+base the operator names, in the main checkout's worktree directory.
 
 **Native tools named in a shared skill.** Step 1a lists what a native
 worktree tool may be called, `EnterWorktree` among them, and the
@@ -37,8 +35,8 @@ the claude-ism scanner has no term for it.
 **The fallback's checks.** The ignore check runs against the directory
 actually selected, with its trailing slash:
 `git -C <project-root> check-ignore -q <worktree-dir>/`. A directory not
-ignored is added to `.gitignore` and committed, and the same directory
-is checked again. `git worktree add -b` refusing a branch name that already
+ignored is put to the operator as a decision ask, never fixed by a
+commit, and the same directory is checked again once they settle it. `git worktree add -b` refusing a branch name that already
 exists is the answer: the agent picks a fresh name or checks out the
 existing branch deliberately, never forcing past it
 (`crucible:using-git-worktrees § 1b. Git Worktree Fallback`).
@@ -91,7 +89,7 @@ name or a path, places a new worktree under `.claude/worktrees/` and
 takes its base from a setting (checked 2026-10-20), so it cannot be given
 either. An ignore fix committed from the project root would land on
 whatever branch the main checkout has out, which can be the base, so
-the fallback commits nothing and reports a not-ignored directory, from
+the fallback commits nothing and asks about a not-ignored directory, from
 another feature's worktree since 2026-10-12 and from any checkout since
 2026-11-05, upstream's commit gone. That reaches a fresh repository's
 default directory too, since the check cannot tell it from a declared
@@ -167,7 +165,7 @@ On 2026-11-03 the two steps were copied into SDD's setup reference, and the git 
 
 ## Changes
 
-- 2026-11-05: the fallback reports a not-ignored directory from any checkout and commits nothing, and finishing's cleanup covers a declared directory, closing the two residuals kept from upstream.
+- 2026-11-05: the fallback puts a not-ignored directory to the operator from any checkout and commits nothing, and finishing's cleanup covers a declared directory, closing the two residuals kept from upstream.
 - 2026-11-03: the copy's size is dated to when it was made, since the per-file compaction cut both copies further.
 - 2026-11-03: SDD Setup runs project setup and the clean baseline from its own copy of the worktree skill's Steps 2–3, and the git fallback moved into `skills/using-git-worktrees/references/git-fallback.md` behind a stub; because the skill loads on every route where the fallback rarely runs, and SDD Setup rarely reloaded the skill for the two steps.
 - 2026-11-02: why Step 0's comparison holds in a submodule moved here

@@ -220,7 +220,7 @@ adapters are in `docs/dual-runtime.md`.
   instructions say to work in place. Crucible uses your host's own
   worktree tool where one exists. Where it creates one itself, it goes
   under `.worktrees/`; if that folder is not already ignored by git,
-  crucible adds it to `.gitignore` and commits that change.
+  crucible asks you how to settle that, and commits nothing itself.
 
 Once a feature finishes, its process records (review rounds, reports,
 rulings) live only in your host's session transcripts, so they last only

@@ -308,7 +308,7 @@ worktree. (Basis: judgment, accepted by the maintainer.)
 
 ## Changes
 
-- 2026-11-05: a feature reads the repository's commit conventions before its first commit, since meeting them only at a pull request made a sign-off a history rewrite.
+- 2026-11-05: a feature reads the repository's commit conventions before its first commit, and hands implementers those beyond the instruction files, since meeting them only at a pull request made a sign-off a history rewrite.
 - 2026-11-04: the rewrite route's basis says who raised what: the review of the lane that added it found both credited to an agent.
 - 2026-11-04: the never-commit mode is closed, no project needing it being known; the record keeps rewriting a copy of the branch at push time as the route to try first, with its measured limits.
 - 2026-11-03: SDD's Setup is the only writer that seeds the ledger with what earlier phases left open, contained amendments, open premise asks and `deferred-minor` entries, its forms moved into `skills/subagent-driven-development/references/setup.md`; the plan phase's and the folded campaign's closes no longer seed it; because the same seeding was written twice with no incident behind the second writer.
