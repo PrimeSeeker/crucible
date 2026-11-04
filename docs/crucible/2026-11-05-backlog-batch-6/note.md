@@ -10,9 +10,9 @@ Clear the backlog points whose fix is stated and needs no evidence from a real r
 - `writing-skills-followups`, `repo-conventions-at-setup`, `declared-worktree-directory-residuals`;
 - the own-entry clause missing from `review-terms.md`, and `record-wording-slips`.
 
-The operator's ruling applies: fix a minor only if it could lose a record or sits on a path that has actually run; file the rest.
+The minors policy the operator accepted applies: fix a minor only if it could lose a record or sits on a path that has actually run; file the rest.
 
-No break: a not-ignored worktree directory now stops for the operator's answer where a commit went through, and nothing the base does stops working.
+No break: a not-ignored worktree directory is now excluded locally where a commit went through, and nothing the base does stops working.
 
 ## Change list
 
