@@ -4,7 +4,7 @@
 
 **The spine.** SDD executes a plan task by task: a fresh implementer, then one fresh-context reviewer, unless the plan routes the task's review to the branch review (below), with progress kept in a ledger that survives compaction. The controller records BASE before each implementer, never runs two implementers at once, and fixes no finding itself, inline mode and the very-small lane's fix waves excepted (`crucible:subagent-driven-development § The Task Loop`; `skills/subagent-driven-development/references/task-loop.md`). The very-small lane runs no per-task loop (`docs/decisions/routes.md`).
 
-**The implementer contract.** What the plan's spec pointer names binds, with requirements, interfaces, non-goals and acceptance, read for its intent (`docs/decisions/the-spec.md`; `crucible:writing-plans § Deferring detail`); the approach is advice, and the implementer may depart from it, logging each departure in its report's Decision Log with what, why and blast radius. Changing or contradicting binding content, or applying it literally to a case its author plainly did not consider, is BLOCKED, the report naming the item, the evidence that shows it wrong and a proposed correction (`skills/subagent-driven-development/implementer-prompt.md` § Binding vs Advisory: the Deviation License); the controller lets an item the evidence does not show wrong stand and passes any other correction through the containment test (`skills/subagent-driven-development/references/task-loop.md` § 2. Handle the report). It reports BLOCKED or NEEDS_CONTEXT rather than guess, and is told that escalating is never penalized (`skills/subagent-driven-development/implementer-prompt.md` § Stop-and-Ask Triggers). Beside its work, its report may carry concerns, `Questions` items, a premise finding (`docs/decisions/evidence-and-findings.md`) and a fix it proposes outside its task, which it never makes; the controller handles none of these before review (`crucible:subagent-driven-development § What a report voices`). Its dispatch carries a one-line reminder of the binding acceptance criteria and the Decision Log obligation (`skills/subagent-driven-development/implementer-prompt.slots.md`). Every implementer seat, fix waves' included, is dispatched as instrument `implementer` (`skills/subagent-driven-development/references/dispatch-composition.md` § Models and effort; `docs/decisions/model-roles-and-effort.md`). What else it follows, its report file, writing-skills for text instructing agents and the git identity among them, is its template's (`skills/subagent-driven-development/implementer-prompt.md` § Where You Work, § Tests: Test-First, Evidence Before Done, § Report Format).
+**The implementer contract.** What the plan's spec pointer names binds, with each task's Contract and Acceptance and the plan's inter-task contracts, read for its intent (`docs/decisions/the-spec.md`; `crucible:writing-plans § Deferring detail`); the approach is advice, and the implementer may depart from it, logging each departure in its report's Decision Log with what, why and blast radius. Changing or contradicting binding content, or applying it literally to a case its author plainly did not consider, is BLOCKED, the report naming the item, the evidence that shows it wrong and a proposed correction (`skills/subagent-driven-development/implementer-prompt.md` § Binding vs Advisory: the Deviation License); the controller lets an item the evidence does not show wrong stand and passes any other correction through the containment test (`skills/subagent-driven-development/references/task-loop.md` § 2. Handle the report). It reports BLOCKED or NEEDS_CONTEXT rather than guess, and is told that escalating is never penalized (`skills/subagent-driven-development/implementer-prompt.md` § Stop-and-Ask Triggers). Beside its work, its report may carry concerns, `Questions` items, a premise finding (`docs/decisions/evidence-and-findings.md`) and a fix it proposes outside its task, which it never makes; the controller handles none of these before review (`crucible:subagent-driven-development § What a report voices`). Its dispatch carries a one-line reminder of the binding acceptance criteria and the Decision Log obligation (`skills/subagent-driven-development/implementer-prompt.slots.md`). Every implementer seat, fix waves' included, is dispatched as instrument `implementer` (`skills/subagent-driven-development/references/dispatch-composition.md` § Models and effort; `docs/decisions/model-roles-and-effort.md`). What else it follows, its report file, writing-skills for text instructing agents and the git identity among them, is its template's (`skills/subagent-driven-development/implementer-prompt.md` § Where You Work, § Tests: Test-First, Evidence Before Done, § Report Format).
 
 **Task review.** One fresh reviewer per task, never skipped, a task completed branch review only aside (below). Its stance is adversarial, "attempt to reject this task", governing the search and not the conclusion, and it returns four verdicts, all required: intent, scope, the deviation audit and quality (`skills/subagent-driven-development/task-reviewer-prompt.md`). A concern is confirmed as a finding at a staked severity or dismissed with a one-line reason, and a review or re-review that leaves one unruled is missing a verdict (`skills/subagent-driven-development/references/seat-rules.md` § Concerns; `crucible:subagent-driven-development § What a report voices`). Its own `Questions` items, a premise doubt among them, become leads (`docs/decisions/evidence-and-findings.md`). It takes the reported test output as given and builds its own diff (`docs/decisions/branch-review.md`), and a literal-reading finding goes to the adjudicator (`docs/decisions/adjudication.md`). The task reviewer runs on the default role, every task it reviews, and the re-reviewer on the bounded role or better (`docs/decisions/model-roles-and-effort.md`). An open premise finding holds no task's completion by itself.
 
@@ -75,6 +75,18 @@ outside the feature builds on the behaviour it changes goes to the
 operator. (Basis: judgment, accepted by the maintainer; measured, for
 the case; judgment, a branch review's proposal accepted by the maintainer, for testing the
 ruling.)
+
+What binds is stated per document since 2026-11-04. The spec's list and
+the plan's had stood side by side since 0.2.0 without saying so:
+writing-plans listed "requirements, interfaces, non-goals, acceptance",
+which read as a wider list for the spec, and the implementer template's
+Binding line named none of them, though the 2026-10-28 spec of the firm
+class took it to. A plan task's Contract and Acceptance and the
+inter-task contracts bind as plan content, and what binds in a spec is
+unchanged, its own Acceptance, interfaces and non-goals staying lightly
+held (`docs/decisions/the-spec.md`). An agent's recommendation, on which
+the maintainer left the call to the agent. (Basis: judgment, accepted by
+the maintainer.)
 
 On crucible's umbrella-specs feature (2026-10-28, five tasks, all
 prose), the issues that mattered surfaced in the implementers'
@@ -298,6 +310,13 @@ judgment, accepted by the maintainer, for the test.)
 
 ## Rejected
 
+- **A spec's Acceptance, interfaces and non-goals binding as well:** every
+  change to them after the campaign would be an amendment, against the
+  spec read as a hypothesis (`docs/decisions/the-spec.md`), whose sample's
+  longest chain of asks began at an Acceptance threshold.
+- **The spec's list alone binding an implementer, plan text included:**
+  reviewers and the implementer's own reminder hold a task to its
+  acceptance, so this would change what they enforce.
 - **A stuck trigger** escalating a seat past the default role, for now:
   the maintainer judged late waves generally not stuck, just slowly
   mining residual issues (§ Why).
@@ -326,6 +345,7 @@ judgment, accepted by the maintainer, for the test.)
 
 ## Changes
 
+- 2026-11-04: what binds is stated per document: a plan task's Contract and Acceptance and the inter-task contracts as plan content, the spec's list unchanged; because "requirements, interfaces, non-goals and acceptance" read as a second list for the spec, and the implementer template named no plan items.
 - 2026-11-03: the implementer's role is cited at the dispatch composition's § Models and effort and its slot card's Model line, no longer at SDD's Models section; because SDD dropped the implementer's row when the default role came to be stated once for every seat (`docs/decisions/model-roles-and-effort.md`).
 - 2026-11-03: the arrangement questions' citation follows their move from the shared seat reference to `skills/subagent-driven-development/references/review-terms.md`, a reference of their own, so a controller that applies them no longer loads the seat rules.
 - 2026-11-02: the shared seat reference's citations follow its rename
