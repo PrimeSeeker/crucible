@@ -37,7 +37,8 @@ behavior; the requirement or review finding the deletion or loosening
 fulfils; or a warning sign from
 `skills/subagent-driven-development/writing-good-tests.md` that it shows.
 The task reviewer checks the Decision Log's justification against the
-code, the re-reviewer the fix report's (on the very-small lane, the
+code (inline mode's controller-written report names it too), the
+re-reviewer the fix report's (on the very-small lane, the
 controller's own fix report names it as an implementer's does), and the
 branch reviewer judges
 from the code and the requirements, and checks the Decision Log's
@@ -192,6 +193,7 @@ testing, or other test gates, states them there.
 
 ## Changes
 
+- 2026-11-04: inline mode's task report names each deletion's or loosening's justification, as the lane's inline fix reports do, so a miss costs no conversion to dispatch.
 - 2026-11-04: the third justification reads "the deletion or loosening fulfils", since the earlier wording, naming the change, also read as the whole work fulfilling a requirement, which any task's does; the very-small lane's inline fix reports name each deletion's or loosening's justification, since the re-reviewer counts one only where the fix report names it.
 - 2026-11-04: any other change making a test more permissive takes the deleted test's justifications, for what it loosened; because deleting an over-specific assertion, or one whose requirement was relaxed, passed while loosening it failed.
 - 2026-11-04: a removed assertion takes the deleted test's justifications instead of counting as a weakened test, which now means a test made more permissive; because the test guide's own remedy for an assertion on a mock failed review while deleting the whole test passed.
