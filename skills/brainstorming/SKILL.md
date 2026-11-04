@@ -20,7 +20,7 @@ Do NOT invoke any implementation skill, write any code (a context-gathering prob
 1. Gather context, aggressively
 2. Clarifying dialogue
 3. Propose 2–3 approaches
-4. Present the design in sections
+4. Present the design in sections, closing on the arrangement (§ Proposing the arrangement) and any umbrella (§ Umbrellas)
 5. Write the spec
 6. Spec self-review
 7. Provision the feature workspace
@@ -92,7 +92,7 @@ After writing, re-read with fresh eyes (where step 4's answer approved a draft, 
 
 1. **Placeholder scan:** fix any "TBD", "TODO", incomplete section or vague requirement. A `Deferred to implementation:` marker is exempt: it records who decides, not an unfinished sentence.
 2. **Internal consistency:** do sections contradict each other? Does the architecture match the feature descriptions?
-3. **Scope check:** focused enough for a single implementation plan, or does it need decomposition? Parts meeting § Umbrellas' criterion take an umbrella.
+3. **Scope check:** focused enough for a single implementation plan, or does it need decomposition? Parts meeting § Umbrellas' criterion take an umbrella; on an umbrella's own draft, ask it of each child.
 4. **Ambiguity check:** where a requirement reads two ways, pick one and make it explicit, unless it carries a `Deferred to implementation:` marker; then picking is the implementer's job.
 5. **Evidence check:** every claim § Spec contract's verification rule covers was verified when written or carries `UNVERIFIED`; resolve the tags now, or leave them standing as declared input for the campaign. Then the **consumer sweep**: for each symbol, file or interface the design changes, deletes or constrains, find its existing consumers by search, not from memory, and account for each in the design. A rule stated in more than one place (docs, prompts, templates) is such an interface: its consumers are every site stating it, found by searching its key terms. Then the **trace**: for each rule the design ties to a trigger ("at each X, do Y"), name every route (standard, folded lane, very-small lane, umbrella) and phase (brainstorm, spec campaign, plan phase, execution, branch review, finish) that must reach it, and the moment X occurs in each; where X occurs and nothing reaches the rule, the design has a gap.
 

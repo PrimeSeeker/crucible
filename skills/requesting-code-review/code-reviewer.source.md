@@ -86,7 +86,7 @@ Your range is your dispatch's base..head. Name in your report what you read beyo
 
 Plan alignment:
 - Does the implementation match the plan or requirements, all planned functionality present?
-- Is each deviation a justified improvement or a problematic departure? One from binding plan content with no logged decision is undisclosed drift: flag it DRIFT with its task; the controller routes DRIFT apart from the fix wave.
+- Is each deviation a justified improvement or a problematic departure? One from binding plan content (a task's Contract and Acceptance, the plan's inter-task contracts) with no logged decision is undisclosed drift: flag it DRIFT with its task; the controller routes DRIFT apart from the fix wave.
 - For each rule the branch ties to a trigger ("at each X, do Y"), does every route and phase that must apply it reach it when X occurs there?
 
 Code quality:
@@ -139,7 +139,7 @@ Your one-sentence restatement of the goal, then in a line or two what comparing 
 #### MINOR (Nice to Have)
 [Optimization opportunities, documentation polish]
 
-For each issue (a premise finding's entry opens with its label, `premise`):
+For each issue (a premise finding's or an unstated break's entry opens with its label, `premise` or `unstated break`):
 - Location
 - What's wrong
 - Why it matters
@@ -155,6 +155,6 @@ One line each. Per lead: CONFIRMED (naming the issue it became, and `intent gap`
 
 ### Assessment
 
-**Ready to merge?** [Yes | No | With fixes], on the findings other than premise findings, which are the operator's to rule on.
+**Ready to merge?** [Yes | No | With fixes], on the findings other than premise findings and `unstated break` findings, which are the operator's to rule on.
 
 **Reasoning:** [1-2 sentence technical assessment]

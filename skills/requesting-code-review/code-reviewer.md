@@ -40,7 +40,7 @@ What binds is the spec at the revision your dispatch or your plan's spec pointer
 
 ## Binding changes
 
-Grade the artifact or range under review against what binds: a change to any of those Constraints or firm decisions, to what an umbrella's Intent asks for, or to a started child's entry (its feature folder exists), this feature's or another's, is a finding, whether the artifact calls for it or the range makes it. Not findings: this feature's own mark; a clarification of its own entry that its spec states, changing nothing another entry waits on; a binding change a merge takes in from the base.
+Grade the artifact or range under review against what binds: a change to any of those Constraints or firm decisions, to what an umbrella's Intent asks for, or to a started child's entry (its feature folder exists), this feature's or another's, is a finding, whether the artifact calls for it or the range makes it. Not findings: this feature's own mark, its entry being the one naming its feature folder's slug; a clarification of its own entry that its spec states, changing nothing another entry waits on; a binding change a merge takes in from the base.
 
 Where a binding item's literal reading reaches a case its author plainly did not consider, whether the branch applies it there or departs from it, report a finding labeled literal-reading naming the item and the case.
 [[when lane = very-small]]
@@ -124,7 +124,7 @@ Read `commits.txt`, then `range.diff`, each once. A failed check or git command 
 
 Plan alignment:
 - Does the implementation match the plan or requirements, all planned functionality present?
-- Is each deviation a justified improvement or a problematic departure? One from binding plan content with no logged decision is undisclosed drift: flag it DRIFT with its task; the controller routes DRIFT apart from the fix wave.
+- Is each deviation a justified improvement or a problematic departure? One from binding plan content (a task's Contract and Acceptance, the plan's inter-task contracts) with no logged decision is undisclosed drift: flag it DRIFT with its task; the controller routes DRIFT apart from the fix wave.
 - For each rule the branch ties to a trigger ("at each X, do Y"), does every route and phase that must apply it reach it when X occurs there?
 
 Code quality:
@@ -200,7 +200,7 @@ Your one-sentence restatement of the goal, then in a line or two what comparing 
 #### MINOR (Nice to Have)
 [Optimization opportunities, documentation polish]
 
-For each issue (a premise finding's entry opens with its label, `premise`):
+For each issue (a premise finding's or an unstated break's entry opens with its label, `premise` or `unstated break`):
 - Location
 - What's wrong
 - Why it matters
@@ -216,6 +216,6 @@ One line each. Per lead: CONFIRMED (naming the issue it became, and `intent gap`
 
 ### Assessment
 
-**Ready to merge?** [Yes | No | With fixes], on the findings other than premise findings, which are the operator's to rule on.
+**Ready to merge?** [Yes | No | With fixes], on the findings other than premise findings and `unstated break` findings, which are the operator's to rule on.
 
 **Reasoning:** [1-2 sentence technical assessment]

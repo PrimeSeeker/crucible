@@ -5,15 +5,6 @@
 A split on the very-small lane, and the ledger and report rules around it,
 have not run in a session, and no run on record has hit any of these.
 
-- **An appended report can be overwritten on the save path.**
-  `skills/subagent-driven-development/references/dispatch-composition.md`
-  item 5 counts an appended report without the seat's section as missing, and
-  after one resume the controller persists the return itself. The mark's rule
-  (`skills/redteaming/references/formats.md` § Feature workspace root and
-  layout) describes a whole file and does not say to append. A save written
-  as a whole file destroys the earlier sections, and on a split the resume
-  rule would then re-run those parts. A fresh fix-wave implementer's report
-  has the same exposure. It needs a seat that fails to write twice.
 - **A part that stopped has a section.** A split resumes from the first part
   the report file holds no section for
   (`references/very-small-lane.md`), but an implementer writes its report
@@ -37,15 +28,12 @@ have not run in a session, and no run on record has hit any of these.
   controller re-derives how the rest were cut from the note and `git log`.
 - **Whether this mechanism is worth its words.** The feature that added the
   split raised the subagent-driven-development prose budget by 194 words for
-  paths no run has hit, and its last full pass found three of the seams above
-  in text its previous wave had added.
+  paths no run has hit, and its last full pass found seams of this kind in text
+  its previous wave had added.
 
 ## Follow-up
 
-Fix the save path first: say that a save for an appended report is appended,
-its mark opening its section. It is the one seam that loses a record.
-
-Then decide between two shapes for the rest: finish the mechanics (the section
+Decide between two shapes: finish the mechanics (the section
 states the part's status, the wave line covers any fresh seat, the split is
 written down once at the stay answer), or replace them with a shorter rule,
 such as a resumed controller putting a split in progress to a fresh decision.

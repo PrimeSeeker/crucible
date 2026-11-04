@@ -48,7 +48,7 @@ A round directory's contents and record: `skills/redteaming/references/round-rec
 
 **Later changes to the ask enter `request.md` (binding).** While the workspace lives, the controller appends to it, quoted verbatim, each operator message after brainstorm exit that changes what was asked.
 
-**A report the controller saved carries a mark (binding):** it is the returned text unchanged, under a first line saying the controller saved it and why. The `sdd/` files the controller writes by rule (the very-small lane's `wave-<n>-fix.md`, inline mode's report) are its own and carry none.
+**A report the controller saved carries a mark (binding):** it is the returned text unchanged, under a first line saying the controller saved it and why; saved to an appended report it is appended, the mark opening its section. The `sdd/` files the controller writes by rule (the very-small lane's `wave-<n>-fix.md`, inline mode's report) are its own and carry none.
 
 **Lifecycle (binding):** provisioned at brainstorm exit; lives until SDD Finish, an umbrella's landing, or abandonment, the operator's call (a late split's included) on a readout listing what the records hold open. At each end the controller deletes `.crucible/<feature-slug>/` and nothing else, and reports what it could not delete. An umbrella's closing review has its own workspace, under the umbrella's slug, deleted once its findings have left (§ Open items). No orphan workspaces. Workspace lost mid-feature: the in-flight phase restarts from the committed spec or plan and `git log`.
 

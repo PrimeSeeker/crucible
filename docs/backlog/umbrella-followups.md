@@ -6,16 +6,6 @@ The branch that added umbrellas (`skills/brainstorming/references/umbrellas.md`,
 `docs/decisions/umbrellas.md`) closed its review with these left open,
 none blocking:
 
-- **A mark can conflict with an appended child.** § Shape puts a blank
-  line between entries, which keeps siblings' marks from conflicting in git.
-  Where the Children list ends the file, one branch marking the last
-  entry and another appending a child conflict; a line after the list
-  avoids it (reproduced in throwaway repositories).
-- **No text says how a seat finds the feature's own entry** (by its
-  slug).
-- **Brainstorming's Flow step 4 does not point to the umbrella stub.**
-  Self-review check 3's umbrella sentence also reads oddly against an
-  umbrella's own draft.
 - **FIX_BASE after a red suite.** SDD § Finish gives a red-suite wave's
   FIX_BASE as the HEAD the suite ran on; the branch review's receiving
   step can merge the base before FIX_BASE is recorded.
@@ -40,7 +30,7 @@ none blocking:
 
 ## Follow-up
 
-Fix the first three in one small change; rule on the FIX_BASE wording
+Rule on the FIX_BASE wording
 and on whether the mark or an approval-only umbrella's workspace should
 change. Close the two open-items gaps: a carrier for a pending ask
 (the umbrella's workspace, or a note in `umbrella.md`) and the

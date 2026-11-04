@@ -12,11 +12,13 @@ An umbrella is a spec of its own kind, with a feature's slug, branch, worktree, 
 
 A campaigned umbrella carries every section, so its seats grade it as a spec. No `Deferred to implementation:` marker: detail it leaves open goes in the owning child's entry.
 
-**The Children list** is ordered, one entry per child, with a blank line between entries. An entry names the child's slug, what it must deliver, what it waits on, and its mark (`skills/brainstorming/references/umbrella-children.md` § Marks):
+**The Children list** is ordered, one entry per child, with a blank line between entries and a line of text after the last, so a mark and an appended child do not conflict in git. An entry names the child's slug, what it must deliver, what it waits on, and its mark (`skills/brainstorming/references/umbrella-children.md` § Marks):
 
     - `cache-layer` — a read-through cache behind the store interface; waits on nothing — landed
 
     - `cache-metrics` — hit-rate metrics for the cache layer; waits on `cache-layer`
+
+    End of the Children list.
 
 **Breaks.** The step-4 proposal says whether each child can land without a break (`crucible:brainstorming` § Spec contract). Where one cannot, its entry says so, and the entry of the child that owes the rest says what it owes.
 

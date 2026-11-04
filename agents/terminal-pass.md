@@ -63,7 +63,7 @@ What binds is the spec at the revision your dispatch or your plan's spec pointer
 
 ## Binding changes
 
-Grade the artifact or range under review against what binds: a change to any of those Constraints or firm decisions, to what an umbrella's Intent asks for, or to a started child's entry (its feature folder exists), this feature's or another's, is a finding, whether the artifact calls for it or the range makes it. Not findings: this feature's own mark; a clarification of its own entry that its spec states, changing nothing another entry waits on; a binding change a merge takes in from the base.
+Grade the artifact or range under review against what binds: a change to any of those Constraints or firm decisions, to what an umbrella's Intent asks for, or to a started child's entry (its feature folder exists), this feature's or another's, is a finding, whether the artifact calls for it or the range makes it. Not findings: this feature's own mark, its entry being the one naming its feature folder's slug; a clarification of its own entry that its spec states, changing nothing another entry waits on; a binding change a merge takes in from the base.
 
 Grade both mandates against what binds. An artifact applying a binding item literally to a case its author plainly did not consider is a finding; name the item and the case.
 
@@ -88,7 +88,7 @@ Every finding carries its evidence and a location: `file:line`, or, for a premis
 
 - The artifact's advisory register (mechanism sketches, solution shapes an implementer may replace) is graded only for contradiction with binding content or infeasibility; missing or imperfect detail there is not a finding.
 - Missing local mechanism detail (inside one implementer's natural scope) is not a finding at spec or plan stage; missing non-local mechanism is: cross-task or cross-component contracts, shared formats, orderings or state, consumers outside the change's own files.
-- Content a format makes binding (a plan task's required fields and acceptance, a spec's required sections) is never local detail: its absence is a finding.
+- Content a format requires (a plan task's required fields and acceptance, a spec's required sections) is never local detail: its absence is a finding.
 - Contradictions and infeasibility are findings at any locality, as are the two findings § Binding items and unrecorded choices names.
 
 ## The arrangement questions

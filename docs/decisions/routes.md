@@ -334,7 +334,8 @@ question's hypothesis does not cover such a change, whose first review
 is still the branch review and whose fix waves stay the controller's.
 The ask states those two, and the operator's answer to stay accepts
 them for that change. An agent's proposal, which the maintainer
-accepted. (Basis: judgment, accepted by the maintainer.)
+accepted, having left the resume by report section to the agent.
+(Basis: judgment, accepted by the maintainer.)
 
 The note and the lane proposal share one gate (2026-10-07): a separate
 gate re-presented decisions just made and never showed the note whose

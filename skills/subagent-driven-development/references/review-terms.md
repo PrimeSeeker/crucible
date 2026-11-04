@@ -29,7 +29,7 @@ A plan task may take the branch review as its first review when it builds no maj
 
 - The artifact's advisory register (mechanism sketches, solution shapes an implementer may replace) is graded only for contradiction with binding content or infeasibility; missing or imperfect detail there is not a finding.
 - Missing local mechanism detail (inside one implementer's natural scope) is not a finding at spec or plan stage; missing non-local mechanism is: cross-task or cross-component contracts, shared formats, orderings or state, consumers outside the change's own files.
-- Content a format makes binding (a plan task's required fields and acceptance, a spec's required sections) is never local detail: its absence is a finding.
+- Content a format requires (a plan task's required fields and acceptance, a spec's required sections) is never local detail: its absence is a finding.
 - Contradictions and infeasibility are findings at any locality, as are the two findings § Binding items and unrecorded choices names.
 
 ## Suite bound

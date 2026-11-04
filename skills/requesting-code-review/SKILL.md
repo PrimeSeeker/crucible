@@ -33,7 +33,7 @@ Where the spec's preamble (on the lane, the note's) carries an `Umbrella:` line,
 
 A review missing a verdict (a pass that leaves a lead it was handed unruled, a re-review that leaves a fix-report concern unruled) is handled as `crucible:subagent-driven-development § Rules every route shares` states.
 
-**An `unstated break`** goes to the operator as a decision ask: repair opens a wave; acceptance, with until when or that it is permanent, is a ruling that closes the finding.
+**An `unstated break`** goes to the operator as a decision ask, written open under `## Adjudication rulings`: repair opens a wave; acceptance, with until when or that it is permanent, is a ruling that closes the finding.
 
 **What opens a wave**, each counted against the cap:
 

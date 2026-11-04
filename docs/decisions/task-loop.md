@@ -252,8 +252,9 @@ not done, restarted it at step 1 and lost the wave count (left open by
 the `backlog-batch-2` lane, no run on record hit it, 2026-11-04). The
 line now names the wave, and that wave's own line ends the wait. A fresh
 wave implementer, where a host cannot resume, takes a line of the same
-kind, which resumes inside its wave for the same reason.
-(Basis: judgment, an agent's proposal accepted by the maintainer.)
+kind, which resumes inside its wave for the same reason. (Basis:
+judgment, an agent's proposal accepted by the maintainer, who left the
+fresh wave implementer's line to the agent.)
 
 ### Drift found after the fact
 

@@ -110,7 +110,8 @@ The line names a path and no revision, so the plan header keeps its
 single pin: the plan pins the spec, and the spec's preamble carries the
 line. A seat treats as binding only what the statement it was handed
 names, so a statement that left the umbrella out would leave that seat
-reviewing without it; hence the clause at every statement. Within a
+reviewing without it; hence, until 2026-11-02, the clause at every
+statement. Within a
 reviewed range, the child's own mark, a clarification its spec states
 that changes nothing another entry waits on, and a binding change taken
 in from the base are not findings: the mark and such a clarification
@@ -179,7 +180,9 @@ cases: a nested umbrella's landing, an unrelated feature taking a
 child's slug, and a drop riding a branch that never lands. A mark
 written by the child itself lands with the child, touches only its own
 entry, and the blank line between entries keeps siblings' marks from
-conflicting in git. Closing is read from the marks, recursively, so it
+conflicting in git, as a line after the list keeps a last entry's mark
+from conflicting with an appended child (reproduced in a throwaway
+repository, 2026-11-04). Closing is read from the marks, recursively, so it
 takes no write of its own up the chain. A child
 already in flight when its umbrella is written carries no line, so its
 finish finds its entry by its slug instead (2026-10-28). (Basis:
@@ -319,6 +322,7 @@ judgment, an agent's call the maintainer has not ruled on.)
 
 ## Changes
 
+- 2026-11-04: the Children list ends on a line of text, because a last entry's mark conflicted in git with an appended child; a seat finds a feature's own entry by its feature folder's slug, which nothing stated.
 - 2026-11-04: an umbrella's children keep landing on the base, now weighed against holding them off it; its proposal says whether they can land without a break, and the entry of the child that owes the rest says what it owes. The maintainer asked, and a break is now stated (`docs/decisions/the-spec.md`).
 - 2026-11-04: the closing review's dropped seat on the other host is ruled on: the maintainer kept it dropped, leaving it to the operator's own instruction.
 - 2026-11-03: the premise-finding route is cited at `skills/redteaming/references/premise-asks.md`, where flip-paths' § Premise findings moved, so a controller handling a premise finding no longer loads the flip paths (`docs/decisions/authoring-crucible.md`).
