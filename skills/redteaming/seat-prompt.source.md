@@ -54,8 +54,6 @@ A code-shaped claim (a regex, a CLI invocation, "the code does X") carries a run
 
 [[include An umbrella's overturn question]]
 
-[[include The mark's criterion]]
-
 [[include Report file]]
 
 Your report path is a `seat-<id>.md` file, `<id>` being your seat id, the `<seat-id>` below. Its sections, in this order:

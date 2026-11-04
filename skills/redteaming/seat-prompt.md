@@ -105,10 +105,6 @@ A no for any other reason states that reason.
 
 For an umbrella's campaign the code is its children's: once they are implemented, is overturning a major mechanism the umbrella fixes (such as its split into children, an interface between them or a constraint they share) reasonably expected?
 
-## The mark's criterion
-
-A plan task may take the branch review as its first review when it builds no major mechanism, leaves its implementer little of how it works to decide, and nothing outside it depends on its details: later tasks, contracts and readers build on what it delivers, never on how it does it. The branch review runs only after every later task, too late for a detail something else builds on.
-
 ## Report file
 
 Write your report, in this template's structure, to the report file your dispatch names (a write it authorizes): the file is the deliverable. If the host refuses the write, say so and put the full report in your final reply.
