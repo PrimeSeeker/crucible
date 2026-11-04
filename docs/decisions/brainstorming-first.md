@@ -83,14 +83,16 @@ at v6.2.0) whose page loads its logo from Prime Radiant's site with the
 plugin version in the request unless a telemetry opt-out variable is
 set: a usage ping crucible would have to strip. A builder tool does
 want visual questions, so a lighter, host-neutral form stayed open until
-2026-11-04, when the maintainer postponed it indefinitely: nobody had
-asked for one, no brainstorm is on record going wrong without one, and a
-just-in-time offer looked likely to grow in scope. The README's section
-for people coming from superpowers says crucible has none, for whoever
-comes across it and doesn't remember. (Basis: the maintainer's
+2026-11-04, when the maintainer postponed it indefinitely, judging a
+just-in-time offer likely to grow in scope. The agent putting that ask
+had found no request for one and, searching the records for mockups and
+visual questions, no brainstorm that went wrong without one. The README's
+section for people coming from superpowers says crucible has none, for
+whoever comes across it and doesn't remember. (Basis: the maintainer's
 preference, for the original drop, the postponement and the note;
-external, for upstream's server; judgment, accepted by the maintainer,
-for not refusing a lighter form.)
+external, for upstream's server; measured, by that search, for what it
+found; judgment, accepted by the maintainer, for not refusing a lighter
+form.)
 
 ## Rejected
 
@@ -117,6 +119,7 @@ ask for a foreign plan to run as written, or set how questions are asked.
 
 ## Changes
 
+- 2026-11-04: the postponement's reasons say whose each is, and what was searched.
 - 2026-11-04: the lighter visual companion is postponed indefinitely rather than open, and the README says crucible has none; the maintainer's ruling.
 - 2026-10-27: a throwaway probe answering a question is context
   gathering, never committed, narrower than upstream's spike (v7.0.1

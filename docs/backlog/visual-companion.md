@@ -6,8 +6,8 @@
   showing mockups during brainstorming: the maintainer did not use it, and
   upstream's form is a Node server with an opt-out usage ping
   (`docs/decisions/brainstorming-first.md`).
-- Nobody has asked for it, and no brainstorm is on record going wrong for
-  lack of a mockup.
+- A search on 2026-11-04 found no request for it in the repository's issues
+  or records, and no brainstorm on record going wrong for lack of a mockup.
 - On one reading, `crucible:brainstorming` § Context gathering already allows
   a throwaway mockup in the host's temporary directory, as a probe answering
   a question; only the offer is missing.

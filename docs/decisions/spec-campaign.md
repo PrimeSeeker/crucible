@@ -46,8 +46,8 @@ architecture-heavy runs on the alternate role
 instructions or request ask for one, never on crucible's proposal: an
 extra seat, read-only, beside the round's seats on this host, which stay
 complete without it, required lenses included. Its loss costs the round
-nothing, and its findings are each checked against the files before they
-merge (`skills/redteaming/references/panels.md`;
+nothing, though the round readout names it, and its findings are each
+checked against the files before they merge (`skills/redteaming/references/panels.md`;
 `skills/redteaming/references/merge-and-finding-hygiene.md`).
 
 **The general lens.** Every multi-seat round has at least one general
@@ -239,11 +239,21 @@ proposing the seat to everyone, and the audit is why each finding is
 checked before it merges. It is an extra seat so that a usage limit, an
 expected trade-off on the other host, costs the round nothing. Its
 sandbox enforces read-only where a prompt cannot, at the price of
-probes that write files. The README's recommendation is the
-maintainer's own and is labelled anecdotal. (Basis: measured, on thin
-data, for the yield; judgment, an agent's proposal accepted by the
-maintainer, for the form; the maintainer's preference, for the
-recommendation.)
+probes that write files. The readout names a lost seat so that a broken
+setup cannot silently turn the operator's instruction into nothing.
+The README's recommendation is the maintainer's own and is labelled
+anecdotal. (Basis: measured, on thin data, for the yield; judgment, an
+agent's proposal accepted by the maintainer, for the form; the
+maintainer's preference, for the recommendation.)
+
+The run on that lane, from Claude Code with crucible enabled on Codex,
+took about 2 minutes and 101k tokens. Its session recorded the
+operator's `model_reasoning_effort` value, and its commands read its
+template first and no router, the whole basis for the README's "needs
+no switch". A run still going after 30 minutes counts as lost: the
+figure is a judgment, generous beside that run, and the one hung run on
+record was under a fresh Codex home on Windows. (Basis: measured, one
+run; judgment, an agent's call, for the figure.)
 
 ### Right-sizing
 
@@ -431,6 +441,7 @@ trim.)
 
 ## Changes
 
+- 2026-11-04: the round readout names a lost seat on another host, a run counts as lost after 30 minutes, and the record keeps what the one measured run showed, which would otherwise leave with its workspace.
 - 2026-11-04: the quorum rule excepts a seat on another host and required lenses stay on this host's seats, so losing it costs the round nothing; the yield gains that lane's own run.
 - 2026-11-04: a seat on another host, opt-in and written down, settling the single-family revisit: the maintainer's ruling on a thin recorded yield, and the risk stays accepted for a panel with none.
 - 2026-11-03: the operating stance is recorded as the one sentence the compaction made it, its disclosure paragraph now a clause.

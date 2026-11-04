@@ -8,6 +8,7 @@ At every round close the readout carries these items and nothing else:
 - the questions carried to readout, each quoted as written, ids included — omitted where none is;
 - in every numbered spec-campaign round, whether overturning a major mechanism after code is still reasonably expected, and why, answering each seat forecast of an expected overturn by the mechanism it names — omitted elsewhere;
 - in the plan record and a folded campaign's terminal-pass record, the tasks the plan marks `Review: branch only`, each with its reason, as information, not an ask — omitted elsewhere and where no task carries the mark;
+- a seat on another host that ended with no report, and what happened — omitted where none did;
 - design judgments, as decision asks — omitted where none is.
 
 An item is omitted only where its line says; an omitted item is dropped, not narrated as absent.

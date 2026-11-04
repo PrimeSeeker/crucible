@@ -44,7 +44,8 @@ enabled = true
   to this key; `high` is the recommended level. Without it a seat runs at
   its model's default (`low` for crucible's default model), not at your
   session's effort, and crucible's review and execution workflows say so
-  before their first dispatch.
+  before their first dispatch. A seat started from Claude Code through
+  `codex exec` reads the top-level `model_reasoning_effort` instead.
 - **The checklist tool.** Crucible tracks checklists with `update_plan`,
   which on codex-cli 0.162.1 exists only with this key set. Without it,
   sessions keep the checklist in their messages.
