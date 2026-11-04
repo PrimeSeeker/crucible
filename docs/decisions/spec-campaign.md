@@ -14,7 +14,7 @@
 
 **Right-sizing.** The right-sizing seat's product is scope-cut decisions, and it is judged by them. It sits in round 1 and is re-seated mid-campaign or when the controller judges the artifact has grown far enough to need it; what it attests as right-sized is cut only by a logged ruling (`skills/redteaming/references/panels.md`). A fix that removes machinery outranks one that adds it, all else equal (`crucible:redteaming § Fix application and blind verification`).
 
-**Quorum and degraded rounds.** Every lost or crashed seat is recorded, and a round that lost one, a seat on another host aside, is topped back up or recorded degraded. A degraded round never counts toward convergence or against the cap, a one-seat round that loses its seat is degraded, and two consecutive degraded rounds go to the operator as an infrastructure escalation (`crucible:redteaming § Panels`; `skills/redteaming/references/panels.md`).
+**Quorum and degraded rounds.** Every lost or crashed seat is recorded, and a round that lost one, a seat on another host aside, is topped back up or recorded degraded. A degraded round never counts toward convergence or against the cap, a one-seat round that loses its seat is degraded, and two consecutive degraded rounds go to the operator as an infrastructure escalation. A round 1 recorded degraded hands on what no returned seat ran, the goal check, the outside-the-frame lens or the swap, to the next round (`crucible:redteaming § Panels`; `skills/redteaming/references/panels.md`).
 
 **Stop rule and cap.** The campaign stops after the first numbered panel round once overturning a major mechanism after code is no longer reasonably expected: the overturn question (`skills/subagent-driven-development/references/review-terms.md` § The arrangement questions, § An umbrella's overturn question). The call is the controller's judgment, not put to the operator to confirm, over the round's records, the seats' forecasts included, never conversation memory; finding counts and finding provenance are not signals, and severity is not the trigger. A round whose own fix wave adds, removes or re-shapes a major mechanism is never the stop round, at least one numbered panel round runs once a campaign is chosen, and the terminal pass always follows and checks the stop's basis (`docs/decisions/terminal-pass.md`). In a spec campaign every panel seat's verdict forecasts the answer (`skills/redteaming/seat-prompt.md`), and every numbered round's readout answers each forecast overturn by the mechanism it names (`skills/redteaming/references/round-readout.md`). The cap is 4 rounds, degraded rounds excluded, counted from the records: the campaign's guarantee that it ends, bounding rounds, not spend. An overturn still reasonably expected at the cap, a cap round whose own wave re-shapes a major mechanism, or any BLOCKER or MAJOR still open there goes to the operator as a decision ask (`crucible:redteaming § Stop rule and terminal pass`). A premise finding (`docs/decisions/evidence-and-findings.md`) is merged `parked` as a decision ask and is never an open finding here: it opens no fix wave, holds no cap and no stop, and at the cap is put to the operator alone; a ruling that upholds it after the stop takes the flip paths, and one still open at the close is carried in the close readout (`skills/redteaming/references/merge-and-finding-hygiene.md`; `skills/redteaming/references/premise-asks.md` § Premise findings; `docs/decisions/umbrellas.md`).
 
@@ -189,6 +189,14 @@ fresh report path keeps a late return from overwriting its successor.
 reduced it to one line on 2026-11-02, the ambiguous-liveness BLOCKED
 entry in the quorum block going (`docs/decisions/shared-tree.md`).
 
+The goal check, the outside-the-frame lens and the swap were tied to
+round 1 by its number, so one recorded degraded could drop all three for
+the campaign, as a closing review found on 2026-11-03. A degraded round
+never counts toward convergence, so a next round always follows and can
+run them; only what no returned seat ran moves, since a returned seat's
+goal check or lens was read. (Basis: judgment, an agent's proposal
+accepted by the maintainer.)
+
 ### Stop rule and cap
 
 Finding counts do not decay: across 89 campaigns of the git-history study
@@ -336,6 +344,7 @@ trim.)
 
 ## Changes
 
+- 2026-11-04: a round 1 recorded degraded hands on what no returned seat ran, the goal check, the outside-the-frame lens or the swap, to the next round, since all three were tied to round 1 by its number.
 - 2026-11-04: the measured run's effort is stated, since its miss would otherwise read as one at the recommended level.
 - 2026-11-04: the 30 minutes' basis says the maintainer has not ruled on the figure, since the plain label reads as the maintainer's acceptance.
 - 2026-11-04: the round readout names a lost seat on another host, a run counts as lost after 30 minutes, and the record keeps what the one measured run showed, which would otherwise leave with its workspace.

@@ -39,7 +39,8 @@ bounded role or better. The default role is stated once, in the dispatch composi
 in a spec campaign's round 1 with two or more seats on the host the seat
 the controller judges most architecture-heavy runs on it, named in the
 campaign shape at the campaign gate, with no swap in a one-seat round 1 or
-the plan phase; work of a kind the host map lists as a weak spot of its
+the plan phase, and a round 1 recorded degraded handing on a swap no
+returned seat ran (`docs/decisions/spec-campaign.md`); work of a kind the host map lists as a weak spot of its
 default role, at an implementer, reviewer or redteam seat, never the
 blind verifier; and the operator's request, at any seat. A host map
 naming no alternate skips all three.
@@ -238,6 +239,7 @@ operator's config key.
 
 ## Changes
 
+- 2026-11-04: a round 1 recorded degraded hands on a swap no returned seat ran to the next round (`docs/decisions/spec-campaign.md`).
 - 2026-11-04: a seat started through `codex exec` names no effort either, and takes the key that run reads from the operator's Codex config, so effort stays the operator's on this route too.
 - 2026-11-03: the default role is stated once, in the dispatch composition's § Models and effort; the slot cards' Model lines keep only a seat's departure from it, SDD's Models section drops the implementer's, task reviewer's and re-reviewer's rows, and redteaming drops its sentence on the verifier's role; because each restated what every dispatch already shares.
 - 2026-11-02: SDD's escalation row for fix waves 4–5 and its fresh

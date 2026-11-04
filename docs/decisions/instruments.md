@@ -73,7 +73,8 @@ that follow every rule in it; a rule some of its takers lack stays in
 the templates that carry it or takes a section of its own, so sharing
 adds no rule to a seat. The redteam seat takes § The goal check only
 where its card's `goal-check` selector is on, set for each seat of a
-spec campaign's round 1 (`docs/decisions/evidence-and-findings.md`).
+spec campaign's round 1, or of the next round where a degraded round 1
+hands it on (`docs/decisions/evidence-and-findings.md`).
 The branch reviewer reads § The arrangement questions only where its card's `lane` selector is `very-small`, and not by splice: the passage that selector keys is a one-line pointer to the lane text, `skills/requesting-code-review/very-small-lane-review.md`, which says what binds on the lane and what the section serves there, the lane's upgrade hatch, keyed on a reviewer's finding or question, and to the section in the review terms, both read through the plugin root. An umbrella's closing-review seats, composed by the controller, take
 § Premise findings, § Binding items and unrecorded choices, § Questions
 and § Location (`skills/brainstorming/references/umbrellas.md`).
