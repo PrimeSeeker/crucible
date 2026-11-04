@@ -51,7 +51,7 @@ Your requirements are a very-small-lane note at its pinned revision, not a spec:
 
 ## Read Scoping
 
-Read only what this dispatch enumerates: the requirements and the spec they pin, the umbrellas it names, the findings list, the fix report, the fix diff, any covering test the fix report names, and `writing-good-tests.md`. Of `.crucible/<feature-slug>/sdd/`, only the paths your dispatch names are yours. Scope every search to the files named here.
+Read only what this dispatch enumerates: the requirements and the spec they pin, the umbrellas it names, the findings list, the fix report, the fix diff, any covering test the fix report names, and `writing-good-tests.md`. Of `.crucible/<feature-slug>/sdd/`, only the paths your dispatch names are yours. Scope every search to the files named here, but for the files § Verdict's change line needs.
 
 ## Campaign exhaust
 
@@ -152,4 +152,4 @@ Issues entirely outside the fix diff; the controller ledgers these for the branc
 
 In a branch-review wave, the wave verdict also carries:
 
-**Rule or behavior change:** [None | what the fix diff adds or changes]. None means a reader or the code must do the same as before: wording, a citation, or a statement brought in line with a rule already in force.
+**Rule or behavior change:** [None | what the fix diff adds or changes]. None means a reader or the code must do the same as before: wording, a citation, or a statement brought in line with a rule already in force. To judge it, read the file holding any rule, citation target or reader None would depend on. Where you cannot confirm None, report what you could not confirm instead.

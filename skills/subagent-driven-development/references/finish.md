@@ -4,7 +4,7 @@
    - the campaign records where their phases ran (round records, readouts, fix lists), and the ledger's sections
    - in `sdd/reports/`: per task, `task-<N>-<kind>.md`, `<kind>` being `report`, `review` (none where the latest run completed branch review only), `re-review-w<W>` per wave, `adjudication-<b>` per dispute batch and `snapshot-<k>` per snapshot blessing; for a task run again, only its latest run's, in `-x<X>` form; `-r<R>` forms included; and `lane-report.md` where the lane dispatched an implementer
    - in `sdd/branch-review/`: each `pass-<k>.md`, `wave-<n>-fix.md`, `wave-<n>-re-review.md` and `adjudication-<b>.md`
-2. Close readout to the operator: a message, not a file, its decision asks in a final block. Assemble it from the ledger's `## Adjudication rulings`, `## Deferred minors`, `## Questions`, `Task <N>: parked` lines and lane section, following its predecessor link where one exists. It lists:
+2. Close readout to the operator: a message, not a file, its decision asks in a final block. Assemble it from the ledger's `## Adjudication rulings`, `## Deferred minors`, `## Questions`, `Task <N>: parked` lines, `Branch wave` lines and lane section, following its predecessor link where one exists. It lists:
    - dismissed BLOCKER/MAJOR findings and ruled premise findings, with their rulings
    - every ruling you made yourself, with its reason: disputes and plan conflicts, the plan patches they led to, contained amendments, the plan phase's included
    - every improvement you adopted, named as a lightly held change
