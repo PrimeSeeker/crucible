@@ -2,8 +2,9 @@
 
 Every record carries the three sections a record cannot omit:
 ``## Decision``, ``## Why`` and ``## Changes``. The check is structural
-(headings exist), not a check of their content; that a later edit added
-its Changes line is the branch reviewer's check, not this file's.
+(headings exist), not a check of their content; that an edit changing a
+decision or its reasoning added its Changes line is the branch reviewer's
+check, not this file's.
 
 The helper takes an explicit root so a seeded tree under tmp_path shows
 the check failing.

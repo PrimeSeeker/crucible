@@ -12,7 +12,11 @@ option could plausibly return, a related record's Rejected part says so.
 
 A record's sections, in order:
 
-- `## Decision`: the current position, in a few lines.
+- `## Decision`: the current positions, each in a sentence or two, with a
+  pointer (`docs/authoring.md` § Reference convention) to the skill
+  heading that holds the procedure rather than a restatement of it. What
+  no skill holds stays here. A record not yet cut to this shape follows
+  when next edited.
 - `## Why`: the reasoning and evidence, restated in the record, each with
   its basis inline: **measured** (what, how often, on what),
   **external** (a host's documentation, an upstream file, another cited
@@ -24,8 +28,8 @@ A record's sections, in order:
   again: what, and why not.
 - `## What a project may change`: only where a project's instruction
   files can override the decision.
-- `## Changes`: one line per change, newest first,
-  `<YYYY-MM-DD>: <what changed, and why>`.
+- `## Changes`: one line per change to a decision or its reasoning, newest
+  first, `<YYYY-MM-DD>: <what changed, and why>`.
 
 A record states a position as held firmly only where the maintainer
 said so: "the maintainer's preference" names a position's origin, not
@@ -40,10 +44,13 @@ controller` is judgment, accepted by the maintainer, its text saying
 that the maintainer left the call to the agent, never stating it as the
 maintainer's ruling or choice.
 
-A section carries content or is absent; none says "N/A". Every edit adds
-its Changes line in the same commit. At the port, a record got one
-Changes line per position it states, ported or added beside the ported
-ones, dated by the day that position took its current form.
+A section carries content or is absent; none says "N/A". An edit that
+changes a decision or its reasoning adds its Changes line in the same
+commit; an edit that changes neither, such as a citation, wording or a cut
+of restated text, adds none, and its commit says what it did. Existing
+lines stay. At the port, a record got one Changes line per position it
+states, ported or added beside the ported ones, dated by the day that
+position took its current form.
 
 A change that makes a record untrue edits it in the same change. Records
 cite crucible's files by path and heading (`docs/authoring.md`
@@ -111,6 +118,36 @@ without the history they came from; quoting the maintainer is fine.
 (Basis: judgment, accepted by the maintainer on 2026-10-17; quoting is
 the maintainer's own allowance.)
 
+### When an edit takes a Changes line
+
+Until 2026-11-04 every edit to a record added a Changes line. By then the
+records held 395 lines totalling 15,946 words, 19% of the records' words.
+About two dozen only followed a moved citation or a removed mark (a keyword
+search, likely an undercount), and 171 were dated in the two days of the
+2026-11 skill rewrite. A search of the repository outside the records found
+the branch reviewer the only reader, checking that they exist. (Basis:
+measured.)
+
+A line now goes with an edit that changes a decision or its reasoning, and
+the commit carries the rest: an agent's proposal, which the backlog item
+had suggested. The maintainer's "OK" answered a recommendation whose
+sentence did not separate this option from removing the sections
+altogether; the controller said so and took this one, which loses nothing.
+(Basis: judgment, accepted by the maintainer, 2026-11-04.)
+
+### A Decision points at procedure
+
+The reference scanner catches a renamed or removed heading a record cites,
+but not changed content, so a Decision restating a skill could go untrue
+with no test failing, and each skill edit forced a repeat edit. A screen of
+each Decision sentence against the shipped skills put 48% of the words at
+high overlap with one skill paragraph, 37% in the middle and 16% low; the
+screen misses paraphrase and does not search `AGENTS.md` or `docs/`. Eight
+records held 65% of the high-overlap words. (Basis: measured.) Those eight
+were cut first, with no word target, and the other 22 follow when next
+edited: an agent's proposal, which the maintainer accepted. (Basis:
+judgment, accepted by the maintainer, 2026-11-04.)
+
 ### Origin and strength
 
 On crucible's umbrella-specs feature (2026-10-28), the task that wrote a
@@ -144,9 +181,12 @@ judgment, accepted by the maintainer, 2026-10-29.)
   records: replaced before the first record was written (§ Why).
 - **Dated names, and an index file** (§ Why).
 - **Placeholder sections** ("N/A", "none") (§ Why).
+- **Removing the Changes sections**, for now: the changelog was the
+  maintainer's own addition (§ Why), and the maintainer has not reversed it.
 
 ## Changes
 
+- 2026-11-04: a Changes line goes with an edit that changes a decision or its reasoning, no longer every edit, and a Decision points at the skill heading holding the procedure rather than restating it; because the lines were a fifth of the records' words with one reader, and restated procedure could go untrue with no test failing.
 - 2026-11-03: the citation of writing-plans' per-task structure uses its shortened heading.
 - 2026-10-30: an entry recorded `accepted — delegated to the
   controller` is attributed as judgment, accepted by the maintainer,
