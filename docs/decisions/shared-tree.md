@@ -5,8 +5,9 @@
 **Read windows.** While any seat, verifier or pass reads a spec or plan,
 the artifact is frozen: fixes land between dispatches. While a dispatched
 agent works in the worktree, the controller commits nothing there and
-queues the commit until it returns. Every review seat in execution and
-every dispatch window in the campaigns ends in one status check. The
+queues the commit until it returns. Every review seat in execution,
+every dispatch window in the campaigns and an umbrella's closing-review
+seats end in one status check. The
 seat is dispatched with no tracked or staged change, the controller
 first writing the output of `git rev-parse HEAD` and `git status
 --porcelain --untracked-files=all` to `<workspace>/tree-check.txt`,
@@ -138,6 +139,7 @@ delegated by the maintainer.)
 
 ## Changes
 
+- 2026-11-04: an umbrella's closing-review seats take the status check, since a window with no named check left the guard off them.
 - 2026-11-03: a campaign's replacement seat takes a fresh id, no longer one no earlier seat of the feature used, since the stop check matches forecasts by mechanism, not by seat id: a minor loss under the maintainer's compaction mandate (`docs/decisions/fix-verification-and-merge.md`).
 - 2026-11-03: the replacement's `-r<R>` path in execution and the branch review is stated in the dispatch composition's § Shared-tree rules, and the slot cards, SDD's shared-tree paragraph and the adjudicator's report paths no longer restate it; because four cards and two SDD sites each carried a copy.
 - 2026-11-02: the no-commit rule, the status check and the replacement
