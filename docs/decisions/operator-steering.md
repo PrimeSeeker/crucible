@@ -129,7 +129,7 @@ shows them; nothing is ever withheld.
 
 ## Changes
 
-- 2026-11-05: decision asks coming last in a block of their own moved to the router's § Decision asks, reaching any message to the operator, and SDD's close readout no longer states it itself, since the campaign gate, the umbrella landing and the closing review reached the rule only through a redteaming reference.
+- 2026-11-05: decision asks coming last in a block of their own moved to the router's § Decision asks, reaching any message to the operator, and SDD's close readout keeps only "in a final block", since the campaign gate, the umbrella landing and the closing review reached the rule only through a redteaming reference.
 - 2026-11-02: the design digest retired, with its `digest.md`, its
   format with its `## Decisions`, `## Positions flipped` and
   `## Open judgments` sections, the round readout's digest-update item

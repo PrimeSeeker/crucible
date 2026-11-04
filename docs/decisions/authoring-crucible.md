@@ -336,7 +336,9 @@ by word and refuses none, since a commit raises its own number
 (`docs/backlog/prose-creep-containment.md`); `tests/test_skill_size.py`
 caps each `SKILL.md`, and the session-start budget
 (`tests/test_session_start.py`, 10,000 characters) caps the router and
-host maps, which covers the trigger's second clause. An agent's
+host maps, which covers the trigger's second clause. The first clause,
+on prose cost, has no replacement; containing growth stays open in that
+backlog item. An agent's
 proposal, which the maintainer accepted. (Basis: judgment, accepted by
 the maintainer.)
 
@@ -504,7 +506,7 @@ the build-history rule included (`skills/using-crucible/SKILL.md`).
 
 ## Changes
 
-- 2026-11-05: the re-open trigger's retirement no longer says the prose budget holds growth, since it records growth and refuses none; the retirement stands. Compaction's loop ends only with no rule-adding addition left unruled, since a clean check otherwise shipped one unruled. A micro-test's sample on a realistic task needs no announcement, since it is told nothing false.
+- 2026-11-05: the re-open trigger's retirement no longer says the prose budget holds growth, since it records growth and refuses none; the retirement stands, the maintainer leaving that call to the agent once told its first clause has no replacement. Compaction's loop ends only with no rule-adding addition left unruled, since a clean check otherwise shipped one unruled. A micro-test's sample on a realistic task needs no announcement, since it is told nothing false.
 - 2026-11-03: writing-skills covers text agents act on and is organized around reader cost, with a micro-tested fix rule, excess as a review finding and `compacting.md` for compaction; its supporting-file rule is stated in reader-cost terms; a compaction pass on every edit is rejected; it was rewritten whole from a rule inventory, reversing the 2026-10-14 rejection of a whole rewrite, its `SKILL.md` capped at its prior token count for that rewrite only; because the maintainer asked it to carry what the prose compaction learned about creep and to cover all reused prompt-class text.
 - 2026-11-03: the split files' word counts are dated to the moves, since the per-file compaction cut those files further.
 - 2026-11-03: text under `skills/` holds each paragraph and list item on one line, because a hard wrap cost 4 to 5% of a file's tokens raw and 12 to 13% with the line numbers a file reader adds.

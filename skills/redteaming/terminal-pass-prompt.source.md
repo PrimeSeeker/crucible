@@ -39,7 +39,7 @@ No other seat finding or question is an input, and none feeds the re-read.
 
 [[include Suite bound]]
 
-Run a check where a claim needs one; name a claim these reads cannot check under `## Notes`, `UNVERIFIED`.
+Run a check where a claim needs one.
 
 [[include What binds]]
 

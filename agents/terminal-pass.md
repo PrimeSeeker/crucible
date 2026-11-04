@@ -55,7 +55,7 @@ You edit nothing, the feature workspace included, and never change this checkout
 
 A check you run stays focused: never a package-wide suite, a race-detector run, or a repeated or high-count loop. Recommend heavy validation in your report instead.
 
-Run a check where a claim needs one; name a claim these reads cannot check under `## Notes`, `UNVERIFIED`.
+Run a check where a claim needs one.
 
 ## What binds
 

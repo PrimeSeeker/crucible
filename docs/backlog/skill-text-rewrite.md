@@ -19,6 +19,11 @@
   are reached only through each template's read list, which could conflict
   where the plugin root is itself a checkout of the repository under review
   (a development install).
+- **A claim the terminal pass cannot check.** Its read scope admits the
+  files a claim in the artifact cites. A claim citing no file, such as
+  "no other site restates this", stays uncheckable under its scoped
+  searches, and nothing says what the pass or the controller does with
+  one.
 
 ## Follow-up
 
@@ -28,3 +33,5 @@
   next edited.
 - `placement`'s open item: state the plugin-root exception in § Seat
   conduct if a development install needs it.
+- The terminal pass: say what it does with a claim it cannot check, and
+  what the controller does with the result.

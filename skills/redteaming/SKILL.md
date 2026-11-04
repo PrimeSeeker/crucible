@@ -49,7 +49,7 @@ Whenever you judge which findings a fix list takes, or write, apply or verify a 
 
 ## Round readout
 
-At every round and campaign close, for any other readout that points here to put decision asks, and whenever an operator ruling or record correction arrives after a round closed, **read `skills/redteaming/references/round-readout.md` in full**.
+At every round and campaign close, and whenever an operator ruling or record correction arrives after a round closed, **read `skills/redteaming/references/round-readout.md` in full**.
 
 ## Stop rule and terminal pass
 
