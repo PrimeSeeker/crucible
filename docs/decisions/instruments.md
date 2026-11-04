@@ -48,8 +48,9 @@ its template names, and if the host refuses the write it returns the
 report as text and says so. Review seats and the adjudicator write under
 the feature workspace's `sdd/reports/` and `sdd/branch-review/`
 (`crucible:subagent-driven-development § Finish`). When a seat that owes a
-report returns, the controller confirms the file is on disk; if it is
-missing and no refusal was reported, it resumes the seat once; if it is
+report returns, the controller confirms the file is on disk, an
+appended one holding that seat's section, since an earlier seat's file
+would pass otherwise; if it is missing and no refusal was reported, it resumes the seat once; if it is
 still missing, or the write was refused, it persists the latest full
 return unchanged under a first line saying the controller saved it and
 why (`skills/redteaming/references/formats.md` § Feature workspace root
@@ -336,6 +337,7 @@ judgment, accepted by the maintainer.)
 
 ## Changes
 
+- 2026-11-04: the confirmation of a report file covers an appended report, which holds that seat's section, because an earlier seat's file on disk passed a missing report.
 - 2026-11-04: the `goal-check` selector is also set for the round a degraded round 1 hands the goal check on to (`docs/decisions/spec-campaign.md`).
 - 2026-11-04: the verifier's and the re-reviewer's cards name the host's file-writing tool in the report slot, through the host map; because their report-file misses persisted under the template's sentence, and later runs count whether this holds.
 - 2026-11-04: the redteam seat no longer takes § The mark's criterion, the section it kept when the seats stopped grading marks on 2026-11-02, with no duty in its template; because a section reaches only seats that follow it.

@@ -250,7 +250,9 @@ The ledger line left out a BLOCKED raised in a fix wave: a wave appends
 no step 1 line, so a resume inside the answered wave read the task as
 not done, restarted it at step 1 and lost the wave count (left open by
 the `backlog-batch-2` lane, no run on record hit it, 2026-11-04). The
-line now names the wave, and that wave's own line ends the wait.
+line now names the wave, and that wave's own line ends the wait. A fresh
+wave implementer, where a host cannot resume, takes a line of the same
+kind, which resumes inside its wave for the same reason.
 (Basis: judgment, an agent's proposal accepted by the maintainer.)
 
 ### Drift found after the fact
@@ -374,7 +376,7 @@ judgment, accepted by the maintainer, for the test.)
 ## Changes
 
 - 2026-11-04: the lane's inline fix waves, on a split, rest on the operator's answer to stay, because a split is more than the one implementer's worth their acceptance assumed.
-- 2026-11-04: a `BLOCKED` raised in a fix wave names the wave in its ledger line, and the answered wave continues, because a wave appends no step 1 line and a resume restarted the task, losing the wave count.
+- 2026-11-04: a `BLOCKED` raised in a fix wave names the wave in its ledger line, and the answered wave continues, because a wave appends no step 1 line and a resume restarted the task, losing the wave count; a fresh wave implementer's ledger line takes a stated form for the same reason.
 - 2026-11-04: a task waiting on the operator after BLOCKED gets a ledger line; a plan change short of a supersede after the third wave records a line with the task's BASE, closes the open findings and re-runs the task with that BASE, reviewed even where it is marked, on every run's report; a missing verdict goes back to its seat or a replacement, then to the operator, never the controller's ruling; because each left the controller with no stated next step.
 - 2026-11-04: what binds is stated per document: a plan task's Contract and Acceptance and the inter-task contracts as plan content, the spec's list unchanged; because writing-plans' list of a spec's own sections read as a second list for the spec, and the implementer template named no plan items.
 - 2026-11-03: the implementer's role is cited at the dispatch composition's § Models and effort and its slot card's Model line, no longer at SDD's Models section; because SDD dropped the implementer's row when the default role came to be stated once for every seat (`docs/decisions/model-roles-and-effort.md`).

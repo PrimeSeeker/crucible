@@ -46,7 +46,7 @@ MINOR findings never enter the loop: as each arrives, append `Task <N>: minor (d
 
 Report caught errors, your own included, in the flat register of any finding (`crucible:redteaming § Operating stance`): they are the loop working, not a verdict on the author.
 
-A **fix wave** is one fix dispatch plus its scoped re-review; one whose fix dispatch only disputes still counts. Each wave resumes the recorded implementer with the open findings verbatim, never a new agent in place of a live one; where your dispatch reference says the host exposes no resume operation, each wave dispatches a fresh instrument `implementer`, its card filled by its fix-only rules, and you record that in the ledger.
+A **fix wave** is one fix dispatch plus its scoped re-review; one whose fix dispatch only disputes still counts. Each wave resumes the recorded implementer with the open findings verbatim, never a new agent in place of a live one; where your dispatch reference says the host exposes no resume operation, each wave dispatches a fresh instrument `implementer`, its card filled by its fix-only rules, and you record `Task <N>: fix wave <W>: implementer <agent id>`.
 
 Every wave:
 

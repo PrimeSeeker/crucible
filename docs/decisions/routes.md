@@ -326,7 +326,9 @@ could overwrite the first's report (left open by the `backlog-batch-2`
 lane, no run on record hit it, 2026-11-04). Each part is told to append
 to the report and that the note's Acceptance is the last part's to
 meet, which no earlier part could meet alone, and its ledger line names
-the part, so a resumed controller finds its place. A split also sets
+the part. A resumed controller starts at the first part with no section
+in the report, since a part may take several commits and only its
+report shows it finished. A split also sets
 aside what the lane's fit assumes, one implementer's worth: the origin
 question's hypothesis does not cover such a change, whose first review
 is still the branch review and whose fix waves stay the controller's.
@@ -380,7 +382,7 @@ small preset or the waiver for its work.
 
 ## Changes
 
-- 2026-11-04: staying on the lane for a change too big for one implementer splits it across fresh implementers, one per part, in order, each told to append to the report and that the note's Acceptance is the last part's to meet, its ledger line naming the part, because nothing said what followed that answer; the ask states that the branch review stays the first review and the fix waves stay the controller's, and the answer to stay accepts both, since a split is wider than the lane's fit assumes.
+- 2026-11-04: staying on the lane for a change too big for one implementer splits it across fresh implementers, one per part, in order, each told to append to the report and that the note's Acceptance is the last part's to meet, its ledger line naming the part and a resume starting at the first part with no report section, because nothing said what followed that answer; the ask states that the branch review stays the first review and the fix waves stay the controller's, and the answer to stay accepts both, since a split is wider than the lane's fit assumes.
 - 2026-11-04: the lane states what follows a dispatched implementer's NEEDS_CONTEXT or BLOCKED, with a ledger line for an operator ask it raises, since that handling lived in the task loop's text, which the lane does not load; a change too big for one implementer joins the upgrade hatch's question.
 - 2026-11-03: a settled change needing several tasks takes folded or standard by the folded test, no longer standard alone, and a proposal of either campaign preset gives the reason the fold fits or does not; because "only the campaign presets carry a plan" stopped ruling folded out once the task count went, and the reason the maintainer had found off was a standard proposal's.
 - 2026-11-03: the folded preset fits a plan whose tasks are disjoint enough that no seam between them is worth its own review and whose entries are short enough for every seat to read them all, in place of a plan of one or two tasks, and task counts join file and line counts as no test; because the maintainer found a controller justifying standard by a task count, which measures neither what the plan phase reviews nor what the fold costs.
