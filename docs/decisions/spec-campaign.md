@@ -247,8 +247,9 @@ agent's proposal accepted by the maintainer, for the form; the
 maintainer's preference, for the recommendation.)
 
 The run on that lane, from Claude Code with crucible enabled on Codex,
-took about 2 minutes and 101k tokens. Its session recorded the
-operator's `model_reasoning_effort` value, and its commands read its
+took about 2 minutes and 101k tokens. Its session recorded medium, the
+operator's `model_reasoning_effort` and below the `high` `docs/codex.md`
+recommends, which qualifies its place in the yield. Its commands read its
 template first and no router, the whole basis for the README's "needs
 no switch". A run still going after 30 minutes counts as lost: the
 figure is a judgment, generous beside that run, and the one hung run on
@@ -442,7 +443,8 @@ trim.)
 
 ## Changes
 
-- 2026-11-04: the 30 minutes' basis says the maintainer has not ruled on the figure.
+- 2026-11-04: the measured run's effort is stated, since its miss would otherwise read as one at the recommended level.
+- 2026-11-04: the 30 minutes' basis says the maintainer has not ruled on the figure, since the plain label reads as the maintainer's acceptance.
 - 2026-11-04: the round readout names a lost seat on another host, a run counts as lost after 30 minutes, and the record keeps what the one measured run showed, which would otherwise leave with its workspace.
 - 2026-11-04: the quorum rule excepts a seat on another host and required lenses stay on this host's seats, so losing it costs the round nothing; the yield gains that lane's own run.
 - 2026-11-04: a seat on another host, opt-in and written down, settling the single-family revisit: the maintainer's ruling on a thin recorded yield, and the risk stays accepted for a panel with none.

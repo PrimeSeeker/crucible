@@ -206,7 +206,7 @@ preference.)
 
 ## Changes
 
-- 2026-11-04: the dispatch reference gains a seat on another host (`docs/decisions/spec-campaign.md`): the command on Claude Code, and on Codex that none is on record.
+- 2026-11-04: the dispatch reference gains a seat on another host (`docs/decisions/spec-campaign.md`): the command on Claude Code, and on Codex that none is on record, since host mechanics live in the adapter pair.
 - 2026-11-04: on Claude Code a session the host marks unattended gets the host map's path in a note instead of the host map inlined, since it gets no router either (`docs/decisions/session-start-hook.md`).
 - 2026-11-03: the escalation rule's one owner is the dispatch composition's § Models and effort, SDD's Models section having dropped the rows that restated it (`docs/decisions/model-roles-and-effort.md`).
 - 2026-11-03: on the template path the seat reads its template by the path its dispatch names, and installing crucible's roles into the user's Codex configuration is rejected outright, no longer waiting on a cost audit of Codex controllers, since the read by path takes the saving it was for (`docs/decisions/instruments.md`).

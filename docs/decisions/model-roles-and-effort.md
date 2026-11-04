@@ -238,7 +238,7 @@ operator's config key.
 
 ## Changes
 
-- 2026-11-04: a seat started through `codex exec` names no effort either, and takes the key that run reads from the operator's Codex config.
+- 2026-11-04: a seat started through `codex exec` names no effort either, and takes the key that run reads from the operator's Codex config, so effort stays the operator's on this route too.
 - 2026-11-03: the default role is stated once, in the dispatch composition's § Models and effort; the slot cards' Model lines keep only a seat's departure from it, SDD's Models section drops the implementer's, task reviewer's and re-reviewer's rows, and redteaming drops its sentence on the verifier's role; because each restated what every dispatch already shares.
 - 2026-11-02: SDD's escalation row for fix waves 4–5 and its fresh
   implementer a tier up retired with the five-wave loop; the tier bump

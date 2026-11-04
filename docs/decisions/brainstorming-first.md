@@ -119,7 +119,7 @@ ask for a foreign plan to run as written, or set how questions are asked.
 
 ## Changes
 
-- 2026-11-04: the postponement's reasons say whose each is, and what was searched.
+- 2026-11-04: the postponement's reasons say whose each is, and what was searched, since only scope growth was the maintainer's.
 - 2026-11-04: the lighter visual companion is postponed indefinitely rather than open, and the README says crucible has none; the maintainer's ruling.
 - 2026-10-27: a throwaway probe answering a question is context
   gathering, never committed, narrower than upstream's spike (v7.0.1

@@ -261,7 +261,7 @@ controller's judgment (`docs/decisions/spec-campaign.md`).
 
 ## Changes
 
-- 2026-11-04: a seat on another host's findings are each opened and checked against the files before they merge.
+- 2026-11-04: a seat on another host's findings are each opened and checked against the files before they merge, since one audit found about half such a seat's claims held only partly.
 - 2026-11-04: an item the verifier finds not landed or partly landed, and a delta claim the verifier or the controller finds FALSE, take the plan phase's scoped repair in both phases, re-checked by whoever gave the failing verdict, a FALSE claim a decision rests on going to the operator, since the spec campaign had no sanctioned step for either and neither phase one for a FALSE claim.
 - 2026-11-03: what binds in a spec is cited at `skills/subagent-driven-development/references/review-terms.md`, the controller's statement of it, since flip-paths keeps only a pointer.
 - 2026-11-03: seat ids are no longer unique within a feature, a replacement taking a fresh id, since the stop check matches forecasts by the mechanism they name: a minor loss under the maintainer's compaction mandate.
