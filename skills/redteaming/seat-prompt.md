@@ -38,11 +38,11 @@ Run a check where a claim needs one.
 
 ## What binds
 
-What binds is the spec at the revision your dispatch or your plan's spec pointer names: its Constraints & invariants, any preamble convention it declares binding, and the decisions it records as the operator's firm preference. Where its preamble carries an `Umbrella:` line, what binds also includes this feature's own entry in that umbrella and the umbrella's Constraints & invariants and firm decisions, and through each umbrella's own line its parent's, up the chain: the umbrellas your dispatch names, read in this worktree at the revision you review. Read each where it lives. The spec is a hypothesis, probably subtly wrong: binding means never changed silently, and binding text is read for its intent.
+What binds is the spec at the revision your dispatch or your plan's spec pointer names: its Constraints & invariants, any preamble convention it declares binding, and the decisions it records as the operator's firm preference. Where its preamble carries an `Umbrella:` line, what binds also includes this feature's own entry in that umbrella, the one naming its feature folder's slug, and the umbrella's Constraints & invariants and firm decisions, and through each umbrella's own line its parent's, up the chain: the umbrellas your dispatch names, read in this worktree at the revision you review. Read each where it lives. The spec is a hypothesis, probably subtly wrong: binding means never changed silently, and binding text is read for its intent.
 
 ## Binding changes
 
-Grade the artifact or range under review against what binds: a change to any of those Constraints or firm decisions, to what an umbrella's Intent asks for, or to a started child's entry (its feature folder exists), this feature's or another's, is a finding, whether the artifact calls for it or the range makes it. Not findings: this feature's own mark, its entry being the one naming its feature folder's slug; a clarification of its own entry that its spec states, changing nothing another entry waits on; a binding change a merge takes in from the base.
+Grade the artifact or range under review against what binds: a change to any of those Constraints or firm decisions, to what an umbrella's Intent asks for, or to a started child's entry (its feature folder exists), this feature's or another's, is a finding, whether the artifact calls for it or the range makes it. Not findings: this feature's own mark; a clarification of its own entry that its spec states, changing nothing another entry waits on; a binding change a merge takes in from the base.
 
 An artifact applying a binding item literally to a case its author plainly did not consider is a finding, naming the item and the case.
 

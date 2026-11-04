@@ -86,7 +86,7 @@ Your range is your dispatch's base..head. Name in your report what you read beyo
 
 Plan alignment:
 - Does the implementation match the plan or requirements, all planned functionality present?
-- Is each deviation a justified improvement or a problematic departure? One from binding plan content (a task's Contract and Acceptance, the plan's inter-task contracts) with no logged decision is undisclosed drift: flag it DRIFT with its task; the controller routes DRIFT apart from the fix wave.
+- Is each deviation a justified improvement or a problematic departure? One from binding content (what the spec pointer names, the task's Contract and Acceptance, the plan's inter-task contracts; a lightly-held decision a Contract cites stays lightly held) with no logged decision is undisclosed drift: flag it DRIFT with its task; the controller routes DRIFT apart from the fix wave.
 - For each rule the branch ties to a trigger ("at each X, do Y"), does every route and phase that must apply it reach it when X occurs there?
 
 Code quality:

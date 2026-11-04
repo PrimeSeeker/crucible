@@ -11,7 +11,7 @@
    - each ruling or requested change a fixer declined, as an ask
    - the lane's departures and the record-check gaps
    - after loop activity that followed an earlier answer, what changed since
-   - then the work left open, each item with its source and your proposal to keep or drop it, and why: parked BLOCKER/MAJOR findings with their rulings, premise asks still unruled, deferred minors and leads (a RECOMMENDED lead you did not adopt, with its verdict; where a cleanup wave ran, why it left each one), and, with your disposition, the `## Questions` items not listed above (declined improvements and what earlier phases carried among them)
+   - then the work left open, each item with its source and your proposal to keep or drop it, and why: parked BLOCKER/MAJOR findings with their rulings, premise asks still unruled, `unstated break` asks still open, deferred minors and leads (a RECOMMENDED lead you did not adopt, with its verdict; where a cleanup wave ran, why it left each one), and, with your disposition, the `## Questions` items not listed above (declined improvements and what earlier phases carried among them)
    - where the project's instructions name no home for open items and something is left open, an ask where it goes or whether to drop it, offering to record the answer (`skills/redteaming/references/formats.md` § Open items)
    - where this feature's landing could complete its umbrella, what `skills/brainstorming/references/umbrellas.md` § Closing review has the readout say
    - each break the spec, folded document or lane note states (`crucible:brainstorming` § Spec contract) or an operator's ruling accepted, and until when, or an `unstated break` still open, so the operator can time runs and releases around it

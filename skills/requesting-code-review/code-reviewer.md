@@ -36,11 +36,11 @@ Your dispatch's spec pointer: the spec path at its pinned revision, the pointer 
 
 ## What binds
 
-What binds is the spec at the revision your dispatch or your plan's spec pointer names: its Constraints & invariants, any preamble convention it declares binding, and the decisions it records as the operator's firm preference. Where its preamble carries an `Umbrella:` line, what binds also includes this feature's own entry in that umbrella and the umbrella's Constraints & invariants and firm decisions, and through each umbrella's own line its parent's, up the chain: the umbrellas your dispatch names, read in this worktree at the revision you review. Read each where it lives. The spec is a hypothesis, probably subtly wrong: binding means never changed silently, and binding text is read for its intent.
+What binds is the spec at the revision your dispatch or your plan's spec pointer names: its Constraints & invariants, any preamble convention it declares binding, and the decisions it records as the operator's firm preference. Where its preamble carries an `Umbrella:` line, what binds also includes this feature's own entry in that umbrella, the one naming its feature folder's slug, and the umbrella's Constraints & invariants and firm decisions, and through each umbrella's own line its parent's, up the chain: the umbrellas your dispatch names, read in this worktree at the revision you review. Read each where it lives. The spec is a hypothesis, probably subtly wrong: binding means never changed silently, and binding text is read for its intent.
 
 ## Binding changes
 
-Grade the artifact or range under review against what binds: a change to any of those Constraints or firm decisions, to what an umbrella's Intent asks for, or to a started child's entry (its feature folder exists), this feature's or another's, is a finding, whether the artifact calls for it or the range makes it. Not findings: this feature's own mark, its entry being the one naming its feature folder's slug; a clarification of its own entry that its spec states, changing nothing another entry waits on; a binding change a merge takes in from the base.
+Grade the artifact or range under review against what binds: a change to any of those Constraints or firm decisions, to what an umbrella's Intent asks for, or to a started child's entry (its feature folder exists), this feature's or another's, is a finding, whether the artifact calls for it or the range makes it. Not findings: this feature's own mark; a clarification of its own entry that its spec states, changing nothing another entry waits on; a binding change a merge takes in from the base.
 
 Where a binding item's literal reading reaches a case its author plainly did not consider, whether the branch applies it there or departs from it, report a finding labeled literal-reading naming the item and the case.
 [[when lane = very-small]]
@@ -124,7 +124,7 @@ Read `commits.txt`, then `range.diff`, each once. A failed check or git command 
 
 Plan alignment:
 - Does the implementation match the plan or requirements, all planned functionality present?
-- Is each deviation a justified improvement or a problematic departure? One from binding plan content (a task's Contract and Acceptance, the plan's inter-task contracts) with no logged decision is undisclosed drift: flag it DRIFT with its task; the controller routes DRIFT apart from the fix wave.
+- Is each deviation a justified improvement or a problematic departure? One from binding content (what the spec pointer names, the task's Contract and Acceptance, the plan's inter-task contracts; a lightly-held decision a Contract cites stays lightly held) with no logged decision is undisclosed drift: flag it DRIFT with its task; the controller routes DRIFT apart from the fix wave.
 - For each rule the branch ties to a trigger ("at each X, do Y"), does every route and phase that must apply it reach it when X occurs there?
 
 Code quality:

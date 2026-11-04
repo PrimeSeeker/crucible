@@ -240,7 +240,7 @@ accepted by the maintainer.)
 
 ## Changes
 
-- 2026-11-04: an `unstated break` is written open under `## Adjudication rulings` and named in the close readout, because an ask lost to compaction would leave nothing telling Finish it was pending; the reviewer's report format and verdict line name its label beside `premise`, because a reviewer staking one at MAJOR would answer No on a pass the loop treats as ending the review.
+- 2026-11-04: an `unstated break` is written open under `## Adjudication rulings` and named in the close readout among the work left open, because an ask lost to compaction would leave nothing telling Finish it was pending, and an integration answer would delete it with the workspace; the reviewer's report format and verdict line name its label beside `premise`, because a reviewer staking one at MAJOR would answer No on a pass the loop treats as ending the review.
 - 2026-11-04: the branch reviewer labels a break that follows from what the branch sets out to do, which its spec or requirements source does not state, and the operator repairs it or accepts it by a ruling; an ordinary defect stays an ordinary finding (`docs/decisions/the-spec.md`).
 - 2026-11-04: the branch reviewer's check of a branch-review-only task's Decision Log covers a loosening's justification beside a deletion's, since a removed assertion and any other loosening now take the deleted test's justifications (`docs/decisions/test-rules.md`).
 - 2026-11-03: the `## Questions` line forms are cited at `skills/requesting-code-review/SKILL.md` § The branch-review loop, which holds them since they left SDD's § Setup.
