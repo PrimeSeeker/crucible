@@ -6,8 +6,9 @@
 line per finding: id, severity, a one-sentence claim, an evidence
 pointer. The controller merges from the indexes and opens a finding's
 body only to author its fix, to rule on a contested finding or a
-collision between seats, or where the line is not enough; questions are
-read in full. Every raw seat finding is merged into an entry or closed
+collision between seats, or where the line is not enough; a seat on
+another host's findings are each opened and checked against the files
+(`docs/decisions/spec-campaign.md`); questions are read in full. Every raw seat finding is merged into an entry or closed
 as a duplicate of one, and each merged entry names the per-seat finding
 ids it absorbs in an `origins:` element, which the terminal pass reads
 to find the findings behind each decision ask
@@ -260,6 +261,7 @@ controller's judgment (`docs/decisions/spec-campaign.md`).
 
 ## Changes
 
+- 2026-11-04: a seat on another host's findings are each opened and checked against the files before they merge.
 - 2026-11-04: an item the verifier finds not landed or partly landed, and a delta claim the verifier or the controller finds FALSE, take the plan phase's scoped repair in both phases, re-checked by whoever gave the failing verdict, a FALSE claim a decision rests on going to the operator, since the spec campaign had no sanctioned step for either and neither phase one for a FALSE claim.
 - 2026-11-03: what binds in a spec is cited at `skills/subagent-driven-development/references/review-terms.md`, the controller's statement of it, since flip-paths keeps only a pointer.
 - 2026-11-03: seat ids are no longer unique within a feature, a replacement taking a fresh id, since the stop check matches forecasts by the mechanism they name: a minor loss under the maintainer's compaction mandate.

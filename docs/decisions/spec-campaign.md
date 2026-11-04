@@ -253,7 +253,8 @@ template first and no router, the whole basis for the README's "needs
 no switch". A run still going after 30 minutes counts as lost: the
 figure is a judgment, generous beside that run, and the one hung run on
 record was under a fresh Codex home on Windows. (Basis: measured, one
-run; judgment, an agent's call, for the figure.)
+run; judgment, an agent's call the maintainer has not ruled on, for the
+figure.)
 
 ### Right-sizing
 
@@ -441,6 +442,7 @@ trim.)
 
 ## Changes
 
+- 2026-11-04: the 30 minutes' basis says the maintainer has not ruled on the figure.
 - 2026-11-04: the round readout names a lost seat on another host, a run counts as lost after 30 minutes, and the record keeps what the one measured run showed, which would otherwise leave with its workspace.
 - 2026-11-04: the quorum rule excepts a seat on another host and required lenses stay on this host's seats, so losing it costs the round nothing; the yield gains that lane's own run.
 - 2026-11-04: a seat on another host, opt-in and written down, settling the single-family revisit: the maintainer's ruling on a thin recorded yield, and the risk stays accepted for a panel with none.

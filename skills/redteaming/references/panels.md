@@ -24,7 +24,7 @@ Dispatch each seat as instrument `redteam-seat` from its slot card; its report `
 
 **Topping up** follows `skills/subagent-driven-development/references/dispatch-composition.md` § Shared-tree rules. The replacement takes a fresh id and writes its own `seat-<id>.md`, never the lost seat's file. A 1-seat round that loses its seat is degraded by definition: a crashed seat is never read as a clean pass.
 
-**A seat on another host** runs only where the operator's instructions or request ask for one: never propose one. It is an extra seat: the round's seats on this host stay complete without it, required lenses included. It takes a lens and slot card like theirs; start it by your dispatch reference's **Seat on another host** entry. A run that ends with no report goes in the quorum block as `not replaced`: no top-up, and it leaves `degraded` as it stands.
+**A seat on another host** runs only where the operator's instructions or request ask for one: never propose one. It is an extra seat: the round's seats on this host stay complete without it, required lenses included. It takes a lens and slot card like theirs; start it by your dispatch reference's **Seat on another host** entry. A run has no report where its report path holds no file, or one with no `## Index`, or where you stop it after 30 minutes. It goes in the quorum block as `not replaced`: no top-up, and it leaves `degraded` as it stands.
 
 **Lens text**, filled verbatim into two seats' lens slots after the lens and its description. The right-sizing seat's:
 
