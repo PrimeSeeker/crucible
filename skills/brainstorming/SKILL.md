@@ -63,7 +63,7 @@ Where an effort's sub-features share decisions, an order, or both, an umbrella (
 
 Audience: the agent fleet. The spec quotes no operator message: the Intent states the goal in its own words, and the asking messages go to the request file (§ Workspace provisioning). Sections, in order:
 
-- **Intent** — problem, goals, non-goals, and any break this landing makes, saying until when: something the base does today stops working, or a path someone can reach fails. Work nobody can reach yet is not a break.
+- **Intent** — problem, goals, non-goals, and any break this landing makes, saying until when or that it is permanent: something the base does today stops working, or a path someone can reach fails. Work nobody can reach yet is not a break.
 - **Decisions** — each with rationale. A decision is lightly held (downstream may flip it with a logged rationale) unless firm; a firm one, recorded `firm` (§ Workspace provisioning), says in its rationale that it is the operator's firm preference.
 - **Constraints & invariants** — binding by construction: invariants every task must keep, not a requirement one site meets. Every downstream agent reads it here, in the spec at its pinned revision.
 - **Interfaces & boundaries**.

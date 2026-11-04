@@ -238,8 +238,8 @@ The maintainer asked whether an incomplete umbrella's children should land
 on the base by default at all. This repository's two umbrellas required
 each child installed before the next one's brainstorm, which took seven
 releases. One effort on another project, before umbrellas, landed about a
-dozen features on its base over about two and a half months, its new path
-unable to run until a late one. A keyword search of its records, not a
+dozen features on its base over about two and a half months, with a break
+on its base until a late one. A keyword search of its records, not a
 full read, found no case of partial work reaching a real run, and the
 maintainer reported no practical trouble. So the default stays, and what
 changed is that a break gets stated. (Basis: measured, for the counts; the

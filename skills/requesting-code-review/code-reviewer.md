@@ -140,7 +140,7 @@ Testing:
 
 Production readiness:
 - Migration strategy if the schema changed, backward compatibility, documentation complete, no obvious bugs?
-- Does landing this leave the base unable to do something it does today, or a path someone can reach failing, with the spec or note not stating that break? An unstated one is a finding.
+- Does landing this leave the base unable to do something it does today, or a path someone can reach failing, with neither its spec nor its requirements source stating that break? An unstated one is a finding.
 
 ## What shipped work carries
 

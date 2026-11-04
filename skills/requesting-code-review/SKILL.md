@@ -33,6 +33,8 @@ Where the spec's preamble (on the lane, the note's) carries an `Umbrella:` line,
 
 A review missing a verdict (a pass that leaves a lead it was handed unruled, a re-review that leaves a fix-report concern unruled) is handled as `crucible:subagent-driven-development § Rules every route shares` states.
 
+**An unstated break** a pass reports goes to the operator as a decision ask before it opens a wave: repair it, which opens one, or accept it, committing its statement in the Intent (on the lane, re-pinning the note), which closes the finding.
+
 **What opens a wave**, each counted against the cap:
 
 - a BLOCKER or MAJOR; a lead the reviewer CONFIRMED as an intent or scope gap counts as one, whatever its staked severity;
