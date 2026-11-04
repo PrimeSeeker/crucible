@@ -46,10 +46,6 @@
     no preset" after a hatch is stated only in the lane reference.
 
 - **Left by `backlog-batch-2`** (2026-11-04):
-  - an umbrella's closing-review seats now take the status check, and
-    their workspace sits in the session's checkout, so another session
-    landing on a shared base mid-window changes HEAD and voids their
-    reports, though the fixed range they read did not move;
   - a BLOCKED raised during a fix wave does not fit the wait line's
     ending: a fix wave resumes the implementer and appends no step 1
     line, so a resume inside the answered wave reads the task as not
@@ -77,7 +73,5 @@
 - The closing review's items: correct the trigger's stated ground or
   restate the trigger; settle the three wording points.
 - `prose-compaction`'s defect: name the plan phase's final check, or drop the condition.
-- `backlog-batch-2`'s items: exempt the closing review from HEAD moving on
-  a shared base, or run it in a checkout of its own, first of the four,
-  since the lane introduced it; fill the other three, each in the skill
-  that owns the step.
+- `backlog-batch-2`'s items: fill the three, each in the skill that owns
+  the step.

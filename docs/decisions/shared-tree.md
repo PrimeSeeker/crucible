@@ -94,6 +94,17 @@ one, and checking for a clean tree alone would again void reviews over
 implementers' test leftovers. (Basis: measured, by the audit; judgment,
 the controller's proposal accepted by the maintainer, for the shape.)
 
+An umbrella's closing review runs after the last landing, in the session's
+checkout, usually on the base, so another session landing there moves HEAD
+and voids reports whose fixed range did not move. That stays, an accepted
+residual: it costs a re-run of two or three seats, in a review that gates
+nothing. An exception sparing a HEAD moved only by `merge` or `pull` entries
+in `git reflog` was proposed and dropped, since no such void is on record and
+it would cost a second rule. A checkout of the review's own would take a
+worktree request, move the workspace and add cleanup, for a rare collision.
+(Basis: judgment, accepted by the maintainer, who left the call to the agent,
+2026-11-04.)
+
 ### One home for both phases
 
 Until 2026-11-02 the shared-tree rules lived in
@@ -132,6 +143,8 @@ delegated by the maintainer.)
 - **Voiding a window only for untracked paths among the seat's inputs**:
   no void it would spare is on record, and it costs a second rule
   (§ Why).
+- **Sparing a closing review's window from a HEAD moved by a landing**:
+  the same two grounds (§ Why).
 - **Fencing to survive two live writers** (write fences, quarantine
   ledgers): designed on an abandoned branch whose review rounds kept
   adding machinery, and left out; refusing the state costs one
@@ -139,6 +152,7 @@ delegated by the maintainer.)
 
 ## Changes
 
+- 2026-11-04: another session's landing voiding a closing review's window is stated as an accepted residual, and an exception for it declined; because no such void is on record and the exception would cost a second rule.
 - 2026-11-04: an umbrella's closing-review seats take the status check, since a window with no named check left the guard off them.
 - 2026-11-03: a campaign's replacement seat takes a fresh id, no longer one no earlier seat of the feature used, since the stop check matches forecasts by mechanism, not by seat id: a minor loss under the maintainer's compaction mandate (`docs/decisions/fix-verification-and-merge.md`).
 - 2026-11-03: the replacement's `-r<R>` path in execution and the branch review is stated in the dispatch composition's § Shared-tree rules, and the slot cards, SDD's shared-tree paragraph and the adjudicator's report paths no longer restate it; because four cards and two SDD sites each carried a copy.
