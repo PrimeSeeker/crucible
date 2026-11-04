@@ -252,7 +252,9 @@ rule's word is "break" because "containment" already names the
 containment test for amendments. A reviewer reading a diff, with no run of
 the product, can miss a break: an accepted residual. No agent was run on
 the wording, the maintainer's account standing as the baseline. (Basis:
-judgment, accepted by the maintainer, 2026-11-04.)
+judgment, accepted by the maintainer, 2026-11-04; for the route of a break
+the reviewer finds and for counting a permanent removal, judgment, accepted
+by the maintainer, who left the call to the agent.)
 
 ## Rejected
 
