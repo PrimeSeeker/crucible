@@ -2,126 +2,23 @@
 
 ## Decision
 
-**One document per effort.** An effort too large for one feature is held
-by an umbrella: `umbrella.md` in a feature folder of its own, a spec of
-its own kind written under the spec contract's sections, whose
-Acceptance is the ordered list of its children, each entry saying what
-that child delivers, what it waits on, and whether it has landed. A
-child that splits becomes an umbrella itself, at any depth; every
-child's folder is born at the root like any feature's, and the list is
-the index. Like a spec, it quotes no message from the operator: the
-effort's request lives in the umbrella's workspace and goes with it at
-the landing, and a child's request holds only the messages of its own
-brainstorm, so a child's seats check its Intent against that request,
-the umbrella's Intent and its own entry (`docs/decisions/the-spec.md`).
+**One document per effort.** An effort too large for one feature is held by an umbrella: `umbrella.md` in a feature folder of its own, a spec of its own kind whose Acceptance is the ordered list of its children. A child that splits becomes an umbrella itself, at any depth, and every child's folder is born at the root (`skills/brainstorming/references/umbrellas.md` § Shape). Like a spec, it quotes no message from the operator: the effort's request goes with the umbrella's workspace at the landing, and a child's seats check its Intent against its own request, the umbrella's Intent and its own entry (`docs/decisions/the-spec.md`; `skills/subagent-driven-development/references/seat-rules.md` § The goal check).
 
-**Reviewed by what it carries, on no route.** An umbrella takes none of
-the three presets (`docs/decisions/routes.md`). One that carries
-decisions, constraints or interfaces gets a spec campaign; one that only
-orders its children and states their obligations is approved by the
-operator as a lane note is. Brainstorming proposes which and the
-operator rules. No umbrella has a plan or execution of its own: its
-children carry both (`skills/brainstorming/references/umbrellas.md`
-§ Review).
+**Reviewed by what it carries, on no route.** An umbrella takes none of the three presets (`docs/decisions/routes.md`). One that carries decisions, constraints or interfaces gets a spec campaign, one that only orders its children and states their obligations is approved by the operator as a lane note is, and no umbrella has a plan or execution of its own (`skills/brainstorming/references/umbrellas.md` § Review).
 
-**Binding through one line.** A child names its umbrella in a line of
-its preamble, and through that line its own entry and the umbrella's
-binding content, its Constraints & invariants and the decisions it
-records as the operator's firm preference, bind it, up the chain of
-umbrellas, each read where it lives
-(`skills/brainstorming/references/umbrella-children.md` § Children).
-What binds, the umbrella included, is stated once for controllers
-(`skills/subagent-driven-development/references/review-terms.md`
-§ What binds in a spec) and once for seats, in the shared seat
-reference's § What binds, which every seat reading binding content
-takes by splice; other
-sites point to them. The umbrella's Intent is protected as the child's
-own is: a seat raises a premise finding against what it asks, stated
-once beside the premise line, and a change on a child's branch to what
-it asks is a finding, stated with the other binding changes; § Children
-points to
-both (`skills/subagent-driven-development/references/seat-rules.md`
-§ Premise findings, § Binding changes).
+**Binding through one line.** A child names its umbrella in a line of its preamble, and through that line its own entry and the umbrella's Constraints & invariants and firm decisions bind it, up the chain of umbrellas, each read where it lives (`skills/brainstorming/references/umbrella-children.md` § Children). What binds, the umbrella included, is stated once for controllers (`skills/subagent-driven-development/references/review-terms.md` § What binds in a spec) and once for seats, by splice (`skills/subagent-driven-development/references/seat-rules.md` § What binds). The umbrella's Intent is protected as the child's own is (`skills/subagent-driven-development/references/seat-rules.md` § Premise findings, § Binding changes).
 
-**Edited by weight until it closes.** Lightly held edits travel on a
-child's branch, a correction to the umbrella's Intent among them only
-where it leaves what the Intent asks for unchanged. A binding change, a
-change to a firm decision or to what the Intent asks for included,
-never does: it goes to the operator, lands on a branch of its own, and
-each child in flight takes it in from the base
-(`skills/brainstorming/references/umbrella-children.md` § Edits and
-§ Under an umbrella). A child's controller never confirms a
-change to umbrella content itself, however contained the change looks
-(`skills/redteaming/references/flip-paths.md` § The containment test).
+**Edited by weight until it closes.** Lightly held edits ride a child's branch; a binding change, to a firm decision or to what the Intent asks for included, goes to the operator and lands on a branch of its own, and a child's controller never confirms a change to umbrella content itself, however contained it looks (`skills/brainstorming/references/umbrella-children.md` § Edits and § Under an umbrella; `skills/redteaming/references/flip-paths.md` § The containment test).
 
-**Marks, not derived state.** Each entry carries its own mark, `landed`,
-`umbrella` or `dropped`, and a child writes its own `landed` in the
-commit that lands it (`skills/brainstorming/references/umbrella-children.md`
-§ Marks; `crucible:subagent-driven-development § Finish`). An umbrella
-has closed when its marks say so, read down the chain; from then it is
-frozen (`skills/brainstorming/references/umbrellas.md` § Closing).
+**Marks, not derived state.** Each entry carries its own mark, a child writing its own `landed` in the commit that lands it, and an umbrella has closed when its marks say so, read down the chain; from then it is frozen (`skills/brainstorming/references/umbrella-children.md` § Marks; `skills/brainstorming/references/umbrellas.md` § Closing).
 
-**One closing review, a step and not a gate.** Once an umbrella is
-complete by its marks, one review reads its children's landings, from
-the umbrella's own to the one that completed it, unrelated landings on
-a shared base aside, against the umbrella: its Intent, its entries,
-its Constraints & invariants and its decisions. The controller whose
-landing completes it, a landed drop included, announces it and runs it
-right after; its width is that controller's call, the review itself is
-not optional; where a child's landing completes it, that child's close
-readout names it as the step after the landing. Where the completing
-landing may happen outside a session, the close readout of each child
-whose landing could complete the umbrella says the review is due once
-they have all landed, and the operator starts it by asking. A nested
-umbrella's review runs at its own completion and, where that completes
-its parent, before the parent's, whose range covers it again. It takes two or three seats the
-controller composes on the default role, read-only, each with a lens
-that reads across children (fidelity to the umbrella's Intent, the seams between
-children, a walkthrough of the workflows the effort changed), with no
-instrument or template of its own. Its readout proposes keeping or
-dropping each finding, a premise finding being a decision ask there,
-and, where the project's instructions name no home for open items,
-asks where the findings kept go; after the answer, the findings kept
-and each premise finding with its ruling go to the project's home or
-the one the answer named, an in-repository one's committed on a branch
-of its own landed on the operator's go-ahead; where nothing is kept and
-no premise finding was raised, nothing is written and the readout names
-each finding dropped. Closing is still read from the
-marks, nothing waits on the review, and it writes nothing into
-`umbrella.md`; a feature that fixes its findings is a feature of its
-own. An umbrella approved without a campaign takes it too
-(`skills/brainstorming/references/umbrellas.md` § Closing review).
+**One closing review, a step and not a gate.** Once an umbrella is complete by its marks, one review reads its children's landings against the umbrella, its seats composed by the controller with no instrument or template of their own. It is a step after the last landing: closing is still read from the marks, nothing waits on it, it writes nothing into `umbrella.md`, and a feature that fixes its findings is a feature of its own (`skills/brainstorming/references/umbrellas.md` § Closing review).
 
-**An open premise ask at the landing.** A premise finding still open
-when an umbrella lands goes to the operator with the landing ask, and
-the landing never waits on it. With no ledger to hold it, it is noted
-in the first entry with no mark in the umbrella's Children list, as
-`open premise ask: <the ask>`; that child's brainstorm takes it into its
-decision record, with the operator's ruling where one has come since or
-else as open for its dialogue, and the child removes the note as a
-clarification its spec states (`skills/brainstorming/references/umbrellas.md`
-§ Landing; `skills/brainstorming/references/umbrella-children.md`
-§ Children; `skills/redteaming/references/premise-asks.md`
-§ Premise findings).
+**An open premise ask at the landing.** A premise finding still open when an umbrella lands goes to the operator with the landing ask, and the landing never waits on it. With no ledger to hold it, it is noted in the first entry with no mark in the umbrella's Children list, for that child's brainstorm to take into its decision record (`skills/brainstorming/references/umbrellas.md` § Landing; `skills/brainstorming/references/umbrella-children.md` § Children; `skills/redteaming/references/premise-asks.md` § Premise findings).
 
-**Work left open at the landing.** An umbrella has no ledger, so what
-its brainstorm and campaign left open, its campaign's `deferred-minor`
-entries included, goes at its landing, each item with its source, to the
-home the project's instructions name for open items, an in-repository
-one's committed on its branch; where they name none, the landing ask
-asks where the items go or whether to drop them, with the offer to
-record the answer, and the workspace is not deleted before it. Where
-nothing was left open, nothing is asked or written
-(`skills/brainstorming/references/umbrellas.md` § Landing;
-`docs/decisions/records-and-workspace.md`). A decision ask still open
-at the landing, a premise ask aside, goes to the operator with the
-landing ask; unruled at the landing, it goes with those items, and
-ruled before it, it leaves them. The premise note is the only note a
-landing writes into a Children entry.
+**Work left open at the landing.** An umbrella has no ledger, so what its brainstorm and campaign left open goes at its landing to the home the project's instructions name for open items, or where the landing ask's answer sends it, and a decision ask unruled there, a premise ask aside, goes with those items (`skills/brainstorming/references/umbrellas.md` § Landing; `docs/decisions/records-and-workspace.md`). The premise note is the only note a landing writes into a Children entry.
 
-**Kept in the merged tree.** An umbrella's own pull request never
-offers `umbrella.md` for removal; the trade-off is in
-`docs/decisions/records-and-workspace.md`.
+**Kept in the merged tree.** An umbrella's own pull request never offers `umbrella.md` for removal; the trade-off is in `docs/decisions/records-and-workspace.md`.
 
 ## Why
 

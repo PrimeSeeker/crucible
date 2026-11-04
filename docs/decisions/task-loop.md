@@ -2,156 +2,23 @@
 
 ## Decision
 
-**The spine.** SDD executes a plan task by task: a fresh implementer, then
-one fresh-context reviewer, unless the plan routes the task's review to
-the branch review (below), with progress kept in a ledger that survives
-compaction. The controller records BASE before each implementer, never
-runs two implementers at once, and fixes no finding itself, inline mode
-and the very-small lane's fix waves excepted
-(`crucible:subagent-driven-development § The Task Loop`). The very-small
-lane runs no per-task loop (`docs/decisions/routes.md`).
+**The spine.** SDD executes a plan task by task: a fresh implementer, then one fresh-context reviewer, unless the plan routes the task's review to the branch review (below), with progress kept in a ledger that survives compaction. The controller records BASE before each implementer, never runs two implementers at once, and fixes no finding itself, inline mode and the very-small lane's fix waves excepted (`crucible:subagent-driven-development § The Task Loop`; `skills/subagent-driven-development/references/task-loop.md`). The very-small lane runs no per-task loop (`docs/decisions/routes.md`).
 
-**The implementer contract.** What the plan's spec pointer names binds,
-the decisions the spec records as the operator's firm preference
-included (`docs/decisions/the-spec.md`), with requirements, interfaces,
-non-goals and acceptance; the approach is advice. Binding text is read
-for its intent. The implementer may depart from advisory content,
-logging each departure in its report's Decision Log with what, why and
-blast radius, and makes the call on each deferral its task owns,
-logged where it departs from advisory content; changing or contradicting binding content, or applying it
-literally to a case its author plainly did not consider, is BLOCKED,
-the report naming the item, the evidence that shows it wrong and a
-proposed correction
-(`skills/subagent-driven-development/implementer-prompt.md` § Binding vs
-Advisory: the Deviation License). The controller lets an item the
-evidence does not show wrong stand, re-dispatching with its ruling, and
-passes any other correction through the containment test: a contained
-one it confirms, any other goes to the operator as a decision ask
-carrying the proposal (`crucible:subagent-driven-development § The Task
-Loop`, step 2). It reports BLOCKED or NEEDS_CONTEXT
-rather than guess on insufficient context, an unsettled trade-off,
-conflicting findings, ambiguity above its authority, or reading file
-after file without progress, and is told that escalating is never
-penalized (`skills/subagent-driven-development/implementer-prompt.md`
-§ Stop-and-Ask Triggers). Beside its work, its report may carry concerns
-about that work, `Questions` items, a premise finding
-(`docs/decisions/evidence-and-findings.md`), under its own heading with
-status DONE_WITH_CONCERNS, or BLOCKED where it cannot go on without the
-ruling, and a fix it proposes outside its task, naming the site and the
-change, which it never makes. The controller handles none of these
-before review: the review of the work rules on every concern, the
-controller routes the rest, `Questions` items as leads for the branch
-reviewer, an out-of-task proposal to the task that owns its site, as a
-lead for the branch reviewer or, where it touches binding content, by
-the flip paths, a premise finding to the operator
-(`crucible:subagent-driven-development § What a report voices`). Its
-dispatch carries a one-line reminder of the
-binding acceptance criteria and the Decision Log obligation; it writes
-its report to a file and replies with a short status. A task that changes
-text instructing agents sends it to `skills/writing-skills/SKILL.md`. It
-commits with the identity git already has, sets none, and reports BLOCKED
-when none is configured. Every implementer seat, fix waves' included, is
-dispatched as instrument `implementer`, on the role the dispatch composition's § Models and effort gives every seat: the default role, the alternate role where one of its triggers selects the seat; its slot card's Model line allows the bounded role for a clearly bounded task
-(`skills/subagent-driven-development/references/dispatch-composition.md` § Models and effort; `docs/decisions/model-roles-and-effort.md`).
+**The implementer contract.** What the plan's spec pointer names binds, read for its intent (`docs/decisions/the-spec.md`); the approach is advice, and the implementer may depart from it, logging each departure in its report's Decision Log with what, why and blast radius. Changing or contradicting binding content, or applying it literally to a case its author plainly did not consider, is BLOCKED, the report naming the item, the evidence that shows it wrong and a proposed correction (`skills/subagent-driven-development/implementer-prompt.md` § Binding vs Advisory: the Deviation License); the controller lets an item the evidence does not show wrong stand and passes any other correction through the containment test (`skills/subagent-driven-development/references/task-loop.md` § 2. Handle the report). It reports BLOCKED or NEEDS_CONTEXT rather than guess, and is told that escalating is never penalized (`skills/subagent-driven-development/implementer-prompt.md` § Stop-and-Ask Triggers). Beside its work, its report may carry concerns, `Questions` items, a premise finding (`docs/decisions/evidence-and-findings.md`) and a fix it proposes outside its task, which it never makes; the controller handles none of these before review (`crucible:subagent-driven-development § What a report voices`). Its dispatch carries a one-line reminder of the binding acceptance criteria and the Decision Log obligation (`skills/subagent-driven-development/implementer-prompt.slots.md`). Every implementer seat, fix waves' included, is dispatched as instrument `implementer` (`skills/subagent-driven-development/references/dispatch-composition.md` § Models and effort; `docs/decisions/model-roles-and-effort.md`). What else it follows, its report file, writing-skills for text instructing agents and the git identity among them, is its template's (`skills/subagent-driven-development/implementer-prompt.md` § Where You Work, § Tests: Test-First, Evidence Before Done, § Report Format).
 
-**Task review.** One fresh reviewer per task, never skipped, a task
-completed branch review only aside (below). Its stance
-is adversarial, "attempt to reject this task", governing the search and
-not the conclusion. Four verdicts, all required: intent, scope, the
-deviation audit (each Decision Log entry justified, nothing undisclosed,
-each concern the implementer reports ruled on, RED before GREEN or a
-logged exception) and quality (defects,
-not style; new-test adequacy is the reviewer's own judgment). A concern
-is confirmed as a finding at a staked severity, an intent or scope gap
-failing that verdict and a quality defect going by its severity, or
-dismissed with a one-line reason; a review that leaves one unruled is
-missing a verdict. The re-reviewer rules the same way on a fix report's
-concerns, and a wave that only disputes, which has no re-review, turns
-its concerns into leads. The ruling duty adds to what the reviewer
-accounts for, never narrowing what it looks for. Its own `Questions`
-items, a premise doubt among them, become leads
-(`docs/decisions/evidence-and-findings.md`). The reviewer checks a
-requirement living outside the diff in the code it needs, and grades it
-in its verdicts. It takes the reported test output as given and builds its own diff
-(`docs/decisions/branch-review.md`). Where a binding item's literal
-reading reaches a case its author plainly did not consider, it reports a
-literal-reading finding naming the item and the case, for the
-controller to send to the adjudicator (`docs/decisions/adjudication.md`). The task
-reviewer runs on the default role, every task it reviews, and the
-re-reviewer on the bounded role or better
-(`docs/decisions/model-roles-and-effort.md`). An open premise finding is
-a decision ask, not an open BLOCKER or MAJOR, and holds no task's
-completion by itself.
+**Task review.** One fresh reviewer per task, never skipped, a task completed branch review only aside (below). Its stance is adversarial, "attempt to reject this task", governing the search and not the conclusion, and it returns four verdicts, all required: intent, scope, the deviation audit and quality (`skills/subagent-driven-development/task-reviewer-prompt.md`). A concern is confirmed as a finding at a staked severity or dismissed with a one-line reason, and a review or re-review that leaves one unruled is missing a verdict (`skills/subagent-driven-development/references/seat-rules.md` § Concerns; `crucible:subagent-driven-development § What a report voices`). Its own `Questions` items, a premise doubt among them, become leads (`docs/decisions/evidence-and-findings.md`). It takes the reported test output as given and builds its own diff (`docs/decisions/branch-review.md`), and a literal-reading finding goes to the adjudicator (`docs/decisions/adjudication.md`). The task reviewer runs on the default role, every task it reviews, and the re-reviewer on the bounded role or better (`docs/decisions/model-roles-and-effort.md`). An open premise finding holds no task's completion by itself.
 
-**Branch review only.** A dispatched task whose plan section carries
-`Review: branch only` (`docs/decisions/plans.md`) runs no task review and
-no fix loop where its report is DONE, raises no concern and passes the
-verification gates, which for it also check that the report shows RED
-output before GREEN or a logged exception. The controller checks that
-each is there; the branch reviewer judges its substance. A report
-raising a concern or failing a gate sends the task to the task review
-after all, and it runs the loop from there. Otherwise the ledger records
-`Task <N>: complete (commits <base7>..<head7>, branch review only)`, which
-the resume rule reads as any `complete` line; the implementer's
-`Questions` items and out-of-task proposals become leads, and the branch
-reviewer is the task's first review, every full-scope pass reading the
-report's Decision Log against the diff (`docs/decisions/branch-review.md`;
-`crucible:subagent-driven-development § The Task Loop`). A task worked
-inline keeps its task review whatever its mark
-(`crucible:subagent-driven-development § Inline mode`).
+**Branch review only.** A dispatched task whose plan section carries `Review: branch only` (`docs/decisions/plans.md`) runs no task review and no fix loop where its report is DONE, raises no concern and passes the verification gates, which for it also check that the report shows RED output before GREEN or a logged exception. The controller checks that each is there; the branch reviewer, the task's first review, judges its substance (`docs/decisions/branch-review.md`). A report raising a concern or failing a gate sends the task to the task review after all, and a task worked inline keeps its task review whatever its mark (`skills/subagent-driven-development/references/task-loop.md` § 2. Handle the report; `crucible:subagent-driven-development § Inline mode`).
 
-**Loop wiring.** A failed intent, scope or deviation-audit verdict enters
-the fix loop whatever the finding's severity label; quality findings enter
-by severity, BLOCKER and MAJOR in, MINOR to the ledger's deferred minors
-for the branch review.
+**Loop wiring.** A failed intent, scope or deviation-audit verdict enters the fix loop whatever the finding's severity label; quality findings enter by severity, BLOCKER and MAJOR in, MINOR to the ledger's deferred minors for the branch review.
 
-**Fix waves.** A fix wave is one fix dispatch and its scoped re-review;
-a task gets three, each resuming the recorded implementer, or, where the
-host exposes no resume operation, a fresh one given the open findings
-and the task's report file. Each finding is answered fixed, with its
-covering run and sibling instances, or NOT CONFIRMED with evidence for
-a ruling (`docs/decisions/adjudication.md`). Findings still open
-after the third wave stop the task: the controller puts them to the
-operator as a decision ask with a recommendation, park a finding with
-its reason, block the work, or another approach (a plan change or a
-revert), and records the ask and the answer under the ledger's
-`## Adjudication rulings`; further waves are not an answer. A BLOCKED
-reasoning problem gets a tier bump where one exists, and at the default
-role goes to the operator. No trigger escalates a stuck seat further.
+**Fix waves.** A fix wave is one fix dispatch and its scoped re-review, and a task gets three, each resuming the recorded implementer where the host can (`skills/subagent-driven-development/references/task-loop.md` § 5. The fix loop). Findings still open after the third wave stop the task: the controller puts them to the operator as a decision ask, and further waves are not an answer (`crucible:subagent-driven-development § The Task Loop`). A BLOCKED reasoning problem gets a tier bump where one exists, and at the default role goes to the operator. No trigger escalates a stuck seat further.
 
-**Drift found after the fact.** Drift found after the fact, undisclosed
-and from binding content or with cross-task blast radius, is a decision
-ask to the operator with the controller's recommendation: revert the
-task, with the later tasks the ask names as building on it, and run them
-again, or repair it, in its own fix loop while the task is open and
-otherwise in a branch-review fix wave counted against that loop's cap.
-A revert's `Task <N>: reverted — <the ruling>` line reopens the task,
-which runs again under `-x<X>` report names. Undisclosed advisory
-choices and disclosed but unjustified entries go to the fix loop instead
-(`crucible:subagent-driven-development § Drift found after the fact`).
+**Drift found after the fact.** Drift undisclosed and from binding content or with cross-task blast radius is a decision ask to the operator with the controller's recommendation, revert or repair; undisclosed advisory choices and disclosed but unjustified entries go to the fix loop instead (`crucible:subagent-driven-development § Drift found after the fact`; `skills/subagent-driven-development/references/drift.md`).
 
-**Snapshot blessing.** Where a task claims behaviour is preserved, a
-changed snapshot or golden output is never blessed autonomously: a fresh
-blind agent given only the old and new output and the preservation claim
-rules on the change, and one it finds visible goes to the operator as a
-decision ask saying what changed and why it matters, never a raw diff.
+**Snapshot blessing.** Where a task claims behaviour is preserved, a changed snapshot or golden output is never blessed autonomously: a fresh blind agent given only the old and new output and the claim rules on the change, and one it finds visible goes to the operator as a decision ask, never a raw diff (`skills/subagent-driven-development/references/task-loop.md` § 4. Verification gates).
 
-**Inline mode.** The controller may implement a task itself only where
-the task is overdetermined, in the sense
-`skills/subagent-driven-development/references/review-terms.md`
-§ The arrangement questions defines, and fits its remaining context
-without pushing out the coordination state it needs through the branch
-review; otherwise it dispatches, the default. On the very-small lane
-the same test decides, only its review clause not applying, since the
-lane has no task review; the lane's branch-review fix waves stay the
-controller's, a cleanup wave's included
-(`skills/subagent-driven-development/references/very-small-lane.md`).
-Review applies unchanged, and any loop-entering finding, at any
-severity, converts the task to standard dispatch, a fresh implementer
-owning the fixes (`crucible:subagent-driven-development § Inline mode`).
-The ledger records the task as `Task <N>: inline`, where a dispatched
-task's implementer line goes, so a dispute on its diff reaches the
-adjudicator after a compaction too (`docs/decisions/adjudication.md`).
+**Inline mode.** The controller may implement a task itself only where the task is overdetermined and fits its remaining context without pushing out the coordination state it needs through the branch review; otherwise it dispatches, the default. Review applies unchanged, and any loop-entering finding, at any severity, converts the task to standard dispatch (`crucible:subagent-driven-development § Inline mode`; `skills/subagent-driven-development/references/inline-mode.md`). On the very-small lane the same test decides, only its review clause not applying, and the lane's branch-review fix waves stay the controller's (`skills/subagent-driven-development/references/very-small-lane.md`).
 
 ## Why
 

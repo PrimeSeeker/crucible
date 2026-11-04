@@ -2,109 +2,21 @@
 
 ## Decision
 
-**What a plan carries.** A plan's readers are strong fresh-context
-implementers and reviewers who also read the spec, so it carries only
-what the spec does not: ownership, dependency order, seams, and where
-each acceptance criterion lands. Detail is deferred to the implementer by
-default. Its input is a spec that has closed its own campaign; anything
-else starts at brainstorming (`crucible:writing-plans § Overview`).
+**What a plan carries.** A plan's readers are strong fresh-context implementers and reviewers who also read the spec, so it carries only what the spec does not: ownership, dependency order, seams, and where each acceptance criterion lands. Detail is deferred to the implementer by default. Its input is a spec that has closed its own campaign; anything else starts at brainstorming (`crucible:writing-plans § Overview`).
 
-**The header.** A spec pointer, the header's only pin (`Spec: this
-document` where the plan is folded into the spec); the goal; the task
-dependency order; a file-ownership and overlap census; the inter-task
-contracts; and the acceptance mapping. There is no test-namespace
-allocation and no parallelizable tier
-(`crucible:writing-plans § Plan header`).
+**The header.** A spec pointer, the header's only pin; the goal; the task dependency order; a file-ownership and overlap census; the inter-task contracts; and the acceptance mapping. There is no test-namespace allocation and no parallelizable tier (`crucible:writing-plans § Plan header`).
 
-**Deferral owners.** A plan's `Deferred to implementation:` marker sits
-in the task that owns it; a spec marker is named, by its site, in the
-Contract of each task that owns it, each owner making the call for its
-own sites. The plan phase's mechanical pre-pass checks, as part of its
-ownership closure, that every marker has an owning task, and on the
-folded lane round 0's pre-pass does. A deferral is misplaced where a task names it whose scope it
-does not touch, or where it sits in a task other than one whose scope
-it falls in (`crucible:writing-plans § Deferring detail`). The call is
-the owning implementer's, logged in its Decision Log where it departs
-from advisory content
-(`skills/subagent-driven-development/implementer-prompt.md` § Binding
-vs Advisory: the Deviation License).
+**Deferral owners.** Every `Deferred to implementation:` marker has an owning task, which the plan phase's pre-pass checks, and a deferral covering binding content or non-local mechanism, or a misplaced one, is a plan defect (`crucible:writing-plans § Deferring detail`). The call is the owning implementer's, logged in its Decision Log where it departs from advisory content (`skills/subagent-driven-development/implementer-prompt.md` § Binding vs Advisory: the Deviation License).
 
-**Four task fields.** Why, Files, Contract and Acceptance, all required,
-and no per-task constraints field. Files enumerates, by search, the
-consumers of everything the task changes; Contract gives signatures, not
-bodies, and names the spec decisions the task enacts by id. A plan never
-contains function bodies, test code, shell sequences, TDD step scripts,
-commit messages, per-step checkboxes or copies of spec content
-(`crucible:writing-plans § Per-task structure`;
-`crucible:writing-plans § What a plan never contains`). Each
-acceptance criterion maps to a kind of check or says why neither applies
-(`docs/decisions/test-rules.md`). Its edge and error scenarios name the
-inputs the spec implies but never names.
+**Four task fields.** Why, Files, Contract and Acceptance, all required, and no per-task constraints field. A plan never contains function bodies, test code, shell sequences, TDD step scripts, commit messages, per-step checkboxes or copies of spec content (`crucible:writing-plans § Per-task structure`; `crucible:writing-plans § What a plan never contains`). Each acceptance criterion maps to a kind of check or says why neither applies (`docs/decisions/test-rules.md`).
 
-**The review mark.** A task that meets the mark's criterion, defined in
-`skills/subagent-driven-development/references/review-terms.md`
-§ The mark's criterion, may carry the line `Review: branch only —
-<reason>`, the reason saying how it meets it; a task with no mark is
-reviewed. Dispatched, a marked task takes the branch review as its first
-review (`docs/decisions/task-loop.md`). A mark is written with the plan,
-and no seat grades marks as such; the close readout of the phase that
-reviews the plan, the plan phase or, on the folded preset, the spec
-campaign, lists the marked tasks for the operator as information. Once
-that review has closed, no mark is added: the task keeps its review
-(`crucible:writing-plans § Per-task structure`).
+**The review mark.** A task that meets the mark's criterion may carry the line `Review: branch only — <reason>`, and dispatched, it takes the branch review as its first review; a task with no mark is reviewed (`skills/subagent-driven-development/references/review-terms.md` § The mark's criterion; `docs/decisions/task-loop.md`). A mark is written with the plan, no seat grades marks as such, and once the plan's review has closed no mark is added (`crucible:writing-plans § Per-task structure`); the close readout of the phase that reviews the plan lists the marked tasks as information (`skills/redteaming/references/round-readout.md`).
 
-**Task sizing.** A task is the smallest unit with its own test cycle and
-its own review verdict, a fresh task reviewer's gate or, for a marked
-task, the branch reviewer's read of its range: split where a
-reviewer could reject one task while approving its neighbour, and fold
-setup into the task that needs it. The calibration is advisory
-(`crucible:writing-plans § Task sizing`): a task's load, the number and
-size of the files it edits, stays near its neighbours', a task far above
-them split or its Why saying why not; plans run in the low teens of
-tasks.
+**Task sizing.** A task is the smallest unit with its own test cycle and its own review verdict. The calibration is advisory: a task's load, the number and size of the files it edits, stays near its neighbours', and plans run in the low teens of tasks (`crucible:writing-plans § Task sizing`).
 
-**Self-review.** The author re-reads the plan once before the plan phase:
-a placeholder scan, the header's arithmetic, name consistency, and
-evidence for every claim about existing code. The plan phase's pre-pass
-stays the independent check (`crucible:writing-plans § Self-review`).
+**Self-review.** The author re-reads the plan once before the plan phase, whose pre-pass stays the independent check (`crucible:writing-plans § Self-review`).
 
-**The plan phase.** A plan gets one verification round and never a loop:
-a mechanical pre-pass whose report carries the seat id `p0` and whose
-arithmetic is run rather than read, one coherence seat reading spec and
-plan together (two for a large plan), one merged fix wave, the blind
-verifier and the plan phase's terminal pass
-(`docs/decisions/terminal-pass.md`). The pre-pass also takes a set
-census: for each set the plan adds a member to, every place in the
-repository's tracked text that enumerates the set, and that place's
-consumers, that text joining its supporting inputs; round 0's pre-pass
-on the folded lane takes it for the plan half
-(`skills/redteaming/references/plan-phase.md`;
-`skills/redteaming/references/folded-lane.md`). The plan phase's pre-pass gets its ownership closure, set census and worksheet as lens text the controller fills into its lens slot (`skills/redteaming/references/panels.md`). The phase's fix wave
-and its repair take what any fix list takes
-(`docs/decisions/fix-verification-and-merge.md`). A failing verifier
-verdict, as in the spec campaign, and a terminal-pass finding a fix list
-would take, get the repair that record states; anything still open goes
-to the operator as a decision ask, and a finding that shows the spec wrong takes the flip path against the
-spec. A correction to the spec that the
-containment test finds contained lands in the phase's own fix wave, as a
-`Contained amendment:` item of its fix list naming the binding item and
-the change, and is named in its readout as a technical call
-(`docs/decisions/the-spec.md`). Its reason, and why it is contained, go
-in the ruling of the merged entry that led to it, never in the item: the
-fix list is the blind verifier's input. The verifier verdicts the item
-from its plan-side hunks, the re-pin and any plan patch, and the
-controller confirms that the amendment commit landed. The shape is
-announced and the phase proceeds, with no approval gate. It is called the
-plan phase, never a campaign; its directory `campaigns/plan/` and
-selector value `plan` keep their names. At close it hands off to
-execution, whose Setup seeds SDD's ledger from the phase's record and
-the earlier ones: each contained amendment as one of the controller's
-own rulings, the item and its reason together, each premise finding
-still open as open (`docs/decisions/evidence-and-findings.md`), what
-the brainstorm and the review phases left open under the ledger's
-`## Questions`, and each `deferred-minor` entry of the spec campaign
-and the plan phase under `## Deferred minors`, its source `Spec` or
-`Plan` (`skills/subagent-driven-development/references/setup.md`).
+**The plan phase.** A plan gets one verification round and never a loop: a mechanical pre-pass, one coherence seat reading spec and plan together (two for a large plan), one merged fix wave, the blind verifier and the plan phase's terminal pass (`skills/redteaming/references/plan-phase.md`; `docs/decisions/terminal-pass.md`). The pre-pass also takes a set census over the repository's tracked text, and on the folded lane round 0's pre-pass takes it for the plan half (`skills/redteaming/references/panels.md`; `skills/redteaming/references/folded-lane.md`). The fix wave and its repair take what any fix list takes (`docs/decisions/fix-verification-and-merge.md`). A finding that shows the spec wrong takes the flip path against the spec; a correction the containment test finds contained lands in the phase's own fix wave as a `Contained amendment:` item, its reason going in the merged entry's ruling, never in the item, since the fix list is the blind verifier's input (`docs/decisions/the-spec.md`). The shape is announced and the phase proceeds, with no approval gate. It is called the plan phase, never a campaign; its directory `campaigns/plan/` and selector value `plan` keep their names. At close it hands off to execution, whose Setup seeds SDD's ledger from the phase's record and the earlier ones (`skills/subagent-driven-development/references/setup.md`; `docs/decisions/evidence-and-findings.md` for an open premise finding).
 
 ## Why
 

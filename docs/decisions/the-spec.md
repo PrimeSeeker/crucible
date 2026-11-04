@@ -2,112 +2,23 @@
 
 ## Decision
 
-**The spec is a hypothesis.** A spec is read as probably subtly wrong
-and certainly locally imperfect. What binds in it, from its campaign's
-close, is its Constraints & invariants, the decisions it records as the
-operator's firm preference, the preamble conventions it declares
-binding, and the umbrella content its umbrella line brings in.
-Binding means never changed silently, not never changed without the
-operator, and binding text is read for its intent: a case its literal
-reading reaches that its author plainly did not consider is raised for a
-ruling, never applied literally. Everything else is lightly held,
-whoever proposed it, and downstream work may flip it with a logged
-rationale (`skills/subagent-driven-development/references/review-terms.md`
-§ What binds in a spec;
-`crucible:brainstorming § Spec contract`).
+**The spec is a hypothesis.** A spec is read as probably subtly wrong and certainly locally imperfect. What binds in it, from its campaign's close, is its Constraints & invariants, the decisions it records as the operator's firm preference, the preamble conventions it declares binding and the umbrella content its umbrella line brings in; binding means never changed silently, and binding text is read for its intent. Everything else is lightly held, whoever proposed it, and downstream work may flip it with a logged rationale (`skills/subagent-driven-development/references/review-terms.md` § What binds in a spec; `crucible:brainstorming § Spec contract`).
 
-**The request.** No spec, folded document, lane note or umbrella quotes
-a message from the operator: the Intent states the goal in its own
-words. The message that asked for the work and each later message that
-changed what was asked, verbatim, a message the controller is unsure
-about included, go to the feature workspace's `request.md`, written at
-brainstorm exit, appended to while the workspace lives and deleted with
-it (`crucible:brainstorming § Workspace provisioning`;
-`skills/redteaming/references/formats.md` § Feature workspace root and
-layout). It is evidence of what was asked, not the standard, and a seat
-may find the request itself wrong. An umbrella's request lives in the
-umbrella's own workspace and goes with it at the landing; a child's
-holds only the messages of its own brainstorm and after. Seats that run
-the goal check receive the file by path and check the Intent against it
-(`docs/decisions/evidence-and-findings.md`, the goal check).
+**The request.** No spec, folded document, lane note or umbrella quotes a message from the operator: the Intent states the goal in its own words, and the messages that asked, verbatim, go to the feature workspace's `request.md`, deleted with it (`crucible:brainstorming § Workspace provisioning`; `skills/redteaming/references/formats.md` § Feature workspace root and layout). It is evidence of what was asked, not the standard, and a seat may find the request itself wrong. An umbrella's request goes with its workspace at the landing, and a child's holds only the messages of its own brainstorm and after. Seats that run the goal check receive the file by path and check the Intent against it (`docs/decisions/evidence-and-findings.md`, the goal check).
 
-**Decision weights.** Constraints & invariants binds by construction
-and holds invariants every task must keep, not a requirement one site
-meets. A decision binds only where it is the operator's firm preference;
-no mark makes a decision binding, and what builds on an item is judged
-where a change to it is weighed (§ Flip paths).
+**Decision weights.** Constraints & invariants binds by construction and holds invariants every task must keep, not a requirement one site meets (`crucible:brainstorming § Spec contract`). A decision binds only where it is the operator's firm preference; no mark makes a decision binding, and what builds on an item is judged where a change to it is weighed (§ Flip paths).
 
-**Approval strength.** The brainstorm decision record records each
-decision `open`, `accepted` or `firm`, and each entry names its
-proposer, the operator or the controller, for attribution only: decision records
-attribute each position's basis from it (`docs/decisions/decision-records.md`),
-and no rule routes on it. `accepted`, the default for any approval, a
-"+", an "OK" or a "your call" included, means "this until new evidence
-arrives"; an answer that leaves the call to the controller is recorded
-`accepted — delegated to the controller`, in the proposer's place,
-never as the operator's ruling or choice; `firm` is recorded only on
-the operator's explicit word, never inferred from an approval. A firm
-decision that reaches a spec or an umbrella is stated
-there as the operator's firm preference and binds. A
-route entry confirms its route only when `accepted` or `firm`. Every
-operator ruling on a decision ask after the brainstorm enters the
-brainstorm decision record too (`crucible:brainstorming § Workspace
-provisioning`;
-`skills/redteaming/references/formats.md` § Feature workspace root and
-layout).
+**Approval strength.** The brainstorm decision record records each decision `open`, `accepted` or `firm`, each entry naming its proposer for attribution only: decision records attribute each position's basis from it (`docs/decisions/decision-records.md`), and no rule routes on it. `accepted` is the default for any approval, meaning "this until new evidence arrives"; `firm` is recorded only on the operator's explicit word; an answer that leaves the call to the controller is recorded `accepted — delegated to the controller`, never as the operator's ruling or choice (`crucible:brainstorming § Workspace provisioning`; for a route entry, `crucible:brainstorming § Proposing the arrangement`; for later rulings, `skills/redteaming/references/formats.md` § Feature workspace root and layout).
 
-**Flip paths.** From the spec campaign's close on, binding content found
-wrong changes only through a scoped amendment (a correction inside a
-mechanism that stands; no new campaign or plan phase) or a supersede (a
-successor with its own review). Every change to binding content, a
-ruling that patches the plan included, is either contained or put to
-the operator as a decision ask. It is contained when everything that
-builds on or consumes the changed item lies inside the feature and none
-of the exclusions the test lists applies. The controller confirms a
-contained scoped amendment itself and records it as its own ruling,
-which reaches the branch review and the close readout; reversing one is
-a scoped amendment the operator confirms. The procedure, the test and
-its exclusions are stated once, in
-`skills/redteaming/references/flip-paths.md` (§ The containment test).
-A premise finding, a claim that the request, what the Intent asks for
-or a firm decision is wrong, goes to the operator as a decision ask at
-any phase, the spec campaign included, never confirmed as contained;
-where it is also a binding item found wrong, a firm decision or a lane
-note's Intent, its route governs
-(`skills/redteaming/references/premise-asks.md` § Premise findings;
-`docs/decisions/evidence-and-findings.md`).
+**Flip paths.** From the spec campaign's close on, binding content found wrong changes only through a scoped amendment or a supersede, and every such change is either contained, which the controller confirms and records as its own ruling, or put to the operator as a decision ask. The procedure, the test and its exclusions are stated once, in `skills/redteaming/references/flip-paths.md` (§ The containment test). A premise finding goes to the operator as a decision ask at any phase, never confirmed as contained (`skills/redteaming/references/premise-asks.md` § Premise findings; `docs/decisions/evidence-and-findings.md`).
 
-**Requirements by pointer.** The converged spec is a shared input every
-downstream agent reads for itself; isolation covers the campaign's
-exhaust, never the spec. Nothing is copied into plans or briefs: a
-task-loop seat is given the plan's path and its task number
-(`crucible:subagent-driven-development § The Task Loop`), a task the
-controller implements inline is reviewed with the same pointer, and the
-plan header's spec pointer is the only pin. A task-loop review names the
-amendment and ruling commits in its range, and any other change there to
-the plan, a folded document or the spec is a scope finding. The branch
-review reads the spec at its pinned revision and the plan.
+**Requirements by pointer.** The converged spec is a shared input every downstream agent reads for itself; isolation covers the campaign's exhaust, never the spec. Nothing is copied into plans or briefs, and the plan header's spec pointer is the only pin (`crucible:writing-plans § Plan header`; `skills/subagent-driven-development/implementer-prompt.md` § Requirements; `skills/subagent-driven-development/references/inline-mode.md`; `skills/requesting-code-review/code-reviewer.md` § Binding Content). A task-loop review names the amendment and ruling commits in its range, and any other change there to the plan, a folded document or the spec is a scope finding (`skills/subagent-driven-development/task-reviewer-prompt.md` § Verdict 2: Scope).
 
-**Intent-weighted content.** Mechanism sketches are advisory. A spec
-pins what binds or crosses tasks and defers local mechanism to the
-implementer at any severity; non-local mechanism, binding and cross-task
-content are never deferred. Fixes land at the altitude of the text around
-them, and the spec states the current design only. Seats grade sketches
-only for contradiction with binding content or infeasibility, and raise missing detail only
-when it is non-local (`crucible:redteaming § Merge and finding hygiene`;
-`crucible:redteaming § Fix application and blind verification`).
+**Intent-weighted content.** Mechanism sketches are advisory. A spec pins what binds or crosses tasks and defers local mechanism to the implementer at any severity; non-local mechanism, binding and cross-task content are never deferred (`crucible:writing-plans § Deferring detail`). Fixes land at the altitude of the text around them, and the spec states the current design only (`crucible:redteaming § Fix application and blind verification`). Seats grade sketches only for contradiction with binding content or infeasibility, and raise missing detail only when it is non-local (`skills/subagent-driven-development/references/review-terms.md` § Finding scope; `crucible:redteaming § Merge and finding hygiene`).
 
-**Restated rules are interfaces.** A rule stated in several places has
-every stating site as a consumer: brainstorming's consumer sweep and a
-plan task's Files field enumerate them, and a fix report names the
-sibling instances of its defect (`crucible:brainstorming § Spec
-self-review`, check 5).
+**Restated rules are interfaces.** A rule stated in several places has every stating site as a consumer: brainstorming's consumer sweep and a plan task's Files field enumerate them, and a fix report names the sibling instances of its defect (`crucible:brainstorming § Spec self-review`, check 5).
 
-**Rules tied to a trigger are traced.** For a rule a design ties to a
-trigger ("at each X, do Y"), the same check names every route and phase
-that must reach the rule and the moment X occurs in each; where X occurs
-and nothing reaches the rule, the design has a gap. The branch reviewer
-asks the same of the shipped text (`docs/decisions/branch-review.md`).
+**Rules tied to a trigger are traced.** The same check traces each rule a design ties to a trigger through every route and phase that must reach it; where the trigger occurs and nothing reaches the rule, the design has a gap. The branch reviewer asks the same of the shipped text (`docs/decisions/branch-review.md`).
 
 ## Why
 

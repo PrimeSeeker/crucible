@@ -2,174 +2,27 @@
 
 ## Decision
 
-**One owner.** `crucible:requesting-code-review` owns the branch-review
-loop and states it once. It is mandatory when SDD hands over a branch
-whose tasks are complete, and before merging any branch. SDD's handoff
-passes the ledger's deferred minors, the spec and plan reviews'
-`deferred-minor` entries among them, and the adjudication rulings
-(`crucible:subagent-driven-development § Whole-Branch Review`).
+**One owner.** `crucible:requesting-code-review` owns the branch-review loop and states it once. It is mandatory when SDD hands over a branch whose tasks are complete, and before merging any branch (`crucible:subagent-driven-development § Whole-Branch Review`).
 
-**The reviewer.** A fresh branch reviewer reads MERGE_BASE..HEAD
-full-scope, for what task-scoped gates cannot see: cross-task
-integration, drift accumulated across the branch, and anything the gates
-let through. It may read beyond the diff where correctness depends on it,
-triages every deferred item (promote, fix in a wave, or leave parked),
-a `deferred-minor` entry for its effect on the code alone, never editing spec or plan text for it
-(`docs/decisions/fix-verification-and-merge.md`),
-checks each ruling against the final code, and flags undisclosed drift
-from binding content in a completed task as DRIFT. It runs the goal
-check, may raise premise findings, reports a binding item that is itself
-wrong and a consequential choice the code makes with no decision
-recording it, and writes a `Questions` section
-(`docs/decisions/evidence-and-findings.md`), and for each rule the
-branch ties to a trigger asks whether every route and phase that must
-apply it reaches it when the trigger occurs. Where the review reopens
-after SDD's Finish has committed, the range holds that commit and the
-reviewer reads it as part of the branch: the feature's umbrella mark and
-the open items written to an in-repository home. Its check for build
-history in what the branch ships exempts decision records, changelogs
-and the feature folder's files, as every execution reviewer's does, and
-those open items too, all of which exist to hold it
-(`skills/subagent-driven-development/references/seat-rules.md`
-§ What shipped work carries; `skills/requesting-code-review/code-reviewer.md`
-§ What Was Built, Against What, § What to Check). It runs on the default
-role, never lowered to save cost
-(`docs/decisions/model-roles-and-effort.md`).
+**The reviewer.** A fresh branch reviewer reads MERGE_BASE..HEAD full-scope, for what task-scoped gates cannot see: cross-task integration, drift accumulated across the branch, and anything the gates let through. It triages every deferred item, a `deferred-minor` entry for its effect on the code alone, never editing spec or plan text for it (`docs/decisions/fix-verification-and-merge.md`), checks each ruling against the final code, and flags undisclosed drift from binding content in a completed task as DRIFT (`skills/requesting-code-review/code-reviewer.md` § Read Scoping, § Execution Trail, § What to Check). It runs the goal check, may raise premise findings, reports a binding item that is itself wrong and an unrecorded consequential choice, and writes a `Questions` section (`docs/decisions/evidence-and-findings.md`); for each rule the branch ties to a trigger it asks whether every route and phase that must apply it reaches it. A review reopened after SDD's Finish has committed reads that commit, the feature's umbrella mark and the open items written to an in-repository home, as part of the branch. Its check for build history exempts decision records, changelogs, the feature folder's files and those open items, all of which exist to hold it (`skills/subagent-driven-development/references/seat-rules.md` § What shipped work carries; `skills/requesting-code-review/code-reviewer.md` § What Was Built, Against What). It runs on the default role, never lowered to save cost (`docs/decisions/model-roles-and-effort.md`).
 
-**Tasks completed branch review only.** For a task the ledger completes
-branch review only (`docs/decisions/task-loop.md`), the branch reviewer
-is the first review. The controller names each such task in the card's
-`[FIRST_REVIEW_TASKS]` slot, with its range, its report, the brainstorm
-decision record where its plan section names it, and the amendment
-commits its range holds. Every full-scope pass reads each such report
-and its Decision Log against the diff over that range, as the task
-review would: each entry justified, nothing undisclosed, a deletion's or
-loosening's justification, RED before GREEN or the logged exception, and no
-change to the plan or spec other than a named amendment commit; and it
-checks each decision-record position's basis against the brainstorm
-decision record. What it finds opens waves by its staked severity, and
-no line is owed per task
-(`crucible:requesting-code-review § Dispatch the branch reviewer`;
-`skills/requesting-code-review/code-reviewer.md` § Execution Trail).
+**Tasks completed branch review only.** For a task the ledger completes branch review only (`docs/decisions/task-loop.md`), the branch reviewer is the first review. The controller names each such task in the card's `[FIRST_REVIEW_TASKS]` slot, and every full-scope pass reads its report and Decision Log against the diff over its range, as the task review would; what it finds opens waves by its staked severity, and no line is owed per task (`crucible:requesting-code-review § Dispatch the branch reviewer`; `skills/requesting-code-review/code-reviewer.md` § Execution Trail).
 
-**Leads and questions.** A task reviewer's and an implementer's
-`Questions` items, an implementer's fixes proposed outside its task, the
-concerns of a fix report no re-review reads, and on the very-small lane
-a dispatched implementer's concerns, reach the branch reviewer as leads:
-ledger lines under `## Deferred minors` marked `lead:`. It rules
-on each lead instead of triaging it: CONFIRMED, a finding at a staked
-severity, named an intent gap or a scope gap where it is one;
-RECOMMENDED, an improvement it backs, which the controller may adopt to
-ride the next fix wave or which reaches the operator in the close
-readout; or LEFT, with one line. A lead it confirms as an intent or
-scope gap opens a wave whatever its staked severity, as a failed
-verdict does in a task review; a pass that leaves a lead unruled is
-missing a verdict. Its own `Questions` items, and a branch-review fix report's, go under the
-ledger's `## Questions` with
-the controller's disposition; the close readout lists them, and the
-branch reviewer's read scoping excludes that section, so a pass's
-questions never become the next pass's input
-(`skills/requesting-code-review/SKILL.md` § The branch-review loop;
-`skills/requesting-code-review/code-reviewer.md` § Execution Trail).
+**Leads and questions.** What task reviewers and implementers voice beyond their work reaches the branch reviewer as leads, ledger lines under `## Deferred minors` marked `lead:`. It rules on each, CONFIRMED, RECOMMENDED or LEFT, instead of triaging it; a lead it confirms as an intent or scope gap opens a wave whatever its staked severity, and a pass that leaves one unruled is missing a verdict. Its own `Questions` items go under the ledger's `## Questions`, which its read scoping excludes, so a pass's questions never become the next pass's input (`skills/requesting-code-review/SKILL.md` § The branch-review loop; `skills/requesting-code-review/code-reviewer.md` § Execution Trail; `skills/subagent-driven-development/references/what-a-report-voices.md`).
 
-**The loop.** A fix wave opens on a BLOCKER or MAJOR or a lead
-confirmed as an intent or scope gap, and otherwise only as the cleanup wave or for a ruling or
-requested work (below): one fresh implementer with the complete
-findings list, then a scoped re-review of the findings answered fixed,
-the disputed ones ruled as `docs/decisions/adjudication.md` states. A wave that leaves no BLOCKER or
-MAJOR open is followed by a full-scope pass, skipped only when nothing
-changed since the last one; the pass that ends the review is the branch
-review's terminal pass, a branch-reviewer dispatch. The cap is three
-waves, every wave counting, a cleanup wave and a ruling's included; a
-finding that would need a fourth goes to the operator as a decision
-ask. A premise finding is a decision ask, not an open BLOCKER
-or MAJOR: a pass that leaves only premise findings open ends the review,
-and one left open holds no merge gate by itself. The re-reviewer rules
-on each concern a fix report raises, and a re-review missing a ruling
-is missing a verdict. Off the
-very-small lane, a DRIFT finding is a decision ask to the operator,
-revert or repair: a repair rides a fix wave counted against the cap, and
-after a revert's re-run tasks complete the review resumes with a
-full-scope pass; on the lane, drift from the note is a wave finding. A red
-suite at SDD's Finish is a BLOCKER that opens a wave. Fixes are never the
-controller's, the very-small lane excepted
-(`crucible:requesting-code-review § The branch-review loop`).
+**The loop.** A fix wave opens on a BLOCKER or MAJOR or a lead confirmed as an intent or scope gap, and otherwise only as the cleanup wave or for a ruling or requested work (below): one fresh implementer with the complete findings list, then a scoped re-review, disputes ruled as `docs/decisions/adjudication.md` states. A wave that leaves no BLOCKER or MAJOR open is followed by a full-scope pass, and the pass that ends the review is the branch review's terminal pass, a branch-reviewer dispatch. The cap is three waves, every wave counting; a finding that would need a fourth goes to the operator as a decision ask. A premise finding is a decision ask, not an open BLOCKER or MAJOR, and holds no merge gate by itself. Off the very-small lane a DRIFT finding is a decision ask to the operator, revert or repair; on the lane, drift from the note is a wave finding. A red suite at SDD's Finish is a BLOCKER that opens a wave. Fixes are never the controller's, the very-small lane excepted (`crucible:requesting-code-review § The branch-review loop`; `skills/subagent-driven-development/references/drift.md`).
 
-**Changes that ride a wave.** An improvement the controller adopts, an
-operator's ruling and work the operator asked for enter a wave's
-findings list as labelled changes, `Change (<kind>): <the change> —
-apply it, or decline it with a reason`, `<kind>` being `improvement`,
-`ruling` or `requested`. With no defect to confirm, none is answered NOT
-CONFIRMED or disputed; one applied goes to the re-review,
-which checks that it landed and broke nothing. The implementer's and
-the re-reviewer's cards name the label and override, for labelled
-items, their templates' two answers and defect wording; the templates
-are unchanged. A declined ruling or requested change goes back to the
-operator in the next close readout; a declined improvement is work left
-open (`docs/decisions/records-and-workspace.md`). On the very-small lane
-the controller's inline fix report answers each one applied or declined
-(`crucible:requesting-code-review § The branch-review loop`;
-`skills/subagent-driven-development/references/very-small-lane.md`).
+**Changes that ride a wave.** An improvement the controller adopts, an operator's ruling and work the operator asked for enter a wave's findings list as labelled changes, applied or declined with a reason; with no defect to confirm, none is answered NOT CONFIRMED or disputed. A declined ruling or requested change goes back to the operator in the next close readout; a declined improvement is work left open (`crucible:requesting-code-review § The branch-review loop`; `skills/subagent-driven-development/references/very-small-lane.md`; `docs/decisions/records-and-workspace.md`).
 
-**Rulings in execution.** A premise ruling the operator gives during
-the task loop lands as a plan change at the next task boundary, the
-tasks it affects not yet dispatched waiting for it; one given at the
-branch review or its close readout opens a branch-review wave, counted
-against the cap, and SDD's Finish restarts after it. A ruling that
-keeps the decision opens nothing. Work the operator's close-readout
-answer asks for opens a wave the same way where the spec and plan
-already require it or the readout listed it as a minor, improvement or
-lead;
-other work is new scope, a feature of its own. Where the cap is spent,
-the operator's answer is the escalation's answer and may open the wave
-(`skills/redteaming/references/premise-asks.md` § Premise findings;
-`crucible:subagent-driven-development § Plan changes mid-execution`).
+**Rulings in execution.** A premise ruling the operator gives during the task loop lands as a plan change at the next task boundary; one given at the branch review or its close readout opens a branch-review wave, counted against the cap, and SDD's Finish restarts after it. Work the operator's close-readout answer asks for opens a wave the same way where the spec and plan already require it or the readout listed it; other work is new scope, a feature of its own (`skills/redteaming/references/premise-asks.md` § Premise findings; `crucible:subagent-driven-development § Plan changes mid-execution`; `crucible:requesting-code-review § The branch-review loop`).
 
-**Minors.** A minor rides a wave something else opened, and never opens
-one by itself. A minor that rode no wave becomes a ledger line listed
-for the operator in the close readout, with no ruling per minor, never
-chased by the controller.
+**Minors.** A minor rides a wave something else opened, and never opens one by itself. A minor that rode no wave becomes a ledger line listed for the operator in the close readout, with no ruling per minor, never chased by the controller.
 
-**The cleanup wave.** Once the review has ended with no BLOCKER or MAJOR
-open and a wave remains under the cap, the controller may open one
-cleanup wave of the minors, and of the leads the reviewer ruled
-CONFIRMED or RECOMMENDED, that it judges worth fixing; a wave of
-improvements alone may open. It runs as any wave, counted against the
-cap, with its scoped re-review and then a full-scope pass, and its
-ledger line marks it `cleanup` (`Branch wave <n>/3 (cleanup, …)`, on
-the very-small lane `Wave <n> (cleanup):`, its fixes inline), so a
-resumed controller sees it spent. One per branch: minors the cleanup
-wave or a later pass raises open no other wave, a BLOCKER or MAJOR opens
-a normal one, and one raised at the cap takes the cap's escalation. The
-close readout says why each minor and lead it left was left. Standalone
-mode has no loop and no cleanup wave
-(`crucible:requesting-code-review § The branch-review loop`).
+**The cleanup wave.** Once the review has ended with no BLOCKER or MAJOR open and a wave remains under the cap, the controller may open one cleanup wave per branch of the minors, and of the leads the reviewer ruled CONFIRMED or RECOMMENDED, that it judges worth fixing, a wave of improvements alone included. It runs as any wave, counted against the cap (`crucible:requesting-code-review § The branch-review loop`), and the close readout says why each minor and lead it left was left (`skills/subagent-driven-development/references/finish.md`).
 
-**Standalone mode.** On a branch with no SDD run, the reviewer gets no
-ledger inputs and no report file, returns its report as its final
-message, works under the host's temporary directory, and reports
-deviations as ordinary findings rather than DRIFT. With no ledger, the
-report is the record of everything it raises, its questions included.
-The invoking agent handles the findings under `crucible:receiving-review`,
-fixes the BLOCKERs and MAJORs it confirms, sends a premise finding to the
-operator as a decision ask rather than to a fix, and runs the review
-again after substantial fixes; there is no wave loop and no cap
-(`crucible:requesting-code-review § Standalone mode`).
+**Standalone mode.** On a branch with no SDD run, the reviewer gets no ledger inputs and returns its report as its final message, and the invoking agent handles the findings under `crucible:receiving-review`, with no wave loop, no cap and no cleanup wave (`crucible:requesting-code-review § Standalone mode`; `skills/requesting-code-review/code-reviewer.md` § Standalone Mode).
 
-**Review seats build their own diff.** The task reviewer, re-reviewer,
-branch reviewer and adjudicator each check with `git cat-file -t` that both
-ends of their range are commits and with `git merge-base --is-ancestor`
-that the base is an ancestor of the head, have git write the commit list and a stat
-summary with a `-U10` patch into files in their scratch subdirectory with
-`--output`, and read the diff there. An end that is not a commit, a base
-that is not an ancestor of the head, or a failing git command, is
-reported, never reviewed as an empty diff. The
-controller records the base before each dispatch, never uses `HEAD~1`, and
-never takes the diff into its own context
-(`skills/subagent-driven-development/references/seat-rules.md`
-§ Building the diff; `skills/subagent-driven-development/task-reviewer-prompt.md`
-§ Diff Under Review; `skills/requesting-code-review/code-reviewer.md`
-§ Git Range to Review).
+**Review seats build their own diff.** The task reviewer, re-reviewer, branch reviewer and adjudicator each check that both ends of their range are commits and the base an ancestor of the head, have git write the diff into files in their scratch subdirectory, and read it there; a failed check is reported, never reviewed as an empty diff. The controller records the base before each dispatch, never uses `HEAD~1`, and never takes the diff into its own context (`skills/subagent-driven-development/references/seat-rules.md` § Building the diff; `skills/subagent-driven-development/task-reviewer-prompt.md` § Diff Under Review; `skills/requesting-code-review/code-reviewer.md` § Git Range to Review).
 
 ## Why
 

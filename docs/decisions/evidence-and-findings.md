@@ -2,170 +2,19 @@
 
 ## Decision
 
-**Finding hygiene.** Panel seats, the terminal pass and the execution
-reviewers stake a severity on each finding, BLOCKER, MAJOR or MINOR. In
-the spec campaign and the plan phase, a BLOCKER without a reproduction
-or evidence is a question, a code-shaped claim in a finding (what a
-regex, a command or the code does) carries a run transcript or the tag
-`UNVERIFIED`, and an `UNVERIFIED` finding never enters a fix list as it
-stands: the controller verifies or discards it
-(`skills/redteaming/seat-prompt.md`; `crucible:redteaming § Merge and
-finding hygiene`). Every finding carries its evidence and a location:
-file:line, or, for a premise finding, the passage of the spec, plan or
-request it contradicts
-(`skills/subagent-driven-development/references/seat-rules.md`
-§ Location). The task reviewer and the branch reviewer treat a BLOCKER
-without evidence as a question; the re-reviewer cites file:line for its
-verdicts and any new breakage; none of the three uses the `UNVERIFIED`
-tag. Improvements and style are not findings: an improvement goes in a
-seat's `Questions` (below). The execution reviewers raise no formatting
-that no repo tool enforces: where a tool enforces it, the tool's failure
-is the finding
-(`skills/subagent-driven-development/references/seat-rules.md` § Findings,
-§ Formatting).
+**Finding hygiene.** Panel seats, the terminal pass and the execution reviewers stake a severity on each finding, a BLOCKER without evidence being a question, and every finding carries its evidence and a location (`skills/subagent-driven-development/references/seat-rules.md` § Findings, § Location; for the re-reviewer, `skills/subagent-driven-development/re-review-prompt.md` § Finding Verdicts). In the spec campaign and the plan phase a code-shaped claim in a finding carries a run transcript or the tag `UNVERIFIED`, and an `UNVERIFIED` finding never enters a fix list as it stands (`skills/redteaming/seat-prompt.md`; `crucible:redteaming § Merge and finding hygiene`); the task reviewer, the re-reviewer and the branch reviewer do not use the tag. Improvements and style are not findings, and the execution reviewers raise no formatting that no repo tool enforces (`skills/subagent-driven-development/references/seat-rules.md` § Questions, § Formatting).
 
-**Premise findings.** A redteam seat, the terminal pass, the branch
-reviewer, an umbrella's closing-review seat or an implementer may claim,
-with evidence, that one of three things is wrong:
-the request, what the Intent asks for, or a firm decision. The request
-is the feature workspace's `request.md`, which redteam seats and the
-branch reviewer receive by path (`docs/decisions/the-spec.md`); the Intent is
-a section of the document, and a firm decision says so in its
-rationale. On the very-small lane the lane note's Intent stands for the
-spec's; for an umbrella's child the umbrella's Intent is protected as
-the child's own is, and a change on the child's branch to what that
-Intent asks is a finding. The finding
-carries the label `premise` after its staked severity. Every other
-decision, whoever proposed it, is lightly held: a finding against it is
-an ordinary one, and so is a correction of an Intent's wording or facts
-that leaves what it asks for unchanged. Any other binding item shown
-wrong, such as a Constraint, keeps its own route, and an execution
-reviewer's `literal-reading` finding keeps its own label, since it
-questions an application, not the premise; a redteam seat raises such a
-case as a finding naming the item and the case. No rule routes on who proposed a
-decision. A task reviewer raises none: its doubt about a premise is a question
-(`skills/subagent-driven-development/references/seat-rules.md` § Premise findings and § Binding changes; `skills/redteaming/references/premise-asks.md`; the reviewer templates' `literal-reading` lines; `skills/subagent-driven-development/task-reviewer-prompt.md`). The controller corrects a label in either
-direction, its reason recorded with it. Every premise finding goes to
-the operator as a decision ask with a recommendation. It is an open
-decision ask, not an open BLOCKER or MAJOR: it holds open no gate keyed
-on one, holds no stop, opens no fix wave and consumes no cap, the
-readouts carry it until it is ruled, and work goes on while it is open
-(`docs/decisions/spec-campaign.md`). In execution the controller tells
-the operator of one in a one-line message when it is raised, not
-waiting for the close readout. An open one is carried across each
-phase's close until ruled
-(`skills/redteaming/references/premise-asks.md` § Premise findings).
+**Premise findings.** A redteam seat, the terminal pass, the branch reviewer, an umbrella's closing-review seat or an implementer may claim, with evidence, that one of three things is wrong: the request, what the Intent asks for, or a firm decision, the finding carrying the label `premise` (`skills/subagent-driven-development/references/seat-rules.md` § Premise findings and § Binding changes). Every other decision, whoever proposed it, is lightly held, and no rule routes on who proposed a decision. Any other binding item shown wrong keeps its own route, and an execution reviewer's `literal-reading` finding its own label, since it questions an application, not the premise (the reviewer templates' `literal-reading` lines). A task reviewer raises none: its doubt about a premise is a question (`skills/subagent-driven-development/task-reviewer-prompt.md`). Every premise finding goes to the operator as a decision ask with a recommendation. It is an open decision ask, not an open BLOCKER or MAJOR: it holds no gate and no stop, opens no fix wave and consumes no cap, the readouts carry it until it is ruled, and work goes on while it is open (`skills/redteaming/references/premise-asks.md` § Premise findings; `docs/decisions/spec-campaign.md`).
 
-**The goal check.** Before reading the Intent, each seat of a spec
-campaign's round 1 and the branch reviewer restate in one sentence the
-goal that the request file their dispatch names asks for
-(`docs/decisions/the-spec.md`), then compare it with the Intent: a
-mismatch the seat can stand behind is a premise finding, a vaguer one a
-question. An umbrella child's seat compares it with the child's Intent,
-the umbrella's Intent and the child's entry. Later rounds' seats and
-plan-phase seats run no goal check, their card's `goal-check` selector
-set off, and keep the request among their inputs as grounds for a
-premise finding. With no request file, the seat restates
-the goal from the Intent and says the request was unavailable.
-On the very-small lane the branch reviewer runs it with the note's
-Intent (`docs/decisions/routes.md`;
-`skills/subagent-driven-development/references/seat-rules.md`
-§ The goal check).
+**The goal check.** Before reading the Intent, each seat of a spec campaign's round 1 and the branch reviewer restate in one sentence the goal that the request file asks for (`docs/decisions/the-spec.md`), then compare it with the Intent: a mismatch the seat can stand behind is a premise finding, a vaguer one a question. Later rounds' seats and plan-phase seats run no goal check, their card's `goal-check` selector set off, and keep the request among their inputs. On the very-small lane the branch reviewer runs it with the note's Intent (`docs/decisions/routes.md`; `skills/subagent-driven-development/references/seat-rules.md` § The goal check).
 
-**Questions.** Redteam seats, the task reviewer, the branch reviewer and
-the implementer each have a `Questions` section for anything material
-they could not stake as a finding: a question, a doubt, a misgiving with
-nothing specific to point to, or a suggested improvement. It holds a few
-items at most, none being the normal case for doubts and misgivings, and
-an item carries no severity
-(`skills/subagent-driven-development/references/seat-rules.md`
-§ Questions). Nothing in it is dropped unrecorded: a redteam seat's item
-gets a disposition in the round record, answered, carried to the
-readout, rejected with a ruling or adopted; a task reviewer's or an
-implementer's becomes a lead the branch reviewer rules on
-(`docs/decisions/branch-review.md`); the branch reviewer's own go under
-the ledger's `## Questions` with the controller's disposition, for the
-close readout; a standalone branch review's report is their record. A
-redteam seat's question that doubts the request, what the Intent asks
-for or a firm decision is always carried to the readout, round 0's
-included, since the operator settles such a doubt and the controller is
-the Intent's author; the readout quotes each carried question verbatim.
-An improvement the controller adopts is a lightly held change it names
-in the readout, and rides the next fix wave: in a campaign as a
-fix-list item naming the question id; at the branch review as a
-labelled change, `Change (improvement)`, which the fixer applies or
-declines with a reason, with no defect to confirm and nothing to
-dispute, an operator's ruling and work the operator asked for
-riding a wave the same way. It never opens a wave by itself, the branch
-review's one cleanup wave aside (`docs/decisions/branch-review.md`); the
-controller never applies one itself outside the very-small lane; one
-with no wave to ride goes to the operator in the readout, and one a
-fixer declines is work left open (`crucible:redteaming § Merge and
-finding hygiene`; `crucible:requesting-code-review § The branch-review
-loop`; `crucible:subagent-driven-development § What a report voices`).
+**Questions.** Redteam seats, the task reviewer, the branch reviewer and the implementer each have a `Questions` section for anything material they could not stake as a finding, with no severity (`skills/subagent-driven-development/references/seat-rules.md` § Questions). Nothing in it is dropped unrecorded: a redteam seat's item gets a disposition in the round record, a task reviewer's or an implementer's becomes a lead the branch reviewer rules on (`docs/decisions/branch-review.md`), and the branch reviewer's own go under the ledger's `## Questions`. A redteam seat's question that doubts the request, what the Intent asks for or a firm decision is always carried to the readout, since the operator settles such a doubt and the controller is the Intent's author, and the readout quotes it verbatim. An improvement the controller adopts is a lightly held change it names in the readout, and rides the next fix wave; it never opens a wave by itself, the branch review's one cleanup wave aside (`docs/decisions/branch-review.md`), and the controller never applies one itself outside the very-small lane (`crucible:redteaming § Merge and finding hygiene`; `crucible:requesting-code-review § The branch-review loop`; `crucible:subagent-driven-development § What a report voices`).
 
-**Evidence on the author's side.** Whoever writes the text under review
-carries the seats' rule. A spec's author checks each claim about
-existing code, files or tool behaviour as it is written, reading the
-file or running the command, or writes it with `UNVERIFIED`, and treats
-an unverified draft claim as wrong until checked; the self-review's
-evidence check resolves the tags or leaves them as declared input for
-the campaign (`crucible:brainstorming § Spec contract`;
-`crucible:brainstorming § Spec self-review`). A plan's author reads
-every signature, format and pin from the code, never from memory
-(`crucible:writing-plans § Self-review`). The controller's fix lists,
-merged entries, rulings, verification outcomes, readouts and decision
-asks show the evidence for each code-shaped claim or carry `UNVERIFIED`,
-and a decision ask resting on an untagged, unverified mechanical fact is
-a defect in the ask. The implementer's report gives each code-shaped
-claim its command and output, or `UNVERIFIED`
-(`skills/subagent-driven-development/implementer-prompt.md` § Report
-Format). Before a fix list freezes, each item names every artifact site
-restating the content it changes, and an item that adds or changes a
-rule, a seat's suggested wording included, also names each site that
-brainstorming's consumer sweep and trace find for it: who produces the
-rule's input, who reads its output, and which routes and phases reach
-it. Every spec-campaign and plan-phase fix list takes the trace, round
-0's, a terminal pass's follow-up wave's and a repair's included; execution's waves do not. A fix landing at fewer sites than
-its item names has not landed (`crucible:redteaming § Fix application
-and blind verification`). `UNVERIFIED` is the one marker; it tags a
-claim and never admits a finding to a fix list.
+**Evidence on the author's side.** Whoever writes the text under review carries the seats' rule: a spec's author checks each claim as it is written or tags it `UNVERIFIED` (`crucible:brainstorming § Spec contract`; `crucible:brainstorming § Spec self-review`); a plan's author reads every signature, format and pin from the code (`crucible:writing-plans § Self-review`); the controller's records, readouts and decision asks show the evidence for each code-shaped claim or carry the tag (`crucible:redteaming § Merge and finding hygiene`); and the implementer's report does the same (`skills/subagent-driven-development/implementer-prompt.md` § Report Format). Before a fix list freezes, each item names every artifact site restating the content it changes and, where it adds or changes a rule, each site brainstorming's consumer sweep and trace find. Every spec-campaign and plan-phase fix list takes the trace; execution's waves do not. A fix landing at fewer sites than its item names has not landed (`crucible:redteaming § Fix application and blind verification`). `UNVERIFIED` is the one marker; it tags a claim and never admits a finding to a fix list.
 
-**Evidence before claims.** Before saying work is complete, fixed or
-passing, an agent runs the check that shows it and reports what its
-output said (`crucible:using-crucible § The Rule`). Where a fix item's
-substance is a predicate (an acceptance check, a gate, a grep), the
-controller runs it at the tree state it will run against before
-recording the item applied, with the command and output under the item;
-a check of a state not yet reached must fail on today's tree, and a
-check taken from a seat's remedy is run the same way. The implementer
-quotes each test result from the run's own output, the tool result or a
-background run's output file, and until that output is read the outcome
-is unknown, whatever a notification promised
-(`skills/subagent-driven-development/implementer-prompt.md` § Tests:
-Test-First, Evidence Before Done). The task reviewer takes that reported
-output as given; which seats run the full suite is stated in
-`docs/decisions/spec-campaign.md`.
+**Evidence before claims.** Before saying work is complete, fixed or passing, an agent runs the check that shows it and reports what its output said (`crucible:using-crucible § The Rule`). Where a fix item's substance is a predicate, the controller runs it before recording the item applied, and a check of a state not yet reached must fail on today's tree (`crucible:redteaming § Fix application and blind verification`). The implementer quotes each test result from the run's own output, and until that output is read the outcome is unknown (`skills/subagent-driven-development/implementer-prompt.md` § Tests: Test-First, Evidence Before Done). The task reviewer takes that reported output as given; which seats run the full suite is stated in `docs/decisions/spec-campaign.md`.
 
-**What the requirements leave unsaid.** The execution reviewers read
-the requirements' silence as no permission: a failure on an input they
-imply but never name is a defect, graded by its effect on a reasonable
-person using the software (`skills/requesting-code-review/code-reviewer.md`
-§ What to Check; `skills/subagent-driven-development/task-reviewer-prompt.md`
-§ Verdict 4: Quality). A redteam seat, the terminal pass and the branch
-reviewer report a consequential choice the artifact takes for granted
-with no decision recording it, for the branch reviewer one the code
-makes, and a binding item that is itself wrong; both clauses have one
-home, the shared reference's § Binding items and unrecorded choices
-(`skills/subagent-driven-development/references/seat-rules.md`),
-which the task reviewer and the implementer do not read. The
-implementer's test evidence
-names every failing test, whether its change caused it or not
-(`skills/subagent-driven-development/implementer-prompt.md` § Report
-Format), and the task reviewer and the re-reviewer re-read evidence that
-looks truncated at its stated path before reporting it missing
-(`skills/subagent-driven-development/references/seat-rules.md`
-§ Review evidence).
+**What the requirements leave unsaid.** The execution reviewers read the requirements' silence as no permission: a failure on an input they imply but never name is a defect, graded by its effect on a reasonable person using the software (`skills/subagent-driven-development/references/seat-rules.md` § Silence is not permission). A redteam seat, the terminal pass and the branch reviewer report a consequential choice the artifact takes for granted with no decision recording it, for the branch reviewer one the code makes, and a binding item that is itself wrong; the task reviewer and the implementer do not read that section (`skills/subagent-driven-development/references/seat-rules.md` § Binding items and unrecorded choices). The implementer's test evidence names every failing test, whether its change caused it or not (`skills/subagent-driven-development/implementer-prompt.md` § Report Format), and the task reviewer and the re-reviewer re-read evidence that looks truncated before reporting it missing (`skills/subagent-driven-development/references/seat-rules.md` § Review evidence).
 
 ## Why
 

@@ -2,133 +2,15 @@
 
 ## Decision
 
-**The feature folder.** A feature commits its spec and, on the standard
-route, its plan in one feature folder, `docs/crucible/<YYYY-MM-DD>-<slug>/`
-by default, a root the project's instruction files name overriding the
-default. The spec is the agents' coordination artifact: its audience is
-the agent fleet, and it says what binds and what is advice
-(`docs/decisions/the-spec.md`). All are committed on the feature branch,
-where agents in other checkouts can read them. Brainstorming creates the
-folder by a birth step that refuses a slug some folder already carries;
-every later consumer finds it by a resolve step that creates nothing and
-reports none or several (`skills/redteaming/references/formats.md`
-§ Feature folder). A shipped spec is never silently edited: it stays as
-the forensic record, and a route that replaces it writes a successor
-beside it. The exception is an umbrella's `umbrella.md`, edited in place
-after it lands until it closes (`docs/decisions/umbrellas.md`). In a pull
-request, the operator is asked whether the files the branch adds to its
-feature folder go in, told first that the branch's commits carry them
-anyway: by the close readout where it recommends
-a pull request, otherwise by finishing. An umbrella's own pull request
-leaves `umbrella.md` off that list, so it stays in the merged tree
-(`crucible:finishing-a-development-branch § Step 5: Execute Choice`).
+**The feature folder.** A feature commits its spec and, on the standard route, its plan in one feature folder on the feature branch, where agents in other checkouts can read them: `docs/crucible/<YYYY-MM-DD>-<slug>/` by default, a root the project's instruction files name overriding the default, found by a birth step and a resolve step (`skills/redteaming/references/formats.md` § Feature folder). The spec is the agents' coordination artifact (`docs/decisions/the-spec.md`). A shipped spec is never silently edited: it stays as the forensic record, the exception being an umbrella's `umbrella.md`, edited in place until it closes (`docs/decisions/umbrellas.md`). In a pull request, the operator is asked whether the files the branch adds to its feature folder go in, told first that the branch's commits carry them anyway; an umbrella's own pull request leaves `umbrella.md` off that list (`crucible:finishing-a-development-branch § Step 5: Execute Choice`).
 
-**The workspace.** A feature's process records (the quoted request, round
-records, seat reports, the execution ledger, scratch) live in
-`.crucible/<slug>/` at the root of the checkout the controller works in. It ignores itself through a
-`.crucible/.gitignore` holding `*`, written by a prose provisioning step
-and confirmed with `git check-ignore` on a file path
-(`skills/redteaming/references/formats.md` § Feature workspace root and
-layout); no host `.gitignore` is edited. Nothing in it is committed or
-archived, and `.crucible/` holds workspaces only. SDD Setup looks for the
-workspace before its worktree and provisioning steps, and continues in
-the checkout that holds it. A workspace's life has three ends, SDD
-Finish, an umbrella's landing and the feature's abandonment, and each
-deletes it, at the first two only once the work left open has gone to
-its home or been dropped, a discard aside; an umbrella's closing review
-keeps a workspace of its own under the umbrella's slug, deleted on the
-same condition (`skills/redteaming/references/formats.md` § Feature
-workspace root and layout, § Open items). A workspace lost mid-feature
-restarts the in-flight phase from the committed spec or plan and
-`git log`.
+**The workspace.** A feature's process records live in `.crucible/<slug>/` at the root of the checkout the controller works in, ignored through a `.crucible/.gitignore` written by a prose provisioning step, with no host `.gitignore` edited (`skills/redteaming/references/formats.md` § Feature workspace root and layout). Nothing in it is committed or archived, and `.crucible/` holds workspaces only. SDD Setup looks for the workspace before its worktree and provisioning steps (`skills/subagent-driven-development/references/setup.md`). A workspace's life has three ends, SDD Finish, an umbrella's landing and the feature's abandonment, and each deletes it, at the first two only once the work left open has gone to its home or been dropped; an umbrella's closing review keeps one of its own. A workspace lost mid-feature restarts the in-flight phase from the committed spec or plan and `git log`.
 
-**What is committed.** A feature's committed record is its spec, its
-plan and its commit messages, and its open items where the project's
-home for them is in the repository. Nothing summarizes a campaign or a
-feature into the repository, and nothing parses records to assemble
-one: open items list work left open, each with its source, not what the
-feature did. The records' process rules
-still bind, and their layout is guidance. The session transcripts hold
-the raw records for as long as the host keeps them (`README.md` § What
-it writes into your repository).
+**What is committed.** A feature's committed record is its spec, its plan and its commit messages, and its open items where the project's home for them is in the repository. Nothing summarizes a campaign or a feature into the repository, and nothing parses records to assemble one: open items list work left open, each with its source, not what the feature did. The records' process rules still bind, and their layout is guidance. The session transcripts hold the raw records for as long as the host keeps them (`README.md` § What it writes into your repository).
 
-**Work left open.** What a phase leaves open travels to Finish in the
-ledger: SDD's Setup, the ledger's only seeding writer on every route,
-seeds under `## Questions` what the brainstorm, the spec campaign and
-the plan phase left open, each as `<phase>: <item> — carried`, apart
-from `deferred-minor` entries, which go under `## Deferred minors` for
-the branch review's triage (`docs/decisions/branch-review.md`;
-`skills/subagent-driven-development/references/setup.md`). Crucible
-keeps no store of its own for open items. At Finish, after the operator's answer
-to the close readout, the work left open (minors, leads, questions,
-declined improvements, unruled asks, parked BLOCKER or MAJOR findings
-with their rulings, and what earlier phases carried) goes, each item
-with its source, to the home the project's instructions name for open
-items, a user-level file's line naming the project counting: an
-in-repository home written and committed on the branch, or an
-outside tracker as the instructions say, those being the operator's word
-for it. Where they name none, the close readout asks the operator where
-the items go or whether to drop them, and offers to record the answer
-in an instruction file the operator picks, committed in the project or
-private and uncommitted, so that the question does not recur; the
-workspace is not deleted before that answer, so a session that ends
-unanswered returns to the question. Items the answer drops go nowhere,
-the readout having named them; where nothing was left open, nothing is
-asked or written. No item takes a ruling of its own. An umbrella, which
-has no ledger, sends what its brainstorm and campaign left open the same
-way at its landing, its campaign's `deferred-minor` entries and the
-decision asks still unruled there, premise asks aside, among them, the
-landing ask carrying the question, and its
-closing review sends the findings kept the same way
-(`docs/decisions/umbrellas.md`). A deferral counts as done only once it
-is in the home or dropped; no item is left only in the workspace
-(`skills/redteaming/references/formats.md` § Open items;
-`crucible:subagent-driven-development § Finish`). Brainstorming's
-context gathering reads the home for open items touching the area,
-which is what makes them found again (`crucible:brainstorming § Context
-gathering (before any question)`). This repository's
-`AGENTS.md` names `docs/backlog/` as its home, and has the controller
-check open items against its no-local-context rule before committing
-them.
+**Work left open.** What a phase leaves open travels to Finish in the ledger, SDD's Setup its only seeding writer on every route (`skills/subagent-driven-development/references/setup.md`; `docs/decisions/branch-review.md` for the `deferred-minor` entries). Crucible keeps no store of its own for open items. At Finish, after the operator's answer to the close readout, the work left open goes, each item with its source, to the home the project's instructions name, a user-level file's line naming the project counting, those instructions being the operator's word for it; where they name none, the close readout asks the operator where the items go or whether to drop them and offers to record the answer, and the workspace is not deleted before that answer (`skills/redteaming/references/formats.md` § Open items; `crucible:subagent-driven-development § Finish`). An umbrella sends its items the same way at its landing and its closing review (`docs/decisions/umbrellas.md`). A deferral counts as done only once it is in the home or dropped; no item is left only in the workspace. Brainstorming's context gathering reads the home, which is what makes open items found again (`crucible:brainstorming § Context gathering (before any question)`). This repository's `AGENTS.md` names `docs/backlog/` as its home, and has the controller check open items against its no-local-context rule before committing them.
 
-**Finish.** SDD Finish runs in a fixed order. Record checks come first,
-then the close readout to the operator, the decision point: it lists
-the work left open, each item with the controller's proposal to keep or
-drop it, and ends with a recommendation, one of the options finishing
-offers on that branch or more work, with its reason; recommending a
-pull request, it also asks the feature folder's files question. The
-controller waits for the answer. An answer that asks for more work, or
-a ruling that opens a wave, reopens the loop first, and Finish restarts
-at the record checks. Where the readout asked where open items go,
-nothing below runs until the answer says or drops them. An answer that
-chooses an integration option, or that leaves the work in place and
-chooses none, runs in order: the open items and the feature's mark in
-its umbrella, where an umbrella names it, those in the repository
-committed on the branch; the full suite or the
-project's declared merge gate on that HEAD; deletion of
-`.crucible/<slug>/` and nothing else; then finishing, which carries out
-the answer without presenting its menu again and asks only what the
-answer left open, or, where the answer chose no option, presents its
-options with the recommendation. An answer that discards the work skips
-the open items, which go with it, and the suite; finishing's typed `discard` confirmation comes
-before the workspace's deletion, and an answer whose discard is left
-unconfirmed counts as one that chose no option. After loop activity
-that follows an answer, a red suite's included, the next readout says
-what changed, and the earlier answer stands only where nothing new was
-left open. A red run is a BLOCKER for the branch-review loop, never
-classified away; one ruled not the branch's, whoever ruled, is shown to
-the operator with its ruling, and only an answer that accepts it lets
-finishing proceed past its suite check (`crucible:subagent-driven-development § Finish`). Where no close
-readout precedes finishing, as at an umbrella's landing or after a
-standalone review, finishing presents its options with a recommendation.
-Finishing accepts a full run on exactly the HEAD being integrated whose
-output it can still show, and otherwise re-runs; it removes any
-feature-folder files the answer leaves out of a pull request in a final
-commit and re-runs the suite. In a pull request the repository's
-conventions come first, and changing commits already made to meet one is
-the operator's decision; PR feedback is handled in the kept worktree
-under `crucible:receiving-review`
-(`crucible:finishing-a-development-branch § Step 5: Execute Choice`).
+**Finish.** SDD Finish runs in a fixed order, the close readout its decision point: record checks; the readout, listing the work left open with a keep-or-drop proposal for each item and ending with a recommendation; the operator's answer, for which the controller waits; then the open items and the feature's umbrella mark, the suite, deletion of `.crucible/<slug>/` and nothing else, and finishing, which carries out the answer without presenting its menu again. An answer asking for more work reopens the loop first, and Finish restarts; a discard skips the open items and the suite, taking finishing's typed confirmation before the deletion (`crucible:subagent-driven-development § Finish`; `skills/subagent-driven-development/references/finish.md`). A red run is a BLOCKER for the branch-review loop, never classified away, and one ruled not the branch's lets finishing proceed only on an answer that accepts it. Where no close readout precedes finishing, it presents its options with a recommendation. Finishing accepts a full run on exactly the HEAD being integrated whose output it can still show (`crucible:finishing-a-development-branch § Step 1: Verify Tests`). In a pull request the repository's conventions come first, and changing commits already made to meet one is the operator's decision; PR feedback is handled in the kept worktree under `crucible:receiving-review` (`crucible:finishing-a-development-branch § Step 5: Execute Choice`).
 
 ## Why
 

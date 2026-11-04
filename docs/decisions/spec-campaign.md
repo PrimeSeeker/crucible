@@ -2,132 +2,25 @@
 
 ## Decision
 
-**Scope.** Redteaming reviews specs and plans and nothing else: a spec,
-or a folded spec+plan document, gets the spec campaign, and a plan gets
-the plan phase (`docs/decisions/plans.md`). Open-ended, project-wide
-issue-mining is out of its scope, and whole-branch review of
-implemented code belongs to `crucible:requesting-code-review`
-(`crucible:redteaming § Overview`).
+**Scope.** Redteaming reviews specs and plans and nothing else: a spec, or a folded spec+plan document, gets the spec campaign, and a plan gets the plan phase (`docs/decisions/plans.md`). Open-ended, project-wide issue-mining is out of its scope, and whole-branch review of implemented code belongs to `crucible:requesting-code-review` (`crucible:redteaming § Overview`).
 
-**Round 0.** Before any panel on every spec campaign, one standalone
-agent, the campaign's one controller-composed dispatch, builds a claim
-table (every claim about the code, or with no code baseline every claim
-about the artifact's inputs, TRUE or FALSE with evidence), checks
-liveness (every declared mechanism has a producer and a consumer within
-the artifact) and runs the artifact's regex and CLI claims rather than
-reading them. Its prompt has it stake each finding's severity, and its
-fix list, which takes what any fix list takes
-(`docs/decisions/fix-verification-and-merge.md`), lands before round 1
-with no verifier of its own. Round 0 consumes no round of the cap
-(`crucible:redteaming § Round 0 — mechanical pre-pass`).
+**Round 0.** Before any panel on every spec campaign, one standalone agent, the campaign's one controller-composed dispatch, builds a claim table, checks liveness and runs the artifact's regex and CLI claims rather than reading them. Its fix list lands before round 1 with no verifier of its own, and round 0 consumes no round of the cap (`crucible:redteaming § Round 0 — mechanical pre-pass`).
 
-**Panels.** Panel size tracks the artifact's maturity and size, never a
-fixed number; the calibration is advisory: 4–5 seats for a fresh large
-artifact's round 1, one seat carrying several lenses for a small
-artifact, 1–2 for a round reading the result of a wave that added,
-removed or re-shaped a major mechanism. Every seat reads the whole
-artifact, its lens only ordering the search, and no seat sees another's
-report. The roster is correctness, evidence-and-inference, general,
-contract-fidelity where interfaces are dense, right-sizing,
-abstraction-level for specs, and outside-the-frame, which asks whether
-the design solves the problem the request poses (for a child, with its
-umbrella's Intent and its entry) and whether another framing, or no
-change, would serve it better, carried by one seat of a spec campaign's
-round 1 and no other; lenses rotate across rounds and mix per
-artifact, and the controller may add a lens for what the artifact makes
-load-bearing, with a one-line description in the seat's lens slot
-(`crucible:redteaming § Panels`). Nothing tallies lenses to demote one;
-the roster changes when the skill does. In a spec campaign's round 1
-with two or more seats on this host, the one the controller judges most
-architecture-heavy runs on the alternate role
-(`docs/decisions/model-roles-and-effort.md`).
+**Panels.** Panel size tracks the artifact's maturity and size, never a fixed number, its calibration advisory. Every seat reads the whole artifact, its lens only ordering the search, and no seat sees another's report; lenses rotate across rounds and mix per artifact, and outside-the-frame, which asks whether the design solves the problem the request poses, is carried by one seat of a spec campaign's round 1 and no other (`skills/redteaming/references/panels.md`). Nothing tallies lenses to demote one; the roster changes when the skill does. In a spec campaign's round 1 with two or more seats on this host, the one the controller judges most architecture-heavy runs on the alternate role (`docs/decisions/model-roles-and-effort.md`).
 
-**A seat on another host.** It runs only where the operator's
-instructions or request ask for one, never on crucible's proposal: an
-extra seat, read-only, beside the round's seats on this host, which stay
-complete without it, required lenses included. Its loss costs the round
-nothing, though the round readout names it, and its findings are each
-checked against the files before they merge (`skills/redteaming/references/panels.md`;
-`skills/redteaming/references/merge-and-finding-hygiene.md`).
+**A seat on another host.** It runs only where the operator's instructions or request ask for one, never on crucible's proposal: an extra seat, read-only, beside the round's seats on this host, which stay complete without it. Its loss costs the round nothing, though the round readout names it, and its findings are each checked against the files before they merge (`skills/redteaming/references/panels.md`; `skills/redteaming/references/merge-and-finding-hygiene.md`).
 
-**The general lens.** Every multi-seat round has at least one general
-seat, with no box, and a one-seat round is general by default; a
-one-seat round 1 carries outside-the-frame beside general.
+**The general lens.** Every multi-seat round has at least one general seat, with no box, and a one-seat round is general by default; a one-seat round 1 carries outside-the-frame beside general.
 
-**Right-sizing.** The right-sizing seat's product is scope-cut
-decisions, and it is judged by them. It sits in round 1 and is
-re-seated mid-campaign or when the controller judges the artifact has
-grown far enough to need it. It carries the over-subtraction guard, as lens text the controller fills into its lens slot (`skills/redteaming/references/panels.md`): what it
-attests as right-sized is cut only by a logged ruling. A fix that
-removes machinery outranks one that adds it, all else equal.
+**Right-sizing.** The right-sizing seat's product is scope-cut decisions, and it is judged by them. It sits in round 1 and is re-seated mid-campaign or when the controller judges the artifact has grown far enough to need it; what it attests as right-sized is cut only by a logged ruling (`skills/redteaming/references/panels.md`). A fix that removes machinery outranks one that adds it, all else equal (`crucible:redteaming § Fix application and blind verification`).
 
-**Quorum and degraded rounds.** Every lost or crashed seat is recorded,
-and a round that lost one, a seat on another host aside, is topped
-back up or recorded degraded. A
-top-up starts only when the host confirms the lost seat has stopped; a
-seat whose state the host cannot confirm is a stop-and-ask, and the
-replacement writes a fresh report under a fresh seat id. A degraded round never counts toward
-convergence or against the cap, a one-seat round that loses its seat is
-degraded, and two consecutive degraded rounds go to the operator as an
-infrastructure escalation (`crucible:redteaming § Panels`).
+**Quorum and degraded rounds.** Every lost or crashed seat is recorded, and a round that lost one, a seat on another host aside, is topped back up or recorded degraded. A degraded round never counts toward convergence or against the cap, a one-seat round that loses its seat is degraded, and two consecutive degraded rounds go to the operator as an infrastructure escalation (`crucible:redteaming § Panels`; `skills/redteaming/references/panels.md`).
 
-**Stop rule and cap.** The campaign stops after the first numbered
-panel round once overturning a major mechanism after code is no longer
-reasonably expected: the overturn question, defined in
-`skills/subagent-driven-development/references/review-terms.md`
-§ The arrangement questions, its reading for an umbrella's campaign in
-§ An umbrella's overturn question. The call is the controller's judgment, not
-put to the operator to confirm, over the round's records, the seats'
-forecasts included, never conversation memory; finding counts and
-finding provenance are not signals, and severity is not the trigger: a
-BLOCKER that would overturn a mechanism
-keeps the campaign going by the question itself. A round whose own fix
-wave adds, removes or re-shapes a major mechanism is never the stop
-round, since no seat has read the result, and once a campaign is chosen
-at least one numbered panel round runs. The stop round's open findings
-that a fix list takes, premise findings aside, get one fix wave and blind
-verification, and the terminal pass always follows and checks the stop's
-basis (`docs/decisions/terminal-pass.md`). In a spec campaign every
-panel seat's verdict carries a line forecasting the answer, naming the
-mechanism where it forecasts an overturn
-(`skills/redteaming/seat-prompt.md`), and every numbered
-round's readout, the folded lane's and an umbrella's included, states
-whether an overturn is still reasonably expected and why, answering
-each forecast that one is by the mechanism it names. The cap is 4
-rounds, degraded rounds excluded, counted from the records, the
-campaign's guarantee that it ends; it bounds rounds, not spend. An
-overturn still reasonably expected at the cap, or a cap round whose own
-wave adds, removes or re-shapes a major
-mechanism, goes to the operator as a decision ask: another round, a
-supersede, or acceptance with parked rulings; so does any BLOCKER or
-MAJOR still open at the cap
-(`crucible:redteaming § Stop rule and terminal pass`). A premise finding
-(`docs/decisions/evidence-and-findings.md`) is merged `parked` as a
-decision ask to the operator and is never an open finding here: it
-opens no fix wave, holds no cap and joins neither cap ask, and at the
-cap it is put to the operator alone. A pending one holds no stop; a
-ruling that upholds it after the stop takes the flip paths. One still
-open at the campaign's close is carried in its close readout, and
-seeded into the ledger as open at SDD's Setup; an umbrella's goes to the
-operator with the landing ask (`docs/decisions/umbrellas.md`;
-`skills/redteaming/references/premise-asks.md` § Premise findings).
+**Stop rule and cap.** The campaign stops after the first numbered panel round once overturning a major mechanism after code is no longer reasonably expected: the overturn question (`skills/subagent-driven-development/references/review-terms.md` § The arrangement questions, § An umbrella's overturn question). The call is the controller's judgment, not put to the operator to confirm, over the round's records, the seats' forecasts included, never conversation memory; finding counts and finding provenance are not signals, and severity is not the trigger. A round whose own fix wave adds, removes or re-shapes a major mechanism is never the stop round, at least one numbered panel round runs once a campaign is chosen, and the terminal pass always follows and checks the stop's basis (`docs/decisions/terminal-pass.md`). In a spec campaign every panel seat's verdict forecasts the answer (`skills/redteaming/seat-prompt.md`), and every numbered round's readout answers each forecast overturn by the mechanism it names (`skills/redteaming/references/round-readout.md`). The cap is 4 rounds, degraded rounds excluded, counted from the records: the campaign's guarantee that it ends, bounding rounds, not spend. An overturn still reasonably expected at the cap, a cap round whose own wave re-shapes a major mechanism, or any BLOCKER or MAJOR still open there goes to the operator as a decision ask (`crucible:redteaming § Stop rule and terminal pass`). A premise finding (`docs/decisions/evidence-and-findings.md`) is merged `parked` as a decision ask and is never an open finding here: it opens no fix wave, holds no cap and no stop, and at the cap is put to the operator alone; a ruling that upholds it after the stop takes the flip paths, and one still open at the close is carried in the close readout (`skills/redteaming/references/merge-and-finding-hygiene.md`; `skills/redteaming/references/premise-asks.md` § Premise findings; `docs/decisions/umbrellas.md`).
 
-**Focused checks.** Panel seats, the round-0 pre-pass, the blind
-verifier and the terminal pass run a focused check where a claim needs
-one, never a package-wide suite, and recommend heavier validation in
-their reports. The task reviewer and re-reviewer are held to focused
-checks as well; the implementer is the one seat its template sends to
-the full suite (`skills/subagent-driven-development/implementer-prompt.md`
-§ Tests: Test-First, Evidence Before Done).
+**Focused checks.** Panel seats, the round-0 pre-pass, the blind verifier and the terminal pass run a focused check where a claim needs one, never a package-wide suite, and recommend heavier validation in their reports (`skills/subagent-driven-development/references/review-terms.md` § Suite bound). The task reviewer and re-reviewer are held to focused checks as well; the implementer is the one seat its template sends to the full suite (`skills/subagent-driven-development/implementer-prompt.md` § Tests: Test-First, Evidence Before Done).
 
-**Operating stance.** Redteaming assumes a baseline error rate in
-controller-authored text and budgets blind verification and the
-terminal pass for it; errors, the
-controller's own included, are reported in the flat register of any
-other finding. It makes shading a record, not erring in it, the only
-reportable failure of the reporting duty, and forbids citing the stance
-to skip, soften or summarize any reporting duty
-(`crucible:redteaming § Operating stance`).
+**Operating stance.** Redteaming assumes a baseline error rate in controller-authored text and budgets blind verification and the terminal pass for it; errors, the controller's own included, are reported in the flat register of any other finding. It makes shading a record, not erring in it, the only reportable failure of the reporting duty, and forbids citing the stance to skip, soften or summarize any reporting duty (`crucible:redteaming § Operating stance`).
 
 ## Why
 
