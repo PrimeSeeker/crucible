@@ -23,6 +23,12 @@ full pass, after a one-clause wave, cost about 187k tokens and found three
 MINORs. So a wave of a few sentences that adds a rule can need the full pass;
 what is unsettled is a wave that adds none.
 
+On a fifth lane that day, three waves of a few clauses each, every one adding
+or changing a rule, passed their scoped re-reviews. The full passes after them
+cost about 116k, 122k and 138k tokens and found one, one and four MINORs, with
+no BLOCKER or MAJOR. Three of the last four were in rules the previous wave had
+added, so these passes did not shrink toward zero, and the cap ended the loop.
+
 ## Follow-up
 
 Decide whether a small wave of prose needs more than its scoped re-review,
