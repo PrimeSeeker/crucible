@@ -9,6 +9,8 @@ description: Use when starting feature work that needs isolation from current wo
 
 Ensure work happens in an isolated workspace: detect existing isolation first, then use native tools, then fall back to git. Never fight the harness.
 
+Before the feature's first commit, by whichever step you reach it, read what the repository says shapes a commit (sign-off or DCO, commit-message rules, commit hooks) and follow it from that commit on.
+
 Every command in Steps 0–1 and 1b's reference is a single Git invocation: no shell program, no command substitution, no pipes. Run each, read its output or exit code, and do the comparing and branching yourself, so the flow runs the same with or without a POSIX shell.
 
 **Stubs.** A reference a section names to read in full binds as if written here. Read it when its step comes, unless read since your last compaction; after compaction, re-read the step in progress's reference first.

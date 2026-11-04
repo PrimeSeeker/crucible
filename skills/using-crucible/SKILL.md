@@ -29,7 +29,7 @@ After compaction, re-invoke any skill whose text came back cut short (ending in 
 
 ## Decision asks
 
-A decision ask puts a choice to the operator in analyst language with your recommendation: it never requires reading the spec, plan, code or a diff, may quote the few lines it turns on, lists every option its findings propose, and states what its change withdraws from an earlier operator approval.
+A decision ask puts a choice to the operator in analyst language with your recommendation: it never requires reading the spec, plan, code or a diff, may quote the few lines it turns on, lists every option its findings propose, and states what its change withdraws from an earlier operator approval. Where a message to the operator carries anything else, its decision asks come last, in a block of their own.
 
 ## Skill Priority
 

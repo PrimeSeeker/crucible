@@ -106,7 +106,7 @@ Then write the request to `<workspace>/request.md`: the message that asked for t
 
 ## Campaign gate
 
-None where step 4's answer approved a draft. Otherwise the operator reviews the decision record's decisions, its open decision asks and the planned campaign shape, presented inline; the gate never requires reading the spec file, and shows whatever part of it the operator asks for. The open asks stand apart (`crucible:redteaming` § Round readout). The campaign shape is its seats with their lenses and models, and its expected rounds, sized per `crucible:redteaming` § Panels; approving the design approves the launch. Record the approved shape as one gate entry in the decision record; the campaign-start readout names any departure from it. Wait for the operator. Changes requested → amend the spec, re-run the self-review, update the decision record, re-gate. Approved → hand off.
+None where step 4's answer approved a draft. Otherwise the operator reviews the decision record's decisions, its open decision asks and the planned campaign shape, presented inline; the gate never requires reading the spec file, and shows whatever part of it the operator asks for. The campaign shape is its seats with their lenses and models, and its expected rounds, sized per `crucible:redteaming` § Panels; approving the design approves the launch. Record the approved shape as one gate entry in the decision record; the campaign-start readout names any departure from it. Wait for the operator. Changes requested → amend the spec, re-run the self-review, update the decision record, re-gate. Approved → hand off.
 
 ## Handoff
 

@@ -43,7 +43,7 @@ For wrong-shaped output, never reach for a prohibition by default: under a compe
 
 ## Evaluating agent-read text
 
-Tell the evaluated agent nothing false: no claim the run is real work, no invented stakes or pressure. A dilemma scenario, built to set the guidance against something else, is disclosed as an evaluation; a realistic task run as the hosts' skill creators run it (Claude Code's with and without the skill, Codex's with it) needs no announcement. Asking, escalating or arguing the guidance is wrong is an outcome to examine, never a failure by definition.
+Tell the evaluated agent nothing false: no claim the run is real work, no invented stakes or pressure. A dilemma scenario, built to set the guidance against something else, is disclosed as an evaluation; a realistic task, run as the hosts' skill creators run it (Claude Code's with and without the skill, Codex's with it) or as a micro-test's sample, needs no announcement. Asking, escalating or arguing the guidance is wrong is an outcome to examine, never a failure by definition.
 
 **Baseline.** Know the failure before writing for it: a recorded incident or a run without the guidance; record a skipped baseline with its reason.
 
@@ -88,7 +88,7 @@ For an agent that knows a rule and breaks it; other failures take the table's fo
 
 Scaffold and evaluate with each host's skill creator; this skill covers what those leave out.
 
-- **Codex:** `skill-creator` is built in, under `~/.codex/skills/.system/`. Personal skills go in `$HOME/.agents/skills`. Guidance: <https://learn.chatgpt.com/docs/build-skills>.
+- **Codex:** `skill-creator` is built in, under `~/.codex/skills/.system/`. Personal skills go in `$HOME/.agents/skills`. The no-guidance run is the same task where the skill is not installed. Guidance: <https://learn.chatgpt.com/docs/build-skills>.
 - **Claude Code:** the official plugin marketplace's `skill-creator` plugin. Personal skills go in `~/.claude/skills/<skill-name>/SKILL.md`. Guidance: <https://platform.claude.com/docs/en/agents-and-tools/agent-skills/best-practices>, <https://code.claude.com/docs/en/skills>.
 
 ## Descriptions and names

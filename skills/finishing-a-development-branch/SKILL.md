@@ -96,7 +96,7 @@ Then change directory to the main checkout's root (found as in Option 1), remove
 Runs for Option 1 and confirmed discards only; Options 2 and 3 keep the worktree. Both callers have already moved to the main checkout's root: use the values you recorded in Step 2, not values re-read there.
 
 - git dir equals common dir: a normal repo with no worktree to clean up; done.
-- `<worktree-path>` under `.worktrees/` or `worktrees/`: this workflow created it and owns its cleanup. Run `git worktree remove <worktree-path>`, then `git worktree prune`, which clears any stale registration. A removal refused for modified or untracked files is the guard working and deletes nothing: report what is uncommitted and ask the operator; never pass `--force` on your own.
+- `<worktree-path>` under `.worktrees/`, `worktrees/` or the worktree directory your instructions declare: this workflow created it and owns its cleanup. Run `git worktree remove <worktree-path>`, then `git worktree prune`, which clears any stale registration. A removal refused for modified or untracked files is the guard working and deletes nothing: report what is uncommitted and ask the operator; never pass `--force` on your own.
 - Otherwise the host environment owns the worktree: leave it in place; if the platform has a tool for leaving a worktree, use it.
 
 ## Common Rationalizations
@@ -107,4 +107,4 @@ Runs for Option 1 and confirmed discards only; Options 2 and 3 keep the worktree
 | "`worktree remove` refused — I'll add --force" | It holds uncommitted work, and forcing destroys it silently. |
 | "`branch -d` refused — I'll use -D" | The merge did not take; `-D` throws the commits away. |
 | "The push was rejected — force-push will fix it" | The remote moved; force-push only on explicit request. |
-| "This other worktree looks stale — I'll clean it too" | Step 6 removes only `<worktree-path>`, and only under `.worktrees/` or `worktrees/`. |
+| "This other worktree looks stale — I'll clean it too" | Step 6 removes only `<worktree-path>`, and only under those directories. |

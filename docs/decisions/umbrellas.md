@@ -322,7 +322,8 @@ judgment, an agent's call the maintainer has not ruled on.)
 
 ## Changes
 
-- 2026-11-04: the Children list ends on a line of text, because a last entry's mark conflicted in git with an appended child; a seat finds a feature's own entry by its feature folder's slug, which nothing stated.
+- 2026-11-05: a closing-review seat's prompt carries its report form, since the sections copied into it send a seat to a report format nothing gave.
+- 2026-11-04: the Children list ends on a line of text, because a last entry's mark conflicts in git with an appended child; a seat finds a feature's own entry by its feature folder's slug, which nothing stated.
 - 2026-11-04: an umbrella's children keep landing on the base, now weighed against holding them off it; its proposal says whether they can land without a break, and the entry of the child that owes the rest says what it owes. The maintainer asked, and a break is now stated (`docs/decisions/the-spec.md`).
 - 2026-11-04: the closing review's dropped seat on the other host is ruled on: the maintainer kept it dropped, leaving it to the operator's own instruction.
 - 2026-11-03: the premise-finding route is cited at `skills/redteaming/references/premise-asks.md`, where flip-paths' § Premise findings moved, so a controller handling a premise finding no longer loads the flip paths (`docs/decisions/authoring-crucible.md`).

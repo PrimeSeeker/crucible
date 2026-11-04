@@ -27,12 +27,6 @@ none blocking:
   landing or closing review writes to an in-repository home, carrying
   ledger-style sources, would draw findings in a review of those
   branches.
-- **The own-entry clause sits on one side of a paired text.**
-  `references/seat-rules.md` § What binds says "the one naming its
-  feature folder's slug" of a feature's own entry;
-  `references/review-terms.md` § What binds in a spec, its pair under
-  `docs/authoring.md` § Paired texts, does not. Entries open with their
-  slug, so a controller finds the entry anyway.
 
 ## Follow-up
 
@@ -40,5 +34,4 @@ Rule on the FIX_BASE wording
 and on whether the mark or an approval-only umbrella's workspace should
 change. Close the two open-items gaps: a carrier for a pending ask
 (the umbrella's workspace, or a note in `umbrella.md`) and the
-exemption's reach. Add the own-entry clause to `review-terms.md` the next
-time that file is edited; it does not justify a change of its own.
+exemption's reach.

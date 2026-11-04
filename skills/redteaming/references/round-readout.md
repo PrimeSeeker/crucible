@@ -13,8 +13,6 @@ At every round close the readout carries these items and nothing else:
 
 An item is omitted only where its line says; an omitted item is dropped, not narrated as absent.
 
-**Decision asks stand apart**, here and in any other readout pointing here: delivered last, in a block of their own, each with its options and recommendation.
-
 Beyond the quoted questions, the delivered readout carries no internal id (merged-list, seat-finding or question); what other readers need from the ids goes in its **trace**, the record-only part after it (`round-record.md` § Round record format, field 8).
 
 Readout coverage is yours: beyond the terminal pass's check of carried questions, nothing checks it after you. Before recording, check the readout against the merged list and `## Question dispositions`. Then record the readout and its trace in the round record's `## Round readout`, write `state: readout`, and deliver the readout to the operator as recorded, less its trace; delivery closes the round.

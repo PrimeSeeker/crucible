@@ -15,7 +15,7 @@
    - where the project's instructions name no home for open items and something is left open, an ask where it goes or whether to drop it, offering to record the answer (`skills/redteaming/references/formats.md` § Open items)
    - where this feature's landing could complete its umbrella, what `skills/brainstorming/references/umbrellas.md` § Closing review has the readout say
    - each break the spec, folded document or lane note states (`crucible:brainstorming` § Spec contract) or an operator's ruling accepted, and until when, or an `unstated break` still open, so the operator can time runs and releases around it
-   - last, your recommendation and why: one of the options `crucible:finishing-a-development-branch` § Step 4: Present Options offers on this branch, or more work; recommending a pull request, also ask that skill's question whether the feature folder's files go into it
+   - your recommendation and why, the final block's last item: one of the options `crucible:finishing-a-development-branch` § Step 4: Present Options offers on this branch, or more work; recommending a pull request, also ask that skill's question whether the feature folder's files go into it
 3. Wait for the answer; integration stays the operator's decision.
    - More work asked for, or a ruling that opens a wave: reopen the branch-review loop before any later step; Finish then restarts at step 1.
    - Loop activity after an answer, a red suite's included: Finish restarts at step 1; the earlier answer stands only where nothing new was left open; otherwise ask again.
