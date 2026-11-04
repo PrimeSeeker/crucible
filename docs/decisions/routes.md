@@ -55,7 +55,8 @@ every seat to read them all, standard the rest. File, line and task counts are n
   proposals, which the controller transcribes to the ledger as leads.
   Its NEEDS_CONTEXT or BLOCKED takes the task loop's handling of context
   and reasoning, stated in the lane's own text, and a change too big for
-  one implementer takes the upgrade hatch's question.
+  one implementer takes the upgrade hatch's question, staying splitting
+  it across fresh implementers, one per part, in order.
   Where overturning a major mechanism of the change is reasonably
   expected now that it is coded, the upgrade hatch puts staying on the
   lane or moving to the standard route to the operator.
@@ -318,6 +319,13 @@ maintainer left the call to the agent, 2026-11-02.)
 
 Until 2026-11-03 the move also linked the lane's ledger from the standard route's as a predecessor, and the plan phase's close carried the lane's open findings, at their staked severity, and its unruled leads to the standard route's branch reviewer, so that the lane's rulings, departures and leads reached a close readout. That carry-over sat in text every standard run reads, the plan phase's close, the branch reviewer's template on every pass and Finish, to serve a move whose trigger fired twice in about 42 lane reviews (above), with no completed move in this repository's feature folders. It went: the brainstorm the hatch invokes takes the lane's open findings, unruled leads and departures in its incoming document, beside the note and the diff, and the lane's rulings no longer reach the final close readout, a minor loss. An agent's proposal, on which the maintainer left the call to the agent. (Basis: measured, for the trigger's count; judgment, accepted by the maintainer.)
 
+Staying on the lane for a change too big for one implementer splits it
+across fresh implementers, one per part, in order, as the task loop
+splits an oversized task; with nothing stated, a second implementer
+could overwrite the first's report (found by a branch review's reading,
+not in a run, 2026-11-04). An agent's proposal, which the maintainer
+accepted. (Basis: judgment, accepted by the maintainer.)
+
 The note and the lane proposal share one gate (2026-10-07): a separate
 gate re-presented decisions just made and never showed the note whose
 acceptance binds the reviewer. (Basis: judgment, accepted by the
@@ -364,6 +372,7 @@ small preset or the waiver for its work.
 
 ## Changes
 
+- 2026-11-04: staying on the lane for a change too big for one implementer splits it across fresh implementers, one per part, in order, because nothing said what followed that answer.
 - 2026-11-04: the lane states what follows a dispatched implementer's NEEDS_CONTEXT or BLOCKED, with a ledger line for an operator ask it raises, since that handling lived in the task loop's text, which the lane does not load; a change too big for one implementer joins the upgrade hatch's question.
 - 2026-11-03: a settled change needing several tasks takes folded or standard by the folded test, no longer standard alone, and a proposal of either campaign preset gives the reason the fold fits or does not; because "only the campaign presets carry a plan" stopped ruling folded out once the task count went, and the reason the maintainer had found off was a standard proposal's.
 - 2026-11-03: the folded preset fits a plan whose tasks are disjoint enough that no seam between them is worth its own review and whose entries are short enough for every seat to read them all, in place of a plan of one or two tasks, and task counts join file and line counts as no test; because the maintainer found a controller justifying standard by a task count, which measures neither what the plan phase reviews nor what the fold costs.

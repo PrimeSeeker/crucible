@@ -9,7 +9,7 @@
 - [PLAN_REMINDER]: one line: the binding acceptance criteria and the Decision Log obligation; on the very-small lane, the note's Acceptance checks; on a fix-only dispatch, each finding fixed or NOT CONFIRMED, each `Change (…)` applied or declined.
 - [WORKTREE_PATH]: the assigned worktree, absolute.
 - [PLUGIN_ROOT]: the plugin root you read this card from, absolute.
-- [REPORT_FILE]: in the feature workspace, `sdd/reports/task-<N>-report.md`, which a fresh fix-wave implementer appends to; on the very-small lane, `sdd/reports/lane-report.md`; for a branch-review fix wave, `sdd/branch-review/wave-<n>-fix.md`.
+- [REPORT_FILE]: in the feature workspace, `sdd/reports/task-<N>-report.md`, which a fresh fix-wave implementer appends to; on the very-small lane, `sdd/reports/lane-report.md`, which a later part's implementer appends to; for a branch-review fix wave, `sdd/branch-review/wave-<n>-fix.md`.
 
 ## Selectors
 

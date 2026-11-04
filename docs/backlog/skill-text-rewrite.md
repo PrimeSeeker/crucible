@@ -45,17 +45,6 @@
     asks in a final block and to end with the recommendation; "proposing
     no preset" after a hatch is stated only in the lane reference.
 
-- **Left by `backlog-batch-2`** (2026-11-04):
-  - a BLOCKED raised during a fix wave does not fit the wait line's
-    ending: a fix wave resumes the implementer and appends no step 1
-    line, so a resume inside the answered wave reads the task as not
-    done, restarts it at step 1 and loses the wave count;
-  - `references/task-loop.md` step 1 names to the reviewer any merge a
-    `plan changed` re-run took, and the task reviewer's card has no
-    slot for it (only under an umbrella);
-  - nothing says what follows the operator's "stay on the lane" for a
-    change too big for one implementer.
-
 - **Left by `prose-compaction`** (2026-11-03): `skills/redteaming/references/round-record.md` makes "the phase's final check" a condition of `confirmed` without saying what that check is (the wording dates from 0.2.0).
 
 ## Follow-up
@@ -73,5 +62,3 @@
 - The closing review's items: correct the trigger's stated ground or
   restate the trigger; settle the three wording points.
 - `prose-compaction`'s defect: name the plan phase's final check, or drop the condition.
-- `backlog-batch-2`'s items: fill the three, each in the skill that owns
-  the step.

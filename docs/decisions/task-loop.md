@@ -12,7 +12,7 @@
 
 **Loop wiring.** A failed intent, scope or deviation-audit verdict enters the fix loop whatever the finding's severity label; quality findings enter by severity, BLOCKER and MAJOR in, MINOR to the ledger's deferred minors for the branch review (`skills/subagent-driven-development/references/task-loop.md` § 3. Review the task, § 5. The fix loop).
 
-**Fix waves.** A fix wave is one fix dispatch and its scoped re-review, and a task gets three, each resuming the recorded implementer where the host can (`skills/subagent-driven-development/references/task-loop.md` § 5. The fix loop). Findings still open after the third wave stop the task: the controller puts them to the operator as a decision ask, and further waves are not an answer (`crucible:subagent-driven-development § The Task Loop`). An answer of a plan change short of a supersede closes the open findings, and the task runs again with its BASE, its review re-grading them. A BLOCKED reasoning problem gets a tier bump where one exists, and at the default role goes to the operator; a task waiting on the operator after BLOCKED carries a ledger line saying so, which the resume rule reads. No trigger escalates a stuck seat further.
+**Fix waves.** A fix wave is one fix dispatch and its scoped re-review, and a task gets three, each resuming the recorded implementer where the host can (`skills/subagent-driven-development/references/task-loop.md` § 5. The fix loop). Findings still open after the third wave stop the task: the controller puts them to the operator as a decision ask, and further waves are not an answer (`crucible:subagent-driven-development § The Task Loop`). An answer of a plan change short of a supersede closes the open findings, and the task runs again with its BASE, its review re-grading them. A BLOCKED reasoning problem gets a tier bump where one exists, and at the default role goes to the operator; a task waiting on the operator after BLOCKED carries a ledger line saying so, which the resume rule reads, and which names the wave where a fix wave raised it, so the answered wave continues. No trigger escalates a stuck seat further.
 
 **Drift found after the fact.** Drift undisclosed and from binding content or with cross-task blast radius is a decision ask to the operator with the controller's recommendation, revert or repair; undisclosed advisory choices and disclosed but unjustified entries go to the fix loop instead (`crucible:subagent-driven-development § Drift found after the fact`; `skills/subagent-driven-development/references/drift.md`).
 
@@ -246,6 +246,13 @@ ledger line, the plan-change line and the seat owing the verdict;
 judgment, accepted by the maintainer, who left the call to the agent, for
 the replacement's miss and for what the re-run's review is given.)
 
+The ledger line left out a BLOCKED raised in a fix wave: a wave appends
+no step 1 line, so a resume inside the answered wave read the task as
+not done, restarted it at step 1 and lost the wave count (found by a
+branch review's reading, not in a run, 2026-11-04). The line now names
+the wave, and that wave's own line ends the wait. (Basis: judgment, an
+agent's proposal accepted by the maintainer.)
+
 ### Drift found after the fact
 
 Patching forward builds on work nobody reviewed against the plan, so
@@ -364,6 +371,7 @@ judgment, accepted by the maintainer, for the test.)
 
 ## Changes
 
+- 2026-11-04: a `BLOCKED` raised in a fix wave names the wave in its ledger line, and the answered wave continues, because a wave appends no step 1 line and a resume restarted the task, losing the wave count.
 - 2026-11-04: a task waiting on the operator after BLOCKED gets a ledger line; a plan change short of a supersede after the third wave records a line with the task's BASE, closes the open findings and re-runs the task with that BASE, reviewed even where it is marked, on every run's report; a missing verdict goes back to its seat or a replacement, then to the operator, never the controller's ruling; because each left the controller with no stated next step.
 - 2026-11-04: what binds is stated per document: a plan task's Contract and Acceptance and the inter-task contracts as plan content, the spec's list unchanged; because writing-plans' list of a spec's own sections read as a second list for the spec, and the implementer template named no plan items.
 - 2026-11-03: the implementer's role is cited at the dispatch composition's § Models and effort and its slot card's Model line, no longer at SDD's Models section; because SDD dropped the implementer's row when the default role came to be stated once for every seat (`docs/decisions/model-roles-and-effort.md`).

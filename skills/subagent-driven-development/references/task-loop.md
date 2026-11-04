@@ -18,7 +18,7 @@ As soon as the dispatch reports the implementer's agent identity, record `Task <
   - A binding item reported wrong: rule that it stands, with your reason, where the evidence does not show it wrong; otherwise a correction, proposed or yours. The ruling passes `skills/redteaming/references/flip-paths.md` § The containment test: confirm and record a contained one as that section states, then re-dispatch; any other is a decision ask carrying the proposal.
   - A premise finding: the task waits for the operator's ruling.
 
-Where the cause leaves the task waiting on the operator (a decision ask, a premise finding), append `Task <N>: BLOCKED — <what it waits on>` as you raise it, the line the resume rule reads as that wait; the re-dispatch after the answer appends step 1's line, which ends it.
+Where the cause leaves the task waiting on the operator (a decision ask, a premise finding), append `Task <N>: BLOCKED — <what it waits on>` as you raise it, the line the resume rule reads as that wait; the re-dispatch after the answer appends step 1's line, which ends it. In a fix wave the line reads `Task <N>: BLOCKED — wave <W>: <what it waits on>`: after the answer that wave continues, and its `fix wave <W>/3` line ends the wait.
 
 Never ignore an escalation or make the same model retry without changes. Whatever the status, route what the report voices beyond its work by `crucible:subagent-driven-development § What a report voices`.
 
