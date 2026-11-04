@@ -19,7 +19,7 @@
 ## Selectors
 
 - goal-check: on | off
-  - on: the goal check and its `## Goal check` report item; set for each seat of a spec campaign's round 1, or of the next round where a degraded round 1 hands it on (`skills/redteaming/references/panels.md`)
+  - on: the goal check and its `## Goal check` report item; set for each seat of a spec campaign's round 1, or of the round a degraded one hands it on to (`skills/redteaming/references/panels.md`)
   - off: none
 
 ## Dispatch

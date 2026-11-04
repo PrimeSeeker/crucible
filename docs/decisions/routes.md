@@ -364,7 +364,7 @@ small preset or the waiver for its work.
 
 ## Changes
 
-- 2026-11-04: the lane states what follows a dispatched implementer's NEEDS_CONTEXT or BLOCKED, since that handling lived in the task loop's text, which the lane does not load; a change too big for one implementer joins the upgrade hatch's question.
+- 2026-11-04: the lane states what follows a dispatched implementer's NEEDS_CONTEXT or BLOCKED, with a ledger line for an operator ask it raises, since that handling lived in the task loop's text, which the lane does not load; a change too big for one implementer joins the upgrade hatch's question.
 - 2026-11-03: a settled change needing several tasks takes folded or standard by the folded test, no longer standard alone, and a proposal of either campaign preset gives the reason the fold fits or does not; because "only the campaign presets carry a plan" stopped ruling folded out once the task count went, and the reason the maintainer had found off was a standard proposal's.
 - 2026-11-03: the folded preset fits a plan whose tasks are disjoint enough that no seam between them is worth its own review and whose entries are short enough for every seat to read them all, in place of a plan of one or two tasks, and task counts join file and line counts as no test; because the maintainer found a controller justifying standard by a task count, which measures neither what the plan phase reviews nor what the fold costs.
 - 2026-11-03: the citation of brainstorming's arrangement section uses its shortened heading.

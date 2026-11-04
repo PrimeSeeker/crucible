@@ -2,7 +2,7 @@
 
 ### 1. Dispatch the implementer
 
-Where the spec's preamble carries an `Umbrella:` line, first take the receiving step of `skills/brainstorming/references/umbrella-children.md` § Under an umbrella, so a binding change it takes in falls before BASE. Record BASE (`git rev-parse HEAD`), where the task's review range starts, then dispatch instrument `implementer`, its card filled.
+Where the spec's preamble carries an `Umbrella:` line, first take the receiving step of `skills/brainstorming/references/umbrella-children.md` § Under an umbrella, so a binding change it takes in falls before BASE. Record BASE (`git rev-parse HEAD`), where the task's review range starts (a `plan changed` line's re-run keeps the BASE that line names), then dispatch instrument `implementer`, its card filled.
 
 As soon as the dispatch reports the implementer's agent identity, record `Task <N>: implementer <agent id>` in the ledger: fix waves resume it.
 

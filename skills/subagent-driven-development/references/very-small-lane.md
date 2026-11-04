@@ -24,6 +24,7 @@ Fix waves run inline, the cleanup wave included, **for this lane only** supersed
 - `Wave <n>: <X> findings (<b>B/<m>M/<k>m); re-review: <verdict>` — once the wave's re-review, if any, and its adjudication have returned; `re-review: none` for a wave that only disputes.
 - `Wave <n> (cleanup): <X> findings (<b>B/<m>M/<k>m); re-review: <verdict>` — for the cleanup wave, so a resumed controller sees it spent.
 - `Note re-pinned: <note-path> @ <rev> — <operator decision>` — on an operator-approved change to the note's binding parts.
+- `Blocked: <what it waits on>` — on an operator ask an implementer's report raises; a resumed controller re-dispatches nothing until its answer stands under `## Adjudication rulings`.
 
 With no `Task <N>` lines, a resumed controller restarts from the last line under `## Lane`; a `Lane: lead` line sits under `## Deferred minors` and is not one. Adjudications go under `## Adjudication rulings`, as everywhere.
 
