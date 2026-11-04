@@ -19,8 +19,8 @@ to install it: `README.md`; the layout: `docs/dual-runtime.md`.
   which the branch reviewer checks; an edit that changes neither, such as
   a citation, wording or a cut of restated text, adds none, and its commit
   says what it did. A Decision points at procedure rather than restating
-  it, and a record not yet cut follows when its Decision is next edited.
-  Git history is the log. The record shape and the rest of the rules:
+  it, and a position not yet cut takes that shape when an edit rewrites
+  it. Git history is the log. The record shape and the rest of the rules:
   `docs/decisions/decision-records.md`.
 - `docs/backlog/` — deferred work, one file per item, and the home for
   open items, the work a feature or an umbrella leaves open. Copy the

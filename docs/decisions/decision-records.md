@@ -15,8 +15,9 @@ A record's sections, in order:
 - `## Decision`: the current positions, each in a sentence or two, with a
   pointer (`docs/authoring.md` § Reference convention) to the skill
   heading that holds the procedure rather than a restatement of it. What
-  no skill holds stays here. A record not yet cut to this shape follows
-  when its Decision is next edited.
+  no skill holds stays here. A position not yet cut to this shape takes
+  it when an edit rewrites that position; a clause-sized edit leaves it,
+  and the record's other positions stay as they are.
 - `## Why`: the reasoning and evidence, restated in the record, each with
   its basis inline: **measured** (what, how often, on what),
   **external** (a host's documentation, an upstream file, another cited
@@ -145,10 +146,20 @@ the largest share of them in any one paragraph of the shipped skills: 48% of
 the words were in sentences at 0.6 or above, 37% between 0.4 and 0.6 and 16%
 below; it misses paraphrase and does not search `AGENTS.md` or `docs/`. Eight
 records held 65% of the high-overlap words. (Basis: measured.) Those eight
-were cut first, with no word target, and the other 22 follow when a
-Decision is next edited, since a citation fix should not carry a whole cut:
-an agent's proposal, which the maintainer accepted. (Basis:
+were cut first, with no word target, and the other 22 were to follow when
+their Decisions were next edited, since a citation fix should not carry a
+whole cut: an agent's proposal, which the maintainer accepted. (Basis:
 judgment, accepted by the maintainer, 2026-11-04.)
+
+Read literally, that made a one-clause edit carry a cut of the whole record.
+The next two lanes edited uncut Decisions and cut none; the second changed 24
+diff lines in five of them, which held about 26 KB of Decision text in about
+117 KB of record. (Basis: measured.) So a position takes the short shape when
+an edit rewrites it, and the rest waits. Nothing now brings the remaining
+records to that shape on any schedule, so their restated procedure can still
+go untrue with no test failing: an agent's proposal, stating that cost and that
+it withdrew the earlier rule, which the maintainer accepted. (Basis: judgment,
+accepted by the maintainer, 2026-11-04.)
 
 ### Origin and strength
 
@@ -188,6 +199,7 @@ judgment, accepted by the maintainer, 2026-10-29.)
 
 ## Changes
 
+- 2026-11-04: a position not yet cut takes the short shape when an edit rewrites it, no longer a whole record at the next edit of its Decision; because a clause-sized edit would have carried a far larger cut, and the lanes making such edits did not follow it.
 - 2026-11-04: a Changes line goes with an edit that changes a decision or its reasoning, no longer every edit, and a Decision points at the skill heading holding the procedure rather than restating it; because the lines were a fifth of the records' words with one reader, and restated procedure could go untrue with no test failing.
 - 2026-11-03: the citation of writing-plans' per-task structure uses its shortened heading.
 - 2026-10-30: an entry recorded `accepted — delegated to the
