@@ -78,7 +78,7 @@ ruling.)
 
 What binds is stated per document since 2026-11-04. The spec's list and
 the plan's had stood side by side since 0.2.0 without saying so:
-writing-plans listed "requirements, interfaces, non-goals, acceptance",
+writing-plans listed a spec's own sections beside the spec pointer's,
 which read as a wider list for the spec, and the implementer template's
 Binding line named none of them, though the 2026-10-28 spec of the firm
 class took it to. A plan task's Contract and Acceptance and the
@@ -345,7 +345,7 @@ judgment, accepted by the maintainer, for the test.)
 
 ## Changes
 
-- 2026-11-04: what binds is stated per document: a plan task's Contract and Acceptance and the inter-task contracts as plan content, the spec's list unchanged; because "requirements, interfaces, non-goals and acceptance" read as a second list for the spec, and the implementer template named no plan items.
+- 2026-11-04: what binds is stated per document: a plan task's Contract and Acceptance and the inter-task contracts as plan content, the spec's list unchanged; because writing-plans' list of a spec's own sections read as a second list for the spec, and the implementer template named no plan items.
 - 2026-11-03: the implementer's role is cited at the dispatch composition's § Models and effort and its slot card's Model line, no longer at SDD's Models section; because SDD dropped the implementer's row when the default role came to be stated once for every seat (`docs/decisions/model-roles-and-effort.md`).
 - 2026-11-03: the arrangement questions' citation follows their move from the shared seat reference to `skills/subagent-driven-development/references/review-terms.md`, a reference of their own, so a controller that applies them no longer loads the seat rules.
 - 2026-11-02: the shared seat reference's citations follow its rename

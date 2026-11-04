@@ -56,11 +56,11 @@
   controller name the host's file-writing tool in the report slot,
   through the host map, on the evidence of one dispatch. No run has
   used them yet.
-- These two are the only seats whose cards allow the bounded role; every
-  other seat that wrote its report runs on the default role unless its
-  card lowers it. Whether the role is the cause is UNVERIFIED: the
-  dispatches' models were not recorded, and a task re-reviewer wrote its
-  report in the third run.
+- These two are the only review seats whose cards name the bounded role;
+  the other review seats run on the default role, and an implementer may
+  drop to the bounded role on a clearly bounded task. Whether the role is
+  the cause is UNVERIFIED: the dispatches' models are not in this item,
+  and a task re-reviewer wrote its report in the third run.
 
 ## Follow-up
 
