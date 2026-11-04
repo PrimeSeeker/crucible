@@ -243,8 +243,8 @@ re-run's review reads every run's report, since its range holds the
 earlier runs' commits and its scope and evidence checks read the report.
 (Basis: judgment, an agent's proposal accepted by the maintainer, for the
 ledger line, the plan-change line and the seat owing the verdict;
-judgment, an agent's call the maintainer has not ruled on, for the
-replacement's miss and for what the re-run's review is given.)
+judgment, accepted by the maintainer, who left the call to the agent, for
+the replacement's miss and for what the re-run's review is given.)
 
 ### Drift found after the fact
 

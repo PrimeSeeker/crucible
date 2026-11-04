@@ -196,8 +196,8 @@ never counts toward convergence, so a next round always follows and can
 run them; only what no returned seat ran moves, since a returned seat's
 goal check or lens was read. A further degraded round hands it on the
 same way. (Basis: judgment, an agent's proposal accepted by the
-maintainer; judgment, an agent's call the maintainer has not ruled on,
-for the further round.)
+maintainer; judgment, accepted by the maintainer, who left the call to
+the agent, for the further round.)
 
 ### Stop rule and cap
 

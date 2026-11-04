@@ -58,8 +58,8 @@
   and mixed: one write under unhedged wording, four misses in the third
   run under the hedged one. That dropping the hedge helps is unverified,
   and naming a tool may not answer a seat that says its instructions bar
-  report files. The first use, one branch-review re-reviewer on the bounded
-  role, wrote on its first return.
+  report files. The first four uses, all branch-review re-reviewers on the bounded
+  role, wrote on their first return; no verifier has run under it yet.
 - These two are the only review seats whose cards name the bounded role;
   the other review seats run on the default role, and an implementer may
   drop to the bounded role on a clearly bounded task. Whether the role is
