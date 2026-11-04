@@ -324,10 +324,15 @@ judgment, accepted by the maintainer.)
   seats whose misses persisted
   (`docs/backlog/review-seat-report-write.md`), taken from the shared
   seat reference's § Report file required, which no other template
-  takes; its § Report file does not carry it.
+  takes; its § Report file does not carry it. Since 2026-11-04 those two
+  seats' cards also have the controller name the host's file-writing
+  tool, on the one verifier dispatched under that wording that wrote
+  on its first return, with no micro-test: a miss costs one resume or
+  a save, less than the samples would.
 
 ## Changes
 
+- 2026-11-04: the verifier's and the re-reviewer's cards name the host's file-writing tool in the report slot, through the host map; because their report-file misses persisted under the template's sentence, and later runs count whether this holds.
 - 2026-11-04: the redteam seat no longer takes § The mark's criterion, the section it kept when the seats stopped grading marks on 2026-11-02, with no duty in its template; because a section reaches only seats that follow it.
 - 2026-11-03: on Codex, and on Claude Code where the instrument agent is not offered, the seat reads its template by path: the controller sends the card's filled Slots and Selectors under one opening line naming the template's absolute path under the plugin root and the runtime, and neither reads nor fills the template; installing crucible's roles into the user's Codex configuration is retired with its backlog item; because a Codex controller held every template it dispatched, and two Codex probes, a redteam seat and a task reviewer, read the template and wrote its report shape.
 - 2026-11-03: the branch reviewer's very-small-lane passage becomes a one-line pointer to `skills/requesting-code-review/very-small-lane-review.md`, the lane text moved there, and to `skills/subagent-driven-development/references/review-terms.md` § The arrangement questions, which the template no longer splices; the seat reads both through its plugin root, the one templated seat reading a shared reference; because every branch-review pass's agent carried the 363-word passage that only a lane pass selects.

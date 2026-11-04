@@ -9,7 +9,7 @@
 - [UMBRELLAS]: per the dispatch composition's item 2; else "none".
 - [FINDINGS]: one bullet per finding this wave's fix report answers fixed, verbatim from the review that raised it, never one answered NOT CONFIRMED (ruled on separately); and each `Change (…)` it applied, ADDRESSED where it landed and broke nothing.
 - [FIX_REPORT]: in a task's fix wave, the implementer's report file, this wave's fix report appended; in a branch-review wave, `sdd/branch-review/wave-<n>-fix.md` — on the very-small lane your own, held to the fix-report contract.
-- [REPORT_FILE]: in the feature workspace, `sdd/reports/task-<N>-re-review-w<W>.md` for task fix wave <W>; `sdd/branch-review/wave-<n>-re-review.md` for branch-review wave <n>.
+- [REPORT_FILE]: in the feature workspace, `sdd/reports/task-<N>-re-review-w<W>.md` for task fix wave <W>; `sdd/branch-review/wave-<n>-re-review.md` for branch-review wave <n>; then the line `Write this file with your <tool> tool before replying.`, `<tool>` being the tool that creates a file in your host map's **Edit** entry.
 - [SCRATCH_DIR]: the seat's scratch directory, absolute.
 - [FIX_BASE_SHA]: in a task's fix wave, the head the previous review saw; in a branch-review wave, the FIX_BASE recorded as it opened.
 - [HEAD_SHA]: the current commit.

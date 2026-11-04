@@ -52,12 +52,19 @@
     terminal passes, implementers, task reviewers, a task re-reviewer and
     the branch-review passes wrote theirs.
 
+- Since 2026-11-04 the verifier's and the re-reviewer's cards have the
+  controller name the host's file-writing tool in the report slot,
+  through the host map, on the evidence of one dispatch. No run has
+  used them yet.
+- These two are the only seats whose cards allow the bounded role; every
+  other seat that wrote its report runs on the default role unless its
+  card lowers it. Whether the role is the cause is UNVERIFIED: the
+  dispatches' models were not recorded, and a task re-reviewer wrote its
+  report in the third run.
+
 ## Follow-up
 
-- Have the verifier's and the re-reviewer's cards name the host's
-  file-write tool for the report, through the host map, since the one
-  verifier dispatched under that wording wrote on its first return;
-  count report-file misses, and scratch files written outside the
-  workspace, again on the runs after.
+- Count report-file misses, and scratch files written outside the
+  workspace, on the runs after, recording each seat's model.
 - If the misses persist, carry the report path too as an absolute path
   in the slot cards, as the scratch directory now is.
