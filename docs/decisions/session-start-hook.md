@@ -210,6 +210,12 @@ reasons and the triggers that would reopen it, is in the backlog item.
 
 ## Rejected
 
+- **Checking the host map in the unattended note's branch:** with the
+  variable at 0 a broken install exits 0 with a note naming a missing
+  file, and a skill the prompt names then fails on that read, where the
+  agent sees it. A check would add a failure path for a session that
+  otherwise never reads the file, so the failure sentence covers sessions
+  that load it.
 - **PreToolUse guards and a checkout rule**: they denied nothing in real
   use, never ran on Codex, and git already refuses the one checkout that
   matters (§ Why).
@@ -229,6 +235,7 @@ reasons and the triggers that would reopen it, is in the backlog item.
 
 ## Changes
 
+- 2026-11-04: a failure covers a missing router or host map only in a session that loads them; because the unattended note's branch reads neither, and checking the host map there was rejected.
 - 2026-11-04: a session the host marks unattended gets a note in place
   of the router, since nobody there can answer the router's workflows;
   the router stops a session another router also reached.

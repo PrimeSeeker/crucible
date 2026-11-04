@@ -326,9 +326,12 @@ judgment, accepted by the maintainer.)
   seat reference's § Report file required, which no other template
   takes; its § Report file does not carry it. Since 2026-11-04 those two
   seats' cards also have the controller name the host's file-writing
-  tool, on the one verifier dispatched under that wording that wrote
-  on its first return, with no micro-test: a miss costs one resume or
-  a save, less than the samples would.
+  tool, unhedged. One verifier wrote on its first return under such
+  wording; in a later run four reports came back as text under "if you
+  have it", three of them saying no write tool was available and one
+  that its instructions barred report files. That the hedge made the
+  difference is a bet, unverified, taken with no micro-test: a miss
+  costs one resume or a save, less than the samples would.
 
 ## Changes
 

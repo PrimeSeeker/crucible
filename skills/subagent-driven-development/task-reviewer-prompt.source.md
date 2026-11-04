@@ -78,7 +78,7 @@ Audit the report's Decision Log against the diff:
 
 - Is each logged deviation justified: what, why and blast radius stated and credible against the code?
 - **Undisclosed deviations**, changes the diff shows that the requirements do not call for and the Decision Log does not declare, are findings.
-- Flag explicitly a logged deviation touching binding content (what the spec pointer names): binding content is not the implementer's to change.
+- Flag explicitly a logged deviation touching binding content (what the spec pointer names, the task's Contract and Acceptance, the plan's inter-task contracts; a lightly-held decision a Contract cites stays lightly held): binding content is not the implementer's to change.
 - Rule on each concern here (§ Concerns). A CONFIRMED one goes under its verdict: an intent or scope gap fails that verdict, a quality defect goes under Quality at its severity. Rulings add to what you account for, never narrow what you look for.
 - Work with neither RED-before-GREEN output nor a logged exception is a finding (§ Test-first evidence).
 

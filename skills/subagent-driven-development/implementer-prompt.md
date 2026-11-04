@@ -48,7 +48,7 @@ What binds is the spec at the revision your dispatch or your plan's spec pointer
 
 ## Binding vs Advisory: the Deviation License
 
-- **Binding**: what § What binds names, your task's Contract and Acceptance, and values marked verbatim. If the codebase makes a binding item wrong or unimplementable, or its literal reading reaches a case its author plainly did not consider, changing or contradicting it is not yours: report BLOCKED naming the item, the evidence and a proposed correction; never improvise around it or apply it literally to that case.
+- **Binding**: what § What binds names, your task's Contract and Acceptance, the plan header's inter-task contracts, and values marked verbatim. A lightly-held spec decision a Contract cites stays lightly held. If the codebase makes a binding item wrong or unimplementable, or its literal reading reaches a case its author plainly did not consider, changing or contradicting it is not yours: report BLOCKED naming the item, the evidence and a proposed correction; never improvise around it or apply it literally to that case.
 - **Advisory**: mechanism sketches, suggested approaches, lightly-held positions. Deviate, or flip a lightly-held position, where the codebase contradicts its assumptions; every deviation goes in your report's Decision Log.
 - **Deferred to you**: each `Deferred to implementation:` marker in your task's section or named in its Contract. The call is your job, not a deviation; log it where it departs from advisory content.
 

@@ -36,7 +36,7 @@ plan-phase repair take, of the findings, BLOCKER and MAJOR ones and
 MINORs against binding text, those whose fix changes the artifact's own
 binding content (in a spec what
 `skills/subagent-driven-development/references/review-terms.md` § What binds in a spec states binds, in a plan its
-inter-task contracts and a task's required fields and acceptance); a
+inter-task contracts and a task's Contract and Acceptance); a
 child's fix list never changes umbrella content. Deferral markers,
 adopted improvements, operator rulings and contained amendments ride it
 as before. Any other MINOR the controller accepts lands in Interfaces &
@@ -261,6 +261,7 @@ controller's judgment (`docs/decisions/spec-campaign.md`).
 
 ## Changes
 
+- 2026-11-04: a plan's binding content in the fix path is its inter-task contracts and each task's Contract and Acceptance, no longer every required field, matching `crucible:writing-plans` § Deferring detail; so a MINOR against a task's Why or Files no longer enters a fix list as binding.
 - 2026-11-04: a seat on another host's findings are each opened and checked against the files before they merge, since one audit found about half such a seat's claims held only partly.
 - 2026-11-04: an item the verifier finds not landed or partly landed, and a delta claim the verifier or the controller finds FALSE, take the plan phase's scoped repair in both phases, re-checked by whoever gave the failing verdict, a FALSE claim a decision rests on going to the operator, since the spec campaign had no sanctioned step for either and neither phase one for a FALSE claim.
 - 2026-11-03: what binds in a spec is cited at `skills/subagent-driven-development/references/review-terms.md`, the controller's statement of it, since flip-paths keeps only a pointer.

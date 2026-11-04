@@ -34,7 +34,7 @@ Name each spec `Deferred to implementation:` marker, by its site, in the Contrac
 
 Binding content and non-local mechanism are never deferrable: a deferral covering either is a plan defect, and so is a misplaced one, named by a task whose scope it does not touch, or sitting in one whose scope it does not fall in. Missing detail is no defect in a recorded deferral; it is the point of one.
 
-- **Binding:** in the plan, each task's Contract and Acceptance and the header's inter-task contracts; in the spec, what the spec pointer names as binding, read as `skills/subagent-driven-development/references/review-terms.md` § What binds in a spec states; how it changes: `skills/redteaming/references/flip-paths.md`.
+- **Binding:** in the plan, each task's Contract and Acceptance and the header's inter-task contracts, a lightly-held spec decision a Contract cites staying lightly held; in the spec, what the spec pointer names as binding, read as `skills/subagent-driven-development/references/review-terms.md` § What binds in a spec states; how it changes: `skills/redteaming/references/flip-paths.md`.
 - **Advisory:** everything about *how*, and every item marked `Deferred to implementation:`. An implementer may depart from it where the codebase contradicts its assumptions, logging each departure.
 
 Keep the split visible: mark advisory content as advisory; keep binding sections free of mechanism detail.

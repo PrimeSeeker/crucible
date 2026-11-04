@@ -54,8 +54,11 @@
 
 - Since 2026-11-04 the verifier's and the re-reviewer's cards have the
   controller name the host's file-writing tool in the report slot,
-  through the host map, on the evidence of one dispatch. No run has
-  used them yet.
+  through the host map, with no "if you have it". The evidence is thin
+  and mixed: one write under unhedged wording, four misses in the third
+  run under the hedged one. That dropping the hedge helps is unverified,
+  and naming a tool may not answer a seat that says its instructions bar
+  report files.
 - These two are the only review seats whose cards name the bounded role;
   the other review seats run on the default role, and an implementer may
   drop to the bounded role on a clearly bounded task. Whether the role is
