@@ -11,21 +11,9 @@
   today by adding a distinction. For a fix-list clause asking whether a
   removing or merging resolution exists, the maintainer agreed it looked
   weak and deferred the restructuring ("probably later").
-- **A rule gap:** when the operator answers the after-three-waves ask
-  with another approach by a plan change rather than a revert, nothing
-  says what happens to the task's open findings: its latest line stays
-  `fix wave 3/3`, and the resume rule sends it to an ask already
-  answered.
 - **Umbrella landings.** Whether a clause-sized binding change to an
   umbrella entry needs a landing of its own on the base branch first:
   one feature needed two such landings for one-clause edits.
-- **A review missing a verdict.** `crucible:subagent-driven-development`
-  § The Task Loop says never to accept a review report missing any
-  verdict, and `crucible:requesting-code-review` sends its two cases (a
-  pass leaving a lead it was handed unruled, a re-review leaving a
-  fix-report concern unruled) there for the action; neither says what
-  the controller then does: resume the seat for the verdict, dispatch a
-  fresh one, or rule itself.
 - **Left open by `placement`** (2026-11-03):
   - an umbrella's closing-review seats are composed with no template,
     yet the shared sections copied into their prompts
@@ -50,19 +38,6 @@
     the prose budget"; a commit that grows a skill raises its number,
     rendered seat templates are no longer counted, and the umbrella's
     own Problem shows about 3,900 words of growth under that budget;
-  - the goal check, the outside-the-frame lens and the alternate-role
-    swap are tied to round 1 by its number, so a round 1 recorded
-    degraded instead of topped up drops all three for that campaign;
-  - a task waiting on an operator ask after an implementer's BLOCKED
-    report gets no ledger line, so after compaction the resume rule
-    reads it as not done and resumable; the `Task <N>: BLOCKED` wait
-    covers only the answer after the third fix wave;
-  - on the very-small lane nothing reachable says what to do when the
-    lane's implementer reports NEEDS_CONTEXT, or BLOCKED for context or
-    reasoning: that handling lives in `references/task-loop.md`, which
-    the lane neither applies nor loads;
-  - an umbrella's closing-review seats are dispatched with no named
-    status-check window, so the tree-check guard does not cover them;
   - three wording points: "decision asks stand apart" reaches the
     campaign gate, the umbrella landing and the closing review only
     through a redteaming reference, and could join the router's
@@ -76,8 +51,6 @@
 
 - Weigh the separability point and the tension-closing restructuring as
   design targets of a later rewrite.
-- Fill the rule gap and state the action on a review missing a
-  verdict, each in the skill that owns the step.
 - The umbrella-landing question: weigh it when the umbrella procedure is
   next edited.
 - `placement`'s open items: give composed seats their report form;
@@ -87,6 +60,5 @@
   claim it checks cites, or say what it does with a claim it cannot
   check within its inputs.
 - The closing review's items: correct the trigger's stated ground or
-  restate the trigger; fill the four rule gaps, each in the skill that
-  owns the step; settle the three wording points.
+  restate the trigger; settle the three wording points.
 - `prose-compaction`'s defect: name the plan phase's final check, or drop the condition.
