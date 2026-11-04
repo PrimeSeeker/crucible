@@ -242,9 +242,9 @@ dozen features on its base over about two and a half months, with a break
 on its base until a late one. A keyword search of its records, not a
 full read, found no case of partial work reaching a real run, and the
 maintainer reported no practical trouble. So the default stays, and what
-changed is that a break gets stated. (Basis: measured, for the counts; the
-maintainer's account, for no trouble; judgment, accepted by the maintainer,
-2026-11-04, for keeping the default.)
+changed is that a break gets stated. (Basis: measured, for the counts and
+the search; judgment, accepted by the maintainer, 2026-11-04, for keeping
+the default.)
 
 An operator who wants an effort off the base can already name another base
 (`docs/decisions/worktrees.md`), and picks the means once a break is
@@ -319,7 +319,7 @@ judgment, an agent's call the maintainer has not ruled on.)
 
 ## Changes
 
-- 2026-11-04: an umbrella's children keep landing on the base, now weighed against holding them off it; its proposal says whether they can land without a break, and what a child leaves unfinished goes in the entry of the child that owes it. The maintainer asked, and a break is now stated (`docs/decisions/the-spec.md`).
+- 2026-11-04: an umbrella's children keep landing on the base, now weighed against holding them off it; its proposal says whether they can land without a break, and the entry of the child that owes the rest says what it owes. The maintainer asked, and a break is now stated (`docs/decisions/the-spec.md`).
 - 2026-11-04: the closing review's dropped seat on the other host is ruled on: the maintainer kept it dropped, leaving it to the operator's own instruction.
 - 2026-11-03: the premise-finding route is cited at `skills/redteaming/references/premise-asks.md`, where flip-paths' § Premise findings moved, so a controller handling a premise finding no longer loads the flip paths (`docs/decisions/authoring-crucible.md`).
 - 2026-11-03: a feature with no umbrella line keeps at its finish only a trigger, the `git grep` for its slug, and the check that it was in flight when the umbrella was written moves to `skills/brainstorming/references/umbrella-children.md` § Marks; because every route's finish read a procedure that only a child already in flight when its umbrella was written uses.

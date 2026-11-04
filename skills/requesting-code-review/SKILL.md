@@ -23,7 +23,7 @@ Severities: BLOCKER / MAJOR / MINOR.
 
 Where the spec's preamble (on the lane, the note's) carries an `Umbrella:` line, take the receiving step of `skills/brainstorming/references/umbrella-children.md` § Under an umbrella before each full-scope pass builds its range and before each fix wave records FIX_BASE, so a binding change it takes in falls outside the range reviewed.
 
-1. **A full-scope pass** reads the whole branch. One that leaves no open or new BLOCKER or MAJOR ends the review; one that raises one opens a fix wave. A premise finding is a decision ask, not an open BLOCKER or MAJOR (`skills/redteaming/references/premise-asks.md` § Premise findings): a pass leaving only premise findings open ends the review too. The pass that ends it is **the branch review's terminal pass**, a `branch-reviewer` dispatch, never the campaign's terminal-pass instrument; earlier passes are not terminal.
+1. **A full-scope pass** reads the whole branch. One that leaves no open or new BLOCKER or MAJOR ends the review; one that raises one opens a fix wave. A premise finding or an `unstated break` (below) is a decision ask, not an open BLOCKER or MAJOR (`skills/redteaming/references/premise-asks.md` § Premise findings): a pass leaving only those open ends the review too. The pass that ends it is **the branch review's terminal pass**, a `branch-reviewer` dispatch, never the campaign's terminal-pass instrument; earlier passes are not terminal.
 2. **A fix wave**, one fix dispatch plus its scoped re-review, takes what a pass left open. Record FIX_BASE (`git rev-parse HEAD`) as it opens. Dispatch one fresh instrument `implementer` with the complete findings list, its card `skills/subagent-driven-development/implementer-prompt.slots.md` filled by its branch-review fix-wave rules: never per-finding fixers, and off the very-small lane never your own fixes. It answers each finding fixed or NOT CONFIRMED, and each labelled change applied or declined.
    - Findings answered fixed, and changes applied, get the scoped re-review: instrument `re-reviewer`, its card `skills/subagent-driven-development/re-review-prompt.slots.md` filled for a branch-review wave. New BLOCKER or MAJOR breakage joins the open findings; out-of-scope observations go to the ledger as deferred minors.
    - Findings answered NOT CONFIRMED go to Disputes (below). A wave that only disputes has no re-review but counts as a wave; its fix report's concerns become leads for the next full-scope pass.
@@ -33,13 +33,14 @@ Where the spec's preamble (on the lane, the note's) carries an `Umbrella:` line,
 
 A review missing a verdict (a pass that leaves a lead it was handed unruled, a re-review that leaves a fix-report concern unruled) is handled as `crucible:subagent-driven-development § Rules every route shares` states.
 
-**An unstated break** a pass reports goes to the operator as a decision ask before it opens a wave: repair it, which opens one, or accept it, committing its statement in the Intent (on the lane, re-pinning the note), which closes the finding.
+**An `unstated break`** goes to the operator as a decision ask: repair opens a wave; acceptance, with until when or that it is permanent, is a ruling that closes the finding.
 
 **What opens a wave**, each counted against the cap:
 
 - a BLOCKER or MAJOR; a lead the reviewer CONFIRMED as an intent or scope gap counts as one, whatever its staked severity;
 - a red suite at Finish (`crucible:subagent-driven-development § Finish`, step 5);
 - a premise ruling that `skills/redteaming/references/premise-asks.md` sends to a branch-review wave;
+- the operator's ruling to repair an `unstated break`;
 - work the operator's close-readout answer asks for, where the spec and plan already require it or the readout listed it as a minor, improvement or lead; other work is new scope, a feature of its own;
 - a drift repair, which rides the next fix wave, opening one where none is open, never before the first full-scope pass;
 - the cleanup wave (below).
@@ -72,7 +73,7 @@ When the review ends, return to `crucible:subagent-driven-development § Finish`
 For a branch with no SDD run: no ledger, no workspace, no wave loop, no cap.
 
 1. Dispatch the branch reviewer as above, its card filled by its standalone-mode rules. It returns its report as its final message, the record of everything it raises, questions included.
-2. Handle the findings yourself, under `crucible:receiving-review`: you are not an SDD controller. Fix the BLOCKER and MAJOR findings you confirm, and after substantial fixes run this mode again. A premise finding goes to the operator as a decision ask, never to a fix. The operator decides what remains open.
+2. Handle the findings yourself, under `crucible:receiving-review`: you are not an SDD controller. Fix the BLOCKER and MAJOR findings you confirm, and after substantial fixes run this mode again. A premise finding or an `unstated break` goes to the operator as a decision ask, never to a fix on your own. The operator decides what remains open.
 
 ## Common Rationalizations
 

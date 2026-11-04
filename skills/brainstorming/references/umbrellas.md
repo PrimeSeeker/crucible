@@ -18,7 +18,7 @@ A campaigned umbrella carries every section, so its seats grade it as a spec. No
 
     - `cache-metrics` — hit-rate metrics for the cache layer; waits on `cache-layer`
 
-**Breaks.** The step-4 proposal says whether each child can land without a break (`crucible:brainstorming` § Spec contract). Where one cannot, its entry says so, and what a child leaves unfinished goes in the entry of the child that owes it.
+**Breaks.** The step-4 proposal says whether each child can land without a break (`crucible:brainstorming` § Spec contract). Where one cannot, its entry says so, and the entry of the child that owes the rest says what it owes.
 
 **Recursion.** A child that splits becomes an umbrella over its own children; its entry in its parent says so. Each umbrella holds only what its children share; what one child alone needs moves down into that child's entry. No depth cap.
 
