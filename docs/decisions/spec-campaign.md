@@ -44,9 +44,10 @@ architecture-heavy runs on the alternate role
 
 **A seat on another host.** It runs only where the operator's
 instructions or request ask for one, never on crucible's proposal: an
-extra seat beside the round's seats on this host, read-only, whose loss
-costs the round nothing and whose findings are each checked against the
-files before they merge (`skills/redteaming/references/panels.md`;
+extra seat, read-only, beside the round's seats on this host, which stay
+complete without it, required lenses included. Its loss costs the round
+nothing, and its findings are each checked against the files before they
+merge (`skills/redteaming/references/panels.md`;
 `skills/redteaming/references/merge-and-finding-hygiene.md`).
 
 **The general lens.** Every multi-seat round has at least one general
@@ -61,7 +62,8 @@ attests as right-sized is cut only by a logged ruling. A fix that
 removes machinery outranks one that adds it, all else equal.
 
 **Quorum and degraded rounds.** Every lost or crashed seat is recorded,
-and a round that lost one is topped back up or recorded degraded. A
+and a round that lost one, a seat on another host aside, is topped
+back up or recorded degraded. A
 top-up starts only when the host confirms the lost seat has stopped; a
 seat whose state the host cannot confirm is a stop-and-ask, and the
 replacement writes a fresh report under a fresh seat id. A degraded round never counts toward
@@ -226,11 +228,13 @@ the risk.)
 The revisit came on 2026-11-04: a seat on another host runs only where
 the operator asks, and the risk stays accepted for a panel with none.
 The recorded yield is thin and nobody has counted it: one BLOCKER, a
-race in the option Claude had picked; one MAJOR another seat also
+fatal flaw in the option Claude had picked; one MAJOR another seat also
 raised, backed by an executed probe; one clean return after a short
 read; one audit with nothing the others missed and about half its
-claims holding only partly, mostly on attribution; and one large review
-with nothing beyond the losses already accepted. That does not justify
+claims holding only partly, mostly on attribution; one large review
+with nothing beyond the losses already accepted; and the run on the
+lane that added it, with no findings where that lane's branch review
+found a binding line left uncorrected. That does not justify
 proposing the seat to everyone, and the audit is why each finding is
 checked before it merges. It is an extra seat so that a usage limit, an
 expected trade-off on the other host, costs the round nothing. Its
@@ -427,6 +431,7 @@ trim.)
 
 ## Changes
 
+- 2026-11-04: the quorum rule excepts a seat on another host and required lenses stay on this host's seats, so losing it costs the round nothing; the yield gains that lane's own run.
 - 2026-11-04: a seat on another host, opt-in and written down, settling the single-family revisit: the maintainer's ruling on a thin recorded yield, and the risk stays accepted for a panel with none.
 - 2026-11-03: the operating stance is recorded as the one sentence the compaction made it, its disclosure paragraph now a clause.
 - 2026-11-03: the over-subtraction guard reaches the right-sizing seat as lens text from `skills/redteaming/references/panels.md`, and the seat card's `right-sizing` selector goes; because every redteam seat's agent carried the guard for the one seat that takes it (`docs/decisions/instruments.md`).

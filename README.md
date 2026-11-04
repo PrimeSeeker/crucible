@@ -94,7 +94,9 @@ files can override them (§ Configuration).
    answer crucible's questions, so it loads no crucible skill unless the
    prompt names one. Codex marks no run that way for crucible: turn
    crucible off before a `codex exec` run and back on after it, with the
-   plugin switch in `docs/codex.md` § Turning another router off.
+   plugin switch in `docs/codex.md` § Turning another router off. A
+   reviewer crucible itself starts that way (§ Configuration) needs no
+   switch: its prompt names its task, which held on the one run checked.
 4. **Say what you want to build**, for example "I'd like to add CSV export
    to the reports page". Crucible asks questions one at a time, proposes
    approaches with a recommendation, presents the design in sections for

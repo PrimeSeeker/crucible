@@ -38,7 +38,7 @@ The plan record alone appends `confirmed`. States advance strictly in order, eac
 - `readout`: the round readout recorded; the round closes once it is delivered.
 - `confirmed`: the terminal pass's report, and any second read, on disk, and the phase's final check done.
 
-**3. `## Quorum block`**: seats dispatched, seats returned, and every lost or crashed seat by id, with what happened and its resolution: `topped-up` (re-dispatched, report present) or the round marked degraded. Its one binding line, `degraded: yes | no`, feeds cap arithmetic: a round that lost any dispatched seat and was not topped back up is `degraded: yes`.
+**3. `## Quorum block`**: seats dispatched, seats returned, and every lost or crashed seat by id, with what happened and its resolution: `topped-up` (re-dispatched, report present), `not replaced` (a seat on another host, `panels.md`) or the round marked degraded. Its one binding line, `degraded: yes | no`, feeds cap arithmetic: a round that lost any dispatched seat but a seat on another host and did not top it back up is `degraded: yes`.
 
 **4. `## Panel roster`**: per seat, its id, model, assigned lens and `seat-<id>.md` file.
 

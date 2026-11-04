@@ -20,11 +20,11 @@ Rotate lenses across rounds and mix them per artifact; add a lens for whatever t
 
 Dispatch each seat as instrument `redteam-seat` from its slot card; its report `seat-<id>.md` feeds your merge. Seats never see each other's reports, and a round's seats are independent: start every seat the host admits before waiting for any of them, and the rest as capacity frees. Record the roster (seat id, model, effort where set, lens) in the round record before or at dispatch, and each seat's identity in it before relying on continuation: an in-flight seat resumes by that identity rather than being re-dispatched.
 
-**Quorum and degraded rounds:** record every lost or crashed seat, and what happened, in the round record's quorum block (cap arithmetic and the stop rule read it). A round that lost any dispatched seat is either topped back up (the lost seat re-dispatched) or explicitly recorded as degraded.
+**Quorum and degraded rounds:** record every lost or crashed seat, and what happened, in the round record's quorum block (cap arithmetic and the stop rule read it). A round that lost any dispatched seat, a seat on another host aside (below), is either topped back up (the lost seat re-dispatched) or explicitly recorded as degraded.
 
 **Topping up** follows `skills/subagent-driven-development/references/dispatch-composition.md` § Shared-tree rules. The replacement takes a fresh id and writes its own `seat-<id>.md`, never the lost seat's file. A 1-seat round that loses its seat is degraded by definition: a crashed seat is never read as a clean pass.
 
-**A seat on another host** runs only where the operator's instructions or request ask for one: never propose one. It is an extra seat, beside the round's seats on this host and never in place of one, with a lens and slot card like theirs; start it by your dispatch reference's **Seat on another host** entry. A run that ends with no report goes in the quorum block, with no top-up and no degraded round.
+**A seat on another host** runs only where the operator's instructions or request ask for one: never propose one. It is an extra seat: the round's seats on this host stay complete without it, required lenses included. It takes a lens and slot card like theirs; start it by your dispatch reference's **Seat on another host** entry. A run that ends with no report goes in the quorum block as `not replaced`: no top-up, and it leaves `degraded` as it stands.
 
 **Lens text**, filled verbatim into two seats' lens slots after the lens and its description. The right-sizing seat's:
 

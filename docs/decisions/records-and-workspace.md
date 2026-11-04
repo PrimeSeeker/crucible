@@ -174,7 +174,8 @@ cite a feature folder. Commit messages citing a hash go stale, which only
 a rewrite adds: at most 23 of 381 recent messages here and 3 of 400 in
 that project. Fixes after a pull-request review land on the copy.
 (Basis: measured, on thin data; judgment, an agent's proposal accepted by
-the maintainer.)
+the maintainer, for trying the route first; the maintainer's preference,
+for recording its dangling references.)
 
 An umbrella is the exception to that ask, since its children read it,
 their marks included, on the base they branch from and land on: removed
@@ -423,6 +424,7 @@ worktree. (Basis: judgment, accepted by the maintainer.)
 
 ## Changes
 
+- 2026-11-04: the rewrite route's basis says who raised what: the review of the lane that added it found both credited to an agent.
 - 2026-11-04: the never-commit mode is closed, no project needing it being known; the record keeps rewriting a copy of the branch at push time as the route to try first, with its measured limits.
 - 2026-11-03: SDD's Setup is the only writer that seeds the ledger with what earlier phases left open, contained amendments, open premise asks and `deferred-minor` entries, its forms moved into `skills/subagent-driven-development/references/setup.md`; the plan phase's and the folded campaign's closes no longer seed it; because the same seeding was written twice with no incident behind the second writer.
 - 2026-11-02: a red suite at Finish may be ruled not the branch's by
