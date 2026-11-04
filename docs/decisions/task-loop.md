@@ -248,10 +248,10 @@ the replacement's miss and for what the re-run's review is given.)
 
 The ledger line left out a BLOCKED raised in a fix wave: a wave appends
 no step 1 line, so a resume inside the answered wave read the task as
-not done, restarted it at step 1 and lost the wave count (found by a
-branch review's reading, not in a run, 2026-11-04). The line now names
-the wave, and that wave's own line ends the wait. (Basis: judgment, an
-agent's proposal accepted by the maintainer.)
+not done, restarted it at step 1 and lost the wave count (left open by
+the `backlog-batch-2` lane, no run on record hit it, 2026-11-04). The
+line now names the wave, and that wave's own line ends the wait.
+(Basis: judgment, an agent's proposal accepted by the maintainer.)
 
 ### Drift found after the fact
 
