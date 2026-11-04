@@ -9,11 +9,14 @@ round-NN/ # NN zero-padded, sequential; round 0 is round-00
   record.md # the round record
   seat-<id>.md # one per seat report, raw, workspace-only
   verifier.md # the blind verifier's report
+  verifier-recheck.md # its re-check of the wave's repairs, if one runs
   terminal-pass.md # plan phase only
   second-read.md # plan phase, if one runs
 terminal-pass/ # the spec campaign's terminal pass
   record.md
   pass.md # the pass's report
+  verifier.md # its follow-up wave's, if one runs
+  verifier-recheck.md # if one runs
   second-read.md # if a second read runs
 ```
 
@@ -34,7 +37,7 @@ The plan record alone appends `confirmed`. States advance strictly in order, eac
 - `returned`: every dispatched seat's report on disk, or its loss recorded and resolved (field 3).
 - `merged`: the merged finding list, with dispositions, written.
 - `fix-applied`: the recorded fix list landed in the artifact.
-- `verified`: the blind verifier's report on disk, each item or claim found failing repaired or put to the operator as a decision ask.
+- `verified`: the blind verifier's report on disk, each item or claim found failing repaired or put to the operator as a decision ask, each untraced hunk reverted or named under the item needing it.
 - `readout`: the round readout recorded; the round closes once it is delivered.
 - `confirmed`: the terminal pass's report, and any second read, on disk, and the phase's final check done.
 
@@ -50,7 +53,7 @@ The plan record alone appends `confirmed`. States advance strictly in order, eac
 
 **6. `## Fix list`** (what it takes, the propagation sweep and the trace: `crucible:redteaming` § Fix application and blind verification): enumerated items, each naming the finding id(s) it resolves or the question id of the adopted improvement it carries. It is the blind verifier's sole mandate input: fix list + diff, never rationale. **Restating sites** (binding): each item also names every other artifact site its sweep and any trace find.
 
-**7. `## Verifier block`**: a pointer to `verifier.md`; a landed/not-landed verdict per fix item; the nothing-outside-the-list-moved verdict; a verdict per delta claim, TRUE or FALSE with evidence, or not checked with the reason; for each claim not checked, your own check and its outcome; and each repair, with its re-check's verdict or the decision ask it became.
+**7. `## Verifier block`**: a pointer to `verifier.md` and any `verifier-recheck.md`; a landed/not-landed verdict per fix item; the nothing-outside-the-list-moved verdict, with what became of each untraced hunk; a verdict per delta claim, TRUE or FALSE with evidence, or not checked with the reason; for each claim not checked, your own check and its outcome; and each repair, with its re-check's verdict or the decision ask it became.
 
 **8. `## Round readout`**: the readout as delivered to the operator, compact, with the items and form of `crucible:redteaming` § Round readout. After it, a line `Trace:` opens the trace, the bookkeeping other readers need, record-only and never delivered:
 - in a numbered round record and the plan record, each decision ask's merged-list ids, the entries it turns on (the terminal pass reads them).
@@ -58,5 +61,5 @@ The plan record alone appends `confirmed`. States advance strictly in order, eac
 **Special records:**
 
 - **Round 0** (`round-00/record.md`): fields 1, 2, 6 and 8 plus `## Claim table` (claim → TRUE/FALSE with evidence). Its fix list holds its findings and the fixes applied before round 1; each finding the list does not take is named after the items, with its disposition. It runs no blind verifier, and with no merge has no question dispositions: its agent's questions are answered in its readout.
-- **Terminal pass** (`terminal-pass/record.md`): fields 1, 2, 6 and 8, a pointer to `pass.md` in its preamble, and `## Deferred minors`, the pass's `deferred-minor` findings (a second read's included), each with its disposition. Field 6 appears only when the pass's findings trigger the at-most-one further fix wave. Field 8, the close, is recorded before any second read and delivered after it, its corrections added. Here `verified` means `second-read.md` is on disk.
+- **Terminal pass** (`terminal-pass/record.md`): fields 1, 2, 6, 7 and 8, a pointer to `pass.md` in its preamble, and `## Deferred minors`, the pass's `deferred-minor` findings (a second read's included), each with its disposition. Fields 6 and 7 appear only when the pass's findings trigger the at-most-one further fix wave. Field 8, the close, is recorded before any second read and delivered after it, its corrections added. Here `verified` means `second-read.md` is on disk, with field 7 written where that wave ran.
 - **Plan phase** (`campaigns/plan/round-01/record.md`), the phase's only record: no `round-00`, no `terminal-pass/`; its terminal pass's reports go in `round-01/`, beside the pre-pass's `seat-p0.md`, a seat report for every purpose. Fields 1–8 plus `## Terminal pass`: the pass's `Record corrections: <N>` outcome, any repair of the pass's findings, the close delivered after the pass, any second read, the pass's `deferred-minor` findings and the final check before `confirmed`. The quorum block is kept for lost seats; no cap arithmetic applies. That repair re-advances the record through `fix-applied` → `verified`; `confirmed` is written last. A flagged correction is a decision ask to the operator.

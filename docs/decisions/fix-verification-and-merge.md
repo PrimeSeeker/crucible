@@ -66,8 +66,14 @@ landed or partly landed, and a delta claim found FALSE, takes one scoped
 repair edit and a re-check of it alone by whoever gave the failing
 verdict, the verifier or the controller; one still failing is a decision
 ask, and so, without a repair, is a FALSE claim a
-decision rests on. The round record's verifier block records each
-repair (`skills/redteaming/references/fix-application.md`).
+decision rests on. The verifier's re-check is a fresh seat given the
+repairs alone, writing `verifier-recheck.md`. A hunk the verifier traces
+to no item is reverted by the same repair or, where an item needs it,
+named under that item. The round record's verifier block records each
+repair and each such hunk, the spec terminal pass's follow-up wave
+keeping one in the terminal-pass record
+(`skills/redteaming/references/fix-application.md`;
+`skills/redteaming/references/round-record.md`).
 
 **Readout coverage and the trace.** The delivered readout names every
 rejected, parked or partly-applied BLOCKER or MAJOR with its ruling, in
@@ -229,6 +235,16 @@ instead, since correcting the sentence leaves the decision without its
 ground. (Basis: measured, for the recount; judgment, accepted by the
 maintainer, for the path.)
 
+The repair left three cases unstated until 2026-11-04. The verifier's
+re-check had no report of its own, and a resume writing to the verifier's
+path would have overwritten the verdicts the block points to; a fresh
+seat cannot anchor on its own earlier verdict, needs no resume from the
+host, and costs little on inputs this small. An untraced hunk had no
+next step, and reverting it by default keeps a wave to the list the
+verifier checks it against. The spec terminal pass's follow-up wave was
+verified like every wave with nowhere to record it. (Basis: judgment, an
+agent's proposal accepted by the maintainer.)
+
 ### Readouts and the trace
 
 The coverage check on readouts used to run in a script: the round checks
@@ -258,9 +274,11 @@ controller's judgment (`docs/decisions/spec-campaign.md`).
   or index mismatches (§ Why).
 - **Carrying a failing verifier verdict to the next round**, on its fix
   list or to its panel, in place of the scoped repair (§ Why).
+- **Resuming the wave's verifier for its re-check** (§ Why).
 
 ## Changes
 
+- 2026-11-04: the verifier's re-check is a fresh seat writing `verifier-recheck.md`, an untraced hunk is reverted or named under the item needing it, and the spec terminal pass's follow-up wave records a verifier block, since none of the three had a stated path.
 - 2026-11-04: a plan's binding content in the fix path is its inter-task contracts and each task's Contract and Acceptance, no longer every required field, matching `crucible:writing-plans` § Deferring detail; so a MINOR against a task's Why or Files no longer enters a fix list as binding.
 - 2026-11-04: a seat on another host's findings are each opened and checked against the files before they merge, since one audit found about half such a seat's claims held only partly.
 - 2026-11-04: an item the verifier finds not landed or partly landed, and a delta claim the verifier or the controller finds FALSE, take the plan phase's scoped repair in both phases, re-checked by whoever gave the failing verdict, a FALSE claim a decision rests on going to the operator, since the spec campaign had no sanctioned step for either and neither phase one for a FALSE claim.
