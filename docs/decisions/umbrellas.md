@@ -18,6 +18,8 @@
 
 **Work left open at the landing.** An umbrella has no ledger, so what its brainstorm and campaign left open goes at its landing to the home the project's instructions name for open items, or where the landing ask's answer sends it, and a decision ask unruled there, a premise ask aside, goes with those items (`skills/brainstorming/references/umbrellas.md` § Landing; `docs/decisions/records-and-workspace.md`). The premise note is the only note a landing writes into a Children entry.
 
+**Children land on the base.** An umbrella's children land on the base as each finishes, so the base can hold part of an effort; what a landing breaks is stated as any feature's is (`docs/decisions/the-spec.md`), and an umbrella's proposal says whether its children can land without one (`skills/brainstorming/references/umbrellas.md` § Shape).
+
 **Kept in the merged tree.** An umbrella's own pull request never offers `umbrella.md` for removal; the trade-off is in `docs/decisions/records-and-workspace.md`.
 
 ## Why
@@ -230,6 +232,25 @@ which questions what the effort asks for, keeps the note its next
 child's brainstorm takes up. (Basis: judgment, accepted by the
 maintainer, who left both calls to the agent, 2026-11-01.)
 
+### Children land on the base
+
+The maintainer asked whether an incomplete umbrella's children should land
+on the base by default at all. This repository's two umbrellas required
+each child installed before the next one's brainstorm, which took seven
+releases. One effort on another project, before umbrellas, landed about a
+dozen features on its base over about two and a half months, its new path
+unable to run until a late one. A keyword search of its records, not a
+full read, found no case of partial work reaching a real run, and the
+maintainer reported no practical trouble. So the default stays, and what
+changed is that a break gets stated. (Basis: measured, for the counts; the
+maintainer's account, for no trouble; judgment, accepted by the maintainer,
+2026-11-04, for keeping the default.)
+
+An operator who wants an effort off the base can already name another base
+(`docs/decisions/worktrees.md`), and picks the means once a break is
+stated, so nothing says which. That path has not been run. (Basis:
+judgment, accepted by the maintainer, 2026-11-04.)
+
 ### The closing review
 
 Each child's branch review grades that child against its own plan, and
@@ -289,9 +310,16 @@ judgment, an agent's call the maintainer has not ruled on.)
 - **The closing review as a gate** before the umbrella is marked
   closed: it would add a landing ask where the review finds nothing and
   a check on resume (§ Why).
+- **Holding an incomplete umbrella's children off the base by default:**
+  no harm is on record, both of this repository's umbrellas needed each
+  child landed and installed before the next, and it would cost drift, one
+  very large final diff and children other sessions cannot see (§ Why).
+- **A dedicated effort-branch path:** a named base already allows it, and
+  the operator picks the means once a break is stated (§ Why).
 
 ## Changes
 
+- 2026-11-04: an umbrella's children keep landing on the base, now weighed against holding them off it; its proposal says whether they can land without a break, and what a child leaves unfinished goes in the entry of the child that owes it. The maintainer asked, and a break is now stated (`docs/decisions/the-spec.md`).
 - 2026-11-04: the closing review's dropped seat on the other host is ruled on: the maintainer kept it dropped, leaving it to the operator's own instruction.
 - 2026-11-03: the premise-finding route is cited at `skills/redteaming/references/premise-asks.md`, where flip-paths' § Premise findings moved, so a controller handling a premise finding no longer loads the flip paths (`docs/decisions/authoring-crucible.md`).
 - 2026-11-03: a feature with no umbrella line keeps at its finish only a trigger, the `git grep` for its slug, and the check that it was in flight when the umbrella was written moves to `skills/brainstorming/references/umbrella-children.md` § Marks; because every route's finish read a procedure that only a child already in flight when its umbrella was written uses.

@@ -20,6 +20,8 @@
 
 **Rules tied to a trigger are traced.** The same check traces each rule a design ties to a trigger through every route and phase that must reach it; where the trigger occurs and nothing reaches the rule, the design has a gap. The branch reviewer asks the same of the shipped text (`docs/decisions/branch-review.md`).
 
+**A break is stated.** A landing that leaves the base unable to do what it did, or a path someone can reach failing, says so in its Intent; the operator sees it at the design presentation and again before the landing, and the branch reviewer treats an unstated one as a finding (`crucible:brainstorming § Spec contract`; `skills/subagent-driven-development/references/finish.md`; `skills/requesting-code-review/code-reviewer.md` § What to Check). Work nobody can reach yet is not a break.
+
 ## Why
 
 ### Weights and flip paths
@@ -223,6 +225,27 @@ on the author's side). Treating every
 restating site as a consumer puts those siblings in the sweep. (Basis:
 measured.)
 
+### Breaks
+
+Nothing stated what a landing leaves the base able to do. Asked whether an
+incomplete umbrella's children should land on the base at all, the
+maintainer reported no practical trouble, since they arrange a run around
+partial work when they plan one, but "it requires being aware of the
+issue", and by default the process could break the base without anyone
+saying so. (Basis: the maintainer's account, 2026-11-04.)
+
+So the gap sits at every landing, a feature with no umbrella included. The
+Intent states a break because the Intent binds the reviewer and the
+design presentation shows it to the operator; the reviewer checks because
+an author omits the break they did not think of; the close readout repeats
+it because that is when a run or a release can still be timed around it.
+Unreachable work stays out of the rule, so most landings owe nothing. The
+rule's word is "break" because "containment" already names the
+containment test for amendments. A reviewer reading a diff, with no run of
+the product, can miss a break: an accepted residual. No agent was run on
+the wording, the maintainer's account standing as the baseline. (Basis:
+judgment, accepted by the maintainer, 2026-11-04.)
+
 ## Rejected
 
 - **Carriage**: copying the spec's [LOAD-BEARING] decisions into a plan's
@@ -247,9 +270,15 @@ measured.)
   the operator's messages (§ Why).
 - **Seats reading the session transcripts for the request**, and **a
   request store that outlives the workspace** (§ Why).
+- **The question at an umbrella's proposal alone:** a feature with no
+  umbrella can break the base too (§ Why, Breaks).
+- **A required no-break line in every close readout:** it would add text to
+  every landing, and the reviewer's check already covers a silent one
+  (§ Why, Breaks).
 
 ## Changes
 
+- 2026-11-04: a landing that breaks the base states it in its Intent, the operator sees it at the design presentation and before the landing, and the branch reviewer treats an unstated one as a finding; because by default a landing could break the base with nobody saying so.
 - 2026-11-03: the citations of brainstorming's workspace provisioning use its shortened heading.
 - 2026-11-03: the premise-finding route is cited at `skills/redteaming/references/premise-asks.md`, where flip-paths' § Premise findings moved, so a controller handling a premise finding no longer loads the flip paths (`docs/decisions/authoring-crucible.md`).
 - 2026-11-03: what binds is cited at its one controller statement, `skills/subagent-driven-development/references/review-terms.md` § What binds in a spec, moved there from flip-paths' opening so every route's controller reads it from brainstorm on (`docs/decisions/instruments.md`).

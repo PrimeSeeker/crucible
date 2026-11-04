@@ -41,7 +41,7 @@ Explore the project state: files, docs, recent commits, existing specs and plans
 
 **Approaches:** propose 2–3 with trade-offs, leading with your recommendation and why. Apply YAGNI ruthlessly: cut unneeded features from every approach.
 
-**Presenting the design:** in sections scaled to their complexity (a few sentences to a few hundred words), asking after each whether it looks right. Cover architecture, component boundaries, data flow, error handling and testing. Prefer small units with one clear purpose and well-defined interfaces: if internals can't change without breaking consumers, the boundaries need work. In existing codebases, follow existing patterns and include targeted improvements where existing problems affect the work; no unrelated refactoring.
+**Presenting the design:** in sections scaled to their complexity (a few sentences to a few hundred words), asking after each whether it looks right. Cover architecture, component boundaries, data flow, error handling, testing and any break (§ Spec contract). Prefer small units with one clear purpose and well-defined interfaces: if internals can't change without breaking consumers, the boundaries need work. In existing codebases, follow existing patterns and include targeted improvements where existing problems affect the work; no unrelated refactoring.
 
 Close the presentation by naming the feature worktree, and its base where the git fallback sets it: the operator's approval of that message is the request `crucible:using-git-worktrees` needs. Choose `<feature-slug>` before the worktree: it names the branch, the feature folder and the workspace. Before the first write, establish the worktree with that skill's Steps 0–1 on a branch named for the slug (its setup and baseline steps wait for SDD Setup). It is this feature's own even inside another feature's worktree, and the spec, the workspace and the records all live there.
 
@@ -63,7 +63,7 @@ Where an effort's sub-features share decisions, an order, or both, an umbrella (
 
 Audience: the agent fleet. The spec quotes no operator message: the Intent states the goal in its own words, and the asking messages go to the request file (§ Workspace provisioning). Sections, in order:
 
-- **Intent** — problem, goals, non-goals.
+- **Intent** — problem, goals, non-goals, and any break this landing makes, saying until when: something the base does today stops working, or a path someone can reach fails. Work nobody can reach yet is not a break.
 - **Decisions** — each with rationale. A decision is lightly held (downstream may flip it with a logged rationale) unless firm; a firm one, recorded `firm` (§ Workspace provisioning), says in its rationale that it is the operator's firm preference.
 - **Constraints & invariants** — binding by construction: invariants every task must keep, not a requirement one site meets. Every downstream agent reads it here, in the spec at its pinned revision.
 - **Interfaces & boundaries**.

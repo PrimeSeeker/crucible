@@ -38,19 +38,6 @@ none blocking:
   ledger-style sources, would draw findings in a review of those
   branches.
 
-The maintainer later raised one more (2026-11-04):
-
-- **Whether an incomplete umbrella's children land on the base by
-  default.** Landing as each child finishes is the only path the text
-  offers, and an umbrella branch would meet its stated reason, that
-  children branch from a base holding the umbrella, equally; no record
-  weighs that alternative. Nothing requires a child to leave the base
-  shippable as a product, so a release between children could ship half
-  an effort. An umbrella branch would keep that off the base and let the
-  closing review gate the final merge, at the cost of drift, one very
-  large final diff needing a new review step, and children other sessions
-  cannot see until the end. No harm from the current default is on record.
-
 ## Follow-up
 
 Fix the first three in one small change; rule on the FIX_BASE wording
@@ -58,9 +45,3 @@ and on whether the mark or an approval-only umbrella's workspace should
 change. Close the two open-items gaps: a carrier for a pending ask
 (the umbrella's workspace, or a note in `umbrella.md`) and the
 exemption's reach.
-
-For the landing default: weigh asking, when an umbrella is proposed,
-whether the base can ship with only some children landed, an effort that
-cannot taking an umbrella branch, as a feature of its own with a spec
-campaign. The controller's recommendation so far keeps landing on the
-base as the default.
