@@ -16,7 +16,7 @@ A record's sections, in order:
   pointer (`docs/authoring.md` § Reference convention) to the skill
   heading that holds the procedure rather than a restatement of it. What
   no skill holds stays here. A record not yet cut to this shape follows
-  when next edited.
+  when its Decision is next edited.
 - `## Why`: the reasoning and evidence, restated in the record, each with
   its basis inline: **measured** (what, how often, on what),
   **external** (a host's documentation, an upstream file, another cited
@@ -139,13 +139,15 @@ altogether; the controller said so and took this one, which loses nothing.
 
 The reference scanner catches a renamed or removed heading a record cites,
 but not changed content, so a Decision restating a skill could go untrue
-with no test failing, and each skill edit forced a repeat edit. A screen of
-each Decision sentence against the shipped skills put 48% of the words at
-high overlap with one skill paragraph, 37% in the middle and 16% low; the
-screen misses paraphrase and does not search `AGENTS.md` or `docs/`. Eight
+with no test failing, and each skill edit forced a repeat edit. A one-off
+screen, its script not kept, took each Decision sentence's content words and
+the largest share of them in any one paragraph of the shipped skills: 48% of
+the words were in sentences at 0.6 or above, 37% between 0.4 and 0.6 and 16%
+below; it misses paraphrase and does not search `AGENTS.md` or `docs/`. Eight
 records held 65% of the high-overlap words. (Basis: measured.) Those eight
-were cut first, with no word target, and the other 22 follow when next
-edited: an agent's proposal, which the maintainer accepted. (Basis:
+were cut first, with no word target, and the other 22 follow when a
+Decision is next edited, since a citation fix should not carry a whole cut:
+an agent's proposal, which the maintainer accepted. (Basis:
 judgment, accepted by the maintainer, 2026-11-04.)
 
 ### Origin and strength

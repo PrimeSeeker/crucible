@@ -15,12 +15,12 @@ to install it: `README.md`; the layout: `docs/dual-runtime.md`.
   record per family of decisions, named by slug. A record states the
   current position and is edited in place when the decision changes. An
   edit that changes a decision or its reasoning adds a line to its
-  `## Changes` in its own commit, `<YYYY-MM-DD>: <what changed, and why>`,
+  `## Changes` in the same commit, `<YYYY-MM-DD>: <what changed, and why>`,
   which the branch reviewer checks; an edit that changes neither, such as
   a citation, wording or a cut of restated text, adds none, and its commit
   says what it did. A Decision points at procedure rather than restating
-  it, and a record not yet cut follows when next edited. Git history is
-  the log. The record shape and the rest of the rules:
+  it, and a record not yet cut follows when its Decision is next edited.
+  Git history is the log. The record shape and the rest of the rules:
   `docs/decisions/decision-records.md`.
 - `docs/backlog/` — deferred work, one file per item, and the home for
   open items, the work a feature or an umbrella leaves open. Copy the

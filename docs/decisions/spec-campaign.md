@@ -10,7 +10,7 @@
 
 **A seat on another host.** It runs only where the operator's instructions or request ask for one, never on crucible's proposal: an extra seat, read-only, beside the round's seats on this host, which stay complete without it. Its loss costs the round nothing, though the round readout names it, and its findings are each checked against the files before they merge (`skills/redteaming/references/panels.md`; `skills/redteaming/references/merge-and-finding-hygiene.md`).
 
-**The general lens.** Every multi-seat round has at least one general seat, with no box, and a one-seat round is general by default; a one-seat round 1 carries outside-the-frame beside general.
+**The general lens.** Every multi-seat round has at least one general seat, with no box, and a one-seat round is general by default; a one-seat round 1 carries outside-the-frame beside general (`skills/redteaming/references/panels.md` § Panels).
 
 **Right-sizing.** The right-sizing seat's product is scope-cut decisions, and it is judged by them. It sits in round 1 and is re-seated mid-campaign or when the controller judges the artifact has grown far enough to need it; what it attests as right-sized is cut only by a logged ruling (`skills/redteaming/references/panels.md`). A fix that removes machinery outranks one that adds it, all else equal (`crucible:redteaming § Fix application and blind verification`).
 
