@@ -7,7 +7,7 @@
 - [MANDATE_REMINDER]: one line restating this review's binding output: in the report file, all four verdicts, a ruling on each concern the implementer reports, staked severities with evidence, and questions; a reply of the task verdict and that file's path.
 - [REQUIREMENTS]: the plan's path and task number, as the implementer's card named them; then, by hash, each BASE..HEAD commit that landed a scoped amendment or a plan-patching ruling, or "no amendment commits".
 - [UMBRELLAS]: per the dispatch composition's item 2; else "none".
-- [IMPLEMENTER_REPORT]: the implementer's report file, as its card named it.
+- [IMPLEMENTER_REPORT]: the implementer's report file, as its card named it; for a `plan changed` line's re-run, each earlier run's too.
 - [REPORT_FILE]: in the feature workspace, `sdd/reports/task-<N>-review.md`.
 - [SCRATCH_DIR]: the seat's scratch directory, absolute.
 - [BASE_SHA]: the commit before this task, recorded at its implementer's dispatch; never `HEAD~1`.

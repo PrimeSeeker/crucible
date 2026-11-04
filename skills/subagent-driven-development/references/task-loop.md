@@ -2,7 +2,7 @@
 
 ### 1. Dispatch the implementer
 
-Where the spec's preamble carries an `Umbrella:` line, first take the receiving step of `skills/brainstorming/references/umbrella-children.md` § Under an umbrella, so a binding change it takes in falls before BASE. Record BASE (`git rev-parse HEAD`), where the task's review range starts (a `plan changed` line's re-run keeps the BASE that line names), then dispatch instrument `implementer`, its card filled.
+Where the spec's preamble carries an `Umbrella:` line, first take the receiving step of `skills/brainstorming/references/umbrella-children.md` § Under an umbrella, so a binding change it takes in falls before BASE. Record BASE (`git rev-parse HEAD`), where the task's review range starts (a `plan changed` line's re-run keeps the BASE that line names, and names to its reviewer any merge the receiving step took), then dispatch instrument `implementer`, its card filled.
 
 As soon as the dispatch reports the implementer's agent identity, record `Task <N>: implementer <agent id>` in the ledger: fix waves resume it.
 
@@ -22,7 +22,7 @@ Where the cause leaves the task waiting on the operator (a decision ask, a premi
 
 Never ignore an escalation or make the same model retry without changes. Whatever the status, route what the report voices beyond its work by `crucible:subagent-driven-development § What a report voices`.
 
-**A marked task** (dispatched, its plan section carrying `Review: branch only`) reporting DONE with no concern runs step 4's gates here, which also confirm the report shows what the task review would read: RED output before GREEN, or the exception logged (you check presence; the branch reviewer judges substance). All passing: no task review and no fix loop; append its completion line (step 6), the task then completed branch review only, the branch reviewer its first review. A concern or a failed gate sends it to step 3, the loop running from there.
+**A marked task** (dispatched, its plan section carrying `Review: branch only`) reporting DONE with no concern runs step 4's gates here, which also confirm the report shows what the task review would read: RED output before GREEN, or the exception logged (you check presence; the branch reviewer judges substance). All passing: no task review and no fix loop; append its completion line (step 6), the task then completed branch review only, the branch reviewer its first review. A concern, a failed gate or a `plan changed` re-run sends it to step 3, the loop running from there.
 
 **Deviations.** The implementer logs each departure from advisory content in its Decision Log (what, why, blast radius); a deferred item is its call, logged where it departs from advisory content. It implements what binds, reading the plan's spec pointer as `skills/subagent-driven-development/references/review-terms.md` § What binds in a spec states, with its task's Contract and Acceptance and the plan's inter-task contracts; changing or contradicting it is BLOCKED (above), with the evidence and a proposed correction, never improvised. Stop-and-ask triggers, for the implementer and for you: insufficient context, an unresolved trade-off, conflicting findings, ambiguity above task authority. Plan ambiguity is never license.
 

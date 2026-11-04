@@ -194,8 +194,10 @@ round 1 by its number, so one recorded degraded could drop all three for
 the campaign, as a closing review found on 2026-11-03. A degraded round
 never counts toward convergence, so a next round always follows and can
 run them; only what no returned seat ran moves, since a returned seat's
-goal check or lens was read. (Basis: judgment, an agent's proposal
-accepted by the maintainer.)
+goal check or lens was read. A further degraded round hands it on the
+same way. (Basis: judgment, an agent's proposal accepted by the
+maintainer; judgment, an agent's call the maintainer has not ruled on,
+for the further round.)
 
 ### Stop rule and cap
 
