@@ -18,6 +18,8 @@ As soon as the dispatch reports the implementer's agent identity, record `Task <
   - A binding item reported wrong: rule that it stands, with your reason, where the evidence does not show it wrong; otherwise a correction, proposed or yours. The ruling passes `skills/redteaming/references/flip-paths.md` § The containment test: confirm and record a contained one as that section states, then re-dispatch; any other is a decision ask carrying the proposal.
   - A premise finding: the task waits for the operator's ruling.
 
+Where the cause leaves the task waiting on the operator (a decision ask, a premise finding), append `Task <N>: BLOCKED — <what it waits on>` as you raise it, the line the resume rule reads as that wait; the re-dispatch after the answer appends step 1's line, which ends it.
+
 Never ignore an escalation or make the same model retry without changes. Whatever the status, route what the report voices beyond its work by `crucible:subagent-driven-development § What a report voices`.
 
 **A marked task** (dispatched, its plan section carrying `Review: branch only`) reporting DONE with no concern runs step 4's gates here, which also confirm the report shows what the task review would read: RED output before GREEN, or the exception logged (you check presence; the branch reviewer judges substance). All passing: no task review and no fix loop; append its completion line (step 6), the task then completed branch review only, the branch reviewer its first review. A concern or a failed gate sends it to step 3, the loop running from there.
@@ -26,7 +28,7 @@ Never ignore an escalation or make the same model retry without changes. Whateve
 
 ### 3. Review the task
 
-One fresh-context reviewer per task, a task completed branch review only aside (step 2): never skip it; implementer self-review never replaces it. Dispatch instrument `task-reviewer`, its card filled, its base the BASE you recorded; the status check applies (`crucible:subagent-driven-development § Rules every route shares`). Its template ([task-reviewer-prompt.md](../task-reviewer-prompt.md)) requires all four verdicts: intent, scope, deviation audit (ruling on each concern the implementer reported), quality. Never accept a review missing a verdict; an unruled concern is one.
+One fresh-context reviewer per task, a task completed branch review only aside (step 2): never skip it; implementer self-review never replaces it. Dispatch instrument `task-reviewer`, its card filled, its base the BASE you recorded; the status check applies (`crucible:subagent-driven-development § Rules every route shares`). Its template ([task-reviewer-prompt.md](../task-reviewer-prompt.md)) requires all four verdicts: intent, scope, deviation audit (ruling on each concern the implementer reported), quality. Never accept a review missing a verdict (`crucible:subagent-driven-development § Rules every route shares`); an unruled concern is one.
 
 Severities: BLOCKER / MAJOR / MINOR. A failed intent, scope or deviation-audit verdict enters the fix loop whatever the finding's severity label; quality findings enter by severity: BLOCKER/MAJOR in, MINOR to the ledger.
 

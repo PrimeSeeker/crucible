@@ -31,7 +31,7 @@ Where the spec's preamble (on the lane, the note's) carries an `Umbrella:` line,
 3. **After a wave** that leaves no BLOCKER or MAJOR open, each fixed and re-reviewed or dismissed by ruling, run a full-scope pass: scoped re-reviews verify waves, only a full-scope read clears the branch. Skip it where nothing changed since the last full-scope pass: that pass left no BLOCKER or MAJOR open, or a ruling dismissed every one it raised.
 4. **Cap: 3 waves**; a dispute's ruling adds no wave. A BLOCKER or MAJOR that would need a fourth is BLOCKED: escalate it to the operator as a decision ask, and enter the answer in `brainstorm-decisions.md` (status: `crucible:brainstorming` § Workspace provisioning). Where the cap is spent, the operator's answer or ruling is the escalation's answer and may open the wave.
 
-A review missing a verdict (a pass that leaves a lead it was handed unruled, a re-review that leaves a fix-report concern unruled) is treated as `crucible:subagent-driven-development § The Task Loop` treats one.
+A review missing a verdict (a pass that leaves a lead it was handed unruled, a re-review that leaves a fix-report concern unruled) takes `crucible:subagent-driven-development § Rules every route shares`' step.
 
 **What opens a wave**, each counted against the cap:
 

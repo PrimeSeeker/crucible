@@ -47,11 +47,11 @@ Instrument cards name their seats' roles. The seats you compose:
 Run each task through this loop, in plan order: when Setup is done, read `skills/subagent-driven-development/references/task-loop.md` in full. Three fix waves at most per task. Findings the third wave leaves open stop the task and are a decision ask, recorded open under `## Adjudication rulings` with the answer beside it; further waves are not an answer. The options:
 - park a finding, with its reason: a `Task <N>: parked — <finding> — ruling: <the answer>` line per finding, then the completion line with its parked count;
 - block: `Task <N>: BLOCKED — <the ruling>`, and execution stops at that task until the operator rules again;
-- another approach: a plan change (§ Plan changes mid-execution) or a revert (§ Drift found after the fact), whose re-run starts at wave 1.
+- another approach: a plan change (§ Plan changes mid-execution) or a revert (§ Drift found after the fact), whose re-run starts at wave 1. A plan change, once it lands, appends `Task <N>: plan changed — <the ruling>`, which closes the open findings: run the task again from step 1 on the changed plan, its BASE kept and the findings and its earlier report in the implementer's context, so its review re-grades them.
 
 ## Rules every route shares
 
-These hold in the task loop, in the branch review `crucible:requesting-code-review` runs, and on the very-small lane. The dispatch composition's § Shared-tree rules bind every seat you start; the status check's windows are the review seats (task reviewer, re-reviewer, adjudicator, snapshot-blessing agent, branch reviewer), and a replacement seat reads the first seat's file.
+These hold in the task loop, in the branch review `crucible:requesting-code-review` runs, and on the very-small lane. The dispatch composition's § Shared-tree rules bind every seat you start; the status check's windows are the review seats (task reviewer, re-reviewer, adjudicator, snapshot-blessing agent, branch reviewer), and a replacement seat reads the first seat's file. A review missing a verdict goes back to its seat: resume it for that verdict; where the host cannot resume or the verdict is still missing, start a replacement seat. You never rule on it yourself.
 
 ### Disputes and adjudication
 
