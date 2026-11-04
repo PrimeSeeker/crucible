@@ -101,7 +101,8 @@ documentation does not list the variable; should the host drop it,
 sessions get the router again.
 
 **A failure is visible and never breaks the session.** Any problem — a
-missing or unreadable router or host-map file, a missing or unknown host
+missing or unreadable router or host-map file in a session that loads them,
+a missing or unknown host
 argument, a write that fails — means one `crucible: router not loaded:
 <reason>` line on stderr, no other, and exit 1. Every failure found before
 the document is written leaves stdout empty; that is required, not tidy,

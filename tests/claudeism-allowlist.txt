@@ -75,4 +75,4 @@
 3 | claude | hooks/README.md | hook doc: the host half of every two-runtime contrast
 3 | claude-plugin-root | hooks/README.md | registration doc: the plugin-root placeholder that host's registration file actually spells (Claude registration and compatibility docs may name it)
 3 | bash-script-entrypoint | hooks/README.md | registration doc: the hook command that host's registration file spells, `bash` running the hook script at that host's plugin-root placeholder
-3 | claude | hooks/session-start | hook script: `claude-code`, the host argument naming the one host this script has an arm for
+3 | claude | hooks/session-start | hook script: `claude-code`, the host argument naming the one host this script has an arm for; `claude -p`, its comment's example of an unattended session
