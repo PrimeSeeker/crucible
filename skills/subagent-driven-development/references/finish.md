@@ -10,6 +10,7 @@
    - every improvement you adopted, named as a lightly held change
    - each ruling or requested change a fixer declined, as an ask
    - the lane's departures and the record-check gaps
+   - each wave whose ledger line reads `full pass skipped`, its re-review's `Rule or behavior change` line having read None
    - after loop activity that followed an earlier answer, what changed since
    - then the work left open, each item with its source and your proposal to keep or drop it, and why: parked BLOCKER/MAJOR findings with their rulings, premise asks still unruled, `unstated break` asks still open, deferred minors and leads (a RECOMMENDED lead you did not adopt, with its verdict; where a cleanup wave ran, why it left each one), and, with your disposition, the `## Questions` items not listed above (declined improvements and what earlier phases carried among them)
    - where the project's instructions name no home for open items and something is left open, an ask where it goes or whether to drop it, offering to record the answer (`skills/redteaming/references/formats.md` § Open items)

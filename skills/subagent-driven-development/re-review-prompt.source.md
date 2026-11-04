@@ -97,3 +97,7 @@ Issues entirely outside the fix diff; the controller ledgers these for the branc
 ### Verdict
 
 **Fix wave:** [All listed findings addressed, no new BLOCKER/MAJOR breakage | Findings remain open] — list the open ones.
+
+In a branch-review wave, the wave verdict also carries:
+
+**Rule or behavior change:** [None | what the fix diff adds or changes]. None means a reader or the code must do the same as before: wording, a citation, or a statement brought in line with a rule already in force.
