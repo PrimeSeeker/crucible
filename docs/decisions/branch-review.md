@@ -373,13 +373,17 @@ accepted by the maintainer.)
 
 ## Rejected
 
-- **A single fix wave** for the branch, upstream's rule (§ Why).
+- **A single fix wave** for the branch, upstream's rule: fixes unmask
+  problems and drift, and only a full-scope read clears the branch (§ Why).
 - **Minors opening waves by themselves**: the one cleanup wave per
   branch is the controller's call, never a minor's (§ Why).
 - **An adopted improvement riding a wave as a finding**: the fixer's
   contract is to confirm a defect, and an improvement has none (§ Why).
-- **A review-package script** (§ Why).
-- **Per-finding fixers** (§ Why).
+- **A review-package script**: 173 lines for what a reviewer with a shell
+  of its own runs in a few git commands (§ Why).
+- **Per-finding fixers**: each rebuilds context and re-runs suites, and in
+  a session upstream reports, a final review's fix wave cost more than all
+  its tasks combined (§ Why).
 
 ## Changes
 

@@ -431,22 +431,31 @@ judgment, accepted by the maintainer, for the test.)
 
 ## Rejected
 
-- **A stuck trigger** escalating a seat past the default role, for now
-  (§ Why).
+- **A stuck trigger** escalating a seat past the default role, for now:
+  the maintainer judged late waves generally not stuck, just slowly
+  mining residual issues (§ Why).
 - **Repairing or reverting undisclosed binding drift without the
-  operator's answer** (§ Why).
+  operator's answer**: the automatic revert never ran in the audit's runs,
+  and the choice between revert and repair had been left open (§ Why).
 - **Five fix waves, a fresh implementer at waves 4–5 and the breaker**,
-  retired 2026-11-02 (§ Why).
+  retired 2026-11-02: the breaker never ran in the audit's runs, and a
+  guard that never ran keeps only its trigger (§ Why).
 - **Severity labels gating a failed intent, scope or deviation-audit
-  verdict** (§ Why).
-- **Execution with no subagents**, upstream's executing-plans fallback
+  verdict**: a failed one is a gap whatever label the reviewer staked
   (§ Why).
+- **Execution with no subagents**, upstream's executing-plans fallback:
+  both supported hosts dispatch subagents, and the review gates need a
+  fresh reviewer seat (§ Why).
 - **A marked task's concerns as leads alone, or ruled on by the
-  controller** (§ Why).
-- **Autonomous snapshot blessing** by the implementer or the controller
+  controller**: the branch review runs too late for what a later task
+  builds on, and the controller's part is a presence check, not a ruling
   (§ Why).
+- **Autonomous snapshot blessing** by the implementer or the controller:
+  an implementer could bless its own result, where a blind agent judges
+  the change without the author's rationale (§ Why).
 - **Cannot-verify items for the controller**, the rule from 2026-10-07
-  to 2026-11-02 (§ Why).
+  to 2026-11-02: the reviewer checks such a requirement itself, in the
+  code it needs, and its verdicts carry the result (§ Why).
 
 ## Changes
 

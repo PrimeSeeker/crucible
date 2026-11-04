@@ -305,11 +305,17 @@ directory, and `plan` is a value of their `phase` selector.
 
 ## Rejected
 
-- **Code in plans**: bodies, test code, shell sequences, TDD step scripts,
-  commit messages (§ Why).
-- **A multi-round plan campaign** (§ Why).
-- **An approval gate before the plan phase** (§ Why).
-- **Parallelizable tiers and test-namespace allocation** (§ Why).
+- **Code in plans**, bodies, test code, shell sequences, TDD step scripts
+  and commit messages: a strong implementer must re-read such detail and
+  may wrongly treat it as binding (§ Why).
+- **A multi-round plan campaign**: most late findings came from the
+  campaign's own edits, and the design content sits in the spec, which
+  its own campaign reviews (§ Why).
+- **An approval gate before the plan phase**: the phase is autonomous by
+  default, the maintainer reporting over 95% "proceed" (§ Why).
+- **Parallelizable tiers and test-namespace allocation**: they served
+  parallel implementers, which SDD forbids since implementers share the
+  tree (§ Why).
 - **A plan-phase check of each task's load**: a seat duty for a saving
   nobody has measured (§ Why, Task sizing).
 

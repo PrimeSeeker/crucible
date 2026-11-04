@@ -161,18 +161,24 @@ umbrella's D4 and this change's spec.)
 
 ## Rejected
 
-- **Adjudicating only at the cap**, upstream's rule (§ Why).
+- **Adjudicating only at the cap**, upstream's rule: a wrong finding cost
+  up to five waves or landed as an edit made only to comply (§ Why).
 - **Every dispute to a fresh adjudicator**, the rule from 2026-10-07 to
-  2026-11-02 (§ Why).
+  2026-11-02: the audit found it had run 5 times and upheld nothing, and
+  the independent read stays where the controller's lean would cost most
+  (§ Why).
 - **The controller ruling on findings against its own diff**, or parking
-  a BLOCKER or MAJOR on its own ruling (§ Why).
+  a BLOCKER or MAJOR on its own ruling: it would be grading itself, in a
+  ruling silent to an operator who does not read diffs (§ Why).
 - **Asking the operator which governs** on every plan conflict: only a
   design judgment, or a change to binding content the containment test
   does not find contained, reaches the operator (§ Why).
 - **An operator ask for every ruling touching a mark**, the rule until
-  2026-10-28 (§ Why).
+  2026-10-28: the containment test decides instead, the controller
+  confirming what is contained (§ Why).
 - **A pre-flight plan-conflict scan** before Task 1, the rule until
-  2026-11-02 (§ Why).
+  2026-11-02: conflicts that emerge from implementation are the review
+  loop's already (§ Why).
 
 ## Changes
 

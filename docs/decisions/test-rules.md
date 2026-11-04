@@ -167,13 +167,22 @@ preference.)
 
 ## Rejected
 
-- **Read-only test files or lockdown hooks** (§ Why).
-- **A mutation gate**, mandatory or declared per repository (§ Why).
-- **An absence test as a removal's failing step** (§ Why).
-- **Every deleted test a finding**, whatever its justification (§ Why).
-- **Every removed assertion a finding**, whatever its justification (§ Why).
+- **Read-only test files or lockdown hooks**: too hard a constraint for
+  strong models, and persistent agents defeat it anyway (§ Why).
+- **A mutation gate**, mandatory or declared per repository: the mandate
+  produced only waiver boilerplate where no tooling existed, and no
+  repository checked ever declared a gate (§ Why).
+- **An absence test as a removal's failing step**: it is written only to
+  fail first and is kept forever, and the test guide counts it a warning
+  sign (§ Why).
+- **Every deleted test a finding**, whatever its justification: keeping
+  an obsolete test became the cheapest compliant move (§ Why).
+- **Every removed assertion a finding**, whatever its justification: the
+  test guide's own remedy for an assertion on a mock failed review, while
+  deleting the whole test passed (§ Why).
 - **Every loosened test a finding**, or one loosened under the warning
-  sign alone (§ Why).
+  sign alone: deleting the assertion passed where loosening it failed,
+  and the warning sign alone left a relaxed requirement a finding (§ Why).
 
 ## What a project may change
 
