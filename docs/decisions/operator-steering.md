@@ -117,15 +117,18 @@ and a plan-phase record calling a repair complete that had missed a site.
 On audit-corrections (2026-10-30) the terminal passes and their second
 reads found nine statements in the controller's records leaning toward
 closure. On backlog batch 8 (2026-11-05), a very-small lane, the branch
-review caught three overstatements in the controller's account, and the
-router's wording had narrowed a rule beyond what the maintainer had been
-told until the close readout said so. Independent reads caught each; no
-search has looked for a decision that went wrong because of one. A change
+review's questions caught three overstatements in the controller's account;
+the router's wording had also
+narrowed a rule beyond what the maintainer had been told, which the controller
+itself said at the close readout. No search has looked for a decision that
+went wrong because of any of these. A change
 can also reach the records without reaching the maintainer: on arrangements
 (2026-10-29) round-0 fixes made the campaign stop the controller's judgment
 where the approved spec had made it the operator's to confirm, and the
 change was never put to the maintainer, who has since confirmed it
-(`docs/decisions/spec-campaign.md`). (Basis: measured.)
+(`docs/decisions/spec-campaign.md`). (Basis: measured, by the reviews'
+reports, for the earlier features; the controller's own account for batch 8,
+whose reports were not kept.)
 
 The maintainer's view on 2026-10-28 was that the lean is known and expected
 and so far not a problem, and that framing both sides is worth examining
