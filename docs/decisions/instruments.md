@@ -191,6 +191,57 @@ fresh agents, such as a skill evaluation, goes back to the controller
 (`docs/decisions/task-loop.md`). (Basis: judgment, accepted by the
 maintainer; external, for Codex's description of `ultra`.)
 
+Crucible's seat agents carry no tool limits, and Claude Code lets a
+subagent dispatch its own, up to three layers below the main conversation
+by default since v2.1.219 (its subagent docs, read 2026-10-27), so a seat
+can nest dispatches, which the templates ban in prose. The maintainer
+declined a tool-level ban, doubting it would be used unnecessarily.
+(Basis: external, for the host; the maintainer's preference, for the
+ban.)
+
+### What seats read
+
+The maintainer observed that reviewers seemed more freeform in their
+research than the read scopes suggest (2026-10-28), and the transcripts
+on disk bear it out (read 2026-11-06, 48 sessions, the shell's reading
+commands counted as well as the read tool). The share of seats touching
+a file neither the dispatch nor a file it names mentions, and those
+distinct files per seat, on the lenient count, were: redteam seats 77%,
+3.4; branch reviewers 94%, 7.3; task reviewers 82%, 2.0; re-reviewers 65%,
+1.3; terminal passes 62%, 2.9; blind verifiers 29%, 0.8. Counting only
+what a named file cites as reached puts redteam seats at 96%. The branch
+reviewer's template allows such reads of code; the redteam seat's says
+to read only what its dispatch enumerates and to scope every search to
+it, and on the read tool alone 23% of those seats went outside it.
+
+Those reads carry findings: of the redteam seats' 687 BLOCKERs and MAJORs,
+8% on the lenient count and 32% on the strict one mention a file only
+such a read reached, and of their MINORs 8% and 27%. Mention is not
+causation, and matching by file name has false positives. The boundaries
+that matter hold: 3 of 2,438 redteam reads through the read tool opened
+campaign records, 2 of them named; no seat's path or command named a
+session transcript under the host's project records, though 102 seats
+read tool results of their own and 11 touched memory files. So the reach is mostly
+to project code, what checking a claim needs, and no scope tightens. The
+scope sentence stays stricter than what seats do: seats do not follow it
+now, so rewording it would change little. (Basis: measured, by script,
+with no read of what those files held; judgment, accepted by the
+maintainer.)
+
+The methods the audit of the hypothesis-specs umbrella used
+(`docs/decisions/evidence-and-findings.md`) were mostly taken up since:
+an umbrella's closing review runs a walkthrough, fidelity to the umbrella's
+Intent and the seams between children
+(`skills/brainstorming/references/umbrellas.md` § Closing review), and a
+spec campaign's round 1 the goal check and the outside-the-frame lens
+(`docs/decisions/spec-campaign.md`). A feature outside an umbrella gets no
+walkthrough, and the read for design smells has no seat of its own. What
+each method caught was not recounted: the audit's own count sits in a
+report kept only in session transcripts, left unread since transcripts can
+hold secrets. An agent's recommendation to close the question as overtaken,
+which the maintainer accepted. (Basis: judgment, accepted by the
+maintainer.)
+
 ### Report files
 
 On 2026-08-21 report writes were made explicit: each template's read-only
@@ -352,9 +403,13 @@ judgment, accepted by the maintainer.)
   branch review, in place of its share; and a wave's findings can come from
   several reports. A close call, put to the maintainer as one: an agent's
   recommendation, which the maintainer accepted.
+- **Tightening the seats' read scopes**: reads past them carry findings,
+  and they reach project code rather than round records (§ What seats
+  read).
 
 ## Changes
 
+- 2026-11-06: seats' reads past their scopes are measured and left as they are, since those reads carry findings and the boundaries that matter hold; the audit's methods question closes as overtaken; a seat's ability to nest, and the declined tool-level ban, move here from the deleted backlog item.
 - 2026-11-05: passing findings by reference is rejected on measured figures, and the re-reviewers' report writes since the card change are recorded.
 - 2026-11-04: a report the controller saves to an appended report is appended, because a whole-file save would destroy the earlier sections.
 - 2026-11-04: the confirmation of a report file covers an appended report, which holds that seat's section, because an earlier seat's file on disk would pass a missing report.

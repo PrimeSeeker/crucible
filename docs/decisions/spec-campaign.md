@@ -120,7 +120,7 @@ the risk.)
 
 The revisit came on 2026-11-04: a seat on another host runs only where
 the operator asks, and the risk stays accepted for a panel with none.
-The recorded yield is thin and nobody has counted it: one BLOCKER, a
+The recorded yield was thin and uncounted at the time: one BLOCKER, a
 fatal flaw in the option Claude had picked; one MAJOR another seat also
 raised, backed by an executed probe; one clean return after a short
 read; one audit with nothing the others missed and about half its
@@ -149,6 +149,18 @@ figure is a judgment, generous beside that run, and the one hung run on
 record was under a fresh Codex home on Windows. (Basis: measured, one
 run; judgment, an agent's call the maintainer has not ruled on, for the
 figure.)
+
+A count on 2026-11-06, with stage held fixed: of 179 Codex session logs,
+24 named a round and had findings that could be parsed, and 23 had seats
+on this host in the same feature, phase and round. In a spec's round 1
+(14 pairs) the Codex seat staked 1.36 BLOCKERs and MAJORs against its
+peers' mean of 1.94, and 4.29 MINORs against 5.61; it staked more
+BLOCKERs and MAJORs in 3 pairs, fewer in 9 and as many in 2. In round 2 (5
+pairs) it staked 1.00 against 0.50, and 0.40 MINORs against 5.60. Other
+cells hold 2 pairs or fewer. These count staked severities, not whether
+a finding held or only that seat raised it, which is what the seat is
+for, so they neither support nor settle its place. (Basis: measured, on
+thin data.)
 
 ### Right-sizing
 
@@ -257,9 +269,51 @@ campaign that wrote these rules, piloting the forecast lines, its
 terminal pass flagged `CONCLUSION-CHANGING` a round-2 stop resting on
 the controller's reading of one seat's forecast, and the operator ran a
 third round. (Basis: judgment, accepted by the
-maintainer; a single incident, 2026-10-29.) Whether a multi-round
-campaign is net-positive at all, and what would settle the cap, stay
-open in `docs/backlog/campaign-early-stop-investigation.md`.
+maintainer; a single incident, 2026-10-29.) What would settle the cap
+stays open in `docs/backlog/campaign-early-stop-investigation.md`.
+
+Whether a multi-round campaign is net-positive was read from the
+transcripts on disk on 2026-11-06: 48 sessions and 2,476 seats, 6 of the
+sessions crucible's own and 42 one other project's, and 65 features with
+a spec campaign, 19 of them crucible's own. It is not shown net-positive,
+and this design cannot show it either way. The severities are what seats
+staked, never adjudicated, and all of that project's feature work on
+crucible predates the overturn question (its last such session ended
+2026-10-23), so the stop trigger's accuracy on real code stays untested.
+
+Over rounds 1 to 4, that project's MAJORs per seat were 2.14, 1.44, 1.18
+and 1.38, and crucible's own stayed flat at 2.10, 2.15, 2.10 and 2.50.
+Across 44 features with a branch review, the first full-scope pass raised
+a mean of 0.57 BLOCKER or MAJOR after 1 or 2 panel rounds (23 features)
+and 0.19 after 3 or more (21); the bootstrap 95% interval of the
+difference runs from −0.07 to 0.95. Crucible's own runs carry almost all
+of the gap, 1.00 against 0.14; on the other project it was 0.29 against
+0.21. Median campaign cost, in input-equivalent tokens at the weights of
+`docs/decisions/routes.md`, was 2.6, 4.2, 8.6, 9.8 and 15.2 million for 1
+to 5 panel rounds, while a fix wave after the first pass cost 1.04
+million in seats at the median and 2.00 at the mean, the controller's
+share on top. So in branch-review cost alone, rounds 3 and up, at about 5
+to 6 million more, do not repay about 0.4 fewer serious findings, nor the
+interval's top of 0.95 at a mean wave. That is not a counterfactual:
+rounds were not assigned, and
+longer campaigns ran on bigger and harder specs (median 23k to 52k
+characters, first-round BLOCKERs and MAJORs per seat 1.37, 1.34, 1.48,
+2.75 and 5.40 by eventual rounds). Nor does wave cost price what a catch
+before code is worth.
+
+As a proxy for an overturn after code, git shows which features committed
+to their spec with an author date after their first implementer started,
+author date since a rebase resets the committer's. Of 60 features, 42
+could be located: 10 had such commits, and 7 of those touched Decisions
+or Intent, with at most 15 lines in Decisions, at every round count from
+1 to 4 and with no trend. This sees only changes written back into the
+spec and cannot tell a rewording from an overturn without reading the
+edit. Deferral markers showed no association with later rounds' yield
+(1.41, 1.23 and 1.39 BLOCKERs and MAJORs per seat with none, 1 to 3 and 4
+or more markers), and fix altitude could not be measured by script. Told
+this, the maintainer accepted an agent's recommendation to change neither
+the rule nor the cap. (Basis: measured, on staked counts and with
+selection; judgment, accepted by the maintainer.)
 
 The hypothesis-specs umbrella asked that a seat be able to say the spec,
 or the goal behind it, is wrong without costing a fix wave, so a premise
@@ -343,9 +397,14 @@ trim.)
   growth: the re-seat stays the controller's judgment on growth
   (§ Why).
 - **A package-wide suite run from a campaign seat** (§ Why).
+- **An outcome record for stopped campaigns**, a line at each finish on
+  whether a mechanism was overturned after code: git's author dates find
+  the candidates on demand (§ Why), and reading those edits answers it
+  with no step added to every feature.
 
 ## Changes
 
+- 2026-11-06: the rule and the cap stay after a read of the transcripts on disk that did not show multi-round campaigns net-positive and cannot show the opposite; only what would settle the cap stays open; an outcome record is rejected; the seat on another host gains a count with stage held fixed.
 - 2026-11-04: a round 1 recorded degraded hands on what no returned seat ran, the goal check, the outside-the-frame lens or the swap, to the next round, a degraded one handing it on the same way, since all three were tied to round 1 by its number.
 - 2026-11-04: the measured run's effort is stated, since its miss would otherwise read as one at the recommended level.
 - 2026-11-04: the 30 minutes' basis says the maintainer has not ruled on the figure, since the plain label reads as the maintainer's acceptance.
