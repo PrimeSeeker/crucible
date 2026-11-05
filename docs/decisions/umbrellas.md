@@ -342,6 +342,7 @@ maintainer.)
 
 ## Changes
 
+- 2026-11-05: the closing review's controller also reads the host's dispatch reference; because the review composes its seats from the dispatch composition and nothing sent it to the reference.
 - 2026-11-05: three residuals are accepted as they are, an unreviewed `landed` mark, an approval-only umbrella's workspace and a pending open-items ask with no carrier, since each costs little and a fix would add text for a rare case; a late-marking feature's base merge after the branch review stays too.
 - 2026-11-05: a closing-review seat's prompt carries its report form, since the sections copied into it send a seat to a report format nothing gave.
 - 2026-11-04: the Children list ends on a line of text, because a last entry's mark conflicts in git with an appended child; a seat finds a feature's own entry by its feature folder's slug, which nothing stated.

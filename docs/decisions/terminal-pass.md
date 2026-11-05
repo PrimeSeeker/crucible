@@ -33,8 +33,9 @@ overturn question, from
 carry a location as every finding does
 (`docs/decisions/instruments.md`;
 `docs/decisions/evidence-and-findings.md`). It reports counted record corrections,
-and only a correction flagged `CONCLUSION-CHANGING` reaches the operator
-as a decision ask. Its report closes with a bias line, whether its
+and only a correction, or a mismatch in its Notes, flagged
+`CONCLUSION-CHANGING` reaches the operator as a decision ask. Its
+corrections close with a bias line, whether its
 corrections share a direction favoring the record's author, a decision
 ask only where the pass states the record is materially misleading. Its
 tail is bounded: in the spec campaign one further fix wave, taking what
@@ -108,7 +109,7 @@ approval the artifact states against the artifact and the records of
 its change. It would have caught the first, and the second as far as
 the records go: a change recorded in a readout passes whether or not
 that readout reached the maintainer, and nothing checks delivery
-(`docs/backlog/decision-ask-framing.md`). The same audit found doubts
+(`docs/decisions/operator-steering.md`). The same audit found doubts
 stopping at the controller, so the pass also checks that each carried
 question reaches the readout in its seat's words, reading those
 questions alone of the seat reports, and that a call left to the

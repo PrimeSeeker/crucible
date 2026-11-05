@@ -1,4 +1,4 @@
-# Re-audit the mechanisms after the retirement children
+# Re-audit the mechanisms after the retirement children, and recalibrate
 
 ## Observation
 
@@ -23,6 +23,16 @@
   and the verifier's eight runs in
   `docs/decisions/fix-verification-and-merge.md`.
 
+- Crucible's calibrations (four or five seats in a large new spec's first
+  round, the cap of four rounds, plan sizes) come from one project, and
+  were meant to be re-derived before reuse elsewhere; the README says where
+  they come from. The maintainer's estimate is that redteaming works, while
+  the specific parameters are unclear. A/B runs on properly large tasks are
+  too expensive: one run can burn about 5% of a weekly usage limit. The
+  outcome review found no detectable difference
+  (`docs/decisions/publication.md`), and a recount of campaign records left
+  the cap unchanged (`campaign-early-stop-investigation.md`).
+
 ## Follow-up
 
 Once a few features on real code have run on 0.13.0 or later, repeat the
@@ -34,3 +44,8 @@ timestamps: a file's date can be recent on an old run.
 
 In the same transcripts, look for controllers re-reading a moved step's
 reference after compaction before acting on that step.
+
+From the same runs, read seat counts, rounds and plan sizes against the
+calibrations and re-derive what they support, labelling results from one
+project as one project's. A second project is better evidence, not a
+condition.

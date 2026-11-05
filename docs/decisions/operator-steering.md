@@ -14,7 +14,8 @@ rule).
 plan, code or a diff, none is withheld, and a decision ask may quote the
 few lines it turns on. The controller makes technical calls itself and
 reports them; design judgments reach the operator as plain-language
-decision asks with a recommendation, and a message carrying anything
+decision asks with a recommendation and the strongest case against it,
+and a message carrying anything
 else puts them last, in a block of their own (`crucible:using-crucible
 § Decision asks`), which every controller reads. The README states the stance to newcomers (`README.md` § Who
 it is for). There is no profile switch: the router's precedence line is
@@ -107,8 +108,45 @@ bodies among the structural failures it fixes, so every readout now
 puts them in a block after its body. (Basis: judgment, accepted by the
 maintainer.)
 
+### The case against a recommendation
+
+A controller's readouts and asks lean toward a coherent account and toward
+its own recommendations. On umbrella-specs (2026-10-28) a terminal pass's
+second read found three asks framed one-sidedly toward the chosen option
+and a plan-phase record calling a repair complete that had missed a site.
+On audit-corrections (2026-10-30) the terminal passes and their second
+reads found nine statements in the controller's records leaning toward
+closure. On backlog batch 8 (2026-11-05), a very-small lane, the branch
+review caught three overstatements in the controller's account, and the
+router's wording had narrowed a rule beyond what the maintainer had been
+told until the close readout said so. Independent reads caught each; no
+search has looked for a decision that went wrong because of one. A change
+can also reach the records without reaching the maintainer: on arrangements
+(2026-10-29) round-0 fixes made the campaign stop the controller's judgment
+where the approved spec had made it the operator's to confirm, and the
+change was never put to the maintainer, who has since confirmed it
+(`docs/decisions/spec-campaign.md`). (Basis: measured.)
+
+The maintainer's view on 2026-10-28 was that the lean is known and expected
+and so far not a problem, and that framing both sides is worth examining
+but will not remove every bias and may cause decision fatigue. On
+2026-11-05 the controller recommended closing all three candidates; the
+maintainer chose this clause alone, "for now": a trial, with no review
+date. It costs six words in text every session loads, and reaches the
+very-small lane, which has no terminal pass to check its asks. It has no
+wording test: the failure is on record and the clause is a trial, the
+controller's call, which the maintainer accepted. (Basis: the maintainer's
+preference, over the controller's recommendation, for the clause; judgment,
+accepted by the maintainer, for skipping the test.)
+
 ## Rejected
 
+- **An independent read of the controller's records before each round
+  readout**: a dispatch per round, beside the terminal pass and its second
+  read. The maintainer took the clause instead (§ Why).
+- **A check that a readout reached the operator**: no design exists, and the
+  maintainer took the clause instead (§ Why). The terminal pass's check still
+  stops at the records (`docs/decisions/terminal-pass.md`).
 - **A human checkpoint between tasks**: a design defect (§ Why).
 - **An analyst profile switch**, or per-site "overridable" marks: the
   precedence line already does it (§ Why).
@@ -129,6 +167,7 @@ shows them; nothing is ever withheld.
 
 ## Changes
 
+- 2026-11-05: a decision ask also gives the strongest case against its recommendation, as a trial on the maintainer's choice; because the lean toward a controller's own recommendations recurred and independent reads do not reach every ask.
 - 2026-11-05: decision asks coming last in a block of their own moved to the router's § Decision asks, reaching any message to the operator, and SDD's close readout keeps only "in a final block", since the campaign gate, the umbrella landing and the closing review reached the rule only through a redteaming reference.
 - 2026-11-02: the design digest retired, with its `digest.md`, its
   format with its `## Decisions`, `## Positions flipped` and

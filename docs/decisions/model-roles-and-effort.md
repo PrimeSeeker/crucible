@@ -31,7 +31,7 @@ better. The adjudicator, the
 redteam panel seats and passes, and the branch reviewer run on the
 default role, never lowered to save cost; the blind verifier runs on the
 bounded role, never lower; the snapshot-blessing agent runs on the
-bounded role or better. The default role is stated once, in the dispatch composition's § Models and effort; an instrument's slot card names only its seat's departure from it in its Model line, and SDD's Models section the seats SDD composes (`skills/subagent-driven-development/references/dispatch-composition.md` § Models and effort; the seven `*.slots.md` cards; `crucible:subagent-driven-development
+bounded role or better. The default role is stated once, in the dispatch composition's § Models and effort; an instrument's slot card names only its seat's departure from it, or the branch reviewer's floor, in its Model line, and SDD's Models section the seats SDD composes (`skills/subagent-driven-development/references/dispatch-composition.md` § Models and effort; the seven `*.slots.md` cards; `crucible:subagent-driven-development
 § Models`; `crucible:redteaming § Panels`;
 `crucible:requesting-code-review § Dispatch the branch reviewer`).
 
@@ -70,9 +70,8 @@ running at the session's effort on the default role and at `medium` on the
 bounded role (§ Why, Effort).
 
 A change to the roles, the seats' assignments or the alternate role's
-triggers edits this record. A model release that keeps them edits a host
-map's Model roles entry, and on Claude Code perhaps the generator's alias
-(`docs/dual-runtime.md` § Model floor and effort policy).
+triggers edits this record. A model release that keeps them follows
+`docs/dual-runtime.md` § Model floor and effort policy.
 
 ## Why
 

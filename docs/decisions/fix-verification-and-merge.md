@@ -2,7 +2,7 @@
 
 ## Decision
 
-**Merge from the indexes.** Every seat report opens with `## Index`, one
+**Merge from the indexes.** Every seat report carries `## Index`, one
 line per finding: id, severity, a one-sentence claim, an evidence
 pointer. The controller merges from the indexes and opens a finding's
 body only to author its fix, to rule on a contested finding or a
@@ -51,7 +51,7 @@ its landing's open-items step. A repeat of one closes as its duplicate.
 A MINOR the controller finds wrong or outside the finding scope stays
 rejected (`crucible:redteaming § Merge and finding hygiene`).
 
-**Blind verification after every wave.** After every apply, MINOR-only
+**Blind verification after every wave.** After every apply but round 0's, MINOR-only
 waves included, the blind verifier receives the fix list and the diff,
 never the rationale, the seat reports, the readout or the artifact's
 binding content. It verdicts every item landed, not landed or partly
@@ -78,8 +78,9 @@ keeping one in the terminal-pass record
 **Readout coverage and the trace.** The delivered readout names every
 rejected, parked or partly-applied BLOCKER or MAJOR with its ruling, in
 words; the controller checks that coverage against the merged list
-before recording the readout, and nothing checks it afterwards. The
-delivered readout carries no merged-list, seat-finding or question id.
+before recording the readout, and nothing checks it afterwards. Beyond its
+quoted questions, the delivered readout carries no merged-list,
+seat-finding or question id.
 Those go in the record-only trace after it: in a numbered round record
 and the plan record, each decision ask's merged-list ids, which the
 terminal pass reads (`skills/redteaming/references/round-record.md` § Round

@@ -32,7 +32,12 @@ committed text).
 **The outcome review.** Evidence for the README's claims comes from a
 retrospective outcome review whose method was fixed before its data was
 read. How and when crucible's calibrations are re-derived is open in
-`docs/backlog/outcome-evidence.md`.
+`docs/backlog/skill-rewrite-reaudit.md`.
+
+**Hosts and scope.** There is no supported host range: the README names
+the versions crucible was tested on. Host regressions are found through
+use and issues, with no probe set. Crucible ships as one plugin, with no
+core split from optional profiles.
 
 **Contributions: issues only, for now.** Reports and suggestions go to
 GitHub issues, and pull requests are not accepted yet. An accepted report
@@ -87,11 +92,28 @@ claims. (Basis: the maintainer's preference.)
 It ran on 2026-10-17 over one project's history, comparing escaped
 defects (later fixes and reverts touching a feature's files) in code
 written with crucible and before it: no detectable difference. Per added
-line the ratio favoured crucible when a repair had to come at least
+line the ratio favoured crucible (0.10) when a repair had to come at least
 three days after the code, and was unstable at seven; per commit, with uncertain items counted
-against crucible, it reversed; classifiers called about the same share
-of later edits repairs in both periods. Hence the third comparison's
+against crucible, it reversed (1.75); classifiers called about the same share
+of later edits repairs in both periods (29% and 31%). Hence the third comparison's
 caveat. (Basis: measured.)
+
+### Hosts and scope
+
+Crucible depends on undocumented host behaviour that drifts between
+releases, such as Claude Code's write filter on subagent report names, and
+the suite launches no model, so drift shows only in real use. A supported
+range would be the promise the README declines to make, and a probe set
+would be machinery to keep true for one maintainer. On 2026-11-05 the
+repository had one star, no forks and no issues ever filed, so nobody had
+asked for a smaller core; the skills' Markdown, about 375 KB by a count of
+every `.md` under `skills/`, stands against about 279 KB for upstream when
+last measured, perhaps counted differently, and upstream's guidance is that
+project-specific workflow belongs in a separate plugin. The prose budget's
+cap bounds further growth (`AGENTS.md`). The cost: drift on Codex, the less
+used host, can go unseen for longer, and a newcomer takes the whole plugin
+or none. An agent's recommendation, which the maintainer accepted. (Basis:
+measured, for the counts; judgment, accepted by the maintainer, 2026-11-05.)
 
 ### Issues only
 
@@ -126,9 +148,12 @@ search; the maintainer's preference, for keeping the name.)
 - **Pull requests, a code of conduct, a CONTRIBUTING file or issue
   templates**, for now (§ Why).
 - **A progress log in a backlog item** (§ Why).
+- **A supported version range, or a probe set for host drift** (§ Why).
+- **A smallest core with optional profiles** (§ Why).
 
 ## Changes
 
+- 2026-11-05: no supported host range, host regressions found through use and issues, and no core split from profiles; because the README makes no support promise and nobody has asked for a smaller core.
 - 2026-11-05: the name stays, the maintainer judging the differentiation sufficient, on one web search that is not legal clearance.
 - 2026-11-02: the gate showing no token figure is the campaign gate, the
   design digest being retired (`docs/decisions/operator-steering.md`).

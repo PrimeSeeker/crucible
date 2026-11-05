@@ -6,8 +6,9 @@
 planning mode start in `crucible:brainstorming`, whose hard gate holds
 implementation until the design is approved, the spec (or lane note) is
 written and the handoff has run, "regardless of perceived simplicity".
-The one way around it is the trivial-edit waiver
-(`docs/decisions/routes.md`).
+The ways around it are the trivial-edit waiver
+(`docs/decisions/routes.md`) and the operator's explicit word
+(`crucible:using-crucible § The Rule`).
 
 **Probes.** A throwaway probe in the host's temporary directory that
 answers a question is context gathering, not implementation, and is
@@ -19,7 +20,7 @@ issue or a plan crucible did not write goes to brainstorming, which keeps
 what it settles and asks only about the rest; the result gets its
 route's review (`crucible:brainstorming § Context gathering (before any
 question)`). `crucible:writing-plans` takes only a spec that has closed
-its campaign, and no route runs a foreign plan as written.
+its campaign, with any foreign plan kept beside it, and no route runs a foreign plan as written.
 
 **Questions** come one per message, multiple choice where it fits and
 open-ended otherwise (`crucible:brainstorming § The dialogue`).

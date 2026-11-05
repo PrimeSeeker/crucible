@@ -52,7 +52,7 @@ files can override them (§ Configuration).
 
 ## Platforms and prerequisites
 
-- **Hosts:** Claude Code, tested on 2.1.310; Codex, experimentally,
+- **Hosts:** Claude Code, tested on 2.1.318; Codex, experimentally,
   tested on codex-cli 0.162.1 (§ Codex).
 - **Operating systems:** the startup hook is measured on Windows (Git
   Bash) and Linux, not yet on macOS.

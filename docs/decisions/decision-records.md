@@ -161,6 +161,21 @@ go untrue with no test failing: an agent's proposal, stating that cost and that
 it withdrew the earlier rule, which the maintainer accepted. (Basis: judgment,
 accepted by the maintainer, 2026-11-04.)
 
+On 2026-11-05 one seat, on the default role, checked the 22 records' Decisions
+against the shipped text: about 463 statements by its own split, 5 it graded
+untrue, 11 true but missing a condition and 3 it could not test, for want of
+upstream's text at the version cited, for 376k tokens. Read by hand, 13 of
+the 16 held and 3 did not; two of the 13 were shared by a shipped sentence,
+so the check also found skill text no test could. Those were fixed once, and
+the goal of cutting the rest was retired: nothing crucible ships reads a
+record, so a wrong one misleads only someone editing it, against about 78 KB
+of Decision text to cut and review. Positions still take the short shape when
+an edit rewrites them. Nothing repeats the check, so restatements can go out
+of step again unseen. An agent's recommendation, stating that cost and that
+it withdrew the earlier plan to cut them, which the maintainer accepted, after
+asking for the check first. (Basis: measured, by one seat, a lower bound;
+judgment, accepted by the maintainer, 2026-11-05.)
+
 ### Origin and strength
 
 On crucible's umbrella-specs feature (2026-10-28), the task that wrote a
@@ -194,11 +209,15 @@ judgment, accepted by the maintainer, 2026-10-29.)
   records: replaced before the first record was written (§ Why).
 - **Dated names, and an index file** (§ Why).
 - **Placeholder sections** ("N/A", "none") (§ Why).
+- **Cutting the remaining records in a lane of their own**: about 78 KB of
+  Decision text and its reviews, against the few statements a full check
+  found out of step (§ Why).
 - **Removing the Changes sections**, for now: the changelog was the
   maintainer's own addition (§ Why), and the maintainer has not reversed it.
 
 ## Changes
 
+- 2026-11-05: the goal of cutting the remaining 22 records is retired, with a one-off repair of what a check of them confirmed; because nothing shipped reads a record and the check found few statements out of step.
 - 2026-11-04: a position not yet cut takes the short shape when an edit rewrites it, no longer a whole record at the next edit of its Decision; because a clause-sized edit would have carried a far larger cut, and the lanes making such edits did not follow it.
 - 2026-11-04: a Changes line goes with an edit that changes a decision or its reasoning, no longer every edit, and a Decision points at the skill heading holding the procedure rather than restating it; because the lines were a fifth of the records' words with one reader, and restated procedure could go untrue with no test failing.
 - 2026-11-03: the citation of writing-plans' per-task structure uses its shortened heading.

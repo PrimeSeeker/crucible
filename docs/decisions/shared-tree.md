@@ -22,9 +22,10 @@ controller resumed after a compaction finds the dispatch-time state in
 the file (`crucible:redteaming § Inputs and state`;
 `skills/subagent-driven-development/references/dispatch-composition.md`
 § Shared-tree rules). A
-campaign seat's input paths are the artifact, its workspace paths, the
-supporting inputs its card lists and, for the blind verifier, the
-tracked files a delta claim names. Read-only seats run the code they
+campaign seat's input paths are the artifact, the binding artifact and
+its umbrellas, its workspace paths, the supporting inputs its card lists,
+for the blind verifier the tracked files a delta claim names, and for
+the terminal pass the files a claim in the artifact cites. Read-only seats run the code they
 check claims with under the workspace's `scratch/`, one subdirectory per
 report; a standalone branch review, which has no workspace, uses the
 host's temporary directory, for `tree-check.txt` too.

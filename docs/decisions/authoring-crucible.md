@@ -31,9 +31,10 @@ dispatching controller shares (reading the card rather than the
 template, confirming the report file, the shared-tree rules, effort only
 on request) live in
 `skills/subagent-driven-development/references/dispatch-composition.md`,
-and each skill that dispatches carries one line sending its controller
-there and to its host's dispatch reference when the skill starts and
-after compaction. Rules every session needs, ad hoc dispatches included
+and each skill that dispatches instruments carries one line sending its
+controller there and to its host's dispatch reference when the skill
+starts and after compaction; an umbrella's closing review names both at
+its step. Rules every session needs, ad hoc dispatches included
 (never predicting an agent's result, naming the model, the form of a
 decision ask), live in the router. A rule stated more than once has one
 owner text and pointers; three rules are stated on purpose for both
