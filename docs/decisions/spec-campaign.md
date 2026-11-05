@@ -306,11 +306,13 @@ before code is worth.
 As a proxy for an overturn after code, git shows which features committed
 to their spec with an author date after their first implementer started,
 author date since a rebase resets the committer's. Of 60 features, 42
-could be located: 10 had such commits, and 7 of those touched Decisions
-or Intent, with at most 15 lines in Decisions, at every round count from
-1 to 4 and with no trend. This sees only changes written back into the
-spec and cannot tell a rewording from an overturn without reading the
-edit. Deferral markers showed no association with later rounds' yield
+could be located: 10 had such commits, and at least 7 of those touched
+Decisions or Intent, at every round count from 1 to 4 and with no trend.
+Those are added lines, each hunk filed where it starts, so deletions barely
+count and the 15 lines in Decisions, the most seen, is no ceiling; one
+feature's single 884-line commit falls wholly under the preamble, unread.
+This sees only changes written back into the spec and cannot tell a
+rewording from an overturn without reading the edit. Deferral markers showed no association with later rounds' yield
 (1.41, 1.23 and 1.39 BLOCKERs and MAJORs per seat with none, 1 to 3 and 4
 or more markers), and fix altitude could not be measured by script. Told
 this, the maintainer accepted an agent's recommendation to change neither

@@ -203,52 +203,63 @@ ban.)
 
 The maintainer observed that reviewers seemed more freeform in their
 research than the read scopes suggest (2026-10-28), and the transcripts
-on disk bear it out (read 2026-11-06, 48 sessions, the shell's reading
-commands counted as well as the read tool). The share of seats touching
-a file neither the dispatch nor a file it names mentions, and those
-distinct files per seat, on the lenient count, were: redteam seats 77%,
-3.4; branch reviewers 94%, 7.3; task reviewers 82%, 2.0; re-reviewers 65%,
-1.3; terminal passes 62%, 2.9; blind verifiers 29%, 0.8. Counting only
-what a named file cites as reached puts redteam seats at 96%. The branch
-reviewer's template allows such reads of code; the redteam seat's says
-to read only what its dispatch enumerates and to scope every search to
-it, and on the read tool alone 23% of those seats went outside it.
+on disk bear it out for some seats (read 2026-11-06, 48 sessions, the
+shell's reading commands counted as well as the read tool). The share of
+seats touching a file neither the dispatch nor a file it names mentions,
+and those distinct files per seat, on the lenient count, which leaves out
+files the seat made itself, diffs included, were: branch reviewers 89%,
+6.2; redteam seats 77%, 3.3; terminal passes 61%, 2.9; task reviewers 39%,
+0.8; blind verifiers 29%, 0.8; re-reviewers 19%, 0.3. The strict count
+takes only what a named file cites as reached and keeps a seat's own files
+and generic names, which puts redteam seats at 96%. The branch reviewer's
+template allows such reads of code; the redteam seat's says to read only
+what its dispatch enumerates and to scope every search to it, and on the
+read tool alone 23% of those seats went outside it.
 
-Those reads carry findings: of the redteam seats' 687 BLOCKERs and MAJORs,
-8% on the lenient count and 32% on the strict one mention a file only
-such a read reached, and of their MINORs 8% and 27%. Mention is not
-causation, and matching by file name has false positives. On the read
-tool, redteam seats' reads past the scope were mostly repository code (150
-of 201), branch and task reviewers' mostly the workspace (885 of 1,082;
-843 of 921), where, counting the shell, the working files they make top
-the counts. The
-boundaries that matter were only partly checked. On the read tool, 3 of
+On redteam seats, the ones that scope sentence binds, those reads carry
+findings. Of their 687 staked BLOCKERs and MAJORs, never adjudicated, 8% on
+the lenient count and 32% on the strict one mention a file only such a read
+reached, and of their MINORs 8% and 27%; on the read tool alone, 20 of 690
+BLOCKERs and MAJORs. Mention is not causation, and matching by file name has
+false positives. No such figure exists for task reviewers, re-reviewers or
+blind verifiers, and two checks on other seats, both on the read tool, do
+not extend it: terminal passes' MAJORs cited such a file in 0 of 17 and
+their MINORs in 6 of 225, and branch reviewers' reports mentioned one in 18
+of 48 passes staking a BLOCKER or MAJOR and 67 of 164 that did not. On the
+read tool, redteam seats' reads past the scope were mostly repository code
+(150 of 201), branch and task reviewers' mostly the workspace (885 of 1,082;
+843 of 921), where, counting the shell, the working files they make top the
+counts.
+
+The boundaries that matter were only partly checked. On the read tool, 3 of
 2,438 redteam reads opened campaign records, 2 of them named; shell reads
-were not separated, with 95 mentions of seat-report names, a seat's own or
-a peer's unknown, and 3,271 recursive greps not classed by whether they
-entered the workspace. Nothing a script matched named a session transcript
-under the host's project records, though that test takes tool results and
-memory first, so a command naming both is not counted as one; 102 seats
-touched tool results there, whose is not established, and 11 touched
-memory files. So no scope tightens, on the findings those reads carry. The
-scope sentence stays stricter than what seats do: seats do not follow it
-now, so rewording it would change little. (Basis: measured, by script,
-with no read of what those files held; judgment, accepted by the
-maintainer.)
+were not separated, with at least 95 mentions of seat-report names, a seat's
+own or a peer's unknown, and 3,271 recursive greps not classed by whether
+they entered the workspace. Nothing a script matched named a session
+transcript under the host's project records, though that test needs the
+records' path in the same command and takes tool results and memory first,
+so a command naming both is not counted as one; 287 path mentions of
+`.jsonl` files or `/subagents/` were not located. 102 seats touched tool
+results under those records, whose is not established, and 11 touched memory
+files. So the redteam scope does not tighten, on the findings those reads
+carry, and other seats' scopes stay as they are on judgment. The redteam
+scope sentence stays stricter than what seats do: they do not follow it now,
+so rewording it would change little. (Basis: measured, by script, with no
+read of what those files held; judgment, accepted by the maintainer.)
 
 The methods the audit of the hypothesis-specs umbrella used
 (`docs/decisions/evidence-and-findings.md`) were partly taken up since, the
-rest dropped unmeasured: an umbrella's closing review runs a walkthrough, fidelity to the umbrella's
-Intent and the seams between children
+rest dropped unmeasured: an umbrella's closing review runs a walkthrough,
+fidelity to the umbrella's Intent and the seams between children
 (`skills/brainstorming/references/umbrellas.md` § Closing review), and a
 spec campaign's round 1 the goal check and the outside-the-frame lens
 (`docs/decisions/spec-campaign.md`). A feature outside an umbrella gets no
 walkthrough, and the read for design smells has no seat of its own. Which
 method catches what stays unanswered: the audit's reports are kept only in
 session transcripts, which can hold secrets, so nobody reread them, and a
-script's tally by heading matched two method files (`audit-rf.md` 5 MAJOR
-and 5 MINOR; `audit-wt.md` 2 MAJOR and 5 MINOR), which does not say what the
-reviews missed. An agent's recommendation to close the question as
+script's tally by heading matched two of its four method files, all written
+on 2026-10-29 (`audit-rf.md` 5 MAJOR and 5 MINOR; `audit-wt.md` 2 MAJOR and 5
+MINOR), which does not say what the reviews missed. An agent's recommendation to close the question as
 overtaken, which the maintainer accepted. (Basis: measured, for the tally;
 judgment, accepted by the maintainer.)
 
@@ -413,12 +424,12 @@ judgment, accepted by the maintainer.)
   branch review, in place of its share; and a wave's findings can come from
   several reports. A close call, put to the maintainer as one: an agent's
   recommendation, which the maintainer accepted.
-- **Tightening the seats' read scopes**: reads past them carry findings
-  (§ What seats read).
+- **Tightening the redteam seat's read scope**: reads past it carry findings
+  (§ What seats read); other seats' scopes have no such measurement.
 
 ## Changes
 
-- 2026-11-06: seats' reads past their scopes are measured and left as they are, since those reads carry findings; the audit's methods question closes, partly taken up and the rest dropped unmeasured; a seat's ability to nest, and the declined tool-level ban, move here from the deleted backlog item.
+- 2026-11-06: seats' reads past their scopes are measured and left as they are, since on redteam seats those reads carry findings and other seats' scopes stay on judgment; the audit's methods question closes, partly taken up and the rest dropped unmeasured; a seat's ability to nest, and the declined tool-level ban, move here from the deleted backlog item.
 - 2026-11-05: passing findings by reference is rejected on measured figures, and the re-reviewers' report writes since the card change are recorded.
 - 2026-11-04: a report the controller saves to an appended report is appended, because a whole-file save would destroy the earlier sections.
 - 2026-11-04: the confirmation of a report file covers an appended report, which holds that seat's section, because an earlier seat's file on disk would pass a missing report.

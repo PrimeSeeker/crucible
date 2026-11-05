@@ -187,7 +187,7 @@ agents). Only part of that could move: while executing, attributed by what
 it last dispatched, it is 16% of a run, and a further 6% is unattributed.
 At the bounded role's half price and equal token use, that is about 8%, or
 about 11% if all the unattributed part moved too, before the outer
-controller's overhead. Token use would not be equal, though: 79% of the
+controller's overhead. Token use would not be equal, though: about 78% of the
 controller's cost at the record's weights is re-read cache, and a nested
 controller starting at execution would carry less context, a saving no
 script measured. So the measured win is small and its upper end unknown, and
