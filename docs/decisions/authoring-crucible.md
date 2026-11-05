@@ -265,10 +265,12 @@ skill still being worked under, since a controller can see which skills came
 back and the line costs nothing until it fires. A copy can come back stale:
 in sessions that spanned a plugin update, compaction re-attached copies from
 the old version's directory (0.13.0 and 0.12.0 under 0.14.0 on 2026-11-03;
-0.23.0 under 0.27.0 and 0.27.0 under 0.28.0 on 2026-11-05). Only a
-mid-session update produces it, a stale copy holds the rules the session was
-already running, and invoking a skill loads the current version, so
-`docs/dual-runtime.md` says so and no signal was built. An agent's proposal,
+0.23.0 under 0.27.0 on 2026-11-05). Only a mid-session update produces it, a
+stale copy holds the rules the session was already running, and invoking a
+skill loads the current version once the session has reloaded its plugins
+(seen on 2026-11-05: 0.28.0 on the first invocation after the reload, which
+the host's update message queues), so `docs/dual-runtime.md` says so and no
+signal was built. An agent's proposal,
 which the maintainer accepted. (Basis: measured, for the sightings; external,
 for the budget and upstream's issue; judgment, accepted by the maintainer.)
 
@@ -587,7 +589,7 @@ the build-history rule included (`skills/using-crucible/SKILL.md`).
 ## Changes
 
 - 2026-11-05: a total word cap on the skills, 10% over the prose compaction's count, moved only by the operator, because the per-skill budget refuses no growth; total words chosen over a per-route token cap, since they gave nearly the same signal with no list of each route's reads to keep. The rejection of a total target now covers a size the work must reach, since the cap is a ceiling the maintainer rules on. Excess is a review finding on this repository (`AGENTS.md`), since that rule otherwise reaches only readers of `writing-skills`.
-- 2026-11-05: the router's compaction line also names a skill still being worked under that did not come back, and no longer one finished with that came back cut; a stale copy gets the upgrade docs' sentence and no signal, a version line and re-invoking at every compaction being rejected, since only a mid-session update produces it and it holds the rules the session was already running.
+- 2026-11-05: the router's compaction line also names a skill still being worked under that did not come back, and no longer one finished with that came back cut, since re-invoking a finished skill buys nothing; a stale copy gets the upgrade docs' sentence and no signal, a version line and re-invoking at every compaction being rejected, since only a mid-session update produces it and it holds the rules the session was already running.
 - 2026-11-05: resident tokens re-counted to the head with the two reads the closing review found omitted, what seats carry counted beside them, and the compaction re-read measured for the first time, as the skill text rewrite's re-audit asked; its transcript half waits for features on real code (`docs/backlog/skill-rewrite-reaudit.md`).
 - 2026-11-05: the build-history rule's list names open items in the project's home (`docs/decisions/branch-review.md`).
 - 2026-11-05: the re-open trigger's retirement no longer says the prose budget holds growth, since it records growth and refuses none; the retirement stands, the maintainer leaving that call to the agent once told its first clause has no replacement. Compaction's loop ends only with no rule-adding addition left unruled, since a clean check otherwise shipped one unruled. A micro-test's sample on a realistic task needs no announcement, since it is told nothing false.
