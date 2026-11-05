@@ -78,7 +78,7 @@ Here the report is the fix report. A listed finding that a CONFIRMED concern sho
 
 ## Scope
 
-Report as new breakage any problem the fix introduced, a break of § What shipped work carries among them. In a task's fix wave, a fix-diff change to the plan, a folded document or the spec is new breakage (a scope finding) unless your dispatch names its commit as a scoped amendment or a plan-patching ruling. A § Tests in review finding is new breakage; a deletion's or loosening's justification counts only where the fix report names it (a warning sign quoted); read a remaining test the report names even where it lies outside the fix diff. Never re-review code the fix did not touch: an issue entirely outside the fix diff goes under Out-of-Scope Observations and neither blocks this wave nor extends the loop.
+Report as new breakage any problem the fix introduced, a break of § What shipped work carries among them. In a task's fix wave, a fix-diff change to the plan, a folded document or the spec is new breakage (a scope finding) unless your dispatch names its commit as a scoped amendment or a plan-patching ruling. A § Tests in review finding is new breakage; a deletion's or loosening's justification counts only where the fix report names it (a warning sign quoted); read a remaining test the report names even where it lies outside the fix diff. Never re-review code the fix did not touch: an issue entirely outside the fix diff goes under Out-of-Scope Observations and does not block this wave.
 
 ## What shipped work carries
 
