@@ -22,8 +22,7 @@ from instrument_corpus import load_generator, source_path
 REPO = Path(__file__).resolve().parent.parent
 BUDGET_FILE = REPO / "tests" / "prose-budget.txt"
 SLACK = 50
-# 10% over the 43,079 words the 2026-11-03 compaction left. Only the operator
-# moves it (AGENTS.md, the prose budget).
+# Only the operator moves it (AGENTS.md, the prose budget).
 TOTAL_CAP = 47387
 
 

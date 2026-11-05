@@ -368,7 +368,8 @@ trigger was retired on 2026-11-03. `tests/test_skill_size.py` caps each
 trigger's second clause. The first clause, on prose's share of spend, has
 no direct replacement: the total cap (§ The prose budget) limits words, not
 that share. An agent's proposal: the maintainer accepted the retirement on
-2026-11-03. (Basis: judgment, accepted by the maintainer.)
+2026-11-03, and left that it stands with no direct replacement to the agent
+on 2026-11-05. (Basis: judgment, accepted by the maintainer.)
 
 ### The prose budget
 
@@ -398,11 +399,12 @@ The ratchet records growth and refuses none, since a commit raises its own
 number: 67 raises and 27 lowers since 0.2.0, and the every-run load regrew
 4.6 to 5.0% in the two days after the prose compaction. Most of that had
 landed by 0.25.0; the three releases after it added 0.2% to the words. From
-2026-11-05 `TOTAL_CAP` is the limit a commit can't raise for itself: 47,387
+2026-11-05 `TOTAL_CAP` is the limit a commit may not raise for itself: 47,387
 words, 10% over the 43,079 the compaction left, with 45,382 in the skills
-when it was set. It sits in the test because agents raise the lines of
-`tests/prose-budget.txt` routinely. Reaching it asks the operator to compact
-or raise it. The compaction's record ranked a per-route token cap first.
+when it was set. The test can't stop such a commit; the rule in `AGENTS.md`
+and the branch reviewer's check do. It sits in the test because agents raise
+the lines of `tests/prose-budget.txt` routinely. Reaching it asks the operator
+to compact or raise it. The compaction's record ranked a per-route token cap first.
 Total words came to +5.3% over the same span, and stayed within 1.3 points
 of the standard route's every-run load, estimated from characters, at each
 release from 0.16.0 to 0.28.0, with no list to keep of what each route
@@ -412,7 +414,8 @@ can't see text moving from a rarely read file into an every-run one, and
 growth outside the every-run load counts toward it: the 0.17.0 rewrite of
 `writing-skills` added 1.3% to the words and almost nothing to that load.
 An agent's proposal, which the maintainer took over a per-route cap and over
-no mechanism at all; the sentence in `AGENTS.md` making excess a review
+no mechanism at all, with little preference either way, and kept when told of
+the 2026-10-07 decline (§ Rejected); the sentence in `AGENTS.md` making excess a review
 finding came with it, because that rule otherwise reaches only readers of
 `writing-skills`. (Basis: measured; judgment, accepted by the maintainer.)
 
@@ -528,11 +531,16 @@ Counted with Anthropic's token-counting endpoint on 2026-11-03, joining the hard
 - **Folding the route references back in**: they pay whenever a route
   does not run (§ Why).
 - **A total or reduction target** for skills or a rewrite, in bytes or
-  words: declined on 2026-10-07; the budget is a ratchet, not a target,
-  and writing-skills sets none. The 18,000-character line is no such
-  target: it is a per-skill ceiling the host's cut imposes (§ Decision).
-  The cap on writing-skills' `SKILL.md` at its 2026-11-03 token count
-  bound that one rewrite (§ Why).
+  words, a size the work must reach: declined on 2026-10-07 for a rewrite,
+  whose check was net-negative prose and its duty inventory; writing-skills
+  sets none. `TOTAL_CAP` is no such target: it is a ceiling on regrowth,
+  and reaching it asks the maintainer to rule (§ The prose budget). Nor is
+  the 18,000-character line: it is a per-skill ceiling the host's cut
+  imposes (§ Decision). The cap on writing-skills' `SKILL.md` at its
+  2026-11-03 token count bound that one rewrite (§ Why).
+- **A per-route token cap**: the prose compaction's first-ranked control,
+  passed over for `TOTAL_CAP`, which needs no list of each route's reads
+  (§ The prose budget).
 - **A per-feature prose diffstat**: replaced by the budget file's diff.
 - **A standing ban test, or a contributor rules file, for build
   history** (§ Why).
@@ -556,7 +564,7 @@ the build-history rule included (`skills/using-crucible/SKILL.md`).
 
 ## Changes
 
-- 2026-11-05: a total word cap on the skills, 10% over the prose compaction's count, moved only by the operator, because the per-skill budget refuses no growth; total words chosen over a per-route token cap, since they gave nearly the same signal with no list of each route's reads to keep. Excess is a review finding on this repository (`AGENTS.md`), since that rule otherwise reaches only readers of `writing-skills`.
+- 2026-11-05: a total word cap on the skills, 10% over the prose compaction's count, moved only by the operator, because the per-skill budget refuses no growth; total words chosen over a per-route token cap, since they gave nearly the same signal with no list of each route's reads to keep. The rejection of a total target now covers a size the work must reach, since the cap is a ceiling the maintainer rules on. Excess is a review finding on this repository (`AGENTS.md`), since that rule otherwise reaches only readers of `writing-skills`.
 - 2026-11-05: resident tokens re-counted to the head with the two reads the closing review found omitted, what seats carry counted beside them, and the compaction re-read measured for the first time, as the skill text rewrite's re-audit asked; its transcript half waits for features on real code (`docs/backlog/skill-rewrite-reaudit.md`).
 - 2026-11-05: the build-history rule's list names open items in the project's home (`docs/decisions/branch-review.md`).
 - 2026-11-05: the re-open trigger's retirement no longer says the prose budget holds growth, since it records growth and refuses none; the retirement stands, the maintainer leaving that call to the agent once told its first clause has no replacement. Compaction's loop ends only with no rule-adding addition left unruled, since a clean check otherwise shipped one unruled. A micro-test's sample on a realistic task needs no announcement, since it is told nothing false.
