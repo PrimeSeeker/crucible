@@ -334,11 +334,14 @@ The re-count of 2026-11-05 reproduced every earlier every-run total. It
 adds, as conditional reads, the two the umbrella's closing review found
 omitted: the parallel-agents skill on a parallel campaign, which the text
 stopped sending a controller to after `0deefcf`, and the implementer
-template on the very-small lane's inline path. Only the bracketed totals
-move. From before the rewrite to `5546425` the every-run load fell by 33%
+template on the very-small lane, read for its inline path and, from the
+prose compaction, for a fix wave. Only the bracketed totals move. One such
+read stays uncounted: since 2026-11-04 the inline-mode reference also names
+that template, so the standard and folded brackets at `5546425` read about
+4,800 tokens low for a task implemented inline. From before the rewrite to `5546425` the every-run load fell by 33%
 on the standard route, 35% on the folded, 43% on the very-small lane and
 28% on an umbrella's own campaign. Since the prose compaction it has grown
-by 4.6 to 5.0% on every route, in two days of backlog batches. The load
+by 4.6 to 5.0% on every route, in the two days of features since. The load
 conditions are the manifests', not derived again at the head. The head's
 references in no manifest are the other host's pair, this host's map,
 which the hook's text carries, and the shared seat reference, which

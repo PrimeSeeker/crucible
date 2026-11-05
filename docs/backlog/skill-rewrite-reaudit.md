@@ -15,8 +15,9 @@
   about 20 features have run, all on crucible's own repository in one
   session. Only `placement` and `compaction-fit` used a campaign or the
   task loop, where most retired mechanisms lived, and no other project has
-  run a feature on those versions. The maintainer held the audit until one
-  has (2026-11-05).
+  run a feature on those versions. On the controller's proposal, the
+  maintainer held the audit until a few features on real code have run
+  (2026-11-05).
 - What those runs could show is recorded: the token figures and the first
   count of compaction re-reads in `docs/decisions/authoring-crucible.md`,
   and the verifier's eight runs in

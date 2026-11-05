@@ -249,12 +249,15 @@ Whether the verifier earns its keep, the skill text rewrite's open question
 (`docs/crucible/2026-11-01-skill-text-rewrite/umbrella.md`, D5 and D9), has
 only a thin answer so far. On 2026-11-05 the reports of its eight runs since
 the retirements, in two campaigns on crucible's own text, were counted: all
-60 fix items had landed and no hunk fell outside a list. Among their delta
-claims it found one FALSE and two partly so, all minor wording, before the
-repair path above existed; the two traced stayed in the landed spec. Eight
-runs with no miss on its main job, on crucible's own text, do not answer the
-question, and the failure it guards against is silent, so it stays and the
-question waits for features on real code
+60 fix items had landed and no hunk fell outside a list, one run's report
+read only as its closing summary. Among their delta claims it found one FALSE
+and two partly so, all minor wording, before the repair path above existed.
+The FALSE one and one of the others stayed in the landed spec
+(`docs/crucible/2026-11-03-compaction-fit/design.md`, on the umbrella stub's
+rehydration rule and on sites citing a loop step's heading); the third was not
+traced. Eight runs that found every item landed and no stray hunk, on crucible's
+own text, do not answer the question, and the failure it guards against is
+silent, so it stays and the question waits for features on real code
 (`docs/backlog/skill-rewrite-reaudit.md`). An agent's proposal, which the
 maintainer accepted. (Basis: measured, by the controller of those campaigns
 from its own session's reports; judgment, accepted by the maintainer.)

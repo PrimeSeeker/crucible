@@ -139,7 +139,7 @@ def add_reads(routes: dict, revs: list[str]) -> None:
                 phase["files"].append(
                     {"path": PARALLEL, "only": "seats dispatched in parallel", "revs": parallel})
             if route == "very-small" and phase["phase"] == "execution":
-                phase["files"].append({"path": TEMPLATE, "only": "the change implemented inline"})
+                phase["files"].append({"path": TEMPLATE, "only": "the change implemented inline; from the prose compaction, a fix wave"})
 
 
 def resolve(entry: dict, aliases: dict, rev: str) -> str | None:
