@@ -402,7 +402,7 @@ landed by 0.25.0; the three releases after it added 0.2% to the words. From
 2026-11-05 `TOTAL_CAP` is the limit a commit may not raise for itself: 47,387
 words, 10% over the 43,079 the compaction left, with 45,382 in the skills
 when it was set. The test can't stop such a commit; the rule in `AGENTS.md`
-and the branch reviewer's check do. It sits in the test because agents raise
+and the branch reviewer's check do. The cap sits in the test because agents raise
 the lines of `tests/prose-budget.txt` routinely. Reaching it asks the operator
 to compact or raise it. The compaction's record ranked a per-route token cap first.
 Total words came to +5.3% over the same span, and stayed within 1.3 points
@@ -531,9 +531,9 @@ Counted with Anthropic's token-counting endpoint on 2026-11-03, joining the hard
 - **Folding the route references back in**: they pay whenever a route
   does not run (§ Why).
 - **A total or reduction target** for skills or a rewrite, in bytes or
-  words, a size the work must reach: declined on 2026-10-07 for a rewrite,
-  whose check was net-negative prose and its duty inventory; writing-skills
-  sets none. `TOTAL_CAP` is no such target: it is a ceiling on regrowth,
+  words, a size the work must reach: declined on 2026-10-07; the budget is
+  a ratchet, not a target, and writing-skills sets none. `TOTAL_CAP` is no
+  such target: it is a ceiling on regrowth,
   and reaching it asks the maintainer to rule (§ The prose budget). Nor is
   the 18,000-character line: it is a per-skill ceiling the host's cut
   imposes (§ Decision). The cap on writing-skills' `SKILL.md` at its
