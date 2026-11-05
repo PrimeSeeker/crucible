@@ -107,6 +107,15 @@ says where things stand now; the filed date, the source and the progress
 log went on 2026-10-19, and git history keeps them. (Basis: judgment,
 accepted by the maintainer.)
 
+### The name
+
+Atlassian's Crucible is a code-review product at end of life: new sales
+ended 2025-05-13 and support ends 2028-05-15. One web search on 2026-11-05
+found that product, in the same field, and none other of that name among
+the AI code-review tools it listed. It found no trademark record, and no
+registry was searched, so this is not legal clearance. (Basis: external,
+one search.)
+
 ## Rejected
 
 - **Measured-sounding claims without a measurement**: every comparison
@@ -119,6 +128,7 @@ accepted by the maintainer.)
 
 ## Changes
 
+- 2026-11-05: the name's check is recorded: one web search, not legal clearance.
 - 2026-11-02: the gate showing no token figure is the campaign gate, the
   design digest being retired (`docs/decisions/operator-steering.md`).
 - 2026-10-20: the exception also admits a description of what crucible

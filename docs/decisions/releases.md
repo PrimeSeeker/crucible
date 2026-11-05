@@ -50,6 +50,19 @@ tag from GitHub on both hosts; the second, 0.3.0 (2026-10-27), ran the
 update from 0.2.0 on both, and each host fetched the new copy. (Basis:
 measured.)
 
+Codex does not hold a copy by its version: on 2026-11-05, re-adding its
+marketplace at `master` in place of the `v0.27.0` tag, both at version
+0.27.0, replaced the installed copy with no `plugin` command (codex-cli
+0.164.0, a throwaway `CODEX_HOME`). (Basis: measured.)
+
+The version stays in both `.claude-plugin/plugin.json` and the
+marketplace entry, though Claude Code's documentation advises against
+stating it twice: the suite fails on any mismatch, so the two cannot
+drift apart. Record formats carry no version marker, since no reader
+refuses an older record's shape, so none would act on one. An agent's
+proposal, which the maintainer accepted. (Basis: judgment, accepted by
+the maintainer.)
+
 ### Installing from a tag
 
 The rule dates from the dual-runtime design of 2026-08-09: install every
@@ -88,9 +101,13 @@ promote", 2026-10-13). (Basis: judgment, accepted by the maintainer.)
 - **Claude Code's `{name}--v{version}` tag form**: it serves plugin
   dependencies, and none exists (§ Why).
 - **A rollback archive**: the predecessor's tag is the rollback.
+- **The version in one Claude Code manifest only**: the suite already
+  keeps the two equal (§ Why).
+- **A version marker in record formats**: nothing would read it (§ Why).
 
 ## Changes
 
+- 2026-11-05: the version stays in both Claude Code manifests and record formats take no version marker, each weighed and kept as it is; Codex's refresh of a copy under an unchanged version is measured.
 - 2026-10-27: 0.3.0 ran the update from 0.2.0 on both hosts; the
   statement that the update was still to run is replaced by that result.
 - 2026-10-27: pre-releases: `master` bumped to a pre-release version and
