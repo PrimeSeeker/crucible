@@ -9,7 +9,7 @@ redteaming 11460
 requesting-code-review 3433
 subagent-driven-development 14541
 systematic-debugging 1898
-using-crucible 2010
+using-crucible 2019
 using-git-worktrees 957
 writing-plans 1344
 writing-skills 2111

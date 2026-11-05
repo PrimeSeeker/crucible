@@ -65,8 +65,9 @@ the key is absent, tells the operator which and recommends `high`
 § Install). A seat started from Claude Code through `codex exec` takes
 `model_reasoning_effort` from that config instead
 (`skills/using-crucible/references/claude-code-dispatch.md`). There are
-no per-role levels. What a Claude Code seat runs at
-with effort unset is unmeasured (`docs/backlog/escalation-and-effort.md`).
+no per-role levels. A Claude Code seat with effort unset was measured
+running at the session's effort on the default and alternate roles, and at
+`medium` on the bounded role (§ Why, Effort).
 
 A change to the roles, the seats' assignments or the alternate role's
 triggers edits this record. A model release that keeps them edits a host
@@ -206,9 +207,21 @@ maintainer, for the mechanism.)
 
 Claude Code's agent-dispatch tool takes an effort setting (its schema,
 read 2026-10-13 and again 2026-10-20), used only on the operator's
-request. A Claude Code seat
-with effort unset may run below a session set higher, which is
-unmeasured. (Basis: external.)
+request. (Basis: external.)
+
+What a seat runs at with it unset was read on 2026-11-05 from the host's own
+records, the `effort` field in the transcripts of one session's 325 subagents,
+none of its 327 dispatches setting one (Claude Code 2.1.316 to 2.1.318). Under
+a session at `high`, 174 Opus and Fable subagents ran at `high`; under `xhigh`,
+86 Opus ones ran at `xhigh`; all 65 Sonnet ones, 9 of them under `xhigh`, ran
+at `medium`. So the seats on the default and alternate roles followed the
+session, which the tool's description ("its usual effort") does not suggest,
+and the bounded role's did not. Only those two session levels were seen, no
+Fable seat ran under `xhigh`, and why Sonnet stays at `medium` was not
+established. Told this, the maintainer accepted an agent's recommendation to
+leave the rule as it is: no defect traces to it, and setting `high` on the
+re-reviewer and the verifier would cost more with no evidence for it.
+(Basis: measured; judgment, accepted by the maintainer.)
 
 ## Rejected
 
@@ -239,6 +252,7 @@ operator's config key.
 
 ## Changes
 
+- 2026-11-05: what a Claude Code seat runs at with effort unset is measured from host records; the operator-only rule stays, since no defect traces to the difference on the bounded role.
 - 2026-11-04: a round 1 recorded degraded hands on a swap no returned seat ran to the next round (`docs/decisions/spec-campaign.md`).
 - 2026-11-04: a seat started through `codex exec` names no effort either, and takes the key that run reads from the operator's Codex config, so effort stays the operator's on this route too.
 - 2026-11-03: the default role is stated once, in the dispatch composition's § Models and effort; the slot cards' Model lines keep only a seat's departure from it, SDD's Models section drops the implementer's, task reviewer's and re-reviewer's rows, and redteaming drops its sentence on the verifier's role; because each restated what every dispatch already shares.

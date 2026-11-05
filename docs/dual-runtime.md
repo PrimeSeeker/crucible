@@ -289,6 +289,10 @@ Claude Code, no `crucible: router not loaded` notice means the router
 loaded (`hooks/README.md` § SessionStart injection). On Codex, run
 `docs/codex.md` § Check: routing.
 
+On Claude Code, a session running through an upgrade keeps its copy of each
+skill it invoked before it, after compaction too, until that skill is invoked
+again, which loads the new version once the session has reloaded its plugins.
+
 A version rollback leaves crucible on. Switching back to another router is
 a separate step: on Claude Code, `claude plugin disable crucible@crucible`
 and re-enable the other; on Codex, `docs/codex.md` § Rollback.

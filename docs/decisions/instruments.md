@@ -334,10 +334,27 @@ judgment, accepted by the maintainer.)
   have it", three of them saying no write tool was available and one
   that its instructions barred report files. That the hedge made the
   difference is a bet, unverified, taken with no micro-test: a miss
-  costs one resume or a save, less than the samples would.
+  costs one resume or a save, less than the samples would. Since then 23 of
+  23 re-reviewers (21 on the bounded role) wrote without a resume, read
+  from their transcripts on 2026-11-05, all on the very-small lane; that
+  shows the misses stopped there, not why, and no verifier has run since.
+- **Passing a fix wave's findings by reference** (2026-11-05), the raising
+  report's path and finding ids in place of the verbatim copy. Over the
+  latest 23 re-reviews the findings came to a median of 2,280 characters,
+  about 750 tokens per copy, or 2% of the very-small lane's every-run load
+  (`docs/decisions/authoring-crucible.md` § Resident tokens per route), with
+  one copy per wave on that lane and more elsewhere. A reference would guard
+  against a controller narrowing a finding at least as well as the copy does.
+  Against the saving: the task and branch reviewers' templates define no
+  finding ids, so every dispatch would read text defining them; a re-reviewer
+  would read the whole raising report, a median of 9,313 characters for a
+  branch review, in place of its share; and a wave's findings can come from
+  several reports. A close call, put to the maintainer as one: an agent's
+  recommendation, which the maintainer accepted.
 
 ## Changes
 
+- 2026-11-05: passing findings by reference is rejected on measured figures, and the re-reviewers' report writes since the card change are recorded.
 - 2026-11-04: a report the controller saves to an appended report is appended, because a whole-file save would destroy the earlier sections.
 - 2026-11-04: the confirmation of a report file covers an appended report, which holds that seat's section, because an earlier seat's file on disk would pass a missing report.
 - 2026-11-04: the `goal-check` selector is also set for the round a degraded round 1 hands the goal check on to (`docs/decisions/spec-campaign.md`).

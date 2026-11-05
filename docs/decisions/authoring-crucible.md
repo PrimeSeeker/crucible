@@ -257,6 +257,21 @@ measured; judgment, accepted by the maintainer, for the line and its
 test; judgment, an agent's call the maintainer has not ruled on, for
 the reasoning on the unit.)
 
+Two other failures leave a controller without the skill's current text. A
+skill can fail to come back: the combined budget fills from the most
+recently invoked skill, about five skills fit it, and upstream's issue #2481
+records a drop. Since 2026-11-05 the router's line names that case too, for a
+skill still being worked under, since a controller can see which skills came
+back and the line costs nothing until it fires. A copy can come back stale:
+in sessions that spanned a plugin update, compaction re-attached copies from
+the old version's directory (0.13.0 and 0.12.0 under 0.14.0 on 2026-11-03;
+0.23.0 under 0.27.0 and 0.27.0 under 0.28.0 on 2026-11-05). Only a
+mid-session update produces it, a stale copy holds the rules the session was
+already running, and invoking a skill loads the current version, so
+`docs/dual-runtime.md` says so and no signal was built. An agent's proposal,
+which the maintainer accepted. (Basis: measured, for the sightings; external,
+for the budget and upstream's issue; judgment, accepted by the maintainer.)
+
 Long step bodies move into references, as route procedures did, rather
 than into skills of their own: a new skill adds to the always-loaded
 skill index, spreads the combined re-attach budget over more skills, and
@@ -523,6 +538,13 @@ Counted with Anthropic's token-counting endpoint on 2026-11-03, joining the hard
 
 ## Rejected
 
+- **A version line in the session-start text** (2026-11-05), for a controller
+  to compare with a re-attached copy's header: it adds a failure path to the
+  hook for a case only a mid-session update produces (§ The compaction line).
+- **Re-invoking every skill in use at each compaction** (2026-11-05): one rule
+  for a cut, dropped or stale copy, but up to about 6,000 tokens per skill on
+  top of the copy that came back, at every compaction, where one session of
+  the maintainer's had 29.
 - **A full rewrite of the controller skills** (2026-10-01): about three
   times the saving of the references at several times the cost, and it
   would reword rules that each came from an incident. The rewrite later
