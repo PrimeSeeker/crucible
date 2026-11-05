@@ -329,9 +329,9 @@ added it had raised the skill's prose budget by 194 words, of which its
 removal returned 84, and its last full pass found seams in what its
 previous wave had added, such as a stopped part reading as finished. A
 settled oversized change now pays for a campaign or waits for the
-operator's direction on staying, which leaves the branch review as the
-first review and the fix waves the controller's unless that direction says
-otherwise. An agent's proposal, which the
+operator's direction on staying, which, as the ask states, leaves the
+branch review as the first review and the fix waves the controller's
+unless that direction says otherwise. An agent's proposal, which the
 maintainer accepted, withdrawing the acceptance of the split.
 (Basis: judgment, accepted by the maintainer.)
 

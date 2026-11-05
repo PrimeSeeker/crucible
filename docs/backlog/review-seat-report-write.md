@@ -65,6 +65,11 @@
   drop to the bounded role on a clearly bounded task. Whether the role is
   the cause is UNVERIFIED: the dispatches' models are not in this item,
   and a task re-reviewer wrote its report in the third run.
+- The check on an appended report asks that it hold the seat's section
+  (`skills/subagent-driven-development/references/dispatch-composition.md`,
+  item 5), and nothing marks whose section is whose. A seat re-dispatched
+  to the same report whose own write failed passes on the earlier attempt's
+  section. No run on record has hit it.
 
 ## Follow-up
 

@@ -55,8 +55,10 @@ Codex does not hold a copy by its version. On 2026-11-05 (codex-cli
 its copy through re-adding the marketplace at `master`, at the same
 version, and `codex plugin marketplace upgrade` then replaced it; from
 `v0.26.0` the same steps moved it to 0.27.0, with no `plugin` command in
-either run. No ref moved under a marketplace that stayed in place: each
-run re-added it. (Basis: measured.)
+either run. With a ref moving under a marketplace that stayed in place (a
+local bare clone through a git URL rewrite), that command alone moved the
+copy from 0.26.0 to 0.27.0, then replaced its content at 0.27.0. (Basis:
+measured.)
 
 The version stays in both `.claude-plugin/plugin.json` and the
 marketplace entry, though Claude Code's documentation advises against

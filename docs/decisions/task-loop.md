@@ -319,7 +319,8 @@ left to decide gains nothing from the first, so it may run inline where
 the second allows. The defaults stayed: subagents on the campaign
 presets, inline on the lane. The lane's branch-review fix waves stay the
 controller's whatever the change's width, a residual accepted since a
-lane change is one implementer's worth. An
+lane change is one implementer's worth (one too big for that, kept on the
+lane, takes it on the operator's answer to stay: `docs/decisions/routes.md`). An
 agent's proposal, which the maintainer accepted ("OK, I guess").
 (Basis: the maintainer's
 preference, for not expanding the mode; judgment, accepted by the
@@ -376,7 +377,7 @@ judgment, accepted by the maintainer, for the test.)
 
 ## Changes
 
-- 2026-11-05: the lane's fix waves no longer rest on an answer to stay, since a change too big for one implementer no longer splits on the lane (`docs/decisions/routes.md`); any wave that starts a fresh seat records its line, since a tier bump or the alternate role starts one on a host that can resume, and a resume restarted the task and lost that wave.
+- 2026-11-05: a change too big for one implementer that stays on the lane no longer splits, its fix waves still resting on the answer to stay (`docs/decisions/routes.md`); any wave that starts a fresh seat records its line, since a tier bump or the alternate role starts one on a host that can resume, and a resume restarted the task and lost that wave.
 - 2026-11-04: the lane's inline fix waves, on a split, rest on the operator's answer to stay, because a split is more than the one implementer's worth their acceptance assumed.
 - 2026-11-04: a `BLOCKED` raised in a fix wave names the wave in its ledger line, and the answered wave continues, because a wave appends no step 1 line and a resume restarted the task, losing the wave count; a fresh wave implementer's ledger line takes a stated form for the same reason.
 - 2026-11-04: a task waiting on the operator after BLOCKED gets a ledger line; a plan change short of a supersede after the third wave records a line with the task's BASE, closes the open findings and re-runs the task with that BASE, reviewed even where it is marked, on every run's report; a missing verdict goes back to its seat or a replacement, then to the operator, never the controller's ruling; because each left the controller with no stated next step.

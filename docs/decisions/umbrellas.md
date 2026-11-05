@@ -301,10 +301,7 @@ judgment, an agent's call the maintainer has not ruled on.)
 The branch that added umbrellas left three points open, accepted on
 2026-11-05 as they are. A child's `landed` mark is committed at SDD
 Finish, after the branch review: a one-word edit, and a review reopened
-after Finish reads it. A feature with no umbrella line that marks an entry
-may also merge the base branch in there, and the suite then runs on the
-merged tree; that half was not put to the maintainer (judgment, an agent's
-call the maintainer has not ruled on). An umbrella approved without a campaign still gets
+after Finish reads it. An umbrella approved without a campaign still gets
 a workspace and a decision record, which its landing deletes: a small
 cost, and they hold the operator's rulings until then. With no home named
 for open items, a session ending before the operator says where an
@@ -312,6 +309,12 @@ umbrella's items go leaves nothing telling the next session the ask is
 pending: the workspace stays, so nothing is lost, and it takes a project
 with no home and a session ending at that ask. An agent's proposal, which
 the maintainer accepted. (Basis: judgment, accepted by the maintainer.)
+
+Beside the mark, a feature with no umbrella line that marks an entry may
+merge the base branch in at Finish, also after the branch review, and the
+suite then runs on the merged tree. That stays as it is too, but was not
+put to the maintainer. (Basis: judgment, an agent's call the maintainer has
+not ruled on: leaving that merge as it is.)
 
 ## Rejected
 
@@ -339,7 +342,7 @@ the maintainer accepted. (Basis: judgment, accepted by the maintainer.)
 
 ## Changes
 
-- 2026-11-05: three residuals are accepted as they are, an unreviewed `landed` mark with a late-marking feature's base merge, an approval-only umbrella's workspace and a pending open-items ask with no carrier, since each costs little and a fix would add text for a rare case.
+- 2026-11-05: three residuals are accepted as they are, an unreviewed `landed` mark, an approval-only umbrella's workspace and a pending open-items ask with no carrier, since each costs little and a fix would add text for a rare case; a late-marking feature's base merge after the branch review stays too, unruled.
 - 2026-11-05: a closing-review seat's prompt carries its report form, since the sections copied into it send a seat to a report format nothing gave.
 - 2026-11-04: the Children list ends on a line of text, because a last entry's mark conflicts in git with an appended child; a seat finds a feature's own entry by its feature folder's slug, which nothing stated.
 - 2026-11-04: an umbrella's children keep landing on the base, now weighed against holding them off it; its proposal says whether they can land without a break, and the entry of the child that owes the rest says what it owes. The maintainer asked, and a break is now stated (`docs/decisions/the-spec.md`).
