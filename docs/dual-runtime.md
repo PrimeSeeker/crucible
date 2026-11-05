@@ -252,17 +252,19 @@ install moves to a different version (measured on both). Claude Code
 fetches only then: a plugin that sets a version stays on it until the
 version changes (its plugin manifest reference). The commands below ran
 from 0.2.0 to 0.3.0 on both hosts (Claude Code 2.1.311, codex-cli
-0.164.0), and each fetched the new copy. Codex does not hold a copy by
-its version: re-adding its marketplace at `master` in place of the
-`v0.27.0` tag, both at version 0.27.0, replaced the installed copy with no
-`plugin` command (measured on codex-cli 0.164.0).
+0.164.0), and each fetched the new copy. On Codex,
+`codex plugin marketplace upgrade` itself replaces the installed copy,
+whether or not the version changed; re-adding a marketplace at another
+ref replaces nothing until that command runs (measured on codex-cli
+0.164.0).
 
 - Claude Code: `claude plugin update crucible@crucible`, then start a new
   session.
-- Codex installs a cached copy: refresh the marketplace with
-  `codex plugin marketplace upgrade crucible`, then
+- Codex installs a cached copy: `codex plugin marketplace upgrade crucible`
+  replaces it. The update from 0.2.0 to 0.3.0 then also ran
   `codex plugin remove crucible@crucible` and
-  `codex plugin add crucible@crucible`.
+  `codex plugin add crucible@crucible`, which the measurement above did not
+  need.
 
 **Hold or roll back to a version.** Uninstall, re-add the marketplace
 pinned to that version's tag, and install again:

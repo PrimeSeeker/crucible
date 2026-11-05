@@ -50,10 +50,13 @@ tag from GitHub on both hosts; the second, 0.3.0 (2026-10-27), ran the
 update from 0.2.0 on both, and each host fetched the new copy. (Basis:
 measured.)
 
-Codex does not hold a copy by its version: on 2026-11-05, re-adding its
-marketplace at `master` in place of the `v0.27.0` tag, both at version
-0.27.0, replaced the installed copy with no `plugin` command (codex-cli
-0.164.0, a throwaway `CODEX_HOME`). (Basis: measured.)
+Codex does not hold a copy by its version. On 2026-11-05 (codex-cli
+0.164.0, a throwaway `CODEX_HOME`), an install from the `v0.27.0` tag kept
+its copy through re-adding the marketplace at `master`, at the same
+version, and `codex plugin marketplace upgrade` then replaced it; from
+`v0.26.0` the same steps moved it to 0.27.0, with no `plugin` command in
+either run. No ref moved under a marketplace that stayed in place: each
+run re-added it. (Basis: measured.)
 
 The version stays in both `.claude-plugin/plugin.json` and the
 marketplace entry, though Claude Code's documentation advises against
