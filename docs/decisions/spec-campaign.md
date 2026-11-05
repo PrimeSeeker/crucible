@@ -290,15 +290,17 @@ difference runs from −0.07 to 0.95. Crucible's own runs carry almost all
 of the gap, 1.00 against 0.14; on the other project it was 0.29 against
 0.21. Median campaign cost, in input-equivalent tokens at the weights of
 `docs/decisions/routes.md`, was 2.6, 4.2, 8.6, 9.8 and 15.2 million for 1
-to 5 panel rounds, while a fix wave after the first pass cost 1.04
+to 5 panel rounds (5 being one feature), while a fix wave after the first pass cost 1.04
 million in seats at the median and 2.00 at the mean, the controller's
 share on top. So in branch-review cost alone, rounds 3 and up, at about 5
 to 6 million more, do not repay about 0.4 fewer serious findings, nor the
 interval's top of 0.95 at a mean wave. That is not a counterfactual:
 rounds were not assigned, and
-longer campaigns ran on bigger and harder specs (median 23k to 52k
-characters, first-round BLOCKERs and MAJORs per seat 1.37, 1.34, 1.48,
-2.75 and 5.40 by eventual rounds). Nor does wave cost price what a catch
+longer campaigns ran on bigger specs drawing more first-round findings
+(median 23k to 52k characters, BLOCKERs and MAJORs per seat 1.37, 1.34,
+1.48, 2.75 and 5.40 by eventual rounds, the top of each one feature), though
+under the earlier trigger those same severities also kept campaigns going.
+Nor does wave cost price what a catch
 before code is worth.
 
 As a proxy for an overturn after code, git shows which features committed
@@ -399,8 +401,8 @@ trim.)
 - **A package-wide suite run from a campaign seat** (§ Why).
 - **An outcome record for stopped campaigns**, a line at each finish on
   whether a mechanism was overturned after code: git's author dates find
-  the candidates on demand (§ Why), and reading those edits answers it
-  with no step added to every feature.
+  some candidates on demand, missing what was never written back into the
+  spec (§ Why), a limit accepted rather than add a step to every feature.
 
 ## Changes
 

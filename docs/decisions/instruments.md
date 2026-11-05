@@ -217,30 +217,40 @@ it, and on the read tool alone 23% of those seats went outside it.
 Those reads carry findings: of the redteam seats' 687 BLOCKERs and MAJORs,
 8% on the lenient count and 32% on the strict one mention a file only
 such a read reached, and of their MINORs 8% and 27%. Mention is not
-causation, and matching by file name has false positives. The boundaries
-that matter hold: 3 of 2,438 redteam reads through the read tool opened
-campaign records, 2 of them named; no seat's path or command named a
-session transcript under the host's project records, though 102 seats
-read tool results of their own and 11 touched memory files. So the reach is mostly
-to project code, what checking a claim needs, and no scope tightens. The
+causation, and matching by file name has false positives. On the read
+tool, redteam seats' reads past the scope were mostly repository code (150
+of 201), branch and task reviewers' mostly the workspace (885 of 1,082;
+843 of 921), where, counting the shell, the working files they make top
+the counts. The
+boundaries that matter were only partly checked. On the read tool, 3 of
+2,438 redteam reads opened campaign records, 2 of them named; shell reads
+were not separated, with 95 mentions of seat-report names, a seat's own or
+a peer's unknown, and 3,271 recursive greps not classed by whether they
+entered the workspace. Nothing a script matched named a session transcript
+under the host's project records, though that test takes tool results and
+memory first, so a command naming both is not counted as one; 102 seats
+touched tool results there, whose is not established, and 11 touched
+memory files. So no scope tightens, on the findings those reads carry. The
 scope sentence stays stricter than what seats do: seats do not follow it
 now, so rewording it would change little. (Basis: measured, by script,
 with no read of what those files held; judgment, accepted by the
 maintainer.)
 
 The methods the audit of the hypothesis-specs umbrella used
-(`docs/decisions/evidence-and-findings.md`) were mostly taken up since:
-an umbrella's closing review runs a walkthrough, fidelity to the umbrella's
+(`docs/decisions/evidence-and-findings.md`) were partly taken up since, the
+rest dropped unmeasured: an umbrella's closing review runs a walkthrough, fidelity to the umbrella's
 Intent and the seams between children
 (`skills/brainstorming/references/umbrellas.md` § Closing review), and a
 spec campaign's round 1 the goal check and the outside-the-frame lens
 (`docs/decisions/spec-campaign.md`). A feature outside an umbrella gets no
-walkthrough, and the read for design smells has no seat of its own. What
-each method caught was not recounted: the audit's own count sits in a
-report kept only in session transcripts, left unread since transcripts can
-hold secrets. An agent's recommendation to close the question as overtaken,
-which the maintainer accepted. (Basis: judgment, accepted by the
-maintainer.)
+walkthrough, and the read for design smells has no seat of its own. Which
+method catches what stays unanswered: the audit's reports are kept only in
+session transcripts, which can hold secrets, so nobody reread them, and a
+script's tally by heading matched two method files (`audit-rf.md` 5 MAJOR
+and 5 MINOR; `audit-wt.md` 2 MAJOR and 5 MINOR), which does not say what the
+reviews missed. An agent's recommendation to close the question as
+overtaken, which the maintainer accepted. (Basis: measured, for the tally;
+judgment, accepted by the maintainer.)
 
 ### Report files
 
@@ -403,13 +413,12 @@ judgment, accepted by the maintainer.)
   branch review, in place of its share; and a wave's findings can come from
   several reports. A close call, put to the maintainer as one: an agent's
   recommendation, which the maintainer accepted.
-- **Tightening the seats' read scopes**: reads past them carry findings,
-  and they reach project code rather than round records (§ What seats
-  read).
+- **Tightening the seats' read scopes**: reads past them carry findings
+  (§ What seats read).
 
 ## Changes
 
-- 2026-11-06: seats' reads past their scopes are measured and left as they are, since those reads carry findings and the boundaries that matter hold; the audit's methods question closes as overtaken; a seat's ability to nest, and the declined tool-level ban, move here from the deleted backlog item.
+- 2026-11-06: seats' reads past their scopes are measured and left as they are, since those reads carry findings; the audit's methods question closes, partly taken up and the rest dropped unmeasured; a seat's ability to nest, and the declined tool-level ban, move here from the deleted backlog item.
 - 2026-11-05: passing findings by reference is rejected on measured figures, and the re-reviewers' report writes since the card change are recorded.
 - 2026-11-04: a report the controller saves to an appended report is appended, because a whole-file save would destroy the earlier sections.
 - 2026-11-04: the confirmation of a report file covers an appended report, which holds that seat's section, because an earlier seat's file on disk would pass a missing report.

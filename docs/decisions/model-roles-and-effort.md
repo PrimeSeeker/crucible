@@ -154,15 +154,17 @@ first place. The re-reviewer keeps its row, which the probe did not
 look at: an agent's proposal, which the maintainer agreed to. (Basis:
 measured, on 10 samples; judgment, accepted by the maintainer.)
 
+On 2026-11-03 the seats' rows stopped repeating the default. Every card's Model line, SDD's rows for its three instruments and redteaming's sentence on the verifier restated the default role and the alternate role's triggers, which § Models and effort already holds for every dispatch; the default is now stated there once, each card keeps only its seat's departure (the verifier's bounded role, the re-reviewer's bounded role or better, the implementer's drop for a bounded task, the branch reviewer's floor), and SDD keeps the rows of the seats it composes, which have no card. An agent's proposal, on which the maintainer left the call to the agent. (Basis: judgment, accepted by the maintainer.)
+
 Read from the transcripts on disk on 2026-11-06 (48 sessions, 2,476 seats,
 about 3,890 million input-equivalent tokens at the weights of
 `docs/decisions/routes.md`), implementers cost 1,298 million, a third of
 the whole, and 426 of 457 ran on the default role. On Claude Code the
 bounded role's model costs half the default role's (the platform's price
 list, read 2026-11-06), so moving half the implementers would save about
-8%. That runs against the 2026-10-13 ruling above, on which implementers
-double as reviewers, and whether quality would hold on the bounded role
-is unmeasured; a clearly bounded task can already drop. An agent's
+8% at equal token use. That runs against the 2026-10-13 ruling above, on
+which implementers double as reviewers, and whether quality would hold on
+the bounded role is unmeasured; a clearly bounded task can already drop. An agent's
 recommendation to record the figure and open no item, which the
 maintainer accepted. (Basis: measured, for the cost; judgment, accepted
 by the maintainer.)
@@ -176,20 +178,26 @@ controller puts decision asks to the operator mid-run, which a nested one
 cannot do until it returns. The maintainer, 2026-10-27: "the barrier is
 not insurmountable, but I doubt the size of the cost win".
 
-The same transcripts size the win on Claude Code. The controller is 33% of
-a run's cost at the record's weights and 29% at current prices (crucible's
-own 41%, the other project's 31%, at the record's weights; 17 to 74% by
-session, median 42%), but most of that is not movable: while executing,
-attributed by what it last dispatched, it is 16% of a run. At the bounded
-role's half price that is at most about 8%, before the outer controller's
-overhead. So no nesting and no hand-back protocol were designed. The
-Codex half was never measured and was dropped with the item. An agent's
-recommendation, which the maintainer accepted. (Basis: measured, on
+The same transcripts bear on the win on Claude Code, without bounding it.
+The controller is 33% of a run's cost at the record's weights and 29% at
+current prices, cache read at 0.05× and every cache write at the 1-hour 2×
+(crucible's own 41%, the other project's 31%, at the record's weights; 17
+to 74% by session, median 42%, across the 36 sessions with 10 or more
+agents). Only part of that could move: while executing, attributed by what
+it last dispatched, it is 16% of a run, and a further 6% is unattributed.
+At the bounded role's half price and equal token use, that is about 8%, or
+about 11% if all the unattributed part moved too, before the outer
+controller's overhead. Token use would not be equal, though: 79% of the
+controller's cost at the record's weights is re-read cache, and a nested
+controller starting at execution would carry less context, a saving no
+script measured. So the measured win is small and its upper end unknown, and
+no nesting or hand-back protocol was designed, since the barrier to the
+operator stands either way. The Codex half was never measured and was
+dropped with the item. An agent's recommendation, which the maintainer
+accepted on a first statement of "at most about 8%". (Basis: measured, on
 tokens, not quality, the other project's runs ending 2026-10-23; external,
 for upstream and the host; the maintainer's preference, for the doubt;
 judgment, accepted by the maintainer, for closing it.)
-
-On 2026-11-03 the seats' rows stopped repeating the default. Every card's Model line, SDD's rows for its three instruments and redteaming's sentence on the verifier restated the default role and the alternate role's triggers, which § Models and effort already holds for every dispatch; the default is now stated there once, each card keeps only its seat's departure (the verifier's bounded role, the re-reviewer's bounded role or better, the implementer's drop for a bounded task, the branch reviewer's floor), and SDD keeps the rows of the seats it composes, which have no card. An agent's proposal, on which the maintainer left the call to the agent. (Basis: judgment, accepted by the maintainer.)
 
 ### The alternate role
 
@@ -288,8 +296,9 @@ would cost more with no evidence for it.
 - **Reading the Codex controller's own effort from its rollout file**:
   the format is undocumented, sandbox access and freshness are untested,
   and seats would follow a controller set to `xhigh`.
-- **A controller one subagent down on a cheaper model**: at most about
-  8% of a run, before overhead, and it cannot reach the operator mid-run
+- **A controller one subagent down on a cheaper model**: it cannot reach
+  the operator mid-run, and the saving is about 8% of a run at equal token
+  use, more from its shorter context by an unmeasured amount
   (§ A controller one subagent down).
 
 ## What a project may change
@@ -303,7 +312,7 @@ operator's config key.
 
 ## Changes
 
-- 2026-11-06: a controller one subagent down is rejected on its measured ceiling, the Codex half unmeasured; the implementers' cost share and a comparison of the alternate role's seats in the same round are recorded, and neither changes a row.
+- 2026-11-06: a controller one subagent down is rejected, since it cannot reach the operator and its saving at equal token use is small, the shorter context's saving and the Codex half unmeasured; the implementers' cost share and a comparison of the alternate role's seats in the same round are recorded, and neither changes a row.
 - 2026-11-05: what a Claude Code seat runs at with effort unset is measured from host records; the operator-only rule stays, since no defect from the difference on the bounded role has been noticed.
 - 2026-11-04: a round 1 recorded degraded hands on a swap no returned seat ran to the next round (`docs/decisions/spec-campaign.md`).
 - 2026-11-04: a seat started through `codex exec` names no effort either, and takes the key that run reads from the operator's Codex config, so effort stays the operator's on this route too.
