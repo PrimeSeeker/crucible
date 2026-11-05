@@ -334,8 +334,8 @@ The re-count of 2026-11-05 reproduced every earlier every-run total. It
 adds, as conditional reads, the two the umbrella's closing review found
 omitted: the parallel-agents skill on a parallel campaign, which the text
 stopped sending a controller to after `0deefcf`, and the implementer
-template on the very-small lane, read for its inline path and, from the
-prose compaction, for a fix wave. Only the bracketed totals move. One such
+template on the very-small lane, read for its inline path until the prose
+compaction, and from it for a fix wave. Only the bracketed totals move. One such
 read stays uncounted: since 2026-11-04 the inline-mode reference also names
 that template, so the standard and folded brackets at `5546425` read about
 4,800 tokens low for a task implemented inline. From before the rewrite to `5546425` the every-run load fell by 33%
