@@ -11,51 +11,25 @@
   would be loud, so a regression should show; nothing yet checks that
   it did.
 - The blind verifier was kept for now on uncertain evidence (D5).
-- Resident tokens per route were counted at the rewrite's start, before
-  `compaction-fit` and after it, as a baseline
-  (`docs/decisions/authoring-crucible.md` § Why, Resident tokens per
-  route; manifests and script in
-  `docs/crucible/2026-11-03-compaction-fit/`).
-- `compaction-fit` moved long step bodies of three skills into
-  references read at their step. After compaction the host re-attaches
-  the skill, not those references: a controller reaches a moved step's
-  text only by re-reading its reference, as each skill's statement of
-  what a stub means tells it to, and whether controllers do is
-  unmeasured.
+- The recorded runs cannot check either yet. Since 0.13.0 (2026-11-02)
+  about 20 features have run, all on crucible's own repository in one
+  session. Only `placement` and `compaction-fit` used a campaign or the
+  task loop, where most retired mechanisms lived, and no other project has
+  run a feature on those versions. The maintainer held the audit until one
+  has (2026-11-05).
+- What those runs could show is recorded: the token figures and the first
+  count of compaction re-reads in `docs/decisions/authoring-crucible.md`,
+  and the verifier's eight runs in
+  `docs/decisions/fix-verification-and-merge.md`.
 
 ## Follow-up
 
-After `review-retirements` and `execution-retirements` have run on a
-few features, repeat the audit on the new runs with
-`audit-brief.md`, against `inventory.md` (both beside the umbrella):
-did a retired mechanism's failure reach a later stage or the operator,
-and does the verifier earn its keep. Report aggregate figures only for
-any other project.
+Once a few features on real code have run on 0.13.0 or later, repeat the
+audit on those runs with `audit-brief.md`, against `inventory.md` (both
+beside the umbrella): did a retired mechanism's failure reach a later stage
+or the operator, and does the verifier earn its keep. Report aggregate
+figures only for any other project. Judge a session by its events'
+timestamps: a file's date can be recent on an old run.
 
-With it:
-
-- re-count the resident-token manifests
-  (`docs/crucible/2026-11-03-compaction-fit/resident-tokens.json`, with
-  `resident_tokens.py` beside it) at the then-current head, against the
-  baseline in the decision record;
-- in the new runs' transcripts, look for controllers re-reading a moved
-  step's reference after compaction before acting on that step.
-
-The umbrella's closing review (2026-11-03) found the outcome figures
-narrower than they read: counted as the umbrella's Problem counted,
-with rendered seat templates included, shipped skill text fell only
-about 1.2% (the prose budget stopped counting rendered templates
-mid-effort), while what seats read fell from about 19,600 to 17,800
-words, which nothing records; and the manifests count controller files
-only, and omit `skills/dispatching-parallel-agents/SKILL.md` on
-parallel campaigns and the implementer template on the very-small
-lane's inline path. With the re-audit: add those reads under their
-conditions and re-count all three revisions; count what seats read
-alongside what controllers load.
-
-The prose compaction (2026-11-03) re-counted the routes with the new references added to the manifest (`docs/crucible/2026-11-03-prose-compaction/resident-tokens.json` and `.md`); re-count with that manifest too.
-
-`resident_tokens.py` names the model whose tokenizer it counts with;
-where that model has been retired by then, re-count all three revisions
-with its successor, not the head alone, so the comparison stays on one
-tokenizer.
+In the same transcripts, look for controllers re-reading a moved step's
+reference after compaction before acting on that step.

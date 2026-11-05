@@ -7,6 +7,7 @@
 - The effort's record ranks the growth mechanisms and the containment ideas, among them a suite test billing each route's every-run tokens against an operator-owned cap, a compaction trigger at 10% over this baseline, a per-spec token allowance, a review-terms line making excess a finding in crucible's own reviews, and periodic re-derivation of a file from its rule inventory.
 - Since 2026-11-03 writing-skills carries the write-time rules (`crucible:writing-skills § Reader cost`: a fix that keeps the finding's reasons out of the text, excess as a review finding, measuring written text) and the compaction procedure (`skills/writing-skills/compacting.md`). Replace-before-adding was micro-tested then and found unneeded: fixers already revise the sentence that owns the case (`docs/decisions/authoring-crucible.md`).
 - Token costs are reliably underestimated before implementation (the maintainer, 2026-11-03), which weighs against a per-spec allowance: a control measures the written text.
+- By 2026-11-05 the every-run load had regrown 4.6 to 5.0% from that baseline on every route, in two days of backlog batches (`docs/crucible/2026-11-05-reaudit-figures/resident-tokens.md`), about half of the 10% trigger the effort's record proposes.
 - A per-file rewrite loses rules that two files each drop on the strength of the other ("stated elsewhere"); the effort's whole-branch review caught one such pair.
 
 ## Follow-up

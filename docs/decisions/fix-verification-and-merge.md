@@ -245,6 +245,20 @@ verifier checks it against. The spec terminal pass's follow-up wave was
 verified like every wave with nowhere to record it. (Basis: judgment, an
 agent's proposal accepted by the maintainer.)
 
+Whether the verifier earns its keep, the skill text rewrite's open question
+(`docs/crucible/2026-11-01-skill-text-rewrite/umbrella.md`, D5 and D9), has
+only a thin answer so far. On 2026-11-05 the reports of its eight runs since
+the retirements, in two campaigns on crucible's own text, were counted: all
+60 fix items had landed and no hunk fell outside a list. Among their delta
+claims it found one FALSE and two partly so, all minor wording, before the
+repair path above existed; the two traced stayed in the landed spec. Eight
+runs with no miss on its main job, on crucible's own text, do not answer the
+question, and the failure it guards against is silent, so it stays and the
+question waits for features on real code
+(`docs/backlog/skill-rewrite-reaudit.md`). An agent's proposal, which the
+maintainer accepted. (Basis: measured, by the controller of those campaigns
+from its own session's reports; judgment, accepted by the maintainer.)
+
 ### Readouts and the trace
 
 The coverage check on readouts used to run in a script: the round checks
@@ -278,6 +292,7 @@ controller's judgment (`docs/decisions/spec-campaign.md`).
 
 ## Changes
 
+- 2026-11-05: the verifier's eight runs since the retirements are recorded, and it stays for now, since they ran only on crucible's own text and the failure it guards against is silent.
 - 2026-11-04: the verifier's re-check is a fresh seat writing `verifier-recheck.md`, an untraced hunk is reverted or named under the item needing it, and the spec terminal pass's follow-up wave records a verifier block, since none of the three had a stated path.
 - 2026-11-04: a plan's binding content in the fix path is its inter-task contracts and each task's Contract and Acceptance, no longer every required field, matching `crucible:writing-plans` § Deferring detail; so a MINOR against a task's Why or Files no longer enters a fix list as binding.
 - 2026-11-04: a seat on another host's findings are each opened and checked against the files before they merge, since one audit found about half such a seat's claims held only partly.

@@ -288,26 +288,33 @@ maintainer.)
 
 The convention's own text said nothing of a recurring step until 2026-11-03, so a stub whose trigger recurs, such as merging each round's seat reports, read literally sent a controller back to its reference every round; it now says a reference read since the last compaction is not read again. An agent's proposal, on which the maintainer left the call to the agent. (Basis: judgment, accepted by the maintainer.)
 
+Whether controllers do re-read was unmeasured until 2026-11-05. Of the 19 compactions after 0.15.0 in one session on crucible's own repository, 16 run by hand by the maintainer and most falling between features, 2 fell with a moved step in flight. Both times the controller read the reference of the step it next acted on before acting: `finish.md` once, and once the lane's reference and the dispatch references, the maintainer's answer having moved the work from Finish to a wave. Two cases and one controller, counted by that controller from its own transcript: no miss, not yet a habit. (Basis: measured.)
+
 On 2026-11-03 SDD's ledger line forms for leads and `## Questions` moved from its § Setup into `skills/subagent-driven-development/references/setup.md`, read at Setup, though leads and questions are written past that step, at every task and branch-review pass: the texts where they are written restate their forms or lead to that file by citation, so a controller after compaction still finds a form, and the forms no longer ride every re-attach. An agent's proposal, on which the maintainer left the call to the agent. (Basis: judgment, accepted by the maintainer.)
 
 ### Resident tokens per route
 
 Resident tokens were counted on 2026-11-03 at `a3db87f`, before the
 skill text rewrite, at `d78398c`, before the compaction fit, and at
-`4026f6b`, after it. For each route a manifest lists every file a Claude
-Code controller loads, by phase, each once, and each file's text went
-alone to Anthropic's token-counting endpoint
-(`docs/crucible/2026-11-03-compaction-fit/resident-tokens.md`, with the
-manifests and the script beside it). Totals, every run, and in brackets
-with the files loaded only on an event added (a dispute, drift, inline
-work, a flip path, a child of an umbrella):
+`4026f6b`, after it, and on 2026-11-05 again at each of those, at
+`56e8475`, after the prose compaction, and at `5546425`, the head. For
+each route a manifest lists every file a Claude Code controller loads, by
+phase, each once, and each file's text went alone to Anthropic's
+token-counting endpoint
+(`docs/crucible/2026-11-05-reaudit-figures/resident-tokens.md`, with the
+script beside it; the manifests sit beside the 2026-11-03 figures in
+`docs/crucible/2026-11-03-compaction-fit/` and
+`docs/crucible/2026-11-03-prose-compaction/`). Totals, every run, and in
+brackets with the files loaded only on an event added (a dispute, drift,
+inline work, a flip path, a child of an umbrella, seats dispatched in
+parallel):
 
-| Route | `a3db87f` | `d78398c` | `4026f6b` |
-|---|---|---|---|
-| standard | 79,145 (87,453) | 72,172 (80,383) | 70,761 (81,158) |
-| folded | 81,079 (89,387) | 73,542 (81,753) | 72,131 (82,528) |
-| very-small | 59,043 (68,511) | 54,708 (63,986) | 50,295 (61,408) |
-| umbrella campaign | 53,425 (57,211) | 51,916 (55,521) | 52,168 (55,773) |
+| Route | `a3db87f` | `d78398c` | `4026f6b` | `56e8475` | `5546425` |
+|---|---|---|---|---|---|
+| standard | 79,145 (89,679) | 72,172 (82,637) | 70,761 (83,412) | 50,781 (57,733) | 53,256 (60,352) |
+| folded | 81,079 (91,613) | 73,542 (84,007) | 72,131 (84,782) | 50,131 (57,083) | 52,659 (59,755) |
+| very-small | 59,043 (73,717) | 54,708 (70,045) | 50,295 (67,467) | 32,248 (44,347) | 33,738 (46,100) |
+| umbrella campaign | 53,425 (59,437) | 51,916 (57,775) | 52,168 (58,027) | 36,906 (39,747) | 38,604 (41,514) |
 
 Across the rewrite the every-run load fell by 11% on the standard and
 folded routes, 15% on the very-small lane and 2% on an umbrella's own
@@ -319,11 +326,31 @@ raised an umbrella campaign's by 252, and the load with every event's
 file by 775 on the standard and folded routes, through the stubs and the headings the
 references repeat. The manifests are Claude Code's and say nothing about
 Codex, whose host files and tokenizer differ. These figures are the
-baseline a later measurement compares with: the skill text rewrite's
-re-audit (`docs/backlog/skill-rewrite-reaudit.md`) re-counts the
-manifests. The
+baseline a later measurement compares with. The
 measurement was an agent's proposal, which the maintainer accepted.
 (Basis: measured; judgment, accepted by the maintainer.)
+
+The re-count of 2026-11-05 reproduced every earlier every-run total. It
+adds, as conditional reads, the two the umbrella's closing review found
+omitted: the parallel-agents skill on a parallel campaign, which the text
+stopped sending a controller to after `0deefcf`, and the implementer
+template on the very-small lane's inline path. Only the bracketed totals
+move. From before the rewrite to `5546425` the every-run load fell by 33%
+on the standard route, 35% on the folded, 43% on the very-small lane and
+28% on an umbrella's own campaign. Since the prose compaction it has grown
+by 4.6 to 5.0% on every route, in two days of backlog batches. The load
+conditions are the manifests', not derived again at the head. The head's
+references in no manifest are the other host's pair, this host's map,
+which the hook's text carries, and the shared seat reference, which
+reaches seats by splice. (Basis: measured.)
+
+What seats carry was counted alongside, per dispatch, one of each of the
+seven seats: 40,424 tokens (19,672 words) at `a3db87f`, 36,659 (17,879) at
+`4026f6b`, 26,988 (13,330) at `56e8475` and 27,340 (13,479) at `5546425`, a
+fall of 32%. The first figure adds the shared reference five seats then
+read on every dispatch, later spliced into their templates; references a
+seat reads only on some runs, and its own inputs, are not counted.
+(Basis: measured.)
 
 When a full rewrite of the controller skills was declined on
 2026-10-01, a re-open trigger was set: skill prose above about 10% of
@@ -507,6 +534,7 @@ the build-history rule included (`skills/using-crucible/SKILL.md`).
 
 ## Changes
 
+- 2026-11-05: resident tokens re-counted to the head with the two reads the closing review found omitted, what seats carry counted beside them, and the compaction re-read measured for the first time, as the skill text rewrite's re-audit asked; its transcript half waits for features on real code (`docs/backlog/skill-rewrite-reaudit.md`).
 - 2026-11-05: the build-history rule's list names open items in the project's home (`docs/decisions/branch-review.md`).
 - 2026-11-05: the re-open trigger's retirement no longer says the prose budget holds growth, since it records growth and refuses none; the retirement stands, the maintainer leaving that call to the agent once told its first clause has no replacement. Compaction's loop ends only with no rule-adding addition left unruled, since a clean check otherwise shipped one unruled. A micro-test's sample on a realistic task needs no announcement, since it is told nothing false.
 - 2026-11-03: writing-skills covers text agents act on and is organized around reader cost, with a micro-tested fix rule, excess as a review finding and `compacting.md` for compaction; its supporting-file rule is stated in reader-cost terms; a compaction pass on every edit is rejected; it was rewritten whole from a rule inventory, reversing the 2026-10-14 rejection of a whole rewrite, its `SKILL.md` capped at its prior token count for that rewrite only; because the maintainer asked it to carry what the prose compaction learned about creep and to cover all reused prompt-class text.
