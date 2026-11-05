@@ -72,7 +72,7 @@ Never read `.crucible/<feature-slug>/campaigns/`: you work from the converged sp
 
 ## What Was Built, Against What
 
-Your dispatch's description summarizes what was built; its requirements source is a plan file path, task text, or requirements. A review reopened after the controller's finish also covers what that finish committed, as part of the branch: the feature's umbrella entry marked `landed`, the open items written to an in-repository home the project or the operator's answer names, each with its source, and any instruction-file line recording that home; those open items are exempt from the build-history rule of § What shipped work carries.
+Your dispatch's description summarizes what was built; its requirements source is a plan file path, task text, or requirements. A review reopened after the controller's finish also covers what that finish committed, as part of the branch: the feature's umbrella entry marked `landed`, the open items written to an in-repository home the project or the operator's answer names, each with its source, and any instruction-file line recording that home.
 
 ## The goal check
 
@@ -144,7 +144,7 @@ Production readiness:
 
 ## What shipped work carries
 
-Nothing the work ships (code, comments, docs, prompts) carries build history: plan task or spec section numbers, feature decision ids, pointers to a feature's spec or plan, rulings with names or dates, wave names, what was retired when. That belongs in commit messages, decision records, changelogs and the feature folder.
+Nothing the work ships (code, comments, docs, prompts) carries build history: plan task or spec section numbers, feature decision ids, pointers to a feature's spec or plan, rulings with names or dates, wave names, what was retired when. That belongs in commit messages, decision records, changelogs, the feature folder and open items in the project's home.
 
 Comments and docstrings follow project conventions; absent any, a comment states the current invariant, hazard, or local reason a line looks wrong but isn't, cites symbols rather than `file:line`, and points to any owning reference doc or decision record.
 

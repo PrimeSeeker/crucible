@@ -130,7 +130,7 @@ Defects, not style:
 
 ## What shipped work carries
 
-Nothing the work ships (code, comments, docs, prompts) carries build history: plan task or spec section numbers, feature decision ids, pointers to a feature's spec or plan, rulings with names or dates, wave names, what was retired when. That belongs in commit messages, decision records, changelogs and the feature folder.
+Nothing the work ships (code, comments, docs, prompts) carries build history: plan task or spec section numbers, feature decision ids, pointers to a feature's spec or plan, rulings with names or dates, wave names, what was retired when. That belongs in commit messages, decision records, changelogs, the feature folder and open items in the project's home.
 
 Comments and docstrings follow project conventions; absent any, a comment states the current invariant, hazard, or local reason a line looks wrong but isn't, cites symbols rather than `file:line`, and points to any owning reference doc or decision record.
 

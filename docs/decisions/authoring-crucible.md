@@ -82,7 +82,7 @@ everything a change ships, code, comments, docs and prompts: plan task
 numbers, spec section numbers, feature decision ids, pointers to a
 feature's spec or plan, rulings carrying names or dates, wave names, what
 was retired when. It belongs in commit messages, the feature folder, and
-the project's decision records or changelog, which exist to hold it. That
+the project's open items, decision records or changelog, which exist to hold it. That
 rule is unconditional; the rest of the templates' comment policy (the
 current invariant or hazard, symbols rather than `file:line`, a pointer
 to the owning document) is a default under the project's conventions.
@@ -506,6 +506,7 @@ the build-history rule included (`skills/using-crucible/SKILL.md`).
 
 ## Changes
 
+- 2026-11-05: the build-history rule's list names open items in the project's home (`docs/decisions/branch-review.md`).
 - 2026-11-05: the re-open trigger's retirement no longer says the prose budget holds growth, since it records growth and refuses none; the retirement stands, the maintainer leaving that call to the agent once told its first clause has no replacement. Compaction's loop ends only with no rule-adding addition left unruled, since a clean check otherwise shipped one unruled. A micro-test's sample on a realistic task needs no announcement, since it is told nothing false.
 - 2026-11-03: writing-skills covers text agents act on and is organized around reader cost, with a micro-tested fix rule, excess as a review finding and `compacting.md` for compaction; its supporting-file rule is stated in reader-cost terms; a compaction pass on every edit is rejected; it was rewritten whole from a rule inventory, reversing the 2026-10-14 rejection of a whole rewrite, its `SKILL.md` capped at its prior token count for that rewrite only; because the maintainer asked it to carry what the prose compaction learned about creep and to cover all reused prompt-class text.
 - 2026-11-03: the split files' word counts are dated to the moves, since the per-file compaction cut those files further.

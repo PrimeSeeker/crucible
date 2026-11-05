@@ -49,7 +49,7 @@ Read only what this dispatch enumerates (the pinned spec, the umbrellas it names
 
 ## What Was Built, Against What
 
-Your dispatch's description summarizes what was built; its requirements source is a plan file path, task text, or requirements. A review reopened after the controller's finish also covers what that finish committed, as part of the branch: the feature's umbrella entry marked `landed`, the open items written to an in-repository home the project or the operator's answer names, each with its source, and any instruction-file line recording that home; those open items are exempt from the build-history rule of § What shipped work carries.
+Your dispatch's description summarizes what was built; its requirements source is a plan file path, task text, or requirements. A review reopened after the controller's finish also covers what that finish committed, as part of the branch: the feature's umbrella entry marked `landed`, the open items written to an in-repository home the project or the operator's answer names, each with its source, and any instruction-file line recording that home.
 
 [[include The goal check]]
 
