@@ -7,7 +7,7 @@
   directory; invoking them again loaded the new version. A controller
   that does not notice runs the old rules. Seen again in a maintainer
   session on 2026-11-03: copies from 0.13.0 and 0.12.0 re-attached under
-  0.14.0.
+  0.14.0, and on 2026-11-05: a copy from 0.23.0 under 0.27.0.
 - Claude Code's "Extend Claude with skills" page (read 2026-11-03) says
   the re-attached skills share a combined budget of 25,000 tokens,
   filled from the most recently invoked skill, so an older skill can be
