@@ -368,8 +368,8 @@ trigger was retired on 2026-11-03. `tests/test_skill_size.py` caps each
 trigger's second clause. The first clause, on prose's share of spend, has
 no direct replacement: the total cap (§ The prose budget) limits words, not
 that share. An agent's proposal: the maintainer accepted the retirement on
-2026-11-03, and left that it stands with no direct replacement to the agent
-on 2026-11-05. (Basis: judgment, accepted by the maintainer.)
+2026-11-03, and left that it stands with no replacement to the agent on
+2026-11-05. (Basis: judgment, accepted by the maintainer.)
 
 ### The prose budget
 
@@ -396,7 +396,7 @@ maintainer accepted on a decision ask, reading the skill text rewrite's
 (Basis: judgment, accepted by the maintainer.)
 
 The ratchet records growth and refuses none, since a commit raises its own
-number: 67 raises and 27 lowers since 0.2.0, and the every-run load regrew
+number: 67 raises and 27 lowers from 0.2.0 to the prose compaction, and the every-run load regrew
 4.6 to 5.0% in the two days after the prose compaction. Most of that had
 landed by 0.25.0; the three releases after it added 0.2% to the words. From
 2026-11-05 `TOTAL_CAP` is the limit a commit may not raise for itself: 47,387
