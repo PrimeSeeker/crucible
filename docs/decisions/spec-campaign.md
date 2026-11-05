@@ -288,11 +288,11 @@ a mean of 0.57 BLOCKER or MAJOR after 1 or 2 panel rounds (23 features)
 and 0.19 after 3 or more (21); the bootstrap 95% interval of the
 difference runs from −0.07 to 0.95. Crucible's own runs carry almost all
 of the gap, 1.00 against 0.14; on the other project it was 0.29 against
-0.21. Median campaign cost, in input-equivalent tokens at the weights of
+0.21. Median campaign cost in seats, in input-equivalent tokens at the weights of
 `docs/decisions/routes.md`, was 2.6, 4.2, 8.6, 9.8 and 15.2 million for 1
 to 5 panel rounds (5 being one feature), while a fix wave after the first pass cost 1.04
 million in seats at the median and 2.00 at the mean, the controller's
-share on top. So in branch-review cost alone, rounds 3 and up, at about 5
+share on top of both. So in branch-review cost alone, rounds 3 and up, at about 5
 to 6 million more, do not repay about 0.4 fewer serious findings, nor the
 interval's top of 0.95 at a mean wave. That is not a counterfactual:
 rounds were not assigned, and
@@ -316,7 +316,8 @@ rewording from an overturn without reading the edit. Deferral markers showed no 
 (1.41, 1.23 and 1.39 BLOCKERs and MAJORs per seat with none, 1 to 3 and 4
 or more markers), and fix altitude could not be measured by script. Told
 this, the maintainer accepted an agent's recommendation to change neither
-the rule nor the cap. (Basis: measured, on staked counts and with
+the rule nor the cap, to drop the question of drift reducers and to add no
+outcome record. (Basis: measured, on staked counts and with
 selection; judgment, accepted by the maintainer.)
 
 The hypothesis-specs umbrella asked that a seat be able to say the spec,
@@ -404,7 +405,8 @@ trim.)
 - **An outcome record for stopped campaigns**, a line at each finish on
   whether a mechanism was overturned after code: git's author dates find
   some candidates on demand, missing what was never written back into the
-  spec (§ Why), a limit accepted rather than add a step to every feature.
+  spec, a limit the maintainer accepted rather than add a step to every
+  feature (§ Why).
 
 ## Changes
 

@@ -178,8 +178,7 @@ controller puts decision asks to the operator mid-run, which a nested one
 cannot do until it returns. The maintainer, 2026-10-27: "the barrier is
 not insurmountable, but I doubt the size of the cost win".
 
-The same transcripts bear on the win on Claude Code, without bounding it.
-The controller is 33% of a run's cost at the record's weights and 29% at
+The same transcripts bound the win on Claude Code. The controller is 33% of a run's cost at the record's weights and 29% at
 current prices, cache read at 0.05× and every cache write at the 1-hour 2×
 (crucible's own 41%, the other project's 31%, at the record's weights; 17
 to 74% by session, median 42%, across the 36 sessions with 10 or more
@@ -190,9 +189,10 @@ about 11% if all the unattributed part moved too, before the outer
 controller's overhead. Token use would not be equal, though: about 78% of the
 controller's cost at the record's weights is re-read cache, and a nested
 controller starting at execution would carry less context, a saving no
-script measured. So the measured win is small and its upper end unknown, and
-no nesting or hand-back protocol was designed, since the barrier to the
-operator stands either way. The Codex half was never measured and was
+script measured. It comes out of the same shares, and seats' costs do not
+change, so the win lies between about 8% and under 22% of a run, the top
+being arithmetic on those shares, not a measurement. No nesting or hand-back
+protocol was designed, since the barrier to the operator stands either way. The Codex half was never measured and was
 dropped with the item. An agent's recommendation, which the maintainer
 accepted on a first statement of "at most about 8%". (Basis: measured, on
 tokens, not quality, the other project's runs ending 2026-10-23; external,
@@ -298,7 +298,7 @@ would cost more with no evidence for it.
   and seats would follow a controller set to `xhigh`.
 - **A controller one subagent down on a cheaper model**: it cannot reach
   the operator mid-run, and the saving is about 8% of a run at equal token
-  use, more from its shorter context by an unmeasured amount
+  use and under 22% however short its context, unmeasured between
   (§ A controller one subagent down).
 
 ## What a project may change

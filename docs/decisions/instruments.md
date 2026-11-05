@@ -206,18 +206,20 @@ research than the read scopes suggest (2026-10-28), and the transcripts
 on disk bear it out for some seats (read 2026-11-06, 48 sessions, the
 shell's reading commands counted as well as the read tool). The share of
 seats touching a file neither the dispatch nor a file it names mentions,
-and those distinct files per seat, on the lenient count, which leaves out
-files the seat made itself, diffs included, were: branch reviewers 89%,
-6.2; redteam seats 77%, 3.3; terminal passes 61%, 2.9; task reviewers 39%,
-0.8; blind verifiers 29%, 0.8; re-reviewers 19%, 0.3. The strict count
-takes only what a named file cites as reached and keeps a seat's own files
-and generic names, which puts redteam seats at 96%. The branch reviewer's
+and those distinct files per seat, on the lenient count, which takes the
+citations of named files read through the shell as reached and leaves out
+generic names and files the seat made itself, diffs included, were: branch
+reviewers 89%, 6.2; redteam seats 77%, 3.3; terminal passes 61%, 2.9; task
+reviewers 39%, 0.8; blind verifiers 29%, 0.8; re-reviewers 19%, 0.3. The
+strict count takes a named file's citations only where the read tool opened
+it and keeps a seat's own files and generic names, which puts redteam seats
+at 96%. The branch reviewer's
 template allows such reads of code; the redteam seat's says to read only
 what its dispatch enumerates and to scope every search to it, and on the
 read tool alone 23% of those seats went outside it.
 
-On redteam seats, the ones that scope sentence binds, those reads carry
-findings. Of their 687 staked BLOCKERs and MAJORs, never adjudicated, 8% on
+On redteam seats, the ones that scope sentence binds, findings mention what
+those reads reached. Of their 687 staked BLOCKERs and MAJORs, never adjudicated, 8% on
 the lenient count and 32% on the strict one mention a file only such a read
 reached, and of their MINORs 8% and 27%; on the read tool alone, 20 of 690
 BLOCKERs and MAJORs. Mention is not causation, and matching by file name has
@@ -241,8 +243,8 @@ records' path in the same command and takes tool results and memory first,
 so a command naming both is not counted as one; 287 path mentions of
 `.jsonl` files or `/subagents/` were not located. 102 seats touched tool
 results under those records, whose is not established, and 11 touched memory
-files. So the redteam scope does not tighten, on the findings those reads
-carry, and other seats' scopes stay as they are on judgment. The redteam
+files. So the redteam scope does not tighten, on those findings, and other
+seats' scopes stay as they are on judgment. The redteam
 scope sentence stays stricter than what seats do: they do not follow it now,
 so rewording it would change little. (Basis: measured, by script, with no
 read of what those files held; judgment, accepted by the maintainer.)
@@ -257,8 +259,8 @@ spec campaign's round 1 the goal check and the outside-the-frame lens
 walkthrough, and the read for design smells has no seat of its own. Which
 method catches what stays unanswered: the audit's reports are kept only in
 session transcripts, which can hold secrets, so nobody reread them, and a
-script's tally by heading matched two of its four method files, all written
-on 2026-10-29 (`audit-rf.md` 5 MAJOR and 5 MINOR; `audit-wt.md` 2 MAJOR and 5
+script's tally by heading matched two of the four `audit-*` files it found,
+all written on 2026-10-29 (`audit-rf.md` 5 MAJOR and 5 MINOR; `audit-wt.md` 2 MAJOR and 5
 MINOR), which does not say what the reviews missed. An agent's recommendation to close the question as
 overtaken, which the maintainer accepted. (Basis: measured, for the tally;
 judgment, accepted by the maintainer.)
@@ -424,12 +426,13 @@ judgment, accepted by the maintainer.)
   branch review, in place of its share; and a wave's findings can come from
   several reports. A close call, put to the maintainer as one: an agent's
   recommendation, which the maintainer accepted.
-- **Tightening the redteam seat's read scope**: reads past it carry findings
+- **Tightening the redteam seat's read scope**: 8 to 32% of its staked
+  BLOCKERs and MAJORs, by count, mention a file only a read past it reached
   (§ What seats read); other seats' scopes have no such measurement.
 
 ## Changes
 
-- 2026-11-06: seats' reads past their scopes are measured and left as they are, since on redteam seats those reads carry findings and other seats' scopes stay on judgment; the audit's methods question closes, partly taken up and the rest dropped unmeasured; a seat's ability to nest, and the declined tool-level ban, move here from the deleted backlog item.
+- 2026-11-06: seats' reads past their scopes are measured and left as they are, since redteam seats' findings mention what those reads reached and other seats' scopes stay on judgment; the audit's methods question closes, partly taken up and the rest dropped unmeasured; a seat's ability to nest, and the declined tool-level ban, move here from the deleted backlog item.
 - 2026-11-05: passing findings by reference is rejected on measured figures, and the re-reviewers' report writes since the card change are recorded.
 - 2026-11-04: a report the controller saves to an appended report is appended, because a whole-file save would destroy the earlier sections.
 - 2026-11-04: the confirmation of a report file covers an appended report, which holds that seat's section, because an earlier seat's file on disk would pass a missing report.
