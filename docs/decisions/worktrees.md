@@ -106,12 +106,15 @@ The route ran on both hosts on 2026-11-05, in throwaway repositories. On
 Claude Code a file edit under `.git/` in a project directory worked and
 `git worktree add` followed. In Codex's `workspace-write` sandbox
 (codex-cli 0.164.0, Windows) the write was refused by two means, and
-`git worktree add` and a commit were refused too. So a re-check still
+`git worktree add` and a commit were refused too; an attended session seems
+to escalate such a refusal to the operator, or to an automatic review where
+one is available (the maintainer's observation). So a re-check still
 failing, as it does for a declared directory given as an absolute path,
 and a refused write both stop at the operator. A clone whose template has
 no `info/` directory was not run: an append creates it or fails as a
 refused write. An agent's proposal, which the maintainer accepted. (Basis:
-measured, for the route; judgment, accepted by the maintainer.)
+measured, for the route; the maintainer's observation, for attended
+sessions; judgment, accepted by the maintainer.)
 
 ### Native tools named
 

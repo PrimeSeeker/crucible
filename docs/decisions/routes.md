@@ -326,7 +326,7 @@ takes a campaign preset. Staying used to split the change across fresh
 implementers, one per part, with a resume from the report's sections
 (2026-11-04). That went on 2026-11-05: no run had used it, the feature that
 added it had raised the skill's prose budget by 194 words, of which its
-removal returned 84, and its last full pass found seams in what its
+removal returned 68, and its last full pass found seams in what its
 previous wave had added, such as a stopped part reading as finished. A
 settled oversized change now pays for a campaign or waits for the
 operator's direction on staying, which, as the ask states, leaves the

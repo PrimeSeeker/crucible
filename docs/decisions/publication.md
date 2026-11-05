@@ -113,8 +113,9 @@ Atlassian's Crucible is a code-review product at end of life: new sales
 ended 2025-05-13 and support ends 2028-05-15. One web search on 2026-11-05
 found that product, in the same field, and none other of that name among
 the AI code-review tools it listed. It found no trademark record, and no
-registry was searched, so this is not legal clearance. (Basis: external,
-one search.)
+registry was searched, so this is not legal clearance. The name stays: the
+maintainer judged the differentiation sufficient. (Basis: external, one
+search; the maintainer's preference, for keeping the name.)
 
 ## Rejected
 
@@ -128,7 +129,7 @@ one search.)
 
 ## Changes
 
-- 2026-11-05: the name's check is recorded: one web search, not legal clearance.
+- 2026-11-05: the name stays, the maintainer judging the differentiation sufficient, on one web search that is not legal clearance.
 - 2026-11-02: the gate showing no token figure is the campaign gate, the
   design digest being retired (`docs/decisions/operator-steering.md`).
 - 2026-10-20: the exception also admits a description of what crucible

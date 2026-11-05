@@ -312,9 +312,9 @@ the maintainer accepted. (Basis: judgment, accepted by the maintainer.)
 
 Beside the mark, a feature with no umbrella line that marks an entry may
 merge the base branch in at Finish, also after the branch review, and the
-suite then runs on the merged tree. That stays as it is too, but was not
-put to the maintainer. (Basis: judgment, an agent's call the maintainer has
-not ruled on: leaving that merge as it is.)
+suite then runs on the merged tree. That stays as it is too. An agent's
+proposal, which the maintainer accepted. (Basis: judgment, accepted by the
+maintainer.)
 
 ## Rejected
 
@@ -342,7 +342,7 @@ not ruled on: leaving that merge as it is.)
 
 ## Changes
 
-- 2026-11-05: three residuals are accepted as they are, an unreviewed `landed` mark, an approval-only umbrella's workspace and a pending open-items ask with no carrier, since each costs little and a fix would add text for a rare case; a late-marking feature's base merge after the branch review stays too, unruled.
+- 2026-11-05: three residuals are accepted as they are, an unreviewed `landed` mark, an approval-only umbrella's workspace and a pending open-items ask with no carrier, since each costs little and a fix would add text for a rare case; a late-marking feature's base merge after the branch review stays too.
 - 2026-11-05: a closing-review seat's prompt carries its report form, since the sections copied into it send a seat to a report format nothing gave.
 - 2026-11-04: the Children list ends on a line of text, because a last entry's mark conflicts in git with an appended child; a seat finds a feature's own entry by its feature folder's slug, which nothing stated.
 - 2026-11-04: an umbrella's children keep landing on the base, now weighed against holding them off it; its proposal says whether they can land without a break, and the entry of the child that owes the rest says what it owes. The maintainer asked, and a break is now stated (`docs/decisions/the-spec.md`).
