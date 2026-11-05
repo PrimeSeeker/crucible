@@ -262,7 +262,12 @@ skill can fail to come back: the combined budget fills from the most
 recently invoked skill, about five skills fit it, and upstream's issue #2481
 records a drop. Since 2026-11-05 the router's line names that case too, for a
 skill still being worked under, since a controller can see which skills came
-back and the line costs nothing until it fires. A copy can come back stale:
+back and the line costs nothing until it fires. The same wording stops
+re-invoking a cut copy of a skill finished with, which buys nothing: an
+agent's call, which the maintainer kept when told of it. This reasoning is
+Claude Code's; what a Codex controller sees after compaction is unmeasured,
+and where no copy comes back the line fires at every compaction, for the skill
+in use. A copy can come back stale:
 in sessions that spanned a plugin update, compaction re-attached copies from
 the old version's directory (0.13.0 and 0.12.0 under 0.14.0 on 2026-11-03;
 0.23.0 under 0.27.0 on 2026-11-05). Only a mid-session update produces it, a
