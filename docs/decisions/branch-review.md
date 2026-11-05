@@ -120,12 +120,13 @@ maintainer.)
 ### A wave that changes no rule
 
 A full-scope pass costs what the branch's size costs, however small the
-wave before it. Nine such passes ran after waves on text branches on
-2026-11-04 and 2026-11-05, at about 116k to 199k tokens each. One found a
-MAJOR, in a rule its wave had just added: seeing it needed the reviewer's
-card, outside the fix diff, so the wave's scoped re-review could not. The
-other eight found only MINORs, often in rules the previous wave had added.
-Two lanes of 2026-11-04 skipped the pass on the maintainer's word, one
+wave before it. Nine such passes ran after waves on earlier text branches of
+2026-11-04 and 2026-11-05, at about 116k to 199k tokens each. One, after a
+wave of six minors and four small wording and rule changes, found a MAJOR, in
+a rule that wave had just added: seeing it needed the reviewer's card, outside
+the fix diff, so the wave's scoped re-review could not. The other eight found
+only MINORs, often in rules the previous wave had added. Two lanes of
+2026-11-04 skipped the pass, the maintainer leaving the call to the agent, one
 saving about 275k tokens; neither shows what it would have found.
 
 A skip for a wave that took no BLOCKER or MAJOR and changes no rule or
@@ -256,7 +257,7 @@ accepted by the maintainer.)
 - **An adopted improvement riding a wave as a finding**: the fixer's
   contract is to confirm a defect, and an improvement has none (§ Why).
 - **Skipping the full-scope pass after a wave that changes no rule**: it took six conditions, each pass found another hole, and it would rarely apply (§ Why).
-- **A wave's size as the test for its full pass**, in files, lines or tasks: a wave of a few sentences that added a rule produced a MAJOR (§ Why).
+- **A wave's size as the test for its full pass**, in files, lines or tasks: a wave of small changes that added a rule produced a MAJOR (§ Why).
 - **A review-package script**: 173 lines for what a reviewer with a shell
   of its own runs in a few git commands (§ Why).
 - **Per-finding fixers**: each rebuilds context and re-runs suites, and in
