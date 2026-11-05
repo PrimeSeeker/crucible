@@ -10,6 +10,6 @@ requesting-code-review 3433
 subagent-driven-development 14525
 systematic-debugging 1898
 using-crucible 2010
-using-git-worktrees 936
+using-git-worktrees 957
 writing-plans 1344
 writing-skills 2111

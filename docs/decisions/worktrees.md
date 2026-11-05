@@ -36,7 +36,9 @@ the claude-ism scanner has no term for it.
 actually selected, with its trailing slash:
 `git -C <project-root> check-ignore -q <worktree-dir>/`. A directory not
 ignored is added to the clone's `info/exclude`, never fixed by a commit,
-and the same directory is checked again. `git worktree add -b` refusing a branch name that already
+and the same directory is checked again; a check still failing or a
+refused write goes to the operator, and nothing is created until they
+answer. `git worktree add -b` refusing a branch name that already
 exists is the answer: the agent picks a fresh name or checks out the
 existing branch deliberately, never forcing past it
 (`crucible:using-git-worktrees § 1b. Git Worktree Fallback`).
@@ -99,6 +101,17 @@ default names, since the fallback creates worktrees there. An agent's
 proposal, on which the maintainer left the call to the agent. (Basis:
 measured, for the check; external, for the tool; judgment, accepted by
 the maintainer.)
+
+The route ran on both hosts on 2026-11-05, in throwaway repositories. On
+Claude Code a file edit under `.git/` in a project directory worked and
+`git worktree add` followed. In Codex's `workspace-write` sandbox
+(codex-cli 0.164.0, Windows) the write was refused by two means, and
+`git worktree add` and a commit were refused too. So a re-check still
+failing, as it does for a declared directory given as an absolute path,
+and a refused write both stop at the operator. A clone whose template has
+no `info/` directory was not run: an append creates it or fails as a
+refused write. An agent's proposal, which the maintainer accepted. (Basis:
+measured, for the route; judgment, accepted by the maintainer.)
 
 ### Native tools named
 
@@ -168,6 +181,7 @@ On 2026-11-03 the two steps were copied into SDD's setup reference, and the git 
 
 ## Changes
 
+- 2026-11-05: a re-check still failing after the exclude, or a refused write, goes to the operator and nothing is created until they answer, since the sentence ran on to saying the exclusion held and Codex's sandbox refuses the write.
 - 2026-11-05: the fallback excludes a not-ignored directory in the clone's `info/exclude` from any checkout and commits nothing, and finishing's cleanup covers a declared directory, closing the two residuals kept from upstream.
 - 2026-11-03: the copy's size is dated to when it was made, since the per-file compaction cut both copies further.
 - 2026-11-03: SDD Setup runs project setup and the clean baseline from its own copy of the worktree skill's Steps 2–3, and the git fallback moved into `skills/using-git-worktrees/references/git-fallback.md` behind a stub; because the skill loads on every route where the fallback rarely runs, and SDD Setup rarely reloaded the skill for the two steps.
