@@ -7,7 +7,8 @@ source already counts). A count above its
 number fails, so growth is a recorded raise in the commit that grows the
 skill; a count more than ``SLACK`` words below fails too, so a cut lowers
 the number and cannot be regrown silently (``AGENTS.md``, the prose
-budget).
+budget). ``TOTAL_CAP`` limits the sum, and no commit raises it on its own
+authority (same section).
 """
 
 from __future__ import annotations
@@ -21,6 +22,9 @@ from instrument_corpus import load_generator, source_path
 REPO = Path(__file__).resolve().parent.parent
 BUDGET_FILE = REPO / "tests" / "prose-budget.txt"
 SLACK = 50
+# 10% over the 43,079 words the 2026-11-03 compaction left. Only the operator
+# moves it (AGENTS.md, the prose budget).
+TOTAL_CAP = 47387
 
 
 def read_budget() -> dict[str, int]:
@@ -72,6 +76,15 @@ def test_skill_prose_matches_its_budget(name: str) -> None:
     assert words >= budget - SLACK, (
         f"skills/{name} has {words} words, budget {budget}: lower its line in "
         f"tests/prose-budget.txt to {words}"
+    )
+
+
+def test_total_prose_stays_under_the_cap() -> None:
+    total = sum(count_words(REPO / "skills" / name) for name in skill_dirs())
+    assert total <= TOTAL_CAP, (
+        f"skills/ holds {total} words, cap {TOTAL_CAP}: do not raise the cap. "
+        f"Stop and ask the operator whether to compact or to raise it "
+        f"(AGENTS.md, the prose budget)"
     )
 
 

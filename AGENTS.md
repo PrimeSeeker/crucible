@@ -91,7 +91,13 @@ to install it: `README.md`; the layout: `docs/dual-runtime.md`.
   counted; its source is), and the suite fails when a count rises above it
   or falls more than 50 words below it. A commit that grows a skill raises
   its number, and its body says what the words buy or what went in
-  exchange; one that shrinks a skill lowers it.
+  exchange; one that shrinks a skill lowers it. The suite also fails when
+  the skills' total passes `TOTAL_CAP` in `tests/test_prose_budget.py`, 10%
+  over what the last compaction left: stop and ask the operator whether to
+  compact or raise it. Only the operator moves that number, in a commit
+  whose body quotes their ruling, and a compaction's landing asks them for
+  a new one. The branch reviewer checks it. A review of text that agents
+  read counts excess as a finding (`crucible:writing-skills § Reader cost`).
 - **No local context in committed text.** What this repository commits
   carries no personal paths, account names or email addresses, no
   description of a private install or setup, and nothing from the

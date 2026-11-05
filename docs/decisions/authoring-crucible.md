@@ -74,7 +74,8 @@ the sources already count. `tests/test_prose_budget.py` fails when a
 count is above its number or more than 50 words below it. A commit that
 grows a skill raises the number and says in its body what the words buy
 or what went in exchange; one that shrinks a skill lowers it. Restored
-upstream text counts like any other.
+upstream text counts like any other. `TOTAL_CAP` in the same test limits
+the sum, and only the operator moves it (`AGENTS.md`).
 
 **No build history in shipped text.** The implementer, task-reviewer,
 re-reviewer and branch-reviewer templates keep build history out of
@@ -361,17 +362,13 @@ controller spend in a later measurement, or a rule change that had to
 land in a trimmed router or adapter with no headroom left. The rewrite
 it would have reopened ran as the skill text rewrite
 (`docs/crucible/2026-11-01-skill-text-rewrite/umbrella.md`), and the
-trigger was retired on 2026-11-03. The prose budget records growth word
-by word and refuses none, since a commit raises its own number
-(`docs/backlog/prose-creep-containment.md`); `tests/test_skill_size.py`
-caps each `SKILL.md`, and the session-start budget
-(`tests/test_session_start.py`, 10,000 characters) caps the router and
-host maps, which covers the trigger's second clause. The first clause,
-on prose cost, has no replacement; containing growth stays open in that
-backlog item. An agent's
-proposal: the maintainer accepted the retirement on 2026-11-03, and left
-that it stands with no replacement to the agent on 2026-11-05. (Basis:
-judgment, accepted by the maintainer.)
+trigger was retired on 2026-11-03. `tests/test_skill_size.py` caps each
+`SKILL.md`, and the session-start budget (`tests/test_session_start.py`,
+10,000 characters) caps the router and host maps, which covers the
+trigger's second clause. The first clause, on prose's share of spend, has
+no direct replacement: the total cap (§ The prose budget) limits words, not
+that share. An agent's proposal: the maintainer accepted the retirement on
+2026-11-03. (Basis: judgment, accepted by the maintainer.)
 
 ### The prose budget
 
@@ -396,6 +393,28 @@ beside it where a feature measures it. An agent's proposal, which the
 maintainer accepted on a decision ask, reading the skill text rewrite's
 "no rule changes, but one" as not covering this authoring check.
 (Basis: judgment, accepted by the maintainer.)
+
+The ratchet records growth and refuses none, since a commit raises its own
+number: 67 raises and 27 lowers since 0.2.0, and the every-run load regrew
+4.6 to 5.0% in the two days after the prose compaction. Most of that had
+landed by 0.25.0; the three releases after it added 0.2% to the words. From
+2026-11-05 `TOTAL_CAP` is the limit a commit can't raise for itself: 47,387
+words, 10% over the 43,079 the compaction left, with 45,382 in the skills
+when it was set. It sits in the test because agents raise the lines of
+`tests/prose-budget.txt` routinely. Reaching it asks the operator to compact
+or raise it. The compaction's record ranked a per-route token cap first.
+Total words came to +5.3% over the same span, and stayed within 1.3 points
+of the standard route's every-run load, estimated from characters, at each
+release from 0.16.0 to 0.28.0, with no list to keep of what each route
+loads; the skill text rewrite's closing review had found two reads missing
+from such a list. The cap
+can't see text moving from a rarely read file into an every-run one, and
+growth outside the every-run load counts toward it: the 0.17.0 rewrite of
+`writing-skills` added 1.3% to the words and almost nothing to that load.
+An agent's proposal, which the maintainer took over a per-route cap and over
+no mechanism at all; the sentence in `AGENTS.md` making excess a review
+finding came with it, because that rule otherwise reaches only readers of
+`writing-skills`. (Basis: measured; judgment, accepted by the maintainer.)
 
 ### Build history
 
@@ -459,7 +478,7 @@ guess 1"). In SDD's task loop implementer seats write the skill text,
 and before 2026-10-14 no template named the skill, so the pointer is in
 the implementer's template. (Basis: judgment, accepted by the maintainer.)
 
-On 2026-11-03 the skill was rewritten around reader cost. The prose compaction (`docs/crucible/2026-11-03-prose-compaction/effort.md`) had found crucible's skill text regrown within weeks of each rewrite, with 67 raises and 27 lowers of the prose budget since 0.2.0 and none refused, and ranked new mechanisms, review that counts omissions but never excess, and restatement as its main causes. The maintainer asked whether a light version of that effort's per-file pipeline should become the default, and for the skill to cover all reused prompt-class text. An agent argued against running it on every edit: it works on phrasing, not on the mechanisms behind most growth; it would cost a share of the effort's spend, about 850k tokens a file, mostly cached reads, on every edit; and per-file passes miss rules two files each drop on the strength of the other. It proposed the general rules for writing-skills and left the project-side controls, a measured trigger among them, to `docs/backlog/prose-creep-containment.md`. The maintainer accepted, adding that token costs are reliably underestimated before implementation, so a control measures the written text. (Basis: measured, for the budget history; the maintainer's preference, for the estimate; judgment, accepted by the maintainer.)
+On 2026-11-03 the skill was rewritten around reader cost. The prose compaction (`docs/crucible/2026-11-03-prose-compaction/effort.md`) had found crucible's skill text regrown within weeks of each rewrite, with 67 raises and 27 lowers of the prose budget since 0.2.0 and none refused, and ranked new mechanisms, review that counts omissions but never excess, and restatement as its main causes. The maintainer asked whether a light version of that effort's per-file pipeline should become the default, and for the skill to cover all reused prompt-class text. An agent argued against running it on every edit: it works on phrasing, not on the mechanisms behind most growth; it would cost a share of the effort's spend, about 850k tokens a file, mostly cached reads, on every edit; and per-file passes miss rules two files each drop on the strength of the other. It proposed the general rules for writing-skills and left the project-side controls, a measured trigger among them, to the backlog, until the total cap (§ The prose budget). The maintainer accepted, adding that token costs are reliably underestimated before implementation, so a control measures the written text. (Basis: measured, for the budget history; the maintainer's preference, for the estimate; judgment, accepted by the maintainer.)
 
 A micro-test chose the fix rule (`docs/crucible/2026-11-03-writing-skills-reader-cost/microtest/`): fresh agents applied two of the prose compaction's own review findings to the files as they stood before the fix, five runs per arm. Under the skill as it then stood, every run revised the sentence that owned the case, so "replace before adding" had nothing to fix and was not written; the added words were the finding's reasons and a term its pointer already defined, copied into the rule. The recipe that keeps those out took the `setup.md` case from a median of 11 added words (5 to 14) to 5 in all five runs, and the `umbrella-children.md` case from 33 (26 to 36) to 22 (14 to 22); the fixes on record had added 5 and 10. With the rewritten skill as the guidance (at its final text), the `umbrella-children.md` case came to a median of 17 (13 to 22), no run restating the defined term; earlier runs of that arm on the intermediate texts gave medians of 21, 17 and 12, so a five-run median moves by about five words between runs. Two cases, one model, five runs per arm. (Basis: measured.)
 
@@ -537,6 +556,7 @@ the build-history rule included (`skills/using-crucible/SKILL.md`).
 
 ## Changes
 
+- 2026-11-05: a total word cap on the skills, 10% over the prose compaction's count, moved only by the operator, because the per-skill budget refuses no growth; total words chosen over a per-route token cap, since they gave nearly the same signal with no list of each route's reads to keep. Excess is a review finding on this repository (`AGENTS.md`), since that rule otherwise reaches only readers of `writing-skills`.
 - 2026-11-05: resident tokens re-counted to the head with the two reads the closing review found omitted, what seats carry counted beside them, and the compaction re-read measured for the first time, as the skill text rewrite's re-audit asked; its transcript half waits for features on real code (`docs/backlog/skill-rewrite-reaudit.md`).
 - 2026-11-05: the build-history rule's list names open items in the project's home (`docs/decisions/branch-review.md`).
 - 2026-11-05: the re-open trigger's retirement no longer says the prose budget holds growth, since it records growth and refuses none; the retirement stands, the maintainer leaving that call to the agent once told its first clause has no replacement. Compaction's loop ends only with no rule-adding addition left unruled, since a clean check otherwise shipped one unruled. A micro-test's sample on a realistic task needs no announcement, since it is told nothing false.
