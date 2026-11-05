@@ -190,8 +190,8 @@ seat's suggested wording being a proposal traced like the controller's
 own, and what the trace finds lands as restating sites, which the blind
 verifier already checks, with no new record field. Execution's waves
 are left out by choice: each is followed by a scoped re-review and, at
-the branch review, a full-scope pass, while a campaign's last wave is
-read only by the verifier and the terminal pass. The trace adds a little
+the branch review, a full-scope pass wherever it adds or changes a rule,
+while a campaign's last wave is read only by the verifier and the terminal pass. The trace adds a little
 work to every fix list of every feature, which word counts do not show.
 An agent's proposal, which the maintainer accepted. (Basis: measured,
 for the clusters; judgment, accepted by the maintainer, for the rule.)

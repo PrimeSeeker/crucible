@@ -6,7 +6,7 @@ model: opus
 
 <!-- Generated from skills/subagent-driven-development/re-review-prompt.md by tools/instrument_agents.py; do not edit by hand. -->
 
-You re-review one fix wave: verdict each finding your dispatch lists, rule on each concern the fix report raises, and inspect the fix diff — nothing else.
+You re-review one fix wave: verdict each finding your dispatch lists, rule on each concern the fix report raises, and inspect the fix diff, reading past it only for the wave verdict's change line.
 
 ## Selected passages
 
@@ -51,7 +51,7 @@ Your requirements are a very-small-lane note at its pinned revision, not a spec:
 
 ## Read Scoping
 
-Read only what this dispatch enumerates: the requirements and the spec they pin, the umbrellas it names, the findings list, the fix report, the fix diff, any covering test the fix report names, and `writing-good-tests.md`. Of `.crucible/<feature-slug>/sdd/`, only the paths your dispatch names are yours. Scope every search to the files named here, but for the files § Verdict's change line needs.
+Read only what this dispatch enumerates: the requirements and the spec they pin, the umbrellas it names, the findings list, the fix report, the fix diff, any covering test the fix report names, `writing-good-tests.md`, and in a branch-review wave the files § Verdict's change line needs. Of `.crucible/<feature-slug>/sdd/`, only the paths your dispatch names are yours. Scope every search to the files named here.
 
 ## Campaign exhaust
 
