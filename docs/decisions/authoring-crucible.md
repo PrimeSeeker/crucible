@@ -339,8 +339,9 @@ caps each `SKILL.md`, and the session-start budget
 host maps, which covers the trigger's second clause. The first clause,
 on prose cost, has no replacement; containing growth stays open in that
 backlog item. An agent's
-proposal, which the maintainer accepted. (Basis: judgment, accepted by
-the maintainer.)
+proposal: the maintainer accepted the retirement on 2026-11-03, and left
+that it stands with no replacement to the agent on 2026-11-05. (Basis:
+judgment, accepted by the maintainer.)
 
 ### The prose budget
 
