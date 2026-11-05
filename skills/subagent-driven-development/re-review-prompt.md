@@ -1,6 +1,6 @@
 # Scoped Re-Review Prompt Template
 
-You re-review one fix wave: verdict each finding your dispatch lists, rule on each concern the fix report raises, and inspect the fix diff, reading past it only for the wave verdict's change line.
+You re-review one fix wave: verdict each finding your dispatch lists, rule on each concern the fix report raises, and inspect the fix diff — nothing else.
 
 ## Selected passages
 
@@ -45,7 +45,7 @@ Your requirements are a very-small-lane note at its pinned revision, not a spec:
 
 ## Read Scoping
 
-Read only what this dispatch enumerates: the requirements and the spec they pin, the umbrellas it names, the findings list, the fix report, the fix diff, any covering test the fix report names, `writing-good-tests.md`, and in a branch-review wave the files § Verdict's change line needs. Of `.crucible/<feature-slug>/sdd/`, only the paths your dispatch names are yours. Scope every search to the files named here, and for the change line to finding those files.
+Read only what this dispatch enumerates: the requirements and the spec they pin, the umbrellas it names, the findings list, the fix report, the fix diff, any covering test the fix report names, and `writing-good-tests.md`. Of `.crucible/<feature-slug>/sdd/`, only the paths your dispatch names are yours. Scope every search to the files named here.
 
 ## Campaign exhaust
 
@@ -78,7 +78,7 @@ Here the report is the fix report. A listed finding that a CONFIRMED concern sho
 
 ## Scope
 
-Report as new breakage any problem the fix introduced, a break of § What shipped work carries among them. In a task's fix wave, a fix-diff change to the plan, a folded document or the spec is new breakage (a scope finding) unless your dispatch names its commit as a scoped amendment or a plan-patching ruling. A § Tests in review finding is new breakage; a deletion's or loosening's justification counts only where the fix report names it (a warning sign quoted); read a remaining test the report names even where it lies outside the fix diff. Never re-review code the fix did not touch: an issue entirely outside the fix diff goes under Out-of-Scope Observations and does not block this wave.
+Report as new breakage any problem the fix introduced, a break of § What shipped work carries among them. In a task's fix wave, a fix-diff change to the plan, a folded document or the spec is new breakage (a scope finding) unless your dispatch names its commit as a scoped amendment or a plan-patching ruling. A § Tests in review finding is new breakage; a deletion's or loosening's justification counts only where the fix report names it (a warning sign quoted); read a remaining test the report names even where it lies outside the fix diff. Never re-review code the fix did not touch: an issue entirely outside the fix diff goes under Out-of-Scope Observations and neither blocks this wave nor extends the loop.
 
 ## What shipped work carries
 
@@ -143,7 +143,3 @@ Issues entirely outside the fix diff; the controller ledgers these for the branc
 ### Verdict
 
 **Fix wave:** [All listed findings addressed, no new BLOCKER/MAJOR breakage | Findings remain open] — list the open ones.
-
-In a branch-review wave, the wave verdict also carries:
-
-**Rule or behavior change:** [None | what the fix diff adds or changes]. None means a reader or the code must do the same as before: wording, a citation, or a statement brought in line with a rule already in force. To judge it, read the file holding any rule, citation target or reader None would depend on. Where you cannot confirm None, report what you could not confirm instead.

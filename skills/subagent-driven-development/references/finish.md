@@ -4,13 +4,12 @@
    - the campaign records where their phases ran (round records, readouts, fix lists), and the ledger's sections
    - in `sdd/reports/`: per task, `task-<N>-<kind>.md`, `<kind>` being `report`, `review` (none where the latest run completed branch review only), `re-review-w<W>` per wave, `adjudication-<b>` per dispute batch and `snapshot-<k>` per snapshot blessing; for a task run again, only its latest run's, in `-x<X>` form; `-r<R>` forms included; and `lane-report.md` where the lane dispatched an implementer
    - in `sdd/branch-review/`: each `pass-<k>.md`, `wave-<n>-fix.md`, `wave-<n>-re-review.md` and `adjudication-<b>.md`
-2. Close readout to the operator: a message, not a file, its decision asks in a final block. Assemble it from the ledger's `## Adjudication rulings`, `## Deferred minors`, `## Questions`, `Task <N>: parked` lines, `Branch wave` lines and lane section, following its predecessor link where one exists. It lists:
+2. Close readout to the operator: a message, not a file, its decision asks in a final block. Assemble it from the ledger's `## Adjudication rulings`, `## Deferred minors`, `## Questions`, `Task <N>: parked` lines and lane section, following its predecessor link where one exists. It lists:
    - dismissed BLOCKER/MAJOR findings and ruled premise findings, with their rulings
    - every ruling you made yourself, with its reason: disputes and plan conflicts, the plan patches they led to, contained amendments, the plan phase's included
    - every improvement you adopted, named as a lightly held change
    - each ruling or requested change a fixer declined, as an ask
    - the lane's departures and the record-check gaps
-   - each wave whose ledger line reads `full pass skipped`, its re-review's `Rule or behavior change` line having read None
    - after loop activity that followed an earlier answer, what changed since
    - then the work left open, each item with its source and your proposal to keep or drop it, and why: parked BLOCKER/MAJOR findings with their rulings, premise asks still unruled, `unstated break` asks still open, deferred minors and leads (a RECOMMENDED lead you did not adopt, with its verdict; where a cleanup wave ran, why it left each one), and, with your disposition, the `## Questions` items not listed above (declined improvements and what earlier phases carried among them)
    - where the project's instructions name no home for open items and something is left open, an ask where it goes or whether to drop it, offering to record the answer (`skills/redteaming/references/formats.md` § Open items)
