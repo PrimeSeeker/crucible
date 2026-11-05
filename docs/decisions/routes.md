@@ -55,8 +55,9 @@ every seat to read them all, standard the rest. File, line and task counts are n
   proposals, which the controller transcribes to the ledger as leads.
   Its NEEDS_CONTEXT or BLOCKED takes the task loop's handling of context
   and reasoning, stated in the lane's own text, and a change too big for
-  one implementer takes the upgrade hatch's question, staying splitting
-  it across fresh implementers, one per part, in order.
+  one implementer takes the upgrade hatch's ask to move to the standard
+  route, an answer to stay being the operator's direction on how the work
+  continues.
   Where overturning a major mechanism of the change is reasonably
   expected now that it is coded, the upgrade hatch puts staying on the
   lane or moving to the standard route to the operator.
@@ -319,22 +320,16 @@ maintainer left the call to the agent, 2026-11-02.)
 
 Until 2026-11-03 the move also linked the lane's ledger from the standard route's as a predecessor, and the plan phase's close carried the lane's open findings, at their staked severity, and its unruled leads to the standard route's branch reviewer, so that the lane's rulings, departures and leads reached a close readout. That carry-over sat in text every standard run reads, the plan phase's close, the branch reviewer's template on every pass and Finish, to serve a move whose trigger fired twice in about 42 lane reviews (above), with no completed move in this repository's feature folders. It went: the brainstorm the hatch invokes takes the lane's open findings, unruled leads and departures in its incoming document, beside the note and the diff, and the lane's rulings no longer reach the final close readout, a minor loss. An agent's proposal, on which the maintainer left the call to the agent. (Basis: measured, for the trigger's count; judgment, accepted by the maintainer.)
 
-Staying on the lane for a change too big for one implementer splits it
-across fresh implementers, one per part, in order, as the task loop
-splits an oversized task; with nothing stated, a second implementer
-could overwrite the first's report (left open by the `backlog-batch-2`
-lane, no run on record hit it, 2026-11-04). Each part is told to append
-to the report and that the note's Acceptance is the last part's to
-meet, which no earlier part could meet alone, and its ledger line names
-the part. A resumed controller starts at the first part with no section
-in the report, since a part may take several commits and only its
-report shows it finished. A split also sets
-aside what the lane's fit assumes, one implementer's worth: the origin
-question's hypothesis does not cover such a change, whose first review
-is still the branch review and whose fix waves stay the controller's.
-The ask states those two, and the operator's answer to stay accepts
-them for that change. An agent's proposal, which the maintainer
-accepted, having left the resume by report section to the agent.
+A change too big for one implementer moves to the standard route on the
+upgrade hatch's ask, as a settled change needing several tasks already
+takes a campaign preset. Staying used to split the change across fresh
+implementers, one per part, with a resume from the report's sections
+(2026-11-04). That went on 2026-11-05: no run had used it, it had raised
+the skill's prose budget by 194 words, and its last full pass found seams
+in what its previous wave had added, such as a stopped part reading as
+finished. A settled oversized change now pays for a campaign or waits for
+the operator's direction on staying. An agent's proposal, which the
+maintainer accepted, withdrawing the acceptance of the split.
 (Basis: judgment, accepted by the maintainer.)
 
 The note and the lane proposal share one gate (2026-10-07): a separate
@@ -358,6 +353,8 @@ gate.)
 
 ## Rejected
 
+- **Splitting a lane change across fresh implementers**: no run used it,
+  and several tasks already take a campaign preset (§ Why).
 - **One uniform process for every change**: on a small change the plan
   document, not the review, was the disproportionate part, and a change
   with nothing left to decide before code is best reviewed as its diff
@@ -383,6 +380,7 @@ small preset or the waiver for its work.
 
 ## Changes
 
+- 2026-11-05: a change too big for one implementer no longer stays on the lane by splitting: moving to the standard route is the upgrade hatch's ask, and an answer to stay is the operator's direction; because no run had used the split, it cost 194 words, and its reviews kept finding seams in it.
 - 2026-11-04: staying on the lane for a change too big for one implementer splits it across fresh implementers, one per part, in order, each told to append to the report and that the note's Acceptance is the last part's to meet, its ledger line naming the part and a resume starting at the first part with no report section, because nothing said what followed that answer; the ask states that the branch review stays the first review and the fix waves stay the controller's, and the answer to stay accepts both, since a split is wider than the lane's fit assumes.
 - 2026-11-04: the lane states what follows a dispatched implementer's NEEDS_CONTEXT or BLOCKED, with a ledger line for an operator ask it raises, since that handling lived in the task loop's text, which the lane does not load; a change too big for one implementer joins the upgrade hatch's question.
 - 2026-11-03: a settled change needing several tasks takes folded or standard by the folded test, no longer standard alone, and a proposal of either campaign preset gives the reason the fold fits or does not; because "only the campaign presets carry a plan" stopped ruling folded out once the task count went, and the reason the maintainer had found off was a standard proposal's.
