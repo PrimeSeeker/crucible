@@ -4,9 +4,9 @@ Lane: very-small (operator-confirmed 2026-11-06)
 
 ## Intent
 
-Three backlog items hold questions that can now be answered, and the answers are to decline. `escalation-and-effort` asks for a stuck trigger on the alternate role; a read of late waves and rounds found failed fixes rare and no sign of repeats. `lane-entry-and-downshift` and the separability point of `skill-text-rewrite` are one question, whether a lane note may carry a plan or a campaigned spec may skip one. The rest of `skill-text-rewrite` has been overtaken or has one sighting. Each answer goes in its decision record, with what the evidence could not show, and the items are deleted.
+Three backlog items hold questions that can now be answered or moved. `escalation-and-effort` asks for a stuck trigger on the alternate role; a read of late waves and rounds points both ways, so none is added for now and the question moves to the re-audit. `lane-entry-and-downshift` and the separability point of `skill-text-rewrite` are one question, whether a lane note may carry a plan or a campaigned spec may skip one; both stay out, with their trigger stated as unchecked. Of the rest of `skill-text-rewrite`, the umbrella-landing point closes on its one sighting, and the tension point stays open as an item of its own, since no current reason answers the maintainer's remark on it.
 
-Goals: the three items gone, each decision and its limits in a record, every pointer at the items updated, and the re-audit asked to count repeats on real code.
+Goals: the three items gone and one narrower item in their place, each decision and its limits in a record, every pointer at the items updated, and the re-audit asked to decide the stuck trigger on real code.
 
 Non-goals: no skill, template, hook or test changes, and so no release. This breaks nothing.
 
@@ -72,7 +72,7 @@ Run from the worktree root in PowerShell:
 
 1. `python -m pytest tests/` passes, quoting its summary line.
 2. `git grep -n -E "escalation-and-effort|lane-entry-and-downshift|skill-text-rewrite\.md" -- . ":!docs/crucible"` prints nothing.
-3. `(git ls-files docs/backlog).Count` prints 9.
+3. `(git ls-files docs/backlog).Count` prints 10.
 4. `git grep -c -E "11 of 740 parsed" -- docs/decisions/model-roles-and-effort.md` finds one line.
 5. `git diff --name-only 178f6ed...HEAD -- skills agents hooks tests tools .claude-plugin .codex-plugin` prints nothing.
 
