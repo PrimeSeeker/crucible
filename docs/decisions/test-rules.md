@@ -92,7 +92,11 @@ partner's permission. On 2026-10-07 two upstream rules came back in compact
 form: watch the test fail for the reason you expect, since a failure from
 a typo or an import error proves nothing, and delete or log code written
 first; upstream's delete-only form did not, since work with no test seam,
-generated code and prose-only work keep the logged exception. The same
+generated code and prose-only work keep the logged exception. A
+behaviour-preserving improvement its tests cover joined them on 2026-11-06, since it
+has no failing step to show and an improvement around the diff is now part of a task
+(`docs/decisions/task-loop.md` § Around the diff). (Basis: judgment, an agent's call
+the maintainer has not ruled on.) The same
 day the deviation audit began checking RED before GREEN, which nobody had
 checked. Only an implementer's report carries that evidence, so the
 check stays with the seat that reads the report: the task reviewer, or,
@@ -194,7 +198,7 @@ testing, or other test gates, states them there.
 
 ## Changes
 
-- 2026-11-06: a behaviour-preserving improvement its tests cover is an exception to test-first, since it has no failing step to show and an improvement around the diff is now part of a task (`docs/decisions/task-loop.md` § Around the diff). (Basis: judgment, an agent's call the maintainer has not ruled on.)
+- 2026-11-06: a behaviour-preserving improvement its tests cover is an exception to test-first, since it has no failing step to show.
 - 2026-11-04: inline mode's task report names each deletion's or loosening's justification, as the lane's inline fix reports do, so a miss costs no conversion to dispatch.
 - 2026-11-04: the third justification reads "the deletion or loosening fulfils", since the earlier wording, naming the change, also read as the whole work fulfilling a requirement, which any task's does; the very-small lane's inline fix reports name each deletion's or loosening's justification, since the re-reviewer counts one only where the fix report names it.
 - 2026-11-04: any other change making a test more permissive takes the deleted test's justifications, for what it loosened; because deleting an over-specific assertion, or one whose requirement was relaxed, passed while loosening it failed.

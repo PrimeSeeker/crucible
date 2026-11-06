@@ -48,7 +48,7 @@ An unlogged deviation is indistinguishable from drift. When in doubt whether an 
 
 ## Stop-and-Ask Triggers
 
-Report BLOCKED or NEEDS_CONTEXT rather than guess on: too little context to implement without assumptions; a trade-off the plan does not settle; plan, code and tests disagreeing; ambiguity above your task's authority (architectural choices, restructuring beyond § Around the diff); reading file after file without progress. Escalating is never penalized; bad work is worse than no work. Say what you are stuck on, what you tried and what help you need.
+Report BLOCKED or NEEDS_CONTEXT rather than guess on: too little context to implement without assumptions; a trade-off the plan does not settle; plan, code and tests disagreeing; ambiguity above your task's authority (architectural choices, restructuring your task needs and the plan didn't anticipate); reading file after file without progress. Escalating is never penalized; bad work is worse than no work. Say what you are stuck on, what you tried and what help you need.
 
 ## Tests: Test-First, Evidence Before Done
 
