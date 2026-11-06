@@ -33,7 +33,7 @@ By eye, by one reader; `samples.md` lets another check it.
 |---|---|---|---|---|
 | `impl-today` | 3 of 5, 2 of those unlogged | 0 fixed, 5 proposed | Left, 5 of 5 | Left and unmentioned, 5 of 5 |
 | `impl-today-b` | 3 of 5, all logged | 0 fixed, 5 proposed | Left, 5 of 5 | Left and unmentioned, 5 of 5 |
-| `impl-rule` | 5 of 5, all logged | 2 fixed and logged, 3 proposed, those 3 citing the collision | Left, 5 of 5 | Left and proposed, 5 of 5 |
+| `impl-rule` | 5 of 5, all logged | 2 fixed and logged, crossing the binding Acceptance with a concern; 3 proposed, citing the collision | Left, 5 of 5 | Left and proposed, 5 of 5 |
 | `impl-rule-b` | 5 of 5, all logged | 5 fixed and logged | Left, 5 of 5 | Left and proposed, 5 of 5 |
 
 The one bounded-role reply, on `impl-rule`, folded nothing and proposed the bug fix,
@@ -44,7 +44,7 @@ Each reviewer read one report and diff, carrying all three logged changes.
 | Prompt | Fold in the changed function | Bug fix beside it | Other task's file | Fold's missing test named |
 |---|---|---|---|---|
 | `rev-today` | Accepted, 5 of 5, one adding a minor on its reason | Revert, at MAJOR, 5 of 5 | Revert, 5 of 5 | 1 of 5 |
-| `rev-rule` | Passes scope, 3 of 5; 2 stake its one untested line under scope, asking for a test, no revert | Kept, 5 of 5, its collision raised for a ruling as a literal-reading finding | Fails scope, revert, 5 of 5 | 5 of 5 |
+| `rev-rule` | Passes scope, 3 of 5; 2 stake its one untested line under scope, asking for a test, no revert | Kept, 5 of 5, the same collision staked at MINOR, as a literal-reading finding for a ruling | Fails scope, revert, 5 of 5 | 5 of 5 |
 
 All ten reviewers ruled the task needs fixes: the diff carried the other task's
 change on purpose, and the report's pass counts, which all ten flagged, did not
@@ -55,8 +55,12 @@ match the diff by an oversight in the setup.
 - The replies are written, not run, on one invented project.
 - The reviewer arms ran only on the first setup.
 - The rule is untested on the bounded role.
-- Nothing tested the fix-wave sentence, the brainstorming sentence or the inline
-  paths. The shipped section says a fix wave makes "only what its dispatch lists",
-  where the tested one said "only what its findings need", since labelled changes
-  ride a wave.
+- Nothing tested a callee with several callers, a fold-in larger than a loop merge in
+  one function, the design-stage sentence or the inline paths.
+- The shipped section differs from the tested one, and these are untested: a fix wave
+  makes "only what its dispatch's findings and changes need, a defect's sibling
+  instances included", where the test said "only what its findings need"; prose and
+  no-seam work need no test; a restructure is proposed only where it reaches past this
+  code; and the test-first exception says "its tests cover", where the test said "its
+  existing tests cover".
 - Whether fold-ins are worth having on real code is not measured.

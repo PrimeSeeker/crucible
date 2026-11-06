@@ -100,7 +100,7 @@ A deleted test, parametrized case or assertion, or any other change making a tes
 
 ## Test-first evidence
 
-Test-first work shows its failing (RED) run before its passing (GREEN) one, or the Decision Log records its exception and reason, one of: no test seam, generated code, prose-only work, a removal, or a behaviour-preserving improvement its existing tests cover. A removal's failing step is the removed path's own tests failing or being deleted with it, never a new test that the removed thing is absent.
+Test-first work shows its failing (RED) run before its passing (GREEN) one, or the Decision Log records its exception and reason, one of: no test seam, generated code, prose-only work, a removal, or a behaviour-preserving improvement its tests cover. A removal's failing step is the removed path's own tests failing or being deleted with it, never a new test that the removed thing is absent.
 
 ## Building the diff
 

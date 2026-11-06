@@ -119,35 +119,53 @@ refactoring as you go, and ruled that improvements roughly around a task's diff
 fold in at the design and code stages where reasonably safe, bug fixes included,
 and that ones significantly exceeding the scope are only proposed. A separate
 proposal is cleaner, but it depends on someone able to weigh it, which a
-non-developer may not be. The text had one clause licensing improvements, beside a
-self-review line and a scope verdict pulling the other way, a failed scope verdict
-entering the fix loop at any severity, and no test-first exception that fitted a
-tidy-up. The concrete boundary is the controller's, because "roughly" and
-"reasonably safe" alone would get the conservative reading again. (Basis: the
-maintainer's preference, for the rule; judgment, accepted by the maintainer, for
-the boundary and for keeping fix waves to their dispatch, where new hunks would
-meet a capped loop.)
+non-developer may not be. The text had one clause licensing improvements,
+beside a self-review line and a scope verdict pulling the other way, a failed scope
+verdict entering the fix loop at any severity, and no test-first exception that
+fitted a tidy-up. (Basis: the maintainer's preference, for the rule.)
+
+The concrete boundary is the controller's, because "roughly" and "reasonably safe"
+alone would get the conservative reading again. The maintainer accepted the files a
+task changes and what the changed code directly calls or is called by, and that a
+fix wave stays on its findings. (Basis: judgment, accepted by the maintainer.) These
+came after that acceptance: a test the implementer adds counts as cover; prose and
+no-seam work need none, since most of this repository's work could otherwise never
+qualify; a restructure is proposed only where it reaches past this code, the
+maintainer having named refactoring the affected system as usual practice; a fix
+wave's findings carry a defect's sibling instances, since a measured failure of fix
+waves is a fix landing at one site (`docs/decisions/the-spec.md`); and the
+test-first exception. (Basis: judgment, named to the maintainer in that feature's
+close readout.)
 
 A wording test ran first, on an invented task with four seeds beside it; prompts,
 replies and readings are in `docs/crucible/2026-11-06-around-the-diff/microtest/`.
-On today's text, implementers folded clumsy code in the changed function in 6 of
-10 samples, 2 of those unlogged, and fixed a bug in what it directly calls in none,
-all 10 proposing it, and all 5 reviewers reverted that fix at MAJOR. With the rule,
-on a setup where nothing else bound the bug, 5 of 5 implementers made both changes
-and logged them, and all 5 reviewers, on an earlier setup, kept the fix. In 10
+(Basis: measured, by one reader.) On today's text, implementers folded clumsy code in
+the changed function in 6 of 10 samples, 2 of those unlogged, and fixed a bug in what
+it directly calls in none, all 10 proposing it. With the rule, on a setup where
+nothing else bound the bug, 5 of 5 made both changes and logged them. In 10
 implementer samples with the rule, none renamed an output key other code relies on
 or touched another task's file, and all 10 proposed that file's repetition, which
-none of the 10 on today's text mentioned; all 5 reviewers failed the scope of a
-logged change to that file. Where the task's Acceptance held the buggy output
-fixed, 3 of 5 implementers proposed the fix instead and reviewers raised the
-collision for a ruling, which is the rule working as binding content requires.
+none of the 10 on today's text mentioned.
+
+The test's main warning is binding content. On the setup whose Acceptance held the
+buggy output fixed, 3 of 5 implementers with the rule proposed the fix, and 2 made it,
+reading the clause for its intent and raising a concern, though binding content is on
+the propose list and the template sends it to BLOCKED. All 5 reviewers on today's text
+staked that break at MAJOR and reverted the fix; all 5 with the rule staked the same
+break at MINOR, as a literal-reading finding, and would keep it. So the rule lowered
+how seats grade a collision with binding content. The literal-reading route still
+raised it every time, and its ruling stays outside the seat. All 5 with the rule
+failed the scope of a logged change to another task's file, as all 5 on today's did
+by reverting it.
 
 The test has limits: written replies on one invented project, the reviewers on the
-first setup only, and nothing on the fix-wave sentence, the design-stage sentence or
-the inline paths. On the bounded role it shows nothing: the host's safeguards
-stopped 4 of 5 samples. Whether fold-ins are worth having on real code is not
-measured, and a confident wrong fix inside the boundary passes scope, caught only
-if a seat sees the defect.
+first setup only, and a fold-in no larger than a loop merge in one function, so
+nothing read the line between a tidy-up and a refactor. Nothing tested a callee with
+several callers, the fix-wave sentence, the prose and no-seam clause, the restructure
+limit, the design-stage sentence or the inline paths. On the bounded role it shows
+nothing: the host's safeguards stopped 4 of 5 samples. Whether fold-ins are worth
+having on real code is not measured, and a confident wrong fix inside the boundary
+passes scope, caught only if a seat sees the defect.
 
 ### Task review
 

@@ -16,7 +16,7 @@ test's assertions (`crucible:writing-plans § Acceptance maps to checks`).
 for the reason it expects, then implements. Code written before its test
 is redone test-first or logged as an exception: no test seam, generated
 code, prose-only work, a removal, a behaviour-preserving improvement its
-existing tests cover. A removal's failing step is the removed
+tests cover. A removal's failing step is the removed
 path's own tests failing or deleted with it, never a new test that the
 thing is absent. The task reviewer's deviation audit checks RED output
 before GREEN, or the logged exception, and is the one seat that checks
@@ -194,7 +194,7 @@ testing, or other test gates, states them there.
 
 ## Changes
 
-- 2026-11-06: a behaviour-preserving improvement its existing tests cover is an exception to test-first, since it has no failing step to show and an improvement around the diff is now part of a task (`docs/decisions/task-loop.md` § Around the diff).
+- 2026-11-06: a behaviour-preserving improvement its tests cover is an exception to test-first, since it has no failing step to show and an improvement around the diff is now part of a task (`docs/decisions/task-loop.md` § Around the diff). (Basis: judgment, an agent's call the maintainer has not ruled on.)
 - 2026-11-04: inline mode's task report names each deletion's or loosening's justification, as the lane's inline fix reports do, so a miss costs no conversion to dispatch.
 - 2026-11-04: the third justification reads "the deletion or loosening fulfils", since the earlier wording, naming the change, also read as the whole work fulfilling a requirement, which any task's does; the very-small lane's inline fix reports name each deletion's or loosening's justification, since the re-reviewer counts one only where the fix report names it.
 - 2026-11-04: any other change making a test more permissive takes the deleted test's justifications, for what it loosened; because deleting an over-specific assertion, or one whose requirement was relaxed, passed while loosening it failed.

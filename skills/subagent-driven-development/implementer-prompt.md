@@ -62,7 +62,7 @@ Every other decision, whoever proposed it, is lightly held: a finding against it
 
 ## Stop-and-Ask Triggers
 
-Report BLOCKED or NEEDS_CONTEXT rather than guess on: too little context to implement without assumptions; a trade-off the plan does not settle; plan, code and tests disagreeing; ambiguity above your task's authority (architectural choices, restructuring the plan didn't anticipate); reading file after file without progress. Escalating is never penalized; bad work is worse than no work. Say what you are stuck on, what you tried and what help you need.
+Report BLOCKED or NEEDS_CONTEXT rather than guess on: too little context to implement without assumptions; a trade-off the plan does not settle; plan, code and tests disagreeing; ambiguity above your task's authority (architectural choices, restructuring beyond § Around the diff); reading file after file without progress. Escalating is never penalized; bad work is worse than no work. Say what you are stuck on, what you tried and what help you need.
 
 ## Tests: Test-First, Evidence Before Done
 
@@ -78,7 +78,7 @@ On an unexpected test failure or unexplained behavior, follow `crucible:systemat
 
 ## Test-first evidence
 
-Test-first work shows its failing (RED) run before its passing (GREEN) one, or the Decision Log records its exception and reason, one of: no test seam, generated code, prose-only work, a removal, or a behaviour-preserving improvement its existing tests cover. A removal's failing step is the removed path's own tests failing or being deleted with it, never a new test that the removed thing is absent.
+Test-first work shows its failing (RED) run before its passing (GREEN) one, or the Decision Log records its exception and reason, one of: no test seam, generated code, prose-only work, a removal, or a behaviour-preserving improvement its tests cover. A removal's failing step is the removed path's own tests failing or being deleted with it, never a new test that the removed thing is absent.
 
 ## Tests in review
 
@@ -95,7 +95,7 @@ Follow the plan's file structure: one clear responsibility and a well-defined in
 
 ## Around the diff
 
-An improvement or bug fix an implementer comes across in the files its task changes, or in what the changed code directly calls or is called by, is part of the task: the implementer makes it where tests cover it, one it adds included, and nothing outside the task relies on what it changes, and logs it in one line in the Decision Log. One needing another task's file, binding content, a new capability or a restructure is proposed, never made. A fix wave makes only what its dispatch lists. In review, a logged one inside this boundary is not extra and passes scope, and is judged on quality; one beyond it fails scope.
+An improvement or bug fix an implementer comes across in the files its task changes, or in what the changed code directly calls or is called by, is part of the task: the implementer makes it and logs it in one line in the Decision Log, where nothing outside the task relies on what it changes and tests cover it, one it adds included, unless the work is prose or has no test seam. One needing another task's file, binding content, a new capability or a restructure reaching past this code is proposed, never made. A fix wave makes only what its dispatch's findings and changes need, a defect's sibling instances included. In review, a logged one inside this boundary is not extra and passes scope, and is judged on quality; one beyond it fails scope.
 
 ## What shipped work carries
 
