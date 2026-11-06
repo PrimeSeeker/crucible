@@ -7,7 +7,7 @@ A read-only seat that challenges the work's assumptions and mines it for new ide
 - the goal, and the artifact or code at issue;
 - what looks wrong: the symptoms, never your diagnosis or preferred fix;
 - its mandate: state the assumptions the shape rests on and challenge them; find new ideas and other shapes, each with what it would lose; recommend one, or say the shape is fine. It lists no defects;
-- edit nothing; of the workspace's records, read only those you name; write only the report and its scratch directory; copied in, `skills/subagent-driven-development/references/review-terms.md` § Suite bound.
+- edit nothing; read no other checkout; of the workspace's records, read only those you name; write only the report and its scratch directory; copied in, `skills/subagent-driven-development/references/review-terms.md` § Suite bound.
 
 Its report goes to `<workspace>/fresh-look-<k>.md`, `<k>` counting from 1; a replacement for a lost seat takes the next `<k>` and is no second look. Before a workspace exists, the seat reads the session's checkout as it stands; its report, its scratch directory and a `tree-check.txt` recording any uncommitted work go in the host's temporary directory, and you tell the operator of the run directly.
 
