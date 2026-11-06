@@ -52,8 +52,8 @@ A MINOR the controller finds wrong or outside the finding scope stays
 rejected (`crucible:redteaming § Merge and finding hygiene`).
 
 **Repeat hits.** A finding that hits a passage an earlier round of the
-campaign already fixed takes a replacement of the passage, not another
-clause, adding no capability beyond what the finding requires
+campaign already fixed takes a rewrite or removal of the passage, not
+another clause, adding no capability beyond what the finding requires
 (`skills/redteaming/references/fix-application.md`).
 
 **Blind verification after every wave.** After every apply but round 0's, MINOR-only
@@ -208,10 +208,13 @@ general rule, nearly the same sentence. On the open-items rule, four of
 five on today's reference added a hold on integration and kept the cases
 apart, and one added a new fallback; all five with the rule rewrote it,
 four reaching the same hold and one a design close to the maintainer's
-ruling. The rewrites of that rule ran about 15% longer than the patches.
-Five samples with the rule, on a passage a small correction would fix,
-stayed about the same size, four of them replacing a phrase list with a
-shorter, more general search; that case had no control.
+ruling. Median passage length, before the fix, then on today's reference
+and with the rule: 235, 259 and 291 words on the open-items rule; 152, 146
+and 158 on the finding rule. So the rule shortened neither. Five samples with
+the rule, on a passage a small correction would fix, came to a median of 68
+words from 62, four of them folding a phrase list into a more general search;
+that case had no control. The prompts and replies are in
+`docs/crucible/2026-11-06-repeat-hits/microtest/`.
 
 How often today's reference fails depends on the count. A sample that
 added an exception or a new fallback is the narrow count, 2 of 10. Counting
@@ -228,22 +231,26 @@ notices a repeat: the samples were handed it, and a missed one falls back to
 today's behaviour without a signal. The findings were reconstructed from what
 the next revision changed, the small correction's invented.
 
-Two phrases came after the test and are untested. "Keeping what those fixes
-required": one feature's history has a commit restoring four clauses a
+The wording shipped is not the wording tested, which said the item "replaces
+the passage, stated from what it is for" and "adds no capability the artifact
+does not already have". Three changes came after the test and are untested,
+each on the maintainer's approval. The result must still do what the earlier
+fixes required: one feature's history has a commit restoring four clauses a
 round's wave dropped, and the verifier does not see why an earlier fix was
-made. "Beyond what the finding requires" replaced "the artifact does not
-already have", on the maintainer's ruling, once the branch review found the
-literal reading forbade a fix a finding needed; the samples had already read
-past it, describing the holds they added as no new capability.
+made. A finding may overturn those fixes, and the outcome may be removal: the
+branch review found the rule otherwise bound a finding showing an earlier fix
+wrong, which late rounds often do, and passed over fix-by-deletion. "Beyond
+what the finding requires" replaced "the artifact does not already have" once
+the branch review found the literal reading forbade a fix a finding needed.
 
 The trigger is the repeat, not the first hit: one counterexample can fairly
 take a point fix, and a general instruction to prefer the general fix
-resembles a clause the maintainer called weak on 2026-10-29. Replacing a
+resembles a clause the maintainer called weak on 2026-10-29. Rewriting a
 passage does not conflict with building only what is needed, since it
 states the cases already there and adds only what the finding requires. The
 cost accepted: fix waves are the main source of the defects the process
 introduces (§ Small fix lists), and this asks for larger edits late in a
-campaign; a replacement that re-shapes a mechanism meets the stop rule as any
+campaign; a rewrite that re-shapes a mechanism meets the stop rule as any
 such wave does. `crucible:writing-skills`' fix sentence widened the same day
 (`docs/decisions/authoring-crucible.md`).
 (Basis: measured, for the test; judgment, accepted by the maintainer, for
@@ -369,7 +376,7 @@ controller's judgment (`docs/decisions/spec-campaign.md`).
 
 ## Changes
 
-- 2026-11-06: a finding hitting a passage an earlier round already fixed takes a replacement of the passage rather than another clause, adding no capability beyond what the finding requires, because campaigns generated special cases round after round and a wording test moved samples toward one stated rule (§ Repeat hits, with its limits).
+- 2026-11-06: a finding hitting a passage an earlier round already fixed takes a rewrite or removal of the passage rather than another clause, adding no capability beyond what the finding requires, because campaigns generated special cases round after round and a wording test moved samples toward one stated rule (§ Repeat hits, with its limits).
 - 2026-11-05: the verifier's eight runs since the retirements are recorded, and it stays for now, since they ran only on crucible's own text and the failure it guards against is silent.
 - 2026-11-04: the verifier's re-check is a fresh seat writing `verifier-recheck.md`, an untraced hunk is reverted or named under the item needing it, and the spec terminal pass's follow-up wave records a verifier block, since none of the three had a stated path.
 - 2026-11-04: a plan's binding content in the fix path is its inter-task contracts and each task's Contract and Acceptance, no longer every required field, matching `crucible:writing-plans` § Deferring detail; so a MINOR against a task's Why or Files no longer enters a fix list as binding.

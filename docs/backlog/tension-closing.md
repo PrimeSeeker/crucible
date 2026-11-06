@@ -10,9 +10,12 @@
 - The fix list takes fix-by-deletion as a first-class resolution
   (`skills/redteaming/references/fix-application.md`), but that rule predates
   the remark, so it does not answer it.
-- The Repeat hits rule in the same file turns a second hit on a passage into
-  a replacement of it. A first hit's fix, and how a tension is closed in
-  general, stay as they were.
+- The Repeat hits rule in the same file turns a second hit on a passage, in a
+  campaign's fix list, into a rewrite or removal of it; a first hit's fix there
+  stays as it was. `crucible:writing-skills`' fix sentence now also allows
+  restating over the whole class, at any hit, for any fix to agent-read text, a
+  branch-review wave's included. How a tension is closed in general stays as it
+  was.
 - Whether branch-review fix waves generate special cases the same way is
   unchecked. Their fixes must name a cause and report sibling instances in the
   diff, but whether that works is unmeasured.

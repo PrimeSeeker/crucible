@@ -4,7 +4,7 @@ Write the **fix list**, the blind verifier's sole mandate input, into the round 
 
 **Fix altitude** (binding): every fix states its binding outcome unambiguously, at the altitude of the text around it, adding no mechanism that text lacks. Where a fix changes required behavior and its finding carries a reproducer (an input and the wrong result), the item adds an acceptance item: that input and the required result. A deferred finding's item lands the outcome, a `Deferred to implementation:` marker and any such acceptance item, not the mechanism. Outcome and acceptance item are binding content; the marker's owning task (its placement, or a Contract naming a spec marker) is only an ownership pointer.
 
-**Repeat hits** (binding): where a finding hits a passage an earlier round of this campaign already fixed, the item replaces the passage, stated from what it is for and keeping what those fixes required, rather than adding a clause. The replacement adds no capability beyond what the finding requires.
+**Repeat hits** (binding): where a finding hits a passage an earlier round of this campaign already fixed, the item rewrites the passage from what it is for, or removes it, rather than adding a clause. The result still does what those fixes required, unless the finding overturns them, and adds no capability beyond what the finding requires.
 
 The artifact states the current design only: a fix replaces text, never annotates it. No finding citations, resolution sketches, or amendment or changelog prose; what changed, when and why go in the round records. The marker line a scoped amendment writes stays.
 

@@ -106,7 +106,7 @@ Skill Index lines follow it. Codex's `agents/openai.yaml` short
 descriptions are presentation, outside the rule.
 
 **writing-skills.** `skills/writing-skills/` holds `SKILL.md`,
-`compacting.md`, `graphviz-conventions.dot` and `agents/openai.yaml`. It covers text agents act on (skills, instruction files, rules, prompts and templates, hook-injected text), organized around reader cost: a text's tokens times its reads, for each reader, measured on the written text. A fix revises the sentence that owns the case and keeps the finding's reasons, its failure scenario and what a pointer defines out of the text; a review counts excess as a finding. `compacting.md`, read only when compacting, holds the inventory, one-writer and blind-check procedure and the cut patterns. It sends an author to
+`compacting.md`, `graphviz-conventions.dot` and `agents/openai.yaml`. It covers text agents act on (skills, instruction files, rules, prompts and templates, hook-injected text), organized around reader cost: a text's tokens times its reads, for each reader, measured on the written text. A fix revises the sentence that owns the case, restated over its whole class where that covers the case, and keeps the finding's reasons, its failure scenario and what a pointer defines out of the text; a review counts excess as a finding. `compacting.md`, read only when compacting, holds the inventory, one-writer and blind-check procedure and the cut patterns. It sends an author to
 each host's own skill creator for scaffolding and evaluations, says where
 each host keeps personal skills and which instruction file it reads, and
 links each vendor's authoring guidance rather than copying it. It keeps
