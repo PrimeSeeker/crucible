@@ -9,7 +9,7 @@ A read-only seat that challenges the work's assumptions and mines it for new ide
 - its mandate: state the assumptions the shape rests on and challenge them; find new ideas and other shapes, each with what it would lose; recommend one, or say the shape is fine. It lists no defects;
 - read only in the worktree, write only the report and its scratch directory; copied in, `skills/subagent-driven-development/references/review-terms.md` § Suite bound.
 
-Its report goes to `<workspace>/fresh-look-<k>.md`, `<k>` counting from 1; a replacement for a lost seat takes the next `<k>` and is no second look. Before a workspace exists, the report and `tree-check.txt` go in the host's temporary directory, and the report moves to the workspace when it is provisioned.
+Its report goes to `<workspace>/fresh-look-<k>.md`, `<k>` counting from 1; a replacement for a lost seat takes the next `<k>` and is no second look. Before a workspace exists, the report, its scratch directory and `tree-check.txt` go in the host's temporary directory, and the report moves to the workspace when it is provisioned.
 
 **Its result is yours to weigh.** By itself it opens no wave, takes no round and spends no cap. A change you adopt takes the route its phase has for a change of its kind; one altering what the operator approved is a decision ask. Append what you did and why to the report, and name the run in your next readout.
 

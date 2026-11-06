@@ -51,7 +51,7 @@ Run each task through this loop, in plan order: when Setup is done, read `skills
 
 ## Rules every route shares
 
-These hold in the task loop, in the branch review `crucible:requesting-code-review` runs, and on the very-small lane. The dispatch composition's § Shared-tree rules bind every seat you start; the status check's windows are the review seats (task reviewer, re-reviewer, adjudicator, snapshot-blessing agent, branch reviewer), and a replacement seat reads the first seat's file. A review missing a verdict goes back to its seat: resume it for that verdict; where the host cannot resume or the verdict is still missing, start a replacement seat; one that leaves it out too is a decision ask. You never rule on it yourself.
+These hold in the task loop, in the branch review `crucible:requesting-code-review` runs, and on the very-small lane. The dispatch composition's § Shared-tree rules bind every seat you start; the status check's windows are the review seats (task reviewer, re-reviewer, adjudicator, snapshot-blessing agent, branch reviewer, a fresh look), and a replacement seat reads the first seat's file. A review missing a verdict goes back to its seat: resume it for that verdict; where the host cannot resume or the verdict is still missing, start a replacement seat; one that leaves it out too is a decision ask. You never rule on it yourself.
 
 ### Disputes and adjudication
 
