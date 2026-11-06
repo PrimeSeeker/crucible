@@ -6,7 +6,7 @@ Lane: very-small (operator-confirmed 2026-11-06)
 
 A campaign's fix lists can patch one passage round after round, each fix
 adding a clause for the case just found, leaving it jagged and with holes for
-later rounds to find. Make a repeat hit on a passage a rewrite of that passage,
+later rounds to find. Make a repeat hit on a passage a rewrite or removal of that passage,
 adding no capability beyond what the finding requires. No break.
 
 ## Change list
