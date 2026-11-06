@@ -128,15 +128,18 @@ The concrete boundary is the controller's, because "roughly" and "reasonably saf
 alone would get the conservative reading again. The maintainer accepted the files a
 task changes and what the changed code directly calls or is called by, and that a
 fix wave stays on its findings. (Basis: judgment, accepted by the maintainer.) These
-came after that acceptance: a test the implementer adds counts as cover; prose and
+came after that acceptance, and the maintainer accepted them at the feature's close:
+a test the implementer adds counts as cover; prose and
 no-seam work need none, since most of this repository's work could otherwise never
 qualify; the propose list names significant excess over the task's scope, the
 maintainer's own limit, and no longer names a restructure, the maintainer having
 named refactoring the affected system as usual practice; a fix wave's findings
 carry a defect's sibling instances, since a measured failure of fix waves is a fix
 landing at one site (`docs/decisions/the-spec.md`), and its labelled changes ride
-it; and the test-first exception. (Basis: judgment, an agent's call the maintainer
-has not ruled on, for each of these.)
+it; the stop-and-ask line names only a restructure the task needs, so one that is
+only an improvement falls to this boundary; and the test-first exception. A file
+split stays barred without plan guidance, the plan owning the file structure. (Basis:
+judgment, accepted by the maintainer, for each of these.)
 
 A wording test ran first, on an invented task with four seeds beside it; prompts,
 replies and readings are in `docs/crucible/2026-11-06-around-the-diff/microtest/`.
@@ -144,7 +147,7 @@ replies and readings are in `docs/crucible/2026-11-06-around-the-diff/microtest/
 the changed function in 6 of 10 samples, 2 of those unlogged, and fixed a bug in what
 it directly calls in none, all 10 proposing it. With the rule, on a setup where
 nothing else bound the bug, 5 of 5 made both changes and logged them, on an earlier
-wording and again on the shipped one. In 15 implementer samples with the rule, none
+wording and again on the shipped section. In 15 implementer samples with the rule, none
 renamed an output key other code relies on or touched another task's file, and all
 15 proposed that file's repetition, which none of the 10 on today's text mentioned.
 
@@ -158,6 +161,12 @@ how seats grade a collision with binding content. The literal-reading route stil
 raised it every time, and its ruling stays outside the seat. All 5 with the rule
 failed the scope of a logged change to another task's file, as all 5 on today's did
 by reverting it.
+
+The maintainer accepted this result at the feature's close, with no tighter text and
+no reviewer test of the shipped wording: binding text is read for its intent, and real
+features will show more than another written test. The two routes do not compete: a
+fix the task does not need is proposed, and BLOCKED is for a binding item the task's
+own work finds wrong. (Basis: judgment, accepted by the maintainer.)
 
 The test has limits: written replies on one invented project, the reviewers on the
 first setup and an earlier wording only, and a fold-in no larger than a loop merge in
@@ -439,7 +448,7 @@ judgment, accepted by the maintainer, for the test.)
 
 ## Changes
 
-- 2026-11-06: improvements and bug fixes around a task's diff are part of it where safe, and larger ones stay proposals, on the maintainer's ruling that a proposal depends on someone able to weigh it and their expectation of a conservative reading, which the wording test bore out for bug fixes and partly for fold-ins.
+- 2026-11-06: improvements and bug fixes around a task's diff are part of it where safe, and larger ones stay proposals, on the maintainer's ruling that a proposal depends on someone able to weigh it and their expectation of a conservative reading, which the wording test bore out for bug fixes and partly for fold-ins; the maintainer also accepted, at the feature's close, what the controller had added to the boundary and the test's result on binding content.
 - 2026-11-06: a stuck trigger stays out for now, and its basis is judgment accepted by the maintainer, no longer the maintainer's preference; because the re-audit now decides (`docs/decisions/model-roles-and-effort.md`).
 - 2026-11-05: a change too big for one implementer that stays on the lane no longer splits, its fix waves still resting on the answer to stay (`docs/decisions/routes.md`); any wave that starts a fresh seat records its line, since a tier bump or the alternate role starts one on a host that can resume, and a resume restarted the task and lost that wave.
 - 2026-11-04: the lane's inline fix waves, on a split, rest on the operator's answer to stay, because a split is more than the one implementer's worth their acceptance assumed.

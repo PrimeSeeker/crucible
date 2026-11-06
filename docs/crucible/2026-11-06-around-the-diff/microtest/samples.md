@@ -2405,7 +2405,7 @@ Tests: not run: exercise
 Concerns: with `since` set, a malformed `day` raises `ValueError`; without it the day is never read.
 Report file: none (exercise); the report is above.
 
-## impl-final: Implementer, the shipped wording, second setup
+## impl-final: Implementer, the shipped section, second setup
 
 ### Sample 1
 

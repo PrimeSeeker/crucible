@@ -10,7 +10,7 @@ unless stated. The task and project are invented, and no sample could run code.
 | `impl-rule` | Implementer | With the rule | 5, and 5 on the bounded role, of which 4 were stopped by the host's safeguards |
 | `impl-today-b` | Implementer | Today's, second setup | 5 |
 | `impl-rule-b` | Implementer | With the rule, second setup | 5 |
-| `impl-final` | Implementer | The shipped wording, second setup | 5 |
+| `impl-final` | Implementer | The shipped section, second setup | 5 |
 | `rev-today` | Task reviewer | Today's | 5 |
 | `rev-rule` | Task reviewer | With the rule | 5 |
 
@@ -60,6 +60,7 @@ match the diff by an oversight in the setup.
 - Nothing tested a callee with several callers, a fold-in larger than a loop merge in
   one function, the design-stage sentence or the inline paths.
 - Only `impl-final` read the shipped section; the others read an earlier wording. Its
+  stop-and-ask line is an earlier wording, changed after the samples ran. The section's
   fix-wave sentence, its reach over prose and no-seam work, and its limit on significant
   excess have met no case: the seeded fold-ins are small, and no reviewer read this
   wording.

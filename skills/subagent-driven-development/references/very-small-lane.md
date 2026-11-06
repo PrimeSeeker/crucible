@@ -20,7 +20,7 @@ Fix waves run inline, the cleanup wave included, **for this lane only** supersed
 - `Lane: very-small (operator-confirmed <date>)` — first, the date from the decision record.
 - `Gates: <what ran> — <result>` — after implementation and after each wave's fixes.
 - `Implementation complete: <commit>` — once the implementation is committed, by hash.
-- `Departure: <change-list item> — <what was done instead>` — one per change-list item departed from, zero or more.
+- `Departure: <change-list item or around-the-diff change> — <what was done>` — one per change-list item departed from or around-the-diff change, zero or more.
 - `Wave <n>: <X> findings (<b>B/<m>M/<k>m); re-review: <verdict>` — once the wave's re-review, if any, and its adjudication have returned; `re-review: none` for a wave that only disputes.
 - `Wave <n> (cleanup): <X> findings (<b>B/<m>M/<k>m); re-review: <verdict>` — for the cleanup wave, so a resumed controller sees it spent.
 - `Note re-pinned: <note-path> @ <rev> — <operator decision>` — on an operator-approved change to the note's binding parts.
