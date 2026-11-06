@@ -225,10 +225,10 @@ three and the ask's options.)
 Upstream also moves a BLOCKED reasoning problem to a more capable model;
 crucible's escalation stops at the default role, since no escalation
 reaches the alternate role, and a reasoning problem there goes to the
-operator, who may name it (2026-10-13). A stuck trigger stays out
-(`docs/decisions/model-roles-and-effort.md`). (Basis: external; the
-maintainer's preference, for no stuck trigger; judgment, accepted by the
-maintainer, for the routing.)
+operator, who may name it (2026-10-13). A stuck trigger stays out for
+now (`docs/decisions/model-roles-and-effort.md`). (Basis: external;
+judgment, accepted by the maintainer, for no stuck trigger for now and for
+the routing.)
 
 Three next steps stayed unstated until 2026-11-04. A task waiting on an
 ask after an implementer's BLOCKED had no ledger line, so the resume rule
@@ -351,7 +351,8 @@ judgment, accepted by the maintainer, for the test.)
   acceptance, so this would change what they enforce.
 - **A stuck trigger** escalating a seat past the default role, for now:
   the maintainer judged late waves generally not stuck, just slowly
-  mining residual issues (§ Why).
+  mining residual issues (§ Why), and the re-audit decides
+  (`docs/decisions/model-roles-and-effort.md`).
 - **Repairing or reverting undisclosed binding drift without the
   operator's answer**: the automatic revert never ran in the audit's runs,
   and the choice between revert and repair had been left open (§ Why).

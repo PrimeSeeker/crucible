@@ -411,8 +411,10 @@ judgment, accepted by the maintainer.)
   difference is a bet, unverified, taken with no micro-test: a miss
   costs one resume or a save, less than the samples would. Since then 23 of
   23 re-reviewers (21 on the bounded role) wrote without a resume, read
-  from their transcripts on 2026-11-05, all on the very-small lane; that
-  shows the misses stopped there, not why, and no verifier has run since.
+  from their transcripts on 2026-11-05, all on the very-small lane. The
+  next, on the same lane and role on 2026-11-06, ended its run without the
+  Write call and wrote on one resume, so the misses have not stopped, and
+  no verifier has run since.
 - **Passing a fix wave's findings by reference** (2026-11-05), the raising
   report's path and finding ids in place of the verbatim copy. Over the
   latest 23 re-reviews the findings came to a median of 2,280 characters,
@@ -432,6 +434,7 @@ judgment, accepted by the maintainer.)
 
 ## Changes
 
+- 2026-11-06: a re-reviewer on the very-small lane missed its report file and wrote it on one resume, so the 23 straight writes no longer show the misses stopped there; no rule changes.
 - 2026-11-06: a branch reviewer started by a Codex controller's `spawn_agent` read its template and wrote its report shape, one seat on a docs-only lane; no rule changes, and the other instruments have yet to run this way.
 - 2026-11-06: seats' reads past their scopes are measured and left as they are, since redteam seats' findings mention what those reads reached and other seats' scopes stay on judgment; the audit's methods question closes, partly taken up and the rest dropped unmeasured; a seat's ability to nest, and the declined tool-level ban, move here from the deleted backlog item.
 - 2026-11-05: passing findings by reference is rejected on measured figures, and the re-reviewers' report writes since the card change are recorded.

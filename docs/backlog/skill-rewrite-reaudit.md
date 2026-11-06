@@ -46,9 +46,9 @@ In the same transcripts, look for controllers re-reading a moved step's
 reference after compaction before acting on that step.
 
 In the same runs, count findings that fail their re-review on successive
-waves. A stuck trigger was declined on evidence with little real code
-under the current rules (`docs/decisions/model-roles-and-effort.md`
-§ Why), and repeats there reopen it.
+waves, and decide whether a stuck trigger is wanted. The transcripts read
+so far point both ways, with little real code under the current rules
+(`docs/decisions/model-roles-and-effort.md` § Why).
 
 From the same runs, read seat counts, rounds and plan sizes against the
 calibrations and re-derive what they support, labelling results from one

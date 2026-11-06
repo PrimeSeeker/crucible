@@ -20,7 +20,8 @@
 
 ## Follow-up
 
-From the rollout of a Codex run whose seats take several minutes, count the controller's
+From the rollout of a Codex run whose seats take several minutes, count
+the controller's
 `wait_agent` calls, their timeouts and the timeouts that ended with no
 agent finished. If short timeouts recur, add the waiting rule to the
 **Wait** operation in `codex.md`, stated as host mechanics.

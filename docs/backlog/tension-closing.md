@@ -1,0 +1,18 @@
+# How a tension gets closed
+
+## Observation
+
+- A tension a review finds is closed today by adding a distinction. On a
+  proposed fix-list clause asking whether a removing or merging resolution
+  exists, the maintainer said: "Looks weak indeed, we'll need to restructure
+  this somehow, probably later"
+  (`docs/crucible/2026-10-29-audit-corrections/design.md`).
+- The fix list takes fix-by-deletion as a first-class resolution
+  (`skills/redteaming/references/fix-application.md`), but that rule predates
+  the remark, so it does not answer it.
+- Whether reviews still close tensions by adding distinctions is unmeasured.
+
+## Follow-up
+
+Weigh the restructuring as a design target of a later rewrite, and first check
+whether recent fix lists still close tensions that way.
