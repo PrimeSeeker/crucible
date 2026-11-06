@@ -13,9 +13,13 @@
 - The Repeat hits rule in the same file turns a second hit on a passage into
   a replacement of it. A first hit's fix, and how a tension is closed in
   general, stay as they were.
+- Whether branch-review fix waves generate special cases the same way is
+  unchecked. Their fixes must name a cause and report sibling instances in the
+  diff, but whether that works is unmeasured.
 - Whether reviews still close tensions by adding distinctions is unmeasured.
 
 ## Follow-up
 
 Weigh the restructuring as a design target of a later rewrite, and first check
-whether recent fix lists still close tensions that way.
+whether recent fix lists still close tensions that way, and whether branch
+review does.

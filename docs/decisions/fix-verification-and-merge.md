@@ -53,7 +53,7 @@ rejected (`crucible:redteaming § Merge and finding hygiene`).
 
 **Repeat hits.** A finding that hits a passage an earlier round of the
 campaign already fixed takes a replacement of the passage, not another
-clause, adding no capability
+clause, adding no capability beyond what the finding requires
 (`skills/redteaming/references/fix-application.md`).
 
 **Blind verification after every wave.** After every apply but round 0's, MINOR-only
@@ -213,23 +213,39 @@ Five samples with the rule, on a passage a small correction would fix,
 stayed about the same size, four of them replacing a phrase list with a
 shorter, more general search; that case had no control.
 
-So the failure appeared clearly in 2 of 10 samples on today's reference,
-fewer than the history suggested, and the rule's effect is real but modest.
+How often today's reference fails depends on the count. A sample that
+added an exception or a new fallback is the narrow count, 2 of 10. Counting
+too a sample that added its fix as a further clause with the cases kept
+apart gives 6 or 7 of 10, against none with the rule. Yet four of the five
+samples with the rule on the open-items rule reached the same hold as those
+patches, in more text, so there the rule changed the passage's shape more
+than its substance.
+
 The samples saw a passage's earlier fixes laid out, with one finding to
-handle, which a controller under load has to look up, so the baseline may
-flatter today's text. The findings were reconstructed from what the next
-revision changed, the small correction's invented. The words "keeping what
-those fixes required" were added after the test, untested: one feature's history has a commit restoring four
-clauses a round's wave dropped, and the verifier does not see why an
-earlier fix was made.
+handle. A controller under load has to look those up, so today's text may
+fare worse in use. For the same reason nothing tested whether a controller
+notices a repeat: the samples were handed it, and a missed one falls back to
+today's behaviour without a signal. The findings were reconstructed from what
+the next revision changed, the small correction's invented.
+
+Two phrases came after the test and are untested. "Keeping what those fixes
+required": one feature's history has a commit restoring four clauses a
+round's wave dropped, and the verifier does not see why an earlier fix was
+made. "Beyond what the finding requires" replaced "the artifact does not
+already have", on the maintainer's ruling, once the branch review found the
+literal reading forbade a fix a finding needed; the samples had already read
+past it, describing the holds they added as no new capability.
 
 The trigger is the repeat, not the first hit: one counterexample can fairly
 take a point fix, and a general instruction to prefer the general fix
 resembles a clause the maintainer called weak on 2026-10-29. Replacing a
 passage does not conflict with building only what is needed, since it
-states the cases already there and adds no capability. The cost accepted:
-fix waves are the main source of the defects the process introduces
-(§ Small fix lists), and this asks for larger edits late in a campaign.
+states the cases already there and adds only what the finding requires. The
+cost accepted: fix waves are the main source of the defects the process
+introduces (§ Small fix lists), and this asks for larger edits late in a
+campaign; a replacement that re-shapes a mechanism meets the stop rule as any
+such wave does. `crucible:writing-skills`' fix sentence widened the same day
+(`docs/decisions/authoring-crucible.md`).
 (Basis: measured, for the test; judgment, accepted by the maintainer, for
 the rule.)
 
@@ -348,12 +364,12 @@ controller's judgment (`docs/decisions/spec-campaign.md`).
   list or to its panel, in place of the scoped repair (§ Why).
 - **Resuming the wave's verifier for its re-check** (§ Why).
 - **Asking seats to name each finding's class**: it costs every seat on
-  every finding and invites inflated scope (2026-11-06, § Why). (Basis:
+  every finding and invites inflated scope (2026-11-06). (Basis:
   judgment, accepted by the maintainer.)
 
 ## Changes
 
-- 2026-11-06: a finding hitting a passage an earlier round already fixed takes a replacement of the passage rather than another clause, adding no capability, because campaigns generated special cases round after round and a wording test moved controllers toward one stated rule without a misfire.
+- 2026-11-06: a finding hitting a passage an earlier round already fixed takes a replacement of the passage rather than another clause, adding no capability beyond what the finding requires, because campaigns generated special cases round after round and a wording test moved samples toward one stated rule (§ Repeat hits, with its limits).
 - 2026-11-05: the verifier's eight runs since the retirements are recorded, and it stays for now, since they ran only on crucible's own text and the failure it guards against is silent.
 - 2026-11-04: the verifier's re-check is a fresh seat writing `verifier-recheck.md`, an untraced hunk is reverted or named under the item needing it, and the spec terminal pass's follow-up wave records a verifier block, since none of the three had a stated path.
 - 2026-11-04: a plan's binding content in the fix path is its inter-task contracts and each task's Contract and Acceptance, no longer every required field, matching `crucible:writing-plans` § Deferring detail; so a MINOR against a task's Why or Files no longer enters a fix list as binding.
