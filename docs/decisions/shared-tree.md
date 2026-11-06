@@ -27,8 +27,10 @@ its umbrellas, its workspace paths, the supporting inputs its card lists,
 for the blind verifier the tracked files a delta claim names, and for
 the terminal pass the files a claim in the artifact cites. Read-only seats run the code they
 check claims with under the workspace's `scratch/`, one subdirectory per
-report; a standalone branch review, which has no workspace, uses the
-host's temporary directory, for `tree-check.txt` too.
+report; a standalone branch review, which has no workspace, and a fresh look
+before a workspace exists use the host's temporary directory, for
+`tree-check.txt` too, and such a fresh look records a dirty tree rather than
+cleaning it.
 
 **Replacing a seat: one line.** A replacement for a seat never starts
 until the host confirms the first has stopped; silence or a timeout is no
@@ -153,6 +155,7 @@ delegated by the maintainer.)
 
 ## Changes
 
+- 2026-11-07: a fresh look is a status-check window, using the host's temporary directory and recording a dirty tree before a workspace exists; because it can fire before any feature's worktree, and that uncommitted work is not the controller's to clean (`docs/decisions/model-roles-and-effort.md` § A fresh look).
 - 2026-11-04: another session's landing voiding a closing review's window is stated as an accepted residual, and an exception for it declined; because no such void is on record and the exception would cost a second rule.
 - 2026-11-04: an umbrella's closing-review seats take the status check, since a window with no named check left the guard off them.
 - 2026-11-03: a campaign's replacement seat takes a fresh id, no longer one no earlier seat of the feature used, since the stop check matches forecasts by mechanism, not by seat id: a minor loss under the maintainer's compaction mandate (`docs/decisions/fix-verification-and-merge.md`).

@@ -43,8 +43,9 @@ the plan phase, and a round 1 recorded degraded handing on a swap no
 returned seat ran (`docs/decisions/spec-campaign.md`); work of a kind the host map lists as a weak spot of its
 default role, at an implementer, reviewer or redteam seat, never the
 blind verifier; the operator's request, at any seat; and a fresh look,
-a seat that challenges the work's assumptions where the design or code
-seems wrong to the controller or the operator asks for one
+a seat that challenges the work's assumptions where the work's design or
+code, or what it builds on, seems wrong to the controller or the operator
+asks for one
 (`skills/subagent-driven-development/references/fresh-look.md`). A host map
 naming no alternate skips all four.
 
@@ -275,7 +276,11 @@ new ideas and challenge assumptions whenever the design or code "seems too
 overfitted, fragile, finicky, jagged, inelegant or otherwise problematic to
 continue", and, added at the answer, on the operator's request. (Basis: the
 maintainer's preference.) An agent dropped "to continue", which sets the bar
-at being unable to go on. The proposal came as a return to the stuck trigger;
+at being unable to go on; those words also scoped the trigger to work being
+continued, which nobody noticed until a branch review's literal-reading finding,
+so a fresh adjudicator's wording restores that scope without the bar: "the
+work's design or code, or what it builds on". The bare "the work's" would lose
+an existing module the work must extend. The proposal came as a return to the stuck trigger;
 an agent read it as a different mechanism (§ Rejected): that one escalates a
 failing seat on a count, which the re-audit still decides, while this replaces
 no seat, on judgment, so it does not wait for those runs. (Basis: judgment,
@@ -388,7 +393,7 @@ operator's config key.
 
 ## Changes
 
-- 2026-11-07: a fresh look joins the alternate role's triggers as a fourth, on the maintainer's proposal, with signs beside the judgment and a second look going to the operator; because rethinks done ad hoc helped and came mostly from the operator asking. The automatic stuck trigger stays declined, since this replaces no seat.
+- 2026-11-07: a fresh look joins the alternate role's triggers as a fourth, on the maintainer's proposal, scoped to the work's design or code or what it builds on, with signs beside the judgment and a second look going to the operator; because rethinks done ad hoc helped and came mostly from the operator asking. The automatic stuck trigger stays declined, since this replaces no seat.
 - 2026-11-06: a stuck trigger stays out for now and its question moves to the re-audit, no longer open in the backlog; because a read of late waves and rounds points both ways, its limits in § Why, and both caps on fix waves already reach the operator.
 - 2026-11-06: a controller one subagent down is rejected, since it cannot reach the operator and its saving at equal token use is small, the shorter context's saving and the Codex half unmeasured; the implementers' cost share and a comparison of the alternate role's seats in the same round are recorded, and neither changes a row.
 - 2026-11-05: what a Claude Code seat runs at with effort unset is measured from host records; the operator-only rule stays, since no defect from the difference on the bounded role has been noticed.
