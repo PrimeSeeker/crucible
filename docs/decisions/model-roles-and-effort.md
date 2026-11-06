@@ -190,11 +190,14 @@ controller's overhead. Token use would not be equal, though: about 78% of the
 controller's cost at the record's weights is re-read cache, and a nested
 controller starting at execution would carry less context, a saving no
 script measured. It comes out of the same shares, and seats' costs do not
-change, so the win lies between about 8% and under 22% of a run, the top
-being arithmetic on those shares, not a measurement. No nesting or hand-back
+change, so before overhead the win is about 8% of a run at equal token use
+and under 22% however short the context, the top being arithmetic on those
+shares, at the record's weights, not a measurement; the overhead is
+unmeasured. No nesting or hand-back
 protocol was designed, since the barrier to the operator stands either way. The Codex half was never measured and was
 dropped with the item. An agent's recommendation, which the maintainer
-accepted on a first statement of "at most about 8%". (Basis: measured, on
+accepted on a first statement of "at most about 8%" and again on this one.
+(Basis: measured, on
 tokens, not quality, the other project's runs ending 2026-10-23; external,
 for upstream and the host; the maintainer's preference, for the doubt;
 judgment, accepted by the maintainer, for closing it.)
@@ -297,9 +300,9 @@ would cost more with no evidence for it.
   the format is undocumented, sandbox access and freshness are untested,
   and seats would follow a controller set to `xhigh`.
 - **A controller one subagent down on a cheaper model**: it cannot reach
-  the operator mid-run, and the saving is about 8% of a run at equal token
-  use and under 22% however short its context, unmeasured between
-  (§ A controller one subagent down).
+  the operator mid-run, and the saving before an unmeasured overhead is
+  about 8% of a run at equal token use and under 22% however short its
+  context (§ A controller one subagent down).
 
 ## What a project may change
 

@@ -245,8 +245,8 @@ so a command naming both is not counted as one; 287 path mentions of
 results under those records, whose is not established, and 11 touched memory
 files. So the redteam scope does not tighten, on those findings, and other
 seats' scopes stay as they are on judgment. The redteam
-scope sentence stays stricter than what seats do: they do not follow it now,
-so rewording it would change little. (Basis: measured, by script, with no
+scope sentence stays stricter than what most seats do, on the counts above;
+whether a rewording would change that is untested, and none was made. (Basis: measured, by script, with no
 read of what those files held; judgment, accepted by the maintainer.)
 
 The methods the audit of the hypothesis-specs umbrella used
