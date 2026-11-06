@@ -34,6 +34,6 @@ Words in the returned passage, its acceptance text aside.
 
 | Passage | Before | Today's reference, median | With the rule, median |
 |---|---|---|---|
-| Open-items rule | 235 | 259 (230 to 275) | 291 (285 to 311) |
+| Open-items rule | 235 | 259 (251 to 275) | 291 (285 to 311) |
 | Finding rule | 152 | 146 (143 to 170) | 158 (152 to 163) |
 | Small correction | 62 | not run | 68 (64 to 77) |
