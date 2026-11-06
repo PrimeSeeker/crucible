@@ -273,11 +273,13 @@ The maintainer proposed it on 2026-11-07, as the formal form of something
 done ad hoc "successfully a few times": a seat on the alternate role to mine
 new ideas and challenge assumptions whenever the design or code "seems too
 overfitted, fragile, finicky, jagged, inelegant or otherwise problematic to
-continue", and, added at the answer, on the operator's request. An agent
-dropped "to continue", which sets the bar at being unable to go on. It is
-not the stuck trigger (§ Rejected): that escalates a failing seat on a count,
-which the re-audit still decides, while this replaces no seat, on judgment,
-so it does not wait for those runs. (Basis: the maintainer's preference.)
+continue", and, added at the answer, on the operator's request. (Basis: the
+maintainer's preference.) An agent dropped "to continue", which sets the bar
+at being unable to go on. The proposal came as a return to the stuck trigger;
+an agent read it as a different mechanism (§ Rejected): that one escalates a
+failing seat on a count, which the re-audit still decides, while this replaces
+no seat, on judgment, so it does not wait for those runs. (Basis: judgment,
+accepted by the maintainer.)
 
 Script counts over the Claude Code transcripts on disk (2026-11-07), matching
 prompts by keyword with none read by eye, found 57 dispatches on the alternate
@@ -299,8 +301,9 @@ patch may be ordinary, was put to the maintainer. The rule sits in the router,
 the one text every controller holds at every phase, with its procedure in a
 reference and no instrument of its own. A second look at the same problem goes
 to the operator, since the seat costs 2.5 times the base price on Claude Code.
-No wording test ran, the last having cost about 2.1 million tokens; the
-re-audit reads whether the rule fires
+No wording test ran, the one on the around-the-diff rule (2026-11-06) having
+cost about 2.1 million tokens by the controller's tally; the re-audit reads
+whether the rule fires
 (`docs/backlog/skill-rewrite-reaudit.md`). (Basis: judgment, accepted by the
 maintainer.)
 
@@ -357,7 +360,7 @@ would cost more with no evidence for it.
 - **A stuck trigger for the alternate role**, for now: the counts point
   both ways and link no failure to a later one, and both caps on fix waves
   reach the operator; the re-audit decides (§ Why). A fresh look replaces
-  no seat and is not one (§ A fresh look).
+  no seat and is not a stuck trigger (§ A fresh look).
 - **Automatic effort, or a flow choosing `ultra`**: the maintainer's
   ruling, held lightly; on Codex `ultra` also carries automatic task
   delegation (`docs/decisions/instruments.md`).

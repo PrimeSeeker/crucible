@@ -6,8 +6,8 @@
 the artifact is frozen: fixes land between dispatches. While a dispatched
 agent works in the worktree, the controller commits nothing there and
 queues the commit until it returns. Every review seat in execution,
-every dispatch window in the campaigns and an umbrella's closing-review
-seats end in one status check. The
+every dispatch window in the campaigns, an umbrella's closing-review
+seats and a fresh look end in one status check. The
 seat is dispatched with no tracked or staged change, the controller
 first writing the output of `git rev-parse HEAD` and `git status
 --porcelain --untracked-files=all` to `<workspace>/tree-check.txt`,
