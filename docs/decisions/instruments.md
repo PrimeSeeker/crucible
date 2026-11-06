@@ -28,7 +28,7 @@ default model alias, and no tool restriction. On Claude Code a dispatch names `c
 **One dispatch composition.** Every fresh seat, whether an instrument, a
 template-path dispatch or a controller-composed dispatch no template
 serves (the round-0 pre-pass, the adjudicator, the snapshot-blessing
-agent), carries the same seven items, stated once and runtime-neutral in
+agent, a fresh look), carries the same seven items, stated once and runtime-neutral in
 `skills/subagent-driven-development/references/dispatch-composition.md`:
 the worktree path, the input paths, the runtime name, the pointer to the
 binding content with a one-line mandate, the report path and return

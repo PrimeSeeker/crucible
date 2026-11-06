@@ -25,6 +25,7 @@ Gitignored files do not propagate across worktrees, so the workspace lives in on
     brainstorm-decisions.md
     request.md
     tree-check.txt
+    fresh-look-<k>.md
     campaigns/
       spec/
         round-00/

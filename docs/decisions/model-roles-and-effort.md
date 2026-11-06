@@ -35,15 +35,18 @@ bounded role or better. The default role is stated once, in the dispatch composi
 § Models`; `crucible:redteaming § Panels`;
 `crucible:requesting-code-review § Dispatch the branch reviewer`).
 
-**The alternate role has exactly three triggers:** round 1's swap, where
+**The alternate role has exactly four triggers:** round 1's swap, where
 in a spec campaign's round 1 with two or more seats on the host the seat
 the controller judges most architecture-heavy runs on it, named in the
 campaign shape at the campaign gate, with no swap in a one-seat round 1 or
 the plan phase, and a round 1 recorded degraded handing on a swap no
 returned seat ran (`docs/decisions/spec-campaign.md`); work of a kind the host map lists as a weak spot of its
 default role, at an implementer, reviewer or redteam seat, never the
-blind verifier; and the operator's request, at any seat. A host map
-naming no alternate skips all three.
+blind verifier; the operator's request, at any seat; and a fresh look,
+a seat that challenges the work's assumptions where the design or code
+seems wrong to the controller or the operator asks for one
+(`skills/subagent-driven-development/references/fresh-look.md`). A host map
+naming no alternate skips all four.
 
 **Escalation is the tier bump alone.** A BLOCKED reasoning problem goes
 to an implementer a tier up where one exists, and at the default role to
@@ -264,6 +267,43 @@ up at fix waves 4–5 went on 2026-11-02 with the five-wave loop
 (`docs/decisions/task-loop.md`). (Basis: the maintainer's
 preference; judgment, accepted by the maintainer, for the return.)
 
+### A fresh look
+
+The maintainer proposed it on 2026-11-07, as the formal form of something
+done ad hoc "successfully a few times": a seat on the alternate role to mine
+new ideas and challenge assumptions whenever the design or code "seems too
+overfitted, fragile, finicky, jagged, inelegant or otherwise problematic to
+continue", and, added at the answer, on the operator's request. An agent
+dropped "to continue", which sets the bar at being unable to go on. It is
+not the stuck trigger (§ Rejected): that escalates a failing seat on a count,
+which the re-audit still decides, while this replaces no seat, on judgment,
+so it does not wait for those runs. (Basis: the maintainer's preference.)
+
+Script counts over the Claude Code transcripts on disk (2026-11-07), matching
+prompts by keyword with none read by eye, found 57 dispatches on the alternate
+model outside crucible's instruments, 44 of them worded as reviews. Seven
+matched idea wording strongly, at least four of those straight after a
+maintainer's message naming the model, and a narrower phrase found one more,
+the only run a controller seems to have started itself. Only the last message
+before a dispatch was checked, and these are matches, not whether a run
+helped, which rests on the maintainer's report. Every run was both a fresh
+seat and a different model, so nothing separates the two, and the comparison
+under § The alternate role counts staked findings, not ideas. (Basis:
+measured, on thin data.)
+
+An agent proposed the rest, and the maintainer accepted it. Since such runs
+look operator-started and a bare "seems" may rarely fire, the trigger names
+signs beside the judgment, over judgment alone or a hard trigger on a repeat
+hit; the case against, that a list becomes a checklist and a late wave's second
+patch may be ordinary, was put to the maintainer. The rule sits in the router,
+the one text every controller holds at every phase, with its procedure in a
+reference and no instrument of its own. A second look at the same problem goes
+to the operator, since the seat costs 2.5 times the base price on Claude Code.
+No wording test ran, the last having cost about 2.1 million tokens; the
+re-audit reads whether the rule fires
+(`docs/backlog/skill-rewrite-reaudit.md`). (Basis: judgment, accepted by the
+maintainer.)
+
 ### Effort
 
 The rule is the maintainer's, from the 2026-10-13 campaign: "if we want
@@ -316,7 +356,8 @@ would cost more with no evidence for it.
   skill that names a seat's model.
 - **A stuck trigger for the alternate role**, for now: the counts point
   both ways and link no failure to a later one, and both caps on fix waves
-  reach the operator; the re-audit decides (§ Why).
+  reach the operator; the re-audit decides (§ Why). A fresh look replaces
+  no seat and is not one (§ A fresh look).
 - **Automatic effort, or a flow choosing `ultra`**: the maintainer's
   ruling, held lightly; on Codex `ultra` also carries automatic task
   delegation (`docs/decisions/instruments.md`).
@@ -344,6 +385,7 @@ operator's config key.
 
 ## Changes
 
+- 2026-11-07: a fresh look joins the alternate role's triggers as a fourth, on the maintainer's proposal, with signs beside the judgment and a second look going to the operator; because rethinks done ad hoc helped and came mostly from the operator asking. The automatic stuck trigger stays declined, since this replaces no seat.
 - 2026-11-06: a stuck trigger stays out for now and its question moves to the re-audit, no longer open in the backlog; because a read of late waves and rounds points both ways, its limits in § Why, and both caps on fix waves already reach the operator.
 - 2026-11-06: a controller one subagent down is rejected, since it cannot reach the operator and its saving at equal token use is small, the shorter context's saving and the Codex half unmeasured; the implementers' cost share and a comparison of the alternate role's seats in the same round are recorded, and neither changes a row.
 - 2026-11-05: what a Claude Code seat runs at with effort unset is measured from host records; the operator-only rule stays, since no defect from the difference on the bounded role has been noticed.

@@ -25,6 +25,8 @@ Before claiming work is complete, fixed or passing, run the check that shows it 
 
 Dispatching any agent: name its model (an omitted model silently inherits the session's), and never predict or paraphrase its result before it returns.
 
+**A fresh look.** At any phase, where the design or code seems overfitted, fragile, finicky, jagged, inelegant or otherwise wrong, or the operator asks for one, read `skills/subagent-driven-development/references/fresh-look.md` and dispatch its seat before going on. Signs include a second patch to one passage, a fix that adds a special case, a rule you cannot state without its exceptions, and a seat saying so.
+
 After compaction, re-invoke any skill you are still working under that came back cut short (ending in a truncation notice) or did not come back, before acting on it.
 
 ## Decision asks

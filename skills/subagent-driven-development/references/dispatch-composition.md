@@ -26,7 +26,7 @@ These rules bind every dispatch; a slot card's Model line, or a skill's row for 
 - A row names one of three roles, always with the word "role". Your host map's Model roles entry names this host's model for each, and the floor no dispatch goes below.
   - **The default role**: the strong model every seat runs on unless its card or row names another, and the ceiling of automatic escalation.
   - **The bounded role**, for a clearly bounded task: one step below the default role, or the default role's model where the host has no qualifying tier between. Never dispatch below it.
-  - **The alternate role**: the host's other strong model, which no escalation reaches. Exactly three triggers select it: round 1's swap (`crucible:redteaming` § Panels); work of a kind your host map lists as a default-role weak spot, at an implementer, reviewer or redteam seat (never the blind verifier); the operator's request, at any seat. A host map naming no alternate skips all three.
+  - **The alternate role**: the host's other strong model, which no escalation reaches. Exactly four triggers select it: round 1's swap (`crucible:redteaming` § Panels); work of a kind your host map lists as a default-role weak spot, at an implementer, reviewer or redteam seat (never the blind verifier); the operator's request, at any seat; a fresh look (`skills/subagent-driven-development/references/fresh-look.md`). A host map naming no alternate skips all four.
 - Leave a dispatch's reasoning effort unset unless the operator asks for one; no flow sets or raises it. An escalation is the tier bump alone; where that is not enough, the dispatching skill's stop points take it to the operator.
 
 ## Shared-tree rules

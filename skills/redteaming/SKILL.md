@@ -25,7 +25,7 @@ A **spec campaign** is an iterated loop on one artifact: dispatch a panel of fre
 
 ## Dispatch composition
 
-Every seat you start carries the dispatch composition's seven items; the round-0 pre-pass is the one controller-composed dispatch here, and the blind verifier gets no binding pointer (item 4). Three seats are instruments, each dispatched from the slot card beside its template: `redteam-seat` (`seat-prompt.md`, `seat-prompt.slots.md`), `blind-verifier` (`verifier-prompt.md`, `verifier-prompt.slots.md`), `terminal-pass` (`terminal-pass-prompt.md`, `terminal-pass-prompt.slots.md`). Seat models: the dispatch composition's § Models and effort; only the verifier's card has a Model line, other seats taking its default role, and round 1's swap to the alternate role is § Panels'.
+Every seat you start carries the dispatch composition's seven items; the round-0 pre-pass is the one controller-composed dispatch here, a fresh look aside, and the blind verifier gets no binding pointer (item 4). Three seats are instruments, each dispatched from the slot card beside its template: `redteam-seat` (`seat-prompt.md`, `seat-prompt.slots.md`), `blind-verifier` (`verifier-prompt.md`, `verifier-prompt.slots.md`), `terminal-pass` (`terminal-pass-prompt.md`, `terminal-pass-prompt.slots.md`). Seat models: the dispatch composition's § Models and effort; only the verifier's card has a Model line, other seats taking its default role, and round 1's swap to the alternate role is § Panels'.
 
 ## Round 0 — mechanical pre-pass
 

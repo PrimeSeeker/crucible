@@ -50,6 +50,10 @@ waves, and decide whether a stuck trigger is wanted. The transcripts read
 so far point both ways, with little real code under the current rules
 (`docs/decisions/model-roles-and-effort.md` § Why).
 
+In the same runs, read whether fresh looks fired where they should and whether
+the ones adopted helped (`docs/decisions/model-roles-and-effort.md` § A fresh
+look).
+
 From the same runs, read seat counts, rounds and plan sizes against the
 calibrations and re-derive what they support, labelling results from one
 project as one project's. A second project is better evidence, not a

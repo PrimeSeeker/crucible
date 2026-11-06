@@ -8,6 +8,7 @@
    - dismissed BLOCKER/MAJOR findings and ruled premise findings, with their rulings
    - every ruling you made yourself, with its reason: disputes and plan conflicts, the plan patches they led to, contained amendments, the plan phase's included
    - every improvement you adopted, named as a lightly held change
+   - each fresh look (`<workspace>/fresh-look-<k>.md`), with what you did with it
    - each ruling or requested change a fixer declined, as an ask
    - the lane's departures and the record-check gaps
    - after loop activity that followed an earlier answer, what changed since
