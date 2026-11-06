@@ -96,8 +96,8 @@ generated code and prose-only work keep the logged exception. A
 behaviour-preserving improvement its tests cover joined them on 2026-11-06, since it
 has no failing step to show and an improvement around the diff is now part of a task
 (`docs/decisions/task-loop.md` § Around the diff). (Basis: judgment, an agent's call
-the maintainer has not ruled on.) The same
-day the deviation audit began checking RED before GREEN, which nobody had
+the maintainer has not ruled on.) On 2026-10-07
+too the deviation audit began checking RED before GREEN, which nobody had
 checked. Only an implementer's report carries that evidence, so the
 check stays with the seat that reads the report: the task reviewer, or,
 for a task completed branch review only, the branch reviewer, whose slot
