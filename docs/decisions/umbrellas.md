@@ -173,7 +173,11 @@ check runs before each full-scope pass and fix wave, and the branch
 review's range is then measured from the recomputed merge base. (Basis:
 judgment, accepted by the maintainer, 2026-10-28.)
 
-A clause-sized binding change gets no exemption from that landing (2026-11-06). One feature needing two landings for one-clause edits is the one sighting, a child's clarification of its own entry already rides its branch, and only two umbrellas have run; a second sighting reopens it. (Basis: judgment, accepted by the maintainer.)
+A clause-sized binding change gets no exemption from that landing
+(2026-11-06). One feature needing two landings for one-clause edits is
+the one sighting, a child's clarification of its own entry already rides
+its branch, and only two umbrellas have run; a second sighting reopens
+it. (Basis: judgment, accepted by the maintainer.)
 
 ### Marks
 

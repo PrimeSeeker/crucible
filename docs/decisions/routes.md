@@ -120,13 +120,18 @@ maintainer, for keeping it.)
 
 A lane note with a plan and a spec implemented with no plan after its
 campaign were both left out, each an agent's proposal the maintainer
-accepted ("your call", and "Agreed"). Both stay out (2026-11-06): each would add a route to maintain for a need not yet shown. Every feature with a role file after `compaction-fit` has been a lane note, though whether a batch among them would have gone better with a plan is unmeasured. The first reopens on its trigger, a settled change campaigned only to get a plan. As first recorded, the
+accepted ("your call", and "Agreed"). Both stay out (2026-11-06): each
+would add a route to maintain for a need not yet shown. Every feature
+with a role file after `compaction-fit` has been a lane note, though
+whether a batch among them would have gone better with a plan is
+unmeasured. The first reopens on its trigger, a settled change campaigned
+only to get a plan. As first recorded, the
 first had no known use; it has one, a settled change that needs several
 coordinated tasks, and is unsupported
 for its stated reason, that work needing a plan takes a campaign preset
 (corrected 2026-10-30, after the audit,
 `docs/decisions/evidence-and-findings.md`). (Basis: judgment, accepted
-by the maintainer, 2026-10-29.)
+by the maintainer, 2026-10-29, and for leaving both out, 2026-11-06.)
 
 ### What the fold fits
 
@@ -208,7 +213,9 @@ grounds for a no, not the only ones, a no on other grounds stating
 them; the selector keys on the answer, a no taking no campaign where
 one implementer can carry the work; and the reason given is that a
 feature's spec is always campaigned and a note never is, an umbrella
-approved without a campaign being a spec of its own kind. The wider question of how far the choices separate closed on 2026-11-06, with both arrangements left out (§ Separable choices). An agent's proposal, which the
+approved without a campaign being a spec of its own kind. The wider
+question of how far the choices separate closed on 2026-11-06, with both
+arrangements left out (§ Separable choices). An agent's proposal, which the
 maintainer accepted. (Basis: judgment, accepted by the maintainer, for
 returning to the maintainer's original words and for the rest;
 measured, for the audit's findings.)

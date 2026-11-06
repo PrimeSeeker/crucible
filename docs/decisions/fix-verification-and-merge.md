@@ -277,7 +277,13 @@ controller's judgment (`docs/decisions/spec-campaign.md`).
 
 ## Rejected
 
-- **A restructuring of how a tension gets closed**, deferred by the maintainer as "probably later" and declined on 2026-11-06: the fix list already takes fix-by-deletion as a first-class resolution, removing machinery outranking adding it, all else equal (`skills/redteaming/references/fix-application.md`). Whether reviews still close tensions by adding distinctions is unmeasured; a fresh sighting reopens it. (Basis: judgment, accepted by the maintainer.)
+- **A restructuring of how a tension gets closed**, deferred by the
+  maintainer as "probably later" and declined on 2026-11-06: the fix list
+  already takes fix-by-deletion as a first-class resolution, removing
+  machinery outranking adding it, all else equal
+  (`skills/redteaming/references/fix-application.md`). Whether reviews
+  still close tensions by adding distinctions is unmeasured; a fresh
+  sighting reopens it. (Basis: judgment, accepted by the maintainer.)
 - **An agent applying fix waves** (§ Why), unless a re-open condition
   above is met.
 - **Skipping blind verification on MINOR-only waves** (§ Why).
