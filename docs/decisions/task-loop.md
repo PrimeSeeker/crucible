@@ -4,7 +4,7 @@
 
 **The spine.** SDD executes a plan task by task: a fresh implementer, then one fresh-context reviewer, unless the plan routes the task's review to the branch review (below), with progress kept in a ledger that survives compaction. The controller records BASE before each implementer, never runs two implementers at once, and fixes no finding itself, inline mode and the very-small lane's fix waves excepted (`crucible:subagent-driven-development § The Task Loop`; `skills/subagent-driven-development/references/task-loop.md`). The very-small lane runs no per-task loop (`docs/decisions/routes.md`).
 
-**The implementer contract.** What the plan's spec pointer names binds, with each task's Contract and Acceptance and the plan's inter-task contracts, a lightly-held decision a Contract cites staying lightly held, read for its intent (`docs/decisions/the-spec.md`; `crucible:writing-plans § Deferring detail`); the approach is advice, and the implementer may depart from it, logging each departure in its report's Decision Log with what, why and blast radius. Changing or contradicting binding content, or applying it literally to a case its author plainly did not consider, is BLOCKED, the report naming the item, the evidence that shows it wrong and a proposed correction (`skills/subagent-driven-development/implementer-prompt.md` § Binding vs Advisory: the Deviation License); the controller lets an item the evidence does not show wrong stand and passes any other correction through the containment test (`skills/subagent-driven-development/references/task-loop.md` § 2. Handle the report). It reports BLOCKED or NEEDS_CONTEXT rather than guess, and is told that escalating is never penalized (`skills/subagent-driven-development/implementer-prompt.md` § Stop-and-Ask Triggers). Beside its work, its report may carry concerns, `Questions` items, a premise finding (`docs/decisions/evidence-and-findings.md`) and a fix it proposes outside its task, which it never makes; the controller handles none of these before review (`crucible:subagent-driven-development § What a report voices`). Its dispatch carries a one-line reminder of the binding acceptance criteria and the Decision Log obligation (`skills/subagent-driven-development/implementer-prompt.slots.md`). Every implementer seat, fix waves' included, is dispatched as instrument `implementer` (`skills/subagent-driven-development/references/dispatch-composition.md` § Models and effort; `docs/decisions/model-roles-and-effort.md`). What else it follows, its report file, writing-skills for text instructing agents and the git identity among them, is its template's (`skills/subagent-driven-development/implementer-prompt.md` § Where You Work, § Tests: Test-First, Evidence Before Done, § Report Format).
+**The implementer contract.** What the plan's spec pointer names binds, with each task's Contract and Acceptance and the plan's inter-task contracts, a lightly-held decision a Contract cites staying lightly held, read for its intent (`docs/decisions/the-spec.md`; `crucible:writing-plans § Deferring detail`); the approach is advice, and the implementer may depart from it, logging each departure in its report's Decision Log with what, why and blast radius. Changing or contradicting binding content, or applying it literally to a case its author plainly did not consider, is BLOCKED, the report naming the item, the evidence that shows it wrong and a proposed correction (`skills/subagent-driven-development/implementer-prompt.md` § Binding vs Advisory: the Deviation License); the controller lets an item the evidence does not show wrong stand and passes any other correction through the containment test (`skills/subagent-driven-development/references/task-loop.md` § 2. Handle the report). It reports BLOCKED or NEEDS_CONTEXT rather than guess, and is told that escalating is never penalized (`skills/subagent-driven-development/implementer-prompt.md` § Stop-and-Ask Triggers). An improvement or bug fix around its diff is part of the task where safe, and logged in one line (`skills/subagent-driven-development/references/review-terms.md` § Around the diff). Beside its work, its report may carry concerns, `Questions` items, a premise finding (`docs/decisions/evidence-and-findings.md`) and a fix it proposes outside its task, which it never makes; the controller handles none of these before review (`crucible:subagent-driven-development § What a report voices`). Its dispatch carries a one-line reminder of the binding acceptance criteria and the Decision Log obligation (`skills/subagent-driven-development/implementer-prompt.slots.md`). Every implementer seat, fix waves' included, is dispatched as instrument `implementer` (`skills/subagent-driven-development/references/dispatch-composition.md` § Models and effort; `docs/decisions/model-roles-and-effort.md`). What else it follows, its report file, writing-skills for text instructing agents and the git identity among them, is its template's (`skills/subagent-driven-development/implementer-prompt.md` § Where You Work, § Tests: Test-First, Evidence Before Done, § Report Format).
 
 **Task review.** One fresh reviewer per task, never skipped, a task completed branch review only aside (below). Its stance is adversarial, "attempt to reject this task", governing the search and not the conclusion, and it returns four verdicts, all required: intent, scope, the deviation audit and quality (`skills/subagent-driven-development/task-reviewer-prompt.md`). A concern is confirmed as a finding at a staked severity or dismissed with a one-line reason, and a review or re-review that leaves one unruled is missing a verdict (`skills/subagent-driven-development/references/seat-rules.md` § Concerns; `crucible:subagent-driven-development § What a report voices`). A missing verdict goes back to its seat, never to the controller's ruling (`crucible:subagent-driven-development § Rules every route shares`). Its own `Questions` items, a premise doubt among them, become leads (`docs/decisions/evidence-and-findings.md`). It takes the reported test output as given and builds its own diff (`docs/decisions/branch-review.md`), and a literal-reading finding goes to the adjudicator (`docs/decisions/adjudication.md`). The task reviewer runs on the default role, every task it reviews, and the re-reviewer on the bounded role or better (`docs/decisions/model-roles-and-effort.md`). An open premise finding holds no task's completion by itself.
 
@@ -111,6 +111,43 @@ form.)
 On 2026-08-23 an implementer seat committed under an identity taken from
 its session context in place of the configured one; the rule against
 setting one followed on 2026-10-07. (Basis: a single incident.)
+
+### Around the diff
+
+The maintainer asked on 2026-11-06 whether crucible implicitly discouraged
+refactoring as you go, and ruled that improvements roughly around a task's diff
+fold in at the design and code stages where reasonably safe, bug fixes included,
+and that ones significantly exceeding the scope are only proposed. A separate
+proposal is cleaner, but it depends on someone able to weigh it, which a
+non-developer may not be. The text had one clause licensing improvements, beside a
+self-review line and a scope verdict pulling the other way, a failed scope verdict
+entering the fix loop at any severity, and no test-first exception that fitted a
+tidy-up. The concrete boundary is the controller's, because "roughly" and
+"reasonably safe" alone would get the conservative reading again. (Basis: the
+maintainer's preference, for the rule; judgment, accepted by the maintainer, for
+the boundary and for keeping fix waves to their dispatch, where new hunks would
+meet a capped loop.)
+
+A wording test ran first, on an invented task with four seeds beside it; prompts,
+replies and readings are in `docs/crucible/2026-11-06-around-the-diff/microtest/`.
+On today's text, implementers folded clumsy code in the changed function in 6 of
+10 samples, 2 of those unlogged, and fixed a bug in what it directly calls in none,
+all 10 proposing it, and all 5 reviewers reverted that fix at MAJOR. With the rule,
+on a setup where nothing else bound the bug, 5 of 5 implementers made both changes
+and logged them, and all 5 reviewers, on an earlier setup, kept the fix. In 10
+implementer samples with the rule, none renamed an output key other code relies on
+or touched another task's file, and all 10 proposed that file's repetition, which
+none of the 10 on today's text mentioned; all 5 reviewers failed the scope of a
+logged change to that file. Where the task's Acceptance held the buggy output
+fixed, 3 of 5 implementers proposed the fix instead and reviewers raised the
+collision for a ruling, which is the rule working as binding content requires.
+
+The test has limits: written replies on one invented project, the reviewers on the
+first setup only, and nothing on the fix-wave sentence, the design-stage sentence or
+the inline paths. On the bounded role it shows nothing: the host's safeguards
+stopped 4 of 5 samples. Whether fold-ins are worth having on real code is not
+measured, and a confident wrong fix inside the boundary passes scope, caught only
+if a seat sees the defect.
 
 ### Task review
 
@@ -342,6 +379,10 @@ judgment, accepted by the maintainer, for the test.)
 
 ## Rejected
 
+- **A per-feature cleanup allowance:** a field each design would have to fill for
+  what one boundary states once.
+- **Folding in during fix waves:** new hunks late in a capped loop can make new
+  findings; a wave's implementer can still propose what it sees.
 - **A spec's Acceptance, interfaces and non-goals binding as well:** every
   change to them after the campaign would be an amendment, against the
   spec read as a hypothesis (`docs/decisions/the-spec.md`), whose sample's
@@ -378,6 +419,7 @@ judgment, accepted by the maintainer, for the test.)
 
 ## Changes
 
+- 2026-11-06: improvements and bug fixes around a task's diff are part of it where safe, and larger ones stay proposals, on the maintainer's ruling that "no unrelated refactoring" and the scope gate read too conservatively and that a proposal depends on someone able to weigh it.
 - 2026-11-06: a stuck trigger stays out for now, and its basis is judgment accepted by the maintainer, no longer the maintainer's preference; because the re-audit now decides (`docs/decisions/model-roles-and-effort.md`).
 - 2026-11-05: a change too big for one implementer that stays on the lane no longer splits, its fix waves still resting on the answer to stay (`docs/decisions/routes.md`); any wave that starts a fresh seat records its line, since a tier bump or the alternate role starts one on a host that can resume, and a resume restarted the task and lost that wave.
 - 2026-11-04: the lane's inline fix waves, on a split, rest on the operator's answer to stay, because a split is more than the one implementer's worth their acceptance assumed.

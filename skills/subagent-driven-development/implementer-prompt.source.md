@@ -68,13 +68,15 @@ On an unexpected test failure or unexplained behavior, follow `crucible:systemat
 
 ## Code Organization
 
-Follow the plan's file structure: one clear responsibility and a well-defined interface per file. A file growing beyond the plan's intent is DONE_WITH_CONCERNS; don't split files without plan guidance. Follow established patterns, improve code you touch as a good developer would, and restructure nothing outside your task. A fix you see outside it you propose in your report, naming the site and the change, and never make: the controller routes it.
+Follow the plan's file structure: one clear responsibility and a well-defined interface per file. A file growing beyond the plan's intent is DONE_WITH_CONCERNS; don't split files without plan guidance. Follow established patterns. A fix you see beyond § Around the diff you propose in your report, naming the site and the change, and never make: the controller routes it.
+
+[[include Around the diff]]
 
 [[include What shipped work carries]]
 
 ## Before Reporting Back: Self-Review
 
-With fresh eyes, check and fix now: every requirement and edge case done; nothing outside the task touched; the Decision Log holds every deviation and nothing the diff contradicts; tests exercise real behavior, show RED before GREEN or a logged exception, and run pristine.
+With fresh eyes, check and fix now: every requirement and edge case done; nothing beyond § Around the diff touched; the Decision Log holds every deviation and nothing the diff contradicts; tests exercise real behavior, show RED before GREEN or a logged exception, and run pristine.
 
 ## After Review Findings
 

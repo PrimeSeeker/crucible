@@ -78,7 +78,7 @@ On an unexpected test failure or unexplained behavior, follow `crucible:systemat
 
 ## Test-first evidence
 
-Test-first work shows its failing (RED) run before its passing (GREEN) one, or the Decision Log records its exception and reason, one of: no test seam, generated code, prose-only work, or a removal. A removal's failing step is the removed path's own tests failing or being deleted with it, never a new test that the removed thing is absent.
+Test-first work shows its failing (RED) run before its passing (GREEN) one, or the Decision Log records its exception and reason, one of: no test seam, generated code, prose-only work, a removal, or a behaviour-preserving improvement its existing tests cover. A removal's failing step is the removed path's own tests failing or being deleted with it, never a new test that the removed thing is absent.
 
 ## Tests in review
 
@@ -91,7 +91,11 @@ A deleted test, parametrized case or assertion, or any other change making a tes
 
 ## Code Organization
 
-Follow the plan's file structure: one clear responsibility and a well-defined interface per file. A file growing beyond the plan's intent is DONE_WITH_CONCERNS; don't split files without plan guidance. Follow established patterns, improve code you touch as a good developer would, and restructure nothing outside your task. A fix you see outside it you propose in your report, naming the site and the change, and never make: the controller routes it.
+Follow the plan's file structure: one clear responsibility and a well-defined interface per file. A file growing beyond the plan's intent is DONE_WITH_CONCERNS; don't split files without plan guidance. Follow established patterns. A fix you see beyond § Around the diff you propose in your report, naming the site and the change, and never make: the controller routes it.
+
+## Around the diff
+
+An improvement or bug fix an implementer comes across in the files its task changes, or in what the changed code directly calls or is called by, is part of the task: the implementer makes it where tests cover it, one it adds included, and nothing outside the task relies on what it changes, and logs it in one line in the Decision Log. One needing another task's file, binding content, a new capability or a restructure is proposed, never made. A fix wave makes only what its dispatch lists. In review, a logged one inside this boundary is not extra and passes scope, and is judged on quality; one beyond it fails scope.
 
 ## What shipped work carries
 
@@ -101,7 +105,7 @@ Comments and docstrings follow project conventions; absent any, a comment states
 
 ## Before Reporting Back: Self-Review
 
-With fresh eyes, check and fix now: every requirement and edge case done; nothing outside the task touched; the Decision Log holds every deviation and nothing the diff contradicts; tests exercise real behavior, show RED before GREEN or a logged exception, and run pristine.
+With fresh eyes, check and fix now: every requirement and edge case done; nothing beyond § Around the diff touched; the Decision Log holds every deviation and nothing the diff contradicts; tests exercise real behavior, show RED before GREEN or a logged exception, and run pristine.
 
 ## After Review Findings
 

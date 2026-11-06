@@ -103,6 +103,10 @@ A requirement living outside the diff (in unchanged code, or spanning tasks) get
 
 Every hunk must be attributable to this task's requirements or to a Decision Log entry; anything else fails scope. A § Tests in review finding is a scope finding, and so is any change in the range to the plan, a folded document or the spec, other than a commit your dispatch names as a scoped amendment or a plan-patching ruling. A deletion's or loosening's justification must also be named in the Decision Log, quoted if it is a warning sign.
 
+## Around the diff
+
+An improvement or bug fix an implementer comes across in the files its task changes, or in what the changed code directly calls or is called by, is part of the task: the implementer makes it where tests cover it, one it adds included, and nothing outside the task relies on what it changes, and logs it in one line in the Decision Log. One needing another task's file, binding content, a new capability or a restructure is proposed, never made. A fix wave makes only what its dispatch lists. In review, a logged one inside this boundary is not extra and passes scope, and is judged on quality; one beyond it fails scope.
+
 ## Tests in review
 
 A deleted test, parametrized case or assertion, or any other change making a test more permissive, is a finding unless one of these holds for what was deleted or loosened, borne out by the code:
@@ -124,7 +128,7 @@ Audit the report's Decision Log against the diff:
 
 ## Test-first evidence
 
-Test-first work shows its failing (RED) run before its passing (GREEN) one, or the Decision Log records its exception and reason, one of: no test seam, generated code, prose-only work, or a removal. A removal's failing step is the removed path's own tests failing or being deleted with it, never a new test that the removed thing is absent.
+Test-first work shows its failing (RED) run before its passing (GREEN) one, or the Decision Log records its exception and reason, one of: no test seam, generated code, prose-only work, a removal, or a behaviour-preserving improvement its existing tests cover. A removal's failing step is the removed path's own tests failing or being deleted with it, never a new test that the removed thing is absent.
 
 ## Verdict 4: Quality
 

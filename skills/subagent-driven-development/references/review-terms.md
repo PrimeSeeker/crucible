@@ -25,6 +25,10 @@ For an umbrella's campaign the code is its children's: once they are implemented
 
 A plan task may take the branch review as its first review when it builds no major mechanism, leaves its implementer little of how it works to decide, and nothing outside it depends on its details: later tasks, contracts and readers build on what it delivers, never on how it does it. The branch review runs only after every later task, too late for a detail something else builds on.
 
+## Around the diff
+
+An improvement or bug fix an implementer comes across in the files its task changes, or in what the changed code directly calls or is called by, is part of the task: the implementer makes it where tests cover it, one it adds included, and nothing outside the task relies on what it changes, and logs it in one line in the Decision Log. One needing another task's file, binding content, a new capability or a restructure is proposed, never made. A fix wave makes only what its dispatch lists. In review, a logged one inside this boundary is not extra and passes scope, and is judged on quality; one beyond it fails scope.
+
 ## Finding scope
 
 - The artifact's advisory register (mechanism sketches, solution shapes an implementer may replace) is graded only for contradiction with binding content or infeasibility; missing or imperfect detail there is not a finding.

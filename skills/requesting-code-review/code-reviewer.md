@@ -142,6 +142,10 @@ Production readiness:
 - Migration strategy if the schema changed, backward compatibility, documentation complete, no obvious bugs?
 - Does what the branch sets out to do leave the base unable to do something it does today, or a path someone can reach failing, with neither its spec nor its requirements source stating that break? Report it labelled `unstated break`; a defect a fix can repair without changing what the branch does is an ordinary finding.
 
+## Around the diff
+
+An improvement or bug fix an implementer comes across in the files its task changes, or in what the changed code directly calls or is called by, is part of the task: the implementer makes it where tests cover it, one it adds included, and nothing outside the task relies on what it changes, and logs it in one line in the Decision Log. One needing another task's file, binding content, a new capability or a restructure is proposed, never made. A fix wave makes only what its dispatch lists. In review, a logged one inside this boundary is not extra and passes scope, and is judged on quality; one beyond it fails scope.
+
 ## What shipped work carries
 
 Nothing the work ships (code, comments, docs, prompts) carries build history: plan task or spec section numbers, feature decision ids, pointers to a feature's spec or plan, rulings with names or dates, wave names, what was retired when. That belongs in commit messages, decision records, changelogs, the feature folder and open items in the project's home.
