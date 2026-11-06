@@ -173,6 +173,8 @@ check runs before each full-scope pass and fix wave, and the branch
 review's range is then measured from the recomputed merge base. (Basis:
 judgment, accepted by the maintainer, 2026-10-28.)
 
+A clause-sized binding change gets no exemption from that landing (2026-11-06). One feature needing two landings for one-clause edits is the one sighting, a child's clarification of its own entry already rides its branch, and only two umbrellas have run; a second sighting reopens it. (Basis: judgment, accepted by the maintainer.)
+
 ### Marks
 
 State derived from which folders and branches exist misreads three
@@ -318,6 +320,7 @@ maintainer.)
 
 ## Rejected
 
+- **A clause-sized exemption from a binding change's own landing** (§ Binding changes off the child's branch).
 - **A frozen parent amended from its children**, and **a frozen parent
   plus an amendment log**: both leave the reader merging texts (§ Why).
 - **One flat umbrella for the whole tree**, and **a depth cap** (§ Why).
@@ -342,6 +345,7 @@ maintainer.)
 
 ## Changes
 
+- 2026-11-06: a clause-sized binding change keeps its own landing, no longer an open question in the backlog; because the need has one sighting and a child's clarification of its own entry already rides its branch.
 - 2026-11-05: the closing review's controller also reads the host's dispatch reference; because the review composes its seats from the dispatch composition and nothing sent it to the reference.
 - 2026-11-05: three residuals are accepted as they are, an unreviewed `landed` mark, an approval-only umbrella's workspace and a pending open-items ask with no carrier, since each costs little and a fix would add text for a rare case; a late-marking feature's base merge after the branch review stays too.
 - 2026-11-05: a closing-review seat's prompt carries its report form, since the sections copied into it send a seat to a report format nothing gave.

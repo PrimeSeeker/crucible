@@ -228,10 +228,7 @@ On 2026-10-07 an operator exception naming a model above the default was
 deleted as "overly strong"; on 2026-10-13 that model returned as Claude
 Code's alternate role, reached by the three triggers rather than by the
 operator's authorization alone, with that history shown to the
-maintainer. Nothing escalates a stuck seat to it. The maintainer: "Late
-waves are generally not stuck, just slowly mining the residual issues.
-We'll probably introduce a stuck trigger later." The question is open in
-`docs/backlog/escalation-and-effort.md`. SDD's fresh implementer a tier
+maintainer. Nothing escalates a stuck seat to it. The maintainer: "Late waves are generally not stuck, just slowly mining the residual issues." A seat is stuck when the same finding fails its re-review on successive fix attempts. Script counts over the transcripts on disk (2026-11-06; about 120 features, on this repository and one other project whose runs ended by 2026-10-23) agree as far as they can see. 11 of 740 parsed re-review verdicts failed, and at most one feature failed at two separate re-reviews. Text matching linked none of the 11 to any later verdict, so it shows no repeat without ruling one out. Of 496 implementers, 6 reported BLOCKED in an explicit status line, none on a fix-wave dispatch, though a status was readable on only 188; none ran on the alternate role, so nothing shows that role would unstick a seat. Of the 70 tasks whose fix-wave lines the script captured from the ledgers, none reached a third wave. In campaigns, findings worded as repeats were as common in round 1 (6.9%) as later (6.5%), and rounds past the first kept raising about 2 to 4 BLOCKER or MAJOR findings per campaign, among those that reached them. None of this was read by eye, and little of it is real code under the current rules, so the re-audit counts repeats there (`docs/backlog/skill-rewrite-reaudit.md`). A task's third wave already goes to the operator, who may name the alternate role, so the trigger is declined. SDD's fresh implementer a tier
 up at fix waves 4–5 went on 2026-11-02 with the five-wave loop
 (`docs/decisions/task-loop.md`). (Basis: the maintainer's
 preference; judgment, accepted by the maintainer, for the return.)
@@ -286,8 +283,7 @@ would cost more with no evidence for it.
 
 - **Model names in the skills**: every model release would touch every
   skill that names a seat's model.
-- **A stuck trigger for the alternate role**: late waves mine residual
-  issues rather than stall; open in the backlog (§ Why).
+- **A stuck trigger for the alternate role**: failed fixes are rare, nothing shows a repeat, and a task's third wave already reaches the operator (§ Why).
 - **Automatic effort, or a flow choosing `ultra`**: the maintainer's
   ruling, held lightly; on Codex `ultra` also carries automatic task
   delegation (`docs/decisions/instruments.md`).
@@ -315,6 +311,7 @@ operator's config key.
 
 ## Changes
 
+- 2026-11-06: a stuck trigger is declined, no longer open, on a read of late waves and rounds whose limits § Why states; because failed fixes were rare and a task's third wave already reaches the operator.
 - 2026-11-06: a controller one subagent down is rejected, since it cannot reach the operator and its saving at equal token use is small, the shorter context's saving and the Codex half unmeasured; the implementers' cost share and a comparison of the alternate role's seats in the same round are recorded, and neither changes a row.
 - 2026-11-05: what a Claude Code seat runs at with effort unset is measured from host records; the operator-only rule stays, since no defect from the difference on the bounded role has been noticed.
 - 2026-11-04: a round 1 recorded degraded hands on a swap no returned seat ran to the next round (`docs/decisions/spec-campaign.md`).

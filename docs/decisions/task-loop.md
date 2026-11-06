@@ -226,7 +226,7 @@ Upstream also moves a BLOCKED reasoning problem to a more capable model;
 crucible's escalation stops at the default role, since no escalation
 reaches the alternate role, and a reasoning problem there goes to the
 operator, who may name it (2026-10-13). A stuck trigger stays out
-(`docs/backlog/escalation-and-effort.md`). (Basis: external; the
+(`docs/decisions/model-roles-and-effort.md`). (Basis: external; the
 maintainer's preference, for no stuck trigger; judgment, accepted by the
 maintainer, for the routing.)
 

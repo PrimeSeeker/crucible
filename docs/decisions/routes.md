@@ -120,9 +120,7 @@ maintainer, for keeping it.)
 
 A lane note with a plan and a spec implemented with no plan after its
 campaign were both left out, each an agent's proposal the maintainer
-accepted ("your call", and "Agreed"); both wait in
-`docs/backlog/lane-entry-and-downshift.md`, the first with its trigger:
-a settled change campaigned only to get a plan. As first recorded, the
+accepted ("your call", and "Agreed"). Both stay out (2026-11-06): each would add a route to maintain for a need not yet shown. Every feature with a role file after `compaction-fit` has been a lane note, though whether a batch among them would have gone better with a plan is unmeasured. The first reopens on its trigger, a settled change campaigned only to get a plan. As first recorded, the
 first had no known use; it has one, a settled change that needs several
 coordinated tasks, and is unsupported
 for its stated reason, that work needing a plan takes a campaign preset
@@ -210,9 +208,7 @@ grounds for a no, not the only ones, a no on other grounds stating
 them; the selector keys on the answer, a no taking no campaign where
 one implementer can carry the work; and the reason given is that a
 feature's spec is always campaigned and a note never is, an umbrella
-approved without a campaign being a spec of its own kind. The wider
-question of how far the choices separate is the skill-text rewrite's
-(`docs/backlog/skill-text-rewrite.md`). An agent's proposal, which the
+approved without a campaign being a spec of its own kind. The wider question of how far the choices separate closed on 2026-11-06, with both arrangements left out (§ Separable choices). An agent's proposal, which the
 maintainer accepted. (Basis: judgment, accepted by the maintainer, for
 returning to the maintainer's original words and for the rest;
 measured, for the audit's findings.)
@@ -356,6 +352,7 @@ gate.)
 
 ## Rejected
 
+- **A lane note with a plan, or a campaigned spec with no plan** (§ Separable choices).
 - **Splitting a lane change across fresh implementers**: no run used it,
   and several tasks already take a campaign preset (§ Why).
 - **One uniform process for every change**: on a small change the plan
@@ -383,6 +380,7 @@ small preset or the waiver for its work.
 
 ## Changes
 
+- 2026-11-06: a lane note with a plan and a campaigned spec with no plan stay out, no longer waiting in the backlog, and the wider question of how far the choices separate closes with them; because each would add a route for a need not yet shown. The first's trigger stands in § Separable choices.
 - 2026-11-05: a change too big for one implementer no longer stays on the lane by splitting: moving to the standard route is the upgrade hatch's ask, and an answer to stay is the operator's direction; because no run had used the split and its reviews kept finding seams in it.
 - 2026-11-04: staying on the lane for a change too big for one implementer splits it across fresh implementers, one per part, in order, each told to append to the report and that the note's Acceptance is the last part's to meet, its ledger line naming the part and a resume starting at the first part with no report section, because nothing said what followed that answer; the ask states that the branch review stays the first review and the fix waves stay the controller's, and the answer to stay accepts both, since a split is wider than the lane's fit assumes.
 - 2026-11-04: the lane states what follows a dispatched implementer's NEEDS_CONTEXT or BLOCKED, with a ledger line for an operator ask it raises, since that handling lived in the task loop's text, which the lane does not load; a change too big for one implementer joins the upgrade hatch's question.

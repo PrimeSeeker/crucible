@@ -277,6 +277,7 @@ controller's judgment (`docs/decisions/spec-campaign.md`).
 
 ## Rejected
 
+- **A restructuring of how a tension gets closed**, deferred by the maintainer as "probably later" and declined on 2026-11-06: the fix list already takes fix-by-deletion as a first-class resolution, removing machinery outranking adding it, all else equal (`skills/redteaming/references/fix-application.md`). Whether reviews still close tensions by adding distinctions is unmeasured; a fresh sighting reopens it. (Basis: judgment, accepted by the maintainer.)
 - **An agent applying fix waves** (§ Why), unless a re-open condition
   above is met.
 - **Skipping blind verification on MINOR-only waves** (§ Why).
@@ -296,6 +297,7 @@ controller's judgment (`docs/decisions/spec-campaign.md`).
 
 ## Changes
 
+- 2026-11-06: a restructuring of how a tension gets closed is declined, no longer open in the backlog; because the fix list already ranks removing machinery above adding it, all else equal.
 - 2026-11-05: the verifier's eight runs since the retirements are recorded, and it stays for now, since they ran only on crucible's own text and the failure it guards against is silent.
 - 2026-11-04: the verifier's re-check is a fresh seat writing `verifier-recheck.md`, an untraced hunk is reverted or named under the item needing it, and the spec terminal pass's follow-up wave records a verifier block, since none of the three had a stated path.
 - 2026-11-04: a plan's binding content in the fix path is its inter-task contracts and each task's Contract and Acceptance, no longer every required field, matching `crucible:writing-plans` § Deferring detail; so a MINOR against a task's Why or Files no longer enters a fix list as binding.
