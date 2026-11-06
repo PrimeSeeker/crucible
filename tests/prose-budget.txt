@@ -7,7 +7,7 @@ finishing-a-development-branch 1333
 receiving-review 508
 redteaming 11543
 requesting-code-review 3437
-subagent-driven-development 15048
+subagent-driven-development 15038
 systematic-debugging 1898
 using-crucible 2098
 using-git-worktrees 957
