@@ -238,8 +238,8 @@ attempts. Script counts over the transcripts on disk (2026-11-06; about
 whose runs ended by 2026-10-23), none read by eye, point both ways.
 11 of 740 parsed re-review verdicts failed (19 of 785 by a looser parse),
 though about a third of the re-reviewers wrote no report file and may be
-undercounted, and at most one feature had two separate re-reviews among
-the 11. Text matching linked none of the 11 to a later verdict, 3 having
+undercounted, and among the 11 at most one feature failed at two separate
+re-reviews. Text matching linked none of the 11 to a later verdict, 3 having
 none to link to, so it shows no repeat without ruling one out. Of 496
 implementers, 6 reported BLOCKED in an explicit status line, all on first
 runs, though a status was readable on only 188; none ran on the alternate

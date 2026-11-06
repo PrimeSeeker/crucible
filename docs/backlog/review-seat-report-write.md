@@ -14,10 +14,10 @@
   "if you have it". No verifier has run under it. The re-reviewer, which
   missed on three of those runs, has since written 23 of 24 without a resume,
   all on the very-small lane (`docs/decisions/instruments.md`, Rejected,
-  § Seat-facing wording); 21 of those ran on the bounded role, the
-  verifier's, so the role alone does not produce a miss. The 24th, on the
-  bounded role (2026-11-06), ended its run without the Write call and wrote
-  on one resume.
+  § Seat-facing wording). 21 of those 23 ran on the bounded role, the
+  verifier's, so the role alone does not produce a miss. The 24th, also on
+  the bounded role (2026-11-06), ended its run without the Write call and
+  wrote on one resume.
 - The check on an appended report asks that it hold the seat's section
   (`skills/subagent-driven-development/references/dispatch-composition.md`,
   item 5), and nothing marks whose section is whose. A seat re-dispatched
