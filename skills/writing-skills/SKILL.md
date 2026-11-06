@@ -21,7 +21,7 @@ A text costs its tokens times its reads, for each reader: an orchestrating agent
 - A rule gives the action, its observable signal and at most one clause of why.
 - How a rule was learned goes in the project's decision records, or its docs where it keeps none.
 - Write siblings in one list or section at the same grain; detail that breaks the grain goes to a supporting file or a tool's `--help`.
-- A fix revises the sentence that owns the case; its added words are the rule's new condition or action, stated as the sentence states its others, while the finding's reasons, its failure scenario and what a pointer already defines stay out of the text.
+- A fix revises the sentence that owns the case, restated over its whole class where that covers the case; any words it adds are the rule's new condition or action, stated as the sentence states its others, while the finding's reasons, its failure scenario and what a pointer already defines stay out of the text.
 - A review counts excess as a finding, as it counts an omission: text no reader acts on, a restatement of what its reader already loads, a pointer longer than its rule, a second clause of why.
 - Before compacting a text, **read `skills/writing-skills/compacting.md` in full**.
 

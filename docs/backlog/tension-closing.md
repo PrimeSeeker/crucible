@@ -10,6 +10,9 @@
 - The fix list takes fix-by-deletion as a first-class resolution
   (`skills/redteaming/references/fix-application.md`), but that rule predates
   the remark, so it does not answer it.
+- The Repeat hits rule in the same file turns a second hit on a passage into
+  a replacement of it. A first hit's fix, and how a tension is closed in
+  general, stay as they were.
 - Whether reviews still close tensions by adding distinctions is unmeasured.
 
 ## Follow-up

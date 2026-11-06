@@ -51,6 +51,11 @@ its landing's open-items step. A repeat of one closes as its duplicate.
 A MINOR the controller finds wrong or outside the finding scope stays
 rejected (`crucible:redteaming § Merge and finding hygiene`).
 
+**Repeat hits.** A finding that hits a passage an earlier round of the
+campaign already fixed takes a replacement of the passage, not another
+clause, adding no capability
+(`skills/redteaming/references/fix-application.md`).
+
 **Blind verification after every wave.** After every apply but round 0's, MINOR-only
 waves included, the blind verifier receives the fix list and the diff,
 never the rationale, the seat reports, the readout or the artifact's
@@ -179,6 +184,55 @@ them against code. (Basis: measured, for the audit; judgment, accepted
 by the maintainer, for the rule and the destination, and for the
 carve-out for binding text, a call the maintainer left to the agent.)
 
+### Repeat hits
+
+The maintainer saw campaigns generate special cases round after round,
+leaving rules jagged (2026-11-06). The committed specs show it. One rule
+on where open items go took new cases in rounds 0 and 1 and was
+restructured only at round 2, on the maintainer's ruling. Another, on what
+counts as a finding, gained an exception in a terminal pass's wave and two
+more at a later read. That is a reading by eye of 9 of 14 sampled
+paragraphs, out of the 55 in specs and plans revised three or more times,
+and gives no rate. Campaign records are deleted at Finish, so whether such
+clauses start with the seats or the controller could not be told. The rule
+sits at fix authoring because the controller writes every fix, whoever
+suggested it.
+
+A wording test (2026-11-06) ran 25 samples on the default role, each given
+`fix-application.md`, a passage as it stood mid-campaign, a summary of what
+earlier rounds' fix lists did to it and a reconstructed finding. On the
+finding rule, of five samples on today's reference three wrote one general
+rule, one kept the split but pointed to the general rule, and one added
+exceptions as the real controller had; all five with the rule wrote one
+general rule, nearly the same sentence. On the open-items rule, four of
+five on today's reference added a hold on integration and kept the cases
+apart, and one added a new fallback; all five with the rule rewrote it,
+four reaching the same hold and one a design close to the maintainer's
+ruling. The rewrites of that rule ran about 15% longer than the patches.
+Five samples with the rule, on a passage a small correction would fix,
+stayed about the same size, four of them replacing a phrase list with a
+shorter, more general search; that case had no control.
+
+So the failure appeared clearly in 2 of 10 samples on today's reference,
+fewer than the history suggested, and the rule's effect is real but modest.
+The samples saw a passage's earlier fixes laid out, with one finding to
+handle, which a controller under load has to look up, so the baseline may
+flatter today's text. The findings were reconstructed from what the next
+revision changed, the small correction's invented. The words "keeping what
+those fixes required" were added after the test, untested: one feature's history has a commit restoring four
+clauses a round's wave dropped, and the verifier does not see why an
+earlier fix was made.
+
+The trigger is the repeat, not the first hit: one counterexample can fairly
+take a point fix, and a general instruction to prefer the general fix
+resembles a clause the maintainer called weak on 2026-10-29. Replacing a
+passage does not conflict with building only what is needed, since it
+states the cases already there and adds no capability. The cost accepted:
+fix waves are the main source of the defects the process introduces
+(§ Small fix lists), and this asks for larger edits late in a campaign.
+(Basis: measured, for the test; judgment, accepted by the maintainer, for
+the rule.)
+
 ### Blind verification
 
 A study of the maintainer's earlier redteaming on another project
@@ -293,9 +347,13 @@ controller's judgment (`docs/decisions/spec-campaign.md`).
 - **Carrying a failing verifier verdict to the next round**, on its fix
   list or to its panel, in place of the scoped repair (§ Why).
 - **Resuming the wave's verifier for its re-check** (§ Why).
+- **Asking seats to name each finding's class**: it costs every seat on
+  every finding and invites inflated scope (2026-11-06, § Why). (Basis:
+  judgment, accepted by the maintainer.)
 
 ## Changes
 
+- 2026-11-06: a finding hitting a passage an earlier round already fixed takes a replacement of the passage rather than another clause, adding no capability, because campaigns generated special cases round after round and a wording test moved controllers toward one stated rule without a misfire.
 - 2026-11-05: the verifier's eight runs since the retirements are recorded, and it stays for now, since they ran only on crucible's own text and the failure it guards against is silent.
 - 2026-11-04: the verifier's re-check is a fresh seat writing `verifier-recheck.md`, an untraced hunk is reverted or named under the item needing it, and the spec terminal pass's follow-up wave records a verifier block, since none of the three had a stated path.
 - 2026-11-04: a plan's binding content in the fix path is its inter-task contracts and each task's Contract and Acceptance, no longer every required field, matching `crucible:writing-plans` § Deferring detail; so a MINOR against a task's Why or Files no longer enters a fix list as binding.
