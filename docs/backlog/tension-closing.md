@@ -2,9 +2,9 @@
 
 ## Observation
 
-- A tension a review finds is closed today by adding a distinction. On a
-  proposed fix-list clause asking whether a removing or merging resolution
-  exists, the maintainer said: "Looks weak indeed, we'll need to restructure
+- When the maintainer remarked on it (2026-10-29), a tension a review found
+  was closed by adding a distinction. On a proposed fix-list clause asking
+  whether a removing or merging resolution exists, the maintainer said: "Looks weak indeed, we'll need to restructure
   this somehow, probably later"
   (`docs/crucible/2026-10-29-audit-corrections/design.md`).
 - The fix list takes fix-by-deletion as a first-class resolution

@@ -378,6 +378,7 @@ judgment, accepted by the maintainer, for the test.)
 
 ## Changes
 
+- 2026-11-06: a stuck trigger stays out for now, and its basis is judgment accepted by the maintainer, no longer the maintainer's preference; because the re-audit now decides (`docs/decisions/model-roles-and-effort.md`).
 - 2026-11-05: a change too big for one implementer that stays on the lane no longer splits, its fix waves still resting on the answer to stay (`docs/decisions/routes.md`); any wave that starts a fresh seat records its line, since a tier bump or the alternate role starts one on a host that can resume, and a resume restarted the task and lost that wave.
 - 2026-11-04: the lane's inline fix waves, on a split, rest on the operator's answer to stay, because a split is more than the one implementer's worth their acceptance assumed.
 - 2026-11-04: a `BLOCKED` raised in a fix wave names the wave in its ledger line, and the answered wave continues, because a wave appends no step 1 line and a resume restarted the task, losing the wave count; a fresh wave implementer's ledger line takes a stated form for the same reason.

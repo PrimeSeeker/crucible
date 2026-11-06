@@ -133,7 +133,9 @@ coordinated tasks, and is unsupported
 for its stated reason, that work needing a plan takes a campaign preset
 (corrected 2026-10-30, after the audit,
 `docs/decisions/evidence-and-findings.md`). (Basis: judgment, accepted
-by the maintainer, 2026-10-29, and for leaving both out, 2026-11-06.)
+by the maintainer, 2026-10-29, and for leaving both out, 2026-11-06;
+measured, by script over the transcripts on disk of this repository and
+one other project, none read by eye, for the 44 of 98.)
 
 ### What the fold fits
 

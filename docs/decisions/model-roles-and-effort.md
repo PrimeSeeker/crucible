@@ -235,7 +235,8 @@ and the re-audit decides (`docs/backlog/skill-rewrite-reaudit.md`). A seat
 is stuck when the same finding fails its re-review on successive fix
 attempts. Script counts over the transcripts on disk (2026-11-06; about
 120 features with a re-review, on this repository and one other project
-whose runs ended by 2026-10-23), none read by eye, point both ways.
+whose runs ended by 2026-10-23), none read by eye and little of it real
+code under the current rules, point both ways.
 11 of 740 parsed re-review verdicts failed (19 of 785 by a looser parse),
 though about a third of the re-reviewers wrote no report file and may be
 undercounted, and among the 11 at most one feature failed at two separate

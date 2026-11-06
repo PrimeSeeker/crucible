@@ -53,4 +53,6 @@ so far point both ways, with little real code under the current rules
 From the same runs, read seat counts, rounds and plan sizes against the
 calibrations and re-derive what they support, labelling results from one
 project as one project's. A second project is better evidence, not a
-condition.
+condition. Check too whether any one-round campaign was a settled change run
+only to get a plan, the trigger that reopens a lane note with a plan
+(`docs/decisions/routes.md` § Separable choices).
