@@ -56,3 +56,10 @@ project as one project's. A second project is better evidence, not a
 condition. Check too whether any one-round campaign was a settled change run
 only to get a plan, the trigger that reopens a lane note with a plan
 (`docs/decisions/routes.md` § Separable choices).
+
+In the same runs, read how the around-the-diff rule did on real code
+(`docs/decisions/task-loop.md` § Around the diff): were fold-ins worth having,
+did one bring a defect, and what happened on the cases its wording test did
+not reach: a callee with several callers, a fold-in larger than a loop merge,
+the fix-wave sentence, prose and no-seam work, the design-stage sentence, the
+inline paths, a reviewer on the shipped wording, and the bounded role.
