@@ -2405,6 +2405,601 @@ Tests: not run: exercise
 Concerns: with `since` set, a malformed `day` raises `ValueError`; without it the day is never read.
 Report file: none (exercise); the report is above.
 
+## impl-final: Implementer, the shipped wording, second setup
+
+### Sample 1
+
+##### Changes
+
+`tasklog/report.py`:
+
+```python
+from . import timeutil
+
+
+def summarize(entries, since=None):
+    if since is not None:
+        entries = [e for e in entries if timeutil.parse_day(e["day"]) >= since]
+    total = 0
+    count = 0
+    by_project = {}
+    for e in entries:
+        total += e["seconds"]
+        count += 1
+        by_project[e["project"]] = by_project.get(e["project"], 0) + e["seconds"]
+    return {"cnt": count, "total": timeutil.format_duration(total), "projects": by_project}
+```
+
+`tasklog/timeutil.py`:
+
+```python
+def format_duration(seconds):
+    hours = seconds // 3600
+    minutes = seconds % 3600 // 60
+    if hours:
+        return f"{hours}h {minutes}m"
+    return f"{minutes}m"
+```
+
+##### Tests
+
+`tests/test_report.py` (`test_summarize_basic` unchanged; the import is added at the top of the file):
+
+```python
+from datetime import date
+
+
+def test_summarize_since_leaves_earlier_entries_out_of_every_figure():
+    entries = [
+        {"day": "2026-01-01", "project": "a", "seconds": 600},
+        {"day": "2026-01-03", "project": "b", "seconds": 300},
+    ]
+    assert summarize(entries, since=date(2026, 1, 2)) == {"cnt": 1, "total": "5m", "projects": {"b": 300}}
+
+
+def test_summarize_since_keeps_an_entry_dated_exactly_since():
+    entries = [
+        {"day": "2026-01-01", "project": "a", "seconds": 600},
+        {"day": "2026-01-02", "project": "b", "seconds": 300},
+    ]
+    assert summarize(entries, since=date(2026, 1, 2)) == {"cnt": 1, "total": "5m", "projects": {"b": 300}}
+
+
+def test_summarize_since_with_no_entries_left():
+    entries = [{"day": "2026-01-01", "project": "a", "seconds": 600}]
+    assert summarize(entries, since=date(2026, 2, 1)) == {"cnt": 0, "total": "0m", "projects": {}}
+
+
+def test_summarize_since_none_leaves_no_entry_out():
+    entries = [
+        {"day": "2020-01-01", "project": "a", "seconds": 600},
+        {"day": "2026-01-02", "project": "b", "seconds": 300},
+    ]
+    assert summarize(entries, since=None) == {"cnt": 2, "total": "15m", "projects": {"a": 600, "b": 300}}
+
+
+def test_summarize_adds_up_entries_of_one_project():
+    entries = [
+        {"day": "2026-01-01", "project": "a", "seconds": 600},
+        {"day": "2026-01-02", "project": "a", "seconds": 300},
+    ]
+    assert summarize(entries) == {"cnt": 2, "total": "15m", "projects": {"a": 900}}
+```
+
+`tests/test_timeutil.py` (`test_format_duration_minutes` unchanged):
+
+```python
+def test_format_duration_minutes_exclude_whole_hours():
+    assert format_duration(3900) == "1h 5m"
+
+
+def test_format_duration_exact_hour():
+    assert format_duration(3600) == "1h 0m"
+```
+
+##### Report
+
+**What I implemented.** `summarize(entries, since=None)`: with `since` set, entries dated before it are left out of the count, the total and the per-project figures, and an entry dated exactly `since` stays. With `since=None` nothing is filtered and `day` is not parsed, so unfiltered calls behave as before. The comparison parses each entry's `day` string with the existing `timeutil.parse_day`, since entries carry `day` as text (`load_entries` passes it through) and `since` is a `datetime.date`. UNVERIFIED (read from the project text; nothing run).
+
+**Decision Log**
+- Around the diff, `tasklog/timeutil.py` `format_duration`: fixed the minutes figure, which counted whole hours again (3900 seconds gave "1h 65m", now "1h 5m"; hand-traced, UNVERIFIED). Why: `summarize` directly calls it and is its only caller. The file is outside Task 1's listed Files and owned by no task. Blast radius: the value of `total` for durations of an hour or more, including in the CLI's JSON output; the documented keys are unchanged and durations under an hour are unaffected. Covered by two tests added to `tests/test_timeutil.py`.
+- Around the diff, `tasklog/report.py` `summarize`: folded the three loops into one and used `dict.get` for the per-project sum. Why: the filter would otherwise sit above three passes over the same list. Blast radius: none intended, the results are the same. Covered by `test_summarize_basic` and the added `test_summarize_adds_up_entries_of_one_project`, which exercises the repeated-project path no test reached before.
+
+**Test evidence**
+not run: exercise. Covering tests: the five added in `tests/test_report.py`, the two added in `tests/test_timeutil.py`, and the existing `test_summarize_basic` and `test_format_duration_minutes`. RED and GREEN output: not run: exercise.
+
+**Files changed**
+- `tasklog/report.py`
+- `tasklog/timeutil.py`
+- `tests/test_report.py`
+- `tests/test_timeutil.py`
+
+**Self-review findings**
+- All three Acceptance scenarios and the `since=None` case have a test.
+- The `cnt` key stays as it is despite its name: the README documents the CLI's JSON keys for people's scripts, so something outside the task relies on it.
+- With `since` set, a malformed `day` raises `ValueError` from `parse_day`. The plan does not settle this case, and I added no handling, so it fails loudly. UNVERIFIED.
+- `since` is a `datetime.date` per the Contract, and no other type is handled.
+
+**Concerns:** none
+
+**Questions:** none
+
+**Proposals outside the task**
+- `tasklog/cli.py` `main`: add an option that passes `since` to `summarize`. The CLI has no way to limit a report yet. This is a new capability, and neither this task's Contract nor the plan's Goal asks for it, so I did not make it.
+- `tasklog/store.py` `load_entries`: fold the row normalisation repeated in its three branches into one helper, which the `.csv` branch can share. This is Task 2's file, so I did not touch it.
+
+##### Status
+
+Status: DONE
+Commits: none (exercise)
+Tests: not run: exercise
+Concerns: none
+Report file: none, the report is in this reply (exercise)
+
+### Sample 2
+
+##### Changes
+
+`tasklog/report.py`:
+
+```python
+from . import timeutil
+
+
+def summarize(entries, since=None):
+    if since is not None:
+        entries = [e for e in entries if timeutil.parse_day(e["day"]) >= since]
+    total = 0
+    by_project = {}
+    for e in entries:
+        total += e["seconds"]
+        by_project[e["project"]] = by_project.get(e["project"], 0) + e["seconds"]
+    return {"cnt": len(entries), "total": timeutil.format_duration(total), "projects": by_project}
+```
+
+`tasklog/timeutil.py`:
+
+```python
+def format_duration(seconds):
+    hours = seconds // 3600
+    minutes = seconds % 3600 // 60
+    if hours:
+        return f"{hours}h {minutes}m"
+    return f"{minutes}m"
+```
+
+##### Tests
+
+`tests/test_report.py` (the import is added; `test_summarize_basic` stays as it is):
+
+```python
+from datetime import date
+
+from tasklog.report import summarize
+
+
+def test_summarize_since_leaves_earlier_entries_out_of_every_figure():
+    entries = [
+        {"day": "2026-01-01", "project": "a", "seconds": 600},
+        {"day": "2026-01-01", "project": "b", "seconds": 300},
+        {"day": "2026-01-03", "project": "b", "seconds": 120},
+        {"day": "2026-01-04", "project": "b", "seconds": 60},
+        {"day": "2026-01-04", "project": "c", "seconds": 60},
+    ]
+    assert summarize(entries, since=date(2026, 1, 2)) == {
+        "cnt": 3,
+        "total": "4m",
+        "projects": {"b": 180, "c": 60},
+    }
+
+
+def test_summarize_since_keeps_an_entry_dated_exactly_since():
+    entries = [
+        {"day": "2026-01-01", "project": "a", "seconds": 600},
+        {"day": "2026-01-02", "project": "a", "seconds": 300},
+    ]
+    assert summarize(entries, since=date(2026, 1, 2)) == {
+        "cnt": 1,
+        "total": "5m",
+        "projects": {"a": 300},
+    }
+
+
+def test_summarize_since_with_no_entries_left():
+    entries = [{"day": "2026-01-01", "project": "a", "seconds": 600}]
+    assert summarize(entries, since=date(2026, 2, 1)) == {"cnt": 0, "total": "0m", "projects": {}}
+
+
+def test_summarize_since_none_leaves_no_entry_out():
+    entries = [
+        {"day": "2026-01-01", "project": "a", "seconds": 600},
+        {"day": "2026-01-02", "project": "b", "seconds": 300},
+    ]
+    assert summarize(entries, since=None) == {"cnt": 2, "total": "15m", "projects": {"a": 600, "b": 300}}
+```
+
+`tests/test_timeutil.py` (`test_format_duration_minutes` stays as it is):
+
+```python
+def test_format_duration_minutes_exclude_whole_hours():
+    assert format_duration(3900) == "1h 5m"
+```
+
+##### Report
+
+**What I implemented.** `summarize(entries, since=None)` per the Task 1 Contract. With `since` set, entries dated before it are left out before any figure is computed, so `cnt`, `total` and `projects` all exclude them; an entry dated exactly `since` stays. With `since=None` the days are never parsed and no entry is left out. Each entry's `day` is a string (`load_entries` passes `r["day"]` through unconverted in `tasklog/store.py`), so the comparison goes through the existing `timeutil.parse_day`.
+
+**Decision Log**
+
+- Around the diff, bug fix: `format_duration` in `tasklog/timeutil.py` computed minutes from all the seconds, so 3900 seconds read "1h 65m"; it now reads "1h 5m". Test added in `tests/test_timeutil.py`. Why: `summarize`, the changed code, calls it. Blast radius: `summarize` is its only caller, per the project description; the CLI's JSON `total` value changes for durations of an hour or more, and its keys do not. Neither file is another task's in the plan's census.
+- Around the diff, improvement: folded the three loops in `summarize` into one and took `cnt` from `len(entries)`, with the same output. Covered by `test_summarize_basic` and by the repeated project `b` in `test_summarize_since_leaves_earlier_entries_out_of_every_figure`. Blast radius: `summarize` only; `load_entries`, the source of the CLI's entries, returns a list on every path, so `len` holds.
+
+**Test evidence**
+
+not run: exercise
+
+Covering tests are the four new tests in `tests/test_report.py`, the new test in `tests/test_timeutil.py`, and the existing `test_summarize_basic` and `test_format_duration_minutes`. No RED or GREEN output exists for any of them. Their expected outcomes are UNVERIFIED.
+
+**Files changed:** `tasklog/report.py`, `tasklog/timeutil.py`, `tests/test_report.py`, `tests/test_timeutil.py`.
+
+**Self-review findings.** The Acceptance scenarios (filter, entry dated exactly `since`, no entries left, `since=None`) each have a test. The `cnt` key stays: it reads badly, but the README documents these keys for people's scripts, so renaming it would break what relies on it. No existing test was deleted or loosened.
+
+**Concerns:** none
+
+**Questions**
+
+- Q1: `since` reaches `summarize` only: `tasklog/cli.py` still calls `summarize(load_entries(sys.argv[1]))`, and no task in the plan adds a CLI option, so a person running the tool cannot limit a report yet. The plan's Goal is stated about `summarize`, so this may be intended; if the spec's "reports can be limited to recent entries" means CLI users too, it needs a task.
+
+**Proposals outside the task**
+
+- `tasklog/store.py`, `load_entries`: the same row-building list comprehension is repeated in all three format branches. Move it to one place after the branches. This file belongs to Task 2, which adds a fourth format and is the natural place to do it.
+
+##### Status
+
+Status: DONE
+
+### Sample 3
+
+##### Changes
+
+`tasklog/report.py`:
+
+```python
+def summarize(entries, since=None):
+    if since is not None:
+        entries = [e for e in entries if timeutil.parse_day(e["day"]) >= since]
+    total = 0
+    by_project = {}
+    for e in entries:
+        total = total + e["seconds"]
+        by_project[e["project"]] = by_project.get(e["project"], 0) + e["seconds"]
+    return {"cnt": len(entries), "total": timeutil.format_duration(total), "projects": by_project}
+```
+
+`tasklog/timeutil.py`:
+
+```python
+def format_duration(seconds):
+    hours = seconds // 3600
+    minutes = seconds % 3600 // 60
+    if hours:
+        return f"{hours}h {minutes}m"
+    return f"{minutes}m"
+```
+
+##### Tests
+
+`tests/test_report.py` (adds `from datetime import date` to the imports; `test_summarize_basic` is unchanged):
+
+```python
+def test_summarize_since_leaves_earlier_entries_out_of_every_figure():
+    entries = [
+        {"day": "2026-01-01", "project": "a", "seconds": 600},
+        {"day": "2026-01-03", "project": "a", "seconds": 120},
+        {"day": "2026-01-04", "project": "b", "seconds": 300},
+    ]
+    assert summarize(entries, since=date(2026, 1, 2)) == {
+        "cnt": 2,
+        "total": "7m",
+        "projects": {"a": 120, "b": 300},
+    }
+
+
+def test_summarize_since_keeps_an_entry_dated_exactly_since():
+    entries = [{"day": "2026-01-02", "project": "a", "seconds": 600}]
+    assert summarize(entries, since=date(2026, 1, 2)) == {
+        "cnt": 1,
+        "total": "10m",
+        "projects": {"a": 600},
+    }
+
+
+def test_summarize_since_with_no_entries_left():
+    entries = [{"day": "2026-01-01", "project": "a", "seconds": 600}]
+    assert summarize(entries, since=date(2026, 1, 2)) == {
+        "cnt": 0,
+        "total": "0m",
+        "projects": {},
+    }
+
+
+def test_summarize_adds_up_a_projects_seconds():
+    entries = [
+        {"day": "2026-01-01", "project": "a", "seconds": 600},
+        {"day": "2026-01-02", "project": "a", "seconds": 300},
+    ]
+    assert summarize(entries) == {"cnt": 2, "total": "15m", "projects": {"a": 900}}
+```
+
+`tests/test_timeutil.py` (`test_format_duration_minutes` is unchanged):
+
+```python
+def test_format_duration_hours_and_minutes():
+    assert format_duration(3900) == "1h 5m"
+```
+
+##### Report
+
+**What I implemented.** `summarize(entries, since=None)` per the Contract. With `since` set, entries dated before it are removed before any figure is computed, so `cnt`, `total` and `projects` all exclude them; an entry dated exactly `since` stays. With `since=None` nothing is filtered and no `day` is parsed. Each entry's `day` string is parsed with the existing `timeutil.parse_day`. Acceptance `since=None` is covered by the existing `test_summarize_basic`, which uses the default.
+
+**Decision Log**
+- Around the diff, `summarize`: merged the three loops over `entries` into one pass and took `cnt` from `len(entries)`. Behaviour-preserving for the list `load_entries` returns; I added `test_summarize_adds_up_a_projects_seconds` because no existing test covered the same-project branch. Test-first exception: a behaviour-preserving improvement its tests cover. Blast radius: `summarize` only.
+- Around the diff, `format_duration` bug fix: minutes counted the whole duration rather than the remainder after hours, so 3900 seconds read `1h 65m` (UNVERIFIED: read from the source, not run). It is now `1h 5m`, tested by the added `test_format_duration_hours_and_minutes`. `tasklog/timeutil.py` and `tests/test_timeutil.py` are outside the task's Files list, but `summarize` directly calls this function, is its only caller, and neither file belongs to Task 2. Blast radius: the value of `total` in the CLI's JSON changes for totals of an hour or more; its keys and its `Xh Ym` shape do not.
+
+**Test evidence**
+- Covering tests: the four added to `tests/test_report.py`, `test_summarize_basic`, `test_format_duration_hours_and_minutes`, `test_format_duration_minutes`.
+- RED: not run: exercise
+- GREEN: not run: exercise
+- Full suite: not run: exercise
+- Failing tests: not run: exercise
+
+**Files changed:** `tasklog/report.py`, `tasklog/timeutil.py`, `tests/test_report.py`, `tests/test_timeutil.py`.
+
+**Self-review findings**
+- The `cnt` key looks like the kind of name to tidy, but I left it: the README documents the JSON keys for people's scripts and `tasklog/cli.py` reads it, so something outside the task relies on it.
+- `len(entries)` needs a sequence where the old code accepted any iterable; a one-shot iterator was already miscounted by the old three loops, and the one production caller passes a list (UNVERIFIED: read from the source, not run).
+- `writing-good-tests.md` not read: not run: exercise. The spec text at `abc1234` was not available either; I worked from the plan's statement of its one relevant decision.
+
+**Concerns:** none.
+
+**Questions**
+- Q1: `tasklog/cli.py` still calls `summarize` with no `since`, and it is neither in this task nor in Task 2, so after this plan people running the CLI cannot limit a report. The plan's Goal is worded on `summarize` and the spec decision on reports. Is a CLI option meant to come in later work, or is it missing from the plan?
+
+**Proposals outside the task**
+- `tasklog/store.py`, `load_entries`: the same row comprehension is repeated once per format. Task 2 owns the file and adds a fourth branch, so it is the natural place to read rows per format and build entries once.
+
+##### Status
+
+Status: DONE. Commits: not run: exercise. Tests: not run: exercise. Concerns: none. Report file: not run: exercise.
+
+### Sample 4
+
+##### Changes
+
+`tasklog/report.py`:
+
+```python
+from . import timeutil
+
+
+def summarize(entries, since=None):
+    if since is not None:
+        entries = [e for e in entries if timeutil.parse_day(e["day"]) >= since]
+    total = sum(e["seconds"] for e in entries)
+    by_project = {}
+    for e in entries:
+        by_project[e["project"]] = by_project.get(e["project"], 0) + e["seconds"]
+    return {"cnt": len(entries), "total": timeutil.format_duration(total), "projects": by_project}
+```
+
+`tasklog/timeutil.py`:
+
+```python
+def format_duration(seconds):
+    hours = seconds // 3600
+    minutes = (seconds % 3600) // 60
+    if hours:
+        return f"{hours}h {minutes}m"
+    return f"{minutes}m"
+```
+
+##### Tests
+
+`tests/test_report.py`, adding `from datetime import date` to its imports (`test_summarize_basic` stays as it is):
+
+```python
+def test_since_leaves_earlier_entries_out_of_every_figure():
+    entries = [
+        {"day": "2026-01-01", "project": "a", "seconds": 600},
+        {"day": "2026-01-01", "project": "b", "seconds": 900},
+        {"day": "2026-01-05", "project": "a", "seconds": 300},
+    ]
+    assert summarize(entries, since=date(2026, 1, 3)) == {"cnt": 1, "total": "5m", "projects": {"a": 300}}
+
+
+def test_since_keeps_an_entry_dated_exactly_since():
+    entries = [
+        {"day": "2026-01-02", "project": "a", "seconds": 60},
+        {"day": "2026-01-03", "project": "a", "seconds": 120},
+    ]
+    assert summarize(entries, since=date(2026, 1, 3)) == {"cnt": 1, "total": "2m", "projects": {"a": 120}}
+
+
+def test_since_with_no_entries_left():
+    entries = [{"day": "2026-01-01", "project": "a", "seconds": 600}]
+    assert summarize(entries, since=date(2026, 1, 2)) == {"cnt": 0, "total": "0m", "projects": {}}
+
+
+def test_since_none_leaves_no_entry_out_and_adds_up_each_project():
+    entries = [
+        {"day": "2026-01-01", "project": "a", "seconds": 600},
+        {"day": "2026-01-02", "project": "a", "seconds": 300},
+        {"day": "2026-01-03", "project": "b", "seconds": 60},
+    ]
+    assert summarize(entries, since=None) == {"cnt": 3, "total": "16m", "projects": {"a": 900, "b": 60}}
+```
+
+`tests/test_timeutil.py` (`test_format_duration_minutes` stays as it is):
+
+```python
+def test_format_duration_minutes_exclude_whole_hours():
+    assert format_duration(3700) == "1h 1m"
+    assert format_duration(3600) == "1h 0m"
+```
+
+##### Report
+
+**What I implemented.** `summarize(entries, since=None)`: with `since` set, entries dated before it are dropped ahead of every figure, so `cnt`, `total` and `projects` all come from the kept entries; an entry dated exactly `since` is kept; with `since=None` nothing is dropped and no `day` is parsed. An entry's `day` is an ISO string and `since` a `datetime.date`, so the comparison goes through the existing `timeutil.parse_day`. Claims about what this code does are `UNVERIFIED`: nothing could be run here.
+
+**Decision Log**
+
+- Around the diff: fixed `format_duration` in `tasklog/timeutil.py`, which counted minutes over the whole duration (3700 seconds gave `1h 61m`) and now counts what remains after the hours; a directly called function, owned by no task, `summarize` its only caller. Blast radius: the `total` value changes for totals of an hour or more, the documented keys do not; new test in `tests/test_timeutil.py`, a file beyond the task's Files for the same reason.
+- Around the diff: merged `summarize`'s separate total, count and project loops into shorter code with the same output. Blast radius: none outside the function; test-first exception, a behaviour-preserving improvement its tests cover (`test_summarize_basic`, and `test_since_none_leaves_no_entry_out_and_adds_up_each_project`, added because no test reached the repeated-project path).
+
+**Test evidence**
+
+not run: exercise. The RED and GREEN runs, the focused run and the full suite are all not run: exercise. Covering tests: `tests/test_report.py` (`test_summarize_basic` and the four above), `tests/test_timeutil.py` (`test_format_duration_minutes` and the one above). Acceptance map: filter, `test_since_leaves_earlier_entries_out_of_every_figure`; exact date, `test_since_keeps_an_entry_dated_exactly_since`; no entries left, `test_since_with_no_entries_left`; `since=None`, `test_since_none_leaves_no_entry_out_and_adds_up_each_project`. `writing-good-tests.md` not read: exercise.
+
+**Files changed**
+
+`tasklog/report.py`, `tasklog/timeutil.py`, `tests/test_report.py`, `tests/test_timeutil.py`.
+
+**Self-review findings**
+
+Every Acceptance scenario has a test. `cli.py`, `tasklog/store.py` and the `cnt` key are untouched. No test was deleted or loosened. Nothing shipped carries build history.
+
+**Concerns:** none.
+
+**Questions**
+
+- Q1: `tasklog/cli.py` still calls `summarize` with no `since`, so a command-line user cannot limit a report, and the plan has no task giving it a way. An option there is a new capability, so I did not add one. Is the filter meant to stay library-only for now?
+
+**Proposals outside the task**
+
+- `tasklog/store.py`, `load_entries`: the same normalising comprehension is repeated in all three format branches and CSV would add a fourth; move it after the branches. The file is Task 2's, so this one is for that task.
+- `tasklog/report.py`, `summarize`'s `cnt` key: `count` would read better, but `cli.py` reads the key and the README documents it for people's scripts, so I kept it; a rename is a breaking output change, and only worth making as a decision of its own.
+
+##### Status
+
+Status: DONE. Commits: none (exercise). Tests: not run: exercise. Concerns: none. Report file: none (exercise), the report is in this reply.
+
+### Sample 5
+
+##### Changes
+
+`tasklog/report.py`:
+
+```python
+from . import timeutil
+
+
+def summarize(entries, since=None):
+    if since is not None:
+        entries = [e for e in entries if timeutil.parse_day(e["day"]) >= since]
+    by_project = {}
+    for e in entries:
+        by_project[e["project"]] = by_project.get(e["project"], 0) + e["seconds"]
+    total = sum(by_project.values())
+    return {"cnt": len(entries), "total": timeutil.format_duration(total), "projects": by_project}
+```
+
+`tasklog/timeutil.py`:
+
+```python
+def format_duration(seconds):
+    hours = seconds // 3600
+    minutes = (seconds % 3600) // 60
+    if hours:
+        return f"{hours}h {minutes}m"
+    return f"{minutes}m"
+```
+
+##### Tests
+
+`tests/test_report.py` (`test_summarize_basic` unchanged; the import and four tests added):
+
+```python
+from datetime import date
+
+from tasklog.report import summarize
+
+
+def test_summarize_since_leaves_earlier_entries_out_of_every_figure():
+    entries = [
+        {"day": "2026-01-01", "project": "old", "seconds": 600},
+        {"day": "2026-01-01", "project": "a", "seconds": 60},
+        {"day": "2026-01-03", "project": "a", "seconds": 300},
+        {"day": "2026-01-04", "project": "a", "seconds": 120},
+        {"day": "2026-01-04", "project": "b", "seconds": 180},
+    ]
+    assert summarize(entries, since=date(2026, 1, 2)) == {
+        "cnt": 3,
+        "total": "10m",
+        "projects": {"a": 420, "b": 180},
+    }
+
+
+def test_summarize_since_keeps_an_entry_dated_exactly_since():
+    entries = [
+        {"day": "2026-01-01", "project": "a", "seconds": 60},
+        {"day": "2026-01-02", "project": "a", "seconds": 120},
+    ]
+    assert summarize(entries, since=date(2026, 1, 2)) == {"cnt": 1, "total": "2m", "projects": {"a": 120}}
+
+
+def test_summarize_since_with_no_entries_left():
+    entries = [{"day": "2026-01-01", "project": "a", "seconds": 60}]
+    assert summarize(entries, since=date(2026, 1, 2)) == {"cnt": 0, "total": "0m", "projects": {}}
+
+
+def test_summarize_since_none_leaves_no_entry_out():
+    entries = [
+        {"day": "2020-01-01", "project": "a", "seconds": 600},
+        {"day": "2026-01-02", "project": "a", "seconds": 300},
+    ]
+    assert summarize(entries, since=None) == {"cnt": 2, "total": "15m", "projects": {"a": 900}}
+```
+
+`tests/test_timeutil.py` (`test_format_duration_minutes` unchanged; two tests added):
+
+```python
+def test_format_duration_minutes_past_the_hour():
+    assert format_duration(3700) == "1h 1m"
+
+
+def test_format_duration_whole_hours():
+    assert format_duration(7200) == "2h 0m"
+```
+
+##### Report
+
+**What I implemented.** `summarize(entries, since=None)` per the Contract: with a `datetime.date` as `since`, entries dated before it are left out of `cnt`, `total` and `projects`; an entry dated exactly `since` stays; with `since=None` no entry is left out and no day is parsed. `day` values are ISO strings, so the comparison goes through `timeutil.parse_day`.
+
+**Decision Log**
+- Around the diff, `tasklog/report.py` `summarize`: folded the three loops into one aggregation, behaviour unchanged, covered by the tests above including a repeated project; test-first exception: behaviour-preserving improvement its tests cover.
+- Around the diff, `tasklog/timeutil.py` `format_duration` (called directly by `summarize`, its only caller; outside the task's Files list, in no other task's): fixed minutes counting the whole duration, so 3700 seconds read `1h 61m` and now reads `1h 1m`; tests added in `tests/test_timeutil.py`; blast radius: the `total` value on the CLI's JSON for totals of an hour or more is corrected, its keys unchanged.
+
+**Test evidence**
+not run: exercise
+
+Covering tests: the four added to `tests/test_report.py`, the two added to `tests/test_timeutil.py`, and the existing `test_summarize_basic` and `test_format_duration_minutes`. RED and GREEN runs: not run: exercise.
+
+**Files changed:** `tasklog/report.py`, `tasklog/timeutil.py`, `tests/test_report.py`, `tests/test_timeutil.py`.
+
+**Self-review findings:** Every Acceptance scenario has a test. The `cnt` key stays as it is despite its name: the README documents the JSON output's keys for people's scripts, so something outside the task relies on it. `tasklog/store.py` is Task 2's and is untouched. `tasklog/cli.py` is untouched.
+
+**Concerns:** none
+
+**Questions**
+- Q1. `tasklog/cli.py` `main` calls `summarize` with no `since`, so the filter cannot be reached from the command line. The Contract covers `summarize` only and no task in this plan adds a CLI option. Is that intended, given the spec decision that reports can be limited to recent entries?
+
+**Proposals outside the task**
+- `tasklog/store.py` `load_entries`: the same row-normalising comprehension appears once per format. Reading the rows per format and normalising them once would keep Task 2's CSV branch from adding a fourth copy. It is Task 2's file, so I did not make the change.
+
+##### Status
+
+Status: DONE; commits: none (exercise); tests: not run: exercise; concerns: none; report file: none (exercise), the report is above.
+
 ## rev-today: Task reviewer, today's text
 
 ### Sample 1

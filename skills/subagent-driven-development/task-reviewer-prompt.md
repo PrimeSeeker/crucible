@@ -99,7 +99,7 @@ Every hunk must be attributable to this task's requirements or to a Decision Log
 
 ## Around the diff
 
-An improvement or bug fix an implementer comes across in the files its task changes, or in what the changed code directly calls or is called by, is part of the task: the implementer makes it and logs it in one line in the Decision Log, where nothing outside the task relies on what it changes and tests cover it, one it adds included, unless the work is prose or has no test seam. One needing another task's file, binding content, a new capability or a restructure reaching past this code is proposed, never made. A fix wave makes only what its dispatch's findings and changes need, a defect's sibling instances included. In review, a logged one inside this boundary is not extra and passes scope, and is judged on quality; one beyond it fails scope.
+An improvement or bug fix an implementer comes across in the files its task changes, or in what the changed code directly calls or is called by, is part of the task: the implementer makes it and logs it in one line in the Decision Log, where nothing outside the task relies on what it changes and, on work with a test seam, tests cover it, one it adds included. One needing another task's file, binding content or a new capability, or significantly exceeding the task's scope, is proposed, never made. A fix wave makes only what its dispatch's findings and changes need, a defect's sibling instances included. In review, a logged one inside this boundary is not extra and passes scope, and is judged on quality; one beyond it fails scope.
 
 ## Tests in review
 

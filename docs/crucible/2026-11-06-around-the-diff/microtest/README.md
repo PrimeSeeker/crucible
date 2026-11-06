@@ -10,6 +10,7 @@ unless stated. The task and project are invented, and no sample could run code.
 | `impl-rule` | Implementer | With the rule | 5, and 5 on the bounded role, of which 4 were stopped by the host's safeguards |
 | `impl-today-b` | Implementer | Today's, second setup | 5 |
 | `impl-rule-b` | Implementer | With the rule, second setup | 5 |
+| `impl-final` | Implementer | The shipped wording, second setup | 5 |
 | `rev-today` | Task reviewer | Today's | 5 |
 | `rev-rule` | Task reviewer | With the rule | 5 |
 
@@ -35,6 +36,7 @@ By eye, by one reader; `samples.md` lets another check it.
 | `impl-today-b` | 3 of 5, all logged | 0 fixed, 5 proposed | Left, 5 of 5 | Left and unmentioned, 5 of 5 |
 | `impl-rule` | 5 of 5, all logged | 2 fixed and logged, crossing the binding Acceptance with a concern; 3 proposed, citing the collision | Left, 5 of 5 | Left and proposed, 5 of 5 |
 | `impl-rule-b` | 5 of 5, all logged | 5 fixed and logged | Left, 5 of 5 | Left and proposed, 5 of 5 |
+| `impl-final` | 5 of 5, all logged | 5 fixed and logged | Left, 5 of 5 | Left and proposed, 5 of 5 |
 
 The one bounded-role reply, on `impl-rule`, folded nothing and proposed the bug fix,
 citing the collision. One sample shows no rate.
@@ -57,10 +59,8 @@ match the diff by an oversight in the setup.
 - The rule is untested on the bounded role.
 - Nothing tested a callee with several callers, a fold-in larger than a loop merge in
   one function, the design-stage sentence or the inline paths.
-- The shipped section differs from the tested one, and these are untested: a fix wave
-  makes "only what its dispatch's findings and changes need, a defect's sibling
-  instances included", where the test said "only what its findings need"; prose and
-  no-seam work need no test; a restructure is proposed only where it reaches past this
-  code; and the test-first exception says "its tests cover", where the test said "its
-  existing tests cover".
+- Only `impl-final` read the shipped section; the others read an earlier wording. Its
+  fix-wave sentence, its reach over prose and no-seam work, and its limit on significant
+  excess have met no case: the seeded fold-ins are small, and no reviewer read this
+  wording.
 - Whether fold-ins are worth having on real code is not measured.

@@ -130,22 +130,23 @@ task changes and what the changed code directly calls or is called by, and that 
 fix wave stays on its findings. (Basis: judgment, accepted by the maintainer.) These
 came after that acceptance: a test the implementer adds counts as cover; prose and
 no-seam work need none, since most of this repository's work could otherwise never
-qualify; a restructure is proposed only where it reaches past this code, the
-maintainer having named refactoring the affected system as usual practice; a fix
-wave's findings carry a defect's sibling instances, since a measured failure of fix
-waves is a fix landing at one site (`docs/decisions/the-spec.md`); and the
-test-first exception. (Basis: judgment, named to the maintainer in that feature's
-close readout.)
+qualify; the propose list names significant excess over the task's scope, the
+maintainer's own limit, and no longer names a restructure, the maintainer having
+named refactoring the affected system as usual practice; a fix wave's findings
+carry a defect's sibling instances, since a measured failure of fix waves is a fix
+landing at one site (`docs/decisions/the-spec.md`), and its labelled changes ride
+it; and the test-first exception. (Basis: judgment, an agent's call the maintainer
+has not ruled on, for each of these.)
 
 A wording test ran first, on an invented task with four seeds beside it; prompts,
 replies and readings are in `docs/crucible/2026-11-06-around-the-diff/microtest/`.
 (Basis: measured, by one reader.) On today's text, implementers folded clumsy code in
 the changed function in 6 of 10 samples, 2 of those unlogged, and fixed a bug in what
 it directly calls in none, all 10 proposing it. With the rule, on a setup where
-nothing else bound the bug, 5 of 5 made both changes and logged them. In 10
-implementer samples with the rule, none renamed an output key other code relies on
-or touched another task's file, and all 10 proposed that file's repetition, which
-none of the 10 on today's text mentioned.
+nothing else bound the bug, 5 of 5 made both changes and logged them, on an earlier
+wording and again on the shipped one. In 15 implementer samples with the rule, none
+renamed an output key other code relies on or touched another task's file, and all
+15 proposed that file's repetition, which none of the 10 on today's text mentioned.
 
 The test's main warning is binding content. On the setup whose Acceptance held the
 buggy output fixed, 3 of 5 implementers with the rule proposed the fix, and 2 made it,
@@ -159,10 +160,11 @@ failed the scope of a logged change to another task's file, as all 5 on today's 
 by reverting it.
 
 The test has limits: written replies on one invented project, the reviewers on the
-first setup only, and a fold-in no larger than a loop merge in one function, so
-nothing read the line between a tidy-up and a refactor. Nothing tested a callee with
-several callers, the fix-wave sentence, the prose and no-seam clause, the restructure
-limit, the design-stage sentence or the inline paths. On the bounded role it shows
+first setup and an earlier wording only, and a fold-in no larger than a loop merge in
+one function, so nothing read the line between a tidy-up and a refactor, nor the
+limit on significant excess. Nothing tested a callee with
+several callers, the fix-wave sentence, the prose and no-seam reach, the design-stage
+sentence or the inline paths. On the bounded role it shows
 nothing: the host's safeguards stopped 4 of 5 samples. Whether fold-ins are worth
 having on real code is not measured, and a confident wrong fix inside the boundary
 passes scope, caught only if a seat sees the defect.
