@@ -141,7 +141,10 @@ reading its corrections together had observed that both
 "point the same direction: toward the self-correction narrative"
 (2026-08-15). Its escalation got a threshold on 2026-08-21, because the
 ask below it had fired in nearly every campaign and never changed
-anything, and on 2026-11-02 it folded to one bias line, a decision ask
+anything; a standing-stance line written into the closing record below
+the threshold went on 2026-10-13, its reader the committed record trail
+crucible no longer keeps; and on 2026-11-02 the statement folded to one
+bias line, a decision ask
 only on a materially misleading record, since nothing else escalates
 that and its failure would be silent. (Basis: judgment, accepted by the
 maintainer; a single incident, for the observation; the controller's,
@@ -174,8 +177,9 @@ maintainer's proposal, for reporting only what would change a
 conclusion and expecting the lean; the controller's, accepted by the
 maintainer, for keeping the misattributed decision; the controller's
 calls in the spec campaign, told to the maintainer in its round
-readouts, for the third kind, the closing line, the either-direction
-reading, the filter over Notes and the withdrawn approval's kept flag.)
+readouts, for the third kind, the closing line and the either-direction
+reading; the controller's calls in the spec campaign, for the filter
+over Notes and the withdrawn approval's kept flag.)
 
 ### The tail
 

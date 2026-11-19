@@ -174,13 +174,13 @@ every dispute about one does, and one where the controller concludes the
 binding text itself must change, so a change to binding content still gets
 an independent read. The branch reviewer checks every ruling of the task
 loop against the final code, and a ruling made in the branch review, which
-no later pass reads, reaches the operator in the close readout with every
+a later pass reads only where a wave follows, reaches the operator in the close readout with every
 other ruling the controller made. The alternatives put were keeping the
 rule, and the controller accepting such a finding with an adjudicator to
 dismiss one. (Basis: judgment, the controller's recommendation among
 those options, to which the maintainer answered "Agreed, unlikely to miss
 anything substantive", read by the controller as choosing it; the two
-cases kept for the adjudicator the controller's, in the spec campaign.)
+cases' present wording the controller's, in the spec campaign.)
 
 ## Rejected
 

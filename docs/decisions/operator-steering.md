@@ -12,10 +12,11 @@ rule).
 
 **The analyst stance.** No step requires the operator to read a spec,
 plan, code or a diff, none is withheld, and a decision ask may quote the
-few lines it turns on. Every ask a skill prescribes, and any other
-choice the router's test sends to the operator, reaches them as a
-plain-language decision ask with a recommendation and the strongest
-case against it; the controller makes the rest of its calls itself and
+few lines it turns on. An ask, approval or consent a skill prescribes
+reaches the operator as that skill states; any other choice the
+router's test sends to them reaches them as a plain-language decision
+ask with a recommendation and the strongest case against it; the
+controller makes the rest of its calls itself and
 states each in its next message to the operator. A message carrying
 anything else puts the asks last, in a block of their own (`crucible:using-crucible
 § Decision asks`), which every controller reads. The README states the stance to newcomers (`README.md` § Who

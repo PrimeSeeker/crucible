@@ -403,8 +403,11 @@ read of sixteen sessions of one code project, reporting every mismatch
 with a line naming the corrections' shared direction had not reduced the
 lean, and of about 24 readouts reporting corrections two visibly changed
 what happened next (`docs/decisions/terminal-pass.md`). (Basis:
-measured, for the figures; the maintainer's proposal, for expecting the
-lean; the controller's, for the kinds and the line.)
+measured, for the figures; the maintainer's proposal, for reporting
+only what would change a conclusion and expecting the lean; the
+controller's, accepted by the maintainer, for keeping the misattributed
+decision; the controller's calls in the spec campaign, told to the
+maintainer in its round readouts, for the question kind and the line.)
 
 ## Rejected
 

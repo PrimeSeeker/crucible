@@ -85,8 +85,11 @@ may still take. The counts cannot be reproduced from this repository, the
 transcripts not being in it. The alternatives put were dropping the pass
 after a minors-only wave, and both changes together. (Basis: measured, for the counts;
 judgment, the controller's proposal, which the maintainer chose over those
-alternatives; the exclusion's wording the controller's, in the spec
-campaign.)
+alternatives, for a wave taking behaviour, tests and text that instructs
+agents; the controller's calls in the spec campaign, for widening it to
+documentation written for the product's users, to improvements under the
+same test and to working documents that state something false or lack
+something a rule requires, and for the exclusion's wording.)
 
 ### Changes that ride a wave
 
@@ -280,6 +283,7 @@ accepted by the maintainer.)
   branch is the controller's call, never a minor's (§ Why).
 - **An adopted improvement riding a wave as a finding**: the fixer's
   contract is to confirm a defect, and an improvement has none (§ Why).
+- **Dropping the full-scope pass after a wave that took only minors**, put to the maintainer on 2026-11-19 and not chosen: 2 of about 28 such passes raised a MAJOR the first pass had missed, so the pass works as a second opinion on the branch, and narrowing what the cleanup wave takes removes waves without it (§ Why).
 - **Skipping the full-scope pass after a wave that changes no rule**: it took six conditions, each pass found another hole, and it would rarely apply (§ Why).
 - **A wave's size as the test for its full pass**, in files, lines or tasks: a wave of small changes that added a rule produced a MAJOR (§ Why).
 - **A review-package script**: 173 lines for what a reviewer with a shell
