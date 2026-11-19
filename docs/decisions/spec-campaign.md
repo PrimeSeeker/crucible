@@ -18,7 +18,7 @@
 
 **Stop rule and cap.** The campaign stops after the first numbered panel round once overturning a major mechanism after code is no longer reasonably expected: the overturn question (`skills/subagent-driven-development/references/review-terms.md` § The arrangement questions, § An umbrella's overturn question). The call is the controller's judgment, not put to the operator to confirm, over the round's records, the seats' forecasts included, never conversation memory; finding counts and finding provenance are not signals, and severity is not the trigger. A round whose own fix wave adds, removes or re-shapes a major mechanism is never the stop round, at least one numbered panel round runs once a campaign is chosen, and the terminal pass always follows and checks the stop's basis (`docs/decisions/terminal-pass.md`). In a spec campaign every panel seat's verdict forecasts the answer (`skills/redteaming/seat-prompt.md`), and every numbered round's readout answers each forecast overturn by the mechanism it names (`skills/redteaming/references/round-readout.md`). The cap is 4 rounds, degraded rounds excluded, counted from the records: the campaign's guarantee that it ends, bounding rounds, not spend. An overturn still reasonably expected at the cap, a cap round whose own wave re-shapes a major mechanism, or any BLOCKER or MAJOR still open there goes to the operator as a decision ask (`crucible:redteaming § Stop rule and terminal pass`). A premise finding (`docs/decisions/evidence-and-findings.md`) is merged `parked` as a decision ask and is never an open finding here: it opens no fix wave, holds no cap and no stop, and at the cap is put to the operator alone; a ruling that upholds it after the stop takes the flip paths, and one still open at the close is carried in the close readout (`skills/redteaming/references/merge-and-finding-hygiene.md`; `skills/redteaming/references/premise-asks.md` § Premise findings; `docs/decisions/umbrellas.md`).
 
-**Focused checks.** Panel seats, the round-0 pre-pass, the blind verifier and the terminal pass run a focused check where a claim needs one, never a package-wide suite, and recommend heavier validation in their reports (`skills/subagent-driven-development/references/review-terms.md` § Suite bound). The task reviewer and re-reviewer are held to focused checks as well; the implementer is the one seat its template sends to the full suite (`skills/subagent-driven-development/implementer-prompt.md` § Tests: Test-First, Evidence Before Done).
+**Focused checks.** Panel seats, the round-0 pre-pass, the blind verifier and the terminal pass run a focused check where a claim needs one, never a package-wide suite, and recommend heavier validation in their reports (`skills/subagent-driven-development/references/review-terms.md` § Suite bound). The task reviewer and re-reviewer are held to focused checks as well; the implementer is the one seat its template sends to the full suite, save a change touching only documents, files the product neither runs nor loads, for which it runs the project's tests and checks that read them and says so (`skills/subagent-driven-development/implementer-prompt.md` § Tests: Test-First, Evidence Before Done). The controller on the very-small lane runs its gates the same way (`skills/subagent-driven-development/references/very-small-lane.md`), and SDD's Finish still runs the full suite, or the project's merge gate, on the branch's head (`skills/subagent-driven-development/references/finish.md`).
 
 **Operating stance.** Redteaming assumes a baseline error rate in controller-authored text and budgets blind verification and the terminal pass for it; errors, the controller's own included, are reported in the flat register of any other finding. It makes shading a record, not erring in it, the only reportable failure of the reporting duty, and forbids citing the stance to skip, soften or summarize any reporting duty (`crucible:redteaming § Operating stance`).
 
@@ -362,6 +362,19 @@ reported test output reviewers take as given
 (`docs/decisions/evidence-and-findings.md`). (Basis: a single incident,
 2026-10-09.)
 
+Since 2026-11-19 the implementer's full suite, and the very-small lane's
+gates, narrow for a change touching only documents to the tests and checks
+that read them. Running the full suite after documentation-only commits
+generalized a rule written for code; in a read of sixteen sessions of one
+code project on crucible 0.33.x, reader seats noted full-suite runs of
+about nine minutes, a cost the read did not total. Finish's run on the
+commit that lands is unchanged, so the landing still gets the whole suite.
+(Basis: judgment, the controller's proposal, approved by the maintainer
+with the design, who had agreed that full-suite runs after
+documentation-only commits were an improper generalization; its condition
+and its reach to the lane's controller the controller's, in the spec
+campaign.)
+
 ### Operating stance
 
 In one session's retrospective (2026-08-16), the controller's readouts
@@ -410,6 +423,7 @@ trim.)
 
 ## Changes
 
+- 2026-11-19: an implementer whose change touches only documents, files the product neither runs nor loads, runs the tests and checks that read them in place of the full suite and says so, and the controller runs the very-small lane's gates the same way; because full-suite runs after documentation-only commits, about nine minutes each in a read of sixteen sessions of one code project, generalized a rule written for code; Finish's run before the landing is unchanged.
 - 2026-11-06: the rule and the cap stay after a read of the transcripts on disk that did not show multi-round campaigns net-positive and cannot show the opposite; only what would settle the cap stays open; an outcome record is rejected; the seat on another host gains a count with stage held fixed.
 - 2026-11-04: a round 1 recorded degraded hands on what no returned seat ran, the goal check, the outside-the-frame lens or the swap, to the next round, a degraded one handing it on the same way, since all three were tied to round 1 by its number.
 - 2026-11-04: the measured run's effort is stated, since its miss would otherwise read as one at the recommended level.
