@@ -22,6 +22,8 @@
 
 **A break is stated.** A landing that leaves the base unable to do what it did, or a path someone can reach failing, says so in its Intent; the operator sees it at the design presentation and again before the landing, and the branch reviewer labels an unstated one that follows from what the branch sets out to do, for the operator to repair or accept by a ruling (`crucible:brainstorming § Spec contract`; `skills/subagent-driven-development/references/finish.md`; `skills/requesting-code-review/code-reviewer.md` § What to Check; `crucible:requesting-code-review § The branch-review loop`). A permanent removal counts, stated as permanent. Work nobody can reach yet is not a break.
 
+**The premise is stated.** The design presentation and the Intent, a lane note's included, state the observation a feature rests on and whether it was measured; a measurement a context-gathering probe can take runs before the design is presented, and a paid or production-touching one is a decision ask (`crucible:brainstorming § The dialogue`, § Spec contract).
+
 ## Why
 
 ### Weights and flip paths
@@ -256,6 +258,24 @@ judgment, accepted by the maintainer, 2026-11-04; for the route of a break
 the reviewer finds and for counting a permanent removal, judgment, accepted
 by the maintainer, who left the call to the agent.)
 
+### The premise
+
+A read of sixteen sessions of one code project on crucible 0.33.x, twelve
+days of work (2026-11, approximate, from transcripts not in this
+repository), found at least two features in which a measurement taking
+minutes redirected the work, and it ran after the feature was built. The
+premise line puts the observation and its standing in front of the
+operator at the design presentation and in front of the campaign's seats
+in the Intent, and moves a measurement that cheap ahead of the design. A
+probe that fails or settles nothing is reported as not measured so that
+the line never claims more than was shown; a measurement that spends
+money outside the session or touches production stays the operator's.
+Asked whether premise checks should widen, the controller proposed this
+third form over widening the seats' existing checks. What the line costs
+a brainstorm, and whether it catches a premise earlier, are not measured.
+(Basis: judgment, an agent's proposal accepted by the maintainer with the
+design, 2026-11-19; measured, for the two features.)
+
 ## Rejected
 
 - **Carriage**: copying the spec's [LOAD-BEARING] decisions into a plan's
@@ -285,9 +305,12 @@ by the maintainer, who left the call to the agent.)
 - **A required no-break line in every close readout:** it would add text to
   every landing, and the reviewer's check already covers a silent one
   (§ Why, Breaks).
+- **Widening the seats' existing premise checks** in place of a premise
+  line at the design (§ Why, The premise).
 
 ## Changes
 
+- 2026-11-19: the premise line: the design presentation and the Intent, a lane note's included, state the observation a feature rests on and whether it was measured, a measurement a context-gathering probe can take running before the design is presented and a paid one put as a decision ask; because in at least two features of a sixteen-session read a measurement taking minutes redirected the work after it was built.
 - 2026-11-04: a landing that breaks the base, permanently or not, states it in its Intent, the operator sees it at the design presentation and before the landing, and the branch reviewer labels an unstated one that follows from what the branch sets out to do, for the operator to repair or accept by a ruling; because by default a landing could break the base with nobody saying so.
 - 2026-11-03: the citations of brainstorming's workspace provisioning use its shortened heading.
 - 2026-11-03: the premise-finding route is cited at `skills/redteaming/references/premise-asks.md`, where flip-paths' § Premise findings moved, so a controller handling a premise finding no longer loads the flip paths (`docs/decisions/authoring-crucible.md`).

@@ -2,7 +2,7 @@
 
 A **lane note** takes the spec's place as the lane's only artifact: drafted and shown with the lane proposal at step 4, written at step 5 as the operator approved it. About a page, in four parts:
 
-- **Intent** — what the change is for, and any break, as the spec contract states it.
+- **Intent** — what the change is for, its premise and any break, as the spec contract states them.
 - **Change list** — what changes, at file or behavior level.
 - **Acceptance** — runnable checks.
 - **Out of scope**.
