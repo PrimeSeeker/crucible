@@ -18,7 +18,7 @@
 
 **Minors.** A minor rides a wave something else opened, and never opens one by itself. A minor that rode no wave becomes a ledger line listed for the operator in the close readout, with no ruling per minor, never chased by the controller (`skills/requesting-code-review/SKILL.md` § The branch-review loop).
 
-**The cleanup wave.** Once the review has ended with no BLOCKER or MAJOR open and a wave remains under the cap, the controller may open one cleanup wave per branch of the minors, and of the leads the reviewer ruled CONFIRMED or RECOMMENDED, that it judges worth fixing, a wave of improvements alone included. It runs as any wave, counted against the cap (`crucible:requesting-code-review § The branch-review loop`), and the close readout says why each minor and lead it left was left (`skills/subagent-driven-development/references/finish.md`).
+**The cleanup wave.** Once the review has ended with no BLOCKER or MAJOR open and a wave remains under the cap, the controller may open one cleanup wave per branch of the minors, and of the leads the reviewer ruled CONFIRMED or RECOMMENDED, that it judges worth fixing, a wave of improvements alone included; it takes none whose fix only rewords or reformats one of the project's own working documents and leaves what it states unchanged. It runs as any wave, counted against the cap (`crucible:requesting-code-review § The branch-review loop`), and the close readout says why each minor and lead it left was left (`skills/subagent-driven-development/references/finish.md`).
 
 **Standalone mode.** On a branch with no SDD run, the reviewer gets no ledger inputs and returns its report as its final message, and the invoking agent handles the findings under `crucible:receiving-review`, with no wave loop, no cap and no cleanup wave (`crucible:requesting-code-review § Standalone mode`; `skills/requesting-code-review/code-reviewer.md` § Standalone Mode).
 
@@ -67,6 +67,26 @@ still guards against it, since what the cleanup wave raises at MINOR
 opens nothing, and the cap counts the wave like any other. (Basis: the
 maintainer's preference, for loosening the rule; judgment, accepted by
 the maintainer, for the wave's form.)
+
+On 2026-11-19 part of that loosening was withdrawn. A read of sixteen
+sessions of one code project on crucible 0.33.x, over twelve days, counted
+32 first full-scope passes, 5 of which raised a BLOCKER or MAJOR, and about
+35 later passes, about 28 of them after a wave that took only minors. Two of
+those 28 raised a MAJOR, each a defect of the branch the first pass had
+missed, neither introduced by the wave: a later pass works as a second
+opinion on the branch, at about half the first pass's rate, so it stays.
+What multiplied the later passes was the cleanup wave, opened for minors
+that were mostly wording in documents that instruct no agent. The wave now
+takes no fix that only rewords or reformats one of the project's own working
+documents and leaves what it states unchanged; a fix to code, a test, text
+that instructs agents, documentation for the product's users, or a working
+document that states something false or lacks something a rule requires it
+may still take. The counts cannot be reproduced from this repository, the
+transcripts not being in it. The alternatives put were dropping the pass
+after a minors-only wave, and both changes together. (Basis: measured, for the counts;
+judgment, the controller's proposal, which the maintainer chose over those
+alternatives; the exclusion's wording the controller's, in the spec
+campaign.)
 
 ### Changes that ride a wave
 
@@ -270,6 +290,7 @@ accepted by the maintainer.)
 
 ## Changes
 
+- 2026-11-19: the cleanup wave takes no minor, lead or improvement whose fix only rewords or reformats one of the project's own working documents and leaves what it states unchanged, withdrawing part of the 2026-10-30 loosening; because in a read of sixteen sessions of one code project, about 28 of about 35 later full-scope passes followed a wave that took only minors, mostly wording in documents that instruct no agent, while 2 of those 28 raised a MAJOR the first pass had missed, so the pass after every wave stays.
 - 2026-11-05: open items in the project's home join the build-history rule's own list, in place of an exemption in the reviewer's template, because that clause covered only what Finish wrote and left out what an umbrella's landing or closing review writes.
 - 2026-11-05: a skip of the full-scope pass after a wave that changes no rule was built and withdrawn before landing, and is rejected, its evidence recorded; because it took six conditions, each pass found another hole, and it would rarely apply. The loop is unchanged.
 - 2026-11-04: an `unstated break` is written open under `## Adjudication rulings` and named in the close readout among the work left open, because an ask lost to compaction would leave nothing telling Finish it was pending, and an integration answer would delete it with the workspace; the reviewer's report format and verdict line name its label beside `premise`, because a reviewer staking one at MAJOR would answer No on a pass the loop treats as ending the review.
