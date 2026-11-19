@@ -47,7 +47,7 @@ repository: the transcripts are not in it.
 - G1. The cleanup wave stops taking wording in a project's own working
   documents.
 - G2. A literal-reading finding no longer always costs a fresh seat.
-- G3. A change that touches no code and no test does not get the full suite.
+- G3. A change to documents alone does not get the full suite.
 - G4. A choice reaches the operator only where their answer could matter;
   the controller makes the rest and says so.
 - G5. The closing check reports what would change a conclusion and stops
@@ -71,7 +71,8 @@ repository: the transcripts are not in it.
 - What becomes of a MINOR against binding text that the terminal pass's
   tail leaves open: it stays a decision ask.
 - The tests a controller runs for a task it implements inline in the task
-  loop.
+  loop: inline mode keeps a dispatched task's review, and its test rule with
+  it.
 - A release: it follows the landing as its own step.
 
 ### Breaks
@@ -95,56 +96,59 @@ changes is which choices wait for the operator, stated under Decisions.
 ## Decisions
 
 Each is lightly held. D1 and D2 are the operator's choices among options the
-controller put. D5 is the controller's proposal; whether a stop before the
+controller put, their wording since refined by the controller. D5 is the controller's proposal; whether a stop before the
 campaign stays is the operator's ruling, open as this is written. D7's
 target is the operator's proposal, its conditions the controller's. The rest
 are the controller's proposals.
 
-- **D1. The cleanup wave takes what changes behaviour, a test, or text
-  written for a reader outside the work.** Of the minors, the CONFIRMED or
-  RECOMMENDED leads and the improvements a review leaves, the one cleanup
-  wave per branch takes only those whose fix changes what the code does,
-  what a test checks, text that instructs agents (the kinds
-  `crucible:writing-skills` names in its trigger), or documentation written
-  for the product's users. Wording in the project's own working documents
-  (decision records, backlog items, specs, plans, comments) is not taken,
-  and the rule that trivial minors ride an open wave does not admit it to
-  the cleanup wave. What the wave leaves stays in the ledger; the close
-  readout gives the minors left for this reason as one count, not a line
-  each. *Rationale:* the loop of later passes was fed by cleanup waves of
-  document wording; narrowing what the wave takes removes waves without
-  removing the pass that follows one, which found real defects. It withdraws
-  part of the 2026-10-30 loosening, under which the controller could take
-  any minor it judged worth fixing.
+- **D1. The cleanup wave does not take rewording of the project's own
+  working documents.** Of the minors, the CONFIRMED or RECOMMENDED leads and
+  the improvements a review leaves, the one cleanup wave per branch takes
+  none whose fix only rewords or reformats one of the project's own working
+  documents (decision records, backlog items, specs, plans, comments) and
+  leaves what it states unchanged; the rule that trivial minors ride an open
+  wave does not admit such a fix to the cleanup wave. Everything else it may
+  take as today: a fix to code, to a test, to text that instructs agents, to
+  documentation written for the product's users, and to a working document
+  that states something false or lacks something a rule requires. What the
+  wave leaves is listed in the close readout as any deferred minor is.
+  *Rationale:* the loop of later passes was fed by cleanup waves of document
+  wording; narrowing what the wave takes removes waves without removing the
+  pass that follows one, which found real defects. It withdraws part of the
+  2026-10-30 loosening, under which the controller could take any minor it
+  judged worth fixing.
 - **D2. The controller rules on a literal-reading finding.** A reviewer's
   finding that a binding item's literal reading reaches a case its author
-  did not consider is the controller's to rule on, with its evidence. Where
-  it concludes that the binding text itself must change, it rules nothing
-  and hands the finding to a fresh adjudicator, as it does today for every
-  dispute about a diff it wrote. Who rules on any other dispute is
-  unchanged, and the ruling passes the containment test as today.
-  *Rationale:* 11 of 13 such findings were dismissed. The branch reviewer
-  checks every ruling of the task loop against the final code; a ruling made
-  in the branch review, which no later pass reads, reaches the operator in
-  the close readout with every other ruling the controller made.
-- **D3. A change that touches no code and no test does not get the full
-  suite.** An implementer whose change touches no code and no test runs, in
-  place of the full suite, the checks of the project that read the files it
-  changed, if any, and says so in its report. The same holds for the
-  controller on the very-small lane, at its implementation and at each
-  wave's fixes. Finish's run on the commit that lands is unchanged.
-  *Rationale:* full-suite runs after documentation-only commits were a
-  generalization of a rule written for code.
+  did not consider is the controller's to rule on, with its evidence. Two
+  cases go to a fresh adjudicator instead: a finding on a diff the
+  controller wrote (an inline task, Finish's open items, any lane diff), as
+  every dispute about such a diff does today; and a finding on which the
+  controller concludes that the binding text itself must change. Who rules
+  on any other dispute is unchanged, and the ruling passes the containment
+  test as today. *Rationale:* 11 of 13 such findings were dismissed. The
+  branch reviewer checks every ruling of the task loop against the final
+  code; a ruling made in the branch review, which no later pass reads,
+  reaches the operator in the close readout with every other ruling the
+  controller made.
+- **D3. A change to documents alone does not get the full suite.** An
+  implementer whose change touches only documents, files the product neither
+  runs nor loads, runs in place of the full suite the tests and checks of
+  the project that read those files, if any, and says so in its report. The
+  same holds for the controller on the very-small lane, at its
+  implementation and at each wave's fixes. Finish's run on the commit that
+  lands is unchanged. *Rationale:* full-suite runs after documentation-only
+  commits were a generalization of a rule written for code.
 - **D4. The test for a choice no skill puts to the operator.** An ask,
   approval or consent that a skill prescribes, whatever the skill calls it,
   reaches the operator as that skill states. Any other choice the controller
   would put to them reaches them only where it does one of these: changes
-  something observable in what the product does or a run produces; spends
+  something observable in what the product does or outputs; spends
   money outside the session, cannot be undone, or faces outward; changes the
   scope of the work; reverses something the operator ruled; changes a
   standing rule or sets aside a step a skill requires. The rest are the
   controller's: it makes the call and states it, in a line, in its next
-  message to the operator. *Rationale:* the operator's input fell on product
+  message to the operator. A call that changes a decision the record holds
+  is noted under that entry as the controller's, and is no approval. *Rationale:* the operator's input fell on product
   and scope choices and almost never on housekeeping; the fifth clause is
   the kind of housekeeping where it did. Saying the call in the next message
   needs no record to carry it and leaves the operator a prompt veto.
@@ -153,20 +157,22 @@ are the controller's proposals.
   preset by the overturn question and states it, with its reasons and the
   campaign's shape (seats, lenses, models, expected rounds), as it closes
   the design presentation; the operator may veto either like anything they
-  are told, and their approval of the design carries both. At the campaign
-  gate the controller states what changed in the spec since that approval
-  and any departure from the shape. The gate waits for the operator only
-  where that message carries a decision ask: one the record holds open, or a
-  change since the approval that D4's test sends to them. Otherwise the
+  are told, and their approval of the design carries both. The campaign gate
+  presents what it presents today (the record's decisions, its open decision
+  asks, the shape) and says what changed in the spec since the design as the
+  operator approved it, or since their last answer at the gate. It waits for
+  the operator only where that message carries a decision ask: one the
+  record holds open, or a change that D4's test sends to them. Otherwise the
   campaign launches. An umbrella's campaign passes the same gate. The
   very-small lane is still entered only by the operator's approval of its
   note. *Rationale:* 56 asks about the route, the shape or a further round
-  drew no departure, which is the rate a stop kept for a rare pivot would
-  show; the stop therefore stays for the case it exists for, a spec that
-  changed in a way the operator would rule on, and goes where nothing did.
-  The stop rule already makes a further round the controller's judgment, and
-  the terminal pass's stop check still sends a wrong stop to the operator.
-  It narrows the unconditional stop before the campaign that
+  drew no departure, which is also the rate a stop kept for a rare pivot
+  would show. The gate therefore keeps its stop for a pivot the controller
+  can see, a spec that changed or a decision still open, and gives it up for
+  one only the operator could see, who is still told and may interrupt the
+  round. The stop rule already makes a further round the controller's
+  judgment, and the terminal pass's stop check still sends a wrong stop to
+  the operator. It narrows the unconditional stop before the campaign that
   `docs/decisions/operator-steering.md` records the maintainer keeping "in
   case of something coming up".
 - **D6. Leftover minors, leads and questions are the controller's to keep or
@@ -177,29 +183,34 @@ are the controller's proposals.
   break` ask are listed as today and are never the controller's to drop.
   *Rationale:* 29 such choices, one departure.
 - **D7. The closing check reports what would change a conclusion.** The
-  terminal pass's decision-ask fidelity mandate, its stop check and its
-  decision-record check report a mismatch only where it is one of three
-  kinds: one that meets the existing `CONCLUSION-CHANGING` test; a call the
-  record gives as the operator's ruling or choice that was the controller's;
-  a seat's question carried to readout that is missing there or changed in
-  meaning. Its template tells the seat that a lean toward the controller's
-  own recommendation in asks and records is expected, and is reported only
-  through those kinds. In place of the bias line, the report closes its
-  corrections with one line only where the pass finds the record materially
-  misleading as a whole; that line is a decision ask, as the bias line's
-  statement of it is today. The artifact re-read, the pass's other mandate,
-  is unchanged. *Rationale:* reporting every mismatch did not reduce the
-  lean and rarely changed what happened. A call wrongly recorded as the
-  operator's is kept because a decision recorded as firm is shielded from
-  ordinary findings; a dropped question is kept because nothing else carries
-  a seat's doubt past the controller.
-- **D8. The second read.** A second read runs after the pass's further fix
-  wave or repair, and, record-only, where the close carries a decision ask
-  the pass's report raised (a flagged correction, or its line on a
-  misleading record) or puts one to the operator again. A correction of the
-  other two kinds causes none. *Rationale:* second reads of the artifact
-  found no BLOCKER or MAJOR, while second reads of a close that carried an
-  ask produced the conclusion-changing flags.
+  terminal pass's decision-ask fidelity mandate, its stop check, its
+  decision-record check and its Notes report a mismatch only where it is one
+  of three kinds: one that meets the existing `CONCLUSION-CHANGING` test, or
+  that the decision-record check flags today, an approval withdrawn with no
+  record of it; a decision whose record misstates who made it or how firmly
+  the operator holds it; a seat's question carried to readout that is
+  missing there or changed in meaning. Its template tells the seat that a
+  lean toward the controller's own recommendation in asks and records is
+  expected, and is reported only through those kinds. In place of the bias
+  line, the report closes its corrections with one line only where the pass
+  finds the record materially misleading as a whole, saying in what way and
+  naming the entries it rests on; that line is a decision ask, as the bias
+  line's statement of it is today. The controller's duty not to shade a
+  record stays; the pass reports a breach of it through those kinds and that
+  line, and no longer as a pattern. The artifact re-read, the pass's other
+  mandate, is unchanged. *Rationale:* reporting every mismatch did not
+  reduce the lean and rarely changed what happened. A misrecorded decision
+  is kept because a decision recorded as firm is shielded from ordinary
+  findings, and one recorded as less is not; a dropped question is kept
+  because nothing else carries a seat's doubt past the controller.
+- **D8. The second read keeps its triggers.** It runs after the pass's
+  further fix wave or repair, and, record-only, where the pass's report
+  carries a correction or its line on a misleading record, or the controller
+  puts a decision ask to the operator again. No trigger is cut: with D7
+  fewer passes report a correction, so fewer second reads run.
+  *Rationale:* a correction D7 still reports is one whose delivery matters,
+  and nothing but the record-only read checks that the controller's close
+  carries it.
 - **D9. The premise line.** The design presentation states the observation
   the feature rests on and whether it was measured; a spec's Intent and a
   lane note's record both. A measurement that fits a context-gathering probe
@@ -259,8 +270,8 @@ are the controller's proposals.
   `skills/redteaming/references/plan-phase.md` and the plan record read the
   count line.
 - **The close readout** (`skills/subagent-driven-development/references/finish.md`)
-  lists open items with their sources as today, the minors D1 left as one
-  count; step 4 still sends the work as the operator's answer left it.
+  lists open items with their sources as today; step 4 still sends the work
+  as the operator's answer left it.
 
 ## Acceptance
 
@@ -299,10 +310,9 @@ Advisory; an implementer may replace any of it.
   call as one" in `skills/brainstorming/references/proposing-the-arrangement.md`,
   and § Campaign gate, whose wait becomes conditional and whose re-gate loop
   stays for the case that waits.
-- D7 and D8 fit the terminal pass's source by cutting: "material or not"
-  and the bias line go, and the record read's trigger narrows.
-- The words D7, D8 and D5 cut should about pay for those D1, D3, D4 and D9
-  add.
+- D7 fits the terminal pass's source by cutting: "material or not" and the
+  bias line go.
+- The words D7 and D5 cut should about pay for those D1, D3, D4 and D9 add.
 
 ## Task dependency order
 
@@ -356,10 +366,6 @@ Overlaps, each ordered by the task order:
 - **`README.md` is T2's.** T2 rewords both of its sentences this document
   makes false: the one on who rules on disagreements, for T1's D2, and the
   one on confirming the arrangement, for D5.
-- **The count of minors D1 left is T2's.** T1 states in
-  `skills/requesting-code-review/SKILL.md` what the cleanup wave takes; T2
-  makes `finish.md` step 2 report the minors left for that reason as a
-  count.
 - **Reported corrections.** T3 defines which corrections the pass reports
   and what its closing line is. T2's D4 paragraph does not mention record
   corrections; what the pass reports reaches the operator as
@@ -370,7 +376,7 @@ Overlaps, each ordered by the task order:
 
 | Criterion | Check | Task |
 |---|---|---|
-| A1 | standing test: the suite | each task runs what D3 gives it; T5's run of the whole suite is on the tip |
+| A1 | standing test: the suite | each task runs it as the installed implementer template asks; T5's run is on the tip |
 | A2 | standing test: `tests/test_instrument_agents.py` | T1, T3 |
 | A3 | one-time check: each search, failing on the base | T1 (`a literal-reading finding always does`), T2 (`never yours to declare`), T3 (`material or not`, `bias line`) |
 | A4 | standing test: `tests/test_prose_budget.py` | T1 to T4 |
@@ -400,7 +406,9 @@ literal-reading finding to the adjudicator); `docs/decisions/spec-campaign.md`
 two lines of `tests/prose-budget.txt`. Inputs:
 `.crucible/lean-gates/brainstorm-decisions.md`. Consumers checked in the
 brainstorm: `skills/subagent-driven-development/references/finish.md` step 2
-has the readout say why a cleanup wave left each item, which T2 changes; the
+already has the readout say why a cleanup wave left each item, and the
+sentence of `skills/requesting-code-review/SKILL.md` that lists every minor
+that rode no wave for the operator stays; the
 task reviewer's, re-reviewer's and branch reviewer's sources name the
 `literal-reading` label and are unchanged;
 `docs/decisions/evidence-and-findings.md` points at `spec-campaign.md` for
@@ -413,15 +421,18 @@ the implementer's source, beside the full-suite sentence it qualifies, not in
 a section another template splices.
 
 **Acceptance.**
-- Happy: the cleanup wave's paragraph states D1's four kinds and what is not
-  taken; the dispute rule gives a literal-reading finding to the controller,
-  who hands it over where the text must change; the implementer's test
-  paragraph and the lane's two gate sentences state D3.
+- Happy: the cleanup wave's paragraph states what D1 has it leave; the
+  dispute rule gives a literal-reading finding to the controller, with D2's
+  two cases for the adjudicator; the implementer's test paragraph and the
+  lane's two gate sentences state D3.
 - Edge: a wave opened by a BLOCKER or MAJOR still takes trivial minors and
   FIX-IN-WAVE items as today, and the cleanup wave takes none D1 excludes;
-  an improvement to a working document's wording opens no cleanup wave; a
-  lane diff's dispute still goes to the adjudicator; a change to a skill in
-  this repository runs the tests that read skills.
+  an improvement to a working document's wording opens no cleanup wave,
+  while a decision record missing a required line or stating a wrong
+  position may be taken; a literal-reading finding on an inline task, on
+  Finish's open items or on a lane diff goes to the adjudicator; a change to
+  a skill in this repository, or to a prompt or configuration file the
+  product loads, gets the full suite.
 - Error: the search `a literal-reading finding always does` over `skills/`
   matches on the base and not after the task.
 - Integration: `python tools/instrument_agents.py check` and the suite pass;
@@ -461,21 +472,21 @@ true, since the heading and the entry keep their names (C5);
 lane's entry and its line (C3, C5).
 
 **Contract.** Enacts D4, D5, D6 under C1, C3, C4, C5, C6, C8, C9. Produces
-the wording "the route entry" that the fold's two readers use, and the count
-T1's rule needs in the close readout.
+the wording "the route entry" that the fold's two readers use.
 - Deferred to implementation: the order of D4's five clauses.
 
 **Acceptance.**
 - Happy: § Decision asks carries D4's test, its extent as C1 states it, and
   the line in the next message; the preset and the campaign's shape are
   stated as the controller's calls at the close of the design presentation;
-  the campaign gate states what changed and waits only for an ask; the close
-  readout gives the controller's keep-or-drop call for minors, leads and
-  questions, and the minors D1 left as a count.
+  the campaign gate presents what it does today, says what changed, and
+  waits only for an ask; the close readout gives the controller's
+  keep-or-drop call for minors, leads and questions.
 - Edge: the very-small lane's note is still approved by the operator before
   it is written, and the line saying so keeps its sense; a spec changed
   since approval in a way D4's test sends to the operator waits at the gate,
-  and the amend-and-re-gate loop still serves it; an umbrella's campaign
+  and the amend-and-re-gate loop still serves it, measuring the next change
+  from the operator's gate answer; an umbrella's campaign
   passes the same gate; an umbrella approved without a campaign still lands
   as its reference says; a route entry is still written for the standard
   preset; a parked BLOCKER, an unruled premise ask and an open `unstated
@@ -491,8 +502,8 @@ T1's rule needs in the close readout.
 
 ## Task 3: The closing check
 
-**Why.** D7 and D8 change what the terminal pass reports and when a second
-read runs.
+**Why.** D7 changes what the terminal pass reports; D8 keeps the second
+read's triggers, which D7's wording must not narrow by accident.
 
 **Files.** `skills/redteaming/terminal-pass-prompt.source.md` and what the
 tool renders from it; `skills/redteaming/terminal-pass-prompt.slots.md`;
@@ -513,8 +524,9 @@ that arrives after a round closed, and stays.
 
 **Contract.** Enacts D7, D8 under C5, C6, C7, C8, C9. The
 `CONCLUSION-CHANGING` test is not changed, and the stop check and the
-decision-record check flag by it as today; a mismatch of theirs that does
-not meet it is no longer reported. The line on a misleading record is no
+decision-record check flag as today, an approval withdrawn with no record
+included; a mismatch of theirs that is none of D7's kinds is no longer
+reported. The line on a misleading record is no
 flagged correction and sits outside the count. § Operating stance keeps the
 controller's duty not to shade a record; the records say which instrument
 reports a breach of it after this change. What the pass's tail does with a
@@ -525,15 +537,16 @@ finding it leaves open is unchanged.
 **Acceptance.**
 - Happy: mandate 2 reports the three kinds of correction and no other; the
   report format has no bias line and closes with the misleading-record line
-  only where it applies; § Stop rule and terminal pass states that line as a
-  decision ask and the second read's triggers; the plan phase follows.
+  only where it applies, saying in what way and naming its entries; § Stop
+  rule and terminal pass states that line as a decision ask and keeps the
+  second read's triggers; the plan phase follows.
 - Edge: a pass with no reported correction and no fix wave gets no second
   read; a pass whose further fix wave ran gets one with a re-read due; a
-  correction flagged `CONCLUSION-CHANGING` gets a record-only read of the
-  close that carries its ask; a correction naming a call wrongly given as
-  the operator's is reported though it changes no conclusion and causes no
-  second read by itself; a carried question missing from its readout is
-  reported, one reworded with its meaning intact is not.
+  pass reporting a correction of any of the three kinds gets a record-only
+  read of the close; an operator's firm word recorded as `accepted` is
+  reported; a carried question missing from its readout is reported, one
+  reworded with its meaning intact is not; a leaning mismatch in Notes that
+  is none of the three kinds is not reported.
 - Error: the searches `material or not` and `bias line` over `skills/` match
   on the base and not after the task.
 - Integration: `python tools/instrument_agents.py check`,
