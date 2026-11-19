@@ -382,8 +382,7 @@ prosecuted its own error rate while its subagents' reports did not, and
 the errors it disclosed leaned in the flattering direction, which shame
 rewards. The stance makes a caught error the loop working, so disclosure
 stays cheap; the clause on disclosure keeps it from being read as a
-licence to soften records, and the terminal pass's bias line is the
-instrument that detects shading (`docs/decisions/terminal-pass.md`).
+licence to soften records.
 On 2026-10-13 the block lost four
 sentences on the recommendation of the controller, its reader, keeping
 that paragraph unchanged; on 2026-10-28 the paragraph lost its
@@ -394,6 +393,18 @@ into the bias line; on 2026-11-03 it became one sentence, the disclosure
 paragraph a clause of it. (Basis: a single incident, for
 the motive; judgment, accepted by the maintainer, for the stance and the
 trim.)
+
+The terminal pass reports a breach of the stance through the corrections
+it still reports, a decision misattributed or recorded at the wrong
+firmness among them, and through its line on a record materially
+misleading as a whole. From 2026-11-19 it expects the lean toward the
+controller's recommendation and no longer reports it as a pattern: in a
+read of sixteen sessions of one code project, reporting every mismatch
+with a line naming the corrections' shared direction had not reduced the
+lean, and of about 24 readouts reporting corrections two visibly changed
+what happened next (`docs/decisions/terminal-pass.md`). (Basis:
+measured, for the figures; the maintainer's proposal, for expecting the
+lean; the controller's, for the kinds and the line.)
 
 ## Rejected
 
@@ -423,6 +434,7 @@ trim.)
 
 ## Changes
 
+- 2026-11-19: the terminal pass reports a breach of the operating stance through the kinds of correction it still reports and its line on a record materially misleading as a whole, no longer through the bias line, since in a read of sixteen sessions of one code project reporting every mismatch had not reduced the lean toward the controller's recommendation and, of about 24 readouts reporting corrections, two visibly changed what happened next (`docs/decisions/terminal-pass.md`).
 - 2026-11-19: an implementer whose change touches only documents, files the product neither runs nor loads, runs the tests and checks that read them in place of the full suite and says so, and the controller runs the very-small lane's gates the same way; because full-suite runs after documentation-only commits, about nine minutes each in a read of sixteen sessions of one code project, generalized a rule written for code; Finish's run before the landing is unchanged.
 - 2026-11-06: the rule and the cap stay after a read of the transcripts on disk that did not show multi-round campaigns net-positive and cannot show the opposite; only what would settle the cap stays open; an outcome record is rejected; the seat on another host gains a count with stage held fixed.
 - 2026-11-04: a round 1 recorded degraded hands on what no returned seat ran, the goal check, the outside-the-frame lens or the swap, to the next round, a degraded one handing it on the same way, since all three were tied to round 1 by its number.

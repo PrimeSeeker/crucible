@@ -19,4 +19,4 @@ Announce the phase shape (seats, lenses, dispatch count) in the phase-start read
 
 **The second read, at most one,** follows the repair of a terminal-pass finding and, record-only, the cases `crucible:redteaming` § Stop rule and terminal pass names. Record the close under the record's `## Terminal pass` first, then resume the pass with a message setting `follow-up` to `second-read`, naming the report file `campaigns/plan/round-01/second-read.md` and whether a re-read is due; after a repair the re-read is full-scope over the repaired region, not the flagged item alone. Deliver the close and dispose of what stays open as `crucible:redteaming` § Stop rule and terminal pass states.
 
-**The record:** the plan-phase record of `round-record.md` § Round record format, `confirmed` written last; the pass's `Record corrections: <N>` outcome goes under its `## Terminal pass`.
+**The record:** the plan-phase record of `round-record.md` § Round record format, `confirmed` written last; the pass's `Record corrections: <N>` outcome and any line on a misleading record go under its `## Terminal pass`.

@@ -32,20 +32,20 @@ overturn question, from
 § Location, from the shared seat reference, so its findings
 carry a location as every finding does
 (`docs/decisions/instruments.md`;
-`docs/decisions/evidence-and-findings.md`). It reports counted record corrections,
-and only a correction, or a mismatch in its Notes, flagged
-`CONCLUSION-CHANGING` reaches the operator as a decision ask. Its
-corrections close with a bias line, whether its
-corrections share a direction favoring the record's author, a decision
-ask only where the pass states the record is materially misleading. Its
-tail is bounded: in the spec campaign one further fix wave, taking what
-any fix list takes (`docs/decisions/fix-verification-and-merge.md`), in
+`docs/decisions/evidence-and-findings.md`). It reports counted record
+corrections of three kinds only (§ What the pass reports), expecting
+the records to lean toward the controller's own recommendation. A
+correction, or a mismatch in its Notes, flagged `CONCLUSION-CHANGING`
+reaches the operator as a decision ask, and so does its one line on a
+record it finds materially misleading as a whole, which sits outside the
+count. Its tail is bounded: in the spec campaign one further fix wave,
+taking what any fix list takes (`docs/decisions/fix-verification-and-merge.md`), in
 the plan phase one scoped repair, and one second read. The second read
 follows that wave or repair, its dispatch saying whether a re-read is
 due (the card's `{re-read}` slot), and runs record-only after a pass whose
-report carries a record correction or on which the controller puts a
-decision ask again: it reads the close the controller recorded after the
-pass against the pass's report and the seat findings behind each ask,
+report carries a record correction or its line on a misleading record,
+or on which the controller puts a decision ask again: it reads the close
+the controller recorded after the pass against the pass's report and the seat findings behind each ask,
 and the controller delivers that close after it, its corrections added.
 One read covers both cases. Of what it leaves open, a MINOR not against
 binding text takes `deferred-minor`, which the spec terminal-pass record
@@ -129,35 +129,53 @@ a pass or fail verdict on the record the same day, a binary verdict
 inviting rumination over the record's author rather than a correction of
 the record. (Basis: judgment, accepted by the maintainer.)
 
-### The bias statement
+### What the pass reports
 
 Each fidelity check and the materiality flag judge one item at a time:
 a set of individually immaterial corrections all leaning one way passes
 every one of them. The operating stance makes errors cheap to disclose
 and names shading a record as the one reportable failure of the
-reporting duty (`docs/decisions/spec-campaign.md`); the bias statement is
-the instrument that reports it. Before it existed, one pass reading its
-corrections together had already observed that both "point the same
-direction: toward the self-correction narrative" (2026-08-15). (Basis:
-judgment, accepted by the maintainer; a single incident, for the
-observation.)
+reporting duty (`docs/decisions/spec-campaign.md`). A directional-bias
+statement over the pass's corrections came to report it, after one pass
+reading its corrections together had observed that both
+"point the same direction: toward the self-correction narrative"
+(2026-08-15). Its escalation got a threshold on 2026-08-21, because the
+ask below it had fired in nearly every campaign and never changed
+anything, and on 2026-11-02 it folded to one bias line, a decision ask
+only on a materially misleading record, since nothing else escalates
+that and its failure would be silent. (Basis: judgment, accepted by the
+maintainer; a single incident, for the observation; the controller's,
+on a call the maintainer delegated, for the kept trigger.)
 
-The escalation got its threshold on 2026-08-21, because the ask below it
-had fired in nearly every campaign and never changed anything. A
-standing-stance line, written into the closing record below the
-threshold, went on 2026-10-13: its reader was the committed record
-trail, which crucible no longer keeps. (Basis: judgment, accepted by the
-maintainer.)
-
-On 2026-11-02 the statement folded to one line, its apparatus (the
-unconditional guard, the operating stance's pointer, the note on drift
-auditing) retired by the skill text rewrite. Its trigger on a
-`CONCLUSION-CHANGING` correction sharing the direction went, since such
-a correction is a decision ask on its own; its trigger on a materially
-misleading record stayed, since nothing else escalates that and its
-failure would be silent. (Basis: judgment, accepted by the maintainer,
-for the fold; the controller's, on a call the maintainer delegated, for
-the kept trigger.)
+A read of sixteen sessions of one code project on crucible 0.33.x,
+twelve days of work, counted 32 terminal-pass dispatches. The pass's
+record corrections recurred in nearly every campaign, leaned toward the
+controller's own recommendation and did not become rarer over the
+twelve days; of about 24 readouts reporting such corrections, two
+visibly changed what happened next. Reporting every mismatch, and a
+line naming their shared direction, had not reduced the lean and rarely
+changed anything. So from 2026-11-19 the pass expects the lean and
+reports three kinds only. A `CONCLUSION-CHANGING` mismatch is kept, the
+withdrawn approval among them. A decision whose record misstates who
+made it or how firmly the operator holds it is kept, in either
+direction, because a decision recorded as firm is shielded from
+ordinary findings and one recorded as less is not. A question carried
+to readout that is missing there or changed in meaning is kept, because
+nothing else carries a seat's doubt past the controller. The same
+filter covers the pass's Notes. The bias line gives way to one line
+closing the corrections only where the pass finds the record materially
+misleading as a whole, saying in what way and naming its entries: a
+decision ask, as the bias line's statement of it was, for the reason
+that trigger was kept. The controller's duty not to shade a record
+stays; the pass reports a breach of it through those kinds and that
+line, no longer as a pattern. The figures are approximate and cannot be
+reproduced from this repository. (Basis: measured, for the figures; the
+maintainer's proposal, for reporting only what would change a
+conclusion and expecting the lean; the controller's, accepted by the
+maintainer, for keeping the misattributed decision; the controller's
+calls in the spec campaign, told to the maintainer in its round
+readouts, for the third kind, the closing line, the either-direction
+reading, the filter over Notes and the withdrawn approval's kept flag.)
 
 ### The tail
 
@@ -179,6 +197,20 @@ with every fix list (`docs/decisions/fix-verification-and-merge.md`).
 (Basis: measured, for the catches; the controller's proposal, accepted
 by the maintainer, for the record-only run.)
 
+In the read of sixteen sessions above, 17 of the 32 dispatches were
+second reads, and none found a BLOCKER or MAJOR in its artifact; the
+`CONCLUSION-CHANGING` corrections the count found came from second
+reads of a close that put an ask again. A narrowing of the record-only
+run to an ask put again was approved with the design on 2026-11-19 and
+withdrawn in its spec campaign: a correction the pass still reports is
+one whose delivery matters, and nothing but the record-only read checks
+that the close carries it. The triggers stay, the line on a misleading
+record triggering the record-only run as a correction does, and fewer
+second reads run because fewer corrections are reported. (Basis:
+measured, for the figures; the controller's call in the spec campaign, withdrawing what the maintainer's approval of the
+design carried, told to the maintainer in a round readout, for keeping
+the triggers.)
+
 ## Rejected
 
 - **A fidelity seat every round**: the same check at higher cost
@@ -189,11 +221,17 @@ by the maintainer, for the record-only run.)
   check the questions carried to readout, and no more.
 - **Escalating every correction**, or every directional-bias statement,
   to the operator (§ Why).
+- **Reporting every mismatch**, and a line naming the direction the
+  corrections share, removed on 2026-11-19 (§ Why).
+- **Running the record-only second read only where an ask is put
+  again**, approved with the design and withdrawn on 2026-11-19
+  (§ Why).
 - **A standing-stance line below the threshold** (§ Why).
 - **A pass or fail verdict on the record** (§ Why).
 
 ## Changes
 
+- 2026-11-19: the pass reports only corrections of three kinds, a `CONCLUSION-CHANGING` mismatch (a withdrawn approval among them), a decision whose record misstates who made it or how firmly the operator holds it, and a carried question missing from its readout or changed in meaning, its Notes filtered the same way, and its template tells it the lean toward the controller's recommendation is expected; the bias line gives way to one closing line, a decision ask outside the count, only where the record is materially misleading as a whole; the second read keeps its triggers, that line among them; because in a read of sixteen sessions of one code project the corrections recurred in nearly every campaign, leaned the same way and did not become rarer, and of about 24 readouts reporting them two visibly changed what happened next, and the flagged corrections it found came from second reads of a close that put an ask again; and nothing but the record-only read checks that the close carries a correction the pass still reports.
 - 2026-11-05: the pass's read scoping admits the files a claim in the artifact cites, seat reports staying out, since its instruction to run a check needs them and two passes had read them anyway.
 - 2026-11-03: the pass takes the overturn question from `skills/subagent-driven-development/references/review-terms.md`, where the arrangement questions moved from the shared seat reference so a controller that applies them no longer loads the seat rules; its template's text is unchanged.
 - 2026-11-02: the pass's shared sections arrive spliced into its
