@@ -134,8 +134,7 @@ are the controller's proposals.
   controller on the very-small lane, at its implementation and at each
   wave's fixes. Finish's run on the commit that lands is unchanged.
   *Rationale:* full-suite runs after documentation-only commits were a
-  generalization of a rule written for code, and were most frequent on
-  documentation lanes.
+  generalization of a rule written for code.
 - **D4. The test for a choice no skill puts to the operator.** An ask,
   approval or consent that a skill prescribes, whatever the skill calls it,
   reaches the operator as that skill states. Any other choice the controller
