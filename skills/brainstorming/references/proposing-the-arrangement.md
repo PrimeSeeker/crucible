@@ -18,7 +18,7 @@ Choose the preset by the overturn question (`skills/subagent-driven-development/
 - Never use or offer file, line or task counts as the test.
 - An umbrella's review goes by its content (`crucible:brainstorming` § Umbrellas): it has no code of its own to review after.
 
-As you close the design presentation, recommend one preset by name, with the overturn answer and its reason and, for a campaign preset, the reason the fold fits or does not. The operator rules; present a close call as one. A departure you expect only later ("most tasks will likely be branch review only") is a heads-up, not something to confirm: per-task review is the plan's call, reported at the close of the phase that reviews the plan, and execution is chosen per task.
+As you close the design presentation, state the preset you choose by name, with the overturn answer and its reason and, for a campaign preset, the reason the fold fits or does not; where a spec campaign follows, state its shape too: its seats with their lenses and models, and its expected rounds, sized per `crucible:redteaming` § Panels. A departure you expect only later ("most tasks will likely be branch review only") is a heads-up, not part of the call: per-task review is the plan's call, reported at the close of the phase that reviews the plan, and execution is chosen per task.
 
 Route-specific:
 

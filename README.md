@@ -138,16 +138,21 @@ readouts you were given, and the decision to stop, were faithful to the
 findings. Then a plan is written and checked once, and execution
 starts: a fresh agent implements each task, a fresh reviewer checks it
 unless the plan leaves that task to the whole-branch review, and
-crucible rules on disagreements, or a fresh adjudicator does where one
-touches the spec's binding parts or intent, or work crucible wrote
-itself. A whole-branch review closes the work, and you choose, on
-crucible's recommendation, whether to merge, open a pull request or keep
-the branch.
+crucible rules on disagreements, a finding that the spec's wording
+reaches a case its author did not foresee included, or a fresh
+adjudicator does where one touches work crucible wrote itself, where
+such wording must change, or where any other disagreement touches the
+spec's binding parts or intent. A whole-branch review closes the work,
+and you choose, on crucible's recommendation, whether to merge, open a
+pull request or keep the branch.
 
-**Three presets.** At the end of the design dialogue crucible proposes
-how the work is arranged, and you confirm or veto it. The question that
-decides is whether code is likely to overturn one of the design's major
-mechanisms; size alone does not decide:
+**Three presets.** At the end of the design dialogue crucible chooses
+how the work is arranged and, where a spec campaign follows, how its
+panel is made up, and tells you: approving the design approves both,
+and you may veto either. The very small preset alone waits for your
+approval of its lane note. The question that decides is whether code
+is likely to overturn one of the design's major mechanisms; size alone
+does not decide:
 
 - **Standard:** spec, spec campaign, plan, a single verification round of
   the plan, execution; the usual choice.

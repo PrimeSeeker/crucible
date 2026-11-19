@@ -69,7 +69,7 @@ Before the plan phase's first dispatch, **read `skills/redteaming/references/pla
 
 ## The folded lane
 
-Where the brainstorm decision record carries the operator's confirmation of the folded preset (`crucible:brainstorming` § Proposing the arrangement), **read `skills/redteaming/references/folded-lane.md` in full** before the campaign's round 0.
+Where the brainstorm decision record's route entry is the folded preset (`crucible:brainstorming` § Proposing the arrangement), **read `skills/redteaming/references/folded-lane.md` in full** before the campaign's round 0.
 
 ## Exit
 

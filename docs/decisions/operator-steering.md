@@ -12,22 +12,26 @@ rule).
 
 **The analyst stance.** No step requires the operator to read a spec,
 plan, code or a diff, none is withheld, and a decision ask may quote the
-few lines it turns on. The controller makes technical calls itself and
-reports them; design judgments reach the operator as plain-language
-decision asks with a recommendation and the strongest case against it,
-and a message carrying anything
-else puts them last, in a block of their own (`crucible:using-crucible
+few lines it turns on. Every ask a skill prescribes, and any other
+choice the router's test sends to the operator, reaches them as a
+plain-language decision ask with a recommendation and the strongest
+case against it; the controller makes the rest of its calls itself and
+states each in its next message to the operator. A message carrying
+anything else puts the asks last, in a block of their own (`crucible:using-crucible
 § Decision asks`), which every controller reads. The README states the stance to newcomers (`README.md` § Who
 it is for). There is no profile switch: the router's precedence line is
 the override.
 
-**The campaign gate approves the launch.** At brainstorming's campaign
-gate the operator reviews the decision record's decisions, its open asks
-and the campaign shape: seats, lenses, models and expected rounds, all
-presented inline. Approving the design approves that shape, which the
-decision record keeps; the campaign then starts with an announcement
-naming any departure, not a pause. The gate shows no token figure
-(`crucible:brainstorming § Campaign gate`).
+**The design's approval carries the launch.** As the design
+presentation closes, the controller states the preset and the campaign
+shape (seats, lenses, models and expected rounds) as its calls, which
+the operator may veto; approving the design carries both, and the
+decision record keeps them. Brainstorming's campaign gate presents the
+record's decisions, its open asks and the shape inline, with what
+changed in the spec since the operator's approval or last answer, and
+waits only where that message carries a decision ask; otherwise the
+campaign starts with an announcement naming any departure. The gate
+shows no token figure (`crucible:brainstorming § Campaign gate`).
 
 ## Why
 
@@ -101,12 +105,52 @@ by the maintainer, for the retirement; the maintainer's preference, over
 the controller's recommendation to fold the shape into the design's
 approval, for the gate.)
 
+On 2026-11-19 that stop became conditional. A read of sixteen sessions
+of one code project, twelve days of work, counted about 400 decisions
+put to the operator: the largest housekeeping group, 56, was the route,
+the campaign's shape and whether to run another round, and none drew a
+departure from the recommendation, which is also the rate a stop kept
+for a rare pivot would show. The gate keeps its stop for a pivot the
+controller can see, a spec changed since the approval or a decision
+still open, and gives it up for one only the operator could see, who
+is still told and may interrupt the round. A further round was already
+the stop rule's call, and the terminal pass's stop check still sends a
+wrong stop to the operator. The conditional stop was the controller's
+proposal, from a redteam seat's suggestion; the maintainer chose it
+over no stop and over the stop as it stood. (Basis: measured, by
+reader seats over the session transcripts, which this repository does
+not hold, for the count; the maintainer's preference, over two
+alternatives, for the conditional stop.)
+
 ### Decision asks apart
 
 The audit behind that umbrella found decision asks buried in readout
 bodies among the structural failures it fixes, so every readout now
 puts them in a block after its body. (Basis: judgment, accepted by the
 maintainer.)
+
+### Which choices reach the operator
+
+In the same read of about 400 decisions, 217 were about what the
+product does or about scope, and the operator departed from the
+recommendation or raised something new on 45 of them; 121 were
+housekeeping, and the operator did so on 4, three of which ruled on the
+process itself. About 18 of the product decisions were internal choices
+nothing outside the code could observe. So since 2026-11-19 a choice
+no skill prescribes reaches the operator only where the router's test
+sends it there: an observable change to what the product does or
+outputs, money spent outside the session, an act that cannot be undone
+or faces outward, a change of scope, a reversed operator ruling, or a
+change to a standing rule or a step a skill requires, the last being
+the housekeeping where the operator's input fell. Every ask, approval
+or consent a skill prescribes keeps its own route. A call the
+controller makes is stated in its next message, which needs no record
+to carry it and leaves the operator a prompt veto. Whether the test
+withholds a choice the operator needed is unmeasured. The controller's
+proposal, its last clause and the narrowing to observable changes added
+after the count and shown before the design's approval. (Basis:
+measured, by reader seats, for the counts; judgment, accepted by the
+maintainer, for the test.)
 
 ### The case against a recommendation
 
@@ -155,8 +199,11 @@ accepted by the maintainer, for skipping the test.)
   precedence line already does it (§ Why).
 - **A separate approval pause before the campaign**: never used to
   change the shape (§ Why).
-- **Folding the campaign shape into the design's approval**, with no
-  gate: the operator kept a stop before the campaign (§ Why).
+- **No stop before the campaign**, the design's approval carrying the
+  launch with no wait at the gate: the maintainer kept a stop where the
+  gate's message carries a decision ask (§ Why).
+- **An unconditional stop before the campaign**: 56 asks on the route,
+  the shape or a further round drew no departure (§ Why).
 - **A token estimate at the gate**: false precision (§ Why). The README's
   comparisons carry token figures as the maintainer's labelled
   impressions; the gate does not (`docs/decisions/publication.md`).
@@ -170,6 +217,7 @@ shows them; nothing is ever withheld.
 
 ## Changes
 
+- 2026-11-19: the preset and the campaign's shape are the controller's calls, stated as the design presentation closes and carried by the design's approval, and the campaign gate waits only where its message carries a decision ask, one the record holds open or a change since the approval that the router's test sends to the operator; this narrows the unconditional stop before the campaign the maintainer kept on 2026-11-02, the conditional stop being the controller's proposal from a seat's suggestion, which the maintainer chose over no stop and over the stop as it stood. A choice no skill prescribes reaches the operator only where that test sends it, the controller stating its other calls in its next message. Because in a read of about 400 decisions over sixteen sessions of one code project the 56 on the route, the shape or a further round drew no departure, and the operator departed or raised something new on 45 of 217 product and scope decisions against 4 of 121 housekeeping ones.
 - 2026-11-05: a decision ask also gives the strongest case against its recommendation, as a trial on the maintainer's choice; because the lean toward a controller's own recommendations recurred and independent reads do not reach every ask.
 - 2026-11-05: decision asks coming last in a block of their own moved to the router's § Decision asks, reaching any message to the operator, and SDD's close readout keeps only "in a final block", since the campaign gate, the umbrella landing and the closing review reached the rule only through a redteaming reference.
 - 2026-11-02: the design digest retired, with its `digest.md`, its

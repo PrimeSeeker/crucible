@@ -1,6 +1,6 @@
 ## The folded lane
 
-The folded preset folds the plan into the spec: one spec+plan document, `folded.md` in the feature folder, and no plan phase. Entry is the operator's confirmation at brainstorming, never your call. The spec campaign otherwise applies unchanged.
+The folded preset folds the plan into the spec: one spec+plan document, `folded.md` in the feature folder, and no plan phase. Entry is the route entry brainstorming writes at its present-the-design step; nothing folds a feature later. The spec campaign otherwise applies unchanged.
 
 Round 0's pre-pass also covers the plan half: ownership closure and overlap arithmetic over the task list, and the set census by the plan phase's pre-pass lens text in `panels.md`, its inputs widened to the repository's tracked text for it.
 

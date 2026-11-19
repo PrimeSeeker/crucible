@@ -4,20 +4,21 @@
 
 **Four choices, three presets.** A feature's arrangement is four choices: review before code, the plan's form, per-task review, and inline or subagent execution. The branch review is no choice: every arrangement runs it, at full scope. The routes are presets over the choices, standard the usual one, folded and very small the others, stated in `skills/brainstorming/SKILL.md` § Proposing the arrangement; the other combinations are unsupported, each for the reason the list below gives it.
 
-Each choice is made where its information exists: the preset at brainstorming's present-the-design step; per-task review in the plan, where a task may carry `Review: branch only` (`crucible:writing-plans` § Per-task structure; `docs/decisions/plans.md`); execution per task (`crucible:subagent-driven-development` § Inline mode, and on the very-small lane its reference; `docs/decisions/task-loop.md`). A campaign's width, its seats and rounds, is set at the campaign gate and by the stop rule (`crucible:redteaming` § Stop rule and terminal pass; `docs/decisions/spec-campaign.md`).
+Each choice is made where its information exists: the preset at brainstorming's present-the-design step; per-task review in the plan, where a task may carry `Review: branch only` (`crucible:writing-plans` § Per-task structure; `docs/decisions/plans.md`); execution per task (`crucible:subagent-driven-development` § Inline mode, and on the very-small lane its reference; `docs/decisions/task-loop.md`). A campaign's width, its seats and rounds, is stated with the preset and then set by the stop rule (`crucible:redteaming` § Stop rule and terminal pass; `docs/decisions/spec-campaign.md`).
 
 **Unsupported**, each for its reason: per-task review with no plan (there are no tasks); a plan phase without a separate plan (the spec campaign reviews a folded one); a campaign on a lane note, or a spec with no campaign (a feature's spec is always campaigned, a note never is; an umbrella approved without a campaign is a spec of its own kind); a lane note with a plan, or a spec with no plan (work that needs a plan takes a campaign preset, and a campaigned spec is planned).
 
-**The preset is the operator's.** The controller proposes a preset as it
-closes the design presentation, naming it, the overturn answer with its
-reason and, for a campaign preset, the reason the fold fits or does
-not; the operator confirms or
-vetoes it there, and the answer is the route entry in the brainstorm
-decision record, written for every preset. The operator confirms the
-preset only: a departure expected later, such as tasks the plan may
-route to the branch review alone, is a heads-up. The controller never
-declares a preset, and no feature enters one mid-flight; the lane's
-upgrade hatch is the exception. An umbrella, the document holding an effort of
+**The preset is the controller's call.** The controller chooses a
+preset as it closes the design presentation and states it, naming it,
+the overturn answer with its reason and, for a campaign preset, the
+reason the fold fits or does not; the operator may veto it, and
+approving the design carries it. The preset the approved design
+carries is the route entry in the brainstorm decision record, written
+for every preset. The very-small lane is entered only by the
+operator's approval of its note. The call covers the preset only: a
+departure expected later, such as tasks the plan may route to the
+branch review alone, is a heads-up. No feature enters a preset
+mid-flight; the lane's upgrade hatch is the exception. An umbrella, the document holding an effort of
 several features, takes no preset: it is campaigned or approved by what
 it carries, and each of its children takes a preset of its own
 (`docs/decisions/umbrellas.md`).
@@ -104,7 +105,7 @@ maintainer's preference, for separating them.) Of three forms an agent
 offered, presets over the choices, the choices as fields alone, and the
 routes plus two toggles, the maintainer took presets ("Agreed on form"),
 and the other combinations are unsupported, each for a stated reason.
-The step-4 confirmation covers the preset alone because per-task review
+The step-4 call covers the preset alone because per-task review
 needs the tasks and execution needs the task in hand, which only the
 plan and the
 task loop have. (Basis: judgment, accepted by the maintainer,
@@ -136,6 +137,25 @@ for its stated reason, that work needing a plan takes a campaign preset
 by the maintainer, 2026-10-29, and for leaving both out, 2026-11-06;
 measured, by script over the transcripts on disk of this repository and
 one other project, none read by eye, for the 44 of 98.)
+
+### Whose call the preset is
+
+Until 2026-11-19 the operator confirmed or vetoed the preset, and the
+controller never declared one. A read of sixteen sessions of one code
+project, twelve days of work, counted about 400 decisions put to the
+operator; the route, the campaign's shape and whether to run another
+round made up 56 of them, the largest housekeeping group, and none drew
+a departure from the recommendation. The controller now chooses and
+states the preset, which the operator may veto, and the approval of the
+design carries it. The very-small lane keeps the operator's approval,
+since its note is the design it would carry. Nothing converts a feature
+to a lighter preset later: the fold and the lane are entered only
+through the route entry, and the paths out stay the unfold, the late
+split and the upgrade hatch. The controller's proposal; the maintainer
+answered "OK" to it, which the controller read as acceptance and said
+so. (Basis: measured, by reader seats over the session transcripts,
+which this repository does not hold, for the count; judgment, accepted
+by the maintainer, for the change.)
 
 ### What the fold fits
 
@@ -391,6 +411,7 @@ small preset or the waiver for its work.
 
 ## Changes
 
+- 2026-11-19: the preset is the controller's call, stated with its reasons as the design presentation closes, which the operator may veto and the design's approval carries, the route entry recording it, in place of the operator's confirmation; the very-small lane is still entered only by the operator's approval of its note; because in a read of about 400 decisions over sixteen sessions of one code project the 56 on the route, the campaign's shape or a further round drew no departure.
 - 2026-11-06: a lane note with a plan and a campaigned spec with no plan stay out, no longer waiting in the backlog, and the wider question of how far the choices separate closes with them; because each would add a route, whether the need exists being unchecked. The first's trigger stands in § Separable choices.
 - 2026-11-05: a change too big for one implementer no longer stays on the lane by splitting: moving to the standard route is the upgrade hatch's ask, and an answer to stay is the operator's direction; because no run had used the split and its reviews kept finding seams in it.
 - 2026-11-04: staying on the lane for a change too big for one implementer splits it across fresh implementers, one per part, in order, each told to append to the report and that the note's Acceptance is the last part's to meet, its ledger line naming the part and a resume starting at the first part with no report section, because nothing said what followed that answer; the ask states that the branch review stays the first review and the fix waves stay the controller's, and the answer to stay accepts both, since a split is wider than the lane's fit assumes.

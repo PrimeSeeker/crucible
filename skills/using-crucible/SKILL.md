@@ -33,6 +33,8 @@ After compaction, re-invoke any skill you are still working under that came back
 
 A decision ask puts a choice to the operator in analyst language with your recommendation and the strongest case against it: it never requires reading the spec, plan, code or a diff, may quote the few lines it turns on, lists every option its findings propose, and states what its change withdraws from an earlier operator approval. Where a message to the operator carries anything else, its decision asks come last, in a block of their own.
 
+An ask, approval or consent a skill prescribes, whatever it calls it, reaches the operator as that skill states. Put any other choice to them only where it changes what the product observably does or outputs; spends money outside the session, cannot be undone or faces outward; changes the work's scope; reverses their ruling; or changes a standing rule or sets aside a step a skill requires. Make the rest yourself, stating each in a line in your next message to them; one changing a recorded decision is noted under its entry as your call, not an approval.
+
 ## Skill Priority
 
 When several skills apply, process skills come first: brainstorming before building, systematic-debugging before fixing; implementation and domain skills follow.

@@ -43,11 +43,11 @@ Explore the project state: files, docs, recent commits, existing specs and plans
 
 **Presenting the design:** in sections scaled to their complexity (a few sentences to a few hundred words), asking after each whether it looks right. Cover architecture, component boundaries, data flow, error handling, testing and any break (§ Spec contract). Prefer small units with one clear purpose and well-defined interfaces: if internals can't change without breaking consumers, the boundaries need work. In existing codebases, follow existing patterns and include improvements and bug fixes in or beside what the work changes where they are reasonably safe; propose what significantly exceeds that.
 
-Close the presentation by naming the feature worktree, and its base where the git fallback sets it: the operator's approval of that message is the request `crucible:using-git-worktrees` needs. Choose `<feature-slug>` before the worktree: it names the branch, the feature folder and the workspace. Before the first write, establish the worktree with that skill's Steps 0–1 on a branch named for the slug (its setup and baseline steps wait for SDD Setup). It is this feature's own even inside another feature's worktree, and the spec, the workspace and the records all live there.
+Close the presentation with the arrangement (§ Proposing the arrangement) and by naming the feature worktree, and its base where the git fallback sets it: the operator's approval of that message carries the arrangement and is the request `crucible:using-git-worktrees` needs. Choose `<feature-slug>` before the worktree: it names the branch, the feature folder and the workspace. Before the first write, establish the worktree with that skill's Steps 0–1 on a branch named for the slug (its setup and baseline steps wait for SDD Setup). It is this feature's own even inside another feature's worktree, and the spec, the workspace and the records all live there.
 
 ### Proposing the arrangement
 
-**As the design presentation closes, before choosing the preset to propose, read `skills/brainstorming/references/proposing-the-arrangement.md` in full.** The operator confirms or vetoes the preset; it is never yours to declare. Record their answer, whatever the preset, as the route entry in the brainstorm decision record (§ Workspace provisioning). The entry confirms its preset only when `accepted` or `firm`; a fold or a lane with no entry reads downstream as unconfirmed. A feature past step 4 keeps its preset, except through an unfold, a late split (§ Umbrella children) or the lane's upgrade hatch (`skills/subagent-driven-development/references/very-small-lane.md`). The hatch is the one route entry mid-flight: its answer to move is recorded in the same record. Folding a design whose spec is written is a supersede.
+**As the design presentation closes, before choosing the preset, read `skills/brainstorming/references/proposing-the-arrangement.md` in full.** The preset and, where a spec campaign follows, the campaign's shape are your calls, stated with their reasons; the operator may veto either. The very-small lane is entered only by the operator's approval of its note, shown with the proposal. Record the preset the approved design carries, whatever it is, as the route entry in the brainstorm decision record (§ Workspace provisioning). An entry `accepted` or `firm` enters its preset; a fold or a lane with none is not entered downstream. A feature past step 4 keeps its preset, except through an unfold, a late split (§ Umbrella children) or the lane's upgrade hatch (`skills/subagent-driven-development/references/very-small-lane.md`). The hatch is the one route entry mid-flight: its answer to move is recorded in the same record. Folding a design whose spec is written is a supersede.
 
 ### Umbrellas
 
@@ -80,7 +80,7 @@ No code beyond illustrative fragments in advisory sections. Keep binding section
 
 ### The folded lane — the combined spec+plan document (step 5)
 
-Where the operator confirmed the fold at step 4, this step writes one combined spec+plan document in place of a spec. **Before writing it, read `skills/brainstorming/references/folded-lane-document.md` in full.**
+Where the approved design carries the folded preset, this step writes one combined spec+plan document in place of a spec. **Before writing it, read `skills/brainstorming/references/folded-lane-document.md` in full.**
 
 ### The very-small lane
 
@@ -106,7 +106,7 @@ Then write the request to `<workspace>/request.md`: the message that asked for t
 
 ## Campaign gate
 
-None where step 4's answer approved a draft. Otherwise the operator reviews the decision record's decisions, its open decision asks and the planned campaign shape, presented inline; the gate never requires reading the spec file, and shows whatever part of it the operator asks for. The campaign shape is its seats with their lenses and models, and its expected rounds, sized per `crucible:redteaming` § Panels; approving the design approves the launch. Record the approved shape as one gate entry in the decision record; the campaign-start readout names any departure from it. Wait for the operator. Changes requested → amend the spec, re-run the self-review, update the decision record, re-gate. Approved → hand off.
+None where step 4's answer approved a draft. Otherwise present inline the decision record's decisions, its open decision asks and the campaign shape stated at step 4, and say what changed in the spec since the design as the operator approved it, or since their last answer here; the gate never requires reading the spec file, and shows whatever part of it the operator asks for. Record the shape as one gate entry in the decision record; the campaign-start readout names any departure from it. Wait for the operator only where this message carries a decision ask: one the record holds open, or a change the test in `crucible:using-crucible` § Decision asks sends to them; otherwise hand off. While waiting: changes requested → amend the spec, re-run the self-review, update the decision record, re-gate; approved → hand off.
 
 ## Handoff
 
