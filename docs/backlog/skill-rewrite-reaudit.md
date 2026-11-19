@@ -67,3 +67,25 @@ did one bring a defect, and what happened on the cases its wording test did
 not reach: a callee with several callers, a fold-in larger than a loop merge,
 the fix-wave sentence, prose and no-seam work, the design-stage sentence, the
 inline paths, a reviewer on the shipped wording, and the bounded role.
+
+In the same runs, read what the lean-gates narrowing did
+(`docs/decisions/operator-steering.md`, `docs/decisions/branch-review.md`,
+`docs/decisions/adjudication.md`, `docs/decisions/terminal-pass.md`). Five
+things, each against what a read of sixteen sessions of one code project
+found before it:
+
+- the share of decisions put to the operator that are housekeeping, against
+  about 30% in that read;
+- later full-scope passes per first pass, against about 1.1 in that read;
+- any BLOCKER or MAJOR a later pass raised, and whether the first pass
+  missed it or a wave introduced it;
+- any choice the operator said they should have been asked, which the test
+  for a choice no skill puts to them withheld;
+- any controller ruling on a literal-reading finding that a later pass or
+  the operator reversed.
+
+Such a read shows what the remaining passes caught and what the operator
+objected to. It cannot show a defect that a pass not run would have caught,
+what the narrowed steps cost, or what every pass missed: the earlier counts
+have no ground truth behind them, and the figures are approximate. Report
+aggregate figures only for any project, as above.
