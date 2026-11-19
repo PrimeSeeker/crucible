@@ -96,8 +96,8 @@ changes is which choices wait for the operator, stated under Decisions.
 ## Decisions
 
 Each is lightly held. D1 and D2 are the operator's choices among options the
-controller put, their wording since refined by the controller. D5 is the controller's proposal; whether a stop before the
-campaign stays is the operator's ruling, open as this is written. D7's
+controller put, their wording since refined by the controller. D5 is the controller's proposal; the operator ruled for its
+conditional stop, over no stop and over the stop as it stood. D7's
 target is the operator's proposal, its conditions the controller's. The rest
 are the controller's proposals.
 
