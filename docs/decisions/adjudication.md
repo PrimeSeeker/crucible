@@ -30,9 +30,9 @@ conflict (is the plan or the work wrong?); a reviewer's finding that a
 binding item's literal reading reaches a case its author did not
 consider is such a plan conflict. A fresh adjudicator seat, on the
 default role (`docs/decisions/model-roles-and-effort.md`), rules
-instead on any of these that touches binding content, as a
-literal-reading finding always does, or the Intent, and on every
-dispute about
+instead on any of these that touches binding content or the Intent,
+a literal-reading finding only where the controller concludes the
+binding text itself must change, and on every dispute about
 a diff the controller wrote: any commit it made itself, such as a task
 it implemented inline, which its ledger line `Task <N>: inline`
 records, or Finish's open items, and any very-small-lane diff.
@@ -124,7 +124,8 @@ literal reading reaches a case its author did not consider is a plan
 conflict, whether the binding text or the work is wrong; until
 2026-11-02 the controller ruled on it, not sending it to the
 adjudicator as an ordinary dispute, except on a diff it wrote (§ The
-controller rules, with three independent reads). Either seat's ruling on such a finding passes the
+controller rules, with three independent reads), and has again
+since 2026-11-19 (§ Literal-reading findings). Either seat's ruling on such a finding passes the
 containment test whichever way it goes, since upholding the literal
 reading changes no binding content and would otherwise go untested.
 (Basis: judgment, accepted by the maintainer, 2026-10-28; judgment, a
@@ -144,9 +145,10 @@ D4), and one on a diff the controller wrote, since a ruling on its own
 diff that only the close readout lists would be silent to an operator
 who does not read diffs (the umbrella's D2). The `Task <N>: inline`
 line keeps that trigger readable after a compaction. A plan conflict
-is one of the disputes this sorts: one touching binding content, as a
-literal-reading finding always does, or the Intent goes to the
-adjudicator, whose ruling still passes the containment test; one
+is one of the disputes this sorts: one touching binding content or the
+Intent goes to the adjudicator, a literal-reading finding only as
+§ Literal-reading findings states, and the ruling still passes the
+containment test; one
 touching neither stays the controller's; one that is a design judgment
 goes to the operator. The adjudicator's inputs point to the Deviations
 paragraph, so no partial restatement of what binds can drop a clause.
@@ -159,6 +161,27 @@ brainstorm; for plan conflicts, the controller's ruling on a task
 review's finding against a narrower first draft, read from the
 umbrella's D4 and this change's spec.)
 
+### Literal-reading findings
+
+A read of sixteen sessions of one code project on crucible 0.33.x, over
+twelve days, counted 16 adjudicator seats: 13 ruled on a literal-reading
+finding, and 11 of those 13 dismissed it. The counts cannot be reproduced
+from this repository, the transcripts not being in it. (Basis: measured.)
+Since 2026-11-19 the controller rules on such a finding with its evidence,
+and its ruling passes the containment test as an adjudicator's does. Two
+cases keep the fresh seat: a finding on a diff the controller wrote, as
+every dispute about one does, and one where the controller concludes the
+binding text itself must change, so a change to binding content still gets
+an independent read. The branch reviewer checks every ruling of the task
+loop against the final code, and a ruling made in the branch review, which
+no later pass reads, reaches the operator in the close readout with every
+other ruling the controller made. The alternatives put were keeping the
+rule, and the controller accepting such a finding with an adjudicator to
+dismiss one. (Basis: judgment, the controller's recommendation among
+those options, to which the maintainer answered "Agreed, unlikely to miss
+anything substantive", read by the controller as choosing it; the two
+cases kept for the adjudicator the controller's, in the spec campaign.)
+
 ## Rejected
 
 - **Adjudicating only at the cap**, upstream's rule: a wrong finding cost
@@ -167,6 +190,9 @@ umbrella's D4 and this change's spec.)
   2026-11-02: the audit found it had run 5 times and upheld nothing, and
   the independent read stays where the controller's lean would cost most
   (§ Why).
+- **Every literal-reading finding to a fresh adjudicator**, the rule from
+  2026-11-02 to 2026-11-19: in a read of one code project's sessions, 11
+  of 13 such rulings dismissed the finding (§ Why).
 - **The controller ruling on findings against its own diff**, or parking
   a BLOCKER or MAJOR on its own ruling: it would be grading itself, in a
   ruling silent to an operator who does not read diffs (§ Why).
@@ -182,6 +208,7 @@ umbrella's D4 and this change's spec.)
 
 ## Changes
 
+- 2026-11-19: a literal-reading finding is the controller's to rule on, with its evidence and through the containment test; a fresh adjudicator rules on one only on a diff the controller wrote or where the controller concludes the binding text itself must change; because in a read of sixteen sessions of one code project, 13 of 16 adjudicator seats ruled on such a finding and 11 of those 13 dismissed it.
 - 2026-11-03: the copied statement of what binds is the shared seat reference's one core section, § What binds, into which § What binds in a document and § What binds in a range merged.
 - 2026-11-03: the adjudicator's prompt also carries § Binding changes, where the shared seat reference's grading of a range moved out of § What binds in a range.
 - 2026-11-02: the adjudicator's prompt carries the shared seat
