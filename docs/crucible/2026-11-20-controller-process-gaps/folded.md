@@ -52,10 +52,11 @@ those campaigns.
 
 ### Goals
 
-- G1. A ruling that changes the artifact, arriving once the stop round's fix
-  list has frozen, has a stated path up to the campaign's close.
-- G2. The terminal pass reads the artifact after the rulings on the asks
-  that were open when the campaign stopped, not before them.
+- G1. A ruling on a campaign's ask that arrives after its last numbered
+  round's fix list has frozen has a stated way into the artifact before the
+  terminal pass; one that arrives later is named at the close.
+- G2. The terminal pass reads the artifact after the rulings on the asks D2
+  holds it for, not before them.
 - G3. The round record holds the readout the operator received.
 - G4. The operator reads a carried question in plain words beside the
   seat's own.
@@ -107,63 +108,62 @@ further wave; after the close a structural change takes a supersede, as
 ### What is not measured
 
 - How often a ruling arrives after the terminal pass is dispatched once D2
-  holds, and what D1's unverified edit before the pass lets through.
+  holds.
 - Whether the wording change of D3 stops controllers shortening the record:
   the existing rule already forbade it. Only a read of transcripts can show
   it; D5 asks for one.
 
 ## Decisions
 
-Each is lightly held. All are the controller's proposals, approved by the
-operator with the design or at the campaign gate; they chose D2 over never
-waiting. D4 is narrower than what they approved, which also marked a
-question nothing turns on (Non-goals).
+Each is lightly held. All are the controller's proposals. The operator
+approved the design they come from and chose D2 over never waiting. D1's
+second case and D4 are as the controller settled them when the operator
+left both calls to it: D1 checks a ruling's change as any fix is checked,
+where the operator had accepted at the campaign gate that it go unchecked;
+D4 is without the mark for a question nothing turns on, which they had
+accepted there (Non-goals).
 
 - **D1. Where a ruling's change goes.** In a spec campaign, an operator's
-  ruling that changes the artifact goes by when it arrives.
-  1. While a numbered round's fix list can still take it: it rides the next
-     list to freeze, as today.
-  2. Once the stop round's fix list has frozen: it waits for that round to
-     close. Then, before the terminal pass is dispatched, the controller
-     makes the change itself, held to what `fix-application.md` asks of any
-     fix (fix altitude, the propagation sweep, the trace, a predicate run),
-     checks that its commit's diff holds that change and nothing else, and
-     records beside the ruling a line saying what the change does, the sites
-     changed and the commit. The entry goes in the
-     `## Rulings and corrections` that `round-readout.md` sends the ruling
-     to: the round whose ask it answers, or the stop round's where it
-     answers none. No blind verifier runs: the terminal pass is dispatched
-     at the new revision, re-reads full-scope, and checks each such entry
-     against the artifact. A change that adds, removes or re-shapes a major
-     mechanism is first read by a further numbered round, within the cap;
-     where the cap is spent, it is the cap's decision ask.
-  3. From the terminal pass's dispatch on: the change waits for the
-     campaign's close and is handled as a change after the close is. Until
-     then its entry says the change is pending.
+  ruling that changes the artifact takes the first of these that applies.
+  1. A numbered round's fix list can still take it: it rides the next list
+     to freeze, as today.
+  2. The last numbered round's fix list has frozen and the terminal pass is
+     not yet dispatched: once that round has closed and D2's wait has ended,
+     the rulings in hand ride one further fix list of that round, its
+     rulings list. The list is written under that round's
+     `## Rulings and corrections`, and is applied and blind-verified as
+     `fix-application.md` states for any fix list; the verifier's report is
+     `verifier-rulings.md` in that round's directory, a re-check's
+     `verifier-rulings-recheck.md`. For the stop rule and the cap it is that
+     round's own fix wave: one that adds, removes or re-shapes a major
+     mechanism is followed by another round or, at the cap, by the cap's
+     ask, as that text stands. The terminal pass then re-reads full-scope.
+  3. Later: the change waits for the campaign's close. Its entry says the
+     change is still to be made, and the close readout names it. After the
+     close it is handled as a change after the close is, the ruling standing
+     as the operator's confirmation where `flip-paths.md` asks for one; a
+     supersede is still asked.
 
   A premise ruling's change takes these cases as any other ruling's does.
-  *Rationale:* three controllers improvised three procedures. Round 0's
-  fixes already run without a verifier because the next full-scope read
-  checks them (`skills/redteaming/SKILL.md` § Round 0 — mechanical
-  pre-pass); a change made before the terminal pass is in the same
-  position, and the pass, which reads the round records, is given the entry
-  to check. A ruling that comes after the dispatch has the path every
-  change after the close has; applying it in the pass's further wave would
-  need a second read that may already be spent, and one that re-shapes a
-  major mechanism would need a round and a second pass that the record
-  layout has no place for. D2 keeps ordinary asks out of that window. A
-  premise ask holds nothing (C1), so its ruling can fall there, as
-  `docs/decisions/spec-campaign.md` accepted on 2026-11-02.
-- **D2. The terminal pass waits for the open asks.** When a round's readout
-  finds the campaign stopped, the controller dispatches the terminal pass
-  only once every decision ask a round readout of the campaign carries is
-  answered, where the ask's answer, in the controller's judgment, could
-  change the artifact. The stop round's readout says the pass waits and
-  names each ask it waits for, an earlier round's included. An answer that
-  defers the decision ends the wait for that ask, which stays open and
-  travels on as today. A premise ask holds nothing, as today, and neither
-  does a carried question. *Rationale:* a pass that runs before the answer
-  reads text that is about to change. It adds a pause of the kind
+  *Rationale:* three controllers improvised three procedures, and the first
+  of them, a further wave in the closed round, is the one that needs no new
+  rule: the items, their swept sites, the predicate's output, the landed
+  verdicts, the untraced hunks, the repair, the re-shape test and the cap
+  are existing text once the change is an ordinary fix wave. The cost is
+  one bounded-role dispatch in a campaign with a late ruling, and two file
+  names. A ruling that comes after the pass's
+  dispatch has the path every change after the close has; D2 keeps ordinary
+  asks out of that window, and a premise ask, which holds nothing (C1), can
+  fall there, as `docs/decisions/spec-campaign.md` accepted on 2026-11-02.
+- **D2. The terminal pass waits for the open asks.** Before dispatching the
+  terminal pass, the controller waits for an answer to every decision ask
+  the campaign's round readouts carry whose answer, in its judgment, could
+  change the artifact. The readout of the round the pass would follow says
+  the pass waits and names each such ask, an earlier round's included. An
+  answer that defers the decision ends the wait for that ask, which stays
+  open and travels on as today. A premise ask holds nothing, as today, and
+  neither does a carried question. *Rationale:* a pass that runs before the
+  answer reads text that is about to change. It adds a pause of the kind
   `docs/decisions/spec-campaign.md` records as retired on 2026-11-02, when a
   pending premise ask stopped holding the campaign's stop: that hold could
   last as long as the operator took over the premise of the work. This one
@@ -191,9 +191,8 @@ question nothing turns on (Non-goals).
   `docs/backlog/folded-run-process-gaps.md`, which this branch adds, is
   deleted; its remaining points are the non-goals above.
   `docs/backlog/skill-rewrite-reaudit.md` gains these things to read in
-  later runs: whether a ruling arriving after the stop round went by D1,
-  and whether a change made under its second case left a defect a later
-  stage caught; whether recorded readouts match the messages delivered;
+  later runs: whether a ruling arriving after the last numbered round
+  went by D1, and what its rulings list's verifier found; whether recorded readouts match the messages delivered;
   whether a plan phase met a ruling between its readout and its terminal
   pass. It also keeps the item's one figure on the point lean-gates
   addressed, as a figure from before that change: on that run a terminal
@@ -210,9 +209,11 @@ question nothing turns on (Non-goals).
 - **C2. A doubt is always carried, in the seat's words.** D4 adds to the
   readout's item; it removes neither the carrying nor the quote, and the
   three kinds of correction the terminal pass reports stay as they are.
-- **C3. Fixed names and states stay.** The round directory's file names, the
-  state line's tokens and their order, and the section title
-  `## Rulings and corrections` are unchanged; no file name is added.
+- **C3. Fixed names and states stay.** The round directory's existing file
+  names, the state line's tokens and their order, and the section title
+  `## Rulings and corrections` are unchanged. Two file names are added to
+  the round directory: `verifier-rulings.md` and
+  `verifier-rulings-recheck.md`.
 - **C4. The tail stays bounded.** After the terminal pass, at most one
   further fix wave and one second read.
 - **C5. The blind verifier's input stays the fix list and the diff.**
@@ -229,22 +230,22 @@ question nothing turns on (Non-goals).
 
 ## Interfaces & boundaries
 
-- **A ruling's entry under `## Rulings and corrections`** holds the dated
-  ruling and, for a change under D1's second case, a line saying what the
-  change does, the sites changed and the commit; for one under its third
-  case, that the change is pending. Its readers: the terminal pass, below;
-  a controller resuming after compaction, which compares the entry with the
-  artifact before making the change again.
-- **The terminal pass's stop check** counts a change an entry records as
-  made after the stop round as it counts that round's fix list: one that
-  adds, removes or re-shapes a major mechanism, with no numbered round
-  after it, is a mismatch.
-- **The terminal pass's decision-record check** reads each entry that
-  records a change as made against the artifact: a change the artifact does
-  not carry at a site the entry names is a correction flagged
-  `CONCLUSION-CHANGING`. An entry marked pending is none.
-- **The card's `fix-wave` selector** is `yes` also where a change under D1's
-  second case followed the final round.
+- **The rulings list** sits under the last numbered round's
+  `## Rulings and corrections`, in the form of a fix list, with its
+  verifier's verdicts recorded there. Its readers: the blind verifier, with
+  the diff, as for any fix list; the terminal pass, which reads the round
+  records and whose stop check counts it as a fix list of that round; a
+  controller resuming after compaction, which treats a rulings list with no
+  `verifier-rulings.md` beside it as a fix list not yet applied and
+  re-checks it item by item.
+- **The verifier's card** names `verifier-rulings.md` and
+  `verifier-rulings-recheck.md` among its report paths; the round record's
+  directory layout lists both.
+- **The card's `fix-wave` selector** of the terminal pass is `yes` where the
+  final round produced a fix wave, its rulings list's included.
+- **A ruling whose change waits for the close** has an entry saying so; the
+  close readout's list has an item naming each, read by the operator and by
+  whoever makes the change after the close.
 - **`brainstorm-decisions.md`** takes every operator ruling, as today
   (`skills/redteaming/references/formats.md`).
 - **The readout's carried-question item** is read by the terminal pass,
@@ -256,7 +257,11 @@ question nothing turns on (Non-goals).
 - **A1.** `python -m pytest tests/` passes on the branch tip.
 - **A2.** `python tools/instrument_agents.py check` passes.
 - **A3.** The search `to the operator, compact` over `skills/` finds a
-  match on the base and none on the tip.
+  match on the base and none on the tip. The search
+  `verifier-rulings-recheck.md` over `skills/` finds none on the base and,
+  on the tip, a match in each of `references/round-record.md`,
+  `references/fix-application.md` and `verifier-prompt.slots.md` of
+  `skills/redteaming/`.
 - **A4.** The prose-budget test passes on the tip, and
   `tests/test_prose_budget.py` is unchanged from the base, so `TOTAL_CAP` is
   the base's.
@@ -276,8 +281,9 @@ Advisory; an implementer may replace any of it.
   `skills/redteaming/references/round-readout.md`, which a controller
   already reads when a ruling arrives after a round closed; § Stop rule and
   terminal pass points at it and carries D2's wait in a sentence or two.
-- The terminal pass's two added checks are a sentence each, in the stop
-  check and the decision-record check of its source.
+- The stop check of the terminal pass's source may need a word so that "its
+  fix list" reads as covering a rulings list; nothing else in it changes for
+  D1.
 - D3 is a deletion of "compact" and a few words on each of the two
   sentences that deliver a readout.
 - D4 is a clause on one bullet of the readout's list and a clause on the
@@ -295,7 +301,7 @@ T1, T2, T3, strictly in this order: the tasks share a tree and some files.
 |---|---|
 | `skills/redteaming/references/fix-application.md` | T1 |
 | `skills/redteaming/references/premise-asks.md` | T1 |
-| `skills/redteaming/references/flip-paths.md` | T1 |
+| `skills/redteaming/verifier-prompt.slots.md` | T1 |
 | `skills/redteaming/terminal-pass-prompt.slots.md` | T1 |
 | `docs/decisions/spec-campaign.md` | T1 |
 | `docs/backlog/folded-run-process-gaps.md`, `docs/backlog/skill-rewrite-reaudit.md` | T3 |
@@ -303,25 +309,27 @@ T1, T2, T3, strictly in this order: the tasks share a tree and some files.
 Overlaps, each ordered by the task order:
 
 - `skills/redteaming/SKILL.md`: T1 (§ Stop rule and terminal pass: the
-  wait, when the pass re-reads full-scope, the cap's ask; § Inputs and
-  state's Rehydration, as T1's deferral decides), then T2 (the sentence of
+  wait, and a pointer to D1's home; § Inputs and state's Rehydration: the
+  rulings list with no verifier report beside it), then T2 (the sentence of
   § Stop rule and terminal pass that delivers the close).
 - `skills/redteaming/references/round-readout.md`: T1 (its last paragraph;
-  the decision-asks bullet, for the line saying the pass waits), then T2
-  (the carried-questions bullet, the sentence that records and delivers).
-- `skills/redteaming/references/round-record.md`: T1 (what
-  `## Rulings and corrections` holds), then T2 (field 8; the terminal-pass
-  record's sentence on the close).
+  in its list, the line saying the pass waits and the item naming a ruling
+  whose change waits for the close), then T2 (the carried-questions bullet,
+  the sentence that records and delivers).
+- `skills/redteaming/references/round-record.md`: T1 (the directory
+  layout's two new names; what `## Rulings and corrections` holds), then T2
+  (field 8; the terminal-pass record's sentence on the close).
 - `skills/redteaming/terminal-pass-prompt.source.md`, and the files rendered
-  from it: T1 (the stop check, the decision-record check), then T2 (the
-  sentence of mandate 2 that checks a carried question's quote). Each runs
-  `python tools/instrument_agents.py write` in its own commit.
+  from it: T1 (the stop check, where its wording needs the rulings list),
+  then T2 (the sentence of mandate 2 that checks a carried question's
+  quote). Each runs `python tools/instrument_agents.py write` in its own
+  commit where it edits the source.
 - `docs/decisions/fix-verification-and-merge.md`: T1 (rulings riding a fix
-  list, and the change that runs without a verifier), then T2 (its Readout
-  coverage position).
-- `docs/decisions/terminal-pass.md`: T1 (the stop check, the
-  decision-record check), then T2 (its sentences on recording and
-  delivering the close, and on the carried-question check).
+  list, the rulings list and its verifier), then T2 (its Readout coverage
+  position).
+- `docs/decisions/terminal-pass.md`: T1 (the stop check, where T1 changes
+  it), then T2 (its sentences on recording and delivering the close, and on
+  the carried-question check).
 - `docs/decisions/evidence-and-findings.md`: T1 (the 2026-11-02 passage
   saying where a later premise ruling goes), then T2 (its Questions
   position).
@@ -337,9 +345,9 @@ Overlaps, each ordered by the task order:
   restates none of it.
 - **The delivered close.** T1 leaves the sentences that record and deliver
   a readout or a close as they are; T2 owns them.
-- **The pass's source.** T1 edits the stop check and the decision-record
-  check and leaves mandate 2's sentence on carried questions as it is; T2
-  edits that sentence and nothing T1 wrote.
+- **The pass's source.** T1 edits at most the stop check and leaves mandate
+  2's sentence on carried questions as it is; T2 edits that sentence and
+  nothing T1 wrote.
 - **The item's deletion.** T3 deletes the backlog item; T1 and T2 cite this
   document for what was observed, never that file.
 
@@ -349,7 +357,7 @@ Overlaps, each ordered by the task order:
 |---|---|---|
 | A1 | standing test: the suite | each task runs what the installed implementer template asks; T3's run is on the tip |
 | A2 | standing test: `tests/test_instrument_agents.py` | T1, T2 |
-| A3 | one-time check: the search, failing on the base | T2 |
+| A3 | one-time checks: each search, failing on the base | T2 (`to the operator, compact`), T1 (`verifier-rulings-recheck.md`) |
 | A4 | standing test: `tests/test_prose_budget.py`, at T1 and T2; one-time check: `git diff 1f02fc9 -- tests/test_prose_budget.py` prints nothing | T2 |
 | A5 | why-not a test: whether a line says what changed and why is prose only review can judge; `tests/test_decision_records.py` holds the section's presence | T1, T2 |
 | A6 | one-time check for the file's absence; why-not a test for the item's reads and figure, prose only review can judge | T3 |
@@ -357,75 +365,78 @@ Overlaps, each ordered by the task order:
 
 ## Task 1: A ruling's path, and the wait
 
-**Why.** D1 and D2 give a ruling that changes the artifact a path from the
-stop round's frozen list to the campaign's close, and put the terminal pass
-after the answers it can wait for.
+**Why.** D1 and D2 give a ruling that arrives after the last numbered
+round's list a way into the artifact that the terminal pass then reads, and
+name at the close the one that arrives too late for it.
 
-**Files.** `skills/redteaming/SKILL.md` (§ Stop rule and terminal pass, its
-sentence on when the pass re-reads full-scope and the cap's ask included;
-§ Inputs and state's Rehydration paragraph, as the deferral below decides);
-`skills/redteaming/references/round-readout.md` (its last paragraph; the
-decision-asks bullet of its list, which closes with "nothing else", for the
-line saying the pass waits);
-`skills/redteaming/references/round-record.md` (the sentence on
-`## Rulings and corrections`);
+**Files.** `skills/redteaming/SKILL.md` (§ Stop rule and terminal pass, for
+the wait and a pointer to D1's home; § Inputs and state's Rehydration
+paragraph, for the rulings list with no verifier report beside it);
+`skills/redteaming/references/round-readout.md` (its last paragraph; in its
+list, which closes with "nothing else", the line saying the pass waits and
+an item naming each ruling whose change waits for the close);
+`skills/redteaming/references/round-record.md` (the directory layout, for
+the two new names; the sentence on `## Rulings and corrections`);
 `skills/redteaming/references/fix-application.md` (the sentence listing
-what rides a fix list; the sentence that dispatches the blind verifier
-after every apply but round 0's);
+what rides a fix list; the sentence naming the re-check's report);
 `skills/redteaming/references/premise-asks.md` (the ruling's route in a
-spec campaign); `skills/redteaming/references/flip-paths.md` (its sentence
-on what corrects binding content before the campaign closes);
-`skills/redteaming/terminal-pass-prompt.source.md` (the stop check, the
-decision-record check) and what `python tools/instrument_agents.py write`
-renders from it; `skills/redteaming/terminal-pass-prompt.slots.md` (the
-`fix-wave` selector); `docs/decisions/spec-campaign.md` (its Stop rule and
-cap position, and the reasoning on the hold retired on 2026-11-02);
-`docs/decisions/terminal-pass.md` (the stop check, the decision-record
-check); `docs/decisions/fix-verification-and-merge.md` (what rides a fix
-list, and which applies run a verifier);
-`docs/decisions/evidence-and-findings.md` (the 2026-11-02 passage saying
-where a later premise ruling goes); the `redteaming` line of
+spec campaign); `skills/redteaming/verifier-prompt.slots.md` (its report
+path slot); `skills/redteaming/terminal-pass-prompt.slots.md` (the
+`fix-wave` selector, if its wording does not already cover a rulings list);
+`skills/redteaming/terminal-pass-prompt.source.md` (the stop check, on the
+same condition) and what `python tools/instrument_agents.py write` renders
+from it; `docs/decisions/spec-campaign.md` (its Stop rule and cap position,
+and the reasoning on the hold retired on 2026-11-02);
+`docs/decisions/terminal-pass.md` (the stop check, where T1 changes it);
+`docs/decisions/fix-verification-and-merge.md` (what rides a fix list; the
+rulings list and its verifier, with the form this decision had first and
+why it went); `docs/decisions/evidence-and-findings.md` (the 2026-11-02
+passage saying where a later premise ruling goes); the `redteaming` line of
 `tests/prose-budget.txt`. Inputs:
 `.crucible/controller-process-gaps/brainstorm-decisions.md`. Consumers
-checked in the brainstorm: the stub of `skills/redteaming/SKILL.md` § Flip
-paths starts at the campaign's close, where D1's third case hands over, and
-is unchanged; the sentence of § Stop rule and terminal pass on the pass's
-further wave is unchanged, since no ruling joins it;
-`skills/redteaming/references/plan-phase.md` is out of scope (Non-goals);
-`skills/redteaming/references/folded-lane.md` applies the spec campaign
-unchanged; `tests/test_report_filenames.py` reads the round directory's
-layout, to which no name is added (C3).
+checked in the brainstorm: `skills/redteaming/references/flip-paths.md`
+says fix waves correct binding content until the campaign closes, which a
+rulings list is, and is unchanged, as is the stub of
+`skills/redteaming/SKILL.md` § Flip paths; the sentence of § Stop rule and
+terminal pass on the pass's further wave is unchanged, since no ruling
+joins it; `skills/redteaming/references/plan-phase.md` is out of scope
+(Non-goals); `skills/redteaming/references/folded-lane.md` applies the spec
+campaign unchanged; `tests/test_report_filenames.py` collects the report
+names of the cards and of the round directory's layout and checks them
+against the host's write filter, which neither new name matches.
 
 **Contract.** Enacts D1 and D2 under C1, C3, C4, C5, C6, C7, C8, C9.
 Produces the one statement of D1 that the other sites point at, and the
-entry form of Interfaces & boundaries' first item. Each text it adds to a
-file the plan phase also reads (`round-readout.md`, `fix-application.md`)
-says it applies to a spec campaign, so the plan phase gets no path from it.
-- Deferred to implementation: whether the Rehydration paragraph needs a
-  clause for an entry recorded with no commit beside it.
+two file names of C3 at the three sites that list report names (the layout,
+the verifier's card, `fix-application.md`). Each text it adds to a file the
+plan phase also reads (`round-readout.md`, `fix-application.md`) says it
+applies to a spec campaign, so the plan phase gets no path from it.
+- Deferred to implementation: whether a resume during D2's wait, at
+  `state: readout`, should deliver the recorded readout again.
 
 **Acceptance.**
 - Happy: a controller with a ruling in hand finds, from § Stop rule and
   terminal pass or the readout reference, which of D1's three cases it is
   in and what to do; § Stop rule and terminal pass states the wait, what
-  ends it and what the stop round's readout says; the pass's stop check
-  and decision-record check read an entry's change.
-- Edge: a ruling arriving after the stop round's list froze and before that
-  round closed waits for the close and then goes by the second case; an
-  ask of an earlier round still open at the stop holds the pass and is
-  named in the stop round's readout; an answer that defers a decision ends
-  the wait and changes nothing; a ruling on a premise ask arriving before
-  the dispatch goes by the second case and held nothing meanwhile, and one
-  arriving after it waits for the close; a ruling that keeps the decision
-  changes nothing; a change under the second case that re-shapes a major
-  mechanism at a spent cap is the cap's ask; a ruling arriving while a
-  later numbered round can still take it rides that round's list, and no
-  wait applies.
+  ends it and what the readout says; the layout, the verifier's card and
+  `fix-application.md` name the rulings list's two reports.
+- Edge: a ruling arriving after the last round's list froze and before that
+  round closed waits for the close and rides the rulings list; an ask of an
+  earlier round still open holds the pass and is named in the last round's
+  readout; an answer that defers a decision ends the wait and changes
+  nothing; a campaign that ends at the cap has its wait and its rulings
+  list on the cap round, and a rulings list that re-shapes a major mechanism
+  there is the cap's ask as it stands; a ruling on a premise ask in hand
+  when the wait ends rides the rulings list, having held nothing; a ruling
+  that keeps the decision changes nothing; a ruling arriving while a later
+  numbered round can still take it rides that round's list, and no wait
+  applies.
 - Error: an ask the controller judged could not change the artifact is
-  answered with a change after the pass was dispatched: its entry says
-  pending, the pass reports nothing for it, and the change waits for the
-  close; a change the controller recorded as made and did not land at a
-  named site is a flagged correction of the pass.
+  answered with a change after the pass was dispatched: its entry says the
+  change is still to be made, the close readout names it, and it is made
+  after the close; a controller resuming with a rulings list recorded and no
+  `verifier-rulings.md` beside it re-checks the list against the artifact
+  before applying anything.
 - Integration: `python tools/instrument_agents.py check` and the suite pass;
   each of the four records has its new `## Changes` line; the record for
   D2 says what it adds back beside the hold retired on 2026-11-02.
