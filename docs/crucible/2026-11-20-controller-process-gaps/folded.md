@@ -71,13 +71,14 @@ on two runs and on one run; neither was counted across those campaigns.
   `docs/backlog/skill-rewrite-reaudit.md` holds the readout owed on it.
 - Whether a doubt about the request, the Intent or a firm decision is
   carried, and that it is quoted as written: both stay (C2).
-- The plan phase: its decision asks reach the operator in the close
-  delivered after its terminal pass, so a ruling on one already goes by
-  `flip-paths.md`.
+- The plan phase. The three known cases were spec campaigns, and the plan
+  phase's tail has no numbered round and no further wave for D1's cases to
+  use. A ruling on its readout's ask that arrives before its terminal pass
+  stays without a stated path; D5 asks later runs whether one occurs.
 - The very-small lane and SDD's close readout, which is a message and is
   not recorded.
-- A check that a delivered message matches its record: no seat sees the
-  message (`docs/decisions/operator-steering.md` § Rejected).
+- A check that a delivered message matches its record: no seat reads the
+  operator's messages, and the terminal pass's check stops at the records.
 - A host's permission checker refusing a dispatch sent beside another tool
   call: not crucible's text.
 - A release: it follows the landing as its own step.
@@ -104,9 +105,9 @@ waiting and never waiting, twice, the second time with the hold retired on
 2026-11-02 named, and they chose the wait. Two decisions differ from the
 design as first approved, and the operator accepted both at the campaign
 gate: D1's second case runs no blind verifier, where the design had the
-change checked as any fix is; D4 keeps the quote in the readout and leaves a
-question nothing turns on unanswered, where the design moved the quote to
-the record and had the controller answer such a question.
+change checked as any fix is; D4 keeps the quote in the readout and leaves a question nothing turns on unanswered, where the design moved the
+quote to the record, had the controller answer such a question and listed
+it no further.
 
 - **D1. Where a ruling's change goes.** An operator's ruling that changes
   the artifact takes the first of these that applies.
@@ -115,23 +116,26 @@ the record and had the controller answer such a question.
   2. No such list remains and the terminal pass is not yet dispatched: the
      controller makes the change itself, held to what
      `fix-application.md` asks of any fix (fix altitude, the propagation
-     sweep, the trace, a predicate run), commits it, and records under the
-     last numbered round's `## Rulings and corrections` the ruling, the
-     sites changed and the commit. No blind verifier runs on it: the
+     sweep, the trace, a predicate run), commits it, and records the sites
+     changed and the commit beside the ruling, in the
+     `## Rulings and corrections` that `round-readout.md` sends the ruling
+     to: the round whose ask it answers, or the last numbered round's where
+     it answers none. No blind verifier runs on it: the
      terminal pass is then dispatched at the new revision as a full-scope
      re-read, and its decision-record check reads the ruling against the
      artifact.
   3. The terminal pass is dispatched and its one further fix wave is not yet
      applied: the change joins that wave's fix list, with the pass's own
      findings if it has any, and is verified and re-read as that wave is.
-  4. Later than that: it goes as a change after the campaign's close does,
-     by `flip-paths.md`.
+  4. Later than that: it waits for the campaign's close and goes by
+     `flip-paths.md`, as any change from the close on does.
 
-  Under 2 or 3, a change that adds, removes or re-shapes a major mechanism
-  is read by a further numbered round before the campaign goes on, to the
-  terminal pass or to its second read, within the cap; where the cap is
-  spent, it is the cap's decision ask. A premise ruling's change in a spec
-  campaign goes the same way. *Rationale:* three controllers improvised
+  Under 2, a change that adds, removes or re-shapes a major mechanism is
+  read by a further numbered round before the terminal pass, within the cap;
+  where the cap is spent, it is the cap's decision ask. Under 3, such a
+  change joins no wave and goes as the fourth case does, so the tail stays
+  bounded (C4). A premise ruling's change in a spec campaign takes these
+  cases as any other ruling's does. *Rationale:* three controllers improvised
   three procedures. Round 0's fixes already run without a verifier because
   the next full-scope read checks them
   (`skills/redteaming/SKILL.md` § Round 0 — mechanical pre-pass); a ruling's
@@ -166,8 +170,7 @@ the record and had the controller answer such a question.
   is still always carried to the readout and still quoted as written with
   its id. The readout states it first in plain words, and where, in the
   controller's judgment, no answer to it would change the artifact, says
-  so. A question so marked that the
-  operator leaves unanswered is not seeded into the ledger at SDD's Setup.
+  so. A question so marked travels on as any carried question does.
   *Rationale:* the quote is there so the operator reads the seat's words
   and not the controller's account of them
   (`docs/decisions/evidence-and-findings.md`: before it, seat questions were
@@ -179,11 +182,12 @@ the record and had the controller answer such a question.
   `docs/backlog/folded-run-process-gaps.md`, which this branch adds, is
   deleted: this document carries what it observed, and its remaining points
   are the non-goals above. `docs/backlog/skill-rewrite-reaudit.md` gains
-  three things to read in later runs: whether a ruling after the last
+  these things to read in later runs: whether a ruling after the last
   numbered round went by D1, and whether a change made under its second
   case left a defect a later stage caught; whether recorded readouts match
   the messages delivered; whether the operator answered a question marked
-  under D4 with a change.
+  under D4 with a change; whether a plan phase met a ruling between its
+  readout and its terminal pass.
 
 ## Constraints & invariants
 
@@ -212,9 +216,9 @@ the record and had the controller answer such a question.
 
 ## Interfaces & boundaries
 
-- **The last numbered round's `## Rulings and corrections`** holds, for a
-  change under D1's second case, the dated ruling, the sites changed and the
-  commit. Its readers: the terminal pass, which reads the round records for
+- **A ruling's entry under `## Rulings and corrections`** holds, for a
+  change under D1's second case, the sites changed and the commit beside the
+  dated ruling. Its readers: the terminal pass, which reads the round records for
   its stop check; a controller resuming after compaction, which compares the
   entry with the artifact before making the change again.
 - **The terminal pass's stop check** counts a ruling's change made after the
@@ -229,8 +233,6 @@ the record and had the controller answer such a question.
 - **The readout's carried-question item** is read by the terminal pass,
   whose report names a question missing from its readout or changed in
   meaning there; the plain statement is part of what it reads.
-- **SDD's Setup** seeds carried questions the operator left unanswered; it
-  reads D4's mark in the recorded readout to leave a marked one out.
 
 ## Acceptance
 
@@ -238,13 +240,13 @@ the record and had the controller answer such a question.
 - **A2.** `python tools/instrument_agents.py check` passes.
 - **A3.** The search `to the operator, compact` over `skills/` finds a
   match on the base and none on the tip.
-- **A4.** `tests/prose-budget.txt` matches the tip's word counts, and the
-  skills' total is at or under `TOTAL_CAP` as it stood on the base.
+- **A4.** The prose-budget test passes on the tip, and
+  `tests/test_prose_budget.py` is unchanged from the base, so `TOTAL_CAP` is
+  the base's.
 - **A5.** Each decision record whose position changed carries a new dated
   line under `## Changes` saying what changed and why.
 - **A6.** `docs/backlog/folded-run-process-gaps.md` is absent on the tip,
-  and `docs/backlog/skill-rewrite-reaudit.md` asks for D5's three reads,
-  naming no project.
+  and `docs/backlog/skill-rewrite-reaudit.md` asks for D5's reads, naming no project.
 - **A7.** Each of D1 to D4 is stated at the sites the census names, in
   words that say what the decision says.
 
@@ -259,8 +261,7 @@ Advisory; an implementer may replace any of it.
   wait in a sentence.
 - D3 is a deletion of "compact" and a few words on each of the two
   sentences that deliver a readout.
-- D4 is a clause on one bullet of the readout's list and a clause on one
-  bullet of Setup's seeding.
+- D4 is a clause on one bullet of the readout's list.
 - The skills should grow by under 150 words in all; the base total is
   46,632 against a cap of 47,387.
 
@@ -274,17 +275,16 @@ T1, T2, T3, strictly in this order: the tasks share a tree and some files.
 |---|---|
 | `skills/redteaming/references/fix-application.md` | T1 |
 | `skills/redteaming/references/premise-asks.md` | T1 |
+| `skills/redteaming/references/flip-paths.md` | T1 |
 | `skills/redteaming/terminal-pass-prompt.source.md`, and the files rendered from it | T1 |
 | `skills/redteaming/terminal-pass-prompt.slots.md` | T1 |
-| `docs/decisions/spec-campaign.md`, `docs/decisions/terminal-pass.md` | T1 |
-| `skills/subagent-driven-development/references/setup.md` | T2 |
-| `docs/decisions/evidence-and-findings.md` | T2 |
+| `docs/decisions/spec-campaign.md` | T1 |
 | `docs/backlog/folded-run-process-gaps.md`, `docs/backlog/skill-rewrite-reaudit.md` | T3 |
 
 Overlaps, each ordered by the task order:
 
 - `skills/redteaming/SKILL.md`: T1 (§ Stop rule and terminal pass: the
-  wait, the further wave, the cap's ask; § Inputs and state's Rehydration,
+  wait, when the pass re-reads full-scope, the further wave, the cap's ask; § Inputs and state's Rehydration,
   if the entry of D1's second case needs a clause there), then T2 (the
   sentence of § Stop rule and terminal pass that delivers the close).
 - `skills/redteaming/references/round-readout.md`: T1 (its last paragraph;
@@ -297,6 +297,11 @@ Overlaps, each ordered by the task order:
 - `docs/decisions/fix-verification-and-merge.md`: T1 (rulings riding a fix
   list, and the change that runs without a verifier), then T2 (its Readout
   coverage position).
+- `docs/decisions/terminal-pass.md`: T1 (the stop check and the tail), then
+  T2 (its sentences on recording and delivering the close).
+- `docs/decisions/evidence-and-findings.md`: T1 (the 2026-11-02 passage
+  saying where a later premise ruling goes), then T2 (its Questions
+  position).
 - `tests/prose-budget.txt`: T1 and T2 each change only the lines of the
   skill directories they edit, in their own commits, so the suite passes at
   every task.
@@ -319,9 +324,9 @@ Overlaps, each ordered by the task order:
 | A1 | standing test: the suite | each task runs what the installed implementer template asks; T3's run is on the tip |
 | A2 | standing test: `tests/test_instrument_agents.py` | T1 |
 | A3 | one-time check: the search, failing on the base | T2 |
-| A4 | standing test: `tests/test_prose_budget.py` | T1, T2 |
+| A4 | standing test: `tests/test_prose_budget.py`, at T1 and T2; one-time check: `git diff 1f02fc9 -- tests/test_prose_budget.py` prints nothing | T2 |
 | A5 | why-not a test: whether a line says what changed and why is prose only review can judge; `tests/test_decision_records.py` holds the section's presence | T1, T2 |
-| A6 | one-time check for the file's absence; why-not a test for the item's three reads, prose only review can judge | T3 |
+| A6 | one-time check for the file's absence; why-not a test for the item's reads, prose only review can judge | T3 |
 | A7 | why-not: prose fidelity, judged by the task reviews and the branch review | T1, T2 |
 
 ## Task 1: A ruling's path, and the wait
@@ -330,30 +335,33 @@ Overlaps, each ordered by the task order:
 point of the campaign's tail, and put the terminal pass after the answers
 it can wait for.
 
-**Files.** `skills/redteaming/SKILL.md` (§ Stop rule and terminal pass;
-§ Inputs and state's Rehydration paragraph if needed);
+**Files.** `skills/redteaming/SKILL.md` (§ Stop rule and terminal pass, its
+sentence on when the pass re-reads full-scope included; § Inputs and
+state's Rehydration paragraph, as the deferral below decides);
 `skills/redteaming/references/round-readout.md` (its last paragraph; the
 decision-asks bullet of its list, which closes with "nothing else", for the
 line saying the pass waits);
 `skills/redteaming/references/round-record.md` (the sentence on
 `## Rulings and corrections`; the terminal-pass record's sentence on fields
 6 and 7); `skills/redteaming/references/fix-application.md` (the sentence
-listing what rides a fix list);
+listing what rides a fix list; the sentence that dispatches the blind
+verifier after every apply but round 0's);
 `skills/redteaming/references/premise-asks.md` (the ruling's route in a
-spec campaign); `skills/redteaming/terminal-pass-prompt.source.md` (the
+spec campaign); `skills/redteaming/references/flip-paths.md` (its sentence
+on what corrects binding content before the campaign closes); `skills/redteaming/terminal-pass-prompt.source.md` (the
 stop check) and what `python tools/instrument_agents.py write` renders from
 it; `skills/redteaming/terminal-pass-prompt.slots.md` (the `fix-wave`
 selector); `docs/decisions/spec-campaign.md` (its Stop rule and cap
 position, and the reasoning on the hold retired on 2026-11-02);
 `docs/decisions/terminal-pass.md` (the stop check and the tail);
 `docs/decisions/fix-verification-and-merge.md` (what rides a fix list, and
-which applies run a verifier); the `redteaming` line of
+which applies run a verifier); `docs/decisions/evidence-and-findings.md`
+(the 2026-11-02 passage saying where a later premise ruling goes); the `redteaming` line of
 `tests/prose-budget.txt`. Inputs:
 `.crucible/controller-process-gaps/brainstorm-decisions.md`. Consumers
-checked in the brainstorm: `skills/redteaming/references/flip-paths.md`
-starts at the campaign's close and is unchanged;
-`skills/redteaming/references/plan-phase.md` has no numbered rounds and its
-asks are delivered at its close; `skills/redteaming/references/folded-lane.md`
+checked in the brainstorm: the stub of `skills/redteaming/SKILL.md` § Flip paths starts at the
+campaign's close, as D1's fourth case does, and is unchanged;
+`skills/redteaming/references/plan-phase.md` is out of scope (Non-goals); `skills/redteaming/references/folded-lane.md`
 applies the spec campaign unchanged; `tests/test_report_filenames.py` reads
 the round directory's layout, to which no name is added (C3).
 
@@ -373,15 +381,16 @@ entry form of Interfaces & boundaries' first item.
   the artifact by D1's second case and held nothing meanwhile; a ruling
   that arrives while the pass is reading waits for the pass to return and
   joins its wave, the artifact frozen meanwhile; a ruling that keeps the
-  decision changes nothing and opens nothing; a ruling's change that
-  re-shapes a major mechanism at a spent cap is the cap's ask; a ruling
+  decision changes nothing and opens nothing; a ruling's change before the
+  pass that re-shapes a major mechanism at a spent cap is the cap's ask, and
+  one after the pass's dispatch joins no wave and waits for the close; a ruling
   arriving while a later numbered round is still to write its list rides
   that list and no wait applies.
 - Error: an ask the controller judged could not change the artifact is
   answered with a change after the pass was dispatched: the third or fourth
   case takes it, and no text sends it back to the second.
 - Integration: `python tools/instrument_agents.py check` and the suite pass;
-  each of the three records has its new `## Changes` line; the record for
+  each of the four records has its new `## Changes` line; the record for
   D2 says what it adds back beside the hold retired on 2026-11-02.
 
 ## Task 2: The readout's record and its questions
@@ -395,17 +404,15 @@ readout); `skills/redteaming/references/round-record.md` (field 8; the
 terminal-pass record's sentence on the close);
 `skills/redteaming/SKILL.md` (the sentence of § Stop rule and terminal pass
 that delivers the close, its corrections added);
-`skills/subagent-driven-development/references/setup.md` (the bullet
-seeding what earlier phases left open);
 `docs/decisions/fix-verification-and-merge.md` (its Readout coverage
-position); `docs/decisions/evidence-and-findings.md` (its Questions
-position); the `redteaming` and `subagent-driven-development` lines of
-`tests/prose-budget.txt`. Inputs:
+position); `docs/decisions/terminal-pass.md` (its sentences on recording
+and delivering the close); `docs/decisions/evidence-and-findings.md` (its
+Questions position); the `redteaming` line of `tests/prose-budget.txt`. Inputs:
 `.crucible/controller-process-gaps/brainstorm-decisions.md`. Consumers
 checked in the brainstorm: the terminal pass's source still asks that each
 carried question be quoted verbatim and reports one missing or changed in
 meaning, and is unchanged; `docs/decisions/terminal-pass.md` states the same
-and is unchanged; `skills/redteaming/references/merge-and-finding-hygiene.md`
+check, and that statement is unchanged; `skills/redteaming/references/merge-and-finding-hygiene.md`
 keeps "always carried"; § Inputs and state's Rehydration paragraph already
 has a resume deliver the recorded readout again;
 `skills/redteaming/references/plan-phase.md` delivers its close as § Stop
@@ -418,15 +425,16 @@ edits to the three shared files without restating D1.
 - Happy: field 8 names the readout word for word as delivered and no longer
   "compact"; the carried-questions item asks for the plain statement, then
   the quote with its id, and the mark where no answer would change the
-  artifact; Setup leaves a marked, unanswered question unseeded.
+  artifact.
 - Edge: round 0's questions, answered in its readout, follow the same item;
   a close to which a second read's corrections are added is recorded with
   them before it is delivered; a marked question the operator does answer
-  is recorded as any ruling is; a carried question with no mark and no
-  answer is still seeded.
+  is recorded as any ruling is; a marked question the operator leaves
+  unanswered is still seeded into the ledger at SDD's Setup, as any carried
+  question is.
 - Error: the search `to the operator, compact` over `skills/` matches on
   the base and not after the task.
-- Integration: the suite passes; each of the two records has its new
+- Integration: the suite passes; each of the three records has its new
   `## Changes` line, the one for D4 keeping the 2026-10-30 reasoning for
   the quote.
 
@@ -444,7 +452,7 @@ where the next read of real runs will find it.
 **Contract.** Enacts D5 under C8.
 
 **Acceptance.**
-- Happy: the re-audit item asks for D5's three reads, each against what
+- Happy: the re-audit item asks for D5's reads, each against what
   this document observed, and says only a read of transcripts can show the
   second.
 - Edge: it names no project and gives aggregate figures only.
