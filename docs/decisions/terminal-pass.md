@@ -15,7 +15,8 @@ re-shapes a major mechanism is no stop round
 every numbered round's seat reports, their verdict sections only.
 Decision-ask fidelity also checks, in both phases, that each question a
 round record carries to readout is quoted verbatim in that readout,
-reading it in its seat report's `Questions`, and that a call the
+reading it in its seat report's `Questions`, after a plain statement
+that keeps its meaning, and that a call the
 operator left to the controller is entered as delegated, never as the
 operator's ruling or choice; and, in a spec campaign, each `accepted`
 or `firm` entry of the brainstorm decision record whose decision the
@@ -46,7 +47,7 @@ due (the card's `{re-read}` slot), and runs record-only after a pass whose
 report carries a record correction or its line on a misleading record,
 or on which the controller puts a decision ask again: it reads the close
 the controller recorded after the pass against the pass's report and the seat findings behind each ask,
-and the controller delivers that close after it, its corrections added.
+and the controller delivers that close after it, its corrections recorded first.
 One read covers both cases. Of what it leaves open, a MINOR not against
 binding text takes `deferred-minor`, which the spec terminal-pass record
 and the plan record's `## Terminal pass` list; the rest goes to the
@@ -121,6 +122,15 @@ every feature's terminal pass, which word counts do not show. Agents'
 proposals, which the maintainer accepted. (Basis: measured, for the
 audit's findings; judgment, accepted by the maintainer, for the
 checks.)
+
+From 2026-11-20 a readout states each carried question in plain words
+before quoting it (`docs/decisions/evidence-and-findings.md`), and the
+pass reads that statement against the quote: one that softens or
+otherwise changes the question is a question changed in meaning, so the
+controller's account does not stand in for the seat's words beside it.
+The check reaches what the quote check reaches, the numbered rounds'
+questions and not round 0's. (Basis: judgment, the controller's calls in
+the spec campaign, on an ask the maintainer left to it.)
 
 The re-read comes first because reading the records' account of the
 artifact before the artifact turns a confirming read into a re-derivation
@@ -213,7 +223,10 @@ record triggering the record-only run as a correction does, and fewer
 second reads run because fewer corrections are reported. (Basis:
 measured, for the figures; the controller's call in the spec campaign, withdrawing what the maintainer's approval of the
 design carried, told to the maintainer in a round readout, for keeping
-the triggers.)
+the triggers.) From 2026-11-20 the controller records the second read's
+corrections in the close before delivering it, so the record the pass
+checks is the close the operator received
+(`docs/decisions/fix-verification-and-merge.md`).
 
 ## Rejected
 
@@ -235,6 +248,7 @@ the triggers.)
 
 ## Changes
 
+- 2026-11-20: decision-ask fidelity also reads the plain statement a readout gives before each carried question's quote against the quote, one changing its meaning being a correction of the third kind, and the controller records the second read's corrections in the close before delivering it; because a readout now states carried questions in plain words beside the seat's own, and two controllers delivered readouts their records did not hold.
 - 2026-11-20: the stop check reads the stop round's rulings list as it reads its fix list, since a ruling after the last numbered round now rides one as that round's own fix wave (`docs/decisions/fix-verification-and-merge.md`).
 - 2026-11-19: the pass reports only corrections of three kinds, a `CONCLUSION-CHANGING` mismatch (a withdrawn approval among them), a decision whose record misstates who made it or how firmly the operator holds it, and a carried question missing from its readout or changed in meaning, its Notes filtered the same way, and its template tells it the lean toward the controller's recommendation is expected; the bias line gives way to one closing line, a decision ask outside the count, only where the record is materially misleading as a whole; the second read keeps its triggers, that line among them; because in a read of sixteen sessions of one code project the corrections recurred in nearly every campaign, leaned the same way and did not become rarer, and of about 24 readouts reporting them two visibly changed what happened next, and the flagged corrections it found came from second reads of a close that put an ask again; and nothing but the record-only read checks that the close carries a correction the pass still reports.
 - 2026-11-05: the pass's read scoping admits the files a claim in the artifact cites, seat reports staying out, since its instruction to run a check needs them and two passes had read them anyway.

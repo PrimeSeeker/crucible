@@ -8,7 +8,7 @@
 
 **The goal check.** Before reading the Intent, each seat of a spec campaign's round 1 and the branch reviewer restate in one sentence the goal that the request file asks for (`docs/decisions/the-spec.md`), then compare it with the Intent: a mismatch the seat can stand behind is a premise finding, a vaguer one a question. Later rounds' seats and plan-phase seats run no goal check, their card's `goal-check` selector set off, and keep the request among their inputs; the one exception is the round a degraded round 1 none of whose seats returned hands it on to (`docs/decisions/spec-campaign.md`). On the very-small lane the branch reviewer runs it with the note's Intent (`docs/decisions/routes.md`; `skills/subagent-driven-development/references/seat-rules.md` § The goal check).
 
-**Questions.** Redteam seats, the task reviewer, the branch reviewer, the implementer and an umbrella's closing-review seats each have a `Questions` section for anything material they could not stake as a finding, with no severity (`skills/subagent-driven-development/references/seat-rules.md` § Questions). Nothing in it is dropped unrecorded: a redteam seat's item gets a disposition in the round record, a task reviewer's or an implementer's becomes a lead the branch reviewer rules on (`docs/decisions/branch-review.md`), the branch reviewer's own go under the ledger's `## Questions`, and a closing-review seat's is listed in the closing review's readout (`skills/brainstorming/references/umbrellas.md` § Closing review). A redteam seat's question that doubts the request, what the Intent asks for or a firm decision is always carried to the readout, since the operator settles such a doubt and the controller is the Intent's author, and the readout quotes it verbatim. An improvement the controller adopts is a lightly held change it names in the readout, and rides the next fix wave; it never opens a wave by itself, the branch review's one cleanup wave aside (`docs/decisions/branch-review.md`), and the controller never applies one itself outside the very-small lane (`crucible:redteaming § Merge and finding hygiene`; `crucible:requesting-code-review § The branch-review loop`; `crucible:subagent-driven-development § What a report voices`).
+**Questions.** Redteam seats, the task reviewer, the branch reviewer, the implementer and an umbrella's closing-review seats each have a `Questions` section for anything material they could not stake as a finding, with no severity (`skills/subagent-driven-development/references/seat-rules.md` § Questions). Nothing in it is dropped unrecorded: a redteam seat's item gets a disposition in the round record, a task reviewer's or an implementer's becomes a lead the branch reviewer rules on (`docs/decisions/branch-review.md`), the branch reviewer's own go under the ledger's `## Questions`, and a closing-review seat's is listed in the closing review's readout (`skills/brainstorming/references/umbrellas.md` § Closing review). A redteam seat's question that doubts the request, what the Intent asks for or a firm decision is always carried to the readout, since the operator settles such a doubt and the controller is the Intent's author, and the readout states it in plain words and then quotes it verbatim, as it does every question it carries. An improvement the controller adopts is a lightly held change it names in the readout, and rides the next fix wave; it never opens a wave by itself, the branch review's one cleanup wave aside (`docs/decisions/branch-review.md`), and the controller never applies one itself outside the very-small lane (`crucible:redteaming § Merge and finding hygiene`; `crucible:requesting-code-review § The branch-review loop`; `crucible:subagent-driven-development § What a report voices`).
 
 **Evidence on the author's side.** Whoever writes the text under review carries the seats' rule: a spec's author checks each claim as it is written or tags it `UNVERIFIED` (`crucible:brainstorming § Spec contract`; `crucible:brainstorming § Spec self-review`); a plan's author reads every signature, format and pin from the code (`crucible:writing-plans § Self-review`); the controller's records, readouts and decision asks show the evidence for each code-shaped claim or carry the tag (`crucible:redteaming § Merge and finding hygiene`); and the implementer's report does the same (`skills/subagent-driven-development/implementer-prompt.md` § Report Format). Before a fix list freezes, each item names every artifact site restating the content it changes and, where it adds or changes a rule, each site brainstorming's consumer sweep and trace find. Every spec-campaign and plan-phase fix list takes the trace; execution's waves do not. A fix landing at fewer sites than its item names has not landed (`crucible:redteaming § Fix application and blind verification`). `UNVERIFIED` is the one marker; it tags a claim and never admits a finding to a fix list.
 
@@ -151,6 +151,23 @@ the controller's account of them; every other question keeps its four
 dispositions. An agent's proposal, which the maintainer accepted.
 (Basis: measured; judgment, accepted by the maintainer.)
 
+In one run on a code project such a question needed translating before
+the operator could answer it, so from 2026-11-20 the readout states
+every question it carries in plain words before the quote, which stays
+for the reason above; the terminal pass reads the statement against it
+(`docs/decisions/terminal-pass.md`). The design first approved had the
+controller answer a question no answer to which would change the
+artifact, the seat's words kept in the record only, withdrawing the
+quote; the maintainer accepted at the campaign gate the controller's
+proposal to keep the quote and mark such a question instead. The mark
+went in that spec campaign: nothing checks it, and the one case behind
+it asked how firmly a decision was held, which changes what binds.
+(Basis: a single incident, for the observation; judgment, the
+controller's proposal accepted by the maintainer, for the plain
+statement beside the quote; the controller's calls in the spec
+campaign, the mark's removal on an ask the maintainer left to it, for
+the rest.)
+
 A branch's prose review once ran two waves of line-wrap fixes, each
 seeding the next; with formatting no tool enforces out of scope, ragged
 lines cost nothing (2026-10-07). (Basis: a single incident.)
@@ -287,8 +304,14 @@ records that cite "the audit" draw on these figures. (Basis: measured.)
 - **A premise line keyed on a decision's proposer**, the form of
   2026-10-29: seats cannot see the proposer, and it undid the declined
   mark of who decided (§ Why).
+- **The controller answering a carried question nothing turns on**
+  (2026-11-20): approved with a design, its withdrawal accepted at the
+  campaign gate; the mark on such a question that replaced it went in that spec
+  campaign (§ Why).
 
 ## Changes
+
+- 2026-11-20: the readout states every question it carries in plain words before quoting it verbatim, the quote kept for its 2026-10-30 reason, and the controller answering or marking a question nothing turns on is rejected; because one carried question needed translating before the operator could answer it.
 
 - 2026-11-20: a premise ruling that upholds the finding later in a spec campaign changes the artifact by the path any ruling's change takes there, the flip paths from its close, since a ruling arriving once the last numbered round's fix list was applied had no stated path (`docs/decisions/fix-verification-and-merge.md`).
 - 2026-11-04: the round a degraded round 1 none of whose seats returned hands it on to runs the goal check, which that round 1 otherwise dropped (`docs/decisions/spec-campaign.md`).

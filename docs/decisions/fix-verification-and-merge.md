@@ -99,8 +99,10 @@ seat-finding or question id.
 Those go in the record-only trace after it: in a numbered round record
 and the plan record, each decision ask's merged-list ids, which the
 terminal pass reads (`skills/redteaming/references/round-record.md` § Round
-record format, field 8). A readout delivered again after compaction
-leaves its trace out (`crucible:redteaming § Round readout`).
+record format, field 8). The operator receives the recorded readout word
+for word, less its trace, after compaction too, and a close only once a
+second read's corrections are recorded in it
+(`crucible:redteaming § Round readout`, § Stop rule and terminal pass).
 
 ## Why
 
@@ -400,6 +402,18 @@ judgment, accepted by the maintainer, for the trace.) The line counts
 left the trace on 2026-11-02, when the re-seat they served became the
 controller's judgment (`docs/decisions/spec-campaign.md`).
 
+On 2026-11-20 the record became the delivered readout word for word, its
+format no longer calling it compact, and a close's second-read
+corrections went into its record before delivery. In two runs, one on a
+code project, the controller had recorded a shortened readout and sent
+the operator a fuller one, so the terminal pass, which reads the record,
+reported omissions the delivered asks did not have, and its second read
+could not check what was delivered. The rule to deliver the readout as
+recorded already stood; only a read of transcripts can show whether the
+new wording stops the shortening (`docs/backlog/skill-rewrite-reaudit.md`).
+An agent's proposal, approved by the maintainer with the design. (Basis:
+two runs, for the observation; judgment, accepted by the maintainer.)
+
 ## Rejected
 
 - **An agent applying fix waves** (§ Why), unless a re-open condition
@@ -429,6 +443,7 @@ controller's judgment (`docs/decisions/spec-campaign.md`).
 
 ## Changes
 
+- 2026-11-20: the recorded readout is the delivered one word for word, less its trace, the record format no longer calling it compact, and a close is delivered only once a second read's corrections are recorded in it; because in two runs the controller recorded a shortened readout and delivered a fuller one, so the terminal pass audited text the operator had not seen.
 - 2026-11-20: in a spec campaign, rulings in hand once the last numbered round's fix list has frozen ride a rulings list of that round, blind-verified as that round's own fix wave with reports `verifier-rulings.md` and `verifier-rulings-recheck.md`, and a later ruling's change waits for the close, which names it; because three controllers met such a ruling with no stated path and improvised three procedures.
 - 2026-11-06: a finding hitting a passage an earlier round already fixed takes a rewrite or removal of the passage rather than another clause, adding no capability beyond what the finding requires, because campaigns generated special cases round after round and a wording test moved samples toward one stated rule (§ Repeat hits, with its limits).
 - 2026-11-05: the verifier's eight runs since the retirements are recorded, and it stays for now, since they ran only on crucible's own text and the failure it guards against is silent.
