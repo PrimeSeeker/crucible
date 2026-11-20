@@ -140,16 +140,18 @@ accepted there (Non-goals).
      round's own fix wave: one that adds, removes or re-shapes a major
      mechanism is followed by another round or, at the cap, by the cap's
      ask, as that text stands. A decision ask the list raises, a repair
-     still failing or the cap's ask, is put to the operator at once,
-     recorded with the list, and holds the terminal pass as D2's asks do.
-     The terminal pass then re-reads full-scope.
+     still failing or the cap's ask, is put to the operator at once and
+     recorded with the list. The cap's ask decides whether the campaign goes
+     on, as that text stands; a ruling on a repair still failing takes the
+     third case. The terminal pass then re-reads full-scope.
   3. A ruling the rulings list did not take, or one arriving from the
      terminal pass's dispatch on: the change waits for the campaign's
      close. Its entry says the change is still to be made, and the close
-     readout names it. The controller then makes it by `flip-paths.md`
-     before the handoff the close names, the ruling standing as the
-     operator's confirmation where that file asks for one; a supersede is
-     still asked.
+     readout names it. Before the handoff the close names, the controller
+     makes it by the path a change after the close has: `flip-paths.md`,
+     the ruling standing as the operator's confirmation of a scoped
+     amendment and a supersede still asked. Where no such path is stated,
+     as for an umbrella's own campaign before its landing, D1 adds none.
 
   A premise ruling's change takes these cases as any other ruling's does.
   *Rationale:* three controllers improvised three procedures, and the first
@@ -445,8 +447,8 @@ applies to a spec campaign, so the plan phase gets no path from it.
   when the wait ends rides the rulings list, having held nothing; a ruling
   that keeps the decision changes nothing; a ruling arriving after the
   rulings list froze waits for the close; a rulings list whose repair still
-  fails after its re-check raises its ask at once and the pass waits for the
-  answer; a ruling arriving while a later
+  fails after its re-check raises its ask at once, the pass is not held for
+  it, and a ruling on it takes the third case; a ruling arriving while a later
   numbered round can still take it rides that round's list, and no wait
   applies.
 - Error: an ask the controller judged could not change the artifact is
