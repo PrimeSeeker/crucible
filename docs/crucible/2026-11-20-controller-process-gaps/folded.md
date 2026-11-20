@@ -100,11 +100,13 @@ unanswered, the terminal pass no longer starts at once (D2).
 
 Each is lightly held. All are the controller's proposals. The operator
 approved the design they come from; D2 was put to them as a choice between
-waiting and never waiting, and they chose the wait. Two decisions differ
-from that design: D1's second case runs no blind verifier, where the design
-had the change checked as any fix is; D4 keeps the quote in the readout and
-leaves a question nothing turns on unanswered, where the design moved the
-quote to the record and had the controller answer such a question.
+waiting and never waiting, twice, the second time with the hold retired on
+2026-11-02 named, and they chose the wait. Two decisions differ from the
+design as first approved, and the operator accepted both at the campaign
+gate: D1's second case runs no blind verifier, where the design had the
+change checked as any fix is; D4 keeps the quote in the readout and leaves a
+question nothing turns on unanswered, where the design moved the quote to
+the record and had the controller answer such a question.
 
 - **D1. Where a ruling's change goes.** An operator's ruling that changes
   the artifact takes the first of these that applies.
