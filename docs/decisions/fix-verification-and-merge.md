@@ -102,7 +102,7 @@ terminal pass reads (`skills/redteaming/references/round-record.md` § Round
 record format, field 8). The operator receives the recorded readout word
 for word, less its trace, after compaction too, and a close only once a
 second read's corrections are recorded in it
-(`crucible:redteaming § Round readout`, § Stop rule and terminal pass).
+(`crucible:redteaming § Round readout`, § Inputs and state, § Stop rule and terminal pass).
 
 ## Why
 
@@ -384,9 +384,9 @@ accepted, because that edit's failure is silent and falls on the
 operator's own ruling; the maintainer left the call to it. A ruling
 arriving from the pass's dispatch on waits for the close, keeping the
 tail at one wave and one read. An ask the rulings list raises goes to
-the operator at once and holds no pass: a hold gained nothing for a
-repair still failing, and the cap's ask already decides whether the
-campaign goes on. (Basis: judgment, accepted by the maintainer, who left
+the operator at once. A repair's ask holds no pass: a hold gained nothing
+for a repair still failing. The cap's ask decides whether the campaign
+goes on, so the pass follows the ruling on it. (Basis: judgment, accepted by the maintainer, who left
 the call on the verified wave to the agent; the controller's calls in
 the spec campaign, told to the maintainer in its readouts, for the rest.)
 
@@ -446,6 +446,7 @@ corrections before delivery.)
 
 ## Changes
 
+- 2026-11-20: only a repair's ask on the rulings list holds no pass; the cap's ask decides whether the campaign goes on and the pass follows its ruling, since the record said the opposite of the skill text, whose cap offers a round or a supersede that voids a pass dispatched before the answer.
 - 2026-11-20: the recorded readout is the delivered one word for word, less its trace, the record format no longer calling it compact, and a close is delivered only once a second read's corrections are recorded in it; because in two runs the controller recorded a shortened readout and delivered a fuller one, so the terminal pass audited text the operator had not seen.
 - 2026-11-20: in a spec campaign, rulings in hand once the last numbered round's fix list has frozen ride a rulings list of that round, blind-verified as that round's own fix wave with reports `verifier-rulings.md` and `verifier-rulings-recheck.md`, and a later ruling's change waits for the close, which names it; because three controllers met such a ruling with no stated path and improvised three procedures.
 - 2026-11-06: a finding hitting a passage an earlier round already fixed takes a rewrite or removal of the passage rather than another clause, adding no capability beyond what the finding requires, because campaigns generated special cases round after round and a wording test moved samples toward one stated rule (§ Repeat hits, with its limits).

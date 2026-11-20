@@ -10,7 +10,7 @@ At every round close the readout carries these items and nothing else:
 - in the plan record and a folded campaign's terminal-pass record, the tasks the plan marks `Review: branch only`, each with its reason, as information, not an ask — omitted elsewhere and where no task carries the mark;
 - a seat on another host that ended with no report, and what happened — omitted where none did;
 - each fresh look since the last readout, with what you did with it — omitted where none ran;
-- in a spec campaign, the terminal pass's wait (§ Stop rule and terminal pass) — omitted where nothing holds it;
+- in a spec campaign, the terminal pass's wait (`crucible:redteaming` § Stop rule and terminal pass) — omitted where nothing holds it;
 - in a spec campaign's close, each ruling whose change waits for it (below) — omitted where none does;
 - design judgments, as decision asks — omitted where none is.
 

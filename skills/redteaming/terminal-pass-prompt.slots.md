@@ -20,7 +20,7 @@
   - spec: the spec campaign
   - plan: the plan phase
 - fix-wave: yes | no
-  - yes: mandate 1 as a full-scope re-read; set when the final round produced a fix wave or `{re-read}` is `due`
+  - yes: mandate 1 as a full-scope re-read; set when the final round produced a fix wave, its rulings list's included, or `{re-read}` is `due`
   - no: mandate 1 as a confirmation read; set otherwise
 - follow-up: second-read | off
   - second-read: the pass's one second read; spec, a fresh dispatch; plan, stated with the report path and `{re-read}` in the message resuming the pass
