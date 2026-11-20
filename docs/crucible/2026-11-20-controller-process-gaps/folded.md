@@ -131,18 +131,25 @@ accepted there (Non-goals).
      not yet dispatched: once that round has closed and D2's wait has ended,
      the rulings in hand ride one further fix list of that round, its
      rulings list. The list is written under that round's
-     `## Rulings and corrections`, and is applied and blind-verified as
-     `fix-application.md` states for any fix list; the verifier's report is
+     `## Rulings and corrections`, with its verifier's verdicts and any
+     repair; the round's state line stays as it is. It is applied and
+     blind-verified as `fix-application.md` states for any fix list, the
+     verifier's card filled with this list; the verifier's report is
      `verifier-rulings.md` in that round's directory, a re-check's
      `verifier-rulings-recheck.md`. For the stop rule and the cap it is that
      round's own fix wave: one that adds, removes or re-shapes a major
      mechanism is followed by another round or, at the cap, by the cap's
-     ask, as that text stands. The terminal pass then re-reads full-scope.
-  3. Later: the change waits for the campaign's close. Its entry says the
-     change is still to be made, and the close readout names it. After the
-     close it is handled as a change after the close is, the ruling standing
-     as the operator's confirmation where `flip-paths.md` asks for one; a
-     supersede is still asked.
+     ask, as that text stands. A decision ask the list raises, a repair
+     still failing or the cap's ask, is put to the operator at once,
+     recorded with the list, and holds the terminal pass as D2's asks do.
+     The terminal pass then re-reads full-scope.
+  3. A ruling the rulings list did not take, or one arriving from the
+     terminal pass's dispatch on: the change waits for the campaign's
+     close. Its entry says the change is still to be made, and the close
+     readout names it. The controller then makes it by `flip-paths.md`
+     before the handoff the close names, the ruling standing as the
+     operator's confirmation where that file asks for one; a supersede is
+     still asked.
 
   A premise ruling's change takes these cases as any other ruling's does.
   *Rationale:* three controllers improvised three procedures, and the first
@@ -155,8 +162,8 @@ accepted there (Non-goals).
   dispatch has the path every change after the close has; D2 keeps ordinary
   asks out of that window, and a premise ask, which holds nothing (C1), can
   fall there, as `docs/decisions/spec-campaign.md` accepted on 2026-11-02.
-- **D2. The terminal pass waits for the open asks.** Before dispatching the
-  terminal pass, the controller waits for an answer to every decision ask
+- **D2. The terminal pass waits for the open asks.** In a spec campaign,
+  before dispatching the terminal pass, the controller waits for an answer to every decision ask
   the campaign's round readouts carry whose answer, in its judgment, could
   change the artifact. The readout of the round the pass would follow says
   the pass waits and names each such ask, an earlier round's included. An
@@ -177,12 +184,14 @@ accepted there (Non-goals).
   the operator had not seen.
 - **D4. A carried question is put in plain words beside the seat's.** A
   question doubting the request, what the Intent asks for or a firm decision
-  is still always carried to the readout and still quoted as written with
-  its id. The readout states it first in plain words. The terminal pass,
-  which checks the quote today, also reads the plain statement: one that
-  changes the question's meaning is a correction of the kind it already
-  reports. *Rationale:* the quote is there so the operator reads the seat's
-  words and not the controller's account of them
+  is still always carried to the readout. Every question a readout carries
+  is stated there first in plain words and then quoted as written with its
+  id. Where the terminal pass checks a carried question's quote today, it
+  also reads the plain statement against it: one that changes the
+  question's meaning is a correction of the kind it already reports. As
+  today, that check reaches the questions the numbered rounds' records
+  carry, not round 0's. *Rationale:* the quote is there so the operator
+  reads the seat's words and not the controller's account of them
   (`docs/decisions/evidence-and-findings.md`: before it, seat questions were
   answered 47 times, adopted 12 and carried never); a plain statement
   beside it takes nothing of that away, and a check on it keeps the
@@ -192,7 +201,8 @@ accepted there (Non-goals).
   deleted; its remaining points are the non-goals above.
   `docs/backlog/skill-rewrite-reaudit.md` gains these things to read in
   later runs: whether a ruling arriving after the last numbered round
-  went by D1, and what its rulings list's verifier found; whether recorded readouts match the messages delivered;
+  went by D1, what its rulings list's verifier found, and whether the list
+  raised an ask of its own; whether recorded readouts match the messages delivered;
   whether a plan phase met a ruling between its readout and its terminal
   pass. It also keeps the item's one figure on the point lean-gates
   addressed, as a figure from before that change: on that run a terminal
@@ -232,15 +242,17 @@ accepted there (Non-goals).
 
 - **The rulings list** sits under the last numbered round's
   `## Rulings and corrections`, in the form of a fix list, with its
-  verifier's verdicts recorded there. Its readers: the blind verifier, with
+  verifier's verdicts, any repair and any ask it raises recorded there; the
+  round's state line does not change for it. Its readers: the blind verifier, with
   the diff, as for any fix list; the terminal pass, which reads the round
   records and whose stop check counts it as a fix list of that round; a
   controller resuming after compaction, which treats a rulings list with no
   `verifier-rulings.md` beside it as a fix list not yet applied and
   re-checks it item by item.
 - **The verifier's card** names `verifier-rulings.md` and
-  `verifier-rulings-recheck.md` among its report paths; the round record's
-  directory layout lists both.
+  `verifier-rulings-recheck.md` among its report paths, and its fix-list
+  slot admits a rulings list; the round record's directory layout lists
+  both names.
 - **The card's `fix-wave` selector** of the terminal pass is `yes` where the
   final round produced a fix wave, its rulings list's included.
 - **A ruling whose change waits for the close** has an entry saying so; the
@@ -378,10 +390,12 @@ an item naming each ruling whose change waits for the close);
 `skills/redteaming/references/round-record.md` (the directory layout, for
 the two new names; the sentence on `## Rulings and corrections`);
 `skills/redteaming/references/fix-application.md` (the sentence listing
-what rides a fix list; the sentence naming the re-check's report);
+what rides a fix list; the sentence naming the re-check's report; the
+sentence that records the verdicts and sets the state, which a rulings
+list does differently);
 `skills/redteaming/references/premise-asks.md` (the ruling's route in a
 spec campaign); `skills/redteaming/verifier-prompt.slots.md` (its report
-path slot); `skills/redteaming/terminal-pass-prompt.slots.md` (the
+path slot and its fix-list slot); `skills/redteaming/terminal-pass-prompt.slots.md` (the
 `fix-wave` selector, if its wording does not already cover a rulings list);
 `skills/redteaming/terminal-pass-prompt.source.md` (the stop check, on the
 same condition) and what `python tools/instrument_agents.py write` renders
@@ -411,8 +425,9 @@ two file names of C3 at the three sites that list report names (the layout,
 the verifier's card, `fix-application.md`). Each text it adds to a file the
 plan phase also reads (`round-readout.md`, `fix-application.md`) says it
 applies to a spec campaign, so the plan phase gets no path from it.
-- Deferred to implementation: whether a resume during D2's wait, at
-  `state: readout`, should deliver the recorded readout again.
+- Deferred to implementation: whether a resume at `state: readout` during
+  D2's wait or the rulings list's wave should deliver the recorded readout
+  again.
 
 **Acceptance.**
 - Happy: a controller with a ruling in hand finds, from § Stop rule and
@@ -428,18 +443,21 @@ applies to a spec campaign, so the plan phase gets no path from it.
   list on the cap round, and a rulings list that re-shapes a major mechanism
   there is the cap's ask as it stands; a ruling on a premise ask in hand
   when the wait ends rides the rulings list, having held nothing; a ruling
-  that keeps the decision changes nothing; a ruling arriving while a later
+  that keeps the decision changes nothing; a ruling arriving after the
+  rulings list froze waits for the close; a rulings list whose repair still
+  fails after its re-check raises its ask at once and the pass waits for the
+  answer; a ruling arriving while a later
   numbered round can still take it rides that round's list, and no wait
   applies.
 - Error: an ask the controller judged could not change the artifact is
   answered with a change after the pass was dispatched: its entry says the
-  change is still to be made, the close readout names it, and it is made
-  after the close; a controller resuming with a rulings list recorded and no
+  change is still to be made, the close readout names it, and the
+  controller makes it before the handoff; a controller resuming with a rulings list recorded and no
   `verifier-rulings.md` beside it re-checks the list against the artifact
   before applying anything.
 - Integration: `python tools/instrument_agents.py check` and the suite pass;
-  each of the four records has its new `## Changes` line; the record for
-  D2 says what it adds back beside the hold retired on 2026-11-02.
+  each record whose position Task 1 changed has its new `## Changes` line;
+  the record for D2 says what it adds back beside the hold retired on 2026-11-02.
 
 ## Task 2: The readout's record and its questions
 
@@ -475,8 +493,8 @@ edits to the shared files without restating D1.
 
 **Acceptance.**
 - Happy: field 8 names the readout word for word as delivered and no longer
-  "compact"; the carried-questions item asks for the plain statement, then
-  the quote with its id; the pass's source has it read the plain statement
+  "compact"; the carried-questions item asks, for every question it carries,
+  for the plain statement and then the quote with its id; the pass's source has it read the plain statement
   against the quote.
 - Edge: round 0's questions, answered in its readout, follow the same item;
   a close to which a second read's corrections are added is recorded with
