@@ -9,7 +9,7 @@ it opens any record, then decision-ask fidelity, checking each ask
 against the findings behind it and, in a spec campaign, the stop: the
 stated basis against every forecast line in the numbered rounds' seat
 verdicts, each forecast overturn answered by the mechanism it names,
-and the stop round's fix list against the rule that a round whose wave
+and the stop round's fix list and any rulings list against the rule that a round whose wave
 re-shapes a major mechanism is no stop round
 (`docs/decisions/spec-campaign.md`). For that check its inputs gain
 every numbered round's seat reports, their verdict sections only.
@@ -235,6 +235,7 @@ the triggers.)
 
 ## Changes
 
+- 2026-11-20: the stop check reads the stop round's rulings list as it reads its fix list, since a ruling after the last numbered round now rides one as that round's own fix wave (`docs/decisions/fix-verification-and-merge.md`).
 - 2026-11-19: the pass reports only corrections of three kinds, a `CONCLUSION-CHANGING` mismatch (a withdrawn approval among them), a decision whose record misstates who made it or how firmly the operator holds it, and a carried question missing from its readout or changed in meaning, its Notes filtered the same way, and its template tells it the lean toward the controller's recommendation is expected; the bias line gives way to one closing line, a decision ask outside the count, only where the record is materially misleading as a whole; the second read keeps its triggers, that line among them; because in a read of sixteen sessions of one code project the corrections recurred in nearly every campaign, leaned the same way and did not become rarer, and of about 24 readouts reporting them two visibly changed what happened next, and the flagged corrections it found came from second reads of a close that put an ask again; and nothing but the record-only read checks that the close carries a correction the pass still reports.
 - 2026-11-05: the pass's read scoping admits the files a claim in the artifact cites, seat reports staying out, since its instruction to run a check needs them and two passes had read them anyway.
 - 2026-11-03: the pass takes the overturn question from `skills/subagent-driven-development/references/review-terms.md`, where the arrangement questions moved from the shared seat reference so a controller that applies them no longer loads the seat rules; its template's text is unchanged.

@@ -16,7 +16,7 @@
 
 **Quorum and degraded rounds.** Every lost or crashed seat is recorded, and a round that lost one, a seat on another host aside, is topped back up or recorded degraded. A degraded round never counts toward convergence or against the cap, a one-seat round that loses its seat is degraded, and two consecutive degraded rounds go to the operator as an infrastructure escalation. A round 1 recorded degraded hands on what no returned seat ran, the goal check, the outside-the-frame lens or the swap, to the next round, a degraded one handing it on the same way (`crucible:redteaming § Panels`; `skills/redteaming/references/panels.md`).
 
-**Stop rule and cap.** The campaign stops after the first numbered panel round once overturning a major mechanism after code is no longer reasonably expected: the overturn question (`skills/subagent-driven-development/references/review-terms.md` § The arrangement questions, § An umbrella's overturn question). The call is the controller's judgment, not put to the operator to confirm, over the round's records, the seats' forecasts included, never conversation memory; finding counts and finding provenance are not signals, and severity is not the trigger. A round whose own fix wave adds, removes or re-shapes a major mechanism is never the stop round, at least one numbered panel round runs once a campaign is chosen, and the terminal pass always follows and checks the stop's basis (`docs/decisions/terminal-pass.md`). In a spec campaign every panel seat's verdict forecasts the answer (`skills/redteaming/seat-prompt.md`), and every numbered round's readout answers each forecast overturn by the mechanism it names (`skills/redteaming/references/round-readout.md`). The cap is 4 rounds, degraded rounds excluded, counted from the records: the campaign's guarantee that it ends, bounding rounds, not spend. An overturn still reasonably expected at the cap, a cap round whose own wave re-shapes a major mechanism, or any BLOCKER or MAJOR still open there goes to the operator as a decision ask (`crucible:redteaming § Stop rule and terminal pass`). A premise finding (`docs/decisions/evidence-and-findings.md`) is merged `parked` as a decision ask and is never an open finding here: it opens no fix wave, holds no cap and no stop, and at the cap is put to the operator alone; a ruling that upholds it after the stop takes the flip paths, and one still open at the close is carried in the close readout (`skills/redteaming/references/merge-and-finding-hygiene.md`; `skills/redteaming/references/premise-asks.md` § Premise findings; `docs/decisions/umbrellas.md`).
+**Stop rule and cap.** The campaign stops after the first numbered panel round once overturning a major mechanism after code is no longer reasonably expected: the overturn question (`skills/subagent-driven-development/references/review-terms.md` § The arrangement questions, § An umbrella's overturn question). The call is the controller's judgment, not put to the operator to confirm, over the round's records, the seats' forecasts included, never conversation memory; finding counts and finding provenance are not signals, and severity is not the trigger. A round whose own fix wave adds, removes or re-shapes a major mechanism is never the stop round, at least one numbered panel round runs once a campaign is chosen, and the terminal pass always follows and checks the stop's basis (`docs/decisions/terminal-pass.md`). In a spec campaign every panel seat's verdict forecasts the answer (`skills/redteaming/seat-prompt.md`), and every numbered round's readout answers each forecast overturn by the mechanism it names (`skills/redteaming/references/round-readout.md`). The cap is 4 rounds, degraded rounds excluded, counted from the records: the campaign's guarantee that it ends, bounding rounds, not spend. An overturn still reasonably expected at the cap, a cap round whose own wave re-shapes a major mechanism, or any BLOCKER or MAJOR still open there goes to the operator as a decision ask (`crucible:redteaming § Stop rule and terminal pass`). Before dispatching the terminal pass the controller waits for an answer, a deferral included, to each decision ask the readouts carry whose answer it judges could change the artifact, a premise ask aside (same section). A premise finding (`docs/decisions/evidence-and-findings.md`) is merged `parked` as a decision ask and is never an open finding here: it opens no fix wave, holds no cap and no stop, and at the cap is put to the operator alone; a ruling that upholds it changes the artifact by the path any ruling's change takes (`skills/redteaming/references/round-readout.md`), and one still open at the close is carried in the close readout (`skills/redteaming/references/merge-and-finding-hygiene.md`; `skills/redteaming/references/premise-asks.md` § Premise findings; `docs/decisions/umbrellas.md`).
 
 **Focused checks.** Panel seats, the round-0 pre-pass, the blind verifier and the terminal pass run a focused check where a claim needs one, never a package-wide suite, and recommend heavier validation in their reports (`skills/subagent-driven-development/references/review-terms.md` § Suite bound). The task reviewer and re-reviewer are held to focused checks as well; the implementer is the one seat its template sends to the full suite, save a change touching only documents, files the product neither runs nor loads, for which it runs the project's tests and checks that read them and says so (`skills/subagent-driven-development/implementer-prompt.md` § Tests: Test-First, Evidence Before Done). The controller on the very-small lane runs its gates the same way (`skills/subagent-driven-development/references/very-small-lane.md`), and SDD's Finish still runs the full suite, or the project's merge gate, on the branch's head (`skills/subagent-driven-development/references/finish.md`).
 
@@ -336,13 +336,36 @@ From 2026-10-30 such an ask held the stop: the campaign paused at the
 round's close until the operator ruled. On 2026-11-02 the hold went,
 among the campaign mechanisms the skill text rewrite retired: a pending
 ask's failure is loud, since it still reaches the operator and a ruling
-that upholds it after the stop takes the flip paths. The label and its
+that upholds it after the stop still reaches the artifact, by the path
+any ruling's change takes (`skills/redteaming/references/round-readout.md`).
+The label and its
 routes stayed, since without the label each place a doubt arises would
 need a rule of its own, as that feature's campaign found. (Basis:
 measured, for the finding; judgment, an agent's proposal accepted by the
 maintainer, for the hold and for its retirement; judgment, accepted by
 the maintainer, for keeping the label, a call the maintainer left to the
 agent.)
+
+Since 2026-11-20 the controller waits before dispatching the terminal
+pass for an answer to each decision ask the readouts carry whose answer
+it judges could change the artifact, an earlier round's included; an
+answer that defers the decision ends the wait for that ask, which stays
+open. A pass that runs before the answer reads text about to change.
+Three campaigns are known to have met a ruling after their last numbered
+round, two on one code project and one on crucible's own, a lower
+bound, and each controller found its own way into the artifact
+(`docs/crucible/2026-11-20-controller-process-gaps/folded.md`;
+`docs/decisions/fix-verification-and-merge.md`). The wait adds back a
+pause of the kind retired on 2026-11-02, which the maintainer was told
+before accepting it again: that hold could last as long as the
+maintainer took over the premise of the work, while this one holds one
+dispatch, for an ordinary ask, and any answer ends it. A premise ask
+still holds nothing, and neither does a carried question. (Basis:
+measured, for the cases; judgment, the controller's proposal accepted
+by the maintainer, who chose it over never waiting; the controller's
+calls in the spec campaign, told to the maintainer in a round readout,
+for its reach to an earlier round's asks and the end on a deferring
+answer.)
 
 The arrangements spec, as approved at its digest gate, made the stop a
 downshift for the operator to confirm, never the controller's alone;
@@ -415,6 +438,9 @@ maintainer in its round readouts, for the question kind and the line.)
   detection, and a question for people who never asked (§ Why).
 - **Finding counts as a stop signal**: they stay flat deep into long
   campaigns (§ Why).
+- **Dispatching the terminal pass without waiting for the open asks**,
+  a late ruling always applied after it: offered beside the wait and
+  declined (§ Why).
 - **Severity and the structural judgment as the stop trigger**, alone
   or beside the overturn question: a round repairing its predecessor's
   drift kept the campaign going (§ Why).
@@ -437,6 +463,7 @@ maintainer in its round readouts, for the question kind and the line.)
 
 ## Changes
 
+- 2026-11-20: before dispatching the terminal pass the controller waits for an answer, a deferral included, to each decision ask whose answer it judges could change the artifact, a premise ask aside, and a premise ruling's change takes the path any ruling's takes (`skills/redteaming/references/round-readout.md`); because a pass run before the answer reads text about to change, and three controllers met a ruling after the last numbered round with no stated path (`docs/decisions/fix-verification-and-merge.md`).
 - 2026-11-19: the terminal pass reports a breach of the operating stance through the kinds of correction it still reports and its line on a record materially misleading as a whole, no longer through the bias line, since in a read of sixteen sessions of one code project reporting every mismatch had not reduced the lean toward the controller's recommendation and, of about 24 readouts reporting corrections, two visibly changed what happened next (`docs/decisions/terminal-pass.md`).
 - 2026-11-19: an implementer whose change touches only documents, files the product neither runs nor loads, runs the tests and checks that read them in place of the full suite and says so, and the controller runs the very-small lane's gates the same way; because full-suite runs after documentation-only commits, about nine minutes each in a read of sixteen sessions of one code project, generalized a rule written for code; Finish's run before the landing is unchanged.
 - 2026-11-06: the rule and the cap stay after a read of the transcripts on disk that did not show multi-round campaigns net-positive and cannot show the opposite; only what would settle the cap stays open; an outcome record is rejected; the seat on another host gains a count with stage held fixed.

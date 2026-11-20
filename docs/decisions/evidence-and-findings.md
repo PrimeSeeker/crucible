@@ -126,7 +126,9 @@ On 2026-11-02 the skill text rewrite kept premise findings and dropped
 their holds. A pending ask had held the campaign's stop and the
 execution work that built on its premise; a pending ask's failure is
 loud, since it still reaches the operator, and a ruling that upholds it
-later takes the flip paths. Retiring the label as well was proposed and
+later still changes the artifact, in a spec campaign by the path any
+ruling's change takes (`skills/redteaming/references/round-readout.md`),
+from its close by the flip paths. Retiring the label as well was proposed and
 withdrawn: that feature's campaign found that each place a doubt arises
 would then need a rule of its own. In execution the controller tells
 the operator of a premise finding when it is raised, so it no longer
@@ -288,6 +290,7 @@ records that cite "the audit" draw on these figures. (Basis: measured.)
 
 ## Changes
 
+- 2026-11-20: a premise ruling that upholds the finding later in a spec campaign changes the artifact by the path any ruling's change takes there, the flip paths from its close, since a ruling arriving once the last numbered round's fix list was applied had no stated path (`docs/decisions/fix-verification-and-merge.md`).
 - 2026-11-04: the round a degraded round 1 none of whose seats returned hands it on to runs the goal check, which that round 1 otherwise dropped (`docs/decisions/spec-campaign.md`).
 - 2026-11-04: the trace reaches every repair, not only the plan phase's, since the verifier's repair now runs in the spec campaign too (`docs/decisions/fix-verification-and-merge.md`).
 - 2026-11-03: the premise paragraph cites where its sentences live after the compaction: seat-rules' § Premise findings and § Binding changes, `premise-asks.md` and the reviewer templates.

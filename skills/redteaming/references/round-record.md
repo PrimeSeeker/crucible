@@ -10,6 +10,8 @@ round-NN/ # NN zero-padded, sequential; round 0 is round-00
   seat-<id>.md # one per seat report, raw, workspace-only
   verifier.md # the blind verifier's report
   verifier-recheck.md # its re-check of the wave's repairs, if one runs
+  verifier-rulings.md # the rulings list's verifier, if one runs
+  verifier-rulings-recheck.md # its re-check, if one runs
   terminal-pass.md # plan phase only
   second-read.md # plan phase, if one runs
 terminal-pass/ # the spec campaign's terminal pass
@@ -22,7 +24,7 @@ terminal-pass/ # the spec campaign's terminal pass
 
 ## Round record format
 
-Stop-rule inputs, cap arithmetic, parked and deferred minors and quorum status are all computed from the round records. A record's field layout and section titles are guidance; the process rules its fields state bind. Fields 1–2 are the preamble, before the first `##` heading; each later field is a `##` section under its title. Any record may add `## Rulings and corrections`: dated operator rulings on its decision asks and corrections to the record, entered after the round closed.
+Stop-rule inputs, cap arithmetic, parked and deferred minors and quorum status are all computed from the round records. A record's field layout and section titles are guidance; the process rules its fields state bind. Fields 1–2 are the preamble, before the first `##` heading; each later field is a `##` section under its title. Any record may add `## Rulings and corrections`: dated operator rulings on its decision asks and corrections to the record, entered after the round closed, and in a spec campaign any rulings list (`round-readout.md`) with its field-7 contents and any ask it raises, the state line unchanged.
 
 Fields, in order:
 

@@ -80,6 +80,16 @@ keeping one in the terminal-pass record
 (`skills/redteaming/references/fix-application.md`;
 `skills/redteaming/references/round-record.md`).
 
+**A ruling after the last round.** In a spec campaign, rulings in hand
+once the last numbered round's fix list has frozen, that round has
+closed and the wait before the terminal pass has ended ride one more
+fix list of that round, its rulings list, applied and blind-verified as
+that round's own fix wave, its verifier writing `verifier-rulings.md`
+and a re-check `verifier-rulings-recheck.md`. A later ruling's change
+waits for the campaign's close, whose readout names it, and is made
+before the handoff as a change after the close
+(`skills/redteaming/references/round-readout.md`).
+
 **Readout coverage and the trace.** The delivered readout names every
 rejected, parked or partly-applied BLOCKER or MAJOR with its ruling, in
 words; the controller checks that coverage against the merged list
@@ -340,6 +350,44 @@ silent, so it stays and the question waits for features on real code
 maintainer accepted. (Basis: measured, by the controller of those campaigns
 from its own session's reports; judgment, accepted by the maintainer.)
 
+### Rulings after the last round
+
+Once a spec campaign's last numbered round had applied and verified its
+fix list, no text said how an operator's ruling on that round's asks
+reached the artifact, and the flip paths govern only from the close.
+Three campaigns are known to have met it, two on one code project and
+one on crucible's own, a lower bound since a verifier's report does not
+always say where an item came from, and each controller did something
+different: a second wave inside the closed round, its verifier's report
+under a name the record layout did not list; the ruling applied in the
+terminal pass's further wave, at the cost of a second full re-read; and
+the same followed by a further numbered round
+(`docs/crucible/2026-11-20-controller-process-gaps/folded.md`). (Basis:
+measured.)
+
+The first of those needs no new rule once the change is an ordinary fix
+wave: the items, their sweep, the predicates, the verdicts, untraced
+hunks, the repair, the re-shape test and the cap are existing text. Its
+cost is one bounded-role dispatch in a campaign with a late ruling, and
+two file names. It was not the first form. The design as approved
+applied a ruling in hand before the pass and sent a later one to the
+pass's further wave; writing the spec, the controller dropped the edit's
+separate check, the pass's full-scope re-read standing in, and the
+maintainer accepted that at the campaign gate. In the spec campaign the
+further-wave case went, on two seats' finding that the pass's bounded
+tail could already be spent. After a fresh look traced most of the
+campaign's edge findings to the unverified edit, the controller
+recommended the verified wave instead, reversing what the gate had
+accepted, because that edit's failure is silent and falls on the
+operator's own ruling; the maintainer left the call to it. A ruling
+arriving from the pass's dispatch on waits for the close, keeping the
+tail at one wave and one read. An ask the rulings list raises goes to
+the operator at once and holds no pass: a hold gained nothing for a
+repair still failing, and the cap's ask already decides whether the
+campaign goes on. (Basis: judgment, accepted by the maintainer, who left
+the call on the verified wave to the agent; the controller's calls in
+the spec campaign, told to the maintainer in its readouts, for the rest.)
+
 ### Readouts and the trace
 
 The coverage check on readouts used to run in a script: the round checks
@@ -370,12 +418,18 @@ controller's judgment (`docs/decisions/spec-campaign.md`).
 - **Carrying a failing verifier verdict to the next round**, on its fix
   list or to its panel, in place of the scoped repair (§ Why).
 - **Resuming the wave's verifier for its re-check** (§ Why).
+- **A late ruling applied unverified before the terminal pass**, the
+  pass's re-read its only check: accepted at a campaign gate and
+  reversed in that spec campaign (§ Why).
+- **A late ruling in the terminal pass's further wave**: what two
+  controllers did, at the cost of a second full re-read (§ Why).
 - **Asking seats to name each finding's class**: it costs every seat on
   every finding and invites inflated scope (2026-11-06). (Basis:
   judgment, accepted by the maintainer.)
 
 ## Changes
 
+- 2026-11-20: in a spec campaign, rulings in hand once the last numbered round's fix list has frozen ride a rulings list of that round, blind-verified as that round's own fix wave with reports `verifier-rulings.md` and `verifier-rulings-recheck.md`, and a later ruling's change waits for the close, which names it; because three controllers met such a ruling with no stated path and improvised three procedures.
 - 2026-11-06: a finding hitting a passage an earlier round already fixed takes a rewrite or removal of the passage rather than another clause, adding no capability beyond what the finding requires, because campaigns generated special cases round after round and a wording test moved samples toward one stated rule (§ Repeat hits, with its limits).
 - 2026-11-05: the verifier's eight runs since the retirements are recorded, and it stays for now, since they ran only on crucible's own text and the failure it guards against is silent.
 - 2026-11-04: the verifier's re-check is a fresh seat writing `verifier-recheck.md`, an untraced hunk is reverted or named under the item needing it, and the spec terminal pass's follow-up wave records a verifier block, since none of the three had a stated path.

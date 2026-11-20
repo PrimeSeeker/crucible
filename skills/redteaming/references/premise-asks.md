@@ -6,7 +6,7 @@ A premise finding claims that the request, what the Intent asks for (for a child
 
 **The ruling.** The ruling's change routes as any change of its kind:
 
-- in a spec campaign, the next fix list; if the change re-shapes a major mechanism, overturning one after code is reasonably expected again and its round is no stop round;
+- in a spec campaign, as `skills/redteaming/references/round-readout.md` states for a ruling's change;
 - from that campaign's close, the `flip-paths.md` paths, the ruling as the operator's confirmation;
 - during the task loop, a plan change at the next task boundary, affected undispatched tasks waiting for it;
 - at the branch review or its close readout, a branch-review wave counted against its cap, Finish restarting after it.
