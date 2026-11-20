@@ -130,7 +130,8 @@ otherwise changes the question is a question changed in meaning, so the
 controller's account does not stand in for the seat's words beside it.
 The check reaches what the quote check reaches, the numbered rounds'
 questions and not round 0's. (Basis: judgment, the controller's calls in
-the spec campaign, on an ask the maintainer left to it.)
+the spec campaign: the check, with the mark's withdrawal, on an ask the
+maintainer left to it; its reach, the controller's own.)
 
 The re-read comes first because reading the records' account of the
 artifact before the artifact turns a confirming read into a re-derivation

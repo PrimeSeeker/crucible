@@ -411,8 +411,11 @@ reported omissions the delivered asks did not have, and its second read
 could not check what was delivered. The rule to deliver the readout as
 recorded already stood; only a read of transcripts can show whether the
 new wording stops the shortening (`docs/backlog/skill-rewrite-reaudit.md`).
-An agent's proposal, approved by the maintainer with the design. (Basis:
-two runs, for the observation; judgment, accepted by the maintainer.)
+(Basis: two runs, for the observation; judgment, an agent's proposal
+approved by the maintainer with the design, for word-for-word delivery
+and dropping "compact"; the controller's addition while writing the
+spec, not put to the maintainer on its own, for recording a close's
+corrections before delivery.)
 
 ## Rejected
 

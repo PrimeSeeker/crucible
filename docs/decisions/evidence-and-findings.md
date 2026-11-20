@@ -164,9 +164,10 @@ went in that spec campaign: nothing checks it, and the one case behind
 it asked how firmly a decision was held, which changes what binds.
 (Basis: a single incident, for the observation; judgment, the
 controller's proposal accepted by the maintainer, for the plain
-statement beside the quote; the controller's calls in the spec
-campaign, the mark's removal on an ask the maintainer left to it, for
-the rest.)
+statement beside the quote of a carried doubt; the controller's calls in
+the spec campaign: the mark's removal, on an ask the maintainer left to
+it, and the plain statement for every carried question, not only the
+doubts, for the rest.)
 
 A branch's prose review once ran two waves of line-wrap fixes, each
 seeding the next; with formatting no tool enforces out of scope, ragged
