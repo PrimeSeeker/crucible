@@ -84,8 +84,34 @@ found before it:
 - any controller ruling on a literal-reading finding that a later pass or
   the operator reversed.
 
+One figure on the terminal pass's record check comes from before lean-gates,
+on one folded-lane feature of a code project: a terminal pass and its
+second read reported seven record corrections and no artifact finding, two
+default-role runs for a feature of about a hundred lines of code.
+
 Such a read shows what the remaining passes caught and what the operator
 objected to. It cannot show a defect that a pass not run would have caught,
 what the narrowed steps cost, or what every pass missed: the earlier counts
 have no ground truth behind them, and the figures are approximate. Report
 aggregate figures only for any project, as above.
+
+In the same runs, read what the path for a late ruling and the recorded
+readout did (the last paragraph and the list of
+`skills/redteaming/references/round-readout.md`;
+`docs/decisions/fix-verification-and-merge.md`,
+`docs/decisions/spec-campaign.md`, `docs/decisions/terminal-pass.md`). Three
+things, each against what was observed before them:
+
+- whether a ruling arriving after a spec campaign's last numbered round's
+  fix list froze went by that path, what its rulings list's verifier found,
+  and whether the list raised an ask of its own; before it, three campaigns
+  met such a ruling and their controllers did three different things, and
+  in about 20 campaigns of one code project at least 2 of 11 fix passes
+  around the terminal pass carried a ruling, a lower bound;
+- whether recorded readouts match the messages delivered; before it, in two
+  runs the controller recorded a shortened readout and delivered a fuller
+  one. Only a read of transcripts can show this: no seat reads the
+  operator's messages;
+- whether a plan phase met a ruling between its readout and its terminal
+  pass, which has no stated path; none is known, the three known cases being
+  spec campaigns.
