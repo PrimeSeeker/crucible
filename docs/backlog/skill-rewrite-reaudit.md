@@ -99,7 +99,7 @@ In the same runs, read what the path for a late ruling and the recorded
 readout did (the last paragraph and the list of
 `skills/redteaming/references/round-readout.md`;
 `docs/decisions/fix-verification-and-merge.md`,
-`docs/decisions/spec-campaign.md`, `docs/decisions/terminal-pass.md`). Three
+`docs/decisions/spec-campaign.md`, `docs/decisions/terminal-pass.md`). Four
 things, each against what was observed before them:
 
 - whether a ruling arriving after a spec campaign's last numbered round's
@@ -114,4 +114,8 @@ things, each against what was observed before them:
   operator's messages;
 - whether a plan phase met a ruling between its readout and its terminal
   pass, which has no stated path; none is known, the three known cases being
-  spec campaigns.
+  spec campaigns;
+- how often a ruling arrived after the terminal pass was dispatched, the case
+  the rule sends to the campaign's close, and how long the terminal pass's
+  wait for the operator's answers held, so the trade-off accepted over never
+  waiting gets a figure; no figure exists from before, neither was observed.
