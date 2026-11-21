@@ -34,6 +34,16 @@ waits only where that message carries a decision ask; otherwise the
 campaign starts with an announcement naming any departure. The gate
 shows no token figure (`crucible:brainstorming § Campaign gate`).
 
+**Process notes, offered in a line.** A controller always notes what is
+off in the process, with its cause, as it happens, and a seat says in its
+final reply what was off in its own instructions or tools. When the work
+ends the controller gives the operator one line offering the rest; the
+operator's instructions set what more they see
+(`skills/using-crucible/SKILL.md`, its Process notes paragraph;
+`skills/using-crucible/references/process-notes.md`;
+`skills/subagent-driven-development/references/seat-rules.md` § Report
+file). Notes nobody takes are deleted with the workspace.
+
 ## Why
 
 ### Autonomous execution
@@ -187,6 +197,66 @@ controller's call, which the maintainer accepted. (Basis: the maintainer's
 preference, over the controller's recommendation, for the clause; judgment,
 accepted by the maintainer, for skipping the test.)
 
+### Process notes
+
+The maintainer wanted feedback on the process, including what they cannot
+observe at all and what they do not in practice; until 2026-11-21 it came
+only when they asked, which spent their attention and reached no other
+user. A keyword search of 18 sessions over two weeks, 17 of them on one
+code project, found one such request; its answer listed nine things, three
+of which led to a later feature. Whether any had been volunteered earlier
+was not measured. (Basis: the maintainer's preference, for the feedback;
+measured, by a keyword search over session transcripts this repository
+does not hold, for the counts.)
+
+A note's causes follow the maintainer's own split, crucible and the
+project's or the operator's instructions, alone or with crucible, with the
+host and the agent added in the approved note. The maintainer's third
+cause, the operator themselves, is met by remarks on the operator's
+steering, which wait for an invitation (below). (Basis: the maintainer's
+preference, for the split; judgment, accepted by the maintainer, for the
+additions.)
+
+The maintainer's first outline left the report to the agent's discretion,
+since some users should not be shown unfiltered feedback. The controller
+argued that a controller's own account leans toward "it went fine" and
+that the agent cannot tell which user it has, so notes are always made,
+the operator's instruction files set how much of them they see, and the
+agent judges only the kind of item: its own preferences and remarks on
+the operator's steering wait for an invitation. (Basis: judgment, accepted
+by the maintainer.)
+
+The default for an operator who has said nothing, one line with the count,
+the main note and an offer of the rest, was the controller's proposal; the
+maintainer accepted it tentatively ("tentatively agree"). (Basis:
+judgment, accepted by the maintainer, tentatively.)
+
+Notes are made as things happen, one line each in a file in the feature
+workspace, so they survive compaction and a change of session, which a
+question at the close alone would not, and are reread at the close with
+what hindsight adds; the rule sits in the always-loaded router so it also
+reaches work outside a feature. Asked
+"what about subagents?", the controller added one sentence to the seats'
+shared rules, since a seat is the only second observer of the controller;
+the remark goes in the seat's reply rather than its report, so the merge
+and readout rules stay as they were. The three seats a controller composes
+itself (the mechanical pre-pass, the adjudicator, a fresh look) take no
+such sentence. For a note crucible caused, the full list offers a draft
+issue for crucible's maintainers, without the project's details, sent only
+on the operator's word. The running notes, the seat sentence and the issue
+offer were the controller's proposals. (Basis: judgment, accepted by the
+maintainer.)
+
+No store keeps notes beyond the workspace. The controller proposed none and
+named the loss as a limit; the maintainer's view: "Losing ignored notes is
+kind of a feature here, I think". (Basis: judgment, accepted by the
+maintainer, for building no store; the maintainer's preference, for the
+loss.)
+
+The rule costs 111 words, 686 characters, in text every session loads. Whether
+controllers make and offer notes shows only in later sessions
+(`docs/backlog/skill-rewrite-reaudit.md`). (Basis: measured, for the words.)
+
 ## Rejected
 
 - **An independent read of the controller's records before each round
@@ -205,6 +275,19 @@ accepted by the maintainer, for skipping the test.)
   gate's message carries a decision ask (§ Why).
 - **An unconditional stop before the campaign**: 56 asks on the route,
   the shape or a further round drew no departure (§ Why).
+- **No process report unless the operator asks**: the situation before
+  process notes, which reaches no operator who does not think to ask
+  (§ Why).
+- **The full list of process notes by default**: an operator's instruction
+  files can ask for it, and some operators should not be shown unfiltered
+  feedback (§ Why).
+- **An independent reader of a session's records or transcript as a
+  standard step**: a strong-model run per feature; one can still be asked
+  for.
+- **A store for process notes** beyond the workspace: notes nobody takes
+  are meant to go (§ Why).
+- **Sending notes upstream automatically**: it would send session content
+  outward without the operator's consent.
 - **A token estimate at the gate**: false precision (§ Why). The README's
   comparisons carry token figures as the maintainer's labelled
   impressions; the gate does not (`docs/decisions/publication.md`).
@@ -214,10 +297,13 @@ accepted by the maintainer, for skipping the test.)
 The operator's instruction files and direct requests outrank the skills
 (`skills/using-crucible/SKILL.md`, the precedence line), so an operator
 who wants to read and approve every spec or plan says so, and crucible
-shows them; nothing is ever withheld.
+shows them; nothing is ever withheld. Their instruction files can likewise
+ask for the full list of process notes every time, or for none, and can
+invite the agent's own preferences and remarks on their steering.
 
 ## Changes
 
+- 2026-11-21: process notes: a controller always notes what is off in the process, with its cause, as it happens, a seat saying in its final reply what was off in its instructions or tools, and gives the operator one line when the work ends, the full list where they or their instructions ask; because the maintainer saw such things only when they asked, which spent their attention and reached no other user.
 - 2026-11-19: the preset and the campaign's shape are the controller's calls, stated as the design presentation closes and carried by the design's approval, and the campaign gate waits only where its message carries a decision ask, one the record holds open or a change since the approval that the router's test sends to the operator; this narrows the unconditional stop before the campaign the maintainer kept on 2026-11-02, the conditional stop being the controller's proposal from a seat's suggestion, which the maintainer chose over no stop and over the stop as it stood. A choice no skill prescribes reaches the operator only where that test sends it, the controller stating its other calls in its next message. Because in a read of about 400 decisions over sixteen sessions of one code project the 56 on the route, the shape or a further round drew no departure, and the operator departed or raised something new on 45 of 217 product and scope decisions against 4 of 121 housekeeping ones.
 - 2026-11-05: a decision ask also gives the strongest case against its recommendation, as a trial on the maintainer's choice; because the lean toward a controller's own recommendations recurred and independent reads do not reach every ask.
 - 2026-11-05: decision asks coming last in a block of their own moved to the router's § Decision asks, reaching any message to the operator, and SDD's close readout keeps only "in a final block", since the campaign gate, the umbrella landing and the closing review reached the rule only through a redteaming reference.

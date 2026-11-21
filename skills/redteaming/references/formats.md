@@ -26,6 +26,7 @@ Gitignored files do not propagate across worktrees, so the workspace lives in on
     request.md
     tree-check.txt
     fresh-look-<k>.md
+    process-notes.md
     campaigns/
       spec/
         round-00/

@@ -193,6 +193,8 @@ Your report's `Questions` section holds anything material you could not stake as
 
 Write your report, in this template's structure, to the report file your dispatch names (a write it authorizes): the file is the deliverable. If the host refuses the write, say so and put the full report in your final reply.
 
+If anything was off in your instructions or tools, say what in one line at the end of your final reply, whatever else that reply is limited to; normally nothing was.
+
 Follow the structure below exactly, beginning with the Goal Check. Every line is the goal check, a finding with its location, a question, a triage verdict or a check you ran: no preamble, no process narration. Then reply with only the merge verdict and the report file's path; in standalone mode the report is your final message instead.
 
 ### Goal Check

@@ -119,3 +119,12 @@ things, each against what was observed before them:
   the rule sends to the campaign's close, and how long the terminal pass's
   wait for the operator's answers held, so the trade-off accepted over never
   waiting gets a figure; no figure exists from before, neither was observed.
+
+In the same runs, read what process notes did
+(`docs/decisions/operator-steering.md` § Process notes): whether controllers
+made notes as the work went and offered them in a line when it ended, what
+the notes held and which causes they named, whether a seat's remark reached
+them as the seat wrote it, and whether an operator took the offer. Before
+them, a keyword search of 18 sessions over two weeks found one operator
+request for a process report, and nothing measured whether anything had been
+volunteered.

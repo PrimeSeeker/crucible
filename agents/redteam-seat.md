@@ -115,6 +115,8 @@ For an umbrella's campaign the code is its children's: once they are implemented
 
 Write your report, in this template's structure, to the report file your dispatch names (a write it authorizes): the file is the deliverable. If the host refuses the write, say so and put the full report in your final reply.
 
+If anything was off in your instructions or tools, say what in one line at the end of your final reply, whatever else that reply is limited to; normally nothing was.
+
 Your report path is a `seat-<id>.md` file, `<id>` being your seat id, the `<seat-id>` below. Its sections, in this order:
 
 1. `## Verdict`: one line, your overall read of the artifact's fitness. Where your artifact kind is `spec`, a second line answers the overturn question (§ The arrangement questions; for an umbrella's campaign, § An umbrella's overturn question) as your forecast, exactly one of `Overturn after code: reasonably expected — <which mechanism, why>` or `Overturn after code: not reasonably expected`; a no resting on neither of that section's two usual cases gives its reason on the next line.

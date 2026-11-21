@@ -168,6 +168,8 @@ Your report's `Questions` section holds anything material you could not stake as
 
 Write your report, in this template's structure, to the report file your dispatch names (a write it authorizes): the file is the deliverable. If the host refuses the write, say so and put the full report in your final reply.
 
+If anything was off in your instructions or tools, say what in one line at the end of your final reply, whatever else that reply is limited to; normally nothing was.
+
 Follow exactly the structure below, beginning directly with the intent verdict: every line is a verdict, a finding with file:line, a ruling, a question or a check you ran; no preamble, process narration or closing summary. Then reply with only the task verdict and the report file's path.
 
 ### Intent

@@ -242,6 +242,19 @@ another folder for feature folders, name a home for the work a
 feature leaves open, say to work in place rather than in
 worktrees, name a worktree directory, or change a review's size.
 
+**Process notes.** As it works, crucible's controller notes whatever was
+off in the process (a rule missing or at odds, a costly step, a host
+failure, its own slips), each with its cause, and its reviewers and
+implementers say what was off in their own instructions or tools. When
+the work ends you see one line: how many notes there are, the main one,
+and an offer of the rest. A line in your instruction file can ask for the
+full list every time, or for none. The full list states each note as an
+observation about the work; the agent's own preferences, and remarks on
+your steering, appear only where your instructions invite them. For a
+note crucible caused, it offers a draft issue for crucible's maintainers
+without your project's details, and sends nothing without your word.
+Notes you don't take are deleted with the workspace.
+
 **A reviewer from the other model family.** Crucible's review panels run
 on one model family, which can share blind spots. If you use both hosts,
 the maintainer recommends adding one reviewer from the other family to a

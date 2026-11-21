@@ -134,6 +134,8 @@ Every finding carries its evidence and a location: `file:line`, or, for a premis
 
 Write your report, in this template's structure, to the report file your dispatch names (a write it authorizes): the file is the deliverable. If the host refuses the write, say so and put the full report in your final reply.
 
+If anything was off in your instructions or tools, say what in one line at the end of your final reply, whatever else that reply is limited to; normally nothing was.
+
 ## Report Format
 
 - What you implemented (or attempted, if blocked)
