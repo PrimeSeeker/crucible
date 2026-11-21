@@ -238,8 +238,10 @@ what hindsight adds; the rule sits in the always-loaded router so it also
 reaches work outside a feature. Asked
 "what about subagents?", the controller added one sentence to the seats'
 shared rules, since a seat is the only second observer of the controller;
-the remark goes in the seat's reply rather than its report, so the merge
-and readout rules stay as they were. The three seats a controller composes
+the remark goes in the seat's reply rather than in a section of its
+report, so the merge and readout rules stay as they were; where a reply
+is saved as the report (a seat on another host, a refused write), the
+line trails the report's last section. The three seats a controller composes
 itself (the mechanical pre-pass, the adjudicator, a fresh look) take no
 such sentence. For a note crucible caused, the full list offers a draft
 issue for crucible's maintainers, without the project's details, sent only
@@ -253,7 +255,7 @@ kind of a feature here, I think". (Basis: judgment, accepted by the
 maintainer, for building no store; the maintainer's preference, for the
 loss.)
 
-The rule costs 111 words, 686 characters, in text every session loads. Whether
+The rule costs 109 words, 674 characters, in text every session loads. Whether
 controllers make and offer notes shows only in later sessions
 (`docs/backlog/skill-rewrite-reaudit.md`). (Basis: measured, for the words.)
 

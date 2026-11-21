@@ -216,7 +216,8 @@ adapters are in `docs/dual-runtime.md`.
   whole effort, and what it finds that you keep goes there too.
 - **A workspace,** `.crucible/<feature-name>/`, holding your messages
   that asked for the feature, quoted for the reviewers' goal check, the
-  review rounds' records, agents' reports and the execution ledger. It
+  review rounds' records, agents' reports, the execution ledger and the
+  process notes. It
   is untracked (crucible writes a `.crucible/.gitignore` that ignores it
   all) and is deleted when the feature finishes, once the work left open
   has gone to its home or you have dropped it.
