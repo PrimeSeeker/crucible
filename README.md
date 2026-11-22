@@ -248,7 +248,8 @@ off in the process (a rule missing or at odds, a costly step, a host
 failure, its own slips), each with its cause, and its reviewers and
 implementers say what was off in their own instructions or tools. When
 the work ends you see one line: how many notes there are, the main one,
-and an offer of the rest. A line in your instruction file can ask for the
+and an offer of the rest; with no notes, only a feature's close says
+so. A line in your instruction file can ask for the
 full list every time, or for none. The full list states each note as an
 observation about the work; the agent's own preferences, and remarks on
 your steering, appear only where your instructions invite them. For a
