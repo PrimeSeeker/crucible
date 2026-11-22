@@ -64,9 +64,9 @@ No break.
 ## Acceptance
 
 1. `python -m pytest tests/` passes.
-2. `git grep -c "off in the seat's instructions or tools" -- skills/subagent-driven-development/references/dispatch-composition.md`
+2. `git grep -c "sentence on what was off" -- skills/subagent-driven-development/references/dispatch-composition.md`
    prints a count.
-3. `git grep -l "controller reads it, not your reply" -- skills/redteaming/seat-prompt.md skills/redteaming/terminal-pass-prompt.md skills/redteaming/verifier-prompt.md skills/requesting-code-review/code-reviewer.md skills/subagent-driven-development/implementer-prompt.md skills/subagent-driven-development/re-review-prompt.md skills/subagent-driven-development/task-reviewer-prompt.md`
+3. `git grep -l "reads your report from the file" -- skills/redteaming/seat-prompt.md skills/redteaming/terminal-pass-prompt.md skills/redteaming/verifier-prompt.md skills/requesting-code-review/code-reviewer.md skills/subagent-driven-development/implementer-prompt.md skills/subagent-driven-development/re-review-prompt.md skills/subagent-driven-development/task-reviewer-prompt.md`
    lists all seven templates.
 4. `git grep -c "close readout only" -- skills/using-crucible/SKILL.md`
    prints a count, and
