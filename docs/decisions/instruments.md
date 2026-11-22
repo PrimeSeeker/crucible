@@ -44,7 +44,8 @@ part of the assignment: the composition's seventh item, and a line in
 every template.
 
 **Report files.** Every instrument writes its own report file, a write
-its template names, but for the branch reviewer in standalone mode,
+its template names, saying why the file and not the reply holds the
+report, but for the branch reviewer in standalone mode,
 which returns its report as its final message; and if the host refuses the write it returns the
 report as text and says so. Review seats and the adjudicator write under
 the feature workspace's `sdd/reports/` and `sdd/branch-review/`
@@ -299,6 +300,22 @@ own. The redteam seat's template (2026-10-16) and the implementer's
 (2026-10-17) then gained the refused-write fallback their siblings
 carried. (Basis: judgment, accepted by the maintainer.)
 
+On 2026-11-22 § Report file, which all seven templates take, gained its
+reason: the controller reads the report from the file, not from the
+seat's reply, and the file outlasts the controller's context. The host's
+note gives subagents the opposite reason, that the parent reads their
+reply and not files they create, and two seats, asked what was off in
+their instructions, reported the two as a clash. The maintainer's view is
+that the rule should state its reason where the host states the opposite
+one, "because it's right rather than impactful", and their expectation
+that the clash reports then stop. No effect was measured: nine probe
+seats on the default role, three to each of three wordings (the section
+as it stood, with § Report file required added, and with the reason), all
+wrote the file and none reported a clash; the maintainer holds the
+probe's tasks were probably too small to show one, the two reports having
+come in the first run that asked. (Basis: the maintainer's preference,
+for stating the reason; measured, for the probe.)
+
 ### The plugin root
 
 On 2026-10-08 the implementer's template named systematic-debugging and
@@ -402,18 +419,9 @@ judgment, accepted by the maintainer.)
   seats whose misses persisted
   (`docs/backlog/review-seat-report-write.md`), taken from the shared
   seat reference's § Report file required, which no other template
-  takes; its § Report file does not carry it. A second exception, with
-  another purpose: since 2026-11-22 § Report file, which all seven
-  templates take, says why the file is the deliverable: the controller
-  reads it, not the reply, and it outlasts the controller's context. The
-  host's note gives subagents the opposite reason, that the parent reads
-  their reply and not files they create, and two seats asked what was off
-  in their instructions reported the two as a clash. The sentence is there
-  because a rule should state its reason, the maintainer's view, not for a
-  measured effect: nine probe seats on the default role, three to each of
-  three wordings (the section as it stood, with § Report file required
-  added, and with the reason), all wrote the file and none reported a
-  clash. Since 2026-11-04 those two
+  takes; its § Report file does not carry it, and the reason that
+  section gives for the file is no wording against skipped writes
+  (§ Why › Report files). Since 2026-11-04 those two
   seats' cards also have the controller name the host's file-writing
   tool, unhedged. One verifier wrote on its first return under such
   wording; in a later run four reports came back as text under "if you
@@ -445,7 +453,7 @@ judgment, accepted by the maintainer.)
 
 ## Changes
 
-- 2026-11-22: § Report file, which all seven templates take, says why the file is the deliverable (the controller reads it, not the reply, and it outlasts the controller's context); because the host's note to subagents gives the opposite reason and the maintainer holds that the rule should state its own. No effect was measured: nine probe seats wrote the file and reported no clash under any of three wordings.
+- 2026-11-22: § Report file, which all seven templates take, says why the file is the deliverable (the controller reads the report from the file, not from the reply, and the file outlasts the controller's context); because the host's note to subagents gives the opposite reason and the maintainer holds that the rule should state its own. No effect was measured: nine probe seats wrote the file and reported no clash under any of three wordings.
 - 2026-11-06: a re-reviewer on the very-small lane missed its report file and wrote it on one resume, so the 23 straight writes no longer show the misses stopped there; no rule changes.
 - 2026-11-06: a branch reviewer started by a Codex controller's `spawn_agent` named its template in its first command and wrote a report of the template's shape, one seat on a docs-only lane; no rule changes, and the other instruments have yet to run this way.
 - 2026-11-06: seats' reads past their scopes are measured and left as they are, since redteam seats' findings mention what those reads reached and other seats' scopes stay on judgment; the audit's methods question closes, partly taken up and the rest dropped unmeasured; a seat's ability to nest, and the declined tool-level ban, move here from the deleted backlog item.

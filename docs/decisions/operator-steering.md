@@ -37,8 +37,8 @@ shows no token figure (`crucible:brainstorming § Campaign gate`).
 **Process notes, offered in a line.** A controller always notes what is
 off in the process, with its cause, as it happens, and every seat says in
 its final reply what was off in its own instructions or tools. When the
-work ends the controller gives the operator one line offering the rest,
-which in a feature's close readout says so where no notes were made; the
+work ends the controller gives the operator one line offering the rest or,
+in a feature's close readout, saying that no notes were made; the
 operator's instructions set what more they see, or that they see none
 (`skills/using-crucible/SKILL.md`, its Process notes paragraph;
 `skills/using-crucible/references/process-notes.md`;
@@ -262,7 +262,8 @@ pre-pass, the adjudicator, the snapshot-blessing agent, a fresh look and
 an umbrella closing review's seats), at first took no such sentence. Asked
 at the build's close, the maintainer agreed that they should, and the duty
 now sits in the return contract every dispatch carries, in place of a list
-of exceptions. For a note crucible caused, the full list offers a draft
+of exceptions; a composed dispatch copies the template's sentence, so it
+keeps "normally nothing was" and the two wordings cannot drift. For a note crucible caused, the full list offers a draft
 issue for crucible's maintainers, without the project's details, sent only
 on the operator's word. The running notes, the seat sentence and the issue
 offer were the controller's proposals. (Basis: judgment, accepted by the
@@ -274,7 +275,7 @@ kind of a feature here, I think". (Basis: judgment, accepted by the
 maintainer, for building no store; the maintainer's preference, for the
 loss.)
 
-The rule costs 121 words, 737 characters, in text every session loads. Whether
+The rule costs 122 words, 741 characters, in text every session loads. Whether
 controllers make and offer notes shows only in later sessions
 (`docs/backlog/skill-rewrite-reaudit.md`). (Basis: measured, for the words.)
 
@@ -324,7 +325,7 @@ invite the agent's own preferences and remarks on their steering.
 
 ## Changes
 
-- 2026-11-22: every seat says what was off in its instructions or tools, a seat the controller composes itself through the dispatch composition's return contract, the maintainer's answer to a question the build left open; and the statement that no notes were made is part of the one line, so an operator's instructions can silence it, owed in a feature's close readout only; because read literally an operator who asked for no process notes still saw it.
+- 2026-11-22: every seat says what was off in its instructions or tools, a seat the controller composes itself through the dispatch composition's return contract, which copies the template's sentence, the maintainer's answer to a question the build left open; and the statement that no notes were made is part of the one line, so an operator's instructions can silence it, owed in a feature's close readout only; because read literally an operator who asked for no process notes still saw it.
 - 2026-11-22: with no process notes made, a feature's close says so and other work says nothing; because a branch review asked what the line is then, and at a close silence cannot be told from a skipped step.
 - 2026-11-21: process notes: a controller always notes what is off in the process, with its cause, as it happens, a seat saying in its final reply what was off in its instructions or tools, and gives the operator one line when the work ends, the full list where they or their instructions ask; because the maintainer saw such things only when they asked, which spent their attention and reached no other user.
 - 2026-11-19: the preset and the campaign's shape are the controller's calls, stated as the design presentation closes and carried by the design's approval, and the campaign gate waits only where its message carries a decision ask, one the record holds open or a change since the approval that the router's test sends to the operator; this narrows the unconditional stop before the campaign the maintainer kept on 2026-11-02, the conditional stop being the controller's proposal from a seat's suggestion, which the maintainer chose over no stop and over the stop as it stood. A choice no skill prescribes reaches the operator only where that test sends it, the controller stating its other calls in its next message. Because in a read of about 400 decisions over sixteen sessions of one code project the 56 on the route, the shape or a further round drew no departure, and the operator departed or raised something new on 45 of 217 product and scope decisions against 4 of 121 housekeeping ones.
