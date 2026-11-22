@@ -124,7 +124,10 @@ In the same runs, read what process notes did
 (`docs/decisions/operator-steering.md` § Process notes): whether controllers
 made notes as the work went and offered them in a line when it ended, what
 the notes held and which causes they named, whether a seat's remark reached
-them as the seat wrote it, and whether an operator took the offer. Before
+them as the seat wrote it, whether seats reported the host's advice on
+report files as something off (two did on the build of process notes; none
+of nine probe seats did, with or without the rule's reason), and whether an
+operator took the offer. Before
 them, a keyword search of 18 sessions over two weeks found one operator
 request for a process report, and nothing measured whether anything had been
 volunteered.

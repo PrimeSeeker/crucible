@@ -107,7 +107,7 @@ For an umbrella's campaign the code is its children's: once they are implemented
 
 ## Report file
 
-Write your report, in this template's structure, to the report file your dispatch names (a write it authorizes): the file is the deliverable. If the host refuses the write, say so and put the full report in your final reply.
+Write your report, in this template's structure, to the report file your dispatch names (a write it authorizes): the file is the deliverable. Your controller reads it, not your reply, and it outlasts the controller's context. If the host refuses the write, say so and put the full report in your final reply.
 
 If anything was off in your instructions or tools, say what in one line at the end of your final reply, whatever else that reply is limited to; normally nothing was.
 

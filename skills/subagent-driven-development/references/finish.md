@@ -12,7 +12,7 @@
    - each ruling or requested change a fixer declined, as an ask
    - the lane's departures and the record-check gaps
    - after loop activity that followed an earlier answer, what changed since
-   - the one line on `process-notes.md` that `crucible:using-crucible` asks for, or that no notes were made
+   - the one line on `process-notes.md` that `crucible:using-crucible` asks for
    - then the work left open, each item with its source: parked BLOCKER/MAJOR findings with their rulings, premise asks still unruled and `unstated break` asks still open, each with your proposal to keep or drop it, and why, only the operator's answer dropping one; then deferred minors and leads (a RECOMMENDED lead you did not adopt, with its verdict; where a cleanup wave ran, why it left each one) and the `## Questions` items not listed above (declined improvements and what earlier phases carried among them), each with your call to keep or drop it, and why, which the operator's answer may change
    - where the project's instructions name no home for open items and something is left open, an ask where it goes or whether to drop it, offering to record the answer (`skills/redteaming/references/formats.md` § Open items)
    - where this feature's landing could complete its umbrella, what `skills/brainstorming/references/umbrellas.md` § Closing review has the readout say
