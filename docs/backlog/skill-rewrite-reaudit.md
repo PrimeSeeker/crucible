@@ -128,3 +128,14 @@ them as the seat wrote it, and whether an operator took the offer. Before
 them, a keyword search of 18 sessions over two weeks found one operator
 request for a process report, and nothing measured whether anything had been
 volunteered.
+
+Compare the routes on branches that are prose only. Two such features of
+similar size were built back to back on crucible itself: the folded route
+took 27 seat runs, the very-small lane 6, and none of the lane's three
+full-scope reads raised a BLOCKER or MAJOR. One pair settles nothing, and
+the folded feature changed review mechanics across routes while the lane's
+replaced no mechanism. Read what the folded feature's spec campaign found
+that a branch review would have missed, and whether the overturn question
+(`skills/subagent-driven-development/references/review-terms.md` § The
+arrangement questions), which asks how likely an overturn is, should also
+weigh what one costs where the branch is text.
