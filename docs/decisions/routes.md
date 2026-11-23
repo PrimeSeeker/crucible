@@ -131,7 +131,7 @@ Every feature with a role file after `compaction-fit` has been a lane
 note, though whether a batch among them would have gone better with a plan
 is unmeasured, and 44 of 98 spec and plan campaigns stopped after one
 round, the shape a settled change takes, for reasons the counts cannot
-show. The first reopens on its trigger, a settled change campaigned only
+show. The first was to reopen on its trigger, a settled change campaigned only
 to get a plan. As first recorded, the
 first had no known use; it has one, a settled change that needs several
 coordinated tasks, and is unsupported
@@ -153,7 +153,7 @@ it, and waited on that check. (Basis: measured.)
 
 A reader then judged, for each BLOCKER or MAJOR of those five campaigns,
 who would have met it without the campaign. Of round 1's 15 MAJORs, 3 would
-have met the implementer and 2, plausibly, the branch reviewer. 3 would
+plausibly have met the implementer and 2 the branch reviewer. 3 would
 have been built in or acted out silently: two gaps in the safety of the
 work's own steps against production data, and one rule whose effect shows
 only in the product's output. For 6 the reader could not tell, 3 of them
@@ -164,9 +164,13 @@ with 1 undetermined (`docs/backlog/pre-pass-on-settled-changes.md`). None
 of the 32 would have overturned something other tasks built on; three meant
 about a task's rework. In those features the 12 branch-review passes raised
 no BLOCKER or MAJOR, and the task reviews 4 MAJORs, all on documents or
-records. The campaigns' seats took 1.39 million of those features' 4.29
-million seat output tokens, a seat on another host and the controller not
-counted.
+records. Those stages did meet three defects of the kind round 1 raised,
+failure paths in the code as built, one of which the campaign had answered
+as harmless; none met a failure path the spec's own text defined wrongly,
+the campaigns having removed those beforehand, so that cannot be counted
+either way. The campaigns' seats took 1.39 million of those features' 4.29
+million seat output tokens, each campaign's seat on another host and the
+controller not counted.
 
 So a lane note with a plan is rejected: it would save about a third of such
 a feature's seat output and give up the findings no later stage is placed
@@ -505,7 +509,7 @@ small preset or the waiver for its work.
 
 ## Changes
 
-- 2026-11-23: a lane note with a plan is rejected, no longer waiting on a check, on an agent's recommendation the maintainer accepted; because a reader of the five settled-change campaigns judged that of their 15 round-1 MAJORs 3 would have been built in silently and 6 could not be placed, against 5 a later stage would have met, while the campaigns took about a third of those features' seat output.
+- 2026-11-23: a lane note with a plan is rejected, no longer waiting on a check, on an agent's recommendation the maintainer accepted; because a reader of the five settled-change campaigns judged that of their 15 round-1 MAJORs 3 would have been built in silently and 6 could not be placed, against 5 a later stage would plausibly have met, while the campaigns took about a third of those features' seat output.
 - 2026-11-23: a lane note with a plan has met the condition that reopens it, 5 of 8 one-round campaigns in the re-audit's runs being settled changes campaigned only to get tasks, and is not built yet, since those five still merged 2 to 4 MAJORs each in round 1 and whether a branch review would have caught them is unchecked: an agent's recommendation the maintainer accepted. What the lane did without Lane Fit's shape verdict is recorded.
 - 2026-11-23: the very-small lane is entered by the operator's approval of the design that proposes it, and the controller writes the note from that design, no longer showing it for approval; the branch reviewer's goal check reads the note's Out of scope with its Intent; because on two lane features the controller showed the design and wrote the note fuller, and the maintainer reads the note as the reviewer's document. A note's Acceptance takes no check that searches prose for its wording; because two such checks each cost the maintainer's decision and a re-pin when a reviewer improved the sentence, and none ever failed.
 - 2026-11-19: the preset is the controller's call, stated with its reasons as the design presentation closes, which the operator may veto and the design's approval carries, the route entry recording it, in place of the operator's confirmation; the very-small lane is still entered only by the operator's approval of its note; because in a read of about 400 decisions over sixteen sessions of one code project the 56 on the route, the campaign's shape or a further round drew no departure.
