@@ -106,8 +106,9 @@ cut from the point that ran, which `master` will usually have moved past.
 That is why the release commit is made on `testing`'s tip and merged into
 `master`, in place of landing on `master` first. A trial's pre-release
 is of the version its release will take, and moves up from a patch to a
-minor when a behaviour change lands, so that versions only rise: no host
-was measured moving to a lower version.
+minor when a behaviour change lands, so that versions only rise: no
+install was measured updating in place, on a branch it follows, to a
+lower version.
 
 Measured that day in throwaway configurations against a local git remote
 (Claude Code 2.1.330, codex-cli 0.170.0). Claude Code accepted a branch
@@ -177,8 +178,8 @@ kept few and chosen on any branch. (Basis: a single observation.)
   with no version change, the maintainer's installs follow `testing`,
   which a trial moves to a pre-release version commit, and `stable` is
   released from what `testing` has run; pre-release tags are retired as
-  the trial route; because 36 releases in 27 days, each cut within three
-  hours of the work it released, had made `stable` the test channel, and
+  the trial route; because 36 releases in 27 days, each within three
+  hours of the commit before it, had made `stable` the test channel, and
   both hosts were measured following a branch. An update reaching a
   running session joins the reasons an install's moves are kept few.
 
