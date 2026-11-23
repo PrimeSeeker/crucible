@@ -128,11 +128,19 @@ print why. A skip is not a pass. The suite launches no model.
   changed and why.
 - Land on `master` by merging the branch, and only on the operator's
   go-ahead for that landing.
-- A release: bump the version in the three manifests on a branch and land
-  it on `master` as above; tag that commit `v<version>`; fast-forward
-  `stable` to it; publish a GitHub release with a few lines of notes.
+- A landing changes no version and updates no install.
+- A trial puts landed work on the maintainer's installs, which follow
+  `testing`: set the version in the three manifests to the next
+  pre-release (`0.38.0-rc.1`) in a commit landed on `master` as above,
+  fast-forward `testing` to it, and update the installs. No tag, no
+  GitHub release.
+- A release is cut from what `testing` has run: on a branch from its tip,
+  set the final version in the three manifests; tag that commit
+  `v<version>`; fast-forward `testing` and `stable` to it and merge it
+  into `master`; publish a GitHub release with a few lines of notes.
   Minor for a behaviour change, patch for fixes. `stable`, the default
-  branch, holds only releases, and the maintainer's own install tracks it
+  branch, holds only releases.
+- `testing` and `stable` each move only on the maintainer's word
   (`docs/dual-runtime.md` § Release metadata).
 - Line endings are LF. `hooks/session-start` and `*.sh` must stay LF
   (`.gitattributes`); writers that emit CRLF on Windows will break the hook.

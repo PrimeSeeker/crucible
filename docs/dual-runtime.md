@@ -218,24 +218,28 @@ authentication policy plus a category; every shipped skill carries its
 `agents/openai.yaml` presentation metadata; and no registration or presentation
 file bakes in any project's policy.
 
-A release bump therefore edits three files together, or fails the suite.
+A version change therefore edits three files together, or fails the suite.
 
-**A release is a promotion to `stable`.** Features land on `master`. A
-release lands the version bump on `master` like any change, tags that
-commit `v<version>`, fast-forwards `stable` to it and publishes a GitHub
-release with a few lines of notes. `stable` is the default branch and
-holds only releases, so a plain install from GitHub gets the latest one.
-A behaviour change bumps the minor version, fixes the patch version. The
-tag is `v<version>`, not the `<plugin>--v<version>` form Claude Code's
+**Three branches.** Features land on `master`, with no version change.
+`testing` holds what is on trial, and the maintainer's installs follow
+it. `stable` is the default branch and holds only releases, so a plain
+install from GitHub gets the latest one.
+
+**A trial moves `testing`.** A commit landed on `master` like any change
+sets the version to the next pre-release (`0.38.0-rc.1`, then `rc.2`);
+`testing` fast-forwards to it, and the installs that follow it update
+(§ Upgrades and rollback). The version change is what makes Claude Code
+fetch the new copy. A trial has no tag and no GitHub release.
+
+**A release is cut from what `testing` has run.** A commit on
+`testing`'s tip sets the final version and is tagged `v<version>`;
+`testing` and `stable` fast-forward to it, it is merged into `master`,
+and a GitHub release is published with a few lines of notes. A behaviour
+change bumps the minor version, fixes the patch version. The tag is
+`v<version>`, not the `<plugin>--v<version>` form Claude Code's
 `claude plugin tag` creates: other plugins' dependency version ranges
-resolve against that form, and no plugin depends on crucible.
-
-**A pre-release tries a change before its release.** Bump `master`'s
-version to a pre-release one (`0.3.0-rc.1`), tag that commit
-`v0.3.0-rc.1`, and install pinned to the tag (§ Upgrades and rollback);
-`stable` does not move. The version change makes a host fetch the new
-copy (§ Upgrades and rollback). The repository protects every `v*` tag from deletion, so a
-pre-release tag stays, like a release's.
+resolve against that form, and no plugin depends on crucible. The
+repository protects every `v*` tag from deletion.
 
 ## Upgrades and rollback
 
@@ -280,9 +284,12 @@ codex plugin marketplace add PrimeSeeker/crucible --ref v<version>
 codex plugin add crucible@crucible
 ```
 
-**Try a pre-release** the same way, with its tag (`v0.3.0-rc.1`) in
-place of `v<version>`. To go back, pin a release tag, or re-add the
-marketplace without a tag to track `stable` again.
+**Follow `testing`** to run changes on trial: add the marketplace at
+that branch, with `testing` in place of `v<version>` above, and install.
+To update, on Claude Code run `claude plugin marketplace update crucible`
+and then `claude plugin update crucible@crucible`; on Codex,
+`codex plugin marketplace upgrade crucible`. To go back, pin a release
+tag, or re-add the marketplace without a ref to follow `stable` again.
 
 After any install, upgrade or rollback, check routing in a new session. On
 Claude Code, no `crucible: router not loaded` notice means the router

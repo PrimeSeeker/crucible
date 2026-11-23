@@ -2,31 +2,30 @@
 
 ## Decision
 
-**A release is a promotion to `stable`.** Features land on `master`. A
-release bumps the version in the three manifests that carry one, lands
-that bump on `master` like any change, tags the commit `v<version>`,
-fast-forwards `stable` to it and publishes a GitHub release with a few
-lines of notes. A behaviour change bumps the minor version, fixes the
-patch version. `stable` is the default branch and holds only releases,
-so a plain install from GitHub gets the latest one, and the maintainer's
-own install tracks it (`AGENTS.md`, Git; `docs/dual-runtime.md`
-§ Release metadata). The suite checks that the three versions are equal.
-None of upstream's release tooling is carried (`docs/upstream.md`).
+**Three branches.** Features land on `master`, with no version change.
+`testing` holds what is on trial, and the maintainer's installs follow
+it. `stable` is the default branch and holds only releases, so a plain
+install from GitHub gets the latest one. A trial moves `testing` to a
+commit on `master` that sets a pre-release version, with no tag and no
+GitHub release. A release is cut from what `testing` has run: a commit on
+its tip sets the final version and is tagged `v<version>`, `testing` and
+`stable` fast-forward to it, it is merged into `master`, and a GitHub
+release is published with a few lines of notes. A behaviour change bumps
+the minor version, fixes the patch version. Each of the two branches
+moves only on the maintainer's word, and a release waits until what it
+holds has run on real work, a judgment with no cadence (`AGENTS.md`, Git;
+`docs/dual-runtime.md` § Release metadata). The suite checks that the
+three versions are equal. None of upstream's release tooling is carried
+(`docs/upstream.md`).
 
 **Installing from a tag.** Every release keeps its tag. Holding a
 version, or rolling back to one, reinstalls from that version's tag; no
 archive is kept (`docs/dual-runtime.md` § Upgrades and rollback).
 
-**Pre-releases.** To try a change before its release, `master`'s version
-is bumped to a pre-release one (`0.3.0-rc.1`), that commit tagged, and an
-install pinned to the tag; `stable` does not move. Reinstalling a release
-tag goes back (`docs/dual-runtime.md` § Release metadata, § Upgrades and
-rollback). The maintainer holds this position tentatively (§ Why).
-
 **Promotion only between features.** An install moves to a new process
 version only when no feature is between its brainstorm and its finish
 (`AGENTS.md`, You are editing the process you run under). The rule
-covers `stable` and any other install a feature runs under.
+covers `testing`, `stable` and any other install a feature runs under.
 
 ## Why
 
@@ -76,17 +75,60 @@ that a rollback is defined without an archive. On 2026-10-19 it took its
 current form: every release keeps its tag, and holding or rolling back a
 version pins it. (Basis: judgment, accepted by the maintainer.)
 
-### Pre-releases
+### A testing branch
 
 The maintainer asked for "something like an experimental branch" to try
 a change on real work; an agent proposed pre-release tags on `master`,
 since a host fetches a new copy when the version changes. The maintainer
-agreed tentatively ("OK, tentatively agree", 2026-10-27), and the
-position was held until both hosts were seen to accept a pre-release
-version. Before the first release, both did: an install pinned to a
-`0.2.1-rc.1` tag loaded that version, in a newly fetched copy, and moving
-back to `v0.2.0` loaded 0.2.0, on Claude Code and on Codex. (Basis:
-judgment, accepted tentatively by the maintainer; measured.)
+agreed tentatively ("OK, tentatively agree", 2026-10-27). Before the
+first release both hosts were seen to accept a pre-release version: an
+install pinned to a `0.2.1-rc.1` tag loaded that version, in a newly
+fetched copy, and moving back to `v0.2.0` loaded 0.2.0, on Claude Code
+and on Codex. (Basis: judgment, accepted tentatively by the maintainer;
+measured.)
+
+No pre-release was cut after that. From 2026-10-27 to 2026-11-23 the
+repository released 36 times, each release commit made within three hours
+of the commit before it (a median of a minute), and the notes of the last
+four, 0.34.0 to 0.37.0, each said that nothing in them had run in a
+session. A change
+can only be tried once it is installed, the maintainer's installs
+followed `stable`, and pinning an install to a tag means removing and
+re-adding the marketplace, more work than a release. So `stable` served
+as the test channel. The maintainer, when a rule released in 0.35.0 came
+up for narrowing two releases later: "our versioning and publishing
+scheme is off. If we're narrowing the rule immediately after seeing it in
+action, then it should have been in testing (probably a separate branch
+for personal plugin install?), and stable should have been more
+conservative" (2026-11-23).
+
+Since 2026-11-23 the maintainer's installs follow a `testing` branch. A
+branch is followed once, where a tag is pinned anew for each trial; a
+landing costs no version change, tag or install update; and a release is
+cut from the point that ran, which `master` will usually have moved past.
+That is why the release commit is made on `testing`'s tip and merged into
+`master`, in place of landing on `master` first.
+
+Measured that day in throwaway configurations against a local git remote
+(Claude Code 2.1.330, codex-cli 0.170.0). Claude Code accepted a branch
+as the marketplace's ref; a new commit under an unchanged version left
+its copy as it was; and it fetched a new copy at each version change,
+0.37.0 to `0.38.0-rc.1`, to `0.38.0-rc.2`, to 0.38.0, once
+`claude plugin marketplace update` had run before `claude plugin update`,
+which alone reported the old version as the latest. Codex followed the
+branch, and `codex plugin marketplace upgrade` replaced its copy under an
+unchanged version, as measured before. Not measured there: the GitHub
+`owner/repo#testing` form, which the first trial on the repository
+measures.
+
+The costs accepted: sessions on the maintainer's other work run
+`testing`, so real work stays the test bed, one step ahead of `stable`
+where it used to be on it; when a batch has run enough to release is a
+judgment; and no path is designed for an urgent fix to `stable` while
+`testing` holds untried work, which has not come up. (Basis: measured,
+for the counts and the hosts; the maintainer's observation and
+suggestion of a branch; judgment, the controller's proposal, accepted by
+the maintainer, for the scheme's form.)
 
 ### Promotion between features
 
@@ -99,6 +141,13 @@ part of its life under each version (2026-10-10). The maintainer has
 promoted that way since, for instance before a brainstorm ("OK, please
 promote", 2026-10-13). (Basis: judgment, accepted by the maintainer.)
 
+An update also reaches a session already running: one that began on
+0.34.0 loaded the skills it invoked from the 0.36.0 copy after an update
+ran under it, its router text staying as loaded at its start
+(2026-11-23; `docs/dual-runtime.md` § Upgrades and rollback states the
+mechanism). So an install's moves are kept few and chosen on any branch.
+(Basis: a single observation.)
+
 ## Rejected
 
 - **Upstream's release tooling** (a version-bump config and script, a
@@ -109,8 +158,23 @@ promote", 2026-10-13). (Basis: judgment, accepted by the maintainer.)
 - **The version in one Claude Code manifest only**: the suite already
   keeps the two equal (§ Why).
 - **A version marker in record formats**: nothing would read it (§ Why).
+- **A release for every landing**, the practice until 2026-11-23: it made
+  `stable` the test channel (§ A testing branch).
+- **Pre-release tags as the way to try a change**, held tentatively from
+  2026-10-27 and never used: each trial means re-pinning the install
+  (§ A testing branch).
+- **The maintainer's installs following `master`**: a release should be
+  cut from the point that ran, and `master` moves with every landing.
 
 ## Changes
+
+- 2026-11-23: three branches in place of two: features land on `master`
+  with no version change, the maintainer's installs follow `testing`,
+  which a trial moves to a pre-release version commit, and `stable` is
+  released from what `testing` has run; pre-release tags are retired as
+  the trial route; because 36 releases in 27 days, each cut within three
+  hours of the work it released, had made `stable` the test channel, and
+  both hosts were measured following a branch.
 
 - 2026-11-05: the version stays in both Claude Code manifests and record formats take no version marker, each weighed and kept as it is; Codex's refresh of a copy under an unchanged version is measured.
 - 2026-10-27: 0.3.0 ran the update from 0.2.0 on both hosts; the

@@ -316,9 +316,10 @@ rolling back.
 
 A release is tagged `v<version>` and published as a GitHub release with a
 few lines of notes. The repository's default branch, `stable`, holds the
-latest release, so a plain install gets it, and the maintainer's own
-install tracks it too. A behaviour change bumps the minor version; a fix
-bumps the patch version.
+latest release, so a plain install gets it. Changes run first on a
+`testing` branch, which the maintainer's own installs follow, and a
+release is cut from what has run there. A behaviour change bumps the
+minor version; a fix bumps the patch version.
 
 To update on Claude Code, run `claude plugin update crucible@crucible`,
 then start a new session. To stay on a version, or go back to one,
@@ -327,7 +328,7 @@ PrimeSeeker/crucible#v<version>` on Claude Code, `--ref v<version>` on
 Codex. Note your installed version before updating: it is the one you
 would go back to. `claude plugin list` and `codex plugin list` show it.
 `docs/dual-runtime.md` § Upgrades and rollback has the full commands for
-both hosts.
+both hosts, and those for following `testing`.
 
 ## Glossary
 

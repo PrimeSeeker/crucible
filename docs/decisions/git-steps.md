@@ -86,9 +86,9 @@ by the maintainer.)
 ### Crucible's own repository
 
 Landing on `master` only on the maintainer's go-ahead for that landing
-is the maintainer's own rule. `master` is where releases are cut: a
-release lands on it, is tagged and then promoted to `stable`
-(`docs/decisions/releases.md`). (Basis: the maintainer's preference.)
+is the maintainer's own rule. `master` is where everything lands first:
+a trial moves `testing` to a commit on it, and a release is cut from what
+`testing` has run and merged back (`docs/decisions/releases.md`). (Basis: the maintainer's preference.)
 
 ## Rejected
 
