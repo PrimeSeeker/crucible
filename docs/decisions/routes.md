@@ -147,13 +147,38 @@ That trigger fired in the re-audit of 2026-11-23 (its scope and limits in
 the 8 campaigns there that stopped after one numbered round, 5 were settled
 changes campaigned only to get tasks, their route entries or design
 messages expecting no overturn. Those five still merged 2 to 4 MAJORs each
-in that round, and whether a branch review would have caught them was not
-checked. So a lane note with a plan has met the condition that reopens it,
-and is not built yet: it stays unsupported until a read of such campaigns
-shows whether a branch review catches what their round 1 merged
-(`docs/backlog/skill-rewrite-reaudit.md`). An agent's recommendation, which
-the maintainer accepted. (Basis: measured; judgment, accepted by the maintainer,
-2026-11-23.)
+in that round, and whether a later stage would have caught them was not
+checked then. So a lane note with a plan had met the condition that reopens
+it, and waited on that check. (Basis: measured.)
+
+A reader then judged, for each BLOCKER or MAJOR of those five campaigns,
+who would have met it without the campaign. Of round 1's 15 MAJORs, 3 would
+have met the implementer and 2, plausibly, the branch reviewer. 3 would
+have been built in or acted out silently: two gaps in the safety of the
+work's own steps against production data, and one rule whose effect shows
+only in the product's output. For 6 the reader could not tell, 3 of them
+leaning silent, and one fix changed nothing that was built. Of the 17 the
+round-0 pre-pass staked, 1 BLOCKER and 16 MAJORs, 12 would have met the
+implementer, 1 the task reviewer and 3, plausibly, the branch reviewer,
+with 1 undetermined (`docs/backlog/pre-pass-on-settled-changes.md`). None
+of the 32 would have overturned something other tasks built on; three meant
+about a task's rework. In those features the 12 branch-review passes raised
+no BLOCKER or MAJOR, and the task reviews 4 MAJORs, all on documents or
+records. The campaigns' seats took 1.39 million of those features' 4.29
+million seat output tokens, a seat on another host and the controller not
+counted.
+
+So a lane note with a plan is rejected: it would save about a third of such
+a feature's seat output and give up the findings no later stage is placed
+to meet. The case against, as put to the maintainer: 9 of the 15 verdicts
+are silent or undetermined on one reader's judgment of what did not happen,
+and the two gravest concern the work's own handling of production data,
+which an instruction outside a campaign could also cover. An agent's
+recommendation, which the maintainer accepted. The five were selected
+because each stopped after one round, the later stages ran on specs the
+campaigns had already corrected, and the read's other limits apply (above).
+(Basis: measured, each verdict a reader's judgment; judgment, accepted by
+the maintainer, 2026-11-23.)
 
 ### Whose call the preset is
 
@@ -449,7 +474,7 @@ gate.)
 
 ## Rejected
 
-- **A lane note with a plan, or a campaigned spec with no plan** (§ Separable choices); the first met its reopening condition on 2026-11-23 and waits on one check, named there.
+- **A lane note with a plan, or a campaigned spec with no plan** (§ Separable choices); the first met its reopening condition on 2026-11-23 and was rejected the same day, on a check of what its campaigns' first rounds found.
 - **Splitting a lane change across fresh implementers**: no run used it,
   and several tasks already take a campaign preset (§ Why).
 - **One uniform process for every change**: on a small change the plan
@@ -480,6 +505,7 @@ small preset or the waiver for its work.
 
 ## Changes
 
+- 2026-11-23: a lane note with a plan is rejected, no longer waiting on a check, on an agent's recommendation the maintainer accepted; because a reader of the five settled-change campaigns judged that of their 15 round-1 MAJORs 3 would have been built in silently and 6 could not be placed, against 5 a later stage would have met, while the campaigns took about a third of those features' seat output.
 - 2026-11-23: a lane note with a plan has met the condition that reopens it, 5 of 8 one-round campaigns in the re-audit's runs being settled changes campaigned only to get tasks, and is not built yet, since those five still merged 2 to 4 MAJORs each in round 1 and whether a branch review would have caught them is unchecked: an agent's recommendation the maintainer accepted. What the lane did without Lane Fit's shape verdict is recorded.
 - 2026-11-23: the very-small lane is entered by the operator's approval of the design that proposes it, and the controller writes the note from that design, no longer showing it for approval; the branch reviewer's goal check reads the note's Out of scope with its Intent; because on two lane features the controller showed the design and wrote the note fuller, and the maintainer reads the note as the reviewer's document. A note's Acceptance takes no check that searches prose for its wording; because two such checks each cost the maintainer's decision and a re-pin when a reviewer improved the sentence, and none ever failed.
 - 2026-11-19: the preset is the controller's call, stated with its reasons as the design presentation closes, which the operator may veto and the design's approval carries, the route entry recording it, in place of the operator's confirmation; the very-small lane is still entered only by the operator's approval of its note; because in a read of about 400 decisions over sixteen sessions of one code project the 56 on the route, the campaign's shape or a further round drew no departure.

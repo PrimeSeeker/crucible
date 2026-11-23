@@ -7,7 +7,8 @@
   records that hold each question, its scope and limits in
   `docs/decisions/fix-verification-and-merge.md` § Blind verification: the
   verifier stays, the stuck trigger is closed, a lane note with a plan met
-  its reopening condition, and the figures of the read of 2026-11-19, whose
+  its reopening condition and was rejected on a check of the campaigns
+  concerned, and the figures of the read of 2026-11-19, whose
   script counted from a seat index holding 640 of 880 seats, are corrected
   where recounted.
 - No run on 0.34 or later existed then, so nothing measured the changes
@@ -153,12 +154,3 @@ calibrations and re-derive what they support, labelling results from one
 project as one project's. A second project is better evidence, not a
 condition. Where the retirements the read did not examine come up, read
 whether their failure reached a later stage or the operator.
-
-For each settled change campaigned only to get tasks, read whether the
-MAJORs its first round merged were of a kind the branch review catches.
-That decides whether a lane note with a plan is built
-(`docs/decisions/routes.md` § Separable choices): 5 of the 8 one-round
-campaigns of the runs on 0.33.1 were such changes and still merged 2 to 4
-MAJORs each. Those five can answer it without waiting for new runs: the
-maintainer asked for that read on 2026-11-23, and its result is not
-recorded yet.
