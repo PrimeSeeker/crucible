@@ -37,9 +37,10 @@ shows no token figure (`crucible:brainstorming § Campaign gate`).
 **Process notes, offered in a line.** A controller always notes what is
 off in the process, with its cause, as it happens, and every seat says in
 its final reply what was off in its own instructions or tools. When the
-work ends the controller gives the operator one line offering the rest or,
-in a feature's close readout, saying that no notes were made; the
-operator's instructions set what more they see, or that they see none
+work ends the controller gives the operator one line saying what in the
+notes deserves their attention and offering the rest or, in a feature's
+close readout, saying that nothing does; the operator's instructions set
+what more they see, or that they see none
 (`skills/using-crucible/SKILL.md`, its Process notes paragraph;
 `skills/using-crucible/references/process-notes.md`;
 `skills/subagent-driven-development/references/seat-rules.md` § Report
@@ -228,13 +229,34 @@ agent judges only the kind of item: its own preferences and remarks on
 the operator's steering wait for an invitation. (Basis: judgment, accepted
 by the maintainer.)
 
-The default for an operator who has said nothing, one line with the count,
-the main note and an offer of the rest, was the controller's proposal; the
-maintainer accepted it tentatively ("tentatively agree"). (Basis:
-judgment, accepted by the maintainer, tentatively.)
+The default for an operator who has said nothing was at first one line
+with the count, the main note and an offer of the rest, the controller's
+proposal, which the maintainer accepted tentatively ("tentatively agree").
+(Basis: judgment, accepted by the maintainer, tentatively.)
 
-With no notes made, a feature's close readout says so and other work says
-nothing. A branch review asked what the line is then. The controller
+Since 2026-11-23 the line says what in the notes deserves the operator's
+attention, and the count is gone. On three features built back to back on
+crucible itself, one controller made six to nine notes each, most of them
+routine: expected costs, the session running an older installed copy,
+small slips. Each close reported a count and one note. Shown a count of
+nine, the maintainer asked "anything significant? This starts to look
+infinite as well". Collection stays broad, since a line in a file costs
+little and what looks routine once may recur; the judgment moves to the
+report. The maintainer's own filter, "actionable and, informally, not
+having an air-bubble-under-a-film quality", they found too narrow:
+"something like 'this has bad vibes' is not normally even a finding, but
+then it's actually valuable". So a hunch is reported, named as one, and a
+routine note is reported once it has recurred or its cost is material.
+Excluding what cannot be fixed the maintainer considered and left out as
+"too finicky". What a controller knows of earlier features is its own
+memory of one project, a limit the maintainer accepted. Three features,
+one controller and crucible's own text are all this rests on. (Basis: the
+maintainer's observation and preferences; judgment, the controller's
+proposal, accepted by the maintainer, for the line's form.)
+
+With nothing that deserves attention, a feature's close readout says so
+and other work says nothing; until 2026-11-23 the case was no notes
+made. A branch review asked what the line is then. The controller
 proposed this answer, since at a close silence cannot be told from a
 skipped step, while elsewhere the line would be process talk nobody asked
 for. The statement is part of the one line, so an operator's instruction
@@ -275,7 +297,7 @@ kind of a feature here, I think". (Basis: judgment, accepted by the
 maintainer, for building no store; the maintainer's preference, for the
 loss.)
 
-The rule costs 122 words, 741 characters, in text every session loads. Whether
+The rule costs 141 words, 851 characters, in text every session loads. Whether
 controllers make and offer notes shows only in later sessions
 (`docs/backlog/skill-rewrite-reaudit.md`). (Basis: measured, for the words.)
 
@@ -303,6 +325,11 @@ controllers make and offer notes shows only in later sessions
 - **The full list of process notes by default**: an operator's instruction
   files can ask for it, and some operators should not be shown unfiltered
   feedback (§ Why).
+- **The count of notes in the closing line**, the default until
+  2026-11-23: a count says nothing about whether anything in the notes
+  matters (§ Why).
+- **Noting less, or leaving out what cannot be fixed**: a hunch is worth
+  having, and the test for what cannot be fixed would be finicky (§ Why).
 - **An independent reader of a session's records or transcript as a
   standard step**: a strong-model run per feature; one can still be asked
   for.
@@ -325,6 +352,7 @@ invite the agent's own preferences and remarks on their steering.
 
 ## Changes
 
+- 2026-11-23: the closing line on process notes says what in them deserves the operator's attention, a hunch named as one and a routine note once it has recurred or its cost is material, with an offer of the rest, and a feature's close says so when nothing does; the count and the main note go; because three features' closes reported six to nine mostly routine notes as a count, which the maintainer found uninformative and endless.
 - 2026-11-22: every seat says what was off in its instructions or tools, a seat the controller composes itself through the dispatch composition's return contract, which copies the template's sentence, the maintainer's answer to a question the build left open; and the statement that no notes were made is part of the one line, so an operator's instructions can silence it, owed in a feature's close readout only; because read literally an operator who asked for no process notes still saw it.
 - 2026-11-22: with no process notes made, a feature's close says so and other work says nothing; because a branch review asked what the line is then, and at a close silence cannot be told from a skipped step.
 - 2026-11-21: process notes: a controller always notes what is off in the process, with its cause, as it happens, a seat saying in its final reply what was off in its instructions or tools, and gives the operator one line when the work ends, the full list where they or their instructions ask; because the maintainer saw such things only when they asked, which spent their attention and reached no other user.

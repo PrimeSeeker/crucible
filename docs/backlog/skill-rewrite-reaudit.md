@@ -122,7 +122,9 @@ things, each against what was observed before them:
 
 In the same runs, read what process notes did
 (`docs/decisions/operator-steering.md` § Process notes): whether controllers
-made notes as the work went and offered them in a line when it ended, what
+made notes as the work went and offered them in a line when it ended,
+whether that line named what deserved attention and whether the operator
+agreed with the choice (since 2026-11-23 it no longer gives a count), what
 the notes held and which causes they named, whether a seat's remark reached
 them as the seat wrote it, whether seats reported the host's advice on
 report files as something off (two did on the build of process notes; none

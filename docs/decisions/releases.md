@@ -120,9 +120,11 @@ which alone reported the old version as the latest; with the GitHub form
 following `stable`, that one command moved an install from 0.36.0 to
 0.37.0 the same day. Codex followed the
 branch, and `codex plugin marketplace upgrade` replaced its copy under an
-unchanged version, as measured before. Not measured there: the GitHub
-`owner/repo#testing` form, which the first trial on the repository
-measures.
+unchanged version, as measured before. The GitHub `owner/repo#testing`
+form was first used by the first trial, `0.37.1-rc.1`, the same day: on
+each host the marketplace was removed and added again at `testing`, and
+the install loaded that version from the trial's commit. An update in
+place on that form is first measured by the trial after it.
 
 The costs accepted: sessions on the maintainer's other work run
 `testing`, so real work stays the test bed, one step ahead of `stable`
@@ -174,6 +176,9 @@ kept few and chosen on any branch. (Basis: a single observation.)
 
 ## Changes
 
+- 2026-11-23: the first trial, `0.37.1-rc.1`, installed from the GitHub
+  form of a branch ref on both hosts; the statement that the form was
+  unmeasured is replaced by that result.
 - 2026-11-23: three branches in place of two: features land on `master`
   with no version change, the maintainer's installs follow `testing`,
   which a trial moves to a pre-release version commit, and `stable` is
