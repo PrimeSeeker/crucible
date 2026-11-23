@@ -128,18 +128,20 @@ print why. A skip is not a pass. The suite launches no model.
   changed and why.
 - Land on `master` by merging the branch, and only on the operator's
   go-ahead for that landing.
-- A landing changes no version and updates no install.
+- A feature's landing changes no version and updates no install.
 - A trial puts landed work on the maintainer's installs, which follow
   `testing`: set the version in the three manifests to the next
-  pre-release (`0.38.0-rc.1`) in a commit landed on `master` as above,
-  fast-forward `testing` to it, and update the installs. No tag, no
-  GitHub release.
+  pre-release of the version the release will take (`0.38.0-rc.1`, then
+  `rc.2`) in a commit landed on `master` as above, fast-forward `testing`
+  to it, and update the installs. That version is the next minor once
+  anything since the last release changes behaviour, the next patch until
+  then. No tag, no GitHub release.
 - A release is cut from what `testing` has run: on a branch from its tip,
-  set the final version in the three manifests; tag that commit
-  `v<version>`; fast-forward `testing` and `stable` to it and merge it
-  into `master`; publish a GitHub release with a few lines of notes.
-  Minor for a behaviour change, patch for fixes. `stable`, the default
-  branch, holds only releases.
+  set the version in the three manifests to the pre-release's without its
+  suffix; tag that commit `v<version>`; fast-forward `testing` and
+  `stable` to it and merge it into `master`; publish a GitHub release
+  with a few lines of notes. `stable`, the default branch, holds only
+  releases.
 - `testing` and `stable` each move only on the maintainer's word
   (`docs/dual-runtime.md` § Release metadata).
 - Line endings are LF. `hooks/session-start` and `*.sh` must stay LF

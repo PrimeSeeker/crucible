@@ -226,16 +226,20 @@ it. `stable` is the default branch and holds only releases, so a plain
 install from GitHub gets the latest one.
 
 **A trial moves `testing`.** A commit landed on `master` like any change
-sets the version to the next pre-release (`0.38.0-rc.1`, then `rc.2`);
-`testing` fast-forwards to it, and the installs that follow it update
-(§ Upgrades and rollback). The version change is what makes Claude Code
-fetch the new copy. A trial has no tag and no GitHub release.
+sets the version to the next pre-release of the version the release will
+take (`0.38.0-rc.1`, then `rc.2`); `testing` fast-forwards to it, and the
+installs that follow it update (§ Upgrades and rollback). That version is
+the next minor once anything since the last release changes behaviour,
+and the next patch until then, so a later trial may move from
+`0.38.1-rc.1` up to `0.39.0-rc.1` and versions only rise. The version
+change is what makes Claude Code fetch the new copy. A trial has no tag
+and no GitHub release.
 
 **A release is cut from what `testing` has run.** A commit on
-`testing`'s tip sets the final version and is tagged `v<version>`;
-`testing` and `stable` fast-forward to it, it is merged into `master`,
-and a GitHub release is published with a few lines of notes. A behaviour
-change bumps the minor version, fixes the patch version. The tag is
+`testing`'s tip sets the version to the pre-release's without its suffix
+and is tagged `v<version>`; `testing` and `stable` fast-forward to it, it
+is merged into `master`, and a GitHub release is published with a few
+lines of notes. The tag is
 `v<version>`, not the `<plugin>--v<version>` form Claude Code's
 `claude plugin tag` creates: other plugins' dependency version ranges
 resolve against that form, and no plugin depends on crucible. The
