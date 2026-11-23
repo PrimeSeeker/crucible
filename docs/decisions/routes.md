@@ -155,9 +155,10 @@ A reader then judged, for each BLOCKER or MAJOR of those five campaigns,
 who would have met it without the campaign. Of round 1's 15 MAJORs, 3 would
 plausibly have met the implementer and 2 the branch reviewer. 3 would
 have been built in or acted out silently: two gaps in the safety of the
-work's own steps against production data, and one rule whose effect shows
-only in the product's output. For 6 the reader could not tell, 3 of them
-leaning silent, and one fix changed nothing that was built. Of the 17 the
+work's own steps against the production database, the tables at risk
+holding only test residue, and one rule whose effect shows only in the
+product's output. For 6 the reader could not tell, 3 of them leaning
+silent, and for one the build would have been the same either way. Of the 17 the
 round-0 pre-pass staked, 1 BLOCKER and 16 MAJORs, 12 would have met the
 implementer, 1 the task reviewer and 3, plausibly, the branch reviewer,
 with 1 undetermined (`docs/backlog/pre-pass-on-settled-changes.md`). None
@@ -176,8 +177,8 @@ So a lane note with a plan is rejected: it would save about a third of such
 a feature's seat output and give up the findings no later stage is placed
 to meet. The case against, as put to the maintainer: 9 of the 15 verdicts
 are silent or undetermined on one reader's judgment of what did not happen,
-and the two gravest concern the work's own handling of production data,
-which an instruction outside a campaign could also cover. An agent's
+and the two gravest concern the work's own handling of the operator's
+database, which an instruction outside a campaign could also cover. An agent's
 recommendation, which the maintainer accepted. The five were selected
 because each stopped after one round, the later stages ran on specs the
 campaigns had already corrected, and the read's other limits apply (above).

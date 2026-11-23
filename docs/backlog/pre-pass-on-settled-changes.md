@@ -4,8 +4,9 @@
 
 - Every spec campaign opens with a round-0 pre-pass: one agent checks the
   artifact's claims about code, the liveness of its mechanisms and its
-  regex and CLI claims before any panel reads it (`crucible:redteaming`
-  § Round 0; `docs/decisions/spec-campaign.md`).
+  regex and CLI claims before any panel reads it
+  (`crucible:redteaming § Round 0 — mechanical pre-pass`;
+  `docs/decisions/spec-campaign.md`).
 - A read of five campaigns on settled changes, all on the folded preset
   (one code project, crucible 0.33.1, 2026-11-23;
   `docs/decisions/routes.md` § Separable choices), judged who would have
@@ -13,8 +14,8 @@
   implementer would have met 12, by a failing test, a type check or the
   file its task edits; the task reviewer 1; the branch reviewer,
   plausibly, 3; 1 was undetermined, and none would have been built in
-  silently. 11 of the 17 were about the reach of the folded plan's tasks:
-  file lists, censuses, contract checks and overlaps.
+  silently. 10 of the 17 were defects in the folded plan's tasks, mostly
+  their reach: file lists, censuses, contract checks and overlaps.
 - The five pre-passes took 373 thousand of those campaigns' 1.39 million
   seat output tokens. In three of the features implementers added files
   their task's census had missed, by themselves.
