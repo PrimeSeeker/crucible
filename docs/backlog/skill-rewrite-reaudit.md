@@ -140,8 +140,13 @@ corrections controllers made after a review ended, and whether a later
 read found one wrong or reaching a document that binds work;
 whether a lane note written without being shown departed from the design
 the operator approved, and whether a branch reviewer's goal check found
-it; and whether a prose change on the lane landed with an outcome its
-Intent stated and its text did not carry. Nothing was measured before
+it; whether a reviewer who found a note excluding something asked for
+raised it as a premise finding, which the lane passage's "mismatch"
+implies and the definition in
+`skills/redteaming/references/premise-asks.md` does not name (a branch
+reviewer asked; either route reaches the operator); and whether a prose
+change on the lane landed with an outcome its Intent stated and its text
+did not carry. Nothing was measured before
 them: they rest on a controller's notes on three features.
 
 Compare the routes on branches that are prose only. Two such features of
