@@ -27,7 +27,12 @@
     invoking it, working from the re-attached copies and the references it
     read;
   - one plan task, by its own Contract, ran inline as 22 seats the
-    controller composed in place of an implementer; it had its task review.
+    controller composed in place of an implementer; it had its task review;
+  - `docs/decisions/terminal-pass.md` § Why a pass at all says the pass
+    earns its place on a count of 2026-10-12, a BLOCKER or MAJOR after the
+    stop in 27 of 74 campaigns, beside the read's one MAJOR in 22 spec first
+    passes, with no word on the drop or on whether its record corrections
+    now carry its place.
 - Crucible's calibrations (four or five seats in a large new spec's first
   round, the cap of four rounds, plan sizes) come from one project, and
   were meant to be re-derived before reuse elsewhere; the README says where
@@ -65,7 +70,9 @@ things, each against what the runs on 0.33.1 showed before it:
 - any choice the operator said they should have been asked, which the test
   for a choice no skill puts to them withheld;
 - any controller ruling on a literal-reading finding that a later pass or
-  the operator reversed: no adjudicator's ruling of 24 was reversed.
+  the operator reversed: no adjudicator's ruling of 24 was reversed, and
+  one controller's ruling, that a stop rule read literally did not fire,
+  was later superseded by an amendment the operator confirmed.
 
 On the terminal pass's record check, before lean-gates, 20 of 22 spec first
 passes reported a record correction, 63 in all.
@@ -152,4 +159,6 @@ MAJORs its first round merged were of a kind the branch review catches.
 That decides whether a lane note with a plan is built
 (`docs/decisions/routes.md` § Separable choices): 5 of the 8 one-round
 campaigns of the runs on 0.33.1 were such changes and still merged 2 to 4
-MAJORs each.
+MAJORs each. Those five can answer it without waiting for new runs: the
+maintainer asked for that read on 2026-11-23, and its result is not
+recorded yet.
