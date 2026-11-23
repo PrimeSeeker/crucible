@@ -124,7 +124,10 @@ In the same runs, read what process notes did
 (`docs/decisions/operator-steering.md` § Process notes): whether controllers
 made notes as the work went and offered them in a line when it ended,
 whether that line named what deserved attention and whether the operator
-agreed with the choice (since 2026-11-23 it no longer gives a count), what
+agreed with the choice (since 2026-11-23 it no longer gives a count),
+whether expected but large costs came back into the line as "material"
+(a branch reviewer asked; the maintainer reads the word as beyond what
+the work was expected to cost, and left the wording), what
 the notes held and which causes they named, whether a seat's remark reached
 them as the seat wrote it, whether seats reported the host's advice on
 report files as something off (two did on the build of process notes; none

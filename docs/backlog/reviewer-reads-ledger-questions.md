@@ -7,11 +7,12 @@
   questions do not become the next pass's input
   (`skills/requesting-code-review/code-reviewer.source.md` § Read Scoping;
   `docs/decisions/branch-review.md`, Leads and questions).
-- On two features of 2026-11-23, each on the very-small lane, the second
+- On three features of 2026-11-23, each on the very-small lane, a
   full-scope pass's reviewer reported having read that section, one
-  "because I read the whole ledger file in one call"; both said their
-  findings did not rely on it. Neither first pass reported it, though a
-  first pass's ledger holds carried questions too.
+  "because I read the whole ledger file in one call"; each said its
+  findings did not rely on it. Two were second passes and one a first
+  pass; the two other first passes reported nothing, though a first
+  pass's ledger holds carried questions too.
 - The card already hands the reviewer the ledger's deferred minors and
   rulings verbatim. What else it takes from the ledger file itself was
   not checked.
