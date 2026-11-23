@@ -396,14 +396,14 @@ no one had listed and which it quoted as landed, and two to a fix list's
 own wording; the others on verified waves' text were design or consistency
 defects in text that landed as listed, several a new hunk contradicting
 text outside the diff, which the verifier does not read. The 67 runs with
-indexed costs were a third of those campaigns' seats and 3.4% of their
-output tokens, a median of 32 seconds each. A second reader, on another
+indexed costs were a third of those campaigns' indexed seats and 3.4% of
+those seats' output tokens, a median of 32 seconds each. A second reader, on another
 host, counted a run clean only with no qualification at all, and found 23
 of those 67 so. (Basis: measured.)
 
 So the verifier stays, no longer for now: it costs little in output and
-time, and it repairs a fix that did not land at the cheapest moment, before
-the next panel reads it. The case against, as put to the maintainer: every
+time, and it repairs a fix that did not land while repair is cheapest,
+before the next panel reads the artifact. The case against, as put to the maintainer: every
 catch had a full read coming, 60 of 72 runs changed nothing, and a clean
 verdict may lend comfort to a wave wrong in ways it cannot see. An agent's
 recommendation, which the maintainer accepted. (Basis: judgment, accepted

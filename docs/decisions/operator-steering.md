@@ -173,9 +173,9 @@ withholds a choice the operator needed is unmeasured. The controller's
 proposal, its last clause and the narrowing to observable changes added
 after the count and shown before the design's approval. (Basis:
 measured, by reader seats, for the counts; judgment, accepted by the
-maintainer, for the test.) The re-audit's reader (§ One gate for design and launch),
-classifying differently over 36 features of the same project, counted about
-374 decision items in 195 messages that asked the operator something, about
+maintainer, for the test.) The re-audit's reader (§ One gate for design
+and launch), classifying differently over 36 features of the same project,
+counted about 374 decision items in 195 messages that asked the operator something, about
 half substance and half process by a hand check of 30, and 127 of the 354
 operator messages pure assent: another reader's estimate, not a correction
 of the counts above. (Basis: measured, an estimate.)
