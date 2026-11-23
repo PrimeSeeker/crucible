@@ -58,6 +58,8 @@ An improvement you adopt, from a question or a RECOMMENDED lead, is a lightly he
 
 **The cleanup wave.** Once the review has ended with no BLOCKER or MAJOR open and a wave remains under the cap, you may, before returning to Finish, open one cleanup wave of the minors, and the leads the reviewer ruled CONFIRMED or RECOMMENDED, that you judge worth fixing; improvements alone may make one. It takes no minor, lead or improvement, a trivial or FIX-IN-WAVE one included, whose fix only rewords or reformats one of the project's own working documents (decision records, backlog items, specs, plans, comments) and leaves what it states unchanged. It runs as any wave: its scoped re-review, then a full-scope pass. One per branch: minors it or a later pass raises open no other wave; a BLOCKER or MAJOR opens a normal one.
 
+**Record corrections.** Once the review has ended and no wave is to follow, you may yourself correct a statement that a pass's MINOR found false or misattributed in a decision record or in an open item in the project's home: commit the correction the finding states, with no wave or further pass, and add `— corrected (<commit>)` to its `## Deferred minors` line.
+
 **Disputes** follow `crucible:subagent-driven-development § Disputes and adjudication`. Raise a finding you judge wrong before the next wave opens or with a wave's disputes. Never drop a BLOCKER or MAJOR, nor park one on your own ruling; each dismissed one reaches the operator with its ruling in the close readout.
 
 **Ledger lines:**

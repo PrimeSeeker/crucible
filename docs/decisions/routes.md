@@ -15,7 +15,8 @@ reason the fold fits or does not; the operator may veto it, and
 approving the design carries it. The preset the approved design
 carries is the route entry in the brainstorm decision record, written
 for every preset. The very-small lane is entered only by the
-operator's approval of its note. The call covers the preset only: a
+operator's approval of the design that proposes it, and the controller
+writes its note from that design. The call covers the preset only: a
 departure expected later, such as tasks the plan may route to the
 branch review alone, is a heads-up. No feature enters a preset
 mid-flight; the lane's upgrade hatch is the exception. An umbrella, the document holding an effort of
@@ -44,14 +45,17 @@ every seat to read them all, standard the rest. File, line and task counts are n
   and every review instrument unchanged
   (`skills/redteaming/references/folded-lane.md`).
 - **Very small:** a frozen lane note (intent, change list, acceptance
-  as runnable checks, out of scope), implemented inline
+  as runnable checks, none searching prose for its wording, out of
+  scope; `skills/brainstorming/references/lane-note.md`), implemented inline
   where the change is overdetermined and fits the controller's context,
   by the inline test of `docs/decisions/task-loop.md`, and by a
   dispatched implementer otherwise; the repository's own gates and the
   branch review, with no spec campaign, plan or per-task review
   (`skills/subagent-driven-development/references/very-small-lane.md`).
   The branch reviewer, the lane's first review, runs the goal check
-  with the note's Intent against the request in the feature workspace,
+  with the note's Intent and Out of scope against the request in the
+  feature workspace
+  (`skills/requesting-code-review/very-small-lane-review.md`),
   and rules on a dispatched implementer's concerns, questions and
   proposals, which the controller transcribes to the ledger as leads.
   Its NEEDS_CONTEXT or BLOCKED takes the task loop's handling of context
@@ -148,7 +152,9 @@ round made up 56 of them, the largest housekeeping group, and none drew
 a departure from the recommendation. The controller now chooses and
 states the preset, which the operator may veto, and the approval of the
 design carries it. The very-small lane keeps the operator's approval,
-since its note is the design it would carry. Nothing converts a feature
+since its note is the design it would carry; since 2026-11-23 that
+approval is of the design proposing the lane, the note being written
+from it (§ The very-small lane). Nothing converts a feature
 to a lighter preset later: the fold and the lane are entered only
 through the route entry, and the paths out stay the unfold, the late
 split and the upgrade hatch. The controller's proposal; the maintainer
@@ -362,9 +368,40 @@ unless that direction says otherwise. An agent's proposal, which the
 maintainer accepted, withdrawing the acceptance of the split.
 (Basis: judgment, accepted by the maintainer.)
 
-The note and the lane proposal share one gate (2026-10-07): a separate
-gate re-presented decisions just made and never showed the note whose
-acceptance binds the reviewer. (Basis: judgment, accepted by the
+From 2026-10-07 the note and the lane proposal shared one gate: a
+separate gate re-presented decisions just made and never showed the note
+whose acceptance binds the reviewer. (Basis: judgment, accepted by the
+maintainer.)
+
+Since 2026-11-23 the note is not shown. On the two lane features of
+2026-11-21 and 2026-11-22 the controller showed the design in a few
+numbered items and wrote the note fuller, recording the difference as its
+own call, and the maintainer read the note as the reviewer's document:
+"The note is mostly for the final review, I believe?" The operator now
+approves the design that proposes the lane, as on the other routes, and
+the controller writes the note from it. In exchange the branch reviewer's
+goal check reads the note's Out of scope with its Intent against the
+request, so an exclusion of something asked for is found. A committed
+note stays frozen, a change to its binding parts the operator's decision:
+the controller often writes the lane's diff, and would otherwise edit the
+checks its own work is judged by. The cost: the controller alone writes
+the standard the lane's one review holds the work to, and nobody sees it
+before code. This withdraws the reason of 2026-10-07 for showing the
+note. (Basis: the maintainer's view, for whose document the note is;
+judgment, the controller's proposal, accepted by the maintainer.)
+
+Since 2026-11-23 a note's Acceptance takes no check that searches prose
+for its wording. Acceptance is runnable checks, and a check of the state
+a change brings about must fail on the tree before it; for prose that
+produced searches for exact sentences. On one of those two features, two
+of six checks searched for sentences the branch reviewer then improved,
+and since Acceptance binds, each rewording took the maintainer's decision
+and a re-pin of the note; the searches passed on every run of both
+features. The Intent now states such an outcome and the reviewer judges
+it, the rule this repository already applies to its tests (`AGENTS.md`,
+Authoring rules). The cost: a prose change has no check that fails before
+it and passes after. (Basis: a controller's process notes on two
+features; judgment, the controller's proposal, accepted by the
 maintainer.)
 
 ### The waiver
@@ -400,6 +437,9 @@ gate.)
 - **The choices as fields with no presets, or the routes plus two
   toggles** (§ Why).
 - **A separate gate for the lane note** (§ Why).
+- **Showing the lane note for the operator's approval**, the rule until
+  2026-11-23, and **searching prose for its wording in a note's
+  Acceptance** (§ The very-small lane).
 - **No route for trivial edits, or an agent-declared one** (§ Why).
 
 ## What a project may change
@@ -411,6 +451,7 @@ small preset or the waiver for its work.
 
 ## Changes
 
+- 2026-11-23: the very-small lane is entered by the operator's approval of the design that proposes it, and the controller writes the note from that design, no longer showing it for approval; the branch reviewer's goal check reads the note's Out of scope with its Intent; because on two lane features the controller showed the design and wrote the note fuller, and the maintainer reads the note as the reviewer's document. A note's Acceptance takes no check that searches prose for its wording; because two such checks each cost the maintainer's decision and a re-pin when a reviewer improved the sentence, and none ever failed.
 - 2026-11-19: the preset is the controller's call, stated with its reasons as the design presentation closes, which the operator may veto and the design's approval carries, the route entry recording it, in place of the operator's confirmation; the very-small lane is still entered only by the operator's approval of its note; because in a read of about 400 decisions over sixteen sessions of one code project the 56 on the route, the campaign's shape or a further round drew no departure.
 - 2026-11-06: a lane note with a plan and a campaigned spec with no plan stay out, no longer waiting in the backlog, and the wider question of how far the choices separate closes with them; because each would add a route, whether the need exists being unchecked. The first's trigger stands in § Separable choices.
 - 2026-11-05: a change too big for one implementer no longer stays on the lane by splitting: moving to the standard route is the upgrade hatch's ask, and an answer to stay is the operator's direction; because no run had used the split and its reviews kept finding seams in it.

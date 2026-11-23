@@ -4,7 +4,7 @@
 
 **One document per effort.** An effort too large for one feature is held by an umbrella: `umbrella.md` in a feature folder of its own, a spec of its own kind whose Acceptance is the ordered list of its children. A child that splits becomes an umbrella itself, at any depth, and every child's folder is born at the root (`skills/brainstorming/references/umbrellas.md` § Shape). Like a spec, it quotes no message from the operator: the effort's request goes with the umbrella's workspace at the landing, and a child's seats check its Intent against its own request, the umbrella's Intent and its own entry (`docs/decisions/the-spec.md`; `skills/subagent-driven-development/references/seat-rules.md` § The goal check).
 
-**Reviewed by what it carries, on no route.** An umbrella takes none of the three presets (`docs/decisions/routes.md`). One that carries decisions, constraints or interfaces gets a spec campaign, one that only orders its children and states their obligations is approved by the operator as a lane note is, and no umbrella has a plan or execution of its own (`skills/brainstorming/references/umbrellas.md` § Review).
+**Reviewed by what it carries, on no route.** An umbrella takes none of the three presets (`docs/decisions/routes.md`). One that carries decisions, constraints or interfaces gets a spec campaign, one that only orders its children and states their obligations is approved by the operator, who is shown its draft, and no umbrella has a plan or execution of its own (`skills/brainstorming/references/umbrellas.md` § Review).
 
 **Binding through one line.** A child names its umbrella in a line of its preamble, and through that line its own entry and the umbrella's Constraints & invariants and firm decisions bind it, up the chain of umbrellas, each read where it lives (`skills/brainstorming/references/umbrella-children.md` § Children). What binds, the umbrella included, is stated once for controllers (`skills/subagent-driven-development/references/review-terms.md` § What binds in a spec) and once for seats, by splice (`skills/subagent-driven-development/references/seat-rules.md` § What binds). The umbrella's Intent is protected as the child's own is (`skills/subagent-driven-development/references/seat-rules.md` § Premise findings, § Binding changes).
 
@@ -78,7 +78,9 @@ maintainer's own earlier proposal, 2026-10-27.)
 An umbrella's decisions, constraints and interfaces bind every child
 under it, so one that carries them gets a campaign; an umbrella without
 them holds an order and its children's obligations, whose checks each
-child's own Acceptance carries, and is approved as a lane note is. The
+child's own Acceptance carries, and is approved by the operator, who is
+shown its draft, as a lane note was until 2026-11-23
+(`docs/decisions/routes.md`). The
 ruling is made at the umbrella's birth, and a later binding change is
 ruled on by itself. The maintainer chose this from an agent's options,
 the others being a campaign for every umbrella and a campaign for none.

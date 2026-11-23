@@ -29,14 +29,6 @@
   files), so counts after that date run under both that sentence and the
   card change. Whether a reason reduces seats ending without the write is
   untested: nine probe seats on small tasks all wrote, with or without it.
-- A seat the controller composes itself copies the sentence on what was
-  off (`dispatch-composition.md`, item 5) and not the reason, though it
-  gets the same advice from the host. A branch reviewer asked whether it
-  should copy both.
-- The instruments record says the maintainer holds the probe's "tasks"
-  were probably too small. Their words were "the probes themselves needed
-  to be bigger", which may also mean more seats; the branch review's last
-  full read raised it.
 
 ## Follow-up
 
@@ -44,6 +36,3 @@
   re-reviewer ones on the first full routes.
 - If they persist, carry the report path too as an absolute path in the slot
   card, as the scratch directory now is.
-- Decide whether a composed dispatch copies the reason sentence too.
-- In `docs/decisions/instruments.md` § Why › Report files, quote the
-  maintainer on the probe in place of the paraphrase.

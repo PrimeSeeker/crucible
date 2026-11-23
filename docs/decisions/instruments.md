@@ -47,7 +47,10 @@ every template.
 its template names, saying why the file and not the reply holds the
 report, but for the branch reviewer in standalone mode,
 which returns its report as its final message; and if the host refuses the write it returns the
-report as text and says so. Review seats and the adjudicator write under
+report as text and says so. A seat the controller composes itself is
+given the same reason, copied into its dispatch
+(`skills/subagent-driven-development/references/dispatch-composition.md`,
+item 5). Review seats and the adjudicator write under
 the feature workspace's `sdd/reports/` and `sdd/branch-review/`
 (`crucible:subagent-driven-development § Finish`). When a seat that owes a
 report returns, the controller confirms the file is on disk, an
@@ -311,10 +314,18 @@ one, "because it's right rather than impactful", and their expectation
 that the clash reports then stop. No effect was measured: nine probe
 seats on the default role, three to each of three wordings (the section
 as it stood, with § Report file required added, and with the reason), all
-wrote the file and none reported a clash; the maintainer holds the
-probe's tasks were probably too small to show one, the two reports having
-come in the first run that asked. (Basis: the maintainer's preference,
-for stating the reason; measured, for the probe.)
+wrote the file and none reported a clash. The maintainer's reading of
+that: "Probably the probes themselves needed to be bigger to detect in
+the first place (it was reported in the first run to ask questions,
+after all)". (Basis: the maintainer's preference, for stating the
+reason; measured, for the probe.)
+
+Since 2026-11-23 a seat the controller composes itself is given the
+reason too. Such a seat gets the same note from the host, and since
+2026-11-22 its dispatch asks it what was off in its instructions, the
+question under which the two seats reported the clash. No composed seat
+is on record missing its file or reporting one. (Basis: judgment, the
+controller's proposal, accepted by the maintainer.)
 
 ### The plugin root
 
@@ -453,6 +464,7 @@ judgment, accepted by the maintainer.)
 
 ## Changes
 
+- 2026-11-23: a seat the controller composes itself is given the reason the report file is the deliverable, copied into its dispatch beside the sentence on what was off; because it gets the host's opposite note as a template seat does, and is now asked what was off in its instructions.
 - 2026-11-22: § Report file, which all seven templates take, says why the file is the deliverable (the controller reads the report from the file, not from the reply, and the file outlasts the controller's context); because the host's note to subagents gives the opposite reason and the maintainer holds that the rule should state its own. No effect was measured: nine probe seats wrote the file and reported no clash under any of three wordings.
 - 2026-11-06: a re-reviewer on the very-small lane missed its report file and wrote it on one resume, so the 23 straight writes no longer show the misses stopped there; no rule changes.
 - 2026-11-06: a branch reviewer started by a Codex controller's `spawn_agent` named its template in its first command and wrote a report of the template's shape, one seat on a docs-only lane; no rule changes, and the other instruments have yet to run this way.

@@ -23,4 +23,4 @@ As you close the design presentation, state the preset you choose by name, with 
 Route-specific:
 
 - Folded: `crucible:redteaming` § The folded lane carries the campaign, deferral, exit and unfolding rules.
-- Very-small: draft the lane note (`crucible:brainstorming` § The very-small lane), run the self-review on the draft before proposing, and show it with the proposal: the operator's one answer confirms or vetoes the preset and approves or amends the note. Write the file only after that answer; a veto discards the draft.
+- Very-small: once the operator approves the design that proposes the lane, write the lane note from it (`crucible:brainstorming` § The very-small lane).

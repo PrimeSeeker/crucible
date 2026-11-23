@@ -133,6 +133,17 @@ them, a keyword search of 18 sessions over two weeks found one operator
 request for a process report, and nothing measured whether anything had been
 volunteered.
 
+In the same runs, read what the changes of 2026-11-23 did
+(`docs/decisions/branch-review.md` § Record corrections;
+`docs/decisions/routes.md` § The very-small lane): how many record
+corrections controllers made after a review ended, and whether a later
+read found one wrong or reaching past decision records and open items;
+whether a lane note written without being shown departed from the design
+the operator approved, and whether a branch reviewer's goal check found
+it; and whether a prose change on the lane landed with an outcome its
+Intent stated and its text did not carry. Nothing was measured before
+them: they rest on a controller's notes on three features.
+
 Compare the routes on branches that are prose only. Two such features of
 similar size were built back to back on crucible itself: the folded route
 took 27 seat runs, the very-small lane 6, and none of the lane's three

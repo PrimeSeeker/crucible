@@ -149,8 +149,9 @@ pull request or keep the branch.
 **Three presets.** At the end of the design dialogue crucible chooses
 how the work is arranged and, where a spec campaign follows, how its
 panel is made up, and tells you: approving the design approves both,
-and you may veto either. The very small preset alone waits for your
-approval of its lane note. The question that decides is whether code
+and you may veto either. On the very small preset crucible then writes
+a short lane note from the design you approved. The question that
+decides is whether code
 is likely to overturn one of the design's major mechanisms; size alone
 does not decide:
 

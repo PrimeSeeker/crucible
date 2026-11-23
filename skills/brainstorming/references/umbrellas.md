@@ -30,7 +30,7 @@ A campaigned umbrella carries every section, so its seats grade it as a spec. No
 
 An umbrella with Decisions, Constraints & invariants or Interfaces & boundaries takes a spec campaign: steps 5–9 as a spec does, the campaign's close handing off to its landing.
 
-One without them (Mechanism sketches aside) is approved by the operator as a lane note is: drafted, self-reviewed and shown with the proposal at step 4, written as approved at step 5, its workspace provisioned at step 7; with no campaign gate, its handoff is its landing.
+One without them (Mechanism sketches aside) is approved by the operator: drafted, self-reviewed and shown with the proposal at step 4, written as approved at step 5, its workspace provisioned at step 7; with no campaign gate, its handoff is its landing.
 
 Propose which at step 4; the operator's ruling is an entry in the brainstorm decision record. This classifies an umbrella at birth; the operator rules whether a later binding change (`umbrella-children.md` § Edits) takes a campaign. Neither kind takes a plan phase or SDD: its children write the plans.
 
