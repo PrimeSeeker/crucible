@@ -151,10 +151,12 @@ operator; the route, the campaign's shape and whether to run another
 round made up 56 of them, the largest housekeeping group, and none drew
 a departure from the recommendation. The controller now chooses and
 states the preset, which the operator may veto, and the approval of the
-design carries it. The very-small lane keeps the operator's approval,
-since its note is the design it would carry; since 2026-11-23 that
-approval is of the design proposing the lane, the note being written
-from it (§ The very-small lane). Nothing converts a feature
+design carries it. Until 2026-11-23 the very-small lane kept the
+operator's approval of its note, as the design it would carry. Since
+then the same approval of the design carries the lane as it carries the
+other presets; what sets the lane apart is that the design must propose
+it and that this approval licenses implementation directly, no campaign
+gate following it (§ The very-small lane). Nothing converts a feature
 to a lighter preset later: the fold and the lane are entered only
 through the route entry, and the paths out stay the unfold, the late
 split and the upgrade hatch. The controller's proposal; the maintainer

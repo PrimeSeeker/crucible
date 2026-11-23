@@ -137,7 +137,7 @@ In the same runs, read what the changes of 2026-11-23 did
 (`docs/decisions/branch-review.md` § Record corrections;
 `docs/decisions/routes.md` § The very-small lane): how many record
 corrections controllers made after a review ended, and whether a later
-read found one wrong or reaching past decision records and open items;
+read found one wrong or reaching a document that binds work;
 whether a lane note written without being shown departed from the design
 the operator approved, and whether a branch reviewer's goal check found
 it; and whether a prose change on the lane landed with an outcome its

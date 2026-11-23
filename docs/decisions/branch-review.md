@@ -16,7 +16,7 @@
 
 **Rulings in execution.** A premise ruling the operator gives during the task loop lands as a plan change at the next task boundary; one given at the branch review or its close readout opens a branch-review wave, counted against the cap, and SDD's Finish restarts after it. Work the operator's close-readout answer asks for opens a wave the same way where the spec and plan already require it or the readout listed it; other work is new scope, a feature of its own (`skills/redteaming/references/premise-asks.md` § Premise findings; `crucible:subagent-driven-development § Plan changes mid-execution`; `crucible:requesting-code-review § The branch-review loop`).
 
-**Minors.** A minor rides a wave something else opened, and never opens one by itself. A minor that rode no wave becomes a ledger line listed for the operator in the close readout, with no ruling per minor, never chased by the controller. One exception: once the review has ended, the controller may itself correct a statement in a decision record or an open item that a pass's MINOR found false or misattributed, with no wave and no further pass, the close readout naming each correction (`skills/requesting-code-review/SKILL.md` § The branch-review loop; `skills/subagent-driven-development/references/finish.md`).
+**Minors.** A minor rides a wave something else opened, and never opens one by itself. A minor that rode no wave becomes a ledger line listed for the operator in the close readout, with no ruling per minor, never chased by the controller. One exception: once the review has ended, the controller may itself correct a statement that a pass's MINOR found false or misattributed in a decision record or an open item that binds no work, with no wave and no further pass, the close readout naming each correction (`skills/requesting-code-review/SKILL.md` § The branch-review loop; `skills/subagent-driven-development/references/finish.md`).
 
 **The cleanup wave.** Once the review has ended with no BLOCKER or MAJOR open and a wave remains under the cap, the controller may open one cleanup wave per branch of the minors, and of the leads the reviewer ruled CONFIRMED or RECOMMENDED, that it judges worth fixing, a wave of improvements alone included; it takes none whose fix only rewords or reformats one of the project's own working documents and leaves what it states unchanged. It runs as any wave, counted against the cap (`crucible:requesting-code-review § The branch-review loop`), and the close readout says why each minor and lead it left was left (`skills/subagent-driven-development/references/finish.md`).
 
@@ -179,9 +179,11 @@ meanwhile.
 
 Since 2026-11-23 the controller may make such a correction itself once the
 review has ended. It is no wave, so the two rejections of a lighter pass
-after a wave stand (§ A wave that changes no rule): it reaches only
-decision records and open items, which instruct no agent and bind no work,
-and it applies what a reviewer's finding states. Finish already has the
+after a wave stand (§ A wave that changes no rule): it reaches only a
+decision record or an open item that binds no work, and it applies what a
+reviewer's finding states. This repository's records state positions and
+bind nothing; a project whose records bind work keeps them out of the
+rule, a case this change's branch reviewer raised. Finish already has the
 controller write open items after the last pass, unreviewed. A
 misattribution of the operator's words is best corrected by the seat that
 holds those words, and that is the controller. The cost is that nobody
@@ -320,7 +322,7 @@ accepted by the maintainer.)
 
 ## Changes
 
-- 2026-11-23: once the review has ended, the controller may itself correct a statement in a decision record or an open item that a pass's MINOR found false or misattributed, with no wave and no further pass, naming each correction in the close readout; because such findings could only be filed, and on three prose-only features four of the six left that way were false or misattributed statements in decision records.
+- 2026-11-23: once the review has ended, the controller may itself correct a statement that a pass's MINOR found false or misattributed in a decision record or an open item that binds no work, with no wave and no further pass, naming each correction in the close readout; because such findings could only be filed, and on three prose-only features four of the six left that way were false or misattributed statements in decision records.
 - 2026-11-19: the cleanup wave takes no minor, lead or improvement whose fix only rewords or reformats one of the project's own working documents and leaves what it states unchanged, withdrawing part of the 2026-10-30 loosening; because in a read of sixteen sessions of one code project, about 28 of about 35 later full-scope passes followed a wave that took only minors, mostly wording in documents that instruct no agent, while 2 of those 28 raised a MAJOR the first pass had missed, so the pass after every wave stays.
 - 2026-11-05: open items in the project's home join the build-history rule's own list, in place of an exemption in the reviewer's template, because that clause covered only what Finish wrote and left out what an umbrella's landing or closing review writes.
 - 2026-11-05: a skip of the full-scope pass after a wave that changes no rule was built and withdrawn before landing, and is rejected, its evidence recorded; because it took six conditions, each pass found another hole, and it would rarely apply. The loop is unchanged.
