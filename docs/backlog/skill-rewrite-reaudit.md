@@ -1,28 +1,33 @@
-# Re-audit the mechanisms after the retirement children, and recalibrate
+# Re-audit the changes since 0.33.1 on real code, and recalibrate
 
 ## Observation
 
-- The skill text rewrite (`docs/crucible/2026-11-01-skill-text-rewrite/umbrella.md`)
-  retires and simplifies mechanisms on an audit of recorded runs whose
-  limits it states: counts are lower bounds, whether a later stage
-  would have caught a finding is the readers' judgment, and the newest
-  mechanisms ran only on crucible's own text.
-- Its D2 retires a mechanism outright only where the failure it targets
-  would be loud, so a regression should show; nothing yet checks that
-  it did.
-- The blind verifier was kept for now on uncertain evidence (D5).
-- The recorded runs cannot check either yet. Since 0.13.0 (2026-11-02)
-  about 20 features have run, all on crucible's own repository in one
-  session. Only `placement` and `compaction-fit` used a campaign or the
-  task loop, where most retired mechanisms lived, and no other project has
-  run a feature on those versions. On the controller's proposal, the
-  maintainer held the audit until a few features on real code have run
-  (2026-11-05).
-- What those runs could show is recorded: the token figures and the first
-  count of compaction re-reads in `docs/decisions/authoring-crucible.md`,
-  and the verifier's eight runs in
-  `docs/decisions/fix-verification-and-merge.md`.
-
+- The re-audit the skill text rewrite owed ran on 2026-11-23, over 36
+  features of one code project on crucible 0.33.1. Its results are in the
+  records that hold each question, its scope and limits in
+  `docs/decisions/fix-verification-and-merge.md` § Blind verification: the
+  verifier stays, the stuck trigger is closed, a lane note with a plan met
+  its reopening condition, and the figures of the read of 2026-11-19, whose
+  script counted from a seat index holding 640 of 880 seats, are corrected
+  where recounted.
+- No run on 0.34 or later existed then, so nothing measured the changes
+  made since. That project's first sessions on 0.38.0-rc.1 have begun.
+- The read did not examine the waves' line counts the readout trace lost,
+  the load-bearing marks, or the containment test's exclusions; snapshot
+  blessing never fired.
+- What the read saw and nobody has ruled on:
+  - four of six fresh looks fired at a passage's third patch, where the
+    router's sign is the second
+    (`docs/decisions/model-roles-and-effort.md` § A fresh look);
+  - three landings had no full-scope read after their last change, each on
+    the operator's word or a call left to the controller, one of them
+    landing six hand-merged rebase conflicts no reviewer read;
+  - in one session whole features ran after a compaction with no skill
+    invoked again, the controller twice announcing a skill without
+    invoking it, working from the re-attached copies and the references it
+    read;
+  - one plan task, by its own Contract, ran as 22 seats the controller
+    composed, outside the implementer and the task review.
 - Crucible's calibrations (four or five seats in a large new spec's first
   round, the cap of four rounds, plan sizes) come from one project, and
   were meant to be re-derived before reuse elsewhere; the README says where
@@ -31,73 +36,47 @@
   too expensive: one run can burn about 5% of a weekly usage limit. The
   outcome review found no detectable difference
   (`docs/decisions/publication.md`), and a recount of campaign records left
-  the cap unchanged (`campaign-early-stop-investigation.md`).
+  the cap unchanged (`campaign-early-stop-investigation.md`). The re-audit's
+  campaigns, on the same project, seated two seats in round 1 in 10 of 23
+  and four or five in 10, ran one to four rounds, one reaching the cap, and
+  planned 3 to 14 tasks: what controllers chose, not what serves.
 
 ## Follow-up
 
-Once a few features on real code have run on 0.13.0 or later, repeat the
-audit on those runs with `audit-brief.md`, against `inventory.md` (both
-beside the umbrella): did a retired mechanism's failure reach a later stage
-or the operator, and does the verifier earn its keep. Report aggregate
-figures only for any other project. Judge a session by its events'
+Once a few features of real code have run on 0.38 or later, read their
+transcripts for the threads below. Count seats from the transcripts
+themselves: the index behind the read of 2026-11-19 took dispatches from an
+event that repeats them without a timestamp and lost the originals. Report
+aggregate figures only for any project, and judge a session by its events'
 timestamps: a file's date can be recent on an old run.
 
-In the same transcripts, look for controllers re-reading a moved step's
-reference after compaction before acting on that step.
-
-In the same runs, count findings that fail their re-review on successive
-waves, and decide whether a stuck trigger is wanted. The transcripts read
-so far point both ways, with little real code under the current rules
-(`docs/decisions/model-roles-and-effort.md` § Why).
-
-In the same runs, read whether fresh looks fired where they should and whether
-the ones adopted helped (`docs/decisions/model-roles-and-effort.md` § A fresh
-look).
-
-From the same runs, read seat counts, rounds and plan sizes against the
-calibrations and re-derive what they support, labelling results from one
-project as one project's. A second project is better evidence, not a
-condition. Check too whether any one-round campaign was a settled change run
-only to get a plan, the trigger that reopens a lane note with a plan
-(`docs/decisions/routes.md` § Separable choices).
-
-In the same runs, read how the around-the-diff rule did on real code
-(`docs/decisions/task-loop.md` § Around the diff): were fold-ins worth having,
-did one bring a defect, and what happened on the cases its wording test did
-not reach: a callee with several callers, a fold-in larger than a loop merge,
-the fix-wave sentence, prose and no-seam work, the design-stage sentence, the
-inline paths, a reviewer on the shipped wording, and the bounded role.
-
-In the same runs, read what the lean-gates narrowing did
+Read what the lean-gates narrowing did
 (`docs/decisions/operator-steering.md`, `docs/decisions/branch-review.md`,
 `docs/decisions/adjudication.md`, `docs/decisions/terminal-pass.md`). Five
-things, each against what a read of sixteen sessions of one code project
-found before it:
+things, each against what the runs on 0.33.1 showed before it:
 
-- the share of decisions put to the operator that are housekeeping, against
-  about 30% in that read;
-- later full-scope passes per first pass, against about 1.1 in that read;
+- the share of decisions put to the operator that are housekeeping: about
+  30% by the reader seats of 2026-11-19, about half by the re-audit's hand
+  check of 30 items, two classifications;
+- later full-scope passes per first pass: 51 per 34, about 1.5;
 - any BLOCKER or MAJOR a later pass raised, and whether the first pass
-  missed it or a wave introduced it;
+  missed it or a wave introduced it: 3 in 51 later passes, none introduced
+  by a wave;
 - any choice the operator said they should have been asked, which the test
   for a choice no skill puts to them withheld;
 - any controller ruling on a literal-reading finding that a later pass or
-  the operator reversed.
+  the operator reversed: no adjudicator's ruling of 24 was reversed.
 
-One figure on the terminal pass's record check comes from before lean-gates,
-on one folded-lane feature of a code project: a terminal pass and its
-second read reported seven record corrections and no artifact finding, two
-default-role runs for a feature of about a hundred lines of code.
+On the terminal pass's record check, before lean-gates, 20 of 22 spec first
+passes reported a record correction, 63 in all.
 
 Such a read shows what the remaining passes caught and what the operator
 objected to. It cannot show a defect that a pass not run would have caught,
 what the narrowed steps cost, or what every pass missed: the earlier counts
-have no ground truth behind them, and the figures are approximate. Report
-aggregate figures only for any project, as above.
+have no ground truth behind them, and the figures are approximate.
 
-In the same runs, read what the path for a late ruling and the recorded
-readout did (the last paragraph and the list of
-`skills/redteaming/references/round-readout.md`;
+Read what the path for a late ruling and the recorded readout did (the last
+paragraph and the list of `skills/redteaming/references/round-readout.md`;
 `docs/decisions/fix-verification-and-merge.md`,
 `docs/decisions/spec-campaign.md`, `docs/decisions/terminal-pass.md`). Four
 things, each against what was observed before them:
@@ -120,39 +99,36 @@ things, each against what was observed before them:
   wait for the operator's answers held, so the trade-off accepted over never
   waiting gets a figure; no figure exists from before, neither was observed.
 
-In the same runs, read what process notes did
-(`docs/decisions/operator-steering.md` § Process notes): whether controllers
-made notes as the work went and offered them in a line when it ended,
-whether that line named what deserved attention and whether the operator
-agreed with the choice (since 2026-11-23 it no longer gives a count),
-whether expected but large costs came back into the line as "material"
-(a branch reviewer asked; the maintainer reads the word as beyond what
-the work was expected to cost, and left the wording), what
-the notes held and which causes they named, whether a seat's remark reached
-them as the seat wrote it, whether seats reported the host's advice on
-report files as something off (two did on the build of process notes; none
-of nine probe seats did, with or without the rule's reason; the
+Read what process notes did (`docs/decisions/operator-steering.md`
+§ Process notes): whether controllers made notes as the work went and
+offered them in a line when it ended, whether that line named what deserved
+attention and whether the operator agreed with the choice (since 2026-11-23
+it no longer gives a count), whether expected but large costs came back
+into the line as "material" (a branch reviewer asked; the maintainer reads
+the word as beyond what the work was expected to cost, and left the
+wording), what the notes held and which causes they named, whether a seat's
+remark reached them as the seat wrote it, whether seats reported the host's
+advice on report files as something off (two did on the build of process
+notes; none of nine probe seats did, with or without the rule's reason; the
 maintainer expects none to, now that the rule gives its reason), and
-whether an operator took the offer. Before
-them, a keyword search of 18 sessions over two weeks found one operator
-request for a process report, and nothing measured whether anything had been
-volunteered.
+whether an operator took the offer. Before them, a keyword search of 18
+sessions over two weeks found one operator request for a process report,
+and nothing measured whether anything had been volunteered.
 
-In the same runs, read what the changes of 2026-11-23 did
+Read what the changes of 2026-11-23 did
 (`docs/decisions/branch-review.md` § Record corrections;
 `docs/decisions/routes.md` § The very-small lane): how many record
 corrections controllers made after a review ended, and whether a later
-read found one wrong or reaching a document that binds work;
-whether a lane note written without being shown departed from the design
-the operator approved, and whether a branch reviewer's goal check found
-it; whether a reviewer who found a note excluding something asked for
-raised it as a premise finding, which the lane passage's "mismatch"
-implies and the definition in
-`skills/redteaming/references/premise-asks.md` does not name (a branch
-reviewer asked; either route reaches the operator); and whether a prose
-change on the lane landed with an outcome its Intent stated and its text
-did not carry. Nothing was measured before
-them: they rest on a controller's notes on three features.
+read found one wrong or reaching a document that binds work; whether a lane
+note written without being shown departed from the design the operator
+approved, and whether a branch reviewer's goal check found it; whether a
+reviewer who found a note excluding something asked for raised it as a
+premise finding, which the lane passage's "mismatch" implies and the
+definition in `skills/redteaming/references/premise-asks.md` does not name
+(a branch reviewer asked; either route reaches the operator); and whether a
+prose change on the lane landed with an outcome its Intent stated and its
+text did not carry. Nothing was measured before them: they rest on a
+controller's notes on three features.
 
 Compare the routes on branches that are prose only. Two such features of
 similar size were built back to back on crucible itself: the folded route
@@ -164,3 +140,9 @@ that a branch review would have missed, and whether the overturn question
 (`skills/subagent-driven-development/references/review-terms.md` § The
 arrangement questions), which asks how likely an overturn is, should also
 weigh what one costs where the branch is text.
+
+From the same runs, read seat counts, rounds and plan sizes against the
+calibrations and re-derive what they support, labelling results from one
+project as one project's. A second project is better evidence, not a
+condition. Where the retirements the read did not examine come up, read
+whether their failure reached a later stage or the operator.
