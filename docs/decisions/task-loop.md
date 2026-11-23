@@ -186,7 +186,8 @@ structure. Every task review that discussed one passed its scope, and no scope
 verdict of 143 failed. One defect from a fold-in was found, a dangling
 reference a removed link left, though not every fold-in was traced. The runs
 reached a callee with several callers, fold-ins larger than a loop merge, fix
-waves, which folded in only a defect's sibling instances, and much prose work.
+waves, where a task's waves folded in only a defect's sibling instances and
+one branch wave also took an untested edge case, and much prose work.
 One fold-in changed another task's file, which the rule sends to a proposal,
 and its reviewer passed it as the task's own contract needed it. The 10
 implementer seats on the bounded role logged none; the design stage and the

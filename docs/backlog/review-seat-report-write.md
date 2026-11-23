@@ -1,4 +1,4 @@
-# Seats on the bounded role end without writing their report file
+# Report-file misses fall on the bounded role
 
 ## Observation
 
@@ -18,14 +18,15 @@
 - In the same runs 3 of 56 re-reviewers and 2 of 10 implementers on the
   bounded role ended without the write, against 0 of 37 re-reviewers on the
   default role; no seat on another role missed except after an interrupted
-  run or a failed start. On crucible's own runs through 2026-11-05, 23 of 23
-  re-reviewers wrote without a resume, 21 of them on the bounded role, so
-  the role alone does not produce a miss. All five ended on the host's hand-back call carrying the report. Two
+  run or a failed start. All five that missed ended on the host's hand-back
+  call carrying the report. Two
   said they had no write tool, which their recorded tool lists contradict,
   and their controllers saved the reports without checking; one cited a
   rule against report files that no crucible template states. Every seat
   also receives the host's reminder that its final report goes through that
-  call, against the template's short reply.
+  call, against the template's short reply. On crucible's own runs through
+  2026-11-05, 23 of 23 re-reviewers wrote without a resume, 21 of them on
+  the bounded role, so the role alone does not produce a miss.
 - The check on an appended report asks that it hold the seat's section
   (`skills/subagent-driven-development/references/dispatch-composition.md`,
   item 5), and nothing marks whose section is whose. A seat re-dispatched

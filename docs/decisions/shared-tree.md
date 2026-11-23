@@ -101,8 +101,11 @@ In the re-audit of 2026-11-23 (its scope and limits in
 `docs/decisions/fix-verification-and-merge.md` § Blind verification), the
 301 status checks the reader found in the controllers' transcripts showed
 one difference, the controller's own repair edit, which it had announced.
-No review seat wrote into the tree or ran a git command that changes state,
-writes from inside scripts and test runs not checked. Three branch
+In the transcripts scanned, those of the branch reviewers, re-reviewers,
+adjudicators and task reviewers, no seat wrote into the tree or ran a git
+command that changes state, writes from inside scripts and test runs not
+checked; redteam seats, terminal passes and verifiers were not scanned, the
+status checks covering their tree writes alone. Three branch
 reviewers added and removed a throwaway worktree to run tests at the base,
 a write to the repository's shared git metadata that the status check does
 not see; each said so in its report. One branch wave's re-review read a

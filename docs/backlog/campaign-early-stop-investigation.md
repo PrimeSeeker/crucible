@@ -15,7 +15,9 @@
   2026-11-23 read 23 campaigns of one code project on crucible 0.33.1. One
   reached the cap, after its terminal pass flagged the stop basis and the
   operator ran a fourth round, which found 1 MAJOR and 4 MINORs. The pass
-  flagged 4 of the 21 stop bases it read. No round ran past a valid stop.
+  flagged 4 of the 21 stop bases it read. No round ran past a valid stop,
+  by inference: each round after the first followed a wave that changed a
+  mechanism, a flagged stop or the operator's word.
   Whether any stop was overturned after code was not determined: the
   post-close amendments in 13 of those features' ledgers were not
   classified.

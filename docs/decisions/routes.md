@@ -149,8 +149,10 @@ changes campaigned only to get tasks, their route entries or design
 messages expecting no overturn. Those five still merged 2 to 4 MAJORs each
 in that round, and whether a branch review would have caught them was not
 checked. So a lane note with a plan has met the condition that reopens it,
-and is not built yet. An agent's recommendation, which the maintainer
-accepted. (Basis: measured; judgment, accepted by the maintainer,
+and is not built yet: it stays unsupported until a read of such campaigns
+shows whether a branch review catches what their round 1 merged
+(`docs/backlog/skill-rewrite-reaudit.md`). An agent's recommendation, which
+the maintainer accepted. (Basis: measured; judgment, accepted by the maintainer,
 2026-11-23.)
 
 ### Whose call the preset is
@@ -447,7 +449,7 @@ gate.)
 
 ## Rejected
 
-- **A lane note with a plan, or a campaigned spec with no plan** (§ Separable choices).
+- **A lane note with a plan, or a campaigned spec with no plan** (§ Separable choices); the first met its reopening condition on 2026-11-23 and waits on one check, named there.
 - **Splitting a lane change across fresh implementers**: no run used it,
   and several tasks already take a campaign preset (§ Why).
 - **One uniform process for every change**: on a small change the plan

@@ -175,7 +175,8 @@ to the re-audit's (§ Why a pass at all), which counted every seat. There
 20 of 22 spec first passes reported a record correction, 63 in all, and
 15 of the 20 said their corrections leaned toward the controller's
 recommendation, toward settled or done, or toward the operator's
-endorsement. 25 corrections were flagged `CONCLUSION-CHANGING`, and in 5
+endorsement. Spec first passes and second reads flagged 25 corrections
+`CONCLUSION-CHANGING`, a plan first pass at least one more, and in 5
 of the 21 campaigns corrections visibly changed what happened next, by
 an ask put again, a further round or the operator choosing an option the
 controller had not recommended, each of the five carrying a flagged
@@ -227,8 +228,8 @@ by the maintainer, for the record-only run.)
 In the re-audit's runs (§ Why a pass at all), 26 second reads ran, 20 of
 them spec second reads in seats of their own and 6 resuming a plan pass,
 and none found a BLOCKER or MAJOR in its artifact; of the 25
-`CONCLUSION-CHANGING` corrections, 14 came from first passes and 11 from
-second reads. The read of 2026-11-19, on its partial index, had found
+`CONCLUSION-CHANGING` corrections counted above, 14 came from spec first
+passes and 11 from second reads. The read of 2026-11-19, on its partial index, had found
 the flagged ones coming from second reads of a close that put an ask
 again. A narrowing of the record-only
 run to an ask put again was approved with the design on 2026-11-19 and
@@ -264,7 +265,7 @@ checks is the close the operator received
 
 ## Changes
 
-- 2026-11-23: the counts behind reporting three kinds only are the re-audit's, the read of 2026-11-19 having counted on a partial seat index: 20 of 22 spec first passes reported corrections, 15 of those leaning toward the controller, and corrections visibly changed what happened next in 5 of 21 campaigns, each carrying a flagged one; and the earlier statement that the flagged corrections came from second reads is corrected, 14 of 25 having come from first passes. What the pass's first read found in those runs is recorded. No position changes.
+- 2026-11-23: the counts behind reporting three kinds only are the re-audit's, the read of 2026-11-19 having counted on a partial seat index: 20 of 22 spec first passes reported corrections, 15 of those leaning toward the controller, and corrections visibly changed what happened next in 5 of 21 campaigns, each carrying a flagged one; and the earlier statement that the flagged corrections came from second reads is corrected, 14 of the 25 counted having come from spec first passes. What the pass's first read found in those runs is recorded. No position changes.
 - 2026-11-20: decision-ask fidelity also reads the plain statement a readout gives before each carried question's quote against the quote, one changing its meaning being a correction of the third kind, and the controller records the second read's corrections in the close before delivering it; because a readout now states carried questions in plain words beside the seat's own, and two controllers delivered readouts their records did not hold.
 - 2026-11-20: the stop check reads the stop round's rulings list as it reads its fix list, since a ruling after the last numbered round now rides one as that round's own fix wave (`docs/decisions/fix-verification-and-merge.md`).
 - 2026-11-19: the pass reports only corrections of three kinds, a `CONCLUSION-CHANGING` mismatch (a withdrawn approval among them), a decision whose record misstates who made it or how firmly the operator holds it, and a carried question missing from its readout or changed in meaning, its Notes filtered the same way, and its template tells it the lean toward the controller's recommendation is expected; the bias line gives way to one closing line, a decision ask outside the count, only where the record is materially misleading as a whole; the second read keeps its triggers, that line among them; because in a read of sixteen sessions of one code project the corrections recurred in nearly every campaign, leaned the same way and did not become rarer, and of about 24 readouts reporting them two visibly changed what happened next, and the flagged corrections it found came from second reads of a close that put an ask again; and nothing but the record-only read checks that the close carries a correction the pass still reports.

@@ -212,10 +212,11 @@ main source. By a line proxy, no merged MAJOR of rounds 2 and 3 sat mostly
 on the draft's own text and 37 sat on text written since, while by then a
 median of about 65% of an artifact's lines were post-draft; 11 of the 24
 spec terminal-pass findings were in fix-wave text, by the pass's statement
-or git, 4 in original text and 9 undetermined. 9 campaigns deferred a MINOR
-as `deferred-minor`; one deferral never reached the ledger, the terminal
-pass catching it, and in the 8 others every one seeded reached the branch
-review's triage. (Basis: measured; the drift counts are a line proxy, not
+or git, 4 in original text and 9 undetermined. At least 9 campaigns
+deferred a MINOR as `deferred-minor`, 4 more not determinable from their
+records; one deferral never reached the ledger, the terminal pass catching
+it, and in the 8 others every one seeded reached the branch review's
+triage. (Basis: measured; the drift counts are a line proxy, not
 adjudicated.)
 
 ### Repeat hits
@@ -371,12 +372,14 @@ text (2026-11-05), could not answer it: all 60 fix items had landed and no
 hunk fell outside a list; among their delta claims one was FALSE and two
 partly so, all minor wording, before the repair path above existed, and two
 of the three stayed in the landed spec
-(`docs/crucible/2026-11-03-compaction-fit/design.md`). So it stayed for now.
-(Basis: measured, by the controller of those campaigns from its own
-session's reports.)
+(`docs/crucible/2026-11-03-compaction-fit/design.md`). So it stayed for now,
+an agent's proposal, which the maintainer accepted. (Basis: measured, by the
+controller of those campaigns from its own session's reports; judgment,
+accepted by the maintainer.)
 
 The re-audit of 2026-11-23 read the transcripts and records of 36 features
-of one code project over two weeks on crucible 0.33.1, 931 dispatched seats,
+of one code project, with one operator, over two weeks on crucible 0.33.1,
+931 dispatched seats,
 all but 10 of 185 implementer seats on the default role, through six reader
 seats on the default role and one pass on another host. The transcripts are
 not in this repository, and whether a later stage would have caught what a
@@ -397,7 +400,8 @@ own wording; the others on verified waves' text were design or consistency
 defects in text that landed as listed, several a new hunk contradicting
 text outside the diff, which the verifier does not read. The 67 runs with
 indexed costs were a third of those campaigns' indexed seats and 3.4% of
-those seats' output tokens, a median of 32 seconds each. A second reader, on another
+those seats' output tokens, a median of 32 seconds each; that index lacked
+some panel seats, so both shares are upper bounds. A second reader, on another
 host, counted a run clean only with no qualification at all, and found 23
 of those 67 so. (Basis: measured.)
 
