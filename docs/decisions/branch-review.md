@@ -179,7 +179,8 @@ meanwhile.
 
 Since 2026-11-23 the controller may make such a correction itself once the
 review has ended. It is no wave, so the two rejections of a lighter pass
-after a wave stand (§ A wave that changes no rule): it reaches only a
+after a wave stand (§ An iterative loop with a floor and a cap; § A wave
+that changes no rule): it reaches only a
 decision record or an open item that binds no work, and it applies what a
 reviewer's finding states. This repository's records state positions and
 bind nothing; a project whose records bind work keeps them out of the
