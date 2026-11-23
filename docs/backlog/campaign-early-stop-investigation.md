@@ -11,11 +11,19 @@
   campaigns paying for themselves and could not settle the cap
   (`docs/decisions/spec-campaign.md` § Why). None of the feature work on
   real code it read ran under the overturn question.
+- Features on real code have since run under it: the re-audit of
+  2026-11-23 read 23 campaigns of one code project on crucible 0.33.1. One
+  reached the cap, after its terminal pass flagged the stop basis and the
+  operator ran a fourth round, which found 1 MAJOR and 4 MINORs. The pass
+  flagged 4 of the 21 stop bases it read. No round ran past a valid stop.
+  Whether any stop was overturned after code was not determined: the
+  post-close amendments in 13 of those features' ledgers were not
+  classified.
 
 ## Follow-up
 
-Once features on real code have run under the current stop rule, run one
-extra fresh-panel round past a valid stop on a sample of campaigns, about
-1.5 to 3 million input-equivalent tokens per campaign at recorded round
-costs, and define "routine" at-cap escalation before escalations are
-counted again.
+On a sample of coming campaigns on real code, run one extra fresh-panel
+round past a valid stop, about 1.5 to 3 million input-equivalent tokens per
+campaign at recorded round costs, and define "routine" at-cap escalation
+before escalations are counted again. Classifying post-close amendments
+would show stops overturned after code where they were written back.

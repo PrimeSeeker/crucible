@@ -16,13 +16,25 @@
   restating over the whole class, at any hit, for any fix to agent-read text, a
   branch-review wave's included. How a tension is closed in general stays as it
   was.
-- Whether branch-review fix waves generate special cases the same way is
-  unchecked. Their fixes must name a cause and report sibling instances in the
-  diff, but whether that works is unmeasured.
-- Whether reviews still close tensions by adding distinctions is unmeasured.
+- Reviews still close tensions mostly by adding distinctions. In the
+  re-audit of 2026-11-23, over one code project's runs on crucible 0.33.1, a
+  sample of 69 items from 37 spec-round fix lists in 21 campaigns, taken by
+  position, held 32 that added a distinction, condition or special case, 12
+  rewrites (4 of them generalising a rule), 5 deletions or merges and 20
+  others, mostly bookkeeping.
+- Branch-review fix waves do the same. In a sample of 75 finding fixes from
+  20 fix files, 29 added a condition, special case or guard, 5 restructured,
+  4 deleted and 37 were other corrections. In the two classes of finding
+  that recurred across passes, each wave's special case met a further case
+  at the next read, and the one restructure in either came from a fresh
+  look. Implementer-written fix reports named a cause for about 28% of
+  their items and sibling instances for about 70%, by keyword, so lower
+  bounds; the controller's own fix reports on the very-small lane, 32
+  items, named no cause and siblings for 5, though the lane holds them to
+  the same contract. The classification is one reader's.
 
 ## Follow-up
 
-Weigh the restructuring as a design target of a later rewrite, and first check
-whether recent fix lists still close tensions that way, and whether branch
-review does.
+Weigh the restructuring as a design target of a later rewrite. The checks
+this item first asked for, on fix lists and on branch review, are the
+figures above.
