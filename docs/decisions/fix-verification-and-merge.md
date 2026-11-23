@@ -152,6 +152,17 @@ stay unique because the stop check reads each seat's forecast lines by
 id across rounds. (Basis: measured, for the catches; judgment, an
 agent's proposal accepted by the maintainer, for the retirement.)
 
+The re-audit of 2026-11-23 (§ Blind verification) saw no loss of the kind
+conservation guarded against. All 547 seat-finding ids of the 42 rounds
+whose records hold a merged list appear in it, 2 merged at a lower severity,
+each with a recorded reason, and a side-by-side read of 60 seat findings in
+6 rounds found none lost or softened; 5 rounds could not be checked, their
+merged lists written by shell. The terminal passes reported no seat finding
+missing from a merge, though they read seat findings only behind asks, and
+caught five merged entries whose disposition did not match the seat's
+finding, all before execution. The id check is the retired token check, so
+it shows only that no id went missing. (Basis: measured.)
+
 On 2026-11-03 that uniqueness went too: the stop check answers each forecast by the mechanism it names, never by seat id, and a replacement seat takes a fresh id (`crucible:redteaming § Panels`); an id may now recur across rounds, a minor loss under the maintainer's compaction mandate. An agent's proposal, on which the maintainer left the call to the agent. (Basis: judgment, accepted by the maintainer.)
 
 ### Dispositions and the sub-point check
@@ -195,6 +206,17 @@ was built, rather than to the close readout, where nobody would check
 them against code. (Basis: measured, for the audit; judgment, accepted
 by the maintainer, for the rule and the destination, and for the
 carve-out for binding text, a call the maintainer left to the agent.)
+
+The re-audit of 2026-11-23 (§ Blind verification) found fix waves still the
+main source. By a line proxy, no merged MAJOR of rounds 2 and 3 sat mostly
+on the draft's own text and 37 sat on text written since, while by then a
+median of about 65% of an artifact's lines were post-draft; 11 of the 24
+spec terminal-pass findings were in fix-wave text, by the pass's statement
+or git, 4 in original text and 9 undetermined. 9 campaigns deferred a MINOR
+as `deferred-minor`; one deferral never reached the ledger, the terminal
+pass catching it, and in the 8 others every one seeded reached the branch
+review's triage. (Basis: measured; the drift counts are a line proxy, not
+adjudicated.)
 
 ### Repeat hits
 
@@ -268,6 +290,13 @@ such wave does. `crucible:writing-skills`' fix sentence widened the same day
 (Basis: measured, for the test; judgment, accepted by the maintainer, for
 the rule.)
 
+In the re-audit of 2026-11-23 (§ Blind verification) controllers handled 9
+hits as repeats in 7 campaigns, 6 by rewriting the passage, two of those
+after a fresh look, 2 by a further patch, and one by the operator
+redirecting the design. A line proxy put up to 270 merged findings on
+wave-written text, an upper bound that does not show repeats missed.
+(Basis: measured.)
+
 ### Blind verification
 
 A study of the maintainer's earlier redteaming on another project
@@ -335,22 +364,50 @@ verifier checks it against. The spec terminal pass's follow-up wave was
 verified like every wave with nowhere to record it. (Basis: judgment, an
 agent's proposal accepted by the maintainer.)
 
-Whether the verifier earns its keep, the skill text rewrite's open question
-(`docs/crucible/2026-11-01-skill-text-rewrite/umbrella.md`, D5 and D9), has
-only a thin answer so far. On 2026-11-05 the reports of its eight runs since
-the retirements, in two campaigns on crucible's own text, were counted: all
-60 fix items had landed and no hunk fell outside a list, one run's report
-read only as its closing summary. Among their delta claims it found one FALSE
-and two partly so, all minor wording, before the repair path above existed.
-The FALSE one and one of the others stayed in the landed spec
-(`docs/crucible/2026-11-03-compaction-fit/design.md`, on the umbrella stub's
-rehydration rule and on sites citing a loop step's heading); the third was not
-traced. Eight runs that found every item landed and no stray hunk, on crucible's
-own text, do not answer the question, and the failure it guards against is
-silent, so it stays and the question waits for features on real code
-(`docs/backlog/skill-rewrite-reaudit.md`). An agent's proposal, which the
-maintainer accepted. (Basis: measured, by the controller of those campaigns
-from its own session's reports; judgment, accepted by the maintainer.)
+Whether the verifier earns its keep was the skill text rewrite's open
+question (`docs/crucible/2026-11-01-skill-text-rewrite/umbrella.md`, D5 and
+D9). Its eight runs since the retirements, in two campaigns on crucible's own
+text (2026-11-05), could not answer it: all 60 fix items had landed and no
+hunk fell outside a list; among their delta claims one was FALSE and two
+partly so, all minor wording, before the repair path above existed, and two
+of the three stayed in the landed spec
+(`docs/crucible/2026-11-03-compaction-fit/design.md`). So it stayed for now.
+(Basis: measured, by the controller of those campaigns from its own
+session's reports.)
+
+The re-audit of 2026-11-23 read the transcripts and records of 36 features
+of one code project over two weeks on crucible 0.33.1, 931 dispatched seats,
+all but 10 of 185 implementer seats on the default role, through six reader
+seats on the default role and one pass on another host. The transcripts are
+not in this repository, and whether a later stage would have caught what a
+mechanism caught is a reader's judgment throughout; other records cite this
+paragraph for the read's scope. It found 72 verifier runs, 64 on waves and 8
+re-checks of a repair. 56 found every item landed, no untraced hunk and no
+claim failing. 12 led to a change in the artifact or its record, one of them
+cosmetic: fixes partly or not applied (4 runs), breakage the wave itself
+brought, such as a dropped dependency or a stale cross-reference (5), and
+false or unsupported claims about code (4), some runs in two kinds. Every
+catch had a full-scope read or panel coming; for 8 of the 11 that changed
+content the reader judged that read plausibly or likely to catch it, and
+for none could it show so. The 60 other runs changed nothing. Of the 35
+terminal-pass findings standing after verified waves, the reader traced one
+to something the verifier could have flagged, a false claim about code that
+no one had listed and which it quoted as landed, and two to a fix list's
+own wording; the others on verified waves' text were design or consistency
+defects in text that landed as listed, several a new hunk contradicting
+text outside the diff, which the verifier does not read. The 67 runs with
+indexed costs were a third of those campaigns' seats and 3.4% of their
+output tokens, a median of 32 seconds each. A second reader, on another
+host, counted a run clean only with no qualification at all, and found 23
+of those 67 so. (Basis: measured.)
+
+So the verifier stays, no longer for now: it costs little in output and
+time, and it repairs a fix that did not land at the cheapest moment, before
+the next panel reads it. The case against, as put to the maintainer: every
+catch had a full read coming, 60 of 72 runs changed nothing, and a clean
+verdict may lend comfort to a wave wrong in ways it cannot see. An agent's
+recommendation, which the maintainer accepted. (Basis: judgment, accepted
+by the maintainer, 2026-11-23.)
 
 ### Rulings after the last round
 
@@ -446,6 +503,7 @@ corrections before delivery.)
 
 ## Changes
 
+- 2026-11-23: the verifier stays, no longer for now, on an agent's recommendation the maintainer accepted; because on 72 runs over 36 features of one code project it repaired unlanded fixes, breakage the wave brought and false claims at little cost, every catch with a full read coming and 60 runs changing nothing. What the same read showed of retired merge conservation, deferred minors and repeat hits is recorded, and changes no position.
 - 2026-11-20: only a repair's ask on the rulings list holds no pass; the cap's ask decides whether the campaign goes on and the pass follows its ruling, since the record said the opposite of the skill text, whose cap offers a round or a supersede that voids a pass dispatched before the answer.
 - 2026-11-20: the recorded readout is the delivered one word for word, less its trace, the record format no longer calling it compact, and a close is delivered only once a second read's corrections are recorded in it; because in two runs the controller recorded a shortened readout and delivered a fuller one, so the terminal pass audited text the operator had not seen.
 - 2026-11-20: in a spec campaign, rulings in hand once the last numbered round's fix list has frozen ride a rulings list of that round, blind-verified as that round's own fix wave with reports `verifier-rulings.md` and `verifier-rulings-recheck.md`, and a later ruling's change waits for the close, which names it; because three controllers met such a ruling with no stated path and improvised three procedures.

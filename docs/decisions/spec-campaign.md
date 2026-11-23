@@ -104,7 +104,11 @@ rewrite's audit of recorded runs found real catches coming from first
 reads of a design, the first panel round among them, and the lens sits
 in round 1 alone. (Basis: measured, for where catches come from;
 judgment, an agent's proposal accepted by the maintainer, for the lens
-and its seat.)
+and its seat.) In the re-audit of 2026-11-23 (its scope and limits in
+`docs/decisions/fix-verification-and-merge.md` § Blind verification), 8
+round-1 seats carrying that lens alone were the only origin of 5 merged
+MAJORs, 3 of them premise findings: 0.63 per seat, against 0.32 for the 25
+other seats beside them. (Basis: measured, on thin data.)
 
 Unless the operator asks otherwise, every panel runs on one host's
 model family. A model judging outputs
@@ -160,7 +164,10 @@ pairs) it staked 1.00 against 0.50, and 0.40 MINORs against 5.60. Other
 cells hold 2 pairs or fewer. These count staked severities, not whether
 a finding held or only that seat raised it, which is what the seat is
 for, so they neither support nor settle its place. (Basis: measured, on
-thin data.)
+thin data.) In the re-audit (§ Panels and lenses), 21 such seats beside
+round-1 panels were the only origin of 2 merged MAJORs and one of several
+origins of 21, against 0.46 unique MAJORs per seat for the panels' own
+seats. (Basis: measured, on thin data.)
 
 ### Right-sizing
 
@@ -320,6 +327,18 @@ the rule nor the cap, to drop the question of drift reducers and to add no
 outcome record. (Basis: measured, on staked counts and with
 selection; judgment, accepted by the maintainer.)
 
+The re-audit (§ Panels and lenses) read the first campaigns on real code
+under the question: 23, of which 20 stopped on it, 2 ended with the
+operator withdrawing or redirecting the work, and one was reopened and
+closed at the cap. The terminal pass flagged the stop basis
+`CONCLUSION-CHANGING` in 4 of the 21 stops it read, each where the stop
+round's wave had added, removed or re-shaped a major mechanism; in 3 of
+the 4 every seat of the stop round had forecast no overturn, and in the
+fourth the controller had stopped against both seats' forecasts. Whether
+any stop was overturned after code was not determined. Among campaigns
+reaching each round, round 1 merged about 3.7 MAJORs per campaign, round 2
+about 2.2 and round 3 about 1.4. (Basis: measured.)
+
 The hypothesis-specs umbrella asked that a seat be able to say the spec,
 or the goal behind it, is wrong without costing a fix wave, so a premise
 finding reaches the operator as a decision ask rather than as an open
@@ -424,8 +443,9 @@ misleading as a whole. From 2026-11-19 it expects the lean toward the
 controller's recommendation and no longer reports it as a pattern: in a
 read of sixteen sessions of one code project, reporting every mismatch
 with a line naming the corrections' shared direction had not reduced the
-lean, and of about 24 readouts reporting corrections two visibly changed
-what happened next (`docs/decisions/terminal-pass.md`). (Basis:
+lean, and a recount found corrections visibly changing what happened next
+in 5 of 21 campaigns, each carrying a flagged one
+(`docs/decisions/terminal-pass.md`, which gives both reads' limits). (Basis:
 measured, for the figures; the maintainer's proposal, for reporting
 only what would change a conclusion and expecting the lean; the
 controller's, accepted by the maintainer, for keeping the misattributed
@@ -463,6 +483,7 @@ maintainer in its round readouts, for the question kind and the line.)
 
 ## Changes
 
+- 2026-11-23: the first campaigns on real code under the overturn question are recorded, the terminal pass flagging 4 of 21 stop bases and whether any stop was overturned after code undetermined, with the round-1 yield of the outside-the-frame lens and of a seat on another host; the operating stance's figure is the recount's (`docs/decisions/terminal-pass.md`). No position changes.
 - 2026-11-20: before dispatching the terminal pass the controller waits for an answer, a deferral included, to each decision ask whose answer it judges could change the artifact, a premise ask aside, and a premise ruling's change takes the path any ruling's takes (`skills/redteaming/references/round-readout.md`); because a pass run before the answer reads text about to change, and three controllers met a ruling after the last numbered round with no stated path (`docs/decisions/fix-verification-and-merge.md`).
 - 2026-11-19: the terminal pass reports a breach of the operating stance through the kinds of correction it still reports and its line on a record materially misleading as a whole, no longer through the bias line, since in a read of sixteen sessions of one code project reporting every mismatch had not reduced the lean toward the controller's recommendation and, of about 24 readouts reporting corrections, two visibly changed what happened next (`docs/decisions/terminal-pass.md`).
 - 2026-11-19: an implementer whose change touches only documents, files the product neither runs nor loads, runs the tests and checks that read them in place of the full suite and says so, and the controller runs the very-small lane's gates the same way; because full-suite runs after documentation-only commits, about nine minutes each in a read of sixteen sessions of one code project, generalized a rule written for code; Finish's run before the landing is unchanged.

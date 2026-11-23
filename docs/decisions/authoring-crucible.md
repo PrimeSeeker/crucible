@@ -314,6 +314,16 @@ The convention's own text said nothing of a recurring step until 2026-11-03, so 
 
 Whether controllers do re-read was unmeasured until 2026-11-05. Of the 19 compactions after 0.15.0 in one session on crucible's own repository, 16 run by hand by the maintainer and most falling between features, 2 fell with a moved step in flight. Both times the controller read the reference of the step it next acted on before acting: `finish.md` once, and once the lane's reference and the dispatch references, the maintainer's answer having moved the work from Finish to a wave. Two cases and one controller, counted by that controller from its own transcript: no miss, not yet a habit. (Basis: measured.)
 
+The re-audit of 2026-11-23 (its scope and limits in
+`docs/decisions/fix-verification-and-merge.md` § Blind verification) read 43
+compactions on a code project, 21 of them the operator's own. No skill came
+back cut short: every re-attached copy was whole, the most recently invoked
+skill among them, so the router's line never had occasion to fire. A crucible
+step was in flight at 22; the controller re-read that step's reference before
+acting on it at 18 and not at 4, with no consequence found in what followed.
+Of the 19 such compactions followed by a dispatch, both dispatch references
+were read first at 12. (Basis: measured, by one reader from the transcripts.)
+
 On 2026-11-03 SDD's ledger line forms for leads and `## Questions` moved from its § Setup into `skills/subagent-driven-development/references/setup.md`, read at Setup, though leads and questions are written past that step, at every task and branch-review pass: the texts where they are written restate their forms or lead to that file by citation, so a controller after compaction still finds a form, and the forms no longer ride every re-attach. An agent's proposal, on which the maintainer left the call to the agent. (Basis: judgment, accepted by the maintainer.)
 
 ### Resident tokens per route
@@ -596,6 +606,7 @@ the build-history rule included (`skills/using-crucible/SKILL.md`).
 
 ## Changes
 
+- 2026-11-23: the compaction re-read is measured on a code project: in 43 compactions no skill came back cut short, and at 18 of the 22 with a step in flight the controller re-read that step's reference before acting, the 4 others showing no consequence. No position changes.
 - 2026-11-06: a fix to agent-read text restates the sentence over its whole class where that covers the case, no longer only adding a condition; because adding a condition was the one shape the rule named, which pushes a fix toward special cases.
 - 2026-11-05: an umbrella's closing review names the dispatch composition and the host's dispatch reference at its step, and the one-line pointer is stated of skills that dispatch instruments; because a check of the records found the closing review had no line sending its controller to the host's reference.
 - 2026-11-05: a total word cap on the skills, 10% over the prose compaction's count, moved only by the operator, because the per-skill budget refuses no growth; total words chosen over a per-route token cap, since they gave nearly the same signal with no list of each route's reads to keep. The rejection of a total target now covers a size the work must reach, since the cap is a ceiling the maintainer rules on. Excess is a review finding on this repository (`AGENTS.md`), since that rule otherwise reaches only readers of `writing-skills`.

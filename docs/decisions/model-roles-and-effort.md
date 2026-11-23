@@ -226,7 +226,12 @@ price on Claude Code (the platform's price list, read 2026-11-06). The
 seat is chosen as the most architecture-heavy, not at random, and these
 are staked counts, not whether a finding held or only that seat raised
 it, so the swap stands on the maintainer's ruling. (Basis: measured, on
-thin data.)
+thin data.) In the re-audit of 2026-11-23 (its scope and limits in
+`docs/decisions/fix-verification-and-merge.md` § Blind verification), in 22
+spec round 1s, the alternate-role seat was the only origin of 0.50 merged
+MAJORs per seat, against 0.51 for the 45 default-role seats beside it;
+lenses were often combined on one seat, so this compares seats, not lenses.
+(Basis: measured, on thin data.)
 
 On 2026-10-07 an operator exception naming a model above the default was
 deleted as "overly strong"; on 2026-10-13 that model returned as Claude
@@ -234,8 +239,8 @@ Code's alternate role, reached by the three triggers rather than by the
 operator's authorization alone, with that history shown to the
 maintainer. Nothing escalates a stuck seat to it. The maintainer: "Late
 waves are generally not stuck, just slowly mining the residual issues.
-We'll probably introduce a stuck trigger later." None is added for now,
-and the re-audit decides (`docs/backlog/skill-rewrite-reaudit.md`). A seat
+We'll probably introduce a stuck trigger later." None was added then, the
+question left to the re-audit. A seat
 is stuck when the same finding fails its re-review on successive fix
 attempts. Script counts over the transcripts on disk (2026-11-06; about
 120 features with a re-review, on this repository and one other project
@@ -263,8 +268,24 @@ BLOCKER or MAJOR findings of any wording per campaign, among those that
 reached them. Both caps on fix waves, a task's and a branch review's, end
 in an operator ask, and the operator may name the alternate role. (Basis:
 measured, for the counts; judgment, accepted by the maintainer, for adding
-none for now.) SDD's fresh implementer a tier
-up at fix waves 4–5 went on 2026-11-02 with the five-wave loop
+none then.)
+
+The re-audit of 2026-11-23 (above) found no stuck seat: no finding failed
+its re-review twice, in 146 tasks or 58 branch waves. No task reached a second fix wave, and 2 of 93 re-reviews left
+a finding open, one cleared by the next wave and one, on the order tests had
+been written in, beyond any wave's reach. What recurred was a class of
+finding across passes, in two features, each re-review passing its own wave
+while it or the next full read found a further case. In one, a fresh look
+replaced the hand-set list behind the class, and one more case surfaced at
+a later read; the other ran a fourth wave past the cap on the operator's
+word and filed its last two minors. So the stuck trigger is closed as not
+needed: what recurs is the fresh look's ground (§ A fresh look). The case
+against, as put to the maintainer: one project, its implementers on the
+default role. An agent's recommendation, which the maintainer accepted.
+(Basis: measured; judgment, accepted by the maintainer, 2026-11-23.)
+
+SDD's fresh implementer a tier up at fix waves 4–5 went on 2026-11-02 with
+the five-wave loop
 (`docs/decisions/task-loop.md`). (Basis: the maintainer's
 preference; judgment, accepted by the maintainer, for the return.)
 
@@ -282,9 +303,9 @@ so a fresh adjudicator's wording restores that scope without the bar: "the
 work's design or code, or what it builds on". The bare "the work's" would lose
 an existing module the work must extend. The proposal came as a return to the stuck trigger;
 an agent read it as a different mechanism (§ Rejected): that one escalates a
-failing seat on a count, which the re-audit still decides, while this replaces
-no seat, on judgment, so it does not wait for those runs. (Basis: judgment,
-accepted by the maintainer.)
+failing seat on a count, a question then left to the re-audit, while this
+replaces no seat, on judgment, so it did not wait for those runs. (Basis:
+judgment, accepted by the maintainer.)
 
 Script counts over the Claude Code transcripts on disk (2026-11-07), matching
 prompts by keyword with none read by eye, found 57 dispatches on the alternate
@@ -307,10 +328,19 @@ the one text every controller holds at every phase, with its procedure in a
 reference and no instrument of its own. A second look at the same problem goes
 to the operator, since the seat costs 2.5 times the base price on Claude Code.
 No wording test ran, the one on the around-the-diff rule (2026-11-06) having
-cost about 2.1 million tokens by the controller's tally; the re-audit reads
-whether the rule fires
-(`docs/backlog/skill-rewrite-reaudit.md`). (Basis: judgment, accepted by the
-maintainer.)
+cost about 2.1 million tokens by the controller's tally. (Basis: judgment,
+accepted by the maintainer.)
+
+In the re-audit of 2026-11-23 (§ The alternate role) six fresh looks ran,
+all on the alternate role, all on the controller's judgment and none at the
+operator's request, each given symptoms only. Three were adopted in full and
+one in part; one fed a stop recommendation that the operator overrode by
+widening the work, and one was not adopted, the operator then dropping the
+design it had endorsed. No later read in those features reopened a design a
+fresh look had reshaped, though the reads stop at each landing. Four fired
+at a passage's third patch, a round after the router's sign of a second; in
+three other places the sign was named and none ran, the controller putting
+the choice to the operator or patching again. (Basis: measured.)
 
 ### Effort
 
@@ -362,10 +392,11 @@ would cost more with no evidence for it.
 
 - **Model names in the skills**: every model release would touch every
   skill that names a seat's model.
-- **A stuck trigger for the alternate role**, for now: the counts point
-  both ways and link no failure to a later one, and both caps on fix waves
-  reach the operator; the re-audit decides (§ Why). A fresh look replaces
-  no seat and is not a stuck trigger (§ A fresh look).
+- **A stuck trigger for the alternate role**: closed on 2026-11-23 as not
+  needed, since in the re-audit's runs no finding failed its re-review
+  twice and what recurred was a class of finding across passes, the fresh
+  look's ground (§ Why). A fresh look replaces no seat and is not a stuck
+  trigger (§ A fresh look).
 - **Automatic effort, or a flow choosing `ultra`**: the maintainer's
   ruling, held lightly; on Codex `ultra` also carries automatic task
   delegation (`docs/decisions/instruments.md`).
@@ -393,6 +424,7 @@ operator's config key.
 
 ## Changes
 
+- 2026-11-23: the stuck trigger is closed as not needed, no longer waiting on the re-audit, on an agent's recommendation the maintainer accepted; because in 146 tasks and 58 branch waves of one code project no finding failed its re-review twice, and what recurred was a class of finding across passes, which a fresh look addresses. What those runs' six fresh looks did, and the alternate-role seat's unique merged MAJORs in round 1, are recorded.
 - 2026-11-07: a fresh look joins the alternate role's triggers as a fourth, on the maintainer's proposal, scoped to the work's design or code or what it builds on, with signs beside the judgment and a second look going to the operator; because rethinks done ad hoc helped and came mostly from the operator asking. The automatic stuck trigger stays declined, since this replaces no seat.
 - 2026-11-06: a stuck trigger stays out for now and its question moves to the re-audit, no longer open in the backlog; because a read of late waves and rounds points both ways, its limits in § Why, and both caps on fix waves already reach the operator.
 - 2026-11-06: a controller one subagent down is rejected, since it cannot reach the operator and its saving at equal token use is small, the shorter context's saving and the Codex half unmeasured; the implementers' cost share and a comparison of the alternate role's seats in the same round are recorded, and neither changes a row.

@@ -117,7 +117,16 @@ retired it on its audit's evidence
 campaign "in case of something coming up". (Basis: judgment, accepted
 by the maintainer, for the retirement; the maintainer's preference, over
 the controller's recommendation to fold the shape into the design's
-approval, for the gate.)
+approval, for the gate.) In the re-audit of 2026-11-23 (its scope and
+limits in `docs/decisions/fix-verification-and-merge.md` § Blind
+verification), approvals at the gates were mostly terse, such as "+" or
+"OK", and in four features an approval later met a misunderstanding: a
+rule the operator had chosen, dropped after the spec closed once the
+operator asked what it meant; a design resting on an unchecked claim that
+the first round refuted; a premise the operator withdrew after two rounds;
+and an agreed mechanism changed in the spec. Whether a digest would have
+changed any of these cannot be told, since no session ran with one.
+(Basis: measured, the reading of the approvals a reader's judgment.)
 
 On 2026-11-19 that stop became conditional. A read of sixteen sessions
 of one code project, twelve days of work, counted about 400 decisions
@@ -164,7 +173,12 @@ withholds a choice the operator needed is unmeasured. The controller's
 proposal, its last clause and the narrowing to observable changes added
 after the count and shown before the design's approval. (Basis:
 measured, by reader seats, for the counts; judgment, accepted by the
-maintainer, for the test.)
+maintainer, for the test.) The re-audit's reader (§ One gate for design and launch),
+classifying differently over 36 features of the same project, counted about
+374 decision items in 195 messages that asked the operator something, about
+half substance and half process by a hand check of 30, and 127 of the 354
+operator messages pure assent: another reader's estimate, not a correction
+of the counts above. (Basis: measured, an estimate.)
 
 ### The case against a recommendation
 
@@ -352,6 +366,7 @@ invite the agent's own preferences and remarks on their steering.
 
 ## Changes
 
+- 2026-11-23: the re-audit's outcomes are recorded: four features where an approval later met a misunderstanding, with no digest run to compare, and another reader's estimate of the decisions put to the operator beside the counts the 2026-11-19 positions rest on. No position changes.
 - 2026-11-23: the closing line on process notes says what in them deserves the operator's attention, a hunch named as one and a routine note once it has recurred or its cost is material, with an offer of the rest, and a feature's close says so when nothing does; the count and the main note go; because three features' closes reported six to nine mostly routine notes as a count, which the maintainer found uninformative and endless.
 - 2026-11-22: every seat says what was off in its instructions or tools, a seat the controller composes itself through the dispatch composition's return contract, which copies the template's sentence, the maintainer's answer to a question the build left open; and the statement that no notes were made is part of the one line, so an operator's instructions can silence it, owed in a feature's close readout only; because read literally an operator who asked for no process notes still saw it.
 - 2026-11-22: with no process notes made, a feature's close says so and other work says nothing; because a branch review asked what the line is then, and at a close silence cannot be told from a skipped step.

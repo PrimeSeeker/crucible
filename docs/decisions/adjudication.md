@@ -84,7 +84,13 @@ what binds, and ruling on each as a plan conflict. It went on
 2026-11-02: conflicts that emerge from implementation are the review
 loop's, as they already were. (Basis: the skill-text-rewrite umbrella's
 D3, the controller's proposal on its audit's counts, accepted by the
-maintainer.)
+maintainer.) The re-audit of 2026-11-23 (its scope and limits in
+`docs/decisions/fix-verification-and-merge.md` § Blind verification) found
+seven conflicts of a plan task with the tree or other plan text, three of
+them reported BLOCKED by the implementer, and eight literal-reading findings
+that patched or amended binding text, all caught inside the task loop by
+the implementer or the task reviewer; none reached the branch review as a
+plan conflict, and none cost a revert. (Basis: measured.)
 
 ### Disputes at any wave
 
@@ -165,8 +171,13 @@ umbrella's D4 and this change's spec.)
 
 A read of sixteen sessions of one code project on crucible 0.33.x, over
 twelve days, counted 16 adjudicator seats: 13 ruled on a literal-reading
-finding, and 11 of those 13 dismissed it. The counts cannot be reproduced
-from this repository, the transcripts not being in it. (Basis: measured.)
+finding, and 11 of those 13 dismissed it. Its script counted from a seat
+index holding 640 of the window's 880 seats. The re-audit (§ Upstream's
+rule and the first port), counting every seat over 36 features of the same
+project, found 21 adjudicator seats giving 24 rulings, 18 of them
+dismissals, and no ruling reversed; it did not recount which ruled on a
+literal reading. Neither read can be reproduced from this repository, the
+transcripts not being in it. (Basis: measured.)
 Since 2026-11-19 the controller rules on such a finding with its evidence,
 and its ruling passes the containment test as an adjudicator's does. Two
 cases keep the fresh seat: a finding on a diff the controller wrote, as
@@ -208,6 +219,7 @@ cases' present wording the controller's, in the spec campaign.)
 
 ## Changes
 
+- 2026-11-23: the counts behind the literal-reading rule are qualified: the read of 2026-11-19 counted adjudicator seats on a partial index, and the re-audit, counting every seat, found 21 seats and 24 rulings, 18 of them dismissals, without recounting the literal-reading split; the rule stands. The retired pre-flight scan's target conflicts were all caught inside the task loop in the re-audit's runs.
 - 2026-11-19: a literal-reading finding is the controller's to rule on, with its evidence and through the containment test; a fresh adjudicator rules on one only on a diff the controller wrote or where the controller concludes the binding text itself must change; because in a read of sixteen sessions of one code project, 13 of 16 adjudicator seats ruled on such a finding and 11 of those 13 dismissed it.
 - 2026-11-03: the copied statement of what binds is the shared seat reference's one core section, § What binds, into which § What binds in a document and § What binds in a range merged.
 - 2026-11-03: the adjudicator's prompt also carries § Binding changes, where the shared seat reference's grading of a range moved out of § What binds in a range.

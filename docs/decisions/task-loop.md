@@ -178,6 +178,22 @@ nothing: the host's safeguards stopped 4 of 5 samples. Whether fold-ins are wort
 having on real code is not measured, and a confident wrong fix inside the boundary
 passes scope, caught only if a seat sees the defect.
 
+The re-audit of 2026-11-23 (its scope and limits in
+`docs/decisions/fix-verification-and-merge.md` § Blind verification) read the
+rule on real code. About 70 of 185 implementer seats logged a fold-in, most of
+them prose, test hygiene or dead code, about 18 changing code's behaviour or
+structure. Every task review that discussed one passed its scope, and no scope
+verdict of 143 failed. One defect from a fold-in was found, a dangling
+reference a removed link left, though not every fold-in was traced. The runs
+reached a callee with several callers, fold-ins larger than a loop merge, fix
+waves, which folded in only a defect's sibling instances, and much prose work.
+One fold-in changed another task's file, which the rule sends to a proposal,
+and its reviewer passed it as the task's own contract needed it. The 10
+implementer seats on the bounded role logged none; the design stage and the
+inline paths' fold-ins were not examined. Whether fold-ins were worth having
+is still unmeasured. (Basis: measured, by one reader, the counts
+approximate.)
+
 ### Task review
 
 The maintainer kept a review per task: mistakes of the "this shouldn't be
@@ -256,6 +272,14 @@ ruling of 2026-10-27 left it, "not extended for now". That was an
 agent's proposal, the maintainer leaving the call to it ("your call").
 (Basis: judgment, accepted by the maintainer, 2026-10-29.)
 
+In the re-audit of 2026-11-23 (§ Around the diff), 17 tasks in 13 features
+carried the mark, and 3 completed branch review only, the branch review
+finding nothing on them. Of the other 14, 13 went to their task review
+because the implementer reported concerns, as 114 of 144 task implementers
+did, and one ran inline; 4 of the 14 drew fixes, all prose defects a branch
+review would plausibly have caught (`docs/backlog/review-mark-overridden.md`).
+(Basis: measured.)
+
 ### Loop wiring
 
 Intent, scope and the deviation audit are pass-or-fail questions about
@@ -286,15 +310,18 @@ cap and that answer are the loop's termination guarantee. (Basis:
 external, for upstream's reason; measured, for the audit's count, a
 lower bound; judgment, accepted by the maintainer, for the umbrella's
 retirement and, at the execution-retirements brainstorm, for the cap of
-three and the ask's options.)
+three and the ask's options.) The re-audit of 2026-11-23 (§ Around the
+diff) left that retirement untested: of 146 tasks, 34 had one fix
+wave and none a second, and no task's fixes kept failing. (Basis:
+measured.)
 
 Upstream also moves a BLOCKED reasoning problem to a more capable model;
 crucible's escalation stops at the default role, since no escalation
 reaches the alternate role, and a reasoning problem there goes to the
-operator, who may name it (2026-10-13). A stuck trigger stays out for
-now (`docs/decisions/model-roles-and-effort.md`). (Basis: external;
-judgment, accepted by the maintainer, for no stuck trigger for now and for
-the routing.)
+operator, who may name it (2026-10-13). A stuck trigger was closed as not
+needed on 2026-11-23 (`docs/decisions/model-roles-and-effort.md`). (Basis:
+external; judgment, accepted by the maintainer, for no stuck trigger and
+for the routing.)
 
 Three next steps stayed unstated until 2026-11-04. A task waiting on an
 ask after an implementer's BLOCKED had no ledger line, so the resume rule
@@ -340,7 +367,10 @@ DRIFT pass at the branch review no longer spends a wave, since a revert
 is the operator's answer each time and adds no cycle the operator did
 not choose (`docs/decisions/branch-review.md`). (Basis: judgment,
 accepted by the maintainer, for the first design and, at the
-execution-retirements brainstorm, for the operator ask.)
+execution-retirements brainstorm, for the operator ask.) In the re-audit of
+2026-11-23 (§ Around the diff) one DRIFT finding was raised, by a
+branch review on a task its review had approved, and fixed forward in a
+wave; no task was reverted or replanned. (Basis: measured.)
 
 ### Snapshot blessing
 
@@ -357,7 +387,10 @@ went on 2026-10-12; this half stands. (Basis: judgment, accepted by the
 maintainer.) On 2026-11-02 its procedure became one line: the seat, its
 inputs, its report path and the operator ask, the verdict's two labels
 dropped (the skill-text-rewrite umbrella's D4, the controller's
-proposal, accepted by the maintainer).
+proposal, accepted by the maintainer). In the re-audit of 2026-11-23
+(§ Around the diff) it never fired, the snapshots and goldens that changed
+being intended changes of behaviour, so it stays untested on real code.
+(Basis: measured, not exhaustively.)
 
 ### Inline mode
 
@@ -419,9 +452,9 @@ judgment, accepted by the maintainer, for the test.)
 - **The spec's list alone binding an implementer, plan text included:**
   reviewers and the implementer's own reminder hold a task to its
   acceptance, so this would change what they enforce.
-- **A stuck trigger** escalating a seat past the default role, for now:
-  the maintainer judged late waves generally not stuck, just slowly
-  mining residual issues (§ Why), and the re-audit decides
+- **A stuck trigger** escalating a seat past the default role: closed on
+  2026-11-23 as not needed, since in the re-audit's runs no task reached a
+  second wave and no finding failed its re-review twice
   (`docs/decisions/model-roles-and-effort.md`).
 - **Repairing or reverting undisclosed binding drift without the
   operator's answer**: the automatic revert never ran in the audit's runs,
@@ -448,6 +481,7 @@ judgment, accepted by the maintainer, for the test.)
 
 ## Changes
 
+- 2026-11-23: a stuck trigger is closed as not needed, no longer waiting on the re-audit (`docs/decisions/model-roles-and-effort.md`); and the re-audit's outcomes for the retired fix ladder, drift's revert, snapshot blessing, the `Review: branch only` mark and the around-the-diff rule are recorded, the first three as untested, since no task reached a second wave, none was reverted and no blessing case arose.
 - 2026-11-19: a literal-reading finding from the task review is the controller's to rule on, no longer always the adjudicator's, which keeps one on a diff the controller wrote or where the controller concludes the binding text must change (`docs/decisions/adjudication.md`); because in a read of sixteen sessions of one code project, 11 of the 13 adjudicator seats that ruled on such a finding dismissed it.
 - 2026-11-06: improvements and bug fixes around a task's diff are part of it where safe, and larger ones stay proposals, on the maintainer's ruling that a proposal depends on someone able to weigh it and their expectation of a conservative reading, which the wording test bore out for bug fixes and partly for fold-ins; the maintainer also accepted, at the feature's close, what the controller had added to the boundary and the test's result on binding content.
 - 2026-11-06: a stuck trigger stays out for now, and its basis is judgment accepted by the maintainer, no longer the maintainer's preference; because the re-audit now decides (`docs/decisions/model-roles-and-effort.md`).

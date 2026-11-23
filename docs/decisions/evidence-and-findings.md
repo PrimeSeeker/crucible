@@ -140,6 +140,21 @@ retirement and the goal check's reach; judgment, accepted by the
 maintainer, for keeping the label and for the timing, calls the
 maintainer left to the agent.)
 
+In the re-audit of 2026-11-23 (its scope and limits in
+`docs/decisions/fix-verification-and-merge.md` § Blind verification), the
+retired hold's target failure occurred once: a premise ask was still open
+when its campaign's round was called the stop, the terminal pass flagged
+that ask one-sided, and the operator's choice, put again, re-shaped the
+mechanism, so the stop fell and a further round ran, at the cost of a round
+and a wave. Other asks pending while a plan was written and tasks ran
+invalidated nothing. Round-1 goal checks raised doubts that changed a
+design in several campaigns, and the one departure after round 1 from what
+the operator had agreed was caught by a round-2 seat's premise finding and
+by the terminal pass. All 85 branch-review passes ran the goal check and
+none raised a premise finding or a mismatch, though several noted a
+request holding only approvals (`docs/backlog/goal-check-request-file.md`);
+no execution seat labelled a finding `premise`. (Basis: measured.)
+
 Doubts stopped at the controller. A seat question could be carried to
 the readout, but the readout's list had no item for it, and a doubt
 about the Intent could be answered or rejected by the Intent's own
@@ -312,6 +327,7 @@ records that cite "the audit" draw on these figures. (Basis: measured.)
 
 ## Changes
 
+- 2026-11-23: the re-audit's outcomes for the retired premise hold and the narrowed goal check are recorded: the hold's target failure occurred once and the terminal pass caught it, at the cost of a round, and 85 branch-review goal checks raised nothing, several noting a request that held only approvals. No position changes.
 - 2026-11-23: on the very-small lane the goal check reads the note's Out of scope with its Intent; because the operator no longer approves the note, so nothing else holds its exclusions against what was asked (`docs/decisions/routes.md`).
 - 2026-11-20: the readout states every question it carries in plain words before quoting it verbatim, the quote kept for its 2026-10-30 reason, and the controller answering or marking a question nothing turns on is rejected; because one carried question needed translating before the operator could answer it.
 

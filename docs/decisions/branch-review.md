@@ -69,13 +69,22 @@ maintainer's preference, for loosening the rule; judgment, accepted by
 the maintainer, for the wave's form.)
 
 On 2026-11-19 part of that loosening was withdrawn. A read of sixteen
-sessions of one code project on crucible 0.33.x, over twelve days, counted
-32 first full-scope passes, 5 of which raised a BLOCKER or MAJOR, and about
-35 later passes, about 28 of them after a wave that took only minors. Two of
-those 28 raised a MAJOR, each a defect of the branch the first pass had
-missed, neither introduced by the wave: a later pass works as a second
-opinion on the branch, at about half the first pass's rate, so it stays.
-What multiplied the later passes was the cleanup wave, opened for minors
+sessions of one code project on crucible 0.33.x, over twelve days, had found
+later full-scope passes raising MAJORs the first pass had missed, none
+introduced by a wave. Its script counted from a seat index holding 640 of
+the window's 880 seats, and its tally of severities was wrong for several
+passes, so its counts give way to the re-audit's of 2026-11-23 (its scope
+and limits in `docs/decisions/fix-verification-and-merge.md` § Blind
+verification), over 36 features of the same project with every seat
+counted: 34 first full-scope passes, 4 of which raised a BLOCKER or MAJOR,
+and 51 later passes, 3 of which raised a MAJOR. Of the 58 waves, 10 were
+opened by a BLOCKER, a MAJOR or a lead confirmed as an intent gap, and about
+30 were cleanup waves. None of the three MAJORs was introduced by a wave:
+two were defects of the branch that earlier passes had missed, each after a
+wave no BLOCKER or MAJOR had opened, and the third lay partly in the first
+pass's range and partly in a change made outside any wave. So a later pass
+works as a second opinion on the branch, at about half the first pass's
+rate, and it stays. What multiplied the later passes was the cleanup wave, opened for minors
 that were mostly wording in documents that instruct no agent. The wave now
 takes no fix that only rewords or reformats one of the project's own working
 documents and leaves what it states unchanged; a fix to code, a test, text
@@ -312,7 +321,7 @@ accepted by the maintainer.)
   branch is the controller's call, never a minor's (§ Why).
 - **An adopted improvement riding a wave as a finding**: the fixer's
   contract is to confirm a defect, and an improvement has none (§ Why).
-- **Dropping the full-scope pass after a wave that took only minors**, put to the maintainer on 2026-11-19 and not chosen: 2 of about 28 such passes raised a MAJOR the first pass had missed, so the pass works as a second opinion on the branch, and narrowing what the cleanup wave takes removes waves without it (§ Why).
+- **Dropping the full-scope pass after a wave that took only minors**, put to the maintainer on 2026-11-19 and not chosen: in the re-audit's runs 2 of 51 later passes raised a MAJOR earlier passes had missed, each after a wave no BLOCKER or MAJOR had opened, so the pass works as a second opinion on the branch, and narrowing what the cleanup wave takes removes waves without it (§ Why).
 - **Skipping the full-scope pass after a wave that changes no rule**: it took six conditions, each pass found another hole, and it would rarely apply (§ Why).
 - **A wave's size as the test for its full pass**, in files, lines or tasks: a wave of small changes that added a rule produced a MAJOR (§ Why).
 - **A review-package script**: 173 lines for what a reviewer with a shell
@@ -323,6 +332,7 @@ accepted by the maintainer.)
 
 ## Changes
 
+- 2026-11-23: the counts behind keeping the full-scope pass after every wave are the re-audit's, the read of 2026-11-19 having counted on a partial seat index with a wrong severity tally: 34 first passes, 4 raising a BLOCKER or MAJOR, and 51 later passes, 3 raising a MAJOR, none introduced by a wave. The rule stands, the new counts pointing the same way.
 - 2026-11-23: once the review has ended, the controller may itself correct a statement that a pass's MINOR found false or misattributed in a decision record or an open item that binds no work, with no wave and no further pass, naming each correction in the close readout; because such findings could only be filed, and on three prose-only features four of the six left that way were false or misattributed statements in decision records.
 - 2026-11-19: the cleanup wave takes no minor, lead or improvement whose fix only rewords or reformats one of the project's own working documents and leaves what it states unchanged, withdrawing part of the 2026-10-30 loosening; because in a read of sixteen sessions of one code project, about 28 of about 35 later full-scope passes followed a wave that took only minors, mostly wording in documents that instruct no agent, while 2 of those 28 raised a MAJOR the first pass had missed, so the pass after every wave stays.
 - 2026-11-05: open items in the project's home join the build-history rule's own list, in place of an exemption in the reviewer's template, because that clause covered only what Finish wrote and left out what an umbrella's landing or closing review writes.

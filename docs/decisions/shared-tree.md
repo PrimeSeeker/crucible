@@ -97,6 +97,18 @@ one, and checking for a clean tree alone would again void reviews over
 implementers' test leftovers. (Basis: measured, by the audit; judgment,
 the controller's proposal accepted by the maintainer, for the shape.)
 
+In the re-audit of 2026-11-23 (its scope and limits in
+`docs/decisions/fix-verification-and-merge.md` § Blind verification), the
+301 status checks the reader found in the controllers' transcripts showed
+one difference, the controller's own repair edit, which it had announced.
+No review seat wrote into the tree or ran a git command that changes state,
+writes from inside scripts and test runs not checked. Three branch
+reviewers added and removed a throwaway worktree to run tests at the base,
+a write to the repository's shared git metadata that the status check does
+not see; each said so in its report. One branch wave's re-review read a
+moving tree, the controller resuming the implementer while it ran. (Basis:
+measured; checks run in PowerShell may be undercounted.)
+
 An umbrella's closing review runs after the last landing, in the session's
 checkout, usually on the base, so another session landing there moves HEAD
 and voids reports whose fixed range did not move. That stays, an accepted
@@ -136,7 +148,10 @@ its escalation text went, a seat whose state the host cannot confirm
 being a stop-and-ask like any other unresolvable state. (Basis:
 judgment, the controller's proposal accepted by the maintainer, for the
 line; keeping the gate rather than retiring it, the controller's call,
-delegated by the maintainer.)
+delegated by the maintainer.) In the re-audit (§ Read windows) no
+replacement seat was started: the host's notices that a seat was waiting
+on its own background work recurred, and no controller started a second
+seat beside a live one, so the gate stayed untested. (Basis: measured.)
 
 ## Rejected
 
@@ -155,6 +170,7 @@ delegated by the maintainer.)
 
 ## Changes
 
+- 2026-11-23: the re-audit's outcomes are recorded: one difference in 301 status checks, the controller's own announced edit; no review seat writing into the tree, three branch reviewers writing to shared git metadata the check cannot see; and no seat replaced, so the replacement gate untested. No position changes.
 - 2026-11-07: a fresh look is a status-check window, using the host's temporary directory and recording a dirty tree before a workspace exists; because it can fire before any feature's worktree, and that uncommitted work is not the controller's to clean (`docs/decisions/model-roles-and-effort.md` § A fresh look).
 - 2026-11-04: another session's landing voiding a closing review's window is stated as an accepted residual, and an exception for it declined; because no such void is on record and the exception would cost a second rule.
 - 2026-11-04: an umbrella's closing-review seats take the status check, since a window with no named check left the guard off them.

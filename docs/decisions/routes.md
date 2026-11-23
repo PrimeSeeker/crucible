@@ -142,6 +142,17 @@ by the maintainer, 2026-10-29, and for leaving both out, 2026-11-06;
 measured, by script over the transcripts on disk of this repository and
 one other project, none read by eye, for the 44 of 98.)
 
+That trigger fired in the re-audit of 2026-11-23 (its scope and limits in
+`docs/decisions/fix-verification-and-merge.md` § Blind verification): of
+the 8 campaigns there that stopped after one numbered round, 5 were settled
+changes campaigned only to get tasks, their route entries or design
+messages expecting no overturn. Those five still merged 2 to 4 MAJORs each
+in that round, and whether a branch review would have caught them was not
+checked. So a lane note with a plan has met the condition that reopens it,
+and is not built yet. An agent's recommendation, which the maintainer
+accepted. (Basis: measured; judgment, accepted by the maintainer,
+2026-11-23.)
+
 ### Whose call the preset is
 
 Until 2026-11-19 the operator confirmed or vetoed the preset, and the
@@ -353,6 +364,20 @@ aside as `sdd-lane/`
 approved at the campaign gate; for moving the whole `sdd/`, the
 maintainer left the call to the agent, 2026-11-02.)
 
+In the re-audit (§ Separable choices), 13 of the 34 features that reached a
+branch review ran on the lane, their first reviewed ranges from 4 files to
+34, one growing from 10 files to 16 and over 2,000 added lines. Two outgrew
+the lane, judged by passes, waves and severity: one drew a BLOCKER and two
+MAJORs at its first pass and ran four waves, one of whose tests overwrote
+live state on the operator's machine; the other ran five passes and four
+waves on one recurring class of finding. Neither was raised as a shape
+problem, the stop-and-ask line was never used, and both landed on the lane,
+the operator approving or delegating the waves past the cap. The lane's 13
+features drew 1 BLOCKER and 6 MAJORs at the branch review, in 3 features,
+against 1 MAJOR in 14 folded features and 2 in 7 standard ones
+(`docs/backlog/lane-shape.md`). (Basis: measured, the two sightings a
+reader's judgment.)
+
 Until 2026-11-03 the move also linked the lane's ledger from the standard route's as a predecessor, and the plan phase's close carried the lane's open findings, at their staked severity, and its unruled leads to the standard route's branch reviewer, so that the lane's rulings, departures and leads reached a close readout. That carry-over sat in text every standard run reads, the plan phase's close, the branch reviewer's template on every pass and Finish, to serve a move whose trigger fired twice in about 42 lane reviews (above), with no completed move in this repository's feature folders. It went: the brainstorm the hatch invokes takes the lane's open findings, unruled leads and departures in its incoming document, beside the note and the diff, and the lane's rulings no longer reach the final close readout, a minor loss. An agent's proposal, on which the maintainer left the call to the agent. (Basis: measured, for the trigger's count; judgment, accepted by the maintainer.)
 
 A change too big for one implementer moves to the standard route on the
@@ -453,6 +478,7 @@ small preset or the waiver for its work.
 
 ## Changes
 
+- 2026-11-23: a lane note with a plan has met the condition that reopens it, 5 of 8 one-round campaigns in the re-audit's runs being settled changes campaigned only to get tasks, and is not built yet, since those five still merged 2 to 4 MAJORs each in round 1 and whether a branch review would have caught them is unchecked: an agent's recommendation the maintainer accepted. What the lane did without Lane Fit's shape verdict is recorded.
 - 2026-11-23: the very-small lane is entered by the operator's approval of the design that proposes it, and the controller writes the note from that design, no longer showing it for approval; the branch reviewer's goal check reads the note's Out of scope with its Intent; because on two lane features the controller showed the design and wrote the note fuller, and the maintainer reads the note as the reviewer's document. A note's Acceptance takes no check that searches prose for its wording; because two such checks each cost the maintainer's decision and a re-pin when a reviewer improved the sentence, and none ever failed.
 - 2026-11-19: the preset is the controller's call, stated with its reasons as the design presentation closes, which the operator may veto and the design's approval carries, the route entry recording it, in place of the operator's confirmation; the very-small lane is still entered only by the operator's approval of its note; because in a read of about 400 decisions over sixteen sessions of one code project the 56 on the route, the campaign's shape or a further round drew no departure.
 - 2026-11-06: a lane note with a plan and a campaigned spec with no plan stay out, no longer waiting in the backlog, and the wider question of how far the choices separate closes with them; because each would add a route, whether the need exists being unchecked. The first's trigger stands in § Separable choices.
