@@ -79,7 +79,7 @@ installs are re-pointed once, after the landing.
 3. After the landing and the go-ahead, run by the controller and
    reported at the close, not by the branch reviewer:
    `git ls-remote origin testing` prints the trial commit, and each
-   host's plugin list shows `0.38.0-rc.1` from a marketplace whose
+   host's plugin list shows `0.37.1-rc.1` from a marketplace whose
    recorded ref is `testing`.
 
 On the tree before the change, check 1 passes and check 2 prints nothing;
