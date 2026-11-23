@@ -26,8 +26,8 @@
     invoked again, the controller twice announcing a skill without
     invoking it, working from the re-attached copies and the references it
     read;
-  - one plan task, by its own Contract, ran as 22 seats the controller
-    composed, outside the implementer and the task review.
+  - one plan task, by its own Contract, ran inline as 22 seats the
+    controller composed in place of an implementer; it had its task review.
 - Crucible's calibrations (four or five seats in a large new spec's first
   round, the cap of four rounds, plan sizes) come from one project, and
   were meant to be re-derived before reuse elsewhere; the README says where
