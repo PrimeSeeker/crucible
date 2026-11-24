@@ -298,8 +298,8 @@ measured, for the audit's findings.)
 ### The origin question's answer
 
 The answer rests on the branch review: it is mandatory on every
-arrangement, reads the whole diff, and since 2026-10-29 checks the
-goal against the request and may raise premise findings
+arrangement, reads the whole diff, may raise premise findings and, on
+the very-small lane, checks the goal against the request
 (`docs/decisions/evidence-and-findings.md`). Two probes, read from
 records outside this repository (session transcripts, the repository
 crucible was developed in before its move here, and one other project's
@@ -406,9 +406,15 @@ waves on one recurring class of finding. Neither was raised as a shape
 problem, the stop-and-ask line was never used, and both landed on the lane,
 the operator approving or delegating the waves past the cap. The lane's 13
 features drew 1 BLOCKER and 6 MAJORs at the branch review, in 3 features,
-against 1 MAJOR in 14 folded features and 2 in 7 standard ones
-(`docs/backlog/lane-shape.md`). (Basis: measured, the two sightings a
-reader's judgment.)
+against 1 MAJOR in 14 folded features and 2 in 7 standard ones. (Basis:
+measured, the two sightings a reader's judgment.)
+
+The lane gets no check for a change outgrowing it (2026-11-24). The
+boundary is judgment by nature, and in the two sightings the signals that
+mattered belonged to other mechanisms: a recurring class of finding is a
+fresh look's sign (`docs/decisions/model-roles-and-effort.md` § A fresh
+look), and the test that overwrote live state ran before any review, as it
+could have on any route. (Basis: judgment, accepted by the maintainer.)
 
 Until 2026-11-03 the move also linked the lane's ledger from the standard route's as a predecessor, and the plan phase's close carried the lane's open findings, at their staked severity, and its unruled leads to the standard route's branch reviewer, so that the lane's rulings, departures and leads reached a close readout. That carry-over sat in text every standard run reads, the plan phase's close, the branch reviewer's template on every pass and Finish, to serve a move whose trigger fired twice in about 42 lane reviews (above), with no completed move in this repository's feature folders. It went: the brainstorm the hatch invokes takes the lane's open findings, unruled leads and departures in its incoming document, beside the note and the diff, and the lane's rulings no longer reach the final close readout, a minor loss. An agent's proposal, on which the maintainer left the call to the agent. (Basis: measured, for the trigger's count; judgment, accepted by the maintainer.)
 
@@ -510,6 +516,7 @@ small preset or the waiver for its work.
 
 ## Changes
 
+- 2026-11-24: the very-small lane gets no check for a change outgrowing it, its reasons recorded, no position changing: the boundary is judgment, and in the re-audit's two sightings the signals that mattered belonged to other mechanisms, a fresh look's sign and a test that ran before any review. The origin question's answer notes that the branch reviewer checks the goal on this lane alone (`docs/decisions/evidence-and-findings.md`).
 - 2026-11-23: a lane note with a plan is rejected, no longer waiting on a check, on an agent's recommendation the maintainer accepted; because a reader of the five settled-change campaigns judged that of their 15 round-1 MAJORs 3 would have been built in silently and 6 could not be placed, against 5 a later stage would plausibly have met, while the campaigns took about a third of those features' seat output.
 - 2026-11-23: a lane note with a plan has met the condition that reopens it, 5 of 8 one-round campaigns in the re-audit's runs being settled changes campaigned only to get tasks, and is not built yet, since those five still merged 2 to 4 MAJORs each in round 1 and whether a branch review would have caught them is unchecked: an agent's recommendation the maintainer accepted. What the lane did without Lane Fit's shape verdict is recorded.
 - 2026-11-23: the very-small lane is entered by the operator's approval of the design that proposes it, and the controller writes the note from that design, no longer showing it for approval; the branch reviewer's goal check reads the note's Out of scope with its Intent; because on two lane features the controller showed the design and wrote the note fuller, and the maintainer reads the note as the reviewer's document. A note's Acceptance takes no check that searches prose for its wording; because two such checks each cost the maintainer's decision and a re-pin when a reviewer improved the sentence, and none ever failed.

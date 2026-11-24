@@ -61,14 +61,19 @@ operator. The mandates, inputs and flag test are stated in full only in
 
 A campaign that stopped on a fix wave would otherwise converge on edits
 no seat had read: the pass is the review of the last wave (crucible's
-first design, 2026-08-06; judgment, accepted by the maintainer). It
-earns its place: in a recount of the campaign records (2026-10-12), the
-pass's first read found a BLOCKER or MAJOR after the stop call in 27 of
-74 campaigns. (Basis: measured.) In the re-audit of 2026-11-23 (its scope
+first design, 2026-08-06; judgment, accepted by the maintainer). A
+recount of the campaign records (2026-10-12) found the pass's first read
+raising a BLOCKER or MAJOR after the stop call in 27 of 74 campaigns.
+(Basis: measured.) In the re-audit of 2026-11-23 (its scope
 and limits in `docs/decisions/fix-verification-and-merge.md` § Blind
 verification), the first read found something in the artifact in 13 of 22
 spec first passes, one MAJOR and 23 MINORs, and one MAJOR in 7 plan
-passes. (Basis: measured.)
+passes, while its record corrections changed what happened next in 5 of
+21 campaigns (§ What the pass reports). (Basis: measured.) So since
+2026-11-24 the pass's place rests on its record check and on its being
+the one read of the last wave, no longer on the 2026-10-12 count of what
+its re-read finds; no process changes. (Basis: judgment, accepted by the
+maintainer.)
 
 ### Fidelity of the asks
 
@@ -265,6 +270,7 @@ checks is the close the operator received
 
 ## Changes
 
+- 2026-11-24: the pass's place rests on its record check and on its being the one read of the last wave, no longer on its re-read's count of 2026-10-12 (a BLOCKER or MAJOR after the stop in 27 of 74 campaigns); because in the re-audit its first reads found one MAJOR in 22 spec first passes, while its record corrections changed what happened next in 5 of 21 campaigns. No process changes.
 - 2026-11-23: the counts behind reporting three kinds only are the re-audit's, the read of 2026-11-19 having counted on a partial seat index: 20 of 22 spec first passes reported corrections, 15 of those leaning toward the controller, and corrections visibly changed what happened next in 5 of 21 campaigns, each carrying a flagged one; and the earlier statement that the flagged corrections came from second reads is corrected, 14 of the 25 counted having come from spec first passes. What the pass's first read found in those runs is recorded. No position changes.
 - 2026-11-20: decision-ask fidelity also reads the plain statement a readout gives before each carried question's quote against the quote, one changing its meaning being a correction of the third kind, and the controller records the second read's corrections in the close before delivering it; because a readout now states carried questions in plain words beside the seat's own, and two controllers delivered readouts their records did not hold.
 - 2026-11-20: the stop check reads the stop round's rulings list as it reads its fix list, since a ruling after the last numbered round now rides one as that round's own fix wave (`docs/decisions/fix-verification-and-merge.md`).

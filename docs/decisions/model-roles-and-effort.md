@@ -340,7 +340,11 @@ design it had endorsed. No later read in those features reopened a design a
 fresh look had reshaped, though the reads stop at each landing. Four fired
 at a passage's third patch, a round after the router's sign of a second; in
 three other places the sign was named and none ran, the controller putting
-the choice to the operator or patching again. (Basis: measured.)
+the choice to the operator or patching again. (Basis: measured.) The
+timing stays a matter of the router's signs, not a trigger (2026-11-24):
+the signs sit beside the controller's judgment, chosen over a hard
+trigger on a repeat hit (above). (Basis: judgment, accepted by the
+maintainer.)
 
 ### Effort
 
@@ -424,6 +428,7 @@ operator's config key.
 
 ## Changes
 
+- 2026-11-24: fresh looks firing at a passage's third patch, a round after the router's sign of a second, stay a matter of the router's signs, not a trigger, its reason recorded; no position changes.
 - 2026-11-23: the stuck trigger is closed as not needed, no longer waiting on the re-audit, on an agent's recommendation the maintainer accepted; because in 146 tasks and 58 branch waves of one code project no finding failed its re-review twice, and what recurred was a class of finding across passes, which a fresh look addresses. What those runs' six fresh looks did, and the alternate-role seat's unique merged MAJORs in round 1, are recorded.
 - 2026-11-07: a fresh look joins the alternate role's triggers as a fourth, on the maintainer's proposal, scoped to the work's design or code or what it builds on, with signs beside the judgment and a second look going to the operator; because rethinks done ad hoc helped and came mostly from the operator asking. The automatic stuck trigger stays declined, since this replaces no seat.
 - 2026-11-06: a stuck trigger stays out for now and its question moves to the re-audit, no longer open in the backlog; because a read of late waves and rounds points both ways, its limits in § Why, and both caps on fix waves already reach the operator.
