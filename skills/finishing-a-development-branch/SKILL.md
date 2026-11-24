@@ -63,7 +63,7 @@ Discard is never offered: it happens only when your human partner explicitly ask
 
 Find the main checkout first, since worktree removal must run from outside the worktree: the first `worktree <path>` line of `git worktree list --porcelain` is its root. Change your working directory there with your own tools, then run `git checkout <base-branch>`, `git pull`, `git merge --ff-only <feature-branch>`.
 
-A refusal changes nothing. Unless git names local changes to settle first, the base has moved: on the feature branch, checked out again where no worktree holds it, bring the base in, merging it or rebasing onto it where the project prefers (an umbrella's child merges), then return to Step 1 for the same option (after SDD's Finish, to its step 5).
+A refusal changes nothing. Local changes git names are reported and left alone; otherwise the base has moved: on the feature branch, checked out again where no worktree holds it, bring the base in, merging it or rebasing onto it where the project prefers (an umbrella's child merges), then return to Step 1 for the same option (after SDD's Finish, to its step 5).
 
 Once the fast-forward lands, remove the worktree (Step 6), then run `git branch -d <feature-branch>`. If `-d` refuses, the commits never reached the base and the merge did not take: investigate, and never use `-D` to make it go away.
 
