@@ -414,7 +414,10 @@ boundary is judgment by nature, and in the two sightings the signals that
 mattered belonged to other mechanisms: a recurring class of finding is a
 fresh look's sign (`docs/decisions/model-roles-and-effort.md` § A fresh
 look), and the test that overwrote live state ran before any review, as it
-could have on any route. (Basis: judgment, accepted by the maintainer.)
+could have on any route. The first reason is the maintainer's, put to the
+controller as a question on its recommendation, the second the
+controller's answer to it. (Basis: the maintainer's preference, for the
+first reason; judgment, accepted by the maintainer, for the second.)
 
 Until 2026-11-03 the move also linked the lane's ledger from the standard route's as a predecessor, and the plan phase's close carried the lane's open findings, at their staked severity, and its unruled leads to the standard route's branch reviewer, so that the lane's rulings, departures and leads reached a close readout. That carry-over sat in text every standard run reads, the plan phase's close, the branch reviewer's template on every pass and Finish, to serve a move whose trigger fired twice in about 42 lane reviews (above), with no completed move in this repository's feature folders. It went: the brainstorm the hatch invokes takes the lane's open findings, unruled leads and departures in its incoming document, beside the note and the diff, and the lane's rulings no longer reach the final close readout, a minor loss. An agent's proposal, on which the maintainer left the call to the agent. (Basis: measured, for the trigger's count; judgment, accepted by the maintainer.)
 
