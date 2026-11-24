@@ -23,9 +23,11 @@ agent works there (`docs/decisions/shared-tree.md`).
 merge means the merge did not take: the agent investigates and never
 reaches for `-D`. A `git worktree remove` that refuses because the
 worktree holds modified or untracked files is reported to the operator,
-never forced past with `--force`. A merge that stopped on a conflict is
-undone with `git merge --abort`; one that completed and fails its tests
-stays local and recoverable while the agent investigates. Force-deleting
+never forced past with `--force`. The local merge is a fast-forward
+(`git merge --ff-only`): where the base has moved it refuses and changes
+nothing, and the agent brings the base into the branch, merging it or
+rebasing onto it where the project prefers, and tests the result before
+landing it (`docs/decisions/records-and-workspace.md` § Finish). Force-deleting
 a branch belongs to an explicitly requested, typed-out discard
 (`crucible:finishing-a-development-branch § Step 5: Execute Choice`,
 § Step 6: Remove the Worktree), and a force-push to the operator's
@@ -81,7 +83,8 @@ with the single-invocation rewrite on 2026-08-15. On 2026-10-15
 that completed, git refuses it ("There is no merge to abort"), and a
 completed merge that fails its tests is, as upstream says, local and
 recoverable. (Basis: measured, for git's behaviour; judgment, accepted
-by the maintainer.)
+by the maintainer.) Both cases went on 2026-11-24 with the fast-forward,
+after which the base never holds a merge nobody tested or reviewed.
 
 ### Crucible's own repository
 
@@ -101,6 +104,7 @@ a trial moves `testing` to a commit on it, and a release is cut from what
 
 ## Changes
 
+- 2026-11-24: finishing's local merge is a fast-forward, a refusal sending a moved base into the branch (merged, or rebased where the project prefers) before the result is tested; `git merge --abort` and the investigated red merge on the base went with it; because a conflict or a red merged result on the base surfaced where no review reads, and a red merge committed there had to be undone on the shared base (`docs/decisions/records-and-workspace.md`).
 - 2026-11-03: the worktree skill's single-invocation rule covers Steps 0–1 and its git fallback, no longer its setup and baseline steps, which run the project's own commands: a minor loss under the maintainer's compaction mandate.
 - 2026-11-02: finishing's Step 6 is named Remove the Worktree, so it is
   told apart from the step of SDD's Finish that deletes the feature

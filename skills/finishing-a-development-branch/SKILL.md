@@ -61,11 +61,11 @@ Discard is never offered: it happens only when your human partner explicitly ask
 
 ### Option 1: Merge Locally
 
-Find the main checkout first, since worktree removal must run from outside the worktree: the first `worktree <path>` line of `git worktree list --porcelain` is its root. Change your working directory there with your own tools, then run `git checkout <base-branch>`, `git pull`, `git merge <feature-branch>`.
+Find the main checkout first, since worktree removal must run from outside the worktree: the first `worktree <path>` line of `git worktree list --porcelain` is its root. Change your working directory there with your own tools, then run `git checkout <base-branch>`, `git pull`, `git merge --ff-only <feature-branch>`.
 
-Run Step 1's tests on the merged result. On a merge conflict or a red merged result, stop, leave the worktree and branch in place, and investigate: nothing is pushed, so the merge stays local and recoverable. Undo a merge stopped on a conflict with `git merge --abort`.
+A refusal changes nothing: the base has moved. In the worktree, bring the base in, merging it or rebasing onto it where the project prefers, then return to Step 1 (after SDD's Finish, to its step 5).
 
-Once the merged result is green, remove the worktree (Step 6), then run `git branch -d <feature-branch>`. If `-d` refuses, the commits never reached the base and the merge did not take: investigate, and never use `-D` to make it go away.
+Once the fast-forward lands, remove the worktree (Step 6), then run `git branch -d <feature-branch>`. If `-d` refuses, the commits never reached the base and the merge did not take: investigate, and never use `-D` to make it go away.
 
 Where the close readout named an umbrella's closing review as the step after this landing, run it next (`skills/brainstorming/references/umbrellas.md` § Closing review).
 

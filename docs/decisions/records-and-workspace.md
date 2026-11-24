@@ -268,19 +268,32 @@ suite. (Basis: judgment, an agent's call the maintainer has not ruled
 on: a controller's ruling within that feature, on a conflict its task
 review found.)
 
-Since 2026-11-24 the deletion follows finishing. A branch first meets the
-current base at finishing's local merge, so a conflict or a red merged
-result surfaced after the workspace was gone, with no ledger or loop to
-take it, the reason the suite already ran before the deletion; a branch
-review found it when the rule that a conflict resolved by hand takes a
-full-scope pass had no place it could fire (`docs/decisions/branch-review.md`).
-Removing the worktree deletes the gitignored workspace inside it, measured
-with `git worktree remove` on a scratch repository; the deletion step
-covers a workspace outside a worktree. Finishing's own typed confirmation
-now precedes any deletion on a discard, so Finish no longer takes it
-first. A pull request's later conflicts are the maintainer's, or separate
-work when returned. The controller's proposal. (Basis: measured, for the
-worktree removal; judgment, accepted by the maintainer.)
+Since 2026-11-24 the deletion follows finishing, and finishing's local
+merge is a fast-forward. A branch first met a moved base at finishing's
+merge, on the base, so a conflict or a red merged result surfaced where
+no review reads and, until 2026-11-24, after the workspace was gone, the
+reason the suite already ran before the deletion. Three branch-review
+passes found a rule placed there unable to fire or to end; a fresh look
+traced the three misses to the merge's place, not the rule's. Now a moved
+base makes the fast-forward refuse, the controller brings the base into
+the branch, merging it or rebasing onto it where the project prefers, and
+Finish's suite runs again, a conflict resolved by hand taking a full-scope
+pass first (`docs/decisions/branch-review.md`). A rebase rewrites the
+commits that plans and records pin, so the pins name commits that never
+reach the base; the umbrella record keeps children merging for that
+reason (`docs/decisions/umbrellas.md`). Removing the worktree deletes the
+gitignored workspace inside it, measured with `git worktree remove` on a
+scratch repository, as are the fast-forward's refusal and its landing
+after either way of bringing the base in; the deletion step covers a
+workspace outside a worktree. Finishing's own typed confirmation precedes
+any deletion on a discard, so Finish no longer takes it first. Deleting
+after the merge was the maintainer's question, the fast-forward the fresh
+look's proposal, rebasing allowed at the maintainer's word; a pull
+request's later conflicts are the maintainer's, or separate work when
+returned, in their words. (Basis: measured, for git's behaviour; the
+maintainer's preference, for the deletion's order, rebasing and the pull
+request's scope; judgment, accepted by the maintainer, for the
+fast-forward.)
 
 Repository conventions come first in a pull request (2026-10-08), with no
 attempt to detect who owns the repository; a convention that rewrites
@@ -333,7 +346,7 @@ worktree. (Basis: judgment, accepted by the maintainer.)
 
 ## Changes
 
-- 2026-11-24: SDD Finish deletes the feature workspace after finishing, no longer before it, and a discard takes finishing's own typed confirmation; because a conflict or a red merged result at finishing's local merge surfaced after the workspace was gone, with no ledger or loop to take it.
+- 2026-11-24: SDD Finish deletes the feature workspace after finishing, no longer before it, a discard taking finishing's own typed confirmation, and finishing's local merge is a fast-forward, a moved base coming into the branch first and Finish's suite running again; because a conflict or a red merged result at finishing's merge surfaced on the base, where no review reads, after the workspace was gone.
 - 2026-11-19: the close readout gives the controller's call to keep or drop each deferred minor, lead and `## Questions` item, which the operator's answer may change, in place of a proposal; parked BLOCKER or MAJOR findings, unruled premise asks and open `unstated break` asks keep a proposal and are never the controller's to drop; because in a read of sixteen sessions of one code project 29 such choices drew one departure.
 - 2026-11-05: a feature reads the repository's commit conventions before its first commit, and hands implementers those beyond the instruction files, since meeting them only at a pull request made a sign-off a history rewrite.
 - 2026-11-04: the rewrite route's basis says who raised what: the review of the lane that added it found both credited to an agent.
