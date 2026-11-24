@@ -46,7 +46,14 @@ records, and closes the two text gaps of
 - **A conflict resolved by hand is a change no pass has read.** One
   landing carried six hand-merged rebase conflicts no reviewer read. A
   conflict the controller resolves by hand, in a rebase or at the merge,
-  gets a full-scope branch-review pass on the result before landing.
+  gets a full-scope branch-review pass on the result before landing. On
+  the maintainer's rulings during this lane's branch review, SDD's Finish
+  deletes the workspace after finishing, and finishing's local merge
+  becomes a fast-forward: where the base has moved, the controller brings
+  it into the branch (a merge, or a rebase where the project prefers one)
+  and returns to Finish's suite, so whatever the base's arrival surfaces
+  meets a live ledger and review loop, and the base never holds an
+  untested merge. A pull request's later conflicts are out of scope.
 - **The terminal pass's justification is restated.** Its record rests the
   pass on a 2026-10-12 count (a BLOCKER or MAJOR after the stop in 27 of
   74 campaigns); the re-audit's first reads found one MAJOR in 22 spec
@@ -71,7 +78,9 @@ project's transcripts; the rulings are the maintainer's, of 2026-11-24.
 
 Break: a branch reviewer off the very-small lane no longer restates the
 goal, and its report loses the Goal Check section; a marked task's
-concerns no longer buy it a task review. Permanent.
+concerns no longer buy it a task review; a local landing no longer
+merges on the base, a moved base coming into the branch first.
+Permanent.
 
 ## Change list
 
