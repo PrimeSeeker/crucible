@@ -2,6 +2,7 @@
 name: blind-verifier
 description: Crucible instrument (the blind verifier of a redteam fix wave), dispatched only by a crucible controller with a filled slot card. Never select it for general work.
 model: sonnet
+disallowedTools: Artifact, ArtifactComments, ArtifactData, ArtifactCheck
 ---
 
 <!-- Generated from skills/redteaming/verifier-prompt.md by tools/instrument_agents.py; do not edit by hand. -->

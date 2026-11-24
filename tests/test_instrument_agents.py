@@ -589,14 +589,18 @@ def parse_frontmatter(text: str) -> dict[str, str]:
 def test_instrument_agent_frontmatter_parses_with_its_fields(name: str) -> None:
     """Break: frontmatter the loader could misread, a ``name`` the loader
     would expose as another instrument, a model other than the generator's
-    policy default, or a restricting key (tools, disallowedTools,
-    omitClaudeMd, skills), which no generated agent carries."""
+    policy default, a deny list other than the generator's, or another
+    restricting key (tools, omitClaudeMd, skills), which no generated agent
+    carries."""
     # Consumer: the host's plugin agent loader reads this frontmatter; it
-    # exposes the agent as `crucible:<name>` and runs it on `model`.
+    # exposes the agent as `crucible:<name>`, runs it on `model` and
+    # withholds the tools `disallowedTools` names.
+    generator = load_generator()
     fields = parse_frontmatter(_raw(agent_file(name)))
-    assert set(fields) == {"name", "description", "model"}
+    assert set(fields) == {"name", "description", "model", "disallowedTools"}
     assert fields["name"] == name
-    assert fields["model"] == load_generator().MODELS[name]
+    assert fields["model"] == generator.MODELS[name]
+    assert fields["disallowedTools"].split(", ") == list(generator.DISALLOWED)
 
 
 @pytest.mark.parametrize(

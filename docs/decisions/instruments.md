@@ -160,10 +160,29 @@ is no bar then. An agent's proposal, which the maintainer accepted, and
 reconfirmed after saying such dependencies were acceptable. (Basis:
 judgment, accepted by the maintainer.)
 
-Instrument agents carry no `tools` or `disallowedTools`: a reviewer needs
-to write, and correct, its own report file, so read-only stays a conduct
-rule in the template (2026-09-28). (Basis: judgment, accepted by the
-maintainer.)
+Instrument agents carry no `tools` allow-list: a reviewer needs to write,
+and correct, its own report file, so read-only stays a conduct rule in
+the template (2026-09-28). (Basis: judgment, accepted by the maintainer.)
+
+Their `disallowedTools` denies the host's four artifact tools
+(`DISALLOWED` in `tools/instrument_agents.py`). Twice a review seat called
+the artifact tool's publish call with edits to change its own report: on
+2026-10-18 the call published a branch reviewer's report, and on
+2026-11-23 the host's permission check refused it to a branch-reviewer
+agent. Asked, that seat said it wanted to batch several replacements, that
+the tool's description presents the call as file editing, and that an
+instruction in its context forbidding subagents to publish was not in mind
+when it chose. A prose ban had not stopped the call; a deny list removes
+it and leaves every other tool. It reaches only the generated agents:
+template-path and controller-composed seats keep the tools
+(`docs/backlog/seat-artifact-tools.md`). An agent whose deny list names
+tools absent from the session still launches (Claude Code 2.1.330, a
+project agent); whether the host honours the list for a plugin's agents is
+unverified until a session after an install update. The list adds a
+difference between hosts only in the Claude Code agent files, which Codex
+does not read; no skill text changes. An agent's proposal, which the
+maintainer accepted, noting the divergence. (Basis: measured, for the
+incidents and the launch; judgment, accepted by the maintainer.)
 
 On 2026-11-03 two of the redteam seat's passages left its template. An agent carries every selector-keyed passage, selected or not, so the over-subtraction guard with its report item, which only a right-sizing seat takes, and the ownership closure, set census and worksheet, which only the plan phase's pre-pass takes, reached every redteam seat: 276 words, by an agent's count, about 1,650 a mid-size run. They became lens text the controller fills into those two seats' lens slot from the panels reference, and the card's `right-sizing` and `worksheet` selectors went; the plan phase and the folded lane, which sent controllers into the seat's template for the pre-pass's definitions, point to the panels reference instead. The goal check stayed a passage: four of a mid-size run's seven redteam seats take it, by the same count. An agent's proposal, on which the maintainer left the call to the agent. (Basis: judgment, accepted by the maintainer.)
 
@@ -464,6 +483,7 @@ judgment, accepted by the maintainer.)
 
 ## Changes
 
+- 2026-11-24: instrument agents deny the host's four artifact tools, no longer carrying no tool restriction; because two review seats used the artifact tool's publish call with edits on their own reports, and a prose ban had not stopped it.
 - 2026-11-23: a seat the controller composes itself is given the reason the report file is the deliverable, copied into its dispatch beside the sentence on what was off; because it gets the host's opposite note as a template seat does, and is now asked what was off in its instructions.
 - 2026-11-22: § Report file, which all seven templates take, says why the file is the deliverable (the controller reads the report from the file, not from the reply, and the file outlasts the controller's context); because the host's note to subagents gives the opposite reason and the maintainer holds that the rule should state its own. No effect was measured: nine probe seats wrote the file and reported no clash under any of three wordings.
 - 2026-11-06: a re-reviewer on the very-small lane missed its report file and wrote it on one resume, so the 23 straight writes no longer show the misses stopped there; no rule changes.

@@ -2,6 +2,7 @@
 name: redteam-seat
 description: Crucible instrument (a redteam panel seat), dispatched only by a crucible controller with a filled slot card. Never select it for general work.
 model: opus
+disallowedTools: Artifact, ArtifactComments, ArtifactData, ArtifactCheck
 ---
 
 <!-- Generated from skills/redteaming/seat-prompt.md by tools/instrument_agents.py; do not edit by hand. -->

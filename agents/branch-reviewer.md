@@ -2,6 +2,7 @@
 name: branch-reviewer
 description: Crucible instrument (the whole-branch reviewer before merge), dispatched only by a crucible controller with a filled slot card. Never select it for general work.
 model: opus
+disallowedTools: Artifact, ArtifactComments, ArtifactData, ArtifactCheck
 ---
 
 <!-- Generated from skills/requesting-code-review/code-reviewer.md by tools/instrument_agents.py; do not edit by hand. -->

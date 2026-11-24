@@ -44,8 +44,10 @@ Rendering an agent:
 - the body is the template's fixed body -- everything after its line-1 H1
   title -- with every selector-keyed passage kept, marker lines included;
 - its runtime slot is filled with the runtime name, Claude Code, and
-  nothing else is added: a seat takes its tools from the host;
-- the frontmatter carries ``name``, ``description`` and ``model`` only.
+  nothing else is added;
+- the frontmatter carries ``name``, ``description``, ``model`` and
+  ``disallowedTools``: a seat takes its tools from the host, less the
+  host's artifact tools (``DISALLOWED``), and has no allow-list.
 
 Usage, from the plugin root::
 
@@ -120,6 +122,17 @@ ROLES: dict[str, str] = {
 DESCRIPTION = (
     "Crucible instrument ({role}), dispatched only by a crucible controller "
     "with a filled slot card. Never select it for general work."
+)
+
+#: The host tools every agent is denied: the artifact tools, whose
+#: publish call with edits review seats twice used on their own report
+#: files (docs/decisions/instruments.md). A deny list, so every other tool
+#: stays, the seat's report-writing tools included.
+DISALLOWED: tuple[str, ...] = (
+    "Artifact",
+    "ArtifactComments",
+    "ArtifactData",
+    "ArtifactCheck",
 )
 
 #: The runtime the agents are generated for.
@@ -246,6 +259,7 @@ def render(name: str, root: Path, template_text: str | None = None) -> str:
             f"name: {name}",
             f"description: {DESCRIPTION.format(role=ROLES[name])}",
             f"model: {MODELS[name]}",
+            f"disallowedTools: {', '.join(DISALLOWED)}",
             "---",
         ]
     )

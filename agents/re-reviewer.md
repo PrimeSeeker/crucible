@@ -2,6 +2,7 @@
 name: re-reviewer
 description: Crucible instrument (the scoped re-reviewer of a fix wave), dispatched only by a crucible controller with a filled slot card. Never select it for general work.
 model: opus
+disallowedTools: Artifact, ArtifactComments, ArtifactData, ArtifactCheck
 ---
 
 <!-- Generated from skills/subagent-driven-development/re-review-prompt.md by tools/instrument_agents.py; do not edit by hand. -->

@@ -2,6 +2,7 @@
 name: terminal-pass
 description: Crucible instrument (the terminal pass that closes a redteam phase), dispatched only by a crucible controller with a filled slot card. Never select it for general work.
 model: opus
+disallowedTools: Artifact, ArtifactComments, ArtifactData, ArtifactCheck
 ---
 
 <!-- Generated from skills/redteaming/terminal-pass-prompt.md by tools/instrument_agents.py; do not edit by hand. -->
