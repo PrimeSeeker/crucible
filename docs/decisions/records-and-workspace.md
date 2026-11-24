@@ -10,7 +10,7 @@
 
 **Work left open.** What a phase leaves open travels to Finish in the ledger, SDD's Setup its only seeding writer on every route (`skills/subagent-driven-development/references/setup.md`; `docs/decisions/branch-review.md` for the `deferred-minor` entries). Crucible keeps no store of its own for open items. At Finish, after the operator's answer to the close readout, the work left open goes, each item with its source, to the home the project's instructions name, a user-level file's line naming the project counting, those instructions being the operator's word for it; where they name none, the close readout asks the operator where the items go or whether to drop them and offers to record the answer, and the workspace is not deleted before that answer (`skills/redteaming/references/formats.md` § Open items; `crucible:subagent-driven-development § Finish`). An umbrella sends its items the same way at its landing and its closing review (`docs/decisions/umbrellas.md`). A deferral counts as done only once it is in the home or dropped; no item is left only in the workspace. Brainstorming's context gathering reads the home, which is what makes open items found again (`crucible:brainstorming § Context gathering (before any question)`). This repository's `AGENTS.md` names `docs/backlog/` as its home, and has the controller check open items against its no-local-context rule before committing them.
 
-**Finish.** SDD Finish runs in a fixed order, the close readout its decision point: record checks; the readout, listing the work left open, with the controller's call to keep or drop each deferred minor, lead and question and a keep-or-drop proposal for each parked finding and open ask, which only the operator drops, and ending with a recommendation; the operator's answer, for which the controller waits; then the open items and the feature's umbrella mark, the suite, deletion of `.crucible/<slug>/` and nothing else, and finishing, which carries out the answer without presenting its menu again. An answer asking for more work reopens the loop first, and Finish restarts; a discard skips the open items and the suite, taking finishing's typed confirmation before the deletion (`crucible:subagent-driven-development § Finish`; `skills/subagent-driven-development/references/finish.md`). A red run is a BLOCKER for the branch-review loop, never classified away, and one ruled not the branch's lets finishing proceed only on an answer that accepts it. Where no close readout precedes finishing, it presents its options with a recommendation. Finishing accepts a full run on exactly the HEAD being integrated whose output it can still show (`crucible:finishing-a-development-branch § Step 1: Verify Tests`). In a pull request the repository's conventions come first, and changing commits already made to meet one is the operator's decision; PR feedback is handled in the kept worktree under `crucible:receiving-review` (`crucible:finishing-a-development-branch § Step 5: Execute Choice`). A feature reads the repository's commit conventions before its first commit and hands implementers those beyond the instruction files (`crucible:using-git-worktrees`).
+**Finish.** SDD Finish runs in a fixed order, the close readout its decision point: record checks; the readout, listing the work left open, with the controller's call to keep or drop each deferred minor, lead and question and a keep-or-drop proposal for each parked finding and open ask, which only the operator drops, and ending with a recommendation; the operator's answer, for which the controller waits; then the open items and the feature's umbrella mark, the suite, finishing, which carries out the answer without presenting its menu again, and deletion of `.crucible/<slug>/` and nothing else, where removing the worktree has not taken it. An answer asking for more work reopens the loop first, and Finish restarts; a discard skips the open items and the suite, finishing taking its typed confirmation before anything is deleted (`crucible:subagent-driven-development § Finish`; `skills/subagent-driven-development/references/finish.md`). A red run is a BLOCKER for the branch-review loop, never classified away, and one ruled not the branch's lets finishing proceed only on an answer that accepts it. Where no close readout precedes finishing, it presents its options with a recommendation. Finishing accepts a full run on exactly the HEAD being integrated whose output it can still show (`crucible:finishing-a-development-branch § Step 1: Verify Tests`). In a pull request the repository's conventions come first, and changing commits already made to meet one is the operator's decision; PR feedback is handled in the kept worktree under `crucible:receiving-review` (`crucible:finishing-a-development-branch § Step 5: Execute Choice`). A feature reads the repository's commit conventions before its first commit and hands implementers those beyond the instruction files (`crucible:using-git-worktrees`).
 
 ## Why
 
@@ -268,6 +268,20 @@ suite. (Basis: judgment, an agent's call the maintainer has not ruled
 on: a controller's ruling within that feature, on a conflict its task
 review found.)
 
+Since 2026-11-24 the deletion follows finishing. A branch first meets the
+current base at finishing's local merge, so a conflict or a red merged
+result surfaced after the workspace was gone, with no ledger or loop to
+take it, the reason the suite already ran before the deletion; a branch
+review found it when the rule that a conflict resolved by hand takes a
+full-scope pass had no place it could fire (`docs/decisions/branch-review.md`).
+Removing the worktree deletes the gitignored workspace inside it, measured
+with `git worktree remove` on a scratch repository; the deletion step
+covers a workspace outside a worktree. Finishing's own typed confirmation
+now precedes any deletion on a discard, so Finish no longer takes it
+first. A pull request's later conflicts are the maintainer's, or separate
+work when returned. The controller's proposal. (Basis: measured, for the
+worktree removal; judgment, accepted by the maintainer.)
+
 Repository conventions come first in a pull request (2026-10-08), with no
 attempt to detect who owns the repository; a convention that rewrites
 commits already made, such as sign-offs, is a history rewrite and the
@@ -319,6 +333,7 @@ worktree. (Basis: judgment, accepted by the maintainer.)
 
 ## Changes
 
+- 2026-11-24: SDD Finish deletes the feature workspace after finishing, no longer before it, and a discard takes finishing's own typed confirmation; because a conflict or a red merged result at finishing's local merge surfaced after the workspace was gone, with no ledger or loop to take it.
 - 2026-11-19: the close readout gives the controller's call to keep or drop each deferred minor, lead and `## Questions` item, which the operator's answer may change, in place of a proposal; parked BLOCKER or MAJOR findings, unruled premise asks and open `unstated break` asks keep a proposal and are never the controller's to drop; because in a read of sixteen sessions of one code project 29 such choices drew one departure.
 - 2026-11-05: a feature reads the repository's commit conventions before its first commit, and hands implementers those beyond the instruction files, since meeting them only at a pull request made a sign-off a history rewrite.
 - 2026-11-04: the rewrite route's basis says who raised what: the review of the lane that added it found both credited to an agent.

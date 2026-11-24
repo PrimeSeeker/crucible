@@ -10,7 +10,7 @@
 
 **Leads and questions.** `Questions` items from task reviewers and implementers, and the other items `skills/subagent-driven-development/references/what-a-report-voices.md` routes as leads, reach the branch reviewer as leads, ledger lines under `## Deferred minors` marked `lead:`. It rules on each, CONFIRMED, RECOMMENDED or LEFT, instead of triaging it; a lead it confirms as an intent or scope gap opens a wave whatever its staked severity, and a pass that leaves one unruled is missing a verdict. Its own `Questions` items go under the ledger's `## Questions`, which its card does not carry, though its read of the ledger may reach them (§ Why, The ledger's questions; `skills/requesting-code-review/SKILL.md` § The branch-review loop; `skills/requesting-code-review/code-reviewer.md` § Execution Trail; `skills/subagent-driven-development/references/what-a-report-voices.md`).
 
-**The loop.** A fix wave opens on a BLOCKER or MAJOR or a lead confirmed as an intent or scope gap, and otherwise only as the cleanup wave or for a ruling or requested work (below): one fresh implementer with the complete findings list, then a scoped re-review, disputes ruled as `docs/decisions/adjudication.md` states. A wave that leaves no BLOCKER or MAJOR open is followed by a full-scope pass, and the pass that ends the review is the branch review's terminal pass, a branch-reviewer dispatch. The cap is three waves, every wave counting; a finding that would need a fourth goes to the operator as a decision ask. A premise finding is a decision ask, not an open BLOCKER or MAJOR, and holds no merge gate by itself. Off the very-small lane a DRIFT finding is a decision ask to the operator, revert or repair; on the lane, drift from the note is a wave finding. A red suite at SDD's Finish is a BLOCKER that opens a wave. A conflict the controller resolves by hand, in a rebase or at the merge, takes a full-scope pass on the result before landing (`skills/finishing-a-development-branch/SKILL.md` § Option 1: Merge Locally). Fixes are never the controller's, the very-small lane excepted (`crucible:requesting-code-review § The branch-review loop`; `skills/subagent-driven-development/references/drift.md`).
+**The loop.** A fix wave opens on a BLOCKER or MAJOR or a lead confirmed as an intent or scope gap, and otherwise only as the cleanup wave or for a ruling or requested work (below): one fresh implementer with the complete findings list, then a scoped re-review, disputes ruled as `docs/decisions/adjudication.md` states. A wave that leaves no BLOCKER or MAJOR open is followed by a full-scope pass, and the pass that ends the review is the branch review's terminal pass, a branch-reviewer dispatch. The cap is three waves, every wave counting; a finding that would need a fourth goes to the operator as a decision ask. A premise finding is a decision ask, not an open BLOCKER or MAJOR, and holds no merge gate by itself. Off the very-small lane a DRIFT finding is a decision ask to the operator, revert or repair; on the lane, drift from the note is a wave finding. A red suite at SDD's Finish is a BLOCKER that opens a wave. A conflict the controller resolves by hand, in a rebase or at the merge, takes a full-scope pass on the result before landing (`skills/subagent-driven-development/references/finish.md`, step 6). Fixes are never the controller's, the very-small lane excepted (`crucible:requesting-code-review § The branch-review loop`; `skills/subagent-driven-development/references/drift.md`).
 
 **Changes that ride a wave.** An improvement the controller adopts, an operator's ruling and work the operator asked for enter a wave's findings list as labelled changes, applied or declined with a reason; with no defect to confirm, none is answered NOT CONFIRMED or disputed. A declined ruling or requested change goes back to the operator in the next close readout; a declined improvement is work left open (`crucible:requesting-code-review § The branch-review loop`; `skills/subagent-driven-development/references/very-small-lane.md`; `docs/decisions/records-and-workspace.md`).
 
@@ -290,14 +290,15 @@ had merged by hand, which no reviewer read. Since 2026-11-24 a conflict
 the controller resolves by hand, in a rebase or at the merge, is a change
 no pass has read and takes a full-scope pass on the result before landing.
 (Basis: measured, for the landings; judgment, accepted by the maintainer.)
-The rule is stated once, in SDD's Finish, before its suite, where the
-operator's answer to the close readout leads to any rebase or merge of the
-base, and where the workspace and the branch-review loop still run: an
-agent's call the maintainer has not ruled on, made after a branch review
-found the rule's first site, finishing's merge step, running after the
-workspace is gone, with no path for the pass. A conflict met at that merge,
-the base having moved after Finish, has no stated pass. (Basis: judgment,
-an agent's call the maintainer has not ruled on.)
+The rule is stated in SDD's Finish at its finishing step, which runs the
+local merge where a branch first meets the current base. Two branch-review
+passes found it unable to fire where it stood: first in finishing's merge
+step, which ran after Finish had deleted the workspace, then before Finish's
+suite, where nothing brings the base in. Since 2026-11-24 Finish deletes the
+workspace after finishing (`docs/decisions/records-and-workspace.md`), so
+a conflict at the merge, resolved on the branch, meets a live ledger and
+loop. The controller's proposal. (Basis: judgment, accepted by the
+maintainer.)
 
 ### The first review of a task with none
 

@@ -11,7 +11,7 @@ After the close readout (`crucible:subagent-driven-development` § Finish), carr
 
 With no close readout (an umbrella's landing, after a standalone review), or where the answer chose no option, Step 4 presents the options.
 
-A discard the operator confirmed at SDD's Finish, before it deleted the feature workspace, runs Step 2 and then the discard path from after its confirmation, without confirming again; Steps 1, 3 and 4 do not run.
+A discard the operator chose at SDD's Finish runs Step 2 and then the discard path; Steps 1, 3 and 4 do not run.
 
 Run every command, tests and forge tooling included, as a single invocation: no shell program, no command substitution, no captured variables. Keep each output yourself and substitute it into the next command, so the flow runs the same with or without a POSIX shell.
 
