@@ -26,7 +26,8 @@ worktree holds modified or untracked files is reported to the operator,
 never forced past with `--force`. The local merge is a fast-forward
 (`git merge --ff-only`): where the base has moved it refuses and changes
 nothing, and the agent brings the base into the branch, merging it or
-rebasing onto it where the project prefers, and tests the result before
+rebasing onto it where the project prefers, an umbrella's child always
+merging, and tests the result before
 landing it (`docs/decisions/records-and-workspace.md` § Finish). Force-deleting
 a branch belongs to an explicitly requested, typed-out discard
 (`crucible:finishing-a-development-branch § Step 5: Execute Choice`,
