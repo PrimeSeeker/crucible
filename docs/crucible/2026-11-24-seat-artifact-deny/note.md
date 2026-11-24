@@ -4,11 +4,13 @@ Lane: very-small (operator-confirmed 2026-11-24)
 
 ## Intent
 
-Twice a review seat on Claude Code called the host's artifact tool, its
-publish call with edits, to change its own report file: on 2026-10-18 the
-call published a branch reviewer's report; on 2026-11-23 a generated
-branch-reviewer seat made the same call and the host's permission check
-refused it. Asked afterwards, that seat said it wanted to batch several
+Eight times between 2026-10-16 and 2026-11-23 a review seat on Claude
+Code, each a generated instrument agent (six branch reviewers, two
+re-reviewers), called the host's artifact tool, its publish call with
+edits, to change its own report file, by a search of the seats'
+transcripts: on 2026-10-18 the call published a branch reviewer's report,
+and the host's permission check refused the other seven. Asked
+afterwards, the 2026-11-23 seat said it wanted to batch several
 replacements, that the tool's description presents the call as file
 editing, and that an instruction in its context forbidding subagents to
 publish was not in mind when it chose. A prose ban had not stopped the
@@ -20,7 +22,7 @@ every other tool stays, the seat's own report-writing tools included, so
 the reason the instruments record gives for leaving seats unrestricted
 still holds.
 
-Premise: the two incidents and the seat's account are observed. That a
+Premise: the eight calls and the seat's account are observed. That a
 deny list naming tools absent from a session does not stop an agent
 launching is measured (Claude Code 2.1.330, headless, a project agent).
 That the host honours the list for a plugin's agents and for these tools
