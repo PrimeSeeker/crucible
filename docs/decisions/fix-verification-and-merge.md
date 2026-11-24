@@ -85,9 +85,10 @@ once the last numbered round's fix list has frozen, that round has
 closed and the wait before the terminal pass has ended ride one more
 fix list of that round, its rulings list, applied and blind-verified as
 that round's own fix wave, its verifier writing `verifier-rulings.md`
-and a re-check `verifier-rulings-recheck.md`. A later ruling's change
-waits for the campaign's close, whose readout names it, and is made
-before the handoff as a change after the close
+and a re-check `verifier-rulings-recheck.md`. A later ruling that no
+numbered round's fix list can then take waits for the campaign's close,
+whose readout names it, and is made before the handoff as a change after
+the close
 (`skills/redteaming/references/round-readout.md`).
 
 **Readout coverage and the trace.** The delivered readout names every
