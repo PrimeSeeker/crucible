@@ -16,24 +16,6 @@
 - The read did not examine the waves' line counts the readout trace lost,
   the load-bearing marks, or the containment test's exclusions; snapshot
   blessing never fired.
-- What the read saw and nobody has ruled on:
-  - four of six fresh looks fired at a passage's third patch, where the
-    router's sign is the second
-    (`docs/decisions/model-roles-and-effort.md` § A fresh look);
-  - three landings had no full-scope read after their last change, each on
-    the operator's word or a call left to the controller, one of them
-    landing six hand-merged rebase conflicts no reviewer read;
-  - in one session whole features ran after a compaction with no skill
-    invoked again, the controller twice announcing a skill without
-    invoking it, working from the re-attached copies and the references it
-    read;
-  - one plan task, by its own Contract, ran inline as 22 seats the
-    controller composed in place of an implementer; it had its task review;
-  - `docs/decisions/terminal-pass.md` § Why a pass at all says the pass
-    earns its place on a count of 2026-10-12, a BLOCKER or MAJOR after the
-    stop in 27 of 74 campaigns, beside the read's one MAJOR in 22 spec first
-    passes, with no word on the drop or on whether its record corrections
-    now carry its place.
 - Crucible's calibrations (four or five seats in a large new spec's first
   round, the cap of four rounds, plan sizes) come from one project, and
   were meant to be re-derived before reuse elsewhere; the README says where
@@ -137,6 +119,10 @@ definition in `skills/redteaming/references/premise-asks.md` does not name
 prose change on the lane landed with an outcome its Intent stated and its
 text did not carry. Nothing was measured before them: they rest on a
 controller's notes on three features.
+
+Read whether a full-scope pass re-raised an earlier pass's question, which
+reopens the branch reviewer's read of the ledger's `## Questions`
+(`docs/decisions/branch-review.md` § The ledger's questions).
 
 Compare the routes on branches that are prose only. Two such features of
 similar size were built back to back on crucible itself: the folded route

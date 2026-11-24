@@ -6,7 +6,7 @@
 
 **Premise findings.** A redteam seat, the terminal pass, the branch reviewer, an umbrella's closing-review seat or an implementer may claim, with evidence, that one of three things is wrong: the request, what the Intent asks for, or a firm decision, the finding carrying the label `premise` (`skills/subagent-driven-development/references/seat-rules.md` § Premise findings and § Binding changes). Every other decision, whoever proposed it, is lightly held, and no rule routes on who proposed a decision. Any other binding item shown wrong keeps its own route, and an execution reviewer's `literal-reading` finding its own label, since it questions an application, not the premise (the reviewer templates' `literal-reading` lines). A task reviewer raises none: its doubt about a premise is a question (`skills/subagent-driven-development/task-reviewer-prompt.md`). Every premise finding goes to the operator as a decision ask with a recommendation. It is an open decision ask, not an open BLOCKER or MAJOR: it holds no gate and no stop, opens no fix wave and consumes no cap, the readouts carry it until it is ruled, and work goes on while it is open (`skills/redteaming/references/premise-asks.md` § Premise findings; `docs/decisions/spec-campaign.md`).
 
-**The goal check.** Before reading the Intent, each seat of a spec campaign's round 1 and the branch reviewer restate in one sentence the goal that the request file asks for (`docs/decisions/the-spec.md`), then compare it with the Intent: a mismatch the seat can stand behind is a premise finding, a vaguer one a question. Later rounds' seats and plan-phase seats run no goal check, their card's `goal-check` selector set off, and keep the request among their inputs; the one exception is the round a degraded round 1 none of whose seats returned hands it on to (`docs/decisions/spec-campaign.md`). On the very-small lane the branch reviewer runs it with the note's Intent and Out of scope (`docs/decisions/routes.md`; `skills/requesting-code-review/very-small-lane-review.md`; `skills/subagent-driven-development/references/seat-rules.md` § The goal check).
+**The goal check.** Before reading the Intent, each seat of a spec campaign's round 1 and, on the very-small lane, the branch reviewer restate in one sentence the goal that the request file asks for (`docs/decisions/the-spec.md`), then compare it with the Intent: a mismatch the seat can stand behind is a premise finding, a vaguer one a question. Later rounds' seats and plan-phase seats run no goal check, their card's `goal-check` selector set off, and keep the request among their inputs; the one exception is the round a degraded round 1 none of whose seats returned hands it on to (`docs/decisions/spec-campaign.md`). Off the lane the branch reviewer runs none, the passages its card's `lane` selector keys left out, and keeps the request among its inputs; on the lane it runs it with the note's Intent and Out of scope (`docs/decisions/routes.md`; `skills/requesting-code-review/very-small-lane-review.md`; `skills/subagent-driven-development/references/seat-rules.md` § The goal check).
 
 **Questions.** Redteam seats, the task reviewer, the branch reviewer, the implementer and an umbrella's closing-review seats each have a `Questions` section for anything material they could not stake as a finding, with no severity (`skills/subagent-driven-development/references/seat-rules.md` § Questions). Nothing in it is dropped unrecorded: a redteam seat's item gets a disposition in the round record, a task reviewer's or an implementer's becomes a lead the branch reviewer rules on (`docs/decisions/branch-review.md`), the branch reviewer's own go under the ledger's `## Questions`, and a closing-review seat's is listed in the closing review's readout (`skills/brainstorming/references/umbrellas.md` § Closing review). A redteam seat's question that doubts the request, what the Intent asks for or a firm decision is always carried to the readout, since the operator settles such a doubt and the controller is the Intent's author, and the readout states it in plain words and then quotes it verbatim, as it does every question it carries. An improvement the controller adopts is a lightly held change it names in the readout, and rides the next fix wave; it never opens a wave by itself, the branch review's one cleanup wave aside (`docs/decisions/branch-review.md`), and the controller never applies one itself outside the very-small lane (`crucible:redteaming § Merge and finding hygiene`; `crucible:requesting-code-review § The branch-review loop`; `crucible:subagent-driven-development § What a report voices`).
 
@@ -152,8 +152,20 @@ design in several campaigns, and the one departure after round 1 from what
 the operator had agreed was caught by a round-2 seat's premise finding and
 by the terminal pass. All 85 branch-review passes ran the goal check and
 none raised a premise finding or a mismatch, though several noted a
-request holding only approvals (`docs/backlog/goal-check-request-file.md`);
-no execution seat labelled a finding `premise`. (Basis: measured.)
+request holding only approvals, so that the scope they checked came from the
+controller's summaries; no execution seat labelled a finding `premise`.
+(Basis: measured.)
+
+On 2026-11-24 the goal check left the branch review except on the
+very-small lane. Off the lane those 85 passes showed no catch for its
+paragraph per pass, and round 1's goal checks, which changed designs, stay;
+on the lane the branch reviewer's goal check is the one check of the note's
+exclusions against what was asked, so it stays there. The reviewer keeps
+the request among its inputs, for a premise finding. Beside an approval the
+request now quotes the option approved, and beside a message pointing to a
+document its path (`docs/decisions/the-spec.md`), so a goal check reads
+more than a bare yes. (Basis: measured, for the counts; judgment, accepted
+by the maintainer, for the withdrawal.)
 
 Doubts stopped at the controller. A seat question could be carried to
 the readout, but the readout's list had no item for it, and a doubt
@@ -327,6 +339,7 @@ records that cite "the audit" draw on these figures. (Basis: measured.)
 
 ## Changes
 
+- 2026-11-24: the branch reviewer runs the goal check only on the very-small lane, keeping the request among its inputs; because in the re-audit all 85 branch-review goal checks raised nothing, several checking against the controller's summaries of a request that held only approvals, while round 1's goal checks changed designs and the lane's is the one check of the note's exclusions against what was asked.
 - 2026-11-23: the re-audit's outcomes for the retired premise hold and the narrowed goal check are recorded: the hold's target failure occurred once and the terminal pass caught it, at the cost of a round, and 85 branch-review goal checks raised nothing, several noting a request that held only approvals. No position changes.
 - 2026-11-23: on the very-small lane the goal check reads the note's Out of scope with its Intent; because the operator no longer approves the note, so nothing else holds its exclusions against what was asked (`docs/decisions/routes.md`).
 - 2026-11-20: the readout states every question it carries in plain words before quoting it verbatim, the quote kept for its 2026-10-30 reason, and the controller answering or marking a question nothing turns on is rejected; because one carried question needed translating before the operator could answer it.

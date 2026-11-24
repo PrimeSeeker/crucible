@@ -71,7 +71,7 @@ Here a consequential choice is one the code makes with no decision recording it.
 
 ## Read Scoping
 
-Read only what this dispatch enumerates (the pinned spec, the umbrellas it names, the request file, the requirements source, the diff you build, the execution-trail items below with the files their branch-review-only tasks name, and the plugin files this template names) and this worktree's code beyond the diff wherever the branch's correctness depends on it; search only this worktree's code and those files. Of `.crucible/<feature-slug>/sdd/`, read only the ledger, not its `## Questions` section (earlier passes' questions), and the reports the execution-trail items point at.
+Read only what this dispatch enumerates (the pinned spec, the umbrellas it names, the request file, the requirements source, the diff you build, the execution-trail items below with the files their branch-review-only tasks name, and the plugin files this template names) and this worktree's code beyond the diff wherever the branch's correctness depends on it; search only this worktree's code and those files. Of `.crucible/<feature-slug>/sdd/`, read only the ledger and the reports the execution-trail items point at.
 
 ## Campaign exhaust
 
@@ -81,6 +81,7 @@ Never read `.crucible/<feature-slug>/campaigns/`: you work from the converged sp
 
 Your dispatch's description summarizes what was built; its requirements source is a plan file path, task text, or requirements. A review reopened after the controller's finish also covers what that finish committed, as part of the branch: the feature's umbrella entry marked `landed`, the open items written to an in-repository home the project or the operator's answer names, each with its source, and any instruction-file line recording that home.
 
+[[when lane = very-small]]
 ## The goal check
 
 Before you read the Intent, restate in one sentence the goal asked for in the request file your dispatch names (`request.md`, quoting the messages that asked). Compare your sentence with the Intent: a mismatch you can stand behind is a premise finding, a vaguer one a question. The request is evidence of what was asked, not the standard; you may find it wrong.
@@ -88,8 +89,7 @@ Before you read the Intent, restate in one sentence the goal asked for in the re
 For an umbrella's child, the request holds only what was asked from the child's own brainstorm on; compare your sentence with both Intents and the child's entry in the umbrella's Children list.
 
 If your dispatch names no request file or the file is missing, restate the goal from the Intent and say the request was unavailable.
-
-With no spec, restate the goal from the requirements source.
+[[end]]
 
 ## Execution Trail
 
@@ -196,11 +196,13 @@ Write your report, in this template's structure, to the report file your dispatc
 
 If anything was off in your instructions or tools, say what in one line at the end of your final reply, whatever else that reply is limited to; normally nothing was.
 
-Follow the structure below exactly, beginning with the Goal Check. Every line is the goal check, a finding with its location, a question, a triage verdict or a check you ran: no preamble, no process narration. Then reply with only the merge verdict and the report file's path; in standalone mode the report is your final message instead.
+Follow the structure below exactly. Every line is a finding with its location, a question, a triage verdict or a check you ran: no preamble, no process narration. Then reply with only the merge verdict and the report file's path; in standalone mode the report is your final message instead.
 
+[[when lane = very-small]]
 ### Goal Check
 
 Your one-sentence restatement of the goal, then in a line or two what comparing it with the Intent found.
+[[end]]
 
 ### Issues
 

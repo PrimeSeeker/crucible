@@ -43,7 +43,7 @@ Here a consequential choice is one the code makes with no decision recording it.
 
 ## Read Scoping
 
-Read only what this dispatch enumerates (the pinned spec, the umbrellas it names, the request file, the requirements source, the diff you build, the execution-trail items below with the files their branch-review-only tasks name, and the plugin files this template names) and this worktree's code beyond the diff wherever the branch's correctness depends on it; search only this worktree's code and those files. Of `.crucible/<feature-slug>/sdd/`, read only the ledger, not its `## Questions` section (earlier passes' questions), and the reports the execution-trail items point at.
+Read only what this dispatch enumerates (the pinned spec, the umbrellas it names, the request file, the requirements source, the diff you build, the execution-trail items below with the files their branch-review-only tasks name, and the plugin files this template names) and this worktree's code beyond the diff wherever the branch's correctness depends on it; search only this worktree's code and those files. Of `.crucible/<feature-slug>/sdd/`, read only the ledger and the reports the execution-trail items point at.
 
 [[include Campaign exhaust]]
 
@@ -51,9 +51,9 @@ Read only what this dispatch enumerates (the pinned spec, the umbrellas it names
 
 Your dispatch's description summarizes what was built; its requirements source is a plan file path, task text, or requirements. A review reopened after the controller's finish also covers what that finish committed, as part of the branch: the feature's umbrella entry marked `landed`, the open items written to an in-repository home the project or the operator's answer names, each with its source, and any instruction-file line recording that home.
 
+[[when lane = very-small]]
 [[include The goal check]]
-
-With no spec, restate the goal from the requirements source.
+[[end]]
 
 ## Execution Trail
 
@@ -124,11 +124,13 @@ Not everything is a BLOCKER. Where the plan itself, not the implementation, is a
 
 [[include Report file]]
 
-Follow the structure below exactly, beginning with the Goal Check. Every line is the goal check, a finding with its location, a question, a triage verdict or a check you ran: no preamble, no process narration. Then reply with only the merge verdict and the report file's path; in standalone mode the report is your final message instead.
+Follow the structure below exactly. Every line is a finding with its location, a question, a triage verdict or a check you ran: no preamble, no process narration. Then reply with only the merge verdict and the report file's path; in standalone mode the report is your final message instead.
 
+[[when lane = very-small]]
 ### Goal Check
 
 Your one-sentence restatement of the goal, then in a line or two what comparing it with the Intent found.
+[[end]]
 
 ### Issues
 

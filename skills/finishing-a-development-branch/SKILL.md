@@ -63,7 +63,7 @@ Discard is never offered: it happens only when your human partner explicitly ask
 
 Find the main checkout first, since worktree removal must run from outside the worktree: the first `worktree <path>` line of `git worktree list --porcelain` is its root. Change your working directory there with your own tools, then run `git checkout <base-branch>`, `git pull`, `git merge <feature-branch>`.
 
-Run Step 1's tests on the merged result. On a merge conflict or a red merged result, stop, leave the worktree and branch in place, and investigate: nothing is pushed, so the merge stays local and recoverable. Undo a merge stopped on a conflict with `git merge --abort`.
+Run Step 1's tests on the merged result. On a merge conflict or a red merged result, stop, leave the worktree and branch in place, and investigate: nothing is pushed, so the merge stays local and recoverable. Undo a merge stopped on a conflict with `git merge --abort`. A conflict resolved by hand, merging the base into the branch or rebasing, gets a full-scope branch-review pass before landing.
 
 Once the merged result is green, remove the worktree (Step 6), then run `git branch -d <feature-branch>`. If `-d` refuses, the commits never reached the base and the merge did not take: investigate, and never use `-D` to make it go away.
 

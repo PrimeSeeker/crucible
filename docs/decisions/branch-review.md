@@ -4,13 +4,13 @@
 
 **One owner.** `crucible:requesting-code-review` owns the branch-review loop and states it once. It is mandatory when SDD hands over a branch whose tasks are complete, and before merging any branch (`crucible:subagent-driven-development § Whole-Branch Review`).
 
-**The reviewer.** A fresh branch reviewer reads MERGE_BASE..HEAD full-scope, for what task-scoped gates cannot see: cross-task integration, drift accumulated across the branch, and anything the gates let through. It triages every deferred item, a `deferred-minor` entry for its effect on the code alone, never editing spec or plan text for it (`docs/decisions/fix-verification-and-merge.md`), checks each ruling against the final code, and flags undisclosed drift from binding content in a completed task as DRIFT (`skills/requesting-code-review/code-reviewer.md` § Read Scoping, § Execution Trail, § What to Check). It runs the goal check, may raise premise findings, reports a binding item that is itself wrong and an unrecorded consequential choice, and writes a `Questions` section (`docs/decisions/evidence-and-findings.md`); for each rule the branch ties to a trigger it asks whether every route and phase that must apply it reaches it; a break that follows from what the branch sets out to do, which its spec or requirements source does not state, is labelled for the operator to repair or accept, standing open in the ledger until they answer (`docs/decisions/the-spec.md`; `crucible:requesting-code-review § The branch-review loop`). A review reopened after SDD's Finish has committed reads that commit, the feature's umbrella mark and the open items written to an in-repository home, as part of the branch. Its check for build history exempts decision records, changelogs, the feature folder's files and open items in the project's home, all of which exist to hold it (`skills/subagent-driven-development/references/seat-rules.md` § What shipped work carries). It runs on the default role, never lowered to save cost (`docs/decisions/model-roles-and-effort.md`).
+**The reviewer.** A fresh branch reviewer reads MERGE_BASE..HEAD full-scope, for what task-scoped gates cannot see: cross-task integration, drift accumulated across the branch, and anything the gates let through. It triages every deferred item, a `deferred-minor` entry for its effect on the code alone, never editing spec or plan text for it (`docs/decisions/fix-verification-and-merge.md`), checks each ruling against the final code, and flags undisclosed drift from binding content in a completed task as DRIFT (`skills/requesting-code-review/code-reviewer.md` § Read Scoping, § Execution Trail, § What to Check). On the very-small lane it runs the goal check; it may raise premise findings, reports a binding item that is itself wrong and an unrecorded consequential choice, and writes a `Questions` section (`docs/decisions/evidence-and-findings.md`); for each rule the branch ties to a trigger it asks whether every route and phase that must apply it reaches it; a break that follows from what the branch sets out to do, which its spec or requirements source does not state, is labelled for the operator to repair or accept, standing open in the ledger until they answer (`docs/decisions/the-spec.md`; `crucible:requesting-code-review § The branch-review loop`). A review reopened after SDD's Finish has committed reads that commit, the feature's umbrella mark and the open items written to an in-repository home, as part of the branch. Its check for build history exempts decision records, changelogs, the feature folder's files and open items in the project's home, all of which exist to hold it (`skills/subagent-driven-development/references/seat-rules.md` § What shipped work carries). It runs on the default role, never lowered to save cost (`docs/decisions/model-roles-and-effort.md`).
 
-**Tasks completed branch review only.** For a task the ledger completes branch review only (`docs/decisions/task-loop.md`), the branch reviewer is the first review. The controller names each such task in the card's `[FIRST_REVIEW_TASKS]` slot, and every full-scope pass reads its report and Decision Log against the diff over its range, as the task review would; what it finds opens waves by its staked severity, and no line is owed per task (`crucible:requesting-code-review § Dispatch the branch reviewer`; `skills/requesting-code-review/code-reviewer.md` § Execution Trail).
+**Tasks completed branch review only.** For a task the ledger completes branch review only (`docs/decisions/task-loop.md`), the branch reviewer is the first review, its implementer's concerns reaching it as leads. The controller names each such task in the card's `[FIRST_REVIEW_TASKS]` slot, and every full-scope pass reads its report and Decision Log against the diff over its range, as the task review would; what it finds opens waves by its staked severity, and no line is owed per task (`crucible:requesting-code-review § Dispatch the branch reviewer`; `skills/requesting-code-review/code-reviewer.md` § Execution Trail).
 
-**Leads and questions.** `Questions` items from task reviewers and implementers, and the other items `skills/subagent-driven-development/references/what-a-report-voices.md` routes as leads, reach the branch reviewer as leads, ledger lines under `## Deferred minors` marked `lead:`. It rules on each, CONFIRMED, RECOMMENDED or LEFT, instead of triaging it; a lead it confirms as an intent or scope gap opens a wave whatever its staked severity, and a pass that leaves one unruled is missing a verdict. Its own `Questions` items go under the ledger's `## Questions`, which its read scoping excludes, so a pass's questions never become the next pass's input (`skills/requesting-code-review/SKILL.md` § The branch-review loop; `skills/requesting-code-review/code-reviewer.md` § Execution Trail; `skills/subagent-driven-development/references/what-a-report-voices.md`).
+**Leads and questions.** `Questions` items from task reviewers and implementers, and the other items `skills/subagent-driven-development/references/what-a-report-voices.md` routes as leads, reach the branch reviewer as leads, ledger lines under `## Deferred minors` marked `lead:`. It rules on each, CONFIRMED, RECOMMENDED or LEFT, instead of triaging it; a lead it confirms as an intent or scope gap opens a wave whatever its staked severity, and a pass that leaves one unruled is missing a verdict. Its own `Questions` items go under the ledger's `## Questions`, which its card does not carry, though its read of the ledger may reach them (§ Why, The ledger's questions; `skills/requesting-code-review/SKILL.md` § The branch-review loop; `skills/requesting-code-review/code-reviewer.md` § Execution Trail; `skills/subagent-driven-development/references/what-a-report-voices.md`).
 
-**The loop.** A fix wave opens on a BLOCKER or MAJOR or a lead confirmed as an intent or scope gap, and otherwise only as the cleanup wave or for a ruling or requested work (below): one fresh implementer with the complete findings list, then a scoped re-review, disputes ruled as `docs/decisions/adjudication.md` states. A wave that leaves no BLOCKER or MAJOR open is followed by a full-scope pass, and the pass that ends the review is the branch review's terminal pass, a branch-reviewer dispatch. The cap is three waves, every wave counting; a finding that would need a fourth goes to the operator as a decision ask. A premise finding is a decision ask, not an open BLOCKER or MAJOR, and holds no merge gate by itself. Off the very-small lane a DRIFT finding is a decision ask to the operator, revert or repair; on the lane, drift from the note is a wave finding. A red suite at SDD's Finish is a BLOCKER that opens a wave. Fixes are never the controller's, the very-small lane excepted (`crucible:requesting-code-review § The branch-review loop`; `skills/subagent-driven-development/references/drift.md`).
+**The loop.** A fix wave opens on a BLOCKER or MAJOR or a lead confirmed as an intent or scope gap, and otherwise only as the cleanup wave or for a ruling or requested work (below): one fresh implementer with the complete findings list, then a scoped re-review, disputes ruled as `docs/decisions/adjudication.md` states. A wave that leaves no BLOCKER or MAJOR open is followed by a full-scope pass, and the pass that ends the review is the branch review's terminal pass, a branch-reviewer dispatch. The cap is three waves, every wave counting; a finding that would need a fourth goes to the operator as a decision ask. A premise finding is a decision ask, not an open BLOCKER or MAJOR, and holds no merge gate by itself. Off the very-small lane a DRIFT finding is a decision ask to the operator, revert or repair; on the lane, drift from the note is a wave finding. A red suite at SDD's Finish is a BLOCKER that opens a wave. A conflict the controller resolves by hand, in a rebase or at the merge, takes a full-scope pass on the result before landing (`skills/finishing-a-development-branch/SKILL.md` § Option 1: Merge Locally). Fixes are never the controller's, the very-small lane excepted (`crucible:requesting-code-review § The branch-review loop`; `skills/subagent-driven-development/references/drift.md`).
 
 **Changes that ride a wave.** An improvement the controller adopts, an operator's ruling and work the operator asked for enter a wave's findings list as labelled changes, applied or declined with a reason; with no defect to confirm, none is answered NOT CONFIRMED or disputed. A declined ruling or requested change goes back to the operator in the next close readout; a declined improvement is work left open (`crucible:requesting-code-review § The branch-review loop`; `skills/subagent-driven-development/references/very-small-lane.md`; `docs/decisions/records-and-workspace.md`).
 
@@ -251,11 +251,12 @@ consequential choice. Both moved from the redteam seat's template into
 the shared reference the reviewer already reads, where for this seat
 the choice is one the code makes (`docs/decisions/evidence-and-findings.md`).
 (Basis: measured, for the audit's finding; judgment, accepted by the
-maintainer.)
+maintainer.) Since 2026-11-24 the reviewer runs the goal check only on the
+very-small lane, its 85 checks in the re-audit of 2026-11-23 having raised
+nothing (`docs/decisions/evidence-and-findings.md`).
 
 Leads carry what task reviewers and implementers voice to the one seat
-that sees every task, and a pass's questions stay out of the next
-pass's input. The trace question comes from the umbrella-specs
+that sees every task. The trace question comes from the umbrella-specs
 feature (2026-10-28), whose rule fired "at each task or round boundary"
 while two phases, the very-small lane and every branch review, have
 none; the spec campaign and the plan phase missed it, and the branch
@@ -263,6 +264,37 @@ review confirmed it as its one MAJOR. (Basis: a single incident;
 judgment, accepted by the maintainer, for the forms.)
 
 Until 2026-11-03 each lead carried a kind, `question`, `proposal` or `concern`, whose one consumer was the rule that a concern is CONFIRMED or LEFT, never RECOMMENDED. Both went: the one-liner still says what the lead is, and a concern ruled RECOMMENDED is harmless, the controller adopting it or not as any improvement. An agent's proposal, on which the maintainer left the call to the agent. (Basis: judgment, accepted by the maintainer.)
+
+### The ledger's questions
+
+Until 2026-11-24 the reviewer's read scoping excluded the ledger's
+`## Questions`, so that a pass's questions would not become the next
+pass's input. A section of a file a seat is told to read cannot be
+withheld: on three very-small-lane features of 2026-11-23 a full-scope
+pass's reviewer reported reading it, one "because I read the whole ledger
+file in one call", each saying its findings did not rely on it, and no
+effect on a review is on record; a later pass gets the earlier passes'
+rulings on leads either way. The exclusion went, the card still carrying
+only the deferred minors and rulings. The maintainer accepted this as
+tentative: a later read finding passes re-raising earlier passes'
+questions reopens it, a file of their own being the form that holds
+then. (Basis: measured, for the three reads; judgment, accepted by the
+maintainer.)
+
+### A conflict resolved by hand
+
+In the re-audit of 2026-11-23 three landings had no full-scope read after
+their last change, each on the operator's word or a call left to the
+controller, and one of them carried six rebase conflicts the controller
+had merged by hand, which no reviewer read. Since 2026-11-24 a conflict
+the controller resolves by hand, in a rebase or at the merge, is a change
+no pass has read and takes a full-scope pass on the result before landing.
+(Basis: measured, for the landings; judgment, accepted by the maintainer.)
+The rule is stated once, in finishing's merge step, which every landing
+runs, and not again in the branch-review loop, where a rebase has no step:
+an agent's call the maintainer has not ruled on, the implementer's in that
+feature, made to keep the skills under their word cap. (Basis: judgment,
+an agent's call the maintainer has not ruled on.)
 
 ### The first review of a task with none
 
@@ -331,6 +363,8 @@ accepted by the maintainer.)
   its tasks combined (§ Why).
 
 ## Changes
+
+- 2026-11-24: off the very-small lane the branch reviewer no longer runs the goal check (`docs/decisions/evidence-and-findings.md`); a marked task's concerns reach it as leads (`docs/decisions/task-loop.md`); its read scoping no longer excludes the ledger's `## Questions`, because a seat told to read a file reads all of it, three reviewers having read the section with no effect on record, accepted as tentative until a read finds passes re-raising earlier passes' questions; and a conflict the controller resolves by hand, in a rebase or at the merge, takes a full-scope pass on the result before landing, because one landing carried six hand-merged rebase conflicts no reviewer read.
 
 - 2026-11-23: the counts behind keeping the full-scope pass after every wave are the re-audit's, the read of 2026-11-19 having counted on a partial seat index with a wrong severity tally: 34 first passes, 4 raising a BLOCKER or MAJOR, and 51 later passes, 3 raising a MAJOR, none introduced by a wave. The rule stands, the new counts pointing the same way.
 - 2026-11-23: once the review has ended, the controller may itself correct a statement that a pass's MINOR found false or misattributed in a decision record or an open item that binds no work, with no wave and no further pass, naming each correction in the close readout; because such findings could only be filed, and on three prose-only features four of the six left that way were false or misattributed statements in decision records.

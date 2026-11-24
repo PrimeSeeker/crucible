@@ -8,7 +8,7 @@
 
 **Task review.** One fresh reviewer per task, never skipped, a task completed branch review only aside (below). Its stance is adversarial, "attempt to reject this task", governing the search and not the conclusion, and it returns four verdicts, all required: intent, scope, the deviation audit and quality (`skills/subagent-driven-development/task-reviewer-prompt.md`). A concern is confirmed as a finding at a staked severity or dismissed with a one-line reason, and a review or re-review that leaves one unruled is missing a verdict (`skills/subagent-driven-development/references/seat-rules.md` § Concerns; `crucible:subagent-driven-development § What a report voices`). A missing verdict goes back to its seat, never to the controller's ruling (`crucible:subagent-driven-development § Rules every route shares`). Its own `Questions` items, a premise doubt among them, become leads (`docs/decisions/evidence-and-findings.md`). It takes the reported test output as given and builds its own diff (`docs/decisions/branch-review.md`), and a literal-reading finding is the controller's to rule on, the adjudicator's only on a diff the controller wrote or where the controller concludes the binding text must change (`docs/decisions/adjudication.md`). The task reviewer runs on the default role, every task it reviews, and the re-reviewer on the bounded role or better (`docs/decisions/model-roles-and-effort.md`). An open premise finding holds no task's completion by itself.
 
-**Branch review only.** A dispatched task whose plan section carries `Review: branch only` (`docs/decisions/plans.md`) runs no task review and no fix loop where its report is DONE, raises no concern and passes the verification gates, which for it also check that the report shows RED output before GREEN or a logged exception. The controller checks that each is there; the branch reviewer, the task's first review, judges its substance (`docs/decisions/branch-review.md`). A report raising a concern or failing a gate sends the task to the task review after all, and a task worked inline keeps its task review whatever its mark (`skills/subagent-driven-development/references/task-loop.md` § 2. Handle the report; `crucible:subagent-driven-development § Inline mode`).
+**Branch review only.** A dispatched task whose plan section carries `Review: branch only` (`docs/decisions/plans.md`) runs no task review and no fix loop where its report is DONE or DONE_WITH_CONCERNS and passes the verification gates, its concerns reaching the branch reviewer as leads; for it the gates also check that the report shows RED output before GREEN or a logged exception. The controller checks that each is there; the branch reviewer, the task's first review, judges its substance (`docs/decisions/branch-review.md`). A report failing a gate, or a `plan changed` re-run, sends the task to the task review after all, and a task worked inline keeps its task review whatever its mark (`skills/subagent-driven-development/references/task-loop.md` § 2. Handle the report; `crucible:subagent-driven-development § Inline mode`).
 
 **Loop wiring.** A failed intent, scope or deviation-audit verdict enters the fix loop whatever the finding's severity label; quality findings enter by severity, BLOCKER and MAJOR in, MINOR to the ledger's deferred minors for the branch review (`skills/subagent-driven-development/references/task-loop.md` § 3. Review the task, § 5. The fix loop).
 
@@ -252,8 +252,7 @@ measured.)
 The mark is the plan's call, written with the plan, so it needs no
 confirmation of its own at brainstorming; a task review is dropped only
 where the plan says why the task meets the criterion. The controller's
-part is a presence check, not a ruling: it rules on no concern, and any
-concern sends the task to its own review. As first adopted, only a
+part is a presence check, not a ruling: it rules on no concern. As first adopted, only a
 concern touching what a later task builds on did, because the branch
 review runs too late for that, the rest becoming leads, and the branch
 reviewer made the task review's four judgments and owed a line per
@@ -278,8 +277,18 @@ carried the mark, and 3 completed branch review only, the branch review
 finding nothing on them. Of the other 14, 13 went to their task review
 because the implementer reported concerns, as 114 of 144 task implementers
 did, and one ran inline; 4 of the 14 drew fixes, all prose defects a branch
-review would plausibly have caught (`docs/backlog/review-mark-overridden.md`).
-(Basis: measured.)
+review would plausibly have caught, a reader's judgment. (Basis: measured.)
+
+So since 2026-11-24 a marked task reporting concerns completes branch
+review only as one reporting none does, its concerns reaching the branch
+reviewer as leads, as on the very-small lane. The reason a concern once
+sent such a task to its task review, that the branch review runs too late
+for what a later task builds on, the mark's criterion already covers: it
+excludes a task whose details something else builds on
+(`skills/subagent-driven-development/references/review-terms.md` § The
+mark's criterion). A failed gate or a `plan changed` re-run still sends
+it to its task review. (Basis: measured, for the counts; judgment,
+accepted by the maintainer.)
 
 ### Loop wiring
 
@@ -469,10 +478,8 @@ judgment, accepted by the maintainer, for the test.)
 - **Execution with no subagents**, upstream's executing-plans fallback:
   both supported hosts dispatch subagents, and the review gates need a
   fresh reviewer seat (§ Why).
-- **A marked task's concerns as leads alone, or ruled on by the
-  controller**: the branch review runs too late for what a later task
-  builds on, and the controller's part is a presence check, not a ruling
-  (§ Why).
+- **A marked task's concerns ruled on by the controller**: the
+  controller's part is a presence check, not a ruling (§ Why).
 - **Autonomous snapshot blessing** by the implementer or the controller:
   an implementer could bless its own result, where a blind agent judges
   the change without the author's rationale (§ Why).
@@ -482,6 +489,7 @@ judgment, accepted by the maintainer, for the test.)
 
 ## Changes
 
+- 2026-11-24: a task marked `Review: branch only` reporting concerns completes branch review only as one reporting none does, its concerns reaching the branch reviewer as leads; a failed gate or a `plan changed` re-run still sends it to its task review; because in the re-audit any concern sent a marked task to its task review and 114 of 144 implementers reported concerns, so 3 of 17 marked tasks completed branch review only, while the 4 of the 14 reviewed anyway that drew fixes drew prose defects a branch review would plausibly catch, and the mark's criterion already excludes tasks whose details something else builds on. The rejection of a marked task's concerns as leads alone is withdrawn.
 - 2026-11-23: a stuck trigger is closed as not needed, no longer waiting on the re-audit (`docs/decisions/model-roles-and-effort.md`); and the re-audit's outcomes for the retired fix ladder, drift's revert, snapshot blessing, the `Review: branch only` mark and the around-the-diff rule are recorded, the first three as untested, since no task reached a second wave, none was reverted and no blessing case arose.
 - 2026-11-19: a literal-reading finding from the task review is the controller's to rule on, no longer always the adjudicator's, which keeps one on a diff the controller wrote or where the controller concludes the binding text must change (`docs/decisions/adjudication.md`); because in a read of sixteen sessions of one code project, 11 of the 13 adjudicator seats that ruled on such a finding dismissed it.
 - 2026-11-06: improvements and bug fixes around a task's diff are part of it where safe, and larger ones stay proposals, on the maintainer's ruling that a proposal depends on someone able to weigh it and their expectation of a conservative reading, which the wording test bore out for bug fixes and partly for fold-ins; the maintainer also accepted, at the feature's close, what the controller had added to the boundary and the test's result on binding content.

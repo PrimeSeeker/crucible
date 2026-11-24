@@ -4,7 +4,7 @@
 
 - [WORKTREE_PATH]: the reviewed branch's worktree, absolute.
 - [PLUGIN_ROOT]: the plugin root you read this card from, absolute.
-- [MANDATE_REMINDER]: one line restating the review's binding output: the goal check; full-scope findings with staked severity, evidence and location; questions; the ledger triage with a ruling per lead; a merge verdict; all in the report file, then a reply of the verdict and the file's path; in standalone mode, the report as the final message.
+- [MANDATE_REMINDER]: one line restating the review's binding output: on the very-small lane, the goal check; full-scope findings with staked severity, evidence and location; questions; the ledger triage with a ruling per lead; a merge verdict; all in the report file, then a reply of the verdict and the file's path; in standalone mode, the report as the final message.
 - [SPEC_POINTER]: the spec path at its pinned revision, as the plan's header carries it, or "none" without a spec; on the very-small lane, the lane note at its pinned revision.
 - [UMBRELLAS]: per the dispatch composition's item 2; else "none".
 - [REQUEST_FILE]: the workspace's `request.md`, absolute; "none" if absent, standalone mode included.
@@ -21,7 +21,7 @@
 ## Selectors
 
 - lane: very-small | off
-  - very-small: the lane passage under Binding Content; on the very-small lane
+  - very-small: the lane passage under Binding Content, the goal check and its report section; on the very-small lane
   - off: none; any other branch, standalone mode included
 
 ## Dispatch

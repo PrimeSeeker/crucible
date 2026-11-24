@@ -66,7 +66,7 @@ An improvement you adopt, from a question or a RECOMMENDED lead, is a lightly he
 
 - under `## Progress`, per wave: `Branch wave <n>/3 (<X> fixed, <Z> disputed — <one-liners>; commits <a7>..<b7> or none)`; the cleanup wave's, `Branch wave <n>/3 (cleanup, <X> fixed, …)`, so a resumed controller sees it spent. On the lane, the lane ledger's `Wave <n>:` line or its cleanup form instead.
 - under `## Deferred minors`, a dispute-only wave's fix-report concerns: `Branch wave <n>: lead: <one-liner>`.
-- under `## Questions`, each Questions item with your disposition, which carries it to the operator or rules on it (the close readout lists them; no seat reads them): a pass's as `Branch review pass <k>: <item> — <your disposition>`, a fix report's as `Branch wave <n>: <item> — <your disposition>`; and each declined change, `Branch wave <n>: <the change> — declined: <its reason>`.
+- under `## Questions`, each Questions item with your disposition, which carries it to the operator or rules on it (the close readout lists them): a pass's as `Branch review pass <k>: <item> — <your disposition>`, a fix report's as `Branch wave <n>: <item> — <your disposition>`; and each declined change, `Branch wave <n>: <the change> — declined: <its reason>`.
 
 When the review ends, return to `crucible:subagent-driven-development § Finish`.
 

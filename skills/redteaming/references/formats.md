@@ -48,7 +48,7 @@ A round directory's contents and record: `skills/redteaming/references/round-rec
 
 **Later operator rulings enter the decision record (binding).** Every operator ruling on a decision ask after the brainstorm is also entered in `brainstorm-decisions.md`, in that record's entry form (`crucible:brainstorming` § Workspace provisioning) and with its status, besides wherever its own phase records it.
 
-**Later changes to the ask enter `request.md` (binding).** While the workspace lives, the controller appends to it, quoted verbatim, each operator message after brainstorm exit that changes what was asked.
+**Later changes to the ask enter `request.md` (binding).** While the workspace lives, the controller appends to it, quoted verbatim, each operator message after brainstorm exit that changes what was asked, an approval with the option it approved.
 
 **A report the controller saved carries a mark (binding):** it is the returned text unchanged, under a first line saying the controller saved it and why; saved to an appended report it is appended, the mark opening its section. The `sdd/` files the controller writes by rule (the very-small lane's `wave-<n>-fix.md`, inline mode's report) are its own and carry none.
 

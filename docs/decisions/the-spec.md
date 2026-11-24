@@ -4,7 +4,7 @@
 
 **The spec is a hypothesis.** A spec is read as probably subtly wrong and certainly locally imperfect. What binds in it, from its campaign's close, is its Constraints & invariants, the decisions it records as the operator's firm preference, the preamble conventions it declares binding and the umbrella content its umbrella line brings in; binding means never changed silently, and binding text is read for its intent. Everything else is lightly held, whoever proposed it, and downstream work may flip it with a logged rationale (`skills/subagent-driven-development/references/review-terms.md` § What binds in a spec; `crucible:brainstorming § Spec contract`).
 
-**The request.** No spec, folded document, lane note or umbrella quotes a message from the operator: the Intent states the goal in its own words, and the messages that asked, verbatim, go to the feature workspace's `request.md`, deleted with it (`crucible:brainstorming § Workspace provisioning`; `skills/redteaming/references/formats.md` § Feature workspace root and layout). It is evidence of what was asked, not the standard, and a seat may find the request itself wrong. An umbrella's request goes with its workspace at the landing, and a child's holds only the messages of its own brainstorm and after. Seats that run the goal check receive the file by path and check the Intent against it (`docs/decisions/evidence-and-findings.md`, the goal check).
+**The request.** No spec, folded document, lane note or umbrella quotes a message from the operator: the Intent states the goal in its own words, and the messages that asked, verbatim, go to the feature workspace's `request.md`, deleted with it; beside an approval it quotes the option approved, marked as the controller's text, and beside a message pointing to a document it names the document's path (`crucible:brainstorming § Workspace provisioning`; `skills/redteaming/references/formats.md` § Feature workspace root and layout). It is evidence of what was asked, not the standard, and a seat may find the request itself wrong. An umbrella's request goes with its workspace at the landing, and a child's holds only the messages of its own brainstorm and after. Seats that run the goal check receive the file by path and check the Intent against it (`docs/decisions/evidence-and-findings.md`, the goal check).
 
 **Decision weights.** Constraints & invariants binds by construction and holds invariants every task must keep, not a requirement one site meets (`crucible:brainstorming § Spec contract`). A decision binds only where it is the operator's firm preference; no mark makes a decision binding, and what builds on an item is judged where a change to it is weighed (§ Flip paths).
 
@@ -159,7 +159,7 @@ the feature workspace. Feature folders are committed and often pushed,
 so a quoted request published the operator's private messages in every
 project running crucible. The workspace is already uncommitted,
 reaches every seat by an absolute path, and lives past the branch
-review, the last seat that runs the goal check. Pointing seats at the
+review, the last seat that reads it. Pointing seats at the
 host's session transcripts instead was rejected: their formats are
 host-specific, a feature can span several sessions, they cost a seat
 time and noise to read, and they expose the seat to the controller's
@@ -173,6 +173,19 @@ umbrella Intent that misread the effort's request; that check is left
 to the umbrella's own review, its campaign or the operator's approval.
 (Basis: the maintainer's preference, for the rejected store; judgment,
 accepted by the maintainer, for the rest.)
+
+In the re-audit of 2026-11-23 several branch reviewers found a request
+holding only approvals and checked the scope against the controller's
+summaries instead. The maintainer's account: in many sessions the work is
+an existing backlog item they sanity-check, or the controller expands a
+brief idea and the operator approves it, so the quoted messages hold
+little of the goal. Since 2026-11-24 the request quotes, beside a message
+that approves a proposal, the option it approved, marked as the
+controller's text the operator approved, and beside an asking message
+that points to a document, such as a backlog item or an issue, that
+document's path. (Basis: measured, for the re-audit; the maintainer's
+preference, for the account; judgment, accepted by the maintainer, for
+the form.)
 
 ### The trace
 
@@ -237,7 +250,7 @@ issue", and by default the process could break the base without anyone
 saying so. (Basis: the maintainer's preference, 2026-11-04.)
 
 So the gap sits at every landing, a feature with no umbrella included. The
-Intent states a break because the reviewer's goal check reads the Intent
+Intent states a break because the branch reviewer reads the Intent
 and the design presentation shows it to the operator; the reviewer checks
 because an author omits the break they did not think of; the close readout
 repeats it because that is when a run or a release can still be timed around
@@ -310,6 +323,7 @@ design, 2026-11-19; measured, for the two features.)
 
 ## Changes
 
+- 2026-11-24: the request file quotes, beside an approval, the option it approved, marked as the controller's text, and beside a message pointing to a document, its path; because branch reviewers found requests holding only approvals, and in many sessions the work is a backlog item or a brief idea the controller expands, so the quoted messages hold little of the goal. The reason a landing's break is stated in the Intent names the branch reviewer's read of it, no longer its goal check, which off the very-small lane it no longer runs (`docs/decisions/evidence-and-findings.md`).
 - 2026-11-19: the premise line: the design presentation and the Intent, a lane note's included, state the observation a feature rests on and whether it was measured, a measurement a context-gathering probe can take running before the design is presented and a paid one put as a decision ask; because in at least two features of a sixteen-session read a measurement taking minutes redirected the work after it was built.
 - 2026-11-04: a landing that breaks the base, permanently or not, states it in its Intent, the operator sees it at the design presentation and before the landing, and the branch reviewer labels an unstated one that follows from what the branch sets out to do, for the operator to repair or accept by a ruling; because by default a landing could break the base with nobody saying so.
 - 2026-11-03: the citations of brainstorming's workspace provisioning use its shortened heading.
