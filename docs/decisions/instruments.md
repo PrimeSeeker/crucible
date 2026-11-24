@@ -20,7 +20,7 @@ reference
 are committed and never edited by hand, and the suite runs the
 generator's check mode; the splice's rules are in the generator's
 docstring. An agent's frontmatter carries a name, a description and a
-default model alias, and no tool restriction. On Claude Code a dispatch names `crucible:<name>` and its model and sends the card's filled `## Slots` and `## Selectors` as the whole prompt; on Codex, and on Claude Code where the agent is not offered, the controller sends those two sections under one opening line naming the template's absolute path under the plugin root, which the seat reads in full before anything else, and the runtime the template's runtime slot stands for; the controller neither reads nor fills the template. The card's title and `## Dispatch` stay with the controller
+default model alias, and a deny list of the host's artifact tools, with no allow-list. On Claude Code a dispatch names `crucible:<name>` and its model and sends the card's filled `## Slots` and `## Selectors` as the whole prompt; on Codex, and on Claude Code where the agent is not offered, the controller sends those two sections under one opening line naming the template's absolute path under the plugin root, which the seat reads in full before anything else, and the runtime the template's runtime slot stands for; the controller neither reads nor fills the template. The card's title and `## Dispatch` stay with the controller
 (`skills/subagent-driven-development/references/dispatch-composition.md` § Filling a card;
 `skills/using-crucible/references/claude-code-dispatch.md`,
 `skills/using-crucible/references/codex-dispatch.md`).
@@ -165,11 +165,13 @@ and correct, its own report file, so read-only stays a conduct rule in
 the template (2026-09-28). (Basis: judgment, accepted by the maintainer.)
 
 Their `disallowedTools` denies the host's four artifact tools
-(`DISALLOWED` in `tools/instrument_agents.py`). Twice a review seat called
-the artifact tool's publish call with edits to change its own report: on
-2026-10-18 the call published a branch reviewer's report, and on
-2026-11-23 the host's permission check refused it to a branch-reviewer
-agent. Asked, that seat said it wanted to batch several replacements, that
+(`DISALLOWED` in `tools/instrument_agents.py`). Between 2026-10-16 and
+2026-11-23, on crucible's own runs and one code project's, eight review
+agents (six branch reviewers, two re-reviewers) called the artifact tool's
+publish call with edits to change their own report file, by a search of
+the seats' transcripts: on 2026-10-18 the call published a branch
+reviewer's report, and the host's permission check refused the other
+seven. Asked, the 2026-11-23 seat said it wanted to batch several replacements, that
 the tool's description presents the call as file editing, and that an
 instruction in its context forbidding subagents to publish was not in mind
 when it chose. A prose ban had not stopped the call; a deny list removes
@@ -214,7 +216,7 @@ fresh agents, such as a skill evaluation, goes back to the controller
 (`docs/decisions/task-loop.md`). (Basis: judgment, accepted by the
 maintainer; external, for Codex's description of `ultra`.)
 
-Crucible's seat agents carry no tool limits, and Claude Code lets a
+Crucible's seat agents carry no limit on the dispatch tool, and Claude Code lets a
 subagent dispatch its own, up to three layers below the main conversation
 by default since v2.1.219 (its subagent docs, read 2026-10-27), so a seat
 can nest dispatches, which the templates ban in prose. The maintainer
@@ -431,8 +433,8 @@ judgment, accepted by the maintainer.)
   each template's fixed text through the controller's context (§ Why).
 - **Adapter text in seats**, and a digest to compare it: a seat's tools
   come from its host, and no seat could check the copy (§ Why).
-- **Tool restrictions on instrument agents**: a seat must write and
-  correct its own report file.
+- **A tool allow-list on instrument agents**: a seat must write and
+  correct its own report file; only the artifact tools are denied.
 - **Detecting skew between an agent and its card**: an agent loads at
   session start and its card at each dispatch, so a plugin change
   mid-session can skew them, as it can any session-start text; a new
@@ -483,7 +485,7 @@ judgment, accepted by the maintainer.)
 
 ## Changes
 
-- 2026-11-24: instrument agents deny the host's four artifact tools, no longer carrying no tool restriction; because two review seats used the artifact tool's publish call with edits on their own reports, and a prose ban had not stopped it.
+- 2026-11-24: instrument agents deny the host's four artifact tools, no longer carrying no tool restriction; because eight review agents used the artifact tool's publish call with edits on their own reports, one publishing, and a prose ban had not stopped it.
 - 2026-11-23: a seat the controller composes itself is given the reason the report file is the deliverable, copied into its dispatch beside the sentence on what was off; because it gets the host's opposite note as a template seat does, and is now asked what was off in its instructions.
 - 2026-11-22: § Report file, which all seven templates take, says why the file is the deliverable (the controller reads the report from the file, not from the reply, and the file outlasts the controller's context); because the host's note to subagents gives the opposite reason and the maintainer holds that the rule should state its own. No effect was measured: nine probe seats wrote the file and reported no clash under any of three wordings.
 - 2026-11-06: a re-reviewer on the very-small lane missed its report file and wrote it on one resume, so the 23 straight writes no longer show the misses stopped there; no rule changes.

@@ -3,8 +3,8 @@
 ## Observation
 
 - Since 2026-11-24 the generated instrument agents deny the host's four
-  artifact tools on Claude Code, after two review seats used the artifact
-  tool's publish call with edits on their own reports
+  artifact tools on Claude Code, after eight review agents used the
+  artifact tool's publish call with edits on their own reports
   (`docs/decisions/instruments.md`).
 - Whether the host honours the list for a plugin's agents is unverified:
   the deny list reaches no session until an install update, and the one

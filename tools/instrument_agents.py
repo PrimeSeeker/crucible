@@ -125,8 +125,8 @@ DESCRIPTION = (
 )
 
 #: The host tools every agent is denied: the artifact tools, whose
-#: publish call with edits review seats twice used on their own report
-#: files (docs/decisions/instruments.md). A deny list, so every other tool
+#: publish call with edits review seats used on their own report files
+#: (docs/decisions/instruments.md). A deny list, so every other tool
 #: stays, the seat's report-writing tools included.
 DISALLOWED: tuple[str, ...] = (
     "Artifact",
