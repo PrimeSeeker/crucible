@@ -127,7 +127,8 @@ print why. A skip is not a pass. The suite launches no model.
 - One commit per logical change: a short subject, and a body saying what
   changed and why.
 - Land on `master` by merging the branch, and only on the operator's
-  go-ahead for that landing.
+  go-ahead for that landing. Where `master` has moved, bring it into the
+  branch by rebasing onto it, not merging.
 - A feature's landing changes no version and updates no install.
 - A trial puts landed work on the maintainer's installs, which follow
   `testing`: set the version in the three manifests to the next

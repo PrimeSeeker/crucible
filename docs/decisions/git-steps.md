@@ -37,8 +37,9 @@ Execute Choice`, Option 2).
 
 **Crucible's own repository.** Contributors work on a feature branch in
 a worktree under `.worktrees/`, never commit on `master` directly, and
-land on `master` by merging, each landing on the maintainer's go-ahead
-(the Git section of `AGENTS.md`). Line endings are LF
+land on `master` by merging, each landing on the maintainer's go-ahead,
+and bring a moved `master` into the branch by rebasing onto it (the Git
+section of `AGENTS.md`). Line endings are LF
 (`docs/decisions/authoring-crucible.md`).
 
 ## Why
@@ -94,6 +95,15 @@ is the maintainer's own rule. `master` is where everything lands first:
 a trial moves `testing` to a commit on it, and a release is cut from what
 `testing` has run and merged back (`docs/decisions/releases.md`). (Basis: the maintainer's preference.)
 
+A moved `master` comes into a feature branch by a rebase, the maintainer's
+own practice, which finishing's local merge, a fast-forward since
+2026-11-24, asks of a project that prefers one. Until then `master` had
+not moved under a running feature, so every landing could fast-forward.
+The cost: a rebase rewrites the commits a plan's spec pin and a feature's
+records name, so those pins name commits that never reach `master` and
+stop resolving once git collects them (`docs/decisions/records-and-workspace.md`
+§ Finish). (Basis: the maintainer's preference.)
+
 ## Rejected
 
 - **Shell one-liners or POSIX scripts for the Git flow**: the flow has to
@@ -105,6 +115,7 @@ a trial moves `testing` to a commit on it, and a release is cut from what
 
 ## Changes
 
+- 2026-11-24: crucible's own repository brings a moved `master` into a feature branch by rebasing onto it, on the maintainer's word, accepting that a rebase leaves spec pins naming commits that never reach `master`.
 - 2026-11-24: finishing's local merge is a fast-forward, a refusal sending a moved base into the branch (merged, or rebased where the project prefers) before the result is tested; `git merge --abort` and the investigated red merge on the base went with it; because a conflict or a red merged result on the base surfaced where no review reads, and a red merge committed there had to be undone on the shared base (`docs/decisions/records-and-workspace.md`).
 - 2026-11-03: the worktree skill's single-invocation rule covers Steps 0–1 and its git fallback, no longer its setup and baseline steps, which run the project's own commands: a minor loss under the maintainer's compaction mandate.
 - 2026-11-02: finishing's Step 6 is named Remove the Worktree, so it is
