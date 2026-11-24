@@ -290,10 +290,13 @@ had merged by hand, which no reviewer read. Since 2026-11-24 a conflict
 the controller resolves by hand, in a rebase or at the merge, is a change
 no pass has read and takes a full-scope pass on the result before landing.
 (Basis: measured, for the landings; judgment, accepted by the maintainer.)
-The rule is stated once, in finishing's merge step, which every landing
-runs, and not again in the branch-review loop, where a rebase has no step:
-an agent's call the maintainer has not ruled on, the implementer's in that
-feature, made to keep the skills under their word cap. (Basis: judgment,
+The rule is stated once, in SDD's Finish, before its suite, where the
+operator's answer to the close readout leads to any rebase or merge of the
+base, and where the workspace and the branch-review loop still run: an
+agent's call the maintainer has not ruled on, made after a branch review
+found the rule's first site, finishing's merge step, running after the
+workspace is gone, with no path for the pass. A conflict met at that merge,
+the base having moved after Finish, has no stated pass. (Basis: judgment,
 an agent's call the maintainer has not ruled on.)
 
 ### The first review of a task with none

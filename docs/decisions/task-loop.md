@@ -253,7 +253,7 @@ The mark is the plan's call, written with the plan, so it needs no
 confirmation of its own at brainstorming; a task review is dropped only
 where the plan says why the task meets the criterion. The controller's
 part is a presence check, not a ruling: it rules on no concern. As first adopted, only a
-concern touching what a later task builds on did, because the branch
+concern touching what a later task builds on sent the task to its task review, because the branch
 review runs too late for that, the rest becoming leads, and the branch
 reviewer made the task review's four judgments and owed a line per
 task; the alternatives offered then were leads alone, with no escape to
@@ -449,6 +449,13 @@ inline by the lane's own design. An agent's proposal, which the
 maintainer accepted. (Basis: measured, for the audit's finding;
 judgment, accepted by the maintainer, for the test.)
 
+In the re-audit of 2026-11-23 one plan task, by its own Contract, ran
+inline as seats the controller composed in place of an implementer, and
+kept its task review. On 2026-11-24 the maintainer ruled that nothing
+changes: the plan asked for that shape, and the review the task loop owes
+it ran. The controller's proposal. (Basis: judgment, accepted by the
+maintainer.)
+
 ## Rejected
 
 - **A per-feature cleanup allowance:** a field each design would have to fill for
@@ -490,6 +497,7 @@ judgment, accepted by the maintainer, for the test.)
 ## Changes
 
 - 2026-11-24: a task marked `Review: branch only` reporting concerns completes branch review only as one reporting none does, its concerns reaching the branch reviewer as leads; a failed gate or a `plan changed` re-run still sends it to its task review; because in the re-audit any concern sent a marked task to its task review and 114 of 144 implementers reported concerns, so 3 of 17 marked tasks completed branch review only, while the 4 of the 14 reviewed anyway that drew fixes drew prose defects a branch review would plausibly catch, and the mark's criterion already excludes tasks whose details something else builds on. The rejection of a marked task's concerns as leads alone is withdrawn.
+- 2026-11-24: a plan task run inline as controller-composed seats by its own Contract, keeping its task review, takes no new rule, on the maintainer's ruling. No position changes.
 - 2026-11-23: a stuck trigger is closed as not needed, no longer waiting on the re-audit (`docs/decisions/model-roles-and-effort.md`); and the re-audit's outcomes for the retired fix ladder, drift's revert, snapshot blessing, the `Review: branch only` mark and the around-the-diff rule are recorded, the first three as untested, since no task reached a second wave, none was reverted and no blessing case arose.
 - 2026-11-19: a literal-reading finding from the task review is the controller's to rule on, no longer always the adjudicator's, which keeps one on a diff the controller wrote or where the controller concludes the binding text must change (`docs/decisions/adjudication.md`); because in a read of sixteen sessions of one code project, 11 of the 13 adjudicator seats that ruled on such a finding dismissed it.
 - 2026-11-06: improvements and bug fixes around a task's diff are part of it where safe, and larger ones stay proposals, on the maintainer's ruling that a proposal depends on someone able to weigh it and their expectation of a conservative reading, which the wording test bore out for bug fixes and partly for fold-ins; the maintainer also accepted, at the feature's close, what the controller had added to the boundary and the test's result on binding content.
