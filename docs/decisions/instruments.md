@@ -44,8 +44,9 @@ part of the assignment: the composition's seventh item, and a line in
 every template.
 
 **Report files.** Every instrument writes its own report file, a write
-its template names, saying why the file and not the reply holds the
-report, but for the branch reviewer in standalone mode,
+its template names as the exception to a host rule against report files,
+saying why the controller requires the file, but for the branch reviewer
+in standalone mode,
 which returns its report as its final message; and if the host refuses the write it returns the
 report as text and says so. A seat the controller composes itself is
 given the same reason, copied into its dispatch
@@ -87,7 +88,7 @@ and the branch reviewer only where its card's `lane` selector is
 The branch reviewer reads § The arrangement questions only where that selector is `very-small`, and not by splice: the passage under Binding Content that selector keys is a one-line pointer to the lane text, `skills/requesting-code-review/very-small-lane-review.md`, which says what binds on the lane and what the section serves there, the lane's upgrade hatch, keyed on a reviewer's finding or question, and to the section in the review terms, both read through the plugin root. An umbrella's closing-review seats, composed by the controller, take
 § Premise findings, § Binding items and unrecorded choices, § Questions
 and § Location (`skills/brainstorming/references/umbrellas.md`).
-The arrangement questions are three sections: § The arrangement questions, the overturn question and "overdetermined", which the redteam seat and the terminal pass take and the branch reviewer reads on the very-small lane; § An umbrella's overturn question, which the redteam seat and the terminal pass take; and § The mark's criterion, which no seat takes: plan authors read it (`crucible:writing-plans` § Per-task structure). § What binds defines what binds for every seat that reads binding content, and § Binding changes, the grading of an artifact or a range against it, goes to the task reviewer, the re-reviewer, the branch reviewer, the redteam seat and the terminal pass, and by copy the adjudicator, not the implementer; the controllers' own statement of what binds is `skills/subagent-driven-development/references/review-terms.md` § What binds in a spec, which no template takes. The task reviewer, which raises no premise finding, takes no § Premise findings: its template says in one line that a premise doubt is a question. Four sections hold what several templates once copied: § Selected passages, taken by every template whose card has selectors; § Runtime, by all seven, each keeping its runtime slot and plugin-file list beside the include; § Campaign exhaust, by the implementer and the three reviewers; and § Report file required, by the verifier and the re-reviewer. A read-only seat's scratch directory reaches it through its card's scratch slot, which the controller fills as `skills/subagent-driven-development/references/dispatch-composition.md` § Filling a card states.
+The arrangement questions are three sections: § The arrangement questions, the overturn question and "overdetermined", which the redteam seat and the terminal pass take and the branch reviewer reads on the very-small lane; § An umbrella's overturn question, which the redteam seat and the terminal pass take; and § The mark's criterion, which no seat takes: plan authors read it (`crucible:writing-plans` § Per-task structure). § What binds defines what binds for every seat that reads binding content, and § Binding changes, the grading of an artifact or a range against it, goes to the task reviewer, the re-reviewer, the branch reviewer, the redteam seat and the terminal pass, and by copy the adjudicator, not the implementer; the controllers' own statement of what binds is `skills/subagent-driven-development/references/review-terms.md` § What binds in a spec, which no template takes. The task reviewer, which raises no premise finding, takes no § Premise findings: its template says in one line that a premise doubt is a question. Three sections hold what several templates once copied: § Selected passages, taken by every template whose card has selectors; § Runtime, by all seven, each keeping its runtime slot and plugin-file list beside the include; and § Campaign exhaust, by the implementer and the three reviewers. A read-only seat's scratch directory reaches it through its card's scratch slot, which the controller fills as `skills/subagent-driven-development/references/dispatch-composition.md` § Filling a card states.
 
 **The terminal pass's card** also carries `{decision-record-path}`: in
 the spec phase the brainstorm decision record, which its decision-record
@@ -352,6 +353,31 @@ question under which the two seats reported the clash. No composed seat
 is on record missing its file or reporting one. (Basis: judgment, the
 controller's proposal, accepted by the maintainer.)
 
+On 2026-11-26 § Report file came to frame the file as the exception to
+the host's rule. In one feature's run on a code project, on
+0.38.0-rc.2, the clash reports did not stop under the reason: a redteam
+seat ("my environment notes forbid writing report `.md` files, while the
+dispatch requires one at the report path; I followed the dispatch"), the
+round verifiers and the branch reviewer reported it, and one blind
+verifier wrote no file. Asked why, it said it never attempted the write,
+having taken its system context's "Do NOT Write
+report/summary/findings/analysis .md files" to override the dispatch,
+though § Report file required told it to write "even where the host
+advises text". A subagent asked to quote its host's notes word for word
+returned that line with no exception for report files, the reason given
+being that "the parent agent reads your text output, not files you
+create". crucible had called a prohibition advice, and stated a reason
+that contradicted the host's without saying which governs; the old
+reason was also too broad, since the controller does read the reply. The
+rule now names the host's rule and its premise, conditionally, since a
+Codex seat may get no such note (unverified), and says this dispatch is
+the exception: the controller requires the file, as it outlives the
+controller's context. § Report file required went, covered by it; the
+host map states the host's rule as a bar. Whether this reduces clash
+reports or misses is untested. (Basis: observed, the run's notes and the
+quoted host text; the maintainer's wording of the reason, the verb left
+to the controller.)
+
 ### The plugin root
 
 On 2026-10-08 the implementer's template named systematic-debugging and
@@ -447,16 +473,15 @@ judgment, accepted by the maintainer.)
   or loops, or card filling moves into a script (§ The splice).
 - **A fixed header for a controller-saved report**: its one reader is
   gone; a first-line mark does the remaining job (§ Why).
-- **Seat-facing wording against skipped report writes**: a control
-  without the host's advice did not reproduce the skip; the controller's
-  check and one resume cover it. The exception: the verifier's and the
-  re-reviewer's templates say the report file is required even where the
-  host advises returning findings as text, a targeted fix for the two
-  seats whose misses persisted
-  (`docs/backlog/review-seat-report-write.md`), taken from the shared
-  seat reference's § Report file required, which no other template
-  takes; its § Report file does not carry it, and the reason that
-  section gives for the file is no wording against skipped writes
+- **Seat-facing wording against skipped report writes**, beyond § Report
+  file's framing of the file as the host rule's exception: a control
+  without the host's note did not reproduce the skip; the controller's
+  check and one resume cover it. From 2026-11-04 to 2026-11-26 the
+  verifier's and the re-reviewer's templates also said the report file is
+  required even where the host advises returning findings as text, a
+  targeted fix for the two seats whose misses persisted
+  (`docs/backlog/review-seat-report-write.md`); a verifier skipped its
+  file under it, and § Report file's framing replaced it
   (§ Why › Report files). Since 2026-11-04 those two
   seats' cards also have the controller name the host's file-writing
   tool, unhedged. One verifier wrote on its first return under such
@@ -489,6 +514,7 @@ judgment, accepted by the maintainer.)
 
 ## Changes
 
+- 2026-11-26: § Report file frames the file as the exception to a host rule against report files, the controller requiring it as it outlives the controller's context, in place of the reason that the controller reads the file and not the reply; § Report file required retired; the host map calls the host's note a bar, not advice. Because the clash reports went on under the reason, a verifier skipped its file under § Report file required citing the host's "Do NOT", and the host's note, quoted word for word, is a prohibition.
 - 2026-11-24: the branch reviewer takes § The goal check, and its report's `### Goal Check` section, only where its card's `lane` selector is `very-small`, since off that lane it no longer runs the goal check (`docs/decisions/evidence-and-findings.md`).
 - 2026-11-24: instrument agents deny the host's four artifact tools, no longer carrying no tool restriction; because eight review agents used the artifact tool's publish call with edits on their own reports, one publishing, and a prose ban had not stopped it.
 - 2026-11-23: a seat the controller composes itself is given the reason the report file is the deliverable, copied into its dispatch beside the sentence on what was off; because it gets the host's opposite note as a template seat does, and is now asked what was off in its instructions.

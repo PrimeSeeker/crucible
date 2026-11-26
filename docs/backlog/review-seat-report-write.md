@@ -4,8 +4,8 @@
 
 - On four runs of Claude Code before 2026-11-04, blind verifiers returned
   without writing their report file, two saying no write tool was
-  available. The pattern matches the host's prose advice that subagents
-  return findings as text, which
+  available. The pattern matches the host's note barring subagents from
+  writing report files, which
   `skills/using-crucible/references/claude-code-dispatch.md` records.
 - Since 2026-11-04 the verifier's and the re-reviewer's cards have the
   controller name the host's file-writing tool in the report slot
@@ -34,12 +34,18 @@
   section. No run on record has hit it.
 - Since 2026-11-22 every template's § Report file gives the reason the
   file is the deliverable (`docs/decisions/instruments.md` § Why › Report
-  files). No run counted above had it. Whether a reason reduces seats
-  ending without the write is untested: nine probe seats on small tasks all
-  wrote, with or without it.
+  files). No run counted above had it. Nine probe seats on small tasks all
+  wrote, with or without it. In one feature's run under it, on
+  0.38.0-rc.2, one blind verifier (a spec terminal pass's follow-up wave)
+  never attempted the write, saying it took the host's "Do NOT Write
+  report/summary/findings/analysis .md files" to override its dispatch;
+  its controller saved the reply with the mark.
+- Since 2026-11-26 § Report file frames the file as the exception to that
+  host rule, and § Report file required is gone
+  (`docs/decisions/instruments.md` § Why › Report files).
 
 ## Follow-up
 
-- Count report-file misses on runs after 2026-11-22, by role. If they
+- Count report-file misses on runs after 2026-11-26, by role. If they
   persist, carry the report path too as an absolute path in the slot card,
   as the scratch directory now is.

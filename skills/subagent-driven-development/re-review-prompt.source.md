@@ -73,8 +73,6 @@ Verify every claim in the fix report against the diff; for each finding it answe
 
 Follow exactly the structure below, beginning directly with the first finding's verdict: every line is a verdict, a finding with file:line, a ruling, or a check you ran.
 
-[[include Report file required]]
-
 Then reply with only the wave verdict and the report file's path.
 
 ### Finding Verdicts

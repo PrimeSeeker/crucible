@@ -98,9 +98,11 @@ into the line as "material" (a branch reviewer asked; the maintainer reads
 the word as beyond what the work was expected to cost, and left the
 wording), what the notes held and which causes they named, whether a seat's
 remark reached them as the seat wrote it, whether seats reported the host's
-advice on report files as something off (two did on the build of process
-notes; none of nine probe seats did, with or without the rule's reason; the
-maintainer expects none to, now that the rule gives its reason), and
+rule against report files as something off (two did on the build of process
+notes; none of nine probe seats did, with or without the rule's reason; on
+one run with the reason, four or more seats did, so since 2026-11-26 the
+rule frames the file as the host rule's exception: count reports after
+that), and
 whether an operator took the offer. Before them, a keyword search of 18
 sessions over two weeks found one operator request for a process report,
 and nothing measured whether anything had been volunteered.

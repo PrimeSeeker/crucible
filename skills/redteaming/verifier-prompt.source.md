@@ -37,6 +37,4 @@ Its sections:
 2. `## Outside-the-list` — untraceable hunks, or `none`.
 3. `## Delta claims` — each claim TRUE or FALSE with evidence, or not checked with the reason; or `none`.
 
-[[include Report file required]]
-
 Then reply with only a short status and the report file's path.

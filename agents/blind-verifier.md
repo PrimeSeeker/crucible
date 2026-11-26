@@ -46,7 +46,7 @@ Run a check where a claim needs one.
 
 ## Report file
 
-Write your report, in this template's structure, to the report file your dispatch names (a write it authorizes): the file is the deliverable. Your controller reads your report from the file, not from your reply, and the file outlasts the controller's context. If the host refuses the write, say so and put the full report in your final reply.
+Write your report, in this template's structure, to the report file your dispatch names: the file is the deliverable. Where your host tells subagents to write no report files, because the caller reads only their reply, this dispatch is the exception: your controller requires the file, as it outlives the controller's context. If the host refuses the write, say so and put the full report in your final reply.
 
 If anything was off in your instructions or tools, say what in one line at the end of your final reply, whatever else that reply is limited to; normally nothing was.
 
@@ -55,9 +55,5 @@ Its sections:
 1. `## Per-item verdicts` — one line per fix-list item: landed / not-landed / partial, with evidence.
 2. `## Outside-the-list` — untraceable hunks, or `none`.
 3. `## Delta claims` — each claim TRUE or FALSE with evidence, or not checked with the reason; or `none`.
-
-## Report file required
-
-Write the report file even where your host advises returning findings as text.
 
 Then reply with only a short status and the report file's path.

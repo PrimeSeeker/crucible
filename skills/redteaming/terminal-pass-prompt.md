@@ -132,7 +132,7 @@ Expect the asks and records to lean toward the controller's own recommendation; 
 
 ## Report file
 
-Write your report, in this template's structure, to the report file your dispatch names (a write it authorizes): the file is the deliverable. Your controller reads your report from the file, not from your reply, and the file outlasts the controller's context. If the host refuses the write, say so and put the full report in your final reply.
+Write your report, in this template's structure, to the report file your dispatch names: the file is the deliverable. Where your host tells subagents to write no report files, because the caller reads only their reply, this dispatch is the exception: your controller requires the file, as it outlives the controller's context. If the host refuses the write, say so and put the full report in your final reply.
 
 If anything was off in your instructions or tools, say what in one line at the end of your final reply, whatever else that reply is limited to; normally nothing was.
 
