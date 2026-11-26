@@ -18,7 +18,7 @@ a prohibition.
 
 The change frames the report file, in the one rule all seven templates take
 and composed seats copy, as the exception to such a host rule, with a reason
-that is true: the controller strongly prefers the file because it outlives the
+that is true: the controller requires the file because it outlives the
 controller's context (the controller does read the reply). The rule stays
 runtime-neutral and conditional, since a Codex seat may get no such note
 (unverified); the host's own wording is stated where host mechanics live, the
@@ -39,7 +39,7 @@ not rise (the prose budget sits at its cap).
   template's structure, to the report file your dispatch names: the file is
   the deliverable. Where your host tells subagents to write no report files,
   because the caller reads only their reply, this dispatch is the exception:
-  your controller strongly prefers the file, as it outlives the controller's
+  your controller requires the file, as it outlives the controller's
   context. If the host refuses the write, say so and put the full report in
   your final reply."
 - Same file: delete § Report file required; drop its include from
