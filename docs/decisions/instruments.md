@@ -49,7 +49,7 @@ saying why the controller requires the file, but for the branch reviewer
 in standalone mode,
 which returns its report as its final message; and if the host refuses the write it returns the
 report as text and says so. A seat the controller composes itself is
-given the same reason, copied into its dispatch
+given the same exception and reason, copied into its dispatch
 (`skills/subagent-driven-development/references/dispatch-composition.md`,
 item 5). Review seats and the adjudicator write under
 the feature workspace's `sdd/reports/` and `sdd/branch-review/`
@@ -312,9 +312,10 @@ authorized (read in the 2.1.289 binary). Every recorded subagent
 transcript agreed: 83 refusals, all on matching basenames, 78 of them
 `report.md`, and no matching name ever accepted. The spec terminal pass's
 `report.md` was refused on every dispatch; it became `pass.md`, and the
-test keeps every name clear. The host also advises subagents in prose to
-return findings as text, which sometimes leads a seat to return without
-writing; a control without that advice (10 of 10 verifier seats wrote)
+test keeps every name clear. The host's notes also bar subagents from
+writing report files and tell them to return findings as text, which
+sometimes leads a seat to return without writing; a control without that
+note (10 of 10 verifier seats wrote)
 did not reproduce it, so no seat-facing wording was added, and the
 controller confirms the file and resumes the seat once instead. It then
 persists the text without asking: the maintainer saw no point in asking
@@ -514,7 +515,7 @@ judgment, accepted by the maintainer.)
 
 ## Changes
 
-- 2026-11-26: § Report file frames the file as the exception to a host rule against report files, the controller requiring it as it outlives the controller's context, in place of the reason that the controller reads the file and not the reply; § Report file required retired; the host map calls the host's note a bar, not advice. Because the clash reports went on under the reason, a verifier skipped its file under § Report file required citing the host's "Do NOT", and the host's note, quoted word for word, is a prohibition.
+- 2026-11-26: § Report file frames the file as the exception to a host rule against report files, the controller requiring it as it outlives the controller's context, in place of the reason that the controller reads the file and not the reply; § Report file required retired; a composed seat is given the exception with the reason; the host map calls the host's note a bar, not advice. Because the clash reports went on under the reason, a verifier skipped its file under § Report file required citing the host's "Do NOT", and the host's note, quoted word for word, is a prohibition.
 - 2026-11-24: the branch reviewer takes § The goal check, and its report's `### Goal Check` section, only where its card's `lane` selector is `very-small`, since off that lane it no longer runs the goal check (`docs/decisions/evidence-and-findings.md`).
 - 2026-11-24: instrument agents deny the host's four artifact tools, no longer carrying no tool restriction; because eight review agents used the artifact tool's publish call with edits on their own reports, one publishing, and a prose ban had not stopped it.
 - 2026-11-23: a seat the controller composes itself is given the reason the report file is the deliverable, copied into its dispatch beside the sentence on what was off; because it gets the host's opposite note as a template seat does, and is now asked what was off in its instructions.
