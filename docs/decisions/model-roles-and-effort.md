@@ -19,7 +19,10 @@ Each host map's Model roles entry names that host's model for each role
 and the floor (`skills/using-crucible/references/claude-code.md`,
 `skills/using-crucible/references/codex.md`): never a weak, fast or mini
 tier, nor an earlier generation by the host's own labels, and every
-model the entry names qualifies. The one other site naming models is the
+model the entry names qualifies. One exception: Codex's entry stays as
+read on codex-cli 0.164.0, though that host has since labelled its
+default and alternate roles' models previous generation (§ Why). The one
+other site naming models is the
 agent generator's alias map, `MODELS` in `tools/instrument_agents.py`;
 the claude-ism scanner flags model names anywhere else in shipped text.
 Every dispatch names its model.
@@ -109,6 +112,23 @@ judged by the host's own generation labels rather than by a list written
 in crucible. (Basis: the maintainer's preference, for the requirement and
 the exclusion; judgment, accepted by the maintainer, for the structure
 and the move to the middle tier.)
+
+On 2026-11-27 Codex's model list (codex-cli 0.172.0) put a 6.2 line
+first and described `gpt-6.1-sol` and `gpt-6-astra`, the default and
+alternate roles' models, as previous generation. By the floor's own test
+both roles would move to the new line, a model release being an edit to
+the host's entry (`docs/dual-runtime.md` § Model floor and effort
+policy). They stay. On `gpt-6.2-sol` the design gate failed in five fresh
+sessions of six, and on `gpt-6.1-sol` it held in three of three
+(`docs/decisions/runtime-adapters.md` § Codex as a host); a seat started
+from Claude Code takes the default role's model
+(`skills/using-crucible/references/claude-code-dispatch.md`), so the move
+would put that seat on the new line too. The alternate stays with the
+default: the new line's other model was not run. The host map's own text
+is unchanged, its floor sentence dated to 0.164.0. What crucible does
+when Codex retires the two models is open. (Basis: measured; judgment, an
+agent's call the maintainer has not ruled on: holding the roles against
+the floor.)
 
 ### The seats
 
@@ -428,6 +448,7 @@ operator's config key.
 
 ## Changes
 
+- 2026-11-27: Codex's roles stay on the models read on codex-cli 0.164.0, an exception to the floor now that Codex labels two of them previous generation; because on the line that replaced them the design gate failed in five sessions of six, and a seat started from Claude Code takes the default role's model.
 - 2026-11-24: fresh looks firing at a passage's third patch, a round after the router's sign of a second, stay a matter of the router's signs, not a trigger, its reason recorded; no position changes.
 - 2026-11-23: the stuck trigger is closed as not needed, no longer waiting on the re-audit, on an agent's recommendation the maintainer accepted; because in 146 tasks and 58 branch waves of one code project no finding failed its re-review twice, and what recurred was a class of finding across passes, which a fresh look addresses. What those runs' six fresh looks did, and the alternate-role seat's unique merged MAJORs in round 1, are recorded.
 - 2026-11-07: a fresh look joins the alternate role's triggers as a fourth, on the maintainer's proposal, scoped to the work's design or code or what it builds on, with signs beside the judgment and a second look going to the operator; because rethinks done ad hoc helped and came mostly from the operator asking. The automatic stuck trigger stays declined, since this replaces no seat.

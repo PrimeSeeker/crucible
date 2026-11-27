@@ -53,7 +53,7 @@ files can override them (§ Configuration).
 ## Platforms and prerequisites
 
 - **Hosts:** Claude Code, tested on 2.1.318; Codex, experimentally,
-  tested on codex-cli 0.162.1 (§ Codex).
+  last measured on codex-cli 0.172.0 (§ Codex).
 - **Operating systems:** the startup hook is measured on Windows (Git
   Bash) and Linux, not yet on macOS.
 - **git:** crucible works on branches and worktrees.
@@ -306,7 +306,17 @@ is yours to manage.
 
 ## Codex
 
-Experimental. On the Codex CLI crucible failed two checks: one fresh
+Experimental, and on the model Codex now lists first the workflow's first
+gate mostly did not hold. On codex-cli 0.172.0, fresh sessions on that
+model, each given a small feature request, read crucible's router and
+then, in five of six, edited the code without the design approval the
+workflow requires. On the default model of crucible's Codex host map,
+which Codex now describes as previous generation, three of three stopped
+for the approval. Run crucible on the host map's models while Codex offers
+them (`docs/codex.md` § Status). No further measurement is planned for
+now.
+
+Earlier, on codex-cli 0.162.1, crucible failed two checks: one fresh
 session in three acted before reading the router, and the checklist tool
 crucible uses is off by default and, turned on, has only been seen to
 accept a call. The desktop app and the IDE extension are untested.

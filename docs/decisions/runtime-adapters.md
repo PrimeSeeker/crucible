@@ -47,7 +47,10 @@ one sanctioned exception is in `docs/decisions/worktrees.md`).
 plugin reading the same tree. It is labelled experimental on the CLI,
 the one surface tested; the desktop app and the IDE extension are neither
 tested nor maintained, and are assumed similar enough for the skills
-(`docs/codex.md` § Status). On Codex:
+(`docs/codex.md` § Status). On the model Codex lists first since its
+6.2 line, the design gate failed in five sessions of six; crucible is to
+be run on the host map's models, and no further measurement is planned
+for now (`docs/codex.md` § Status). On Codex:
 
 - crucible registers no hook: `.codex-plugin/plugin.json` declares
   `"hooks": {}`, exactly, and a session reaches crucible through skill
@@ -128,6 +131,35 @@ written and labelled Codex experimental, from options an agent put, so a
 later run that passes can lift the label. (Basis: measured; judgment,
 accepted by the maintainer.)
 
+On 2026-11-27, after Codex released its 6.2 model line, the check ran
+again on codex-cli 0.172.0 with crucible 0.38.0-rc.3: fresh `codex exec`
+sessions at medium reasoning effort, each given one small feature request
+in a scratch repository whose instruction file did not mention crucible,
+their tool calls read from the event stream. On `gpt-6.2-sol`, which
+Codex lists first, all six sessions read the router and brainstorming,
+four of them after one earlier command (three listed or checked the
+repository, one searched Codex's memory file); five then edited the code
+without the design approval brainstorming's gate requires, and one
+stopped to ask for it. Three of the five ran each in a clone of its own;
+the other two shared a repository with the session that stopped. On
+`gpt-6.1-sol`, the host map's default role, three sessions, each in its
+own clone, read the router first and stopped to ask. It was one request,
+small enough to invite a direct edit; `gpt-6.2-astra`, an interactive
+session and everything past the design gate were not measured. What
+prompted the run was a public roundup of the line's early user reports
+(Zvi Mowshowitz, "Astra 6.2's Brain Gets Smart But Its Head Gets Dumb",
+2026-11-27): instructions read literally against their intent, scope
+creep, early stops and output shaped for model graders. Those are
+anecdotes, none about a workflow like crucible's. The maintainer proposed
+downgrading the statement of Codex support and plans no further
+measurement for now; an agent proposed its wording, that the gate mostly
+failed on the model Codex lists first, held on the host map's default
+role, and that crucible be run on the host map's models
+(`docs/decisions/model-roles-and-effort.md`). (Basis: measured; external,
+for the reports; the maintainer's preference, for the downgrade;
+judgment, an agent's call the maintainer has not ruled on: the wording
+after the measurement.)
+
 The surfaces are the maintainer's call: crucible is maintained on the
 Codex CLI only, and the desktop app and the IDE extension are assumed to
 be similar enough for skill purposes. That is an assumption, not
@@ -206,6 +238,7 @@ preference.)
 
 ## Changes
 
+- 2026-11-27: on the model Codex lists first since its 6.2 line the design gate failed in five sessions of six and held on the host map's default role in three of three; the Codex status says so, tells users to run crucible on the host map's models, and says no further measurement is planned, because the earlier status described a model line Codex has since replaced.
 - 2026-11-04: the dispatch reference gains a seat on another host (`docs/decisions/spec-campaign.md`): the command on Claude Code, and on Codex that none is on record, since host mechanics live in the adapter pair.
 - 2026-11-04: on Claude Code a session the host marks unattended gets the host map's path in a note instead of the host map inlined, since it gets no router either (`docs/decisions/session-start-hook.md`).
 - 2026-11-03: the escalation rule's one owner is the dispatch composition's § Models and effort, SDD's Models section having dropped the rows that restated it (`docs/decisions/model-roles-and-effort.md`).
