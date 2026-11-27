@@ -130,16 +130,17 @@ measured a review seat, which is what the roles govern in practice: Codex
 as a host is unmaintained, and a seat started from Claude Code takes the
 default role's model
 (`skills/using-crucible/references/claude-code-dispatch.md`). The
-alternate's model, of the line before 6.1, stays with it, which the
-ruling's words do not cover: an agent's call, the new line's other model
-not having been run. The host map's own text is unchanged, so its sentence that every model it
+alternate's model, of the line before 6.1, stays too: the new line's
+other model was not run, and in the maintainer's words "the alternate is
+dormant for now, as it isn't invoked from CC", a seat started from Claude
+Code taking the default role alone. The host map's own text is unchanged, so its sentence that every model it
 names qualifies no longer holds by Codex's labels
 (`docs/backlog/codex-host-unmaintained.md`). The further evidence would
 be a review seat run on both lines
 (`docs/backlog/codex-seat-model-trial.md`); what crucible does when Codex
 retires the two models is open. (Basis: measured; external, for the
-reports; the maintainer's preference, for the default role; judgment, an
-agent's call the maintainer has not ruled on: the alternate staying.)
+reports; the maintainer's preference, for the default role; judgment,
+accepted by the maintainer, for the alternate staying.)
 
 ### The seats
 
