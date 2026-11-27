@@ -14,8 +14,8 @@ stands beside the outcome review's finding of no detectable difference.
 Subscription advice is labelled the maintainer's experience. It claims
 no measurement of skill triggering (`docs/decisions/crucible-suite.md`).
 Its platforms name what was measured: the hook on Windows and Linux, not
-on macOS (`docs/decisions/session-start-hook.md`), and Codex as
-experimental, with the checks it failed
+on macOS (`docs/decisions/session-start-hook.md`), and Codex as a host
+as unmaintained, with the checks it failed
 (`docs/decisions/runtime-adapters.md`). It states where crucible's
 calibration comes from in aggregate figures (`README.md` § How it
 compares).

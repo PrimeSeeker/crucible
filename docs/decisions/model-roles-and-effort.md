@@ -118,17 +118,25 @@ first and described `gpt-6.1-sol` and `gpt-6-astra`, the default and
 alternate roles' models, as previous generation. By the floor's own test
 both roles would move to the new line, a model release being an edit to
 the host's entry (`docs/dual-runtime.md` § Model floor and effort
-policy). They stay. On `gpt-6.2-sol` the design gate failed in five fresh
-sessions of six, and on `gpt-6.1-sol` it held in three of three
-(`docs/decisions/runtime-adapters.md` § Codex as a host); a seat started
-from Claude Code takes the default role's model
-(`skills/using-crucible/references/claude-code-dispatch.md`), so the move
-would put that seat on the new line too. The alternate stays with the
-default: the new line's other model was not run. The host map's own text
-is unchanged, its floor sentence dated to 0.164.0. What crucible does
-when Codex retires the two models is open. (Basis: measured; judgment, an
-agent's call the maintainer has not ruled on: holding the roles against
-the floor.)
+policy). They stay, on the maintainer's ruling: "6.1 is kept for now with
+the justification that 6.2 is deemed inadequate for a review-driven loop
+on first reports pending further evidence". The first reports are two.
+On `gpt-6.2-sol` the design gate failed in five fresh sessions of six,
+and on `gpt-6.1-sol` it held in three of three; and a public roundup of
+the new line's users describes it reading instructions against their
+intent (`docs/decisions/runtime-adapters.md` § Codex as a host). Neither
+measured a review seat, which is what the roles govern in practice: Codex
+as a host is unmaintained, and a seat started from Claude Code takes the
+default role's model
+(`skills/using-crucible/references/claude-code-dispatch.md`). The
+alternate stays with the default: the new line's other model was not run.
+The host map's own text is unchanged, so its sentence that every model it
+names qualifies no longer holds by Codex's labels
+(`docs/backlog/codex-host-unmaintained.md`). The further evidence would
+be a review seat run on both lines
+(`docs/backlog/codex-seat-model-trial.md`); what crucible does when Codex
+retires the two models is open. (Basis: measured; external, for the
+reports; the maintainer's preference.)
 
 ### The seats
 
@@ -448,7 +456,7 @@ operator's config key.
 
 ## Changes
 
-- 2026-11-27: Codex's roles stay on the models read on codex-cli 0.164.0, an exception to the floor now that Codex labels two of them previous generation; because on the line that replaced them the design gate failed in five sessions of six, and a seat started from Claude Code takes the default role's model.
+- 2026-11-27: Codex's roles stay for now on the models read on codex-cli 0.164.0, an exception to the floor now that Codex labels two of them previous generation; because the maintainer deems the line that replaced them inadequate for a review-driven loop on the first reports, pending further evidence, and a seat started from Claude Code takes the default role's model.
 - 2026-11-24: fresh looks firing at a passage's third patch, a round after the router's sign of a second, stay a matter of the router's signs, not a trigger, its reason recorded; no position changes.
 - 2026-11-23: the stuck trigger is closed as not needed, no longer waiting on the re-audit, on an agent's recommendation the maintainer accepted; because in 146 tasks and 58 branch waves of one code project no finding failed its re-review twice, and what recurred was a class of finding across passes, which a fresh look addresses. What those runs' six fresh looks did, and the alternate-role seat's unique merged MAJORs in round 1, are recorded.
 - 2026-11-07: a fresh look joins the alternate role's triggers as a fourth, on the maintainer's proposal, scoped to the work's design or code or what it builds on, with signs beside the judgment and a second look going to the operator; because rethinks done ad hoc helped and came mostly from the operator asking. The automatic stuck trigger stays declined, since this replaces no seat.

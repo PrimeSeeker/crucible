@@ -1,7 +1,8 @@
 # Crucible on Codex
 
-Crucible's Codex support is experimental, and on the model Codex now lists
-first its design gate mostly failed: read § Status before installing. This
+Crucible on Codex as a host is unmaintained: it installs and its sessions
+reach the router, but on the model Codex now lists first its design gate
+mostly failed, and no further measurement is planned (§ Status). This
 guide covers installing it, the two config keys it needs, checking that it
 is the one router and that sessions reach it, and rolling back. The command
 forms are those of codex-cli 0.163.0; the install and pin commands ran on
@@ -102,8 +103,11 @@ ran without crucible.
 
 ## Status
 
-Experimental. No further measurement is planned for now, so what follows
-ages as Codex changes.
+Unmaintained. Crucible installs on Codex and its sessions reach the
+router; the maintainer does not run it as a host and plans no further
+measurement, so what follows ages as Codex changes. The use of Codex that
+is maintained is a review seat started from a Claude Code session
+(`README.md` § Configuration), which this guide does not cover.
 
 **The design gate, by model** (codex-cli 0.172.0, 2026-11-27). Fresh
 `codex exec` sessions at medium reasoning effort were each given one small
@@ -111,9 +115,9 @@ feature request, as in the routing check above, and their tool calls were
 read from the event stream:
 
 - **`gpt-6.2-sol`,** the model Codex lists first: all six sessions read
-  the router and brainstorming, four of them after one earlier command
-  (three listed or checked the repository, one searched Codex's memory
-  file). Five then edited the code without the design approval
+  the router and brainstorming, four of them after one earlier command,
+  which listed or checked the repository in three and searched Codex's
+  memory file in two. Five then edited the code without the design approval
   brainstorming requires, and one stopped to ask for it. Three of the five
   ran each in a clone of its own; the other two shared a repository with
   the session that stopped.
@@ -125,13 +129,14 @@ read from the event stream:
 It was one request, small enough to invite a direct edit. `gpt-6.2-astra`,
 an interactive session and everything past the design gate are unmeasured.
 
-**Run crucible on the host map's models.** Start the session on the
-default role's model (`codex -m gpt-6.1-sol`, or `model = "gpt-6.1-sol"`
-in your Codex config); its seats take their models from the host map.
-Codex's model list now describes that model and the alternate role's as
-previous generation, so both are an exception to crucible's own floor,
-kept because the line that replaced them failed the check above. If Codex
-retires them, crucible has no model on which it is known to hold.
+**The models.** A session runs on the model you start it with, or on
+Codex's own default; the host map names models only for the seats a
+session starts. Those are the models read on codex-cli 0.164.0. Codex's
+list now describes two of them, the default and the alternate roles', as
+previous generation, which crucible's own floor excludes. They stay for
+now: on these first reports the 6.2 line is deemed inadequate for a
+review-driven loop, pending further evidence. Once Codex retires them,
+crucible names no Codex model on which its gate is known to hold.
 
 Two checks failed earlier, on codex-cli 0.162.1:
 

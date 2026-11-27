@@ -43,14 +43,16 @@ claude-ism scanner checks the rest of the shipped text for host-specific
 terms against its allowlist (`AGENTS.md`, Skills stay runtime-neutral;
 one sanctioned exception is in `docs/decisions/worktrees.md`).
 
-**Codex: experimental, on the CLI.** Codex is a native host runtime, a
-plugin reading the same tree. It is labelled experimental on the CLI,
-the one surface tested; the desktop app and the IDE extension are neither
-tested nor maintained, and are assumed similar enough for the skills
-(`docs/codex.md` § Status). On the model Codex lists first since its
-6.2 line, the design gate failed in five sessions of six; crucible is to
-be run on the host map's models, and no further measurement is planned
-for now (`docs/codex.md` § Status). On Codex:
+**Codex as a host: unmaintained.** Codex is a native host runtime, a
+plugin reading the same tree. Since 2026-11-27 it is labelled
+unmaintained: it installs and its sessions reach the router, but on the
+model Codex lists first since its 6.2 line the design gate failed in five
+sessions of six, and no further measurement is planned (`docs/codex.md`
+§ Status). The CLI is the one surface ever tested; the desktop app and
+the IDE extension are assumed similar enough for the skills. The use of
+Codex that is maintained is the seat on another host, started from a
+Claude Code session
+(`skills/using-crucible/references/claude-code-dispatch.md`). On Codex:
 
 - crucible registers no hook: `.codex-plugin/plugin.json` declares
   `"hooks": {}`, exactly, and a session reaches crucible through skill
@@ -137,8 +139,9 @@ sessions at medium reasoning effort, each given one small feature request
 in a scratch repository whose instruction file did not mention crucible,
 their tool calls read from the event stream. On `gpt-6.2-sol`, which
 Codex lists first, all six sessions read the router and brainstorming,
-four of them after one earlier command (three listed or checked the
-repository, one searched Codex's memory file); five then edited the code
+four of them after one earlier command, which listed or checked the
+repository in three and searched Codex's memory file in two; five then
+edited the code
 without the design approval brainstorming's gate requires, and one
 stopped to ask for it. Three of the five ran each in a clone of its own;
 the other two shared a repository with the session that stopped. On
@@ -150,15 +153,21 @@ prompted the run was a public roundup of the line's early user reports
 (Zvi Mowshowitz, "Astra 6.2's Brain Gets Smart But Its Head Gets Dumb",
 2026-11-27): instructions read literally against their intent, scope
 creep, early stops and output shaped for model graders. Those are
-anecdotes, none about a workflow like crucible's. The maintainer proposed
-downgrading the statement of Codex support and plans no further
-measurement for now; an agent proposed its wording, that the gate mostly
-failed on the model Codex lists first, held on the host map's default
-role, and that crucible be run on the host map's models
-(`docs/decisions/model-roles-and-effort.md`). (Basis: measured; external,
-for the reports; the maintainer's preference, for the downgrade;
-judgment, an agent's call the maintainer has not ruled on: the wording
-after the measurement.)
+anecdotes, none about a workflow like crucible's.
+
+The maintainer, who does not run Codex as a host, had proposed
+downgrading the statement of Codex support before the run. An agent then
+proposed keeping "experimental" and telling users to run crucible on the
+host map's models; the maintainer found that inadequate for other users,
+a session's model being Codex's default whatever the host map names. The
+agent proposed stating the two uses separately, the host as unmaintained
+and the seat started from Claude Code as the maintained use, and the
+maintainer ruled: "technically works, but unmaintained it is then". The
+adapter files stay; whether to remove the host is deferred
+(`docs/backlog/codex-host-unmaintained.md`). (Basis: measured; external,
+for the reports; the maintainer's preference, for the downgrade and the
+label; judgment, accepted by the maintainer, for stating the two uses
+separately.)
 
 The surfaces are the maintainer's call: crucible is maintained on the
 Codex CLI only, and the desktop app and the IDE extension are assumed to
@@ -233,12 +242,16 @@ preference.)
 - **Installing crucible's instrument roles into the user's Codex configuration**: a new kind of side effect, for a saving the seat's read of its template by path already takes (`docs/decisions/instruments.md` § Instrument agents).
 - **Maintaining the desktop app and the IDE extension**: untested and
   unused by the maintainer.
+- **Telling Codex users to run crucible on the host map's models**, as
+  the way to keep the host experimental: a session runs on the model its
+  user starts it with, and the models named are ones Codex now labels
+  previous generation.
 - **A cutover runbook** with a flip record, obligations and a capability
   smoke: built for one project's cutover, not for a newcomer's install.
 
 ## Changes
 
-- 2026-11-27: on the model Codex lists first since its 6.2 line the design gate failed in five sessions of six and held on the host map's default role in three of three; the Codex status says so, tells users to run crucible on the host map's models, and says no further measurement is planned, because the earlier status described a model line Codex has since replaced.
+- 2026-11-27: Codex as a host is labelled unmaintained, no longer experimental, and the seat started from Claude Code is named as the maintained use; because on the model Codex lists first since its 6.2 line the design gate failed in five sessions of six, the maintainer does not run Codex as a host and plans no further measurement, and telling users to run the host map's models was found inadequate.
 - 2026-11-04: the dispatch reference gains a seat on another host (`docs/decisions/spec-campaign.md`): the command on Claude Code, and on Codex that none is on record, since host mechanics live in the adapter pair.
 - 2026-11-04: on Claude Code a session the host marks unattended gets the host map's path in a note instead of the host map inlined, since it gets no router either (`docs/decisions/session-start-hook.md`).
 - 2026-11-03: the escalation rule's one owner is the dispatch composition's § Models and effort, SDD's Models section having dropped the rows that restated it (`docs/decisions/model-roles-and-effort.md`).

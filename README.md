@@ -1,9 +1,10 @@
 # crucible
 
-Crucible is a set of process skills for AI coding agents, for Claude Code
-and, experimentally, Codex. It turns "I want to build X" into a reviewed
-design, a plan, an implementation by fresh agents and a reviewed branch,
-with you steering through plain-language decisions along the way.
+Crucible is a set of process skills for AI coding agents, for Claude Code;
+a Codex port exists and is unmaintained (§ Codex). It turns "I want to
+build X" into a reviewed design, a plan, an implementation by fresh agents
+and a reviewed branch, with you steering through plain-language decisions
+along the way.
 
 It is one person's workflow for building projects meant to be maintained
 for a long time, shared because frameworks for individual-scale autonomous
@@ -52,8 +53,8 @@ files can override them (§ Configuration).
 
 ## Platforms and prerequisites
 
-- **Hosts:** Claude Code, tested on 2.1.318; Codex, experimentally,
-  last measured on codex-cli 0.172.0 (§ Codex).
+- **Hosts:** Claude Code, tested on 2.1.318. Codex as a host is
+  unmaintained, last measured on codex-cli 0.172.0 (§ Codex).
 - **Operating systems:** the startup hook is measured on Windows (Git
   Bash) and Linux, not yet on macOS.
 - **git:** crucible works on branches and worktrees.
@@ -306,15 +307,16 @@ is yours to manage.
 
 ## Codex
 
-Experimental, and on the model Codex now lists first the workflow's first
-gate mostly did not hold. On codex-cli 0.172.0, fresh sessions on that
-model, each given a small feature request, read crucible's router and
-then, in five of six, edited the code without the design approval the
-workflow requires. On the default model of crucible's Codex host map,
-which Codex now describes as previous generation, three of three stopped
-for the approval. Run crucible on the host map's models while Codex offers
-them (`docs/codex.md` § Status). No further measurement is planned for
-now.
+As a host, Codex is unmaintained. Crucible installs there and its sessions
+reach the router, but the maintainer does not run it as a host and plans
+no further measurement. On codex-cli 0.172.0, fresh sessions on the model
+Codex now lists first, each given a small feature request, read
+crucible's router and then, in five of six, edited the code without the
+design approval the workflow requires. On the default model of crucible's
+Codex host map, which Codex now describes as previous generation, three
+of three stopped for the approval (`docs/codex.md` § Status). The use of
+Codex that is maintained is a review seat started from a Claude Code
+session (§ Configuration, a reviewer from the other model family).
 
 Earlier, on codex-cli 0.162.1, crucible failed two checks: one fresh
 session in three acted before reading the router, and the checklist tool
