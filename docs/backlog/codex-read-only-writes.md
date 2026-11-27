@@ -14,8 +14,9 @@
   went through was not established.
 - Those sessions were asked for a change; a review seat is not, and the
   status check after each review window would show a write to the tree
-  (`docs/decisions/shared-tree.md`), which has no review seat on record
-  writing into its tree.
+  (`docs/decisions/shared-tree.md`). That record keeps the check because
+  reviewers have written into the tree; its re-audit's scan found none
+  doing so.
 
 ## Follow-up
 

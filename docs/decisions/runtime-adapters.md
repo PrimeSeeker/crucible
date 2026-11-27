@@ -156,22 +156,24 @@ creep, early stops and output shaped for model graders. Those are
 anecdotes, none about a workflow like crucible's.
 
 The maintainer, who does not run Codex as a host, had proposed
-downgrading the statement of Codex support before the run. An agent then
-proposed keeping "experimental" and telling users to run crucible on the
-host map's models; the maintainer found that inadequate for other users,
-a session's model being Codex's default whatever the host map names. The
-agent proposed stating the two uses separately, the host as unmaintained
-and the seat started from Claude Code as the maintained use, and the
-maintainer ruled: "technically works, but unmaintained it is then". The
-adapter files stay; whether to remove the host is deferred
+downgrading the statement of Codex support before the run. After it an
+agent proposed keeping "experimental" with advice to run crucible on the
+host map's models, and asked whether the roles should stay or move to
+the new line. The maintainer found both courses for the roles inadequate
+for other users, a session's model being Codex's default whatever the
+host map names. The agent then withdrew the advice and proposed stating
+the two uses separately, the host as unmaintained and the seat started
+from Claude Code as the maintained use, and the maintainer ruled:
+"technically works, but unmaintained it is then". The adapter files stay;
+whether to remove the host is deferred
 (`docs/backlog/codex-host-unmaintained.md`). (Basis: measured; external,
 for the reports; the maintainer's preference, for the downgrade and the
 label; judgment, accepted by the maintainer, for stating the two uses
-separately.)
+separately and giving no advice on models.)
 
-The surfaces are the maintainer's call: crucible is maintained on the
-Codex CLI only, and the desktop app and the IDE extension are assumed to
-be similar enough for skill purposes. That is an assumption, not
+The surfaces were the maintainer's call: crucible was maintained on the
+Codex CLI only, and the desktop app and the IDE extension were assumed to
+be similar enough for skill purposes. That was an assumption, not
 evidence, and the desktop app can bundle its own Codex, older than the
 CLI. (Basis: the maintainer's preference.)
 
